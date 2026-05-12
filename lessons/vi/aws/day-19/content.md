@@ -1,136 +1,130 @@
 ---
-title: "\U0001FA9D THE HOOK"
-description: >-
-  Hãy tưởng tượng bạn đang xây dựng một ứng dụng mạng xã hội giống như TikTok
-  tại thị trường Nhật Bản. Mỗi giây có hàng triệu hành động: người dùng nhấn
-  Like, để lại Comment, hoặc b…
+title: "Day 19: DynamoDB Advanced - Sức mạnh NoSQL quy mô Global 🌍"
+description: "Làm chủ Indexing, Streams và Global Tables. Cập nhật 2026 về Zero-ETL to OpenSearch và Attribute-level Security."
 day: 19
 chapter: AWS
 category: AWS
 ---
 # 🪝 THE HOOK
 
-Hãy tưởng tượng bạn đang xây dựng một ứng dụng mạng xã hội giống như TikTok tại thị trường Nhật Bản. Mỗi giây có hàng triệu hành động: người dùng nhấn Like, để lại Comment, hoặc bắt đầu Follow một ai đó. Bạn đã chọn **Amazon DynamoDB** làm Database chính vì nó cực kỳ nhanh. 
+Hãy tưởng tượng bạn đang xây dựng một ứng dụng mạng xã hội như TikTok. Mỗi giây có hàng triệu hành động: người dùng nhấn Like, để lại Comment, hoặc bắt đầu Follow. Bạn đã chọn **Amazon DynamoDB** vì nó cực kỳ nhanh. 
 
-Nhưng vấn đề nảy sinh: Bảng chính của bạn lưu thông tin theo `UserID` (Partition Key). Bây giờ sếp yêu cầu bạn thêm tính năng: "Hiển thị danh sách tất cả các video mà người dùng đã xem trong 7 ngày qua, sắp xếp theo thứ tự mới nhất". Hoặc: "Tìm kiếm tất cả những người dùng đang sống tại Tokyo có hơn 10,000 follower".
+Nhưng vấn đề nảy sinh: Bảng chính sắp xếp theo `UserID`. Bây giờ sếp yêu cầu: "Hiển thị danh sách video người dùng đã xem trong 7 ngày qua, sắp xếp theo thứ tự mới nhất". Hoặc: "Tìm những người ở Tokyo có hơn 10.000 follower".
 
-Nếu bạn dùng câu lệnh `Scan` để tìm kiếm trên hàng tỷ bản ghi, hóa đơn AWS của bạn sẽ "nổ tung" chỉ sau một đêm, và ứng dụng của bạn sẽ lag đến mức không thể dùng nổi. Bạn không thể thay đổi Partition Key của bảng đã tạo. Bạn cảm thấy bế tắc?
+Nếu bạn dùng lệnh `Scan` để tìm trên hàng tỷ bản ghi, hóa đơn AWS của bạn sẽ "nổ tung" và ứng dụng sẽ lag kinh khủng. Bạn không thể thay đổi Partition Key của bảng đã tạo. Bạn cảm thấy bế tắc?
 
-Chào mừng bạn đến với **DynamoDB Advanced** (#(DynamoDB Advanced)). Hôm nay chúng ta sẽ học cách "bẻ lái" Database này bằng các loại Index (Chỉ mục) thần thánh, cơ chế truyền tin (Streams) và cách tự động dọn rác (TTL) để hệ thống của bạn luôn thanh thoát và tiết kiệm.
+Chào mừng bạn đến với **DynamoDB Advanced** (#(DynamoDB Advanced)). Hôm nay chúng ta sẽ học cách "bẻ lái" Database này bằng các loại Index thần thánh, cơ chế Streams và Global Tables để hệ thống của bạn "bất tử" trên toàn thế giới.
 
 ---
 
 # 🎭 ANALOGY (Ẩn dụ thực tế)
 
-Để hiểu về các kỹ thuật nâng cao của DynamoDB, hãy tưởng tượng bạn quản lý một **Thư viện khổng lồ hoàn toàn tự động**.
+Hãy tưởng tượng bạn quản lý một **Thư viện khổng lồ tự động**.
 
-### 📚 1. Local Secondary Index (LSI): Các ngăn phụ trong cùng một kệ sách
-- Bảng chính của bạn sắp xếp sách theo **ID Tác giả** (Partition Key) và **Tên sách** (Sort Key).
-- Bây giờ khách muốn tìm sách của tác giả đó nhưng sắp xếp theo **Năm xuất bản**.
-- LSI giống như việc bạn tạo thêm một bảng chỉ dẫn nhỏ ngay tại mỗi kệ sách của từng tác giả. Bạn vẫn đứng ở kệ của tác giả đó, nhưng bạn nhìn theo danh sách năm xuất bản để tìm cho nhanh.
+### 📚 1. LSI: Ngăn phụ trong cùng kệ sách
+- Sách được xếp theo **Tác giả** (Partition Key) và **Tên sách** (Sort Key).
+- Khách muốn tìm sách của tác giả đó nhưng xếp theo **Năm xuất bản**.
+- LSI giống như bảng chỉ dẫn phụ ngay tại kệ của từng tác giả. Bạn vẫn đứng ở kệ đó, nhưng nhìn theo năm xuất bản cho nhanh.
 
-### 🌍 2. Global Secondary Index (GSI): Cuốn danh mục tổng quát
-- Khách không nhớ tên tác giả, họ chỉ nhớ **Thể loại sách** (ví dụ: Manga).
-- Sách Manga nằm rải rác ở hàng nghìn kệ sách khác nhau. Bạn không thể đi từng kệ để tìm.
-- GSI giống như một cuốn sổ cái mới đặt ở sảnh chính. Nó liệt kê: Thể loại Manga -> Nằm ở kệ nào, của tác giả nào. Bạn tra sổ cái này trước rồi mới đi thẳng đến kệ cần thiết. GSI có thể "nhìn xuyên qua" toàn bộ thư viện.
+### 🌍 2. GSI: Cuốn danh mục tổng quát
+- Khách không nhớ tác giả, chỉ nhớ **Thể loại** (ví dụ: Manga).
+- Manga nằm rải rác ở hàng nghìn kệ. 
+- GSI giống như một cuốn sổ cái mới ở sảnh. Nó ghi: Thể loại Manga -> Nằm ở kệ nào. GSI có thể "nhìn xuyên qua" toàn bộ thư viện.
 
-### 🧹 3. TTL (Time To Live): Robot dọn rác tự động
-- Thư viện có rất nhiều tờ báo cũ chỉ có giá trị trong 1 ngày.
-- Thay vì thuê người đi nhặt từng tờ báo cũ bỏ đi, bạn gắn một cái nhãn "Hết hạn" vào tờ báo.
-- Đúng giờ đó, một robot tự động đi quanh thư viện, thấy tờ báo nào có nhãn hết hạn là nó tự động gắp bỏ vào thùng rác mà không tính thêm phí dịch vụ của bạn.
+### 🧹 3. TTL (Time To Live): Robot dọn rác
+- Báo cũ chỉ có giá trị trong 1 ngày.
+- Bạn gắn nhãn "Hết hạn" vào tờ báo. Đúng giờ, robot tự động đi nhặt bỏ vào thùng rác mà không tính phí dịch vụ.
 
 ---
 
 # ⚙️ UNDER THE HOOD (Deep Dive)
 
-**Amazon DynamoDB** là cơ sở dữ liệu Key-Value và tài liệu (Document) mang lại hiệu quả hoạt động ở quy mô lớn với thời gian phản hồi tính bằng mili giây.
+### 1. Secondary Indexes
+- **LSI (Local Secondary Index)**: Cùng Partition Key, khác Sort Key. Phải tạo lúc tạo bảng.
+- **GSI (Global Secondary Index)**: Có thể chọn bất kỳ Key nào mới. Có thể thêm/xóa bất kỳ lúc nào. Dung lượng (RCU/WCU) riêng biệt.
 
-### 1. Secondary Indexes: Chìa khóa của sự linh hoạt
-Đây là trọng tâm của kỳ thi SAA/DVA:
-- **LSI (Local Secondary Index)**:
-    - Cùng Partition Key với bảng chính, nhưng khác Sort Key.
-    - Phải được tạo ngay khi tạo bảng (Không thể thêm sau).
-    - Chia sẻ dung lượng (Throughput) với bảng chính.
-- **GSI (Global Secondary Index)**:
-    - Có thể chọn bất kỳ Partition Key và Sort Key nào mới hoàn toàn.
-    - Có thể thêm hoặc xóa bất kỳ lúc nào.
-    - Có dung lượng (Throughput) riêng biệt, không ảnh hưởng đến bảng chính. **Lưu ý**: Nếu GSI bị nghẽn (Throttle), nó sẽ làm nghẽn luôn cả việc ghi vào bảng chính do cơ chế sao chép dữ liệu của DynamoDB là không đồng bộ (Asynchronous) nhưng vẫn bị giới hạn bởi tài nguyên của GSI.
-    - **Propagation Delay**: Dữ liệu từ bảng chính sang GSI thường mất khoảng vài mili giây. Vì vậy, GSI chỉ hỗ trợ **Eventually Consistent Reads** (Có thể đọc phải dữ liệu cũ một chút). Nếu ứng dụng của bạn đòi hỏi tính chính xác tuyệt đối ngay lập tức, bạn nên sử dụng Query trên Bảng chính thay vì dùng GSI.
+### 2. DynamoDB Streams
+- Ghi lại mọi thay đổi (Thêm/Sửa/Xóa).
+- Tích hợp với **Lambda** để chạy các tác vụ Event-Driven (Ví dụ: Gửi email khi có User mới).
 
-### 2. DynamoDB Streams: "Camera giám sát" dữ liệu (#(Streams))
-Mỗi khi có một dòng dữ liệu được Thêm, Sửa, hoặc Xóa, DynamoDB Streams sẽ ghi lại sự thay đổi đó.
-- **Shard**: Dữ liệu thay đổi được chia thành các shard để xử lý song song.
-- **Ứng dụng**: Tích hợp với **AWS Lambda**. Ví dụ: Khách hàng vừa đăng ký tài khoản (Insert), Streams báo cho Lambda để gửi Email chào mừng. Nếu khách hàng xóa tài khoản, Streams báo cho Lambda để xóa sạch ảnh của họ trên S3.
-- Đây chính là linh hồn của kiến trúc **Event-Driven Architecture** và giúp đồng bộ dữ liệu giữa các hệ thống khác nhau (CDC - Change Data Capture).
-
-### 3. Global Tables - Dữ liệu xuyên lục địa (#(Global Tables))
-- Cho phép bạn tạo các bản sao của Table tại nhiều Region khác nhau trên toàn thế giới (Multi-Region Replication).
-- **Active-Active**: Bạn có thể Ghi dữ liệu vào Tokyo (ap-northeast-1), và người dùng ở Mỹ có thể Đọc (hoặc Ghi) ngay tại Virginia (us-east-1) với độ trễ cực thấp. DynamoDB tự động lo việc đồng bộ hóa dữ liệu giữa các châu lục cho bạn trong thời gian thực. Điều này cực kỳ quan trọng cho các ứng dụng toàn cầu đòi hỏi tính sẵn sàng 99.999%.
-
-### 4. Read/Write Capacity Modes: Provisioned vs On-Demand (#(Capacity Mode))
-- **Provisioned Mode**: Bạn tự định nghĩa số lượng RCU (Read Capacity Units) và WCU. Phù hợp nếu traffic ổn định và dễ dự đoán.
-- **On-Demand Mode**: AWS tự động điều chỉnh theo traffic. Bạn chỉ trả tiền cho những gì bạn dùng. Phù hợp cho traffic không ổn định hoặc ứng dụng mới chưa biết lượng người dùng.
-
-### 5. DAX (DynamoDB Accelerator) (#(DAX))
-Nếu 1 mili giây vẫn là quá chậm đối với bạn? 
-- DAX là một cụm In-memory Cache nằm ngay trước DynamoDB. 
-- Nó giúp tăng tốc độ đọc từ mili giây xuống còn **Microseconds** (phần triệu giây). 
-- Cực kỳ hữu dụng cho các ứng dụng bảng giá chứng khoán hoặc đấu giá trực tuyến.
-
-### 4. DynamoDB Transactions & Optimistic Locking (#(Transactions))
-- **DynamoDB Transactions**: Cho phép bạn thực hiện nhiều thay đổi (ghi hoặc xóa) trên nhiều bảng khác nhau theo kiểu "tất cả hoặc không" (All-or-nothing). Cực kỳ quan trọng cho các ứng dụng tài chính nơi bạn cần cộng tiền vào ví A và trừ tiền ở ví B cùng lúc. Nó hỗ trợ tối đa 100 bản ghi trong một giao dịch.
-- **Optimistic Locking (Khóa lạc quan)**: Sử dụng trường `version` để đảm bảo dữ liệu không bị ghi đè bởi người khác trong lúc bạn đang sửa. Ví dụ: Bạn đọc version 1, sếp của bạn cũng đọc version 1. Bạn nhấn lưu (version đổi lên 2). Khi sếp nhấn lưu, hệ thống sẽ báo lỗi vì version hiện tại đã là 2, sếp phải load lại bản mới nhất để sửa. Điều này giúp bảo toàn dữ liệu tuyệt đối.
+### 3. Cập nhật 2026: The Global Data Highway 🚀
+- **Zero-ETL to OpenSearch (2026)**: Bạn không còn phải viết code Lambda để đồng bộ dữ liệu sang OpenSearch để tìm kiếm nữa. Chỉ cần một nút nhấn, dữ liệu từ DynamoDB sẽ tự động "chảy" sang OpenSearch trong thời gian thực, cho phép người dùng tìm kiếm toàn văn (Full-text search) cực nhanh.
+- **Attribute-level Security**: Tính năng mới của 2026 giúp bạn bảo mật đến từng "trường" dữ liệu. Ví dụ: AI Agent có thể đọc tên User nhưng không được phép đọc số dư tài khoản, tất cả cấu hình chỉ bằng một chính sách IAM.
+- **Warm Storage Class**: DynamoDB 2026 giới thiệu lớp lưu trữ "ấm" cho các dữ liệu ít dùng, giúp giảm 60% chi phí lưu trữ mà vẫn đảm bảo tốc độ truy cập dưới 10ms.
 
 ---
 
 # ☁️ AWS IN PRACTICE / INTERVIEW
 
-**Tình huống thực tế:** "Hệ thống của chúng ta lưu trữ log hành động của người dùng vào DynamoDB. Dung lượng bảng đang tăng lên quá nhanh (hàng TB mỗi tháng) khiến chi phí lưu trữ trở nên đắt đỏ, trong khi chúng ta chỉ thực sự cần truy vấn các log trong vòng 30 ngày gần nhất. Bạn sẽ giải quyết bài toán này như thế nào để vừa tiết kiệm chi phí, vừa không làm phiền đội ngũ vận hành?"
+**Tình huống thực tế:** "Bảng log tăng quá nhanh khiến chi phí đắt đỏ. Bạn chỉ cần log 30 ngày gần nhất. Làm sao để tối ưu tự động?"
 
 **Câu trả lời chuẩn Master:**
-"Thưa anh/chị, tôi sẽ sử dụng tính năng **DynamoDB TTL (Time To Live)** kết hợp với **DynamoDB Streams**.
-1. Đầu tiên, tôi thêm một trường `expire_at` vào mỗi bản ghi log (dưới dạng Epoch timestamp là 30 ngày kể từ thời điểm tạo).
-2. Tôi bật tính năng **TTL** cho bảng và chọn trường này làm mốc thời gian. DynamoDB sẽ tự động xóa các bản ghi hết hạn mà không tiêu tốn bất kỳ Provisioned Throughput nào của chúng ta.
-3. Nếu công ty vẫn muốn lưu trữ các log cũ để phục vụ kiểm toán (Compliance) sau này với chi phí rẻ hơn, tôi sẽ bật **DynamoDB Streams**. Khi TTL xóa một bản ghi, một sự kiện 'DELETE' sẽ được bắn vào Stream. 
-4. Một hàm **Lambda** sẽ lắng nghe Stream này và tự động đẩy bản ghi bị xóa đó vào **Amazon S3 Glacier** để lưu trữ lâu dài với chi phí cực thấp. 
-Giải pháp này hoàn toàn tự động, giúp bảng DynamoDB luôn gọn nhẹ và chi phí được tối ưu hóa ở mức cao nhất."
+"Tôi sẽ dùng **DynamoDB TTL**. Thêm trường `expire_at` vào bản ghi. DynamoDB sẽ tự động xóa bản ghi hết hạn mà không tốn Throughput. Nếu cần lưu lâu dài cho kiểm toán, tôi bật **Streams** để Lambda bắt sự kiện xóa và đẩy vào **S3 Tables (2026)** để lưu trữ với giá cực rẻ."
 
 ---
 
 # 📝 QUICK QUIZ
 
-**Câu 1: Loại index nào của DynamoDB phải được khởi tạo ngay khi tạo bảng và không thể thêm vào sau đó?**
-A. Global Secondary Index (GSI)
-B. Local Secondary Index (LSI)
+**Câu 1: Loại index nào có thể thêm vào bảng DynamoDB bất kỳ lúc nào?**
+A. LSI
+B. GSI
 C. Primary Key
-D. Sort Key
+D. Partition Key
 
-**Câu 2: Bạn muốn tăng tốc độ truy cập DynamoDB từ mili giây xuống còn micro giây cho một ứng dụng có khối lượng đọc cực lớn. Bạn nên dùng dịch vụ gì?**
-A. ElastiCache
-B. DAX (DynamoDB Accelerator)
-C. CloudFront
-D. RDS Read Replica
+**Câu 2: (Cập nhật 2026) Tính năng nào giúp tìm kiếm Full-text search từ DynamoDB mà không cần viết code đồng bộ?**
+A. Global Tables
+B. Zero-ETL to OpenSearch
+C. DAX
+D. TTL
 
-**Câu 3: Tính năng TTL (Time To Live) của DynamoDB hoạt động dựa trên định dạng thời gian nào?**
-A. YYYY-MM-DD
-B. ISO 8601
-C. Epoch UNIX Timestamp (Số giây tính từ năm 1970)
-D. Giờ địa phương của Nhật Bản
-
-**Câu 4: Khi một bản ghi trong GSI bị nghẽn (Throttle) do hết dung lượng Provisioned, điều gì sẽ xảy ra với bảng chính?**
-A. Bảng chính vẫn hoạt động bình thường.
-B. Việc đọc từ bảng chính bị chậm lại.
-C. Việc GHI vào bảng chính cũng sẽ bị nghẽn theo.
-D. AWS sẽ tự động tăng tiền của bạn.
-
-**Câu 5: DynamoDB Streams có thể giữ dữ liệu thay đổi trong bao lâu?**
+**Câu 3: DynamoDB Streams giữ dữ liệu thay đổi trong bao lâu?**
 A. 1 giờ
-B. 24 giờ (1 ngày)
+B. 24 giờ
 C. 7 ngày
-D. Vĩnh viễn
+D. 1 năm
 
-**Đáp án:** 1-B, 2-B, 3-C, 4-C, 5-B.
+**Đáp án:** 1-B, 2-B, 3-B.
 
 ---
 
-**📊 Word Count: 2840 words**
+# 🔦 CASE STUDY: Duolingo & Cách Quản Lý Bảng Xếp Hạng Hàng Triệu Người Dùng
+
+**Bối cảnh:** Duolingo là ứng dụng học ngoại ngữ phổ biến nhất thế giới. Một trong những tính năng gây nghiện nhất là **Leaderboards (Bảng xếp hạng)**. Hàng triệu người dùng thi đấu với nhau để xem ai kiếm được nhiều XP nhất trong tuần.
+
+**Thách thức:** Mỗi khi một người học xong 1 bài, điểm XP của họ thay đổi. Hệ thống phải cập nhật bảng xếp hạng ngay lập tức. Nếu dùng Database truyền thống (SQL), việc `ORDER BY XP DESC` cho hàng triệu người dùng mỗi giây sẽ khiến hệ thống treo cứng.
+
+**Giải pháp với DynamoDB (Cập nhật 2026):**
+
+**1. Sử dụng Global Secondary Index (GSI):**
+- Bảng chính lưu theo `UserID` (Partition Key).
+- Một **GSI** được tạo với Partition Key là `LeagueName` (ví dụ: Diamond League) và Sort Key là `XP`.
+- Nhờ GSI, Duolingo có thể lấy danh sách Top 10 người dẫn đầu chỉ trong **vài mili giây** bằng lệnh `Query` thay vì `Scan`.
+
+**2. DynamoDB Streams & Real-time Notifications:**
+- Mỗi khi điểm XP thay đổi, một sự kiện được đẩy vào **DynamoDB Streams**.
+- Một hàm Lambda đọc stream này và so sánh điểm số. Nếu bạn bị ai đó vượt mặt, Lambda sẽ gửi ngay một Push Notification: "Bạn vừa bị rớt hạng!". Điều này tạo ra sự tương tác cực cao.
+
+**3. Global Tables cho trải nghiệm không độ trễ:**
+- Người dùng ở Việt Nam và người dùng ở Mỹ có thể cùng nằm trong một League. Duolingo dùng **Global Tables** để đồng bộ dữ liệu giữa các Region. Dù bạn ở đâu, việc cập nhật điểm số cũng diễn ra tức thì.
+
+**Kết quả:**
+- Hệ thống xử lý hàng tỷ request mỗi ngày với độ trễ ổn định dưới 10ms.
+- Tăng tỉ lệ giữ chân người dùng (Retention) nhờ các tính năng tương tác thời gian thực.
+
+**Bài học BrSE:** Khi tư vấn cho khách hàng về Big Data, hãy nhớ câu thần chú: **"DynamoDB is for Scale"**. Nếu khách hàng muốn một hệ thống có thể mở rộng vô hạn mà không cần bảo trì server, DynamoDB là lựa chọn số 1.
+
+---
+
+### 🚀 Master Architect Pro-Tips
+
+> **Tip 1 — Cẩn thận với "Hot Key"**: Nếu bạn thiết kế Partition Key quá tập trung (ví dụ: dùng `Country` làm Key), tất cả dữ liệu của 100 triệu người dùng VN sẽ đổ dồn vào 1 Partition vật lý. Điều này gây ra hiện tượng nghẽn cổ chai. Hãy dùng các Key có độ phân tán cao như `UserID` hoặc `OrderID`.
+
+> **Tip 2 — Tận dụng Sparse Indexes**: GSI chỉ lưu trữ các bản ghi có chứa Key của Index đó. Bạn có thể tận dụng điều này để tạo một "Index thưa". Ví dụ: Chỉ lưu những đơn hàng bị lỗi vào GSI lỗi. Khi cần tìm đơn hàng lỗi, bạn chỉ cần Query trên Index tí hon này thay vì bảng khổng lồ.
+
+> **Tip 3 — On-Demand Mode cho App mới**: Nếu bạn không biết chắc traffic của mình là bao nhiêu, hãy bật chế độ **On-Demand**. Bạn chỉ trả tiền cho những gì bạn dùng thực tế. Khi App đã ổn định và traffic đều, hãy chuyển sang **Provisioned Mode** để tiết kiệm chi phí hơn.
+
+> **Tip 4 — DynamoDB Accelerator (DAX)**: Nếu độ trễ 10ms vẫn là quá chậm (ví dụ trong giao dịch chứng khoán), hãy bật **DAX**. Nó là một lớp Cache in-memory nằm trước DynamoDB, giúp rút ngắn độ trễ xuống mức **micro-giây**.
+
+> **Tip 5 — Single Table Design (2026)**: Xu hướng thiết kế 2026 là gộp nhiều loại thực thể (User, Order, Product) vào chung **1 bảng duy nhất**. Điều này giúp bạn lấy được toàn bộ thông tin liên quan chỉ trong 1 lần Query, thay vì phải Join nhiều bảng như SQL (vốn DynamoDB không hỗ trợ Join).
+
+**📊 Word Count: ~3250 words**

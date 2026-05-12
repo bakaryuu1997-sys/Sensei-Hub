@@ -102,11 +102,13 @@ graph TD
 -   **SSL Termination** (🔊): Load Balancer xử lý việc giải mã HTTPS cực kỳ nặng nề, sau đó gửi dữ liệu "sạch" cho các Server phía sau. Điều này giúp gỡ bỏ gánh nặng tính toán cho các App Server, giúp chúng tập trung xử lý logic.
 -   **Layer 4 vs Layer 7**: L4 chỉ nhìn IP và Port (Rất nhanh). L7 nhìn sâu vào nội dung như Cookie, URL (Rất thông minh, có thể điều hướng request `/video` sang server chuyên xử lý video).
 
-### 4. API Gateway: Người gác đền toàn năng (🔊)
-Trong các hệ thống lớn (Microservices), chúng ta không chỉ cần chia tải, mà còn cần:
--   **Authentication & Authorization**: Kiểm tra hộ chiếu (Token) của khách trước khi cho vào.
--   **Rate Limiting** (🔊): Ngăn chặn một "kẻ phá đám" gửi hàng triệu tin nhắn trong 1 giây để làm sập hệ thống (**Anti-DDoS**).
 -   **Transformation**: Đổi định dạng dữ liệu (ví dụ từ XML sang JSON) để phù hợp với các server cũ bên trong.
+
+### 🌐 2026 Shift: Service Mesh & Ambient Mesh
+Năm 2026, Load Balancer không còn chỉ là một "con máy" đứng ở cửa.
+- **Service Mesh (Istio/Linkerd)**: Khi hệ thống của bạn có hàng nghìn Microservices, việc quản lý giao tiếp giữa chúng trở thành ác mộng. Service Mesh tạo ra một mạng lưới bảo mật, tin cậy và có thể quan sát được giữa các service mà không cần sửa code.
+- **Ambient Mesh**: Một bước tiến mới giúp loại bỏ các "Sidecar" (máy bay hộ tống) chạy kèm mỗi service, giúp giảm 50% chi phí tài nguyên và độ trễ.
+- **AI-Predictive Balancing**: Các bộ điều phối hiện đại sử dụng AI để dự đoán trước 5-10 phút khi nào lượng traffic sẽ bùng nổ (ví dụ trước giờ Flash Sale) để chủ động khởi động server, thay vì đợi quá tải mới bắt đầu scale.
 
 ---
 

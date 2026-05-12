@@ -18,7 +18,9 @@ Hãy tưởng tượng bạn đang xây dựng một tính năng tìm kiếm ng�
 
 Nhưng rồi, một buổi sáng thức dậy, ứng dụng của bạn nổi tiếng toàn cầu. Số lượng người dùng vọt lên 1,000,000. Đột nhiên, chức năng tìm kiếm mất tới... 30 giây để phản hồi. Server quá tải, log đỏ rực, và người dùng bắt đầu xóa app.
 
-Một ví dụ thực tế lịch sử là thảm họa của **Knight Capital Group** năm 2012. Chỉ vì một thuật toán không được kiểm soát tốt và lỗi triển khai phần mềm, họ đã mất 440 triệu USD chỉ trong... 45 phút. Trong lập trình, "chạy được" là chưa đủ, bạn phải hiểu được giới hạn vật lý của thuật toán mình viết ra. Hôm nay, chúng ta sẽ học cách "tiên đoán" tương lai đó thông qua **Big-O Analysis** (ビッグオー記法) [Ký pháp Big-O].
+Một ví dụ thực tế lịch sử là thảm họa của **Knight Capital Group** năm 2012. Và đến năm 2026, chúng ta còn phải đối mặt với **AI-driven complexity**. Một thuật toán không tối ưu có thể làm tiêu tốn hàng nghìn USD chi phí năng lượng cho các cụm GPU/TPU khi huấn luyện mô hình.
+
+**💡 Cập nhật 2026:** Hiện nay, các công cụ **AI Static Analysis** có thể dự đoán Big-O của bạn ngay khi bạn vừa gõ xong code. Tuy nhiên, một Architect vẫn phải hiểu bản chất để đưa ra các quyết định đánh đổi (Trade-offs) mà AI chưa thể tự quyết định được.
 
 ---
 

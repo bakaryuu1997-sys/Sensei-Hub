@@ -86,6 +86,12 @@ Trong BJT, nếu bạn thấy một đồng nghiệp đang làm việc hăng say
 - **Câu hỏi**: Bạn chào gì?
 - **Logic**: Không dùng **「こんばんは」**. Phải dùng **「お先に失礼します」**. Lời chào trong BJT luôn ưu tiên **Status (Trạng thái công việc)** hơn là **Clock (Thời gian thực)**.
 
+### 🌐 2026 Update: Remote & Hybrid Greetings
+Trong kỷ nguyên làm việc Hybrid, lời chào qua **Slack, Microsoft Teams hoặc Zoom** trở thành yếu tố quyết định sự chuyên nghiệp:
+- **Slack/Teams**: Thay vì chỉ chào suông, hãy kèm theo **Status Emoji** (ví dụ: 🏠 - Working from home, ☕ - On break).
+- **Video Call**: Khi vào một cuộc họp Online, việc **mở Camera** và chào rõ ràng là một dạng "Manners" tối thiểu. Nếu mạng yếu, bạn phải dùng kính ngữ để xin phép: **「通信環境の関係で、カメラをオフにさせていただきます」**.
+- **AI-Communication**: Khi sử dụng các công cụ AI để soạn thảo email, hãy luôn kiểm tra xem AI có dùng sai cấp độ kính ngữ (**Sonkeigo vs Kenjougo**) hay không, vì AI đôi khi vẫn nhầm lẫn ranh giới **Uchi-Soto**.
+
 ---
 
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ

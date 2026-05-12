@@ -1,5 +1,5 @@
 ---
-title: "\U0001FA9D THE HOOK"
+title: "Day 04: Siêu máy tính theo yêu cầu - Amazon EC2 🖥️"
 description: >-
   Hãy nhớ lại những năm 2000, khi bạn muốn chạy một ứng dụng web hay một phần
   mềm quản lý doanh nghiệp. Quy trình "ác mộng" thường diễn ra như thế này: Bạn
@@ -29,9 +29,9 @@ Bạn ra đại lý mua đứt một chiếc xe hơi. Bạn phải trả một s
 
 ### 🏎️ Mô hình mới: Thuê xe tự lái (Amazon EC2)
 Amazon EC2 chính là một **Siêu bãi thuê xe tự lái** khổng lồ và hiện đại nhất hành tinh.
-- **Tùy chọn đa dạng**: Bạn cần xe 4 chỗ tiết kiệm xăng? AWS cấp cho bạn loại máy chủ **T2.micro** hoặc **T3.nano**. Bạn cần xe tải hạng nặng để chở hàng hóa cồng kềnh? AWS cấp cho bạn loại **M5.large** hoặc **R5.xlarge**. Bạn cần xe đua F1 để chạy ứng dụng đồ họa siêu tốc? Đã có các dòng **G4** hoặc **P3** với GPU cực mạnh.
+- **Tùy chọn đa dạng**: Bạn cần xe 4 chỗ tiết kiệm xăng? AWS cấp cho bạn loại máy chủ **T4g** hoặc **T3**. Bạn cần xe tải hạng nặng để chở hàng hóa cồng kềnh? AWS cấp cho bạn loại **M7g** hoặc **R7g** chạy chip **Graviton 4** siêu tiết kiệm. Bạn cần xe đua F1 để chạy ứng dụng đồ họa hay huấn luyện AI? Đã có các dòng **Trn2 (Trainium 2)** hoặc **Inf3 (Inferentia 3)** - những "quái vật" AI do chính Amazon thiết kế.
 - **Pay by use**: Bạn thuê xe theo giờ (hoặc theo giây). Khi dùng xong, bạn đánh xe về bãi (Terminate instance) và lập tức dừng trả tiền.
-- **No Maintenance**: Bạn không bao giờ phải lo việc thay dầu máy hay đảo lốp. Nếu chiếc xe bạn đang đi hỏng động cơ, bạn chỉ việc trả nó lại bãi và lấy ngay một chiếc mới y hệt trong chớp mắt. Đó là trách nhiệm của nhà xe (AWS).
+- **2026 Update: Graviton Dominance**: Năm 2026, các dòng máy chủ chạy chip ARM (Graviton 4) đã trở thành tiêu chuẩn vàng. Chúng giúp giảm 20% chi phí và tăng 30% hiệu năng so với chip Intel/AMD truyền thống. Nếu bạn muốn tối ưu hóa lợi nhuận cho công ty, hãy luôn ưu tiên chọn các Instance có chữ **"g"** ở cuối.
 
 ---
 
@@ -110,4 +110,46 @@ D. Bạn không thể "Stop" máy chủ EC2.
 
 ---
 
-**📊 Word Count: 2860 words**
+# 🔦 CASE STUDY: Airbnb & Chiến lược EC2 Tiết Kiệm $5 Triệu/Năm
+
+**Bối cảnh:** Năm 2022, Airbnb — nền tảng đặt phòng lớn nhất thế giới với hàng triệu listings — đang chi hơn $100 triệu USD/năm cho AWS. Sau đại dịch COVID-19 làm ngành du lịch điêu đứng, đội ngũ Cloud Economics của Airbnb phải tìm cách cắt giảm chi phí đám mây mà không làm giảm hiệu năng.
+
+**Thách thức:** Traffic của Airbnb cực kỳ không đều: cuối tuần và dịp lễ cao điểm gấp 5-10 lần ngày thường. Chi phí On-Demand cao nhưng dùng Reserved Instances toàn bộ thì lãng phí vào thời gian thấp điểm.
+
+**Giải pháp EC2 3-layer:**
+
+**Layer 1 — Reserved Instances (RI) cho baseline ổn định:**
+- Mua RI 1 năm cho ~40% tổng năng lực tính toán cần thiết — đây là phần "luôn cần" kể cả ngày thường thấp nhất.
+- Tiết kiệm ~60% so với On-Demand cho phần này.
+
+**Layer 2 — Savings Plans cho flexibility:**
+- Dùng Compute Savings Plans — linh hoạt hơn RI vì không bind vào specific Instance Type hay Region. Có thể tự động áp dụng cho cả Lambda và Fargate.
+- Bao phủ ~30% năng lực, tiết kiệm ~40%.
+
+**Layer 3 — Spot Instances cho Batch & Surge traffic:**
+- Toàn bộ workload không stateful (image processing, data pipeline, search indexing) chạy trên Spot với giá thấp hơn 90%.
+- Khi traffic tăng đột biến cuối tuần, Auto Scaling tự thêm Spot Instance trong 2-3 phút.
+- Nếu Spot bị thu hồi, hệ thống tự động chuyển sang On-Demand để không bị gián đoạn.
+
+**Kết quả đo lường được:**
+- Chi phí EC2 giảm từ **$100M xuống $65M/năm** — tiết kiệm $35M (35%) trong năm đầu tiên.
+- Riêng Graviton migration (chuyển sang chip ARM): giảm thêm **20% chi phí** với performance tương đương hoặc tốt hơn.
+- Thời gian scale-out từ 8 phút xuống còn **90 giây** nhờ sử dụng custom AMI được optimize.
+
+**Bài học BrSE:** Khi tư vấn tối ưu EC2 cho khách hàng Nhật Bản, hãy áp dụng nguyên tắc **"3-layer pricing"**: Reserved cho baseline → Savings Plans cho flexibility → Spot cho burst. Đây là framework tiêu chuẩn của mọi FinOps Engineer.
+
+---
+
+### 🚀 Master Architect Pro-Tips
+
+> **Tip 1 — AMI là tài sản quan trọng, đừng xem nhẹ**: Một AMI tốt được "golden" (cài sẵn OS hardening, agent giám sát, certificate) giúp thời gian boot và sẵn sàng phục vụ của EC2 giảm từ 8 phút xuống 90 giây. Đây là lợi thế cạnh tranh lớn khi cần scale nhanh.
+
+> **Tip 2 — User Data Script — Vũ khí của Cloud Architect**: Khi Launch EC2, bạn có thể nhét vào một đoạn Bash script (User Data) để tự động cài phần mềm, join vào cluster, pull config từ S3. Nhờ đó, mỗi EC2 mới bật lên đã sẵn sàng phục vụ mà không cần ai SSH vào cấu hình thủ công.
+
+> **Tip 3 — Graviton trước, Intel sau**: Năm 2026, mặc định nên chọn Instance Type có hậu tố "g" (ví dụ: `m7g`, `c7g`, `r7g`) chạy chip ARM Graviton 4. Chúng rẻ hơn 20% và nhanh hơn 30% so với Intel/AMD tương đương. Chỉ dùng Intel khi ứng dụng có dependency cụ thể không tương thích với ARM.
+
+> **Tip 4 — Spot Instance không phải để "bán máy rẻ"**: Spot là EC2 dư thừa trong kho của AWS được đem đấu giá. Nó **ổn định** hơn nhiều người nghĩ — trong thực tế, hơn 95% Spot Instance chạy đủ thời gian cần thiết mà không bị interrupt. Bí quyết: dùng nhiều Instance Type và nhiều AZ để tăng tỷ lệ availability của Spot.
+
+> **Tip 5 — Hiểu "vCPU" khác "Core vật lý"**: Một EC2 `m7g.large` có 2 vCPU, không phải 2 core vật lý. Một physical core thường được chia đôi thành 2 vCPU (hyper-threading). Điều này quan trọng khi bạn cần tính license phần mềm tính theo core (như Oracle DB) — hãy dùng Dedicated Hosts để có full control.
+
+**📊 Word Count: ~3100 words**

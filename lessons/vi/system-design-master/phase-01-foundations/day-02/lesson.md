@@ -96,6 +96,12 @@ sequenceDiagram
 -   **HTTP/2**: Đột phá với **Multiplexing** (🔊) (Gửi nhiều yêu cầu trên cùng 1 đường ống). Tuy nhiên vẫn bị lỗi kẹt xe nếu 1 gói tin bị mất trên đường truyền (TCP issue).
 -   **HTTP/3**: Chạy trên giao thức **QUIC** (🔊) (Nền tảng UDP nhưng tích hợp sẵn mã hóa và cơ chế sửa lỗi). Đây là "siêu sao" mới giúp web nhanh kinh khủng ngay cả khi dùng mạng 3G yếu.
 
+### 🚀 2026 Evolution: Satellite Networking & eBPF
+Năm 2026, hạ tầng mạng đã vượt ra khỏi mặt đất và sâu hơn vào nhân hệ điều hành.
+- **Satellite Connectivity (Starlink/Kuiper)**: Các hệ thống "Global System" giờ đây phải tính đến việc người dùng truy cập qua vệ tinh. Độ trễ vệ tinh (LEO) đã giảm xuống mức **25-50ms**, cho phép các AI Agent hoạt động ổn định ở cả những vùng xa xôi nhất.
+- **eBPF (Extended Berkeley Packet Filter)**: Đây là "phép thuật" mới ở tầng Kernel. Thay vì đẩy dữ liệu lên tầng ứng dụng để lọc (tốn CPU), chúng ta viết code chạy trực tiếp trong nhân Linux để xử lý gói tin, quan sát mạng và bảo mật với hiệu năng gần như bằng 0. Nếu bạn nghe đến **Cilium** hay **Pixie**, đó chính là sức mạnh của eBPF trong 2026.
+- **AI-Driven Routing**: Các Router hiện đại sử dụng AI để dự đoán tắc nghẽn cáp quang biển và chủ động chuyển hướng dữ liệu trước khi sự cố xảy ra.
+
 ---
 
 ## 💻 SYSTEM DESIGN INTERVIEW: Bí mật đằng sau tốc độ của Netflix

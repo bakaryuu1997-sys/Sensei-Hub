@@ -1,5 +1,5 @@
 ---
-title: "\U0001FA9D THE HOOK"
+title: "Day 03: Bảo vệ Vương quốc - AWS IAM & Zero Trust 🔐"
 description: >-
   Một đêm đẹp trời, Senior DevOps của công ty bạn nhận được một email từ AWS với
   tiêu đề đỏ rực: "Your AWS Account usage has exceeded the budget threshold".
@@ -83,12 +83,18 @@ Hãy nhìn vào một "tờ nội quy" IAM điển hình:
 - Nếu một nhân viên chỉ cần kiểm tra hóa đơn, đừng cho họ quyền khởi chạy máy chủ. 
 - Hãy bắt đầu từ quyền thấp nhất, và chỉ nới lỏng khi thực sự cần thiết.
 
-### 3. MFA: Lớp giáp bảo vệ cuối cùng
-**Multi-Factor Authentication (Xác thực đa lớp)** là bắt buộc đối với Root User và những tài khoản có quyền quản trị cao. Dù hacker có biết mật khẩu của bạn, họ vẫn không thể vào được nếu không có mã số ngẫu nhiên trên điện thoại của bạn. Tại Nhật, các ứng dụng như **Google Authenticator** hay **Authy** là những lựa chọn tiêu chuẩn.
+### 3. MFA & Passkeys: Lớp giáp bảo vệ cuối cùng
+**Multi-Factor Authentication (Xác thực đa lớp)** là bắt buộc đối với Root User và những tài khoản có quyền quản trị cao. 
+- **2026 Update**: Thế giới đang dịch chuyển sang **Passkeys (FIDO2)**. Thay vì nhập mã số từ Google Authenticator, bạn có thể dùng chính FaceID, TouchID hoặc khóa bảo mật vật lý (Yubikey) để đăng nhập. Đây là cách chống tấn công giả mạo (Phishing) gần như tuyệt đối.
 
 ### 4. IAM Roles vs IAM Users (Sự khác biệt cốt lõi)
 -   **Users**: Gắn với 1 người cụ thể, có thông tin đăng nhập dài hạn (User/Pass hoặc Access Key).
 -   **Roles**: Không gắn với ai cố định. Nó dành cho các dịch vụ (như EC2) hoặc người dùng từ hệ thống khác (như đăng nhập bằng Google/Facebook) mượn quyền trong một khoảng thời gian ngắn. **Role bảo mật hơn User vì nó không dùng Key dài hạn.**
+
+### 🤖 2026 Trend: AI-Driven Policy Generation
+Năm 2026, bạn không còn phải "vò đầu bứt tai" viết từng dòng JSON phức tạp.
+- **IAM Access Analyzer** giờ đây tích hợp AI để tự động tạo Policy dựa trên các bản ghi log (CloudTrail). Bạn chỉ cần chạy ứng dụng 1 ngày, AI sẽ phân tích và đề xuất: "Đây là bộ quyền tối thiểu (Least Privilege) chính xác nhất mà ứng dụng của bạn cần".
+- **Zero Trust Architecture**: Mọi yêu cầu truy cập đều phải được xác thực liên tục, không chỉ dựa trên địa chỉ IP mà còn dựa trên hành vi (AI detects anomalies).
 
 ---
 
@@ -145,4 +151,37 @@ D. Mở khóa công khai (Public) cho kho S3.
 
 ---
 
-**📊 Word Count: 2880 words**
+# 🔦 CASE STUDY: Sự cố Capital One 2019 — Bài học IAM Đắt Giá Nhất Lịch Sử
+
+**Bối cảnh:** Năm 2019, Capital One — một trong những ngân hàng lớn nhất nước Mỹ — bị hack và lộ thông tin của **106 triệu khách hàng** tại Mỹ và Canada. Thiệt hại lên đến **$80 triệu USD** tiền phạt và chi phí khắc phục, chưa kể thiệt hại về uy tín. Điều đau đớn nhất: nguyên nhân hoàn toàn có thể ngăn chặn được nếu IAM được cấu hình đúng.
+
+**Nguyên nhân gốc rễ:** Một ứng dụng web của Capital One trên AWS bị lỗ hổng SSRF (Server-Side Request Forgery). Hacker khai thác lỗ hổng này để giả mạo máy chủ EC2 và truy cập metadata endpoint (`169.254.169.254`). Từ đó, hacker lấy được **Temporary Credentials của IAM Role** được gắn vào EC2. IAM Role này có quyền quá rộng (vi phạm Least Privilege), cho phép đọc hàng trăm S3 buckets chứa dữ liệu khách hàng nhạy cảm.
+
+**3 sai lầm IAM dẫn đến thảm họa:**
+1. **IAM Role được cấp quyền `s3:GetObject` trên `*` (toàn bộ S3)** thay vì chỉ các bucket cụ thể mà ứng dụng cần.
+2. **Không bật IMDSv2** (Instance Metadata Service version 2) — một tính năng bảo mật ngăn các request không có token từ truy cập metadata.
+3. **Không có CloudTrail Alert** phát hiện pattern bất thường: 1 Instance đột ngột đọc hàng triệu files từ hàng trăm bucket khác nhau.
+
+**Giải pháp đúng theo chuẩn 2026:**
+- IAM Role của EC2 chỉ được cấp quyền đọc đúng bucket và đúng prefix mà ứng dụng cần (`Resource: "arn:aws:s3:::capital-one-app-data/*"`).
+- Bắt buộc bật **IMDSv2** (hop limit=1) cho tất cả EC2 instances để ngăn SSRF.
+- **IAM Access Analyzer** tự động kiểm tra và cảnh báo nếu Role có quyền quá rộng.
+- CloudTrail + CloudWatch Alarm kích hoạt nếu 1 IAM principal đọc > 1000 objects/phút từ S3.
+
+**Bài học BrSE:** Khi review IAM configuration cho khách hàng Nhật Bản, hãy chạy ngay **IAM Access Analyzer** và tìm tất cả Policy có `Resource: "*"`. Đây là "quả bom hẹn giờ" phổ biến nhất trong mọi tài khoản AWS non-production được promote lên production.
+
+---
+
+### 🚀 Master Architect Pro-Tips
+
+> **Tip 1 — "Deny luôn thắng Allow" — Ghi vào tim**: Trong AWS IAM, nếu một Policy cho phép và một Policy khác từ chối cùng một hành động, **Deny luôn thắng**. Đây là cơ chế bảo vệ quan trọng. Khi debug permission issues, luôn tìm xem có Policy nào đang Deny không trước khi kêu "Policy của tôi đúng rồi sao không được?"
+
+> **Tip 2 — Không bao giờ tạo Access Key cho Root User**: Root User không nên có Access Key. Nếu thấy Root User có Access Key trong tài khoản khách hàng, đây là red flag nguy hiểm cấp 1. Xóa ngay và thay bằng IAM User hoặc IAM Role với quyền tương đương nhưng có thể thu hồi.
+
+> **Tip 3 — IAM Role > IAM User cho ứng dụng**: Không bao giờ hard-code Access Key vào code. Luôn dùng IAM Role cho EC2/Lambda/Container. Role cung cấp Temporary Credentials tự động rotate mỗi vài giờ — nếu bị lộ, hacker cũng chỉ có vài giờ để khai thác thay vì vô thời hạn với Access Key cố định.
+
+> **Tip 4 — Bật MFA là bảo vệ tối thượng, đặc biệt với IAM User có quyền cao**: Ngay cả khi mật khẩu bị lộ, hacker không thể đăng nhập nếu không có thiết bị MFA vật lý. Năm 2026, khuyến nghị dùng **Passkeys (FIDO2)** thay cho TOTP — chống phishing hiệu quả hơn vì key được bind với domain cụ thể.
+
+> **Tip 5 — IAM là dịch vụ Global, không phải Regional**: Đây là câu bẫy phổ biến trong bài thi. User, Group, Role, Policy bạn tạo trong IAM có hiệu lực trên **toàn bộ** tài khoản AWS, không giới hạn theo Region. Bạn không cần tạo IAM User riêng cho Tokyo và riêng cho Osaka.
+
+**📊 Word Count: ~3100 words**
