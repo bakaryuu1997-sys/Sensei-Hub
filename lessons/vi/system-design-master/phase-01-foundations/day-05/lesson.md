@@ -91,7 +91,14 @@ graph TD
     Q4 -- Key-Value --> Redis[Redis]
     Q4 -- Wide Column/Time series --> Cass[Cassandra]
     Q4 -- Social Network Relationships --> Graph[Neo4j]
+    Q4 -- AI/Vector Similarity Search --> Vector[Pinecone / Milvus / Weaviate]
     end
+    
+### 5. 💡 2026 Trend: The Rise of Vector Databases
+Trong kỷ nguyên AI Agent (2026), dữ liệu không chỉ là Text hay Number mà còn là **Vector Embeddings**.
+- **Problem**: SQL/NoSQL truyền thống không thể tìm kiếm "Sự tương đồng về ý nghĩa" (Semantic Similarity) một cách hiệu quả.
+- **Solution**: **Vector Databases** (như Pinecone, Milvus) hoặc các Extension như **pgvector** trên PostgreSQL.
+- **Architecture**: Mọi hệ thống hiện đại năm 2026 đều tích hợp **Hybrid Search** - kết hợp giữa Full-text Search (SQL) và Vector Search (AI) để mang lại kết quả chính xác nhất cho người dùng.
 ```
 
 ### 4. Database Sharding & Replication: Khi SQL muốn "lên đời" (🔊)

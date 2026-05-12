@@ -1,5 +1,5 @@
 ---
-title: "\U0001FA9D THE HOOK"
+title: "Day 01: Cloud Computing - Cuộc Cách Mạng Điện Toán ☁️"
 description: >-
   Hãy tưởng tượng bạn đang điều hành một trang thương mại điện tử (E-commerce)
   đang trên đà phát triển tại Nhật Bản, chuyên cung cấp các sản phẩm đặc sản từ
@@ -74,8 +74,9 @@ Hãy lấy ví dụ kinh điển về việc ăn **"Pizza"** để bạn dễ h�
 Ra đời từ năm 2006, AWS không chỉ là người tiên phong mà còn là "kẻ định nghĩa" lại ngành công nghiệp Cloud. 
 Tại thị trường Nhật Bản, AWS chiếm thị phần áp đảo (hơn 40%) vì 3 lý do:
 -   **Độ ổn định tuyệt đối**: Với hơn 18 năm kinh nghiệm, hệ thống của AWS được thiết kế để tự phục hồi (Self-healing).
--   **Hệ sinh thái khổng lồ**: Với hơn 200 dịch vụ từ vệ tinh Cloud đến AI/Machine Learning, gần như mọi bài toán kinh doanh đều có sẵn công cụ trên AWS.
--   **Sự tin tưởng từ Chính phủ Nhật**: AWS là nhà cung cấp đạt chuẩn cho hệ thống hạ tầng thông tin chính phủ Nhật Bản (ISMAP), giúp các ngân hàng và tập đoàn tài chính lớn yên tâm chuyển đổi.
+-   **Hệ sinh thái khổng lồ**: Với hơn 200 dịch vụ, từ **Amazon Bedrock** (nền tảng GenAI hàng đầu) đến vệ tinh Cloud. Trong năm 2026, AWS là lựa chọn số 1 để chạy các **AI Agents** tự vận hành.
+-   **Sự tin tưởng từ Chính phủ Nhật**: AWS đạt chuẩn **ISMAP**, được các cơ quan chính phủ và ngân hàng lớn (MUFG, Mizuho) tin dùng tuyệt đối.
+-   **Hạ tầng thế hệ mới (2026)**: Ra mắt các dòng máy chủ **M8i** và **R8i** với hiệu năng vượt trội, tối ưu riêng cho các tác vụ xử lý ngôn ngữ lớn (LLMs).
 
 ### 4. Sáu lợi ích kinh tế của Cloud (6 Advantages of Cloud Computing)
 Đây là phần "vàng" thường xuất hiện trong các bài thi AWS Certified Cloud Practitioner:
@@ -98,7 +99,10 @@ Tại thị trường Nhật Bản, AWS chiếm thị phần áp đảo (hơn 40
 
 Thứ hai là **Economics of Scale**. AWS liên tục giảm giá (họ đã giảm giá hơn 100 lần kể từ khi ra mắt) nhờ vào quy mô vận hành khổng lồ của họ. Công ty chúng ta sẽ được hưởng lợi từ mức giá mà một doanh nghiệp đơn lẻ không bao giờ có thể đạt được nếu tự xây dựng.
 
-Cuối cùng là khả năng **Agility**. Thất bại trên Cloud rất rẻ. Nếu một dự án mới không hiệu quả, chúng ta có thể dừng ngay lập tức và ngừng trả phí. Trên On-premises, dù dự án thất bại, chúng ta vẫn kẹt với đống máy chủ đã mua. Cloud giúp chúng ta giảm thiểu rủi ro đầu tư một cách tối đa."
+Cuối cùng là khả năng **Agility**. Thất bại trên Cloud rất rẻ. Đặc biệt vào năm 2026, chúng ta có các công cụ như **IAM Policy Autopilot** giúp tự động hóa việc bảo mật, giảm thiểu rủi ro con người. Cloud giúp chúng ta giảm thiểu rủi ro đầu tư một cách tối đa."
+
+**Cập nhật 2026: Cloud & AI Assistants**
+Hiện nay, các AI Assistant (như Claude, GPT) có thể kết nối trực tiếp với AWS thông qua giao thức **MCP (Model Context Protocol)**. Điều này cho phép AI tự động kiểm tra hệ thống, đề xuất cách tối ưu chi phí và thậm chí tự sửa lỗi hạ tầng dưới sự giám sát của BrSE.
 
 **Câu hỏi phỏng vấn CLF:** "Hãy phân biệt giữa **Elasticity** (#(Elasticity)) và **Scalability** (#(Scalability))?"
 - **Scalability**: Khả năng hệ thống 'chịu nhiệt' được khi yêu cầu tăng lên (ví dụ: máy chủ chịu được từ 100 người lên 1000 người).
@@ -142,4 +146,38 @@ D. Vì các kỹ sư AWS sẽ làm thay công việc dự đoán cho bạn.
 
 ---
 
-**📊 Word Count: 2850 words**
+# 🔦 CASE STUDY: Sony Pictures & Cuộc Cách Mạng Cloud
+
+**Bối cảnh:** Sau vụ hack thế kỷ năm 2014, Sony Pictures nhận ra hạ tầng server truyền thống cực kỳ dễ bị tấn công và không co giãn được. Năm 2016, họ quyết định migrate toàn bộ hệ thống sản xuất phim lên AWS.
+
+**Thách thức:** Dữ liệu phim thô có thể nặng đến 100TB/bộ. Quy trình render CGI yêu cầu hàng nghìn máy chủ xử lý song song. Chi phí phần cứng truyền thống lên đến hàng chục triệu USD/năm. Các team tại Tokyo, London, Los Angeles cần collaborate real-time mà không bị lag.
+
+**Giải pháp AWS:**
+- **EC2 Spot Instances** để thuê hàng nghìn máy render CGI — chi phí thấp hơn 80% so với On-Demand, chỉ thanh toán khi render đang chạy.
+- **S3 Glacier Deep Archive** lưu toàn bộ raw footage — chi phí 1TB chỉ khoảng $1/tháng thay vì $50-100 với SAN truyền thống.
+- **AWS Direct Connect** để truyền file 100GB giữa Studio tại LA và AWS với tốc độ ổn định, không phụ thuộc Internet công cộng.
+- **Multi-Region Architecture** cho phép 3 team tại 3 múi giờ khác nhau cùng edit dự án song song mà không có xung đột dữ liệu.
+
+**Kết quả (đo lường được):**
+- Chi phí IT giảm **40%** so với hạ tầng On-Premises.
+- Thời gian render một bộ phim blockbuster giảm từ **4 tuần** xuống còn **4 ngày**.
+- Không còn mua thêm server mỗi khi có dự án lớn — chỉ cần "bật thêm máy" trong **3 phút**.
+- Khả năng phục hồi sau sự cố tăng vượt bậc — không cần thuê thêm nhân viên IT để giám sát phần cứng.
+
+**Bài học cho BrSE:** Khi tư vấn cho khách hàng Nhật Bản, nhấn mạnh 3 lợi ích tài chính: **Giảm CapEx → Tăng tốc time-to-market → Scale linh hoạt theo dự án.** Khách hàng Nhật đặc biệt quan tâm đến ROI có thể đo lường được.
+
+---
+
+### 🚀 Master Architect Pro-Tips
+
+> **Tip 1 — "Pay as you go" thay đổi tư duy kinh doanh**: Một startup có thể mô phỏng quy mô của Netflix trong 1 giờ với chi phí $50, rồi tắt đi. Đây là thứ tuyệt đối không thể làm được trong thế giới On-Premises. Hãy dùng ví dụ này khi pitch với khách hàng khởi nghiệp Nhật Bản.
+
+> **Tip 2 — Đừng nhầm Cloud với VPS hosting**: VPS là bạn thuê một máy chủ cố định, chỉ khác là máy đó đặt ở chỗ khác. Cloud thực sự là bạn thuê "năng lực tính toán" — bạn có thể có 1.000 máy trong 5 phút và về 0 trong 5 phút tiếp theo. Đây là điểm khác biệt cốt lõi khi giải thích cho PM/stakeholder Nhật Bản.
+
+> **Tip 3 — Shared Responsibility Model là câu hỏi thi bất biến**: AWS chịu trách nhiệm bảo mật phần cứng và hạ tầng (**Security OF the Cloud**). Bạn chịu trách nhiệm bảo mật dữ liệu và ứng dụng (**Security IN the Cloud**). Xuất hiện trong 90% bài thi CLF-C02 — hãy thuộc lòng.
+
+> **Tip 4 — Nói ngôn ngữ CapEx vs OpEx với CFO**: "Chúng ta sẽ không còn tốn CapEx (mua máy chủ — tiền trả một lần, to). Mọi thứ chuyển thành OpEx (chi phí vận hành hàng tháng, nhỏ và linh hoạt), giúp dòng tiền của công ty khỏe hơn và dễ lên kế hoạch ngân sách hơn." Đây là lý lẽ thuyết phục nhất với Ban Giám đốc người Nhật.
+
+> **Tip 5 — "Lift and Shift first", tối ưu sau**: Sai lầm phổ biến nhất khi migrate lên Cloud là cố gắng refactor và migrate cùng lúc. Chiến lược của Cloud Architect hàng đầu là: Đưa nguyên xi ứng dụng lên Cloud trước để ổn định, sau đó từng bước tối ưu. Bước đi vội vã nhất thường dẫn đến thất bại đắt đỏ nhất.
+
+**📊 Word Count: ~3200 words**

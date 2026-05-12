@@ -1,145 +1,118 @@
 ---
-title: "\U0001FA9D THE HOOK"
-description: >-
-  Hãy tưởng tượng bạn là Kiến trúc sư bảo mật cho một **Dự án Ngân hàng số cấp
-  quốc gia** hoặc một hệ thống quản lý **Ví tiền điện tử (Crypto Wallet)** doanh
-  nghiệp.
+title: "Day 56: Multi-Cloud Strategy - Kết nối thế giới Cloud 🌐"
+description: "Làm chủ chiến lược Multi-cloud cho AI, AWS Cloud WAN và AWS AppFabric. Cách xây dựng hệ thống AI tận dụng sức mạnh của nhiều nền tảng đám mây cùng lúc."
 day: 56
 chapter: AWS
 category: AWS
 ---
-# 🪝 THE HOOK
 
-Hãy tưởng tượng bạn là Kiến trúc sư bảo mật cho một **Dự án Ngân hàng số cấp quốc gia** hoặc một hệ thống quản lý **Ví tiền điện tử (Crypto Wallet)** doanh nghiệp.
+# 🪝 THE HOOK: "Đừng bỏ tất cả trứng vào một giỏ Cloud"
 
-Sếp và các bên kiểm toán đưa ra một yêu cầu "không tưởng":
-1. "Dữ liệu khóa riêng (Private Key) phải được lưu trữ trong một thiết bị phần cứng vật lý mà ngay cả nhân viên AWS cũng không thể chạm vào."
-2. "Khi ứng dụng thực hiện ký giao dịch (Signing), dữ liệu phải được xử lý trong một vùng bộ nhớ hoàn toàn cô lập. Ngay cả Root User hay Admin của hệ điều hành EC2 cũng không được phép 'nhìn trộm' vào đó."
-3. "Chúng ta cần toàn quyền kiểm soát vòng đời của các khóa mã hóa (Ownership), không phụ thuộc vào hệ thống quản lý khóa chung của AWS."
+Hãy tưởng tượng bạn đang xây dựng một siêu ứng dụng AI cho một tập đoàn đa quốc gia.
+-   Hệ thống CRM của khách hàng nằm trên **Salesforce**.
+-   Dữ liệu phân tích người dùng nằm trên **Google Cloud (BigQuery)**.
+-   Các thuật toán AI chuyên biệt lại chạy tốt nhất trên **AWS (Bedrock)**.
+-   Đột nhiên, một vùng (Region) của AWS gặp sự cố, hoặc nhà cung cấp Cloud thay đổi chính sách giá khiến chi phí tăng vọt.
 
-Nếu bạn chỉ dùng **AWS KMS** thông thường (Multi-tenant):
-- Kiểm toán viên sẽ lắc đầu vì KMS vẫn là một dịch vụ dùng chung và khóa được quản lý bởi phần mềm của AWS.
-- Hacker nếu chiếm quyền Root của EC2 vẫn có thể dùng `ptrace` hoặc memory dump để đọc trộm dữ liệu nhạy cảm khi ứng dụng đang chạy.
+Nếu bạn chỉ biết mỗi AWS, bạn sẽ bị "kẹt". Một **Master Architect** thực thụ phải biết cách điều phối sức mạnh từ nhiều "vương quốc" Cloud khác nhau để tạo ra một hệ thống không thể bị đánh bại.
 
-Làm thế nào để bạn đạt được mức độ bảo mật "Paranoid" (Siêu bảo mật) này?
-
-Chào mừng bạn đến với **Day 56: Advanced Security**.
+Chào mừng bạn đến với **Day 56: Multi-Cloud Strategy**. Hôm nay, chúng ta học cách kết nối và quản trị thế giới Cloud bao la.
 
 ---
 
-# 🎭 ANALOGY (Ẩn dụ thực tế)
+# 🎭 ANALOGY: Multi-Cloud giống như việc dùng nhiều Thẻ ngân hàng
 
-Bảo mật cao cấp trong AWS giống như việc bảo vệ **Công thức bí mật của Coca-Cola**:
+Tại sao bạn cần nhiều thẻ từ các ngân hàng khác nhau?
 
-### 🏛️ 1. AWS CloudHSM - Két sắt vật lý riêng biệt
-- KMS giống như việc bạn gửi đồ ở tủ gửi đồ siêu thị (an toàn nhưng vẫn do siêu thị quản lý). CloudHSM giống như việc bạn mua hẳn một cái két sắt vật lý đời mới nhất, đặt vào một căn phòng riêng và chỉ có bạn giữ chìa khóa duy nhất. AWS chỉ cung cấp căn phòng và điện nước, họ không có cách nào mở két của bạn.
+### 💳 1. Tránh rủi ro (High Availability)
+- Nếu ngân hàng A bảo trì hệ thống ATM, bạn vẫn có thẻ ngân hàng B để rút tiền và mua sắm.
 
-### 🛡️ 2. AWS Nitro Enclaves - Phòng thí nghiệm vô trùng
-- EC2 giống như một tòa nhà văn phòng. Dù có bảo vệ, nhưng quản lý tòa nhà (Root User) vẫn có chìa khóa vạn năng để vào các phòng. Nitro Enclaves giống như việc bạn xây một cái kén (Enclave) hoàn toàn kín mít bên trong tòa nhà đó. Cái kén này không có mạng, không có người quản lý, không có cửa sổ. Dữ liệu đi vào và đi ra qua một đường ống duy nhất được kiểm soát cực kỳ nghiêm ngặt.
+### 🎁 2. Tận dụng ưu đãi (Best-of-breed)
+- Ngân hàng A có ưu đãi khi đi ăn uống (GCP mạnh về Data Analytics). Ngân hàng B có ưu đãi khi mua sắm (AWS mạnh về AI & Infrastructure). Bạn dùng đúng thẻ cho đúng mục đích để có lợi nhất.
 
-### 🔑 3. KMS External Key Store (XKS) - Chìa khóa để tại nhà
-- Thay vì gửi chìa khóa tại AWS, bạn để chìa khóa ở Data Center của chính bạn. Mỗi khi AWS cần mã hóa dữ liệu, họ phải "gọi điện" sang nhà bạn xin phép dùng chìa khóa. Nếu bạn ngắt kết nối, AWS lập tức không thể đọc được bất kỳ dữ liệu nào của bạn nữa. Bạn có quyền "Hủy diệt" dữ liệu của mình ngay lập tức chỉ bằng một nút bấm tại chỗ.
+### 🌉 3. Chuyển tiền nhanh (AWS Cloud WAN)
+- Bạn cần một hệ thống chuyển tiền liên ngân hàng siêu tốc và an toàn để tiền từ tài khoản này có thể dùng được ngay ở ngân hàng kia mà không bị mất phí cao hay chờ đợi lâu.
 
 ---
 
-# ⚙️ UNDER THE HOOD (Deep Dive)
+# ⚙️ UNDER THE HOOD: Deep Dive
 
-### 1. AWS CloudHSM: Phần cứng bảo mật chuyên nghiệp (#(CloudHSM))
-- **FIPS 140-2 Level 3**: Đây là tiêu chuẩn vàng của ngành phần cứng bảo mật. Nó yêu cầu thiết bị phải có khả năng phát hiện và chống lại các hành vi can thiệp vật lý (Physical Tampering).
-- **Single-tenant & High Control**: Bạn sở hữu thiết bị vật lý (HSM instance) trong VPC của mình. Bạn có toàn quyền quản lý User, Key và Group. AWS chỉ cung cấp môi trường vận hành (điện, mạng, rack), họ tuyệt đối không có "Backdoor" để vào két sắt của bạn.
-- **Tính sẵn sàng (High Availability)**: Để đảm bảo an toàn dữ liệu, Master Architect luôn triển khai CloudHSM Cluster tối thiểu 2 node ở 2 AZs khác nhau. Dữ liệu khóa sẽ được tự động đồng bộ hóa giữa các node này qua mạng riêng của AWS.
-- **Backup & Restore**: CloudHSM tự động thực hiện backup hàng ngày. Các bản backup này được mã hóa bằng một khóa mà AWS không sở hữu, đảm bảo tính vĩnh cửu và an toàn tuyệt đối ngay cả khi toàn bộ cụm HSM bị xóa.
+### 1. AWS Cloud WAN: Trục xương sống Multi-region/Multi-cloud (#(Cloud WAN))
+-   Cho phép bạn xây dựng một mạng lưới toàn cầu kết nối các VPC trên AWS và các Data Center On-prems hoặc Cloud khác chỉ bằng một bảng điều khiển duy nhất.
+-   **Policy-based**: Bạn định nghĩa luật bằng code: "Dữ liệu từ Việt Nam không được đi qua Singapore" hoặc "Traffic từ Azure phải đi qua Firewall trước khi vào AWS".
 
-### 2. AWS Nitro Enclaves: Confidential Computing (#(Nitro Enclaves))
-- **Kiến trúc Zero-Trust**: Nitro Enclaves sử dụng sức mạnh của chip Nitro để tạo ra các phân vùng CPU và RAM cô lập 100%. Enclave không có ổ cứng lưu trữ bền vững, không có mạng ngoài, và **KHÔNG CÓ QUYỀN TRUY CẬP TỪ BÊN NGOÀI**.
-- **The Parent Instance**: Enclave luôn gắn liền với một EC2 "cha". Tuy nhiên, ngay cả Admin của EC2 cha cũng không thể can thiệp vào bộ nhớ của Enclave. Giao tiếp duy nhất là qua một kênh ảo (Virtio-vsock).
-- **Attestation (Chứng thực)**: Đây là tính năng "ăn tiền" nhất. Khi Enclave khởi động, nó tạo ra một tài liệu chứng thực (Attestation Document) chứa các mã băm (Hashes) của phần mềm đang chạy. Dịch vụ như KMS sẽ kiểm tra mã băm này để đảm bảo Enclave chưa bị "hack" trước khi cấp khóa mã hóa cho nó xử lý.
+### 2. AWS AppFabric: Kết nối các ốc đảo SaaS (#(AppFabric))
+-   Thay vì viết code tích hợp cho từng App (Slack, Zoom, Salesforce, Jira), AppFabric tự động chuẩn hóa dữ liệu từ các app này và đưa về AWS.
+-   Giúp AI Agent của bạn có thể hiểu được: "Hôm qua khách hàng phàn nàn trên Slack, hôm nay họ tạo ticket trên Jira và đang chờ họp trên Zoom".
 
-### 3. KMS Custom Key Store & XKS (External Key Store) (#(Advanced KMS))
-- **KMS + CloudHSM**: Bạn được dùng KMS API cực kỳ tiện lợi (như `Encrypt`, `Decrypt`) nhưng khóa gốc lại nằm trong CloudHSM FIPS Level 3 của bạn. Đây là cầu nối hoàn hảo giữa sự tiện dụng và bảo mật phần cứng.
-- **External Key Store (XKS)**: Bạn giữ khóa ở Data Center của mình (ví dụ dùng Thales hoặc Fortanix). Mỗi lần AWS cần dùng chìa khóa, họ phải gửi một yêu cầu qua một Proxy bảo mật (XKS Proxy) tới chỗ bạn. Nếu bạn rút phích cắm server ở nhà, dữ liệu trên Cloud của bạn lập tức trở thành "rác" vì không ai có thể giải mã được nữa. Điều này mang lại sự an tâm tuyệt đối về chủ quyền dữ liệu (Data Sovereignty).
+### 3. Amazon EKS Anywhere & Anthos
+-   Chạy Kubernetes của AWS ngay trên máy chủ vật lý của bạn hoặc trên Cloud đối thủ (Azure/GCP).
+-   Giúp ứng dụng của bạn có thể "di cư" qua lại giữa các Cloud mà không cần sửa code.
 
-### 4. ACM Private CA & PCA (#(Private CA))
-- Dùng để tạo ra các chứng chỉ SSL/TLS nội bộ cho doanh nghiệp.
-- Giúp bạn xây dựng hệ thống **mTLS (Mutual TLS)** giữa các Microservices, đảm bảo mọi giao tiếp trong mạng nội bộ đều được mã hóa và xác thực danh tính hai chiều.
+### 4. Cập nhật 2026: The Inter-Cloud Era 🚀
+-   **Bedrock Multi-Cloud Bridge (2026)**: Cho phép gọi Model Bedrock trực tiếp từ bên trong các dịch vụ của đối thủ với độ trễ cực thấp và bảo mật tối đa (PrivateLink xuyên Cloud).
+-   **Universal Control Plane**: Một màn hình duy nhất trên AWS giúp bạn quản lý cả máy ảo trên Azure và database trên Google Cloud.
+-   **AI-Driven Cross-Cloud Migration**: AI tự động phát hiện nếu một model chạy trên Azure rẻ hơn AWS cho task hiện tại, nó sẽ tự động "đóng gói" và di chuyển workload sang đó.
 
 ---
 
 # ☁️ AWS IN PRACTICE / INTERVIEW
 
-**Tình huống thực tế (Interview):** "Khách hàng của chúng ta là một tổ chức tài chính tại Nhật Bản. Họ yêu cầu dữ liệu giao dịch phải được mã hóa và khóa mã hóa PHẢI được lưu trữ trên hạ tầng on-premise của họ để tuân thủ luật pháp. Tuy nhiên, họ vẫn muốn dùng các dịch vụ như Amazon S3 và EBS. Bạn giải quyết thế nào?"
+**Tình huống thực tế:** "Khách hàng muốn dùng Bedrock để làm AI nhưng dữ liệu nhạy cảm của họ lại đang nằm ở một Private Cloud tại Việt Nam. Bạn giải quyết vấn đề kết nối và bảo mật như thế nào?"
 
-**Câu trả lời chuẩn Master:**
-"Trong tình huống yêu cầu chủ quyền khóa (Key Sovereignty) khắt khe như vậy, giải pháp tối ưu nhất là sử dụng **AWS KMS với External Key Store (XKS)**.
-1. Tôi sẽ yêu cầu khách hàng triển khai một **External Key Manager (EKM)** tại trung tâm dữ liệu của họ.
-2. Tại phía AWS, tôi sẽ cấu hình một **XKS Proxy** (có thể chạy trên Fargate hoặc EC2) để làm cầu nối bảo mật giữa KMS và EKM của khách hàng.
-3. Khi S3 hoặc EBS cần mã hóa dữ liệu, KMS sẽ gửi yêu cầu mã hóa sang XKS Proxy, từ đó yêu cầu EKM thực hiện các phép toán mật mã.
-4. Ưu điểm của giải pháp này là khóa gốc (Master Key) không bao giờ bước chân vào AWS. Khách hàng có toàn quyền thu hồi hoặc xóa khóa tại chỗ, khiến toàn bộ dữ liệu trên AWS trở thành vô nghĩa ngay lập tức. Điều này hoàn toàn đáp ứng các yêu cầu về luật pháp và bảo mật cao nhất của Nhật Bản."
+**Câu trả lời chuẩn Master (BrSE 2026):**
+"Tôi sẽ sử dụng giải pháp **Hybrid-Multi-Cloud Network**:
+1.  **Kết nối**: Dùng **AWS Direct Connect** hoặc **Site-to-Site VPN** kết nối Private Cloud với **AWS Cloud WAN**.
+2.  **Bảo mật**: Thiết lập **VPC Endpoints (PrivateLink)** để dữ liệu đi từ Private Cloud đến Bedrock hoàn toàn trên đường truyền riêng tư của AWS, không chạm vào Internet.
+3.  **Tối ưu**: Dùng **AWS AppFabric** để tổng hợp logs từ các ứng dụng tại Private Cloud về CloudWatch để giám sát tập trung."
 
 ---
 
 # 📝 QUICK QUIZ
 
-**Câu 1: Tiêu chuẩn bảo mật phần cứng cao nhất mà CloudHSM đạt được là gì?**
-A. FIPS 140-2 Level 1.
-B. FIPS 140-2 Level 3.
-C. ISO 9001.
-D. Tier 4 Data Center.
-
-**Câu 2: Tính năng nào của Nitro Enclaves giúp chứng minh với KMS rằng phần mềm chạy bên trong nó là an toàn và không bị can thiệp?**
-A. SSH.
-B. Attestation (Chứng thực).
-C. CloudWatch Logs.
-D. Ping.
-
-**Câu 3: External Key Store (XKS) giúp bạn lưu trữ khóa mã hóa ở đâu?**
-A. Trong S3.
-B. Trong máy tính cá nhân của bạn.
-C. Tại hạ tầng On-premise của khách hàng hoặc bên thứ ba ngoài AWS.
-D. Trong ví của bạn.
-
-**Câu 4: Sự khác biệt chính giữa KMS và CloudHSM là gì?**
-A. CloudHSM miễn phí.
-B. KMS là dịch vụ dùng chung (Multi-tenant), còn CloudHSM là phần cứng riêng biệt (Single-tenant) dành riêng cho bạn.
-C. CloudHSM chỉ dùng để lưu ảnh.
-D. Không có sự khác biệt.
-
-**Câu 5: Dịch vụ nào dùng để quản lý các chứng chỉ SSL nội bộ phục vụ cho mTLS?**
-A. AWS Artifact.
-B. AWS Private CA (AWS Private Certificate Authority).
+**Câu 1: Dịch vụ nào của AWS giúp xây dựng mạng lưới toàn cầu kết nối nhiều vùng và nhiều Cloud khác nhau?**
+A. Amazon S3.
+B. AWS Cloud WAN.
 C. Amazon Route 53.
-D. AWS Shield.
+D. AWS Lambda.
 
-**Đáp án:** 1-B, 2-B, 3-C, 4-B, 5-B.
+**Câu 2: Tại sao doanh nghiệp lại chọn chiến lược Multi-Cloud?**
+A. Để làm cho hệ thống phức tạp hơn.
+B. Để tránh bị lệ thuộc vào một nhà cung cấp (Vendor Lock-in) và tận dụng thế mạnh của từng Cloud.
+C. Vì AWS quá rẻ nên họ muốn tiêu thêm tiền.
+D. Vì họ thích dùng nhiều mật khẩu.
 
----
+**Câu 3: (Cập nhật 2026) 'Universal Control Plane' giúp ích gì?**
+A. Giúp máy bay bay thẳng hơn.
+B. Giúp quản lý tài nguyên trên nhiều nền tảng Cloud khác nhau từ một giao diện duy nhất.
+C. Giúp AI viết code nhanh hơn.
+D. Giúp nén dữ liệu.
 
----
-
-# 🔦 CASE STUDY: Bảo vệ Khóa riêng cho Hệ thống Thanh toán Crypto "ZenPay"
-
-**Bối cảnh**: ZenPay xử lý hàng tỷ USD giao dịch tiền điện tử mỗi tháng. Họ cần một giải pháp lưu trữ Private Key cực kỳ an toàn. Nếu Private Key bị lộ, toàn bộ tiền của khách hàng sẽ biến mất.
-
-**Giải pháp của Master Architect**:
-1. **Lưu trữ vật lý**: Triển khai một cụm **AWS CloudHSM** gồm 3 node rải rác ở 3 AZ. Private Key được tạo trực tiếp bên trong HSM và không bao giờ được phép xuất (export) ra ngoài dưới dạng văn bản thô.
-2. **Xử lý cô lập**: Toàn bộ logic "Ký giao dịch" (Transaction Signing) được chạy bên trong **AWS Nitro Enclaves**. Khi cần ký một lệnh chuyển tiền, EC2 cha gửi dữ liệu giao dịch thô vào Enclave.
-3. **Quy trình xác thực**: 
-    - Enclave thực hiện **Attestation** với AWS KMS để lấy một khóa tạm thời dùng để giải mã dữ liệu nhạy cảm.
-    - KMS chỉ cấp khóa khi bản chứng thực của Enclave khớp hoàn toàn với bản gốc đã đăng ký.
-    - Enclave thực hiện ký giao dịch và trả lại chữ ký điện tử ra ngoài. Đội ngũ IT quản trị EC2 cha hoàn toàn không thể biết được Private Key là gì.
-4. **Chủ quyền tuyệt đối**: Khóa Master bao trùm được lưu trữ tại trung tâm dữ liệu của ZenPay tại Tokyo, kết nối qua **KMS External Key Store (XKS)**.
-
-**Kết quả**: ZenPay đạt được chứng chỉ bảo mật cao nhất của ngành tài chính toàn cầu. Ngay cả khi một Hacker tinh vi nhất chiếm được quyền Admin cao nhất của toàn bộ dàn EC2, họ vẫn hoàn toàn bất lực trong việc lấy cắp Private Key của khách hàng.
+**Đáp án:** 1-B, 2-B, 3-B.
 
 ---
 
-### 🚀 Master Architect Pro-Tips (Tư duy bảo mật tuyệt đối)
-- **Tư duy 'Confidential Computing'**: Đừng chỉ nghĩ đến việc bảo mật dữ liệu 'At Rest' (đã lưu) hay 'In Transit' (đang gửi). Hãy nghĩ đến việc bảo mật dữ liệu 'In Use' (đang xử lý). Nitro Enclaves là công nghệ then chốt để bảo vệ tài sản số quan trọng nhất của doanh nghiệp.
-- **Tối ưu chi phí CloudHSM**: CloudHSM rất đắt đỏ (khoảng $1.5/giờ mỗi instance). Chỉ sử dụng khi thực sự cần tuân thủ FIPS Level 3. Nếu chỉ cần Level 2, KMS là đủ và rẻ hơn rất nhiều.
-- **Dùng 'Multi-Region Keys'**: Nếu bạn vận hành hệ thống toàn cầu, hãy dùng tính năng Multi-Region của KMS. Nó cho phép bạn "nhân bản" cùng một khóa sang các Region khác mà không cần phải re-encrypt dữ liệu từ đầu, giúp hệ thống Disaster Recovery hoạt động cực kỳ mượt mà.
-- **Theo dõi chặt chẽ với CloudTrail**: Mọi thao tác truy cập khóa (KMS, HSM) phải được ghi log 100% vào CloudTrail và đẩy sang S3 (đã khóa). Hãy thiết lập báo động (Alarm) ngay lập tức nếu có ai đó cố tình truy cập vào HSM mà không được phép.
-- **Tự động hóa rotation**: Dù dùng giải pháp nào, hãy luôn bật tính năng **Key Rotation**. Một chiếc chìa khóa dùng quá lâu sẽ trở thành điểm yếu. Master Architect luôn thiết kế hệ thống sao cho việc đổi khóa diễn ra tự động mà không gây gián đoạn ứng dụng.
+# 🔦 CASE STUDY: Siêu ứng dụng Logistics "Global-Express"
+
+**Bối cảnh:** Global-Express hoạt động tại 100 quốc gia. Họ dùng AWS cho Web App, Google Cloud cho bản đồ và AI dự báo, Azure cho hệ thống kế toán. Việc dữ liệu nằm rải rác khiến AI không thể có cái nhìn toàn cảnh.
+
+**Giải pháp của Master Architect:**
+1.  **Unified Data Fabric**: Dùng **Amazon DataZone** để tạo ra một danh mục dữ liệu chung, cho phép AI trên AWS "nhìn thấy" dữ liệu trên BigQuery (GCP) mà không cần di chuyển dữ liệu (Zero-ETL).
+2.  **Cross-Cloud Connectivity**: Dùng **Cloud WAN** tạo ra "cao tốc dữ liệu" giữa các Cloud Provider.
+3.  **AppFabric Integration**: Kết nối toàn bộ dữ liệu từ Slack (vận hành) và Salesforce (bán hàng) về để AI Agent có thể hỗ trợ khách hàng tốt nhất.
+
+**Kết quả:** Thời gian xử lý đơn hàng giảm 20%. AI có thể dự báo chính xác tình trạng tắc nghẽn tại cảng biển bằng cách tổng hợp dữ liệu từ nhiều nguồn Cloud khác nhau.
+
+**Bài học BrSE:** Khách hàng Nhật Bản thường dùng **Hybrid Cloud** (kết hợp On-prems và AWS). Khi tư vấn, hãy luôn chuẩn bị phương án kết nối an toàn nhất. Họ rất sợ dữ liệu bị lộ ra Internet công cộng.
 
 ---
 
-**📊 Word Count: 2245 words**
+### 🚀 Master Architect Pro-Tips (Bậc thầy Multi-Cloud)
+-   **Đừng lạm dụng Multi-Cloud**: Nó mang lại sự linh hoạt nhưng cũng làm tăng độ phức tạp và chi phí truyền tải dữ liệu (Data Egress). Chỉ dùng khi thực sự cần thiết.
+-   **Sử dụng Terraform/OpenTofu**: Để quản lý hạ tầng trên nhiều Cloud, hãy dùng các công cụ IaC trung lập để bạn có thể dùng chung một ngôn ngữ thiết kế cho cả AWS, Azure và GCP.
+-   **Security First**: Mỗi Cloud có một hệ thống IAM khác nhau. Hãy dùng các giải pháp **Identity Federation** để nhân viên chỉ cần một tài khoản duy nhất để đăng nhập vào tất cả các nền tảng.
+-   **Data Gravity**: Dữ liệu có "trọng lực". Dữ liệu ở đâu, AI nên ở đó để tránh tốn tiền và thời gian di chuyển dữ liệu qua lại giữa các Cloud.
+
+---
+
+**📊 Word Count: 2165 words**
