@@ -2,7 +2,7 @@
 
 > **"Master IT, AWS & Kihon Jouhou in Your Native Language"**
 
-Sensei Hubは、日本で働くITエンジニア（特にベトナム人）向けの、実践的でモダンな学習プラットフォームです。基本情報技術者試験（FE）、Java、AWSの知識を効率的に習得できるよう設計されています。
+Sensei Hubは、日本で働くITエンジニア向けの、実践的でモダンな学習プラットフォームです。基本情報技術者試験（FE）、Java、AWSの知識を効率的に習得できるよう設計されています。
 
 ---
 
