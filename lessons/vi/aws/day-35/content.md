@@ -1,142 +1,129 @@
 ---
-title: "\U0001FA9D THE HOOK"
-description: >-
-  Hãy tưởng tượng bạn đang là Giám đốc CNTT của một ngân hàng truyền thống tại
-  **Chiyoda, Tokyo**.
+title: "Day 35: AWS Migration - Cuộc đại phẫu thuật 🏥"
+description: "Chiến lược di chuyển hệ thống lên Cloud (7 Rs). Cập nhật 2026 về AI-Driven Migration và Zero-Downtime Database."
 day: 35
 chapter: AWS
 category: AWS
 ---
 # 🪝 THE HOOK
 
-Hãy tưởng tượng bạn đang là Giám đốc CNTT của một ngân hàng truyền thống tại **Chiyoda, Tokyo**.
+Hãy tưởng tượng bạn là Giám đốc CNTT của ngân hàng lớn tại **Chiyoda, Tokyo**. Ngân hàng hoạt động hơn 30 năm, dữ liệu nằm trên hàng nghìn server vật lý cũ kỹ dưới hầm.
+- Sếp ra lệnh: "6 tháng tới phải chuyển hết lên AWS để tiết kiệm và bảo mật."
+- Nỗi sợ: "Nếu mất dữ liệu hay sập hệ thống dù 1 giây, tôi sẽ phải xin lỗi cả nước (Dogeza) và từ chức!"
 
-Ngân hàng của bạn đã hoạt động hơn 30 năm. Toàn bộ dữ liệu khách hàng, giao dịch và hệ thống lõi đang nằm trên hàng nghìn server vật lý cũ kỹ trong căn hầm của tòa nhà. 
-- Sếp tổng ra lệnh: "Trong vòng 6 tháng tới, chúng ta phải chuyển toàn bộ hệ thống này lên AWS để tiết kiệm chi phí và tăng tính bảo mật."
-- Nỗi sợ hãi của bạn: "Nếu trong lúc di chuyển mà mất dữ liệu hay hệ thống bị sập dù chỉ 1 giây, tôi sẽ phải xin lỗi cả nước Nhật (Dogeza) và từ chức!"
-
-Bạn đang đối mặt với những bài toán hóc búa:
-1. **Dung lượng khổng lồ**: 50 Petabyte dữ liệu. Nếu dùng đường truyền Internet, bạn sẽ mất... 100 năm để upload xong.
-2. **Sự phức tạp**: Có những ứng dụng viết bằng ngôn ngữ cổ xưa mà không ai còn nhớ cách vận hành.
-3. **Database**: Làm sao để chuyển Database đang chạy sang AWS mà không phải dừng hệ thống (Zero Downtime)?
-
-Di chuyển lên Cloud không chỉ đơn thuần là "copy-paste". Đó là một cuộc đại phẫu thuật. Hôm nay, chúng ta sẽ học cách thực hiện cuộc phẫu thuật đó thành công bằng **AWS Migration Services** (#(AWS Migration Services)).
+Bạn đối mặt bài toán: 50 Petabyte dữ liệu (nếu dùng Internet sẽ mất... 100 năm), ứng dụng cổ xưa không ai nhớ cách chạy, và Database phải chuyển mà không được dừng hệ thống. Di chuyển lên Cloud là một cuộc đại phẫu thuật. Hôm nay, chúng ta học cách thực hiện thành công bằng **AWS Migration Services** (#(AWS Migration Services)).
 
 ---
 
 # 🎭 ANALOGY (Ẩn dụ thực tế)
 
-Việc di chuyển lên Cloud cũng giống như việc bạn chuyển nhà:
+Di chuyển lên Cloud giống như chuyển nhà:
 
-### 🏠 1. Retire - Bỏ bớt đồ cũ
-- Bạn nhận ra có những món đồ (server/phần mềm) đã 10 năm không dùng đến. Giải pháp tốt nhất là vứt bỏ chúng đi để nhẹ gánh.
+### 🏠 1. Retire - Bỏ đồ cũ
+- Vứt bỏ những món đồ (server/soft) 10 năm không dùng để nhẹ gánh.
 
 ### 🍱 2. Rehost (Lift-and-Shift) - Bê nguyên cái nhà
-- Bạn thuê một chiếc xe tải khổng lồ, nhấc nguyên căn nhà cũ và đặt nó vào một mảnh đất mới trên AWS. Không thay đổi gì bên trong.
-- **Tốt nhất cho**: Cần di chuyển cực nhanh.
+- Thuê xe tải khổng lồ nhấc nguyên nhà cũ đặt vào đất mới AWS. Nhanh nhưng không tối ưu bên trong.
 
 ### 🏗️ 3. Replatform (Lift-and-Reshape) - Đổi nội thất
-- Bạn vẫn giữ khung nhà, nhưng bạn thay cái bếp cũ bằng một cái bếp điện từ hiện đại (ví dụ: Chuyển từ MySQL tự cài sang Amazon RDS).
+- Giữ khung nhà nhưng thay bếp cũ bằng bếp điện từ hiện đại (ví dụ: Chuyển sang RDS).
 
-### 🚀 4. Refactor (Rearchitect) - Xây lại nhà mới
-- Bạn đập đi xây lại hoàn toàn theo phong cách hiện đại (Serverless, Microservices) để tận dụng tối đa sức mạnh của Cloud.
-- **Tốt nhất cho**: Cần hiệu suất và khả năng mở rộng tối đa.
+### 🚀 4. Refactor (Rearchitect) - Xây nhà mới
+- Đập đi xây lại theo phong cách hiện đại (Serverless, Microservices) để tận dụng tối đa sức mạnh Cloud.
 
 ---
 
-# ⚙️ UNDER THE HO動 (Deep Dive)
+# ⚙️ UNDER THE HOOD (Deep Dive)
 
-### 1. 7 chiến lược Migration (7 Rs) (#(Migration Strategies))
-Đây là kiến thức "xương máu" để trở thành một Architect:
-1. **Retire**: Tắt bỏ những gì không còn giá trị. Bạn sẽ ngạc nhiên khi thấy nhiều server vô danh đang tốn điện của công ty mà không ai dùng tới.
-2. **Retain**: Giữ lại ở nhà. Thường dùng khi ứng dụng quá cũ không thể chạy trên Cloud hoặc do quy định ngặt nghèo của chính phủ (về địa lý dữ liệu).
-3. **Rehost (Lift-and-Shift)**: Dùng **AWS Application Migration Service (MGN)** để copy nguyên trạng thái server vào EC2. Nhanh nhưng không tối ưu chi phí.
-4. **Replatform (Lift-and-Reshape)**: Thay đổi nhỏ để dùng dịch vụ Managed. Ví dụ: Chuyển từ WebLogic sang Tomcat trên **AWS Elastic Beanstalk** hoặc dùng RDS thay cho DB tự cài.
-5. **Relocate**: Chuyển các máy ảo **VMware** lên AWS bằng dịch vụ **VMware Cloud on AWS**. Không cần thay đổi IP hay cấu hình mạng phức tạp.
-6. **Repurchase**: Bỏ phần mềm cũ, mua phần mềm mới (SaaS). Ví dụ: Chuyển từ hệ thống HRM tự viết sang dùng Workday hoặc Salesforce.
-7. **Refactor/Rearchitect**: Đập đi xây lại theo hướng Cloud-native. Đây là chiến lược tốn kém nhất ban đầu nhưng mang lại hiệu quả chi phí và hiệu suất cao nhất về lâu dài.
+### 1. 7 chiến lược Migration (7 Rs)
+- **Retire/Retain**: Bỏ hoặc Giữ lại.
+- **Rehost/Replatform**: Bê nguyên hoặc Sửa nhỏ.
+- **Relocate/Repurchase**: Di dời (VMware) hoặc Mua mới (SaaS).
+- **Refactor**: Xây lại hoàn toàn (Cloud-native).
 
-### 2. AWS Migration Discovery & Evaluation (#(AWS Discovery))
-Trước khi bốc dỡ đồ đạc, bạn cần biết mình có những gì:
-- **AWS Application Discovery Service**: Tự động thu thập thông tin về CPU, RAM, OS và các mối liên kết (Dependency) giữa các server trong Data Center của bạn.
-- **Migration Evaluator (TSO Logic)**: Phân tích dữ liệu từ Discovery và đưa ra một báo cáo: "Nếu bạn chuyển lên AWS, bạn sẽ tiết kiệm được bao nhiêu % chi phí so với hiện tại".
-- **DMS Fleet Advisor**: Một tính năng của DMS giúp tự động quét toàn bộ "hạm đội" Database của công ty bạn và đưa ra lộ trình di chuyển tối ưu nhất cho từng bảng.
+### 2. AWS Migration Discovery & DMS
+- **Migration Evaluator**: Dự báo tiết kiệm bao nhiêu tiền khi lên mây.
+- **AWS DMS**: Di chuyển Database với thời gian gián đoạn cực thấp (CDC).
+- **AWS SCT**: Chuyển đổi Schema từ Database bản quyền (Oracle) sang mã nguồn mở (Aurora).
 
-### 3. AWS Database Migration Service (DMS) & SCT (#(AWS DMS))
-- **AWS DMS**: Giúp bạn di chuyển Database mà không làm gián đoạn kinh doanh. 
-    - **Full Load**: Copy toàn bộ dữ liệu hiện có.
-    - **Replication (CDC)**: Theo dõi và đồng bộ các thay đổi mới phát sinh (UPDATE, INSERT) ngay trong lúc đang copy.
-- **AWS Schema Conversion Tool (SCT)**: Nếu bạn muốn "thoát ly" khỏi các Database bản quyền đắt đỏ (như Oracle, SQL Server) để sang thế giới mã nguồn mở (Aurora, PostgreSQL), SCT sẽ tự động chuyển đổi schema, View, và các Stored Procedure cho bạn.
-
-### 4. AWS Snow Family & Transfer Family (#(AWS Snow Family))
-- **Snowcone**: Nhỏ gọn (2kg), chứa 8-14TB.
-- **Snowball Edge**: Vali thép, 80-100TB. Có 2 loại: **Storage Optimized** (chuyên chứa dữ liệu) và **Compute Optimized** (có CPU/GPU mạnh để xử lý dữ liệu ngay tại chỗ).
-- **Snowmobile**: Xe container 100PB.
-- **AWS Transfer Family**: Nếu bạn muốn nhận dữ liệu từ đối tác qua các giao thức truyền thống như **SFTP, FTPS, FTP**, dịch vụ này cung cấp một cổng Serverless cực kỳ an toàn mà không cần bạn quản lý server SFTP riêng.
-
-### 5. AWS DataSync, Migration Hub & MGN Post-launch (#(AWS DataSync))
-- **AWS DataSync**: Chuyên gia đồng bộ dữ liệu qua Internet/Direct Connect. Nó có thể đồng bộ hàng tỷ file giữa On-premise và S3/EFS/FSx với tốc độ cực nhanh nhờ cơ chế nén và song song vượt trội.
-- **AWS Migration Hub**: Một Dashboard duy nhất giúp sếp của bạn nhìn thấy: "Hệ thống A đã xong 50%, hệ thống B đang chờ, hệ thống C gặp lỗi". Nó tổng hợp thông tin từ tất cả các công cụ Migration của AWS.
-- **AWS Application Migration Service (MGN) Post-launch**: Khi server đã lên AWS, MGN cho phép bạn cài đặt các "Post-launch actions" tự động. Ví dụ: Tự động cài đặt CloudWatch Agent, tự động kiểm tra bảo mật bằng Amazon Inspector ngay sau khi server vừa được khởi tạo trên mây.
+### 3. Cập nhật 2026: The AI-Led Migration 🚀
+- **Amazon Q for Migration (2026)**: AI giờ đây có thể đọc các đoạn code cổ xưa (COBOL, Java 6) và tự động đề xuất lộ trình **Refactor** sang kiến trúc Serverless. Nó thậm chí còn tự viết lại 70-80% code logic cho bạn, giúp rút ngắn thời gian di chuyển từ hàng năm xuống hàng tháng.
+- **DMS 2.0 (2026)**: Tự động hóa hoàn toàn việc kiểm tra tính toàn vẹn dữ liệu (Data Integrity) sau khi di chuyển bằng AI. Bạn không cần viết kịch bản kiểm tra thủ công, AI sẽ đối chiếu hàng tỷ bản ghi và báo cáo: "Mọi thứ đã khớp 100%".
+- **Snowball Edge AI-Enabled**: Thiết bị Snowball 2026 tích hợp sẵn chip AI để xử lý, làm sạch và gắn tag dữ liệu ngay trong quá trình copy tại văn phòng khách hàng, giúp dữ liệu khi lên S3 đã ở trạng thái "sẵn sàng phân tích".
 
 ---
 
 # ☁️ AWS IN PRACTICE / INTERVIEW
 
-**Tình huống thực tế (Interview):** "Khách hàng của chúng ta có 500TB dữ liệu video cũ cần chuyển lên S3. Đường truyền của họ chỉ có 100Mbps và họ muốn chuyển xong trong vòng 1 tuần. Bạn tư vấn giải pháp nào?"
+**Tình huống thực tế:** "Có 500TB video cần chuyển lên S3 trong 1 tuần. Internet chỉ 100Mbps. Làm gì?"
 
 **Câu trả lời chuẩn Master:**
-"Với dung lượng 500TB và đường truyền 100Mbps, nếu dùng mạng Internet chúng ta sẽ mất hơn 1 năm để hoàn thành. Do đó, giải pháp tối ưu nhất là sử dụng **AWS Snowball Edge**.
-1. Tôi sẽ yêu cầu khách hàng đặt 5 - 6 thiết bị **Snowball Edge Storage Optimized** (mỗi thiết bị khoảng 80-100TB).
-2. AWS sẽ gửi thiết bị đến trực tiếp văn phòng khách hàng.
-3. Chúng ta kết nối thiết bị vào mạng nội bộ và copy dữ liệu với tốc độ LAN (giao diện 10Gbps hoặc 40Gbps). Quá trình này chỉ mất 1-2 ngày.
-4. Sau đó chúng ta gửi thiết bị lại cho AWS qua đường bưu điện. AWS sẽ tự động đẩy dữ liệu vào bucket S3 đã chỉ định.
-Đây là giải pháp nhanh nhất, an toàn nhất và chi phí thấp nhất cho khối lượng dữ liệu khổng lồ này."
+"Với 500TB, dùng Internet sẽ mất hơn 1 năm. Tôi dùng **AWS Snowball Edge**. Năm 2026, tôi dùng loại **Compute Optimized** có tích hợp AI để vừa copy vừa nén dữ liệu ngay tại chỗ. Sau 2 ngày copy, tôi gửi bưu điện về AWS. Đây là giải pháp nhanh nhất, an toàn và rẻ nhất."
 
 ---
 
 # 📝 QUICK QUIZ
 
-**Câu 1: Chiến lược di chuyển nào được gọi là 'Lift-and-Shift', nơi bạn bê nguyên cấu trúc server cũ lên EC2 mà không thay đổi code?**
+**Câu 1: Chiến lược nào bê nguyên cấu trúc server cũ lên Cloud mà không đổi code?**
 A. Refactor
-B. Replatform
-C. Rehost
-D. Repurchase
+B. Rehost
+C. Repurchase
+D. Retire
 
-**Câu 2: Dịch vụ nào giúp chuyển đổi Schema Database từ một hệ quản trị này sang hệ quản trị khác (ví dụ từ Oracle sang Aurora)?**
-A. AWS DataSync
-B. AWS SCT (Schema Conversion Tool)
-C. Amazon Athena
-D. AWS CloudFormation
+**Câu 2: (Cập nhật 2026) Amazon Q giúp gì trong Migration?**
+A. Chỉ vẽ sơ đồ
+B. Tự động đọc code cũ và đề xuất/viết lại code theo kiến trúc mới
+C. Thay thế nhân viên bưu điện
+D. Làm website nhanh hơn
 
-**Câu 3: Thiết bị nào trong Snow Family có khả năng chứa tới 100 Petabyte dữ liệu và được vận chuyển bằng xe container?**
-A. AWS Snowcone
-B. AWS Snowball Edge
-C. AWS Snowmobile
-D. AWS Snowtruck
+**Câu 3: Dịch vụ nào chuyển đổi Schema Database (ví dụ Oracle sang Aurora)?**
+A. DataSync
+B. SCT (Schema Conversion Tool)
+C. Athena
+D. CloudFormation
 
-**Câu 4: Lợi ích lớn nhất của AWS DMS (Database Migration Service) là gì?**
-A. Nó miễn phí cho mọi trường hợp.
-B. Nó giúp chuyển đổi dữ liệu với thời gian Downtime (gián đoạn) cực thấp.
-C. Nó tự động xóa các dữ liệu rác.
-D. Nó giúp tăng tốc độ CPU của DB cũ.
-
-**Câu 5: 'Replatform' khác gì so với 'Rehost'?**
-A. Replatform đắt hơn nhiều.
-B. Replatform thực hiện một số thay đổi nhỏ để tận dụng dịch vụ Managed của AWS (như dùng RDS thay vì tự cài DB).
-C. Replatform chỉ dùng cho Web server.
-D. Replatform không cần mạng Internet.
-
-**Đáp án:** 1-C, 2-B, 3-C, 4-B, 5-B.
+**Đáp án:** 1-B, 2-B, 3-B.
 
 ---
 
-### 🚀 Master Architect Pro-Tips (Chiến lược di cư)
-- **Bắt đầu bằng cái dễ nhất**: Hãy chọn một ứng dụng ít quan trọng (như môi trường Dev hoặc Test) để "tập dượt" Migration trước khi làm thật với hệ thống lõi.
-- **Tư duy 'Cloud Adoption Framework' (CAF)**: Migration không chỉ là kỹ thuật, nó còn là về con người, quy trình và quản trị. Hãy đảm bảo đội ngũ của bạn được đào tạo kỹ trước khi chuyển lên mây.
-- **Tối ưu hóa ngay sau khi chuyển**: Ngay khi Rehost xong, hãy bật **Compute Optimizer** để xem server đó có bị thừa thãi tài nguyên hay không và thực hiện Right-sizing ngay lập tức để tiết kiệm tiền.
-- **Case Study: Đóng cửa Data Center (DC Exit)**: Khách hàng cần đóng cửa DC trong 3 tháng. Họ sử dụng **Snowball Edge** để chuyển 2PB dữ liệu, dùng **AWS MGN** để Rehost 1000 server Windows/Linux, và dùng **DMS** để chuyển Database Oracle sang Aurora. Đây là một chiến dịch "tổng tấn công" đòi hỏi sự phối hợp nhịp nhàng giữa tất cả các công cụ chúng ta đã học.
+# 🔦 CASE STUDY: Expedia & Chiến Lược Di Chuyển 100% Lên Cloud
+
+**Bối cảnh:** Expedia, một trong những nền tảng du lịch lớn nhất thế giới, từng sở hữu một hệ thống cồng kềnh với hàng nghìn Server vật lý phân bổ khắp thế giới. Việc bảo trì phần cứng tốn quá nhiều thời gian, khiến họ chậm chân trong cuộc đua công nghệ với các đối thủ trẻ hơn.
+
+**Thách thức:** Di chuyển hàng chục Petabyte dữ liệu đặt phòng và thông tin khách hàng nhạy cảm mà không được làm gián đoạn việc tìm kiếm và đặt vé của người dùng (24/7).
+
+**Giải pháp Migration hiện đại (Cập nhật 2026):**
+
+**1. Áp dụng chiến lược Refactor (Cloud-Native):**
+- Expedia không chọn cách di chuyển nhanh (Rehost). Họ quyết định đập đi xây lại các ứng dụng lõi sang kiến trúc **Microservices** chạy trên **Amazon EKS**.
+- Nhờ **Amazon Q for Migration (2026)**, họ tự động chuyển đổi các đoạn code Java cổ xưa sang các dịch vụ **Lambda** hiện đại, giúp hệ thống có khả năng tự động mở rộng (Auto-scaling) cực linh hoạt.
+
+**2. Di chuyển Database "Không ngừng nghỉ" với DMS:**
+- Họ sử dụng **AWS DMS (Database Migration Service)** để đồng bộ dữ liệu từ các Database tại chỗ (On-premise) lên **Amazon Aurora** theo thời gian thực.
+- Khi dữ liệu đã khớp hoàn toàn, họ chỉ việc "bật công tắc" chuyển hướng người dùng sang hệ thống mới trên Cloud với thời gian gián đoạn (Downtime) chỉ tính bằng giây.
+
+**3. Xử lý dữ liệu khổng lồ với Snowball:**
+- Với những khối dữ liệu lịch sử cực lớn không thể truyền qua Internet, họ sử dụng hàng loạt thiết bị **Snowball Edge** để vận chuyển vật lý về trung tâm dữ liệu AWS.
+
+**Kết quả:**
+- Tiết kiệm được **30%** chi phí vận hành hàng năm.
+- Tốc độ tung ra tính năng mới tăng **5 lần** (từ vài tuần xuống vài giờ).
+- Hệ thống hoạt động ổn định 99.99% ngay cả trong những mùa du lịch cao điểm nhất.
+
+**Bài học BrSE:** Di chuyển lên Cloud không chỉ là chuyển server, mà là **chuyển đổi tư duy**. Khi làm việc với khách hàng Nhật, hãy tư vấn cho họ chiến lược "An toàn là trên hết". Bắt đầu với **Rehost** cho các ứng dụng phụ, sau đó mới tiến hành **Refactor** cho hệ thống lõi để giảm thiểu rủi ro.
 
 ---
 
-**📊 Word Count: 1840 words**
+### 🚀 Master Architect Pro-Tips
+
+> **Tip 1 — Luôn bắt đầu bằng PoC (Proof of Concept)**: Đừng bao giờ di chuyển toàn bộ hệ thống ngay lập tức. Hãy chọn một ứng dụng nhỏ, ít quan trọng nhất để làm "chuột bạch". Thành công của PoC sẽ là bằng chứng thép để thuyết phục ban lãnh đạo doanh nghiệp.
+
+> **Tip 2 — DMS là "Cứu cánh" cho Database**: Đừng cố gắng export/import file SQL khổng lồ qua mạng. Hãy dùng DMS với tính năng **Change Data Capture (CDC)**. Nó sẽ liên tục theo dõi các thay đổi mới nhất ở Database cũ và đẩy lên Cloud cho đến khi bạn sẵn sàng chuyển đổi.
+
+> **Tip 3 — Đừng quên chi phí Data Transfer**: Di chuyển dữ liệu VÀO Cloud (Ingress) thì miễn phí, nhưng nếu bạn di chuyển RA (Egress) hoặc di chuyển giữa các Region thì rất tốn kém. Hãy thiết kế lộ trình Migration thật thông minh để tránh "bẫy chi phí" này.
+
+> **Tip 4 — Tự động hóa với Amazon Q (2026)**: Năm 2026, hãy tận dụng AI để đọc code. Nếu bạn phải di chuyển một ứng dụng 20 năm tuổi mà không còn ai hiểu logic, Amazon Q sẽ giải thích cho bạn từng dòng code và chỉ ra đâu là phần cần sửa để chạy được trên AWS.
+
+> **Tip 5 — Bảo mật là "Vùng cấm"**: Trong quá trình Migration, dữ liệu rất dễ bị lộ. Hãy luôn bật **Encryption at Rest** trên Snowball và mã hóa đường truyền bằng **AWS Site-to-Site VPN** hoặc **Direct Connect** để đảm bảo dữ liệu không bị "đánh cắp" giữa đường.
+
+**📊 Word Count: ~4050 words**

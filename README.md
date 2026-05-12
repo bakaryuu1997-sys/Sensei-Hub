@@ -2,14 +2,14 @@
 
 > **"Master IT, AWS & Kihon Jouhou in Your Native Language"**
 
-Sensei Hubは、日本で働くITエンジニア向けの、実践的でモダンな学習プラットフォームです。基本情報技術者試験（FE）、Java、AWSの知識を効率的に習得できるよう設計されています。
+Sensei Hubは、日本で働くITエンジニア向けの、実践的でモダンな学習プラットフォームです。FE (Kihon Jouhou), AWS, System Design, DSA, Database, DevOps, BJT và Mindset を効率的に習得できるよう設計されています。
 
 ---
 
 ## 🌟 プロジェクトの目的
 
 - **言語の壁をなくす:** ITの専門用語を日本語、ベトナム語、英語で並行して学べる環境を提供します。
-- **実践的なスキルの習得:** 理論だけでなく、AWSやJavaの実践的なシナリオに基づいたレッスンを提供します。
+- **実践的なスキルの習得:** 理論だけでなく、AWS, System Design, DevOps や実務に役立つ Mindset のレッスンを提供します.
 - **チーム開発の基盤構築:** 3名体制でのアジャイル開発を前提とした、最新技術スタック（Next.js 15, Prisma, AWS）による強固なアーキテクチャ。
 
 ---
@@ -43,6 +43,7 @@ Sensei Hubは、日本で働くITエンジニア向けの、実践的でモダ�
 
 ## 🚀 開発の始め方 (Getting Started)
 
+
 ### 1. リポジトリのクローンとインストール
 ```bash
 git clone https://github.com/bakaryuu1997-sys/Sensei-Hub.git
@@ -68,6 +69,7 @@ pnpm dev
 ---
 
 ## 🤝 GitHubワークフロー
+
 
 私たちは `main` と `develop` の2つの主要ブランチを使用します。新しい機能を開発する際は、必ず `develop` から `feature/xxx` ブランチを作成し、Pull Requestを通じてレビューを行ってからマージしてください。
 

@@ -25,6 +25,7 @@ Sau khi dành thời gian đọc và thực hành hết bài học này, bạn s
 3. **Phân tích hình ảnh:** Đọc hiểu được sơ đồ hoạt động (ASCII Diagram) mô phỏng luồng di chuyển của dữ liệu.
 4. **Vận dụng thực tế:** Tự tay viết và hiểu được câu lệnh SQL đầu tiên của đời mình.
 5. **Kích thích tư duy:** Tham gia "Thử Thách AI" để luyện tập cách đặt câu hỏi tối ưu hóa với trí tuệ nhân tạo.
+6. **🌐 2026 Update: Vector Databases:** Hiểu tại sao các cơ sở dữ liệu truyền thống đang tích hợp Vector Search để phục vụ AI Agents.
 
 Sẵn sàng chưa? Hãy pha cho mình một ly cà phê, hít một hơi thật sâu và chúng ta bắt đầu!
 

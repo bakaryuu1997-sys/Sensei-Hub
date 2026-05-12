@@ -27,9 +27,10 @@ Hãy tưởng tượng bạn đang ở thời kỳ chưa có internet. Bạn mu�
 Đây chính là hệ **Binary** (2 進数 - Nijinsuu) [Hệ nhị phân]. Chỉ có 2 trạng thái. Mỗi lần bật/tắt đó được gọi là một **Bit** (ビット - Bitto) - đơn vị nhỏ nhất của thông tin.
 
 ### 2.2 Đến hàng tỷ chiếc công tắc siêu nhỏ
-Bên trong con chip Apple M3 hay Intel Core i9 hiện đại là hàng tỷ chiếc "công tắc" siêu nhỏ gọi là **Transistor** (トランジスタ - Toranjisuta) [Bóng bán dẫn]. 
+Bên trong con chip **Apple M5** hay **Intel Core Ultra (Series 3)** hiện đại năm 2026 là hàng tỷ chiếc "công tắc" siêu nhỏ gọi là **Transistor** (トランジスタ - Toranjisuta) [Bóng bán dẫn]. 
 -   Khi dòng điện chạy qua (thường là 5V hoặc 3.3V): Máy tính hiểu là `1`.
 -   Khi dòng điện bị ngắt (thường là 0V): Máy tính hiểu là `0`.
+-   **💡 2026 Context: NPU (Neural Processing Unit)**: Khác với CPU truyền thống, NPU được thiết kế để xử lý hàng nghìn phép tính nhị phân song song cực nhanh, phục vụ riêng cho các mô hình AI chạy Local (On-device AI). Tuy nhiên, dù là AI siêu việt đến đâu, gốc rễ của nó vẫn là những phép toán nhị phân 0 và 1 mà bạn đang học ở đây.
 
 Tại sao chúng ta không dùng hệ 10? Vì việc chế tạo một thiết bị điện tử có thể phân biệt chính xác 10 mức điện áp khác nhau (ví dụ: 0.5V, 1V, 1.5V...) là cực kỳ khó và dễ bị nhiễu điện từ. Hệ nhị phân là sự lựa chọn tối ưu vì nó đảm bảo tính **Reliability** (信頼性 - Shinraisei) [Độ tin cậy] tuyệt đối: Hoặc là Có, hoặc là Không. Một kỹ sư SE Nhật Bản luôn đặt tính ổn định (Stability) lên hàng đầu, và đó là lý do nhị phân vẫn tồn tại sau gần một thế kỷ.
 

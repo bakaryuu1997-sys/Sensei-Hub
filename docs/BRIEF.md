@@ -7,7 +7,7 @@
 
 ## 1. 解決すべき課題 (Problem Statement)
 *   **基本情報技術者試験 (FE)** は学習範囲が広く、効率的な検索や反復練習ができるツールが不足している。
-*   **Java** や **AWS** の実践的なスキルを、要点を絞った形で素早く学びたいというニーズがある。
+*   **FE (Kihon Jouhou)**, **AWS**, **System Design**, **DSA**, **Database**, **DevOps**, **BJT** và **Mindset** là những mảng kiến thức quan trọng cần được hệ thống hóa.
 *   **言語の壁:** 専門的なIT用語を日本語とベトナム語の両方で正しく理解するためのサポート環境が整っていない。
 
 ## 2. 提案する解決策 (Proposed Solution)
@@ -19,7 +19,8 @@
 ## 3. ターゲットユーザー (Target Audience)
 *   日本のIT企業で働く、または就職を目指す外国人（主にベトナム人）エンジニア。
 *   基本情報技術者試験（FE）の合格を目指す学習者。
-*   JavaとAWSの基礎を短期間で身につけたい初心者〜中級者。
+*   Học viên muốn thi FE (Kihon Jouhou) hoặc nâng cao trình độ System Design, AWS, DevOps.
+*   Kỹ sư muốn cải thiện tư duy lập trình (Mindset) và tiếng Nhật chuyên ngành (BJT).
 
 ## 4. 主な機能 (Key Features)
 1.  **Markdownレッスンエンジン:** `lessons/` ディレクトリ内の `.md` ファイルを動的にパースし、美しく表示。
