@@ -103,3 +103,11 @@ AWS Amplify (CDN + SSR Hosting)
 3. モバイルとPCの両方でレイアウトが崩れないこと（Responsive）。
 4. TypeScriptのエラーや致命的なESLintの警告がないこと。
 5. 多言語対応（日/越/英）が適用されていること。
+
+---
+
+## 🔗 クイックリンク (Quick Links)
+
+- **GitHub リポジトリ:** [bakaryuu1997-sys/Sensei-Hub](https://github.com/bakaryuu1997-sys/Sensei-Hub)
+- **Staging URL:** *(デプロイ後に更新)*
+- **Production URL:** *(ローンチ後に更新)*

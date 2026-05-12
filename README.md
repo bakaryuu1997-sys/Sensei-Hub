@@ -45,8 +45,8 @@ Sensei Hubは、日本で働くITエンジニア（特にベトナム人）向�
 
 ### 1. リポジトリのクローンとインストール
 ```bash
-git clone <repository-url>
-cd Gakushu
+git clone https://github.com/bakaryuu1997-sys/Sensei-Hub.git
+cd SenseiHub
 pnpm install
 ```
 
