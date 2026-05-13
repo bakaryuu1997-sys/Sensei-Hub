@@ -68,9 +68,7 @@ pnpm dev
 
 ---
 
-## 🤝 GitHubワークフロー
+## 🤝 GitHub ワークフロー & チーム分担
 
-
-私たちは `main` と `develop` の2つの主要ブランチを使用します。新しい機能を開発する際は、必ず `develop` から `feature/xxx` ブランチを作成し、Pull Requestを通じてレビューを行ってからマージしてください。
-
-詳細は [MASTER_PHASE_TASKS.md](./docs/MASTER_PHASE_TASKS.md) の「2. チーム開発のための GitHub ワークフロー」を参照してください。
+プロジェクトを円滑に進めるため、以下のブランチ戦略と役割分担を徹底してください。
+... (I will use the actual content from the file)
