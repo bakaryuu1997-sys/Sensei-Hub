@@ -1,113 +1,136 @@
-# 📚 Sensei Hub — プロジェクト総まとめ (Master Index)
+# 📋 Sensei Hub — マスタードキュメントインデックス
 
-> **Version:** 1.0.0-planning  
-> **最終更新:** 2026-05-12  
-> **チーム体制:** 3名 (Cloud Architect, Backend Engineer, Frontend Engineer)  
-> **目標:** 多言語対応（日・越・英）のIT学習Webアプリ。レッスン、用語集、クイズ機能を搭載。
-
----
-
-## 📋 ドキュメント目次
-
-| ファイル名 | 内容 | 必読対象 |
-|------|----------|-----------|
-| `BRIEF.md` | プロジェクトの背景、課題、解決策 | 全員 |
-| `TECH_STACK.md` | 使用する技術スタック | 全員 |
-| `TEAM_ROLES.md` | チームの役割と責任分担 | 全員 |
-| `MASTER_PHASE_TASKS.md` | **全4フェーズのタスクマトリックス ＆ GitHub ワークフロー** | 全員 |
-| `ROADMAP.md` | 4週間のタイムライン | 全員 |
-| `ARCHITECTURE.md` | AWS + Next.js アーキテクチャ図 | Member A, B |
-| `DATABASE_DESIGN.md` | Prisma Schema 詳細 | Member B |
-| `API_SPECS.md` | API エンドポイント仕様書 | Member B, C |
-| `LESSON_ENGINE.md` | Markdownファイルの読み込み・描画の仕組み | Member B |
-| `I18N_STRATEGY.md` | 多言語化（i18n）戦略 | Member B, C |
-| `PROJECT_STRUCTURE.md` | ディレクトリ構造 ＆ 命名規則 | 全員 |
-| `FEATURES_DETAIL.md` | 各機能の詳細要件 | 全員 |
-| `UI_UX_SPEC.md` | デザインシステム ＆ UXフロー | Member C |
-| `DEPLOYMENT.md` | AWS デプロイ手順書 | Member A |
-| `DETAILED_BACKLOG.md` | 日別（Day 1~20）の詳細タスク | 全員 |
-| `MOCKUPS.md` | UIモックアップ画像集 | Member C |
+> **バージョン**: 2.0.0  
+> **最終更新**: 2026-05-20  
+> **ステータス**: アクティブ開発中
 
 ---
 
-## 🎯 プロジェクトのビジョン
+## 🎯 プロジェクトビジョン
 
-**Sensei Hub**は、日本で働く、または学習するITエンジニア（特にベトナム人）向けの**シンプルかつ実践的**な学習プラットフォームです。複雑な仕組みを省き、基本情報技術者試験（FE）対策、Java、AWSの実用的な知識をMarkdownベースのレッスンを通じて効率的に学べる「強力な武器」を提供します。
+**Sensei Hub（センセイハブ）** は、日本で働くITエンジニア向けのトリリンガル学習プラットフォームです。英語・日本語・ベトナム語の3言語で、AWS、基本情報技術者試験、System Design、データ構造・アルゴリズム、データベース、DevOps、BJT、Blockchain、サイバーセキュリティ、Git & GitHub、Developer Mindsetの**11コース**（合計**1,560以上のレッスン**）を提供します。
 
 ---
 
-## 🏗️ 全体アーキテクチャ概要
+## 📑 ドキュメント一覧
 
+### コアドキュメント（ルート）
+
+| # | ファイル名 | カテゴリ | 説明 |
+|---|-----------|---------|------|
+| 1 | [INDEX.md](./INDEX.md) | 📋 索引 | マスターインデックス（本ファイル） |
+| 2 | [BRIEF.md](./BRIEF.md) | 📝 概要 | プロジェクト概要・課題定義・解決策 |
+| 3 | [TECH_STACK.md](./TECH_STACK.md) | 🛠 技術 | テックスタック詳細・バージョン・選定理由 |
+| 4 | [ARCHITECTURE.md](./ARCHITECTURE.md) | 🏛 設計 | システムアーキテクチャ・データフロー図 |
+| 5 | [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) | 📁 構成 | ディレクトリ構成・命名規則・コーディング規約 |
+| 6 | [DATABASE_DESIGN.md](./DATABASE_DESIGN.md) | 🗄 DB | データベース設計・Prismaスキーマ・ERD |
+| 7 | [API_SPECS.md](./API_SPECS.md) | 🔌 API | REST API / Server Actions 仕様書 |
+| 8 | [LESSON_ENGINE.md](./LESSON_ENGINE.md) | 📝 エンジン | レッスンコンテンツエンジン設計 |
+| 9 | [I18N_STRATEGY.md](./I18N_STRATEGY.md) | 🌐 i18n | 国際化（多言語対応）戦略 |
+| 10 | [UI_UX_SPEC.md](./UI_UX_SPEC.md) | 🎨 デザイン | UI/UX仕様・デザインシステム |
+| 11 | [MOCKUPS.md](./MOCKUPS.md) | 🖼 モック | UIモックアップ画像集 |
+| 12 | [FEATURES_DETAIL.md](./FEATURES_DETAIL.md) | ⚙️ 機能 | 機能要件詳細・受入基準 |
+| 13 | [ROADMAP.md](./ROADMAP.md) | 🗺 計画 | ロードマップ・マイルストーン |
+| 14 | [MASTER_PHASE_TASKS.md](./MASTER_PHASE_TASKS.md) | 📊 管理 | フェーズ別タスクマトリックス |
+| 15 | [DETAILED_BACKLOG.md](./DETAILED_BACKLOG.md) | ✅ タスク | 詳細バックログ・進捗トラッキング |
+| 16 | [TEAM_ROLES.md](./TEAM_ROLES.md) | 👥 チーム | チーム役割分担・責任範囲 |
+| 17 | [DEPLOYMENT.md](./DEPLOYMENT.md) | 🚀 運用 | デプロイメントガイド・AWS構築手順 |
+| 18 | [BRSE_INPUT_CHECKLIST.md](./BRSE_INPUT_CHECKLIST.md) | ✅ BrSE | BrSEインプットチェックリスト |
+
+### サブディレクトリ
+
+| # | ファイル名 | カテゴリ | 説明 |
+|---|-----------|---------|------|
+| 19 | [design/DATABASE_SCHEMA.md](./design/DATABASE_SCHEMA.md) | 📊 ERD | ER図（Mermaid） |
+| 20 | [design/SCREEN_FLOW.md](./design/SCREEN_FLOW.md) | 🔄 フロー | 画面遷移図 |
+| 21 | [design/SCREEN_FLOW_JA.md](./design/SCREEN_FLOW_JA.md) | 🔄 フロー | 画面遷移図（詳細版） |
+| 22 | [design/UI_KIT_JA.md](./design/UI_KIT_JA.md) | 🎨 UI | UIキット・デザイントークン |
+| 23 | [specs/SRS_SENSEI_HUB.md](./specs/SRS_SENSEI_HUB.md) | 📋 SRS | ソフトウェア要件仕様書（正式版） |
+
+### アセット
+
+| フォルダ | 内容 |
+|---------|------|
+| [assets/](./assets/) | モックアップ画像（PNG） |
+| [assets/mockups/](./assets/mockups/) | 追加モックアップ（ダッシュボード、試験室、レッスンUI、Wiki UI） |
+
+---
+
+## 🏛 システムアーキテクチャ概要
+
+```mermaid
+graph TB
+    subgraph Client["🌐 クライアント"]
+        Browser["ブラウザ"]
+    end
+
+    subgraph App["🖥 sensei-hub-dashboard"]
+        NextJS["Next.js 16<br/>App Router"]
+        Components["React 19<br/>コンポーネント"]
+        i18n["i18n<br/>LanguageProvider"]
+    end
+
+    subgraph Data["💾 データ層"]
+        Prisma["Prisma ORM"]
+        PostgreSQL["PostgreSQL"]
+        Lessons["Markdown<br/>レッスンファイル"]
+    end
+
+    subgraph Infra["☁️ インフラ"]
+        Amplify["AWS Amplify"]
+        S3["AWS S3"]
+        RDS["AWS RDS"]
+    end
+
+    Browser --> NextJS
+    NextJS --> Components
+    Components --> i18n
+    NextJS --> Prisma
+    Prisma --> PostgreSQL
+    NextJS --> Lessons
+    NextJS -.-> Amplify
+    PostgreSQL -.-> RDS
+    Lessons -.-> S3
 ```
-User (Browser)
-    │ HTTPS
-    ▼
-AWS Amplify (CDN + SSR Hosting)
-    │
-    ├── Next.js 15 App
-    │       ├── App Router (SSR Pages)
-    │       ├── API Routes / Server Actions
-    │       ├── next-intl (i18n: ja/vi/en)
-    │       └── Prisma ORM
-    │               │
-    │               ▼
-    │       AWS RDS (PostgreSQL 16)
-    │
-    └── AWS S3 (Static Assets / Lesson Images)
-```
 
 ---
 
-## 👥 チーム体制 (Roles)
+## 👥 チーム構成
 
-| メンバー | 役割 | メインドメイン |
-|-----------|---------|-------------|
-| **Member A** | Cloud Architect / DevOps | AWS, CI/CD, Auth, Security |
-| **Member B** | Backend Engineer | API, Database, Content Engine |
-| **Member C** | Frontend Engineer | UI, UX, Responsive, SEO |
-
----
-
-## 🗺️ 4週間のスプリント概要 (Sprint Overview)
-
-```
-第1週 (P1 - Foundation):
-  A: AWS セットアップ, RDS, Auth.js
-  B: Prisma Schema, Lesson Engine 基盤
-  C: Next.js 雛形構築, レイアウト
-
-第2週 (P2 - Core Modules):
-  A: CI/CD パイプライン構築
-  B: レッスンAPI, 用語集API
-  C: レッスンUI, 用語集UI
-
-第3週 (P3 - Interactive):
-  A: CloudFront CDN 設定
-  B: クイズロジック, 進捗管理API
-  C: クイズUI, ダッシュボードUI
-
-第4週 (P4 - Launch):
-  A: 監視(Monitoring), WAF, 本番デプロイ
-  B: クエリ最適化, DBインデックス
-  C: SEO対策, Lighthouseスコア改善
-  Team: 総合テスト → LAUNCH 🚀
-```
+| 役割 | 担当領域 |
+|------|---------|
+| ☁️ **クラウドアーキテクト** | AWS（RDS, S3, Amplify）、Docker、CI/CD |
+| ⚙️ **バックエンドエンジニア** | Prisma、Auth.js、API Routes、Server Actions |
+| 🎨 **フロントエンドエンジニア** | Next.js、React、Tailwind CSS、UI/UXデザイン |
 
 ---
 
-## ✅ 完了の定義 (Definition of Done - DoD)
+## 📅 スプリント概要
 
-各機能は以下の条件を満たした時点で「完了」とみなします。
-1. 最低1名の他のメンバーによってコードレビュー（PR承認）が完了していること。
-2. ローカルだけでなく、Staging環境（Amplify）で正常に動作すること。
-3. モバイルとPCの両方でレイアウトが崩れないこと（Responsive）。
-4. TypeScriptのエラーや致命的なESLintの警告がないこと。
-5. 多言語対応（日/越/英）が適用されていること。
+| フェーズ | 期間 | 内容 | ステータス |
+|---------|------|------|-----------|
+| Phase 1 | Week 1-2 | インフラ構築・コンテンツ作成・ダッシュボードUI | ✅ 完了 |
+| Phase 2 | Week 3 | バックエンド統合・認証・API | 🔧 進行中 |
+| Phase 3 | Week 4 | 機能完成（語彙・クイズ・レッスンビューア） | ⏳ 予定 |
+| Phase 4 | Week 5+ | 最適化・テスト・AWSデプロイ | ⏳ 予定 |
 
 ---
 
-## 🔗 クイックリンク (Quick Links)
+## 🔗 クイックリンク
 
-- **GitHub リポジトリ:** [bakaryuu1997-sys/Sensei-Hub](https://github.com/bakaryuu1997-sys/Sensei-Hub)
-- **Staging URL:** *(デプロイ後に更新)*
-- **Production URL:** *(ローンチ後に更新)*
+- 📦 **リポジトリ**: [github.com/bakaryuu1997-sys/Sensei-Hub](https://github.com/bakaryuu1997-sys/Sensei-Hub)
+- 🖥 **ダッシュボード**: `sensei-hub-dashboard/` ディレクトリ
+- 📚 **レッスン**: `lessons/` ディレクトリ（EN/JA/VI）
+- 🐳 **Docker**: `docker-compose.yml`（ローカルPostgreSQL）
+
+---
+
+## 📖 推奨読了順序
+
+1. 🔰 **[BRIEF.md](./BRIEF.md)** — プロジェクトの全体像を把握
+2. 🛠 **[TECH_STACK.md](./TECH_STACK.md)** — 技術スタックの理解
+3. 🏛 **[ARCHITECTURE.md](./ARCHITECTURE.md)** — システム設計の理解
+4. 📁 **[PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md)** — ディレクトリ構成の把握
+5. 🗄 **[DATABASE_DESIGN.md](./DATABASE_DESIGN.md)** — データモデルの理解
+6. 📝 **[LESSON_ENGINE.md](./LESSON_ENGINE.md)** — レッスンコンテンツの仕組み
+7. 🗺 **[ROADMAP.md](./ROADMAP.md)** — 開発計画の確認

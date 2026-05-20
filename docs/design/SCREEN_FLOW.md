@@ -1,57 +1,69 @@
-# 画面遷移図 (Screen Flow) - Sensei-Hub
+# 🔄 Sensei Hub — 画面遷移図
 
-Sensei-Hubプラットフォームのユーザー体験（UX）および主要な画面フローを定義します。
+> **バージョン**: 2.0.0  
+> **最終更新**: 2026-05-20
 
-## 1. ユーザーフロー図
+---
+
+## 画面フロー
 
 ```mermaid
-graph TD
-    Start((開始)) --> Landing[ランディングページ]
-    Landing --> Auth{認証}
-    Auth -->|未登録| SignUp[サインアップ]
-    Auth -->|登録済| Login[ログイン]
+flowchart TD
+    Landing["🏠 ランディングページ<br/>(予定)"] --> Auth{"🔐 認証"}
     
-    SignUp --> Dashboard
-    Login --> Dashboard[ダッシュボード]
+    Auth -->|ログイン| Login["ログイン画面<br/>(予定)"]
+    Auth -->|新規登録| Register["登録画面<br/>(予定)"]
     
-    Dashboard --> SubjectList[科目選択: AWS, DevOps, BJT等]
-    SubjectList --> Roadmap[科目ロードマップ: 60/120日]
+    Login --> Dashboard
+    Register --> Dashboard
+
+    Dashboard["📊 ダッシュボード<br/>/ ✅ 実装済み"]
     
-    Roadmap --> LessonView[レッスンビューア]
+    Dashboard --> Subject["📖 科目詳細<br/>/subject/[slug] ✅ 実装済み"]
+    Dashboard --> Vocab["📚 語彙辞典<br/>(予定)"]
+    Dashboard --> Quiz["🧪 クイズ<br/>(予定)"]
+    Dashboard --> Settings["⚙️ 設定<br/>(予定)"]
     
-    subgraph "学習体験"
-        LessonView --> AI_Tutor[AIチューター: 質問・対話]
-        LessonView --> Quiz[クイズ: 理解度チェック]
-        LessonView --> Dictionary[用語集: BJT/JLPT単語]
-    end
+    Subject --> Lesson["📝 レッスンビューア<br/>(予定)"]
+    Subject --> SubjectQuiz["🧪 科目別クイズ<br/>(予定)"]
     
-    Quiz -->|完了| Roadmap
-    AI_Tutor -->|履歴保存| AI_Context[AIコンテキスト更新]
+    Lesson --> NextLesson["次のレッスン"]
+    Lesson --> PrevLesson["前のレッスン"]
+    NextLesson --> Lesson
+    PrevLesson --> Lesson
     
-    Dashboard --> Profile[プロフィール / 学習統計]
-    Dashboard --> Settings[設定 / AIパーソナライズ]
+    Vocab --> VocabDetail["📚 語彙詳細<br/>(予定)"]
+    
+    Quiz --> QuizResult["📊 クイズ結果<br/>(予定)"]
+
+    style Dashboard fill:#4ade80,stroke:#16a34a
+    style Subject fill:#4ade80,stroke:#16a34a
+    style Login fill:#fbbf24,stroke:#d97706
+    style Register fill:#fbbf24,stroke:#d97706
+    style Lesson fill:#fbbf24,stroke:#d97706
+    style Vocab fill:#fbbf24,stroke:#d97706
+    style Quiz fill:#fbbf24,stroke:#d97706
+    style Settings fill:#fbbf24,stroke:#d97706
 ```
 
-## 2. 画面詳細説明
+---
 
-### 2.1 ダッシュボード (Dashboard)
-- ユーザーの学習進捗、現在のストリーク、おすすめのレッスンを表示。
-- 全8科目の進捗状況を鳥瞰できるウィジェットを配置。
+## 画面一覧
 
-### 2.2 ロードマップ (Roadmap)
-- 各科目の全レッスンを「Day 1」から「Day 120」までリスト表示。
-- ロック機能：前日のレッスンを完了しないと次の日に進めない（オプション設定可能）。
+| # | 画面 | パス | ステータス | 説明 |
+|---|------|------|-----------|------|
+| 1 | ダッシュボード | `/` | ✅ 実装済み | ヒーローバナー、統計行、科目グリッド、チャレンジ、リーダーボード |
+| 2 | 科目詳細 | `/subject/[slug]` | ✅ 実装済み | 科目ヘッダー、統計、モジュールリスト |
+| 3 | ログイン | `/login` | ⏳ 予定 | メール/パスワードログイン |
+| 4 | 新規登録 | `/register` | ⏳ 予定 | メール/パスワード/名前登録 |
+| 5 | レッスンビューア | `/lesson/[subject]/[day]` | ⏳ 予定 | Markdownレンダリング、進捗保存 |
+| 6 | 語彙辞典 | `/vocabulary` | ⏳ 予定 | 3言語並列表示、検索、お気に入り |
+| 7 | クイズ | `/quiz` | ⏳ 予定 | 問題表示、タイマー、結果 |
+| 8 | 設定 | `/settings` | ⏳ 予定 | プロフィール、言語、テーマ |
 
-### 2.3 レッスンビューア (Lesson Viewer)
-- **メインコンテンツ**: Markdown形式の高品質な学習教材。
-- **AIサイドバー**: 2026年5月時点の最新AIモデルを搭載したチューターが、質問に即座に回答。
-- **インタラクティブ要素**: 読了ボタン、重要単語のブックマーク機能。
+---
 
-### 2.4 クイズ (Quiz)
-- レッスンの最後に実施。J1+レベルの論理的思考を問う問題を含む。
-- AIによる解説フィードバック機能。
+## 📎 関連ドキュメント
 
-## 3. デザイン方針 (2026年版)
-- **Rich Aesthetics**: モダンなダークモード、グラスモーフィズムを採用し、プレミアムな学習体験を提供。
-- **AI-First**: 常にAIアシスタントが寄り添うレイアウト。
-- **Responsiveness**: デスクトップ、タブレット、モバイルのすべてでシームレスに動作。
+- [SCREEN_FLOW_JA.md](./SCREEN_FLOW_JA.md) — 画面遷移図（詳細版）
+- [UI_UX_SPEC.md](../UI_UX_SPEC.md) — UI/UX仕様書

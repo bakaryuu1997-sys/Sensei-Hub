@@ -1,156 +1,233 @@
-# 🚀 AWS デプロイメントガイド (Deployment Guide)
+# 🚀 Sensei Hub — デプロイメントガイド
 
-> **担当:** Member A (Cloud Architect)  
-> **ターゲット:** AWS Amplify + RDS + S3 + CloudFront
-
----
-
-## 1. 準備: AWS アカウントと IAM
-
-```bash
-# デプロイ用の IAM User を作成（ルートアカウントは使用しないこと）
-1. AWS Console → IAM → Users → Create User
-2. Username: gakushuu-deploy
-3. Permissions: AdministratorAccess (またはカスタムポリシー)
-4. Access Key ID と Secret Access Key を保存し、.env ファイルに追加する
-```
+> **バージョン**: 2.0.0  
+> **最終更新**: 2026-05-20
 
 ---
 
-## 2. AWS RDS (PostgreSQL) のセットアップ
+## 1. ローカル開発環境
 
-### ステップ 1: RDS インスタンスの作成
-```
-AWS Console → RDS → Create Database
-├── Engine: PostgreSQL
-├── Version: 16.x
-├── Template: Free tier (無料枠)
-├── DB Instance ID: gakushuu-db
-├── Master Username: postgres
-├── Master Password: [強力なパスワード]
-├── Instance: db.t3.micro
-├── Storage: 20GB gp2
-└── Public access: Yes (開発中のみ。本番では No に変更)
-```
+### 1.1 Docker Compose（PostgreSQL）
 
-### ステップ 2: セキュリティグループ (Security Group) の設定
-```
-Inbound Rules:
-- Port 5432 (PostgreSQL)
-- Source: 0.0.0.0/0 (開発環境用) または Amplify の IP レンジ (本番用)
-```
-
-### ステップ 3: 接続文字列の取得
-```
-DATABASE_URL="postgresql://postgres:PASSWORD@RDS_ENDPOINT:5432/postgres"
-```
-
----
-
-## 3. AWS S3 + CloudFront のセットアップ
-
-### S3 バケットの作成
-```
-AWS Console → S3 → Create Bucket
-├── Bucket name: gakushuu-assets-[region]
-├── Region: ap-northeast-1 (Tokyo)
-└── Block all public access: OFF (画像配信用にパブリック読み取りが必要)
-```
-
-### バケットポリシー (Bucket Policy) の設定
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [{
-    "Effect": "Allow",
-    "Principal": "*",
-    "Action": "s3:GetObject",
-    "Resource": "arn:aws:s3:::gakushuu-assets-*/*"
-  }]
-}
-```
-
-### CloudFront ディストリビューションの作成
-```
-Origin: S3 bucket URL
-Viewer Protocol Policy: Redirect HTTP to HTTPS
-Price Class: Use Only North America, Europe, Asia
-```
-
----
-
-## 4. AWS Amplify (ホスティング) のセットアップ
-
-### ステップ 1: リポジトリの接続
-```
-AWS Amplify Console → New App → Host Web App
-├── Provider: GitHub
-├── Repository: [your-repo]
-└── Branch: main
-```
-
-### ステップ 2: ビルド設定 (Build Settings)
-Amplify は自動的に Next.js を検出します。 `amplify.yml` を以下のように設定します。
 ```yaml
-version: 1
-frontend:
-  phases:
-    preBuild:
-      commands:
-        - npm install -g pnpm
-        - pnpm install
-        - npx prisma generate
-        - npx prisma migrate deploy
-    build:
-      commands:
-        - pnpm build
-  artifacts:
-    baseDirectory: .next
-    files:
-      - '**/*'
-  cache:
-    paths:
-      - node_modules/**/*
-      - .next/cache/**/*
+# docker-compose.yml
+version: '3.8'
+services:
+  postgres:
+    image: postgres:16
+    container_name: sensei-hub-db
+    environment:
+      POSTGRES_USER: sensei
+      POSTGRES_PASSWORD: sensei_pass
+      POSTGRES_DB: sensei_hub
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
 ```
 
-### ステップ 3: 環境変数の設定
-```
-AWS Amplify Console → App → Environment Variables:
-
-DATABASE_URL          = postgresql://...
-NEXTAUTH_SECRET       = [ランダムな32文字の文字列]
-NEXTAUTH_URL          = https://your-amplify-domain.com
-GOOGLE_CLIENT_ID      = ...
-GOOGLE_CLIENT_SECRET  = ...
-AWS_REGION            = ap-northeast-1
-AWS_ACCESS_KEY_ID     = ...
-AWS_SECRET_ACCESS_KEY = ...
-AWS_S3_BUCKET         = gakushuu-assets-ap-northeast-1
-NEXT_PUBLIC_APP_URL   = https://your-amplify-domain.com
-```
-
----
-
-## 5. Prisma マイグレーション (本番環境)
+### 1.2 セットアップ手順
 
 ```bash
-# 本番データベースでマイグレーションを実行
-DATABASE_URL="postgresql://..." npx prisma migrate deploy
+# 1. PostgreSQLコンテナ起動
+docker-compose up -d
 
-# 用語集などの初期データを投入（オプション）
-DATABASE_URL="postgresql://..." npx prisma db seed
+# 2. ダッシュボードアプリのセットアップ
+cd sensei-hub-dashboard
+pnpm install
+
+# 3. 環境変数設定
+cat > .env << EOF
+DATABASE_URL="postgresql://sensei:sensei_pass@localhost:5432/sensei_hub?schema=public"
+AUTH_SECRET="your-dev-auth-secret-at-least-32-chars"
+AUTH_URL="http://localhost:3000"
+EOF
+
+# 4. データベースマイグレーション
+pnpm prisma migrate dev --name init
+
+# 5. Prisma Client 生成
+pnpm prisma generate
+
+# 6. 開発サーバー起動
+pnpm dev
+```
+
+### 1.3 確認
+
+- ブラウザで `http://localhost:3000` にアクセス
+- Prisma Studio: `pnpm prisma studio`（`http://localhost:5555`）
+
+---
+
+## 2. AWS デプロイメント
+
+### 2.1 事前準備
+
+- AWSアカウント
+- AWS CLI インストール・設定済み
+- カスタムドメイン（オプション）
+
+### 2.2 Step 1: IAMユーザー作成
+
+```bash
+# デプロイ専用IAMユーザー作成
+aws iam create-user --user-name sensei-hub-deploy
+
+# 必要なポリシーをアタッチ
+aws iam attach-user-policy \
+  --user-name sensei-hub-deploy \
+  --policy-arn arn:aws:iam::aws:policy/AmazonRDSFullAccess
+
+aws iam attach-user-policy \
+  --user-name sensei-hub-deploy \
+  --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
+
+aws iam attach-user-policy \
+  --user-name sensei-hub-deploy \
+  --policy-arn arn:aws:iam::aws:policy/CloudFrontFullAccess
+```
+
+### 2.3 Step 2: RDS PostgreSQL
+
+```bash
+# PostgreSQL インスタンス作成
+aws rds create-db-instance \
+  --db-instance-identifier sensei-hub-db \
+  --db-instance-class db.t3.micro \
+  --engine postgres \
+  --engine-version 16 \
+  --master-username sensei_admin \
+  --master-user-password <STRONG_PASSWORD> \
+  --allocated-storage 20 \
+  --db-name sensei_hub \
+  --vpc-security-group-ids <SG_ID> \
+  --availability-zone ap-northeast-1a \
+  --backup-retention-period 7 \
+  --storage-encrypted
+```
+
+> ⚠️ **セキュリティ警告**: Security Groupでは、本番環境ではポート5432への接続元を**アプリケーションサーバーのIPのみ**に制限してください。`0.0.0.0/0`（全公開）は絶対に避けてください。
+
+### 2.4 Step 3: S3 + CloudFront
+
+```bash
+# S3バケット作成（静的アセット用）
+aws s3 mb s3://sensei-hub-assets --region ap-northeast-1
+
+# バケットポリシー設定（CloudFrontからのアクセスのみ許可）
+aws s3api put-bucket-policy \
+  --bucket sensei-hub-assets \
+  --policy file://s3-policy.json
+
+# CloudFrontディストリビューション作成
+aws cloudfront create-distribution \
+  --origin-domain-name sensei-hub-assets.s3.ap-northeast-1.amazonaws.com \
+  --default-root-object index.html
+```
+
+### 2.5 Step 4: AWS Amplify ホスティング
+
+1. **Amplify Console** にアクセス
+2. **GitHub リポジトリを接続**
+3. **ビルド設定**:
+
+```yaml
+# amplify.yml
+version: 1
+applications:
+  - appRoot: sensei-hub-dashboard
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm install -g pnpm
+            - pnpm install
+        build:
+          commands:
+            - pnpm prisma generate
+            - pnpm build
+      artifacts:
+        baseDirectory: .next
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*
+          - .next/cache/**/*
+```
+
+4. **環境変数設定**（Amplify Console）:
+
+```
+DATABASE_URL=postgresql://sensei_admin:<password>@<rds-endpoint>:5432/sensei_hub
+AUTH_SECRET=<production-secret-at-least-32-chars>
+AUTH_URL=https://your-domain.com
+```
+
+### 2.6 Step 5: カスタムドメイン + SSL
+
+1. **Amplify Console** → **ドメイン管理**
+2. カスタムドメインを追加
+3. CNAME レコードを設定（DNS）
+4. SSL証明書は自動発行（AWS Certificate Manager）
+
+---
+
+## 3. CI/CDパイプライン（GitHub Actions）
+
+```yaml
+# .github/workflows/deploy.yml
+name: Deploy to AWS Amplify
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install pnpm
+        run: npm install -g pnpm
+      
+      - name: Install dependencies
+        run: cd sensei-hub-dashboard && pnpm install
+      
+      - name: Run type check
+        run: cd sensei-hub-dashboard && pnpm tsc --noEmit
+      
+      - name: Build
+        run: cd sensei-hub-dashboard && pnpm build
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
 ```
 
 ---
 
-## 6. カスタムドメインと SSL
+## 4. 本番環境チェックリスト
 
-```
-AWS Amplify → Domain Management → Add Domain
-├── Domain: gakushuu.yourdomain.com
-└── SSL: Amplify が自動で発行 (AWS Certificate Manager)
+- [ ] RDS のセキュリティグループをアプリサーバーIPのみに制限
+- [ ] `AUTH_SECRET` を十分な長さの安全な値に設定
+- [ ] `next.config.mjs` の `ignoreBuildErrors` を `false` に変更
+- [ ] 画像最適化を有効化（`unoptimized: false`）
+- [ ] アクセスログの有効化（CloudFront）
+- [ ] バックアップポリシーの確認（RDS）
+- [ ] HTTPS リダイレクトの設定
 
-Route53 を使用する場合:
-AWS Route53 → Create Hosted Zone → Add A Record → Amplify domain
-```
+---
+
+## 📎 関連ドキュメント
+
+- [ARCHITECTURE.md](./ARCHITECTURE.md) — システムアーキテクチャ
+- [TECH_STACK.md](./TECH_STACK.md) — テックスタック

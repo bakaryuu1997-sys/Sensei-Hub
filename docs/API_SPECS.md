@@ -1,268 +1,287 @@
-# 🔌 API 仕様書 (API Specifications): Sensei Hub
+# 🔌 Sensei Hub — API仕様書
 
-> **バージョン:** 1.0  
-> **Base URL:** `/api`  
-> **認証:** Cookieベースのセッション (Auth.js)  
-> **レスポンス形式:** 標準化されたJSONフォーマット（セクション7を参照）
-
----
-
-## 1. 認証 (Authentication - `/api/auth`)
-
-### `POST /api/auth/register`
-Emailとパスワードを使用した新規アカウント登録。
-
-**Request Body:**
-```json
-{
-  "name": "山田 太郎",
-  "email": "user@example.com",
-  "password": "password123"
-}
-```
-**Response (201):** `{ "success": true, "data": { "id": "...", "email": "..." } }`  
-**エラー (400):** Emailが既に存在します。
+> **バージョン**: 2.0.0  
+> **最終更新**: 2026-05-20  
+> **アーキテクチャ**: Next.js 16 Server Actions + API Routes
 
 ---
 
-### `GET /api/auth/me`
-ログイン中のユーザー情報を取得。
+## 1. 概要
 
-**Headers:** `Cookie: next-auth.session-token=...`  
-**Response (200):**
-```json
-{
-  "id": "uuid",
-  "name": "山田 太郎",
-  "email": "user@example.com",
-  "preferredLang": "vi",
-  "image": null
-}
-```
+Sensei HubのバックエンドAPIは、**Next.js 16のServer Actions**をメインとし、外部連携用に**API Routes**も併用するハイブリッドアーキテクチャを採用しています。
 
----
+### レスポンス形式
 
-## 2. レッスン (Lessons - `/api/lessons`)
-
-### `GET /api/lessons`
-レッスンの一覧を取得（サブディレクトリなしのフラット構造）。
-
-**Query params:**
-- `locale` (string): `ja` | `vi` | `en` — デフォルト: `vi`
-- `category` (string): `Java` | `AWS` | `KihonJouhou` | ...
-
-**Response (200):**
-```json
-{
-  "success": true,
-  "data": [
-    {
-      "slug": "java-basic-01",
-      "title": "Java基礎 第1回：はじめに",
-      "category": "Java",
-      "level": "Beginner",
-      "order": 1
-    }
-  ]
-}
-```
-
----
-
-### `GET /api/lessons/[slug]`
-特定のレッスンの詳細内容（Markdown → HTML変換後）を取得。
-
-**Params:** `slug` = レッスンファイル名（拡張子なし）, 例: `java-basic-01`  
-**Query:** `locale=vi`
-
-**Response (200):**
-```json
-{
-  "success": true,
-  "data": {
-    "slug": "java-basic-01",
-    "title": "Java基礎 第1回：はじめに",
-    "content": "<h1>はじめに...</h1>",
-    "prev": null,
-    "next": "java-basic-02",
-    "isCompleted": false
-  }
-}
-```
-
----
-
-### `POST /api/lessons/[slug]/progress`
-レッスンの学習状態（進行中/完了）を記録。
-
-**Request Body:** `{ "status": "COMPLETED" | "IN_PROGRESS" }`  
-**Response (200):** `{ "success": true, "data": { "status": "COMPLETED" } }`
-
----
-
-## 3. IT用語集 (Vocabulary - `/api/vocab`)
-
-### `GET /api/vocab`
-用語集一覧の取得（検索とフィルタリング対応）。
-
-**Query params:**
-- `search` (string): 検索キーワード（日/越/英）
-- `category` (string): `Network` | `AWS` | `Java` | `OS` | `Security`
-- `page` (number): デフォルト `1`
-- `limit` (number): デフォルト `20`
-
-**Response (200):**
-```json
-{
-  "success": true,
-  "data": {
-    "items": [
-      {
-        "id": "uuid",
-        "termJa": "データベース",
-        "termVi": "Cơ sở dữ liệu",
-        "termEn": "Database",
-        "reading": "データベース",
-        "category": "Java",
-        "isFavorite": false
-      }
-    ],
-    "total": 1250,
-    "page": 1,
-    "totalPages": 63
-  }
-}
-```
-
----
-
-### `GET /api/vocab/[id]`
-用語の詳細と例文の取得。
-
-**Response (200):**
-```json
-{
-  "id": "uuid",
-  "termJa": "データベース",
-  "termVi": "Cơ sở dữ liệu",
-  "termEn": "Database",
-  "definitionJa": "データを組織的に格納・管理するシステム",
-  "definitionVi": "Hệ thống lưu trữ và quản lý dữ liệu có tổ chức",
-  "exampleJa": "MySQLはリレーショナルデータベースです。",
-  "exampleVi": "MySQL là một hệ quản trị cơ sở dữ liệu quan hệ.",
-  "category": "Java",
-  "isFavorite": true
-}
-```
-
----
-
-### `PATCH /api/vocab/[id]/favorite`
-用語のお気に入り（ブックマーク）状態の切り替え。
-
-**Response (200):** `{ "isFavorite": true }`
-
----
-
-## 4. クイズ (Quiz - `/api/quiz`)
-
-### `GET /api/quiz/questions`
-ランダムなクイズ問題の取得。
-
-**Query params:**
-- `count` (number): 問題数 — デフォルト `10`
-- `category` (string): カテゴリで絞り込み
-- `level` (number): `1` (易) / `2` (中) / `3` (難)
-- `locale` (string): `ja` | `vi`
-
-**Response (200):**
-```json
-{
-  "success": true,
-  "data": [
-    {
-      "id": "uuid",
-      "contentVi": "RAM là viết tắt của?",
-      "contentJa": "RAMの正式名称は？",
-      "options": [
-        { "id": "uuid-1", "textVi": "Random Access Memory", "textJa": "ランダムアクセスメモリ" },
-        { "id": "uuid-2", "textVi": "Read All Memory", "textJa": "リードオールメモリ" }
-      ]
-    }
-  ]
-}
-```
-
----
-
-### `POST /api/quiz/submit`
-クイズの解答を送信し、結果（スコア）を保存。
-
-**Request Body:**
-```json
-{
-  "answers": [
-    { "questionId": "uuid", "chosenOptionId": "uuid-1" }
-  ],
-  "duration": 120
-}
-```
-
-**Response (200):**
-```json
-{
-  "success": true,
-  "data": {
-    "score": 8,
-    "totalItems": 10,
-    "percentage": 80,
-    "resultId": "uuid",
-    "breakdown": [
-      { "questionId": "uuid", "isCorrect": true, "explanation": "RAMは..." }
-    ]
-  }
-}
-```
-
----
-
-## 5. ユーザー進捗 (User Progress - `/api/user`)
-
-### `GET /api/user/stats`
-学習進捗の全体統計情報の取得。
-
-**Response (200):**
-```json
-{
-  "lessonsCompleted": 12,
-  "totalLessons": 85,
-  "vocabFavorited": 43,
-  "quizAvgScore": 78,
-  "streakDays": 5
-}
-```
-
----
-
-## 6. 標準レスポンスフォーマット (Standard Response Format)
-
-すべてのAPIは以下の統一フォーマットで応答します：
+全APIは以下の統一レスポンス形式を使用します：
 
 ```typescript
-// 成功時 (Success)
+// 成功レスポンス
 {
   "success": true,
-  "data": T,          // 返却データ (any type)
-  "message": string   // オプション：メッセージ
+  "data": { ... },
+  "meta": {
+    "page": 1,
+    "perPage": 20,
+    "total": 100,
+    "totalPages": 5
+  }
 }
 
-// エラー時 (Error)
+// エラーレスポンス
 {
   "success": false,
-  "data": null,
   "error": {
-    "code": string,   // 例: "UNAUTHORIZED", "NOT_FOUND"
-    "message": string // 開発者向けエラーメッセージ
+    "code": "VALIDATION_ERROR",
+    "message": "メールアドレスの形式が正しくありません",
+    "details": { ... }
   }
 }
 ```
+
+### エラーコード一覧
+
+| コード | HTTPステータス | 説明 |
+|-------|--------------|------|
+| `VALIDATION_ERROR` | 400 | リクエストパラメータ不正 |
+| `UNAUTHORIZED` | 401 | 認証が必要 |
+| `FORBIDDEN` | 403 | 権限不足 |
+| `NOT_FOUND` | 404 | リソースが見つからない |
+| `CONFLICT` | 409 | リソース競合（重複メールなど） |
+| `INTERNAL_ERROR` | 500 | サーバー内部エラー |
+
+---
+
+## 2. 認証 API（Auth.js v5）
+
+### 2.1 ユーザー登録
+
+```
+POST /api/auth/register
+```
+
+| パラメータ | 型 | 必須 | 説明 |
+|-----------|-----|------|------|
+| `email` | string | ✅ | メールアドレス |
+| `password` | string | ✅ | パスワード（8文字以上） |
+| `name` | string | ❌ | 表示名 |
+| `preferredLang` | string | ❌ | 優先言語（`en`/`ja`/`vi`、デフォルト: `vi`） |
+
+**レスポンス（201）**:
+```json
+{
+  "success": true,
+  "data": {
+    "id": "clxxx...",
+    "email": "user@example.com",
+    "name": "Tanaka",
+    "role": "USER",
+    "preferredLang": "ja"
+  }
+}
+```
+
+### 2.2 ログイン
+
+```
+POST /api/auth/signin
+```
+
+Auth.js v5のCredentials Providerを使用。セッションはJWTベースで管理されます。
+
+### 2.3 現在のユーザー情報取得
+
+```
+GET /api/auth/session
+```
+
+**レスポンス（200）**:
+```json
+{
+  "user": {
+    "id": "clxxx...",
+    "email": "user@example.com",
+    "name": "Tanaka",
+    "role": "USER",
+    "preferredLang": "ja"
+  },
+  "expires": "2026-06-20T00:00:00.000Z"
+}
+```
+
+---
+
+## 3. レッスン API
+
+### 3.1 レッスン一覧取得
+
+```
+GET /api/lessons?subject={subject}&lang={lang}&page={page}&perPage={perPage}
+```
+
+| パラメータ | 型 | 必須 | 説明 |
+|-----------|-----|------|------|
+| `subject` | string | ✅ | 科目スラッグ |
+| `lang` | string | ❌ | 言語コード（デフォルト: ユーザー設定） |
+| `page` | number | ❌ | ページ番号（デフォルト: 1） |
+| `perPage` | number | ❌ | 1ページあたりの件数（デフォルト: 20） |
+
+**有効な科目スラッグ**:
+
+| スラッグ | コース名 | 総日数 |
+|---------|---------|-------|
+| `aws` | AWS Cloud Engineering | 60 |
+| `blockchain-and-web3-fundamentals` | Blockchain & Web3 | 20 |
+| `business-japanese-test` | BJT | 120 |
+| `cybersecurity-awareness` | Cybersecurity | 15 |
+| `data-structures-and-algorithms` | DSA | 60 |
+| `database-engineering` | Database | 30 |
+| `developer-mindset` | Mindset | 30 |
+| `devops-engineering` | DevOps | 60 |
+| `fundamental-it-engineer` | 基本情報（FE） | 100 |
+| `git-and-github` | Git & GitHub | 10 |
+| `system-design` | System Design | 60 |
+
+### 3.2 レッスン詳細取得
+
+```
+GET /api/lessons/{subject}/{day}?lang={lang}
+```
+
+**レスポンス（200）**:
+```json
+{
+  "success": true,
+  "data": {
+    "frontmatter": {
+      "title": "Day 1: AWSの基礎",
+      "description": "AWS Cloud の概要と主要サービスの理解",
+      "day": 1,
+      "chapter": "AWS Fundamentals",
+      "category": "aws"
+    },
+    "content": "# Day 1: AWSの基礎\n\n..."
+  }
+}
+```
+
+### 3.3 レッスン進捗更新（Server Action）
+
+```typescript
+// Server Action
+async function updateLessonProgress(data: {
+  lessonId: string;     // 例: "aws/day-01"
+  status: "IN_PROGRESS" | "COMPLETED";
+}): Promise<LessonProgress>
+```
+
+### 3.4 ユーザーの進捗一覧取得
+
+```
+GET /api/progress?subject={subject}
+```
+
+---
+
+## 4. 語彙 API
+
+### 4.1 語彙一覧取得
+
+```
+GET /api/vocabulary?category={category}&search={search}&page={page}&perPage={perPage}
+```
+
+| パラメータ | 型 | 必須 | 説明 |
+|-----------|-----|------|------|
+| `category` | string | ❌ | カテゴリフィルタ |
+| `search` | string | ❌ | 検索キーワード（全言語対象） |
+| `page` | number | ❌ | ページ番号 |
+| `perPage` | number | ❌ | 1ページあたりの件数 |
+
+### 4.2 語彙詳細取得
+
+```
+GET /api/vocabulary/{id}
+```
+
+### 4.3 お気に入り切替（Server Action）
+
+```typescript
+async function toggleFavoriteVocab(vocabId: string): Promise<{
+  isFavorite: boolean;
+}>
+```
+
+---
+
+## 5. クイズ API
+
+### 5.1 クイズ問題取得
+
+```
+GET /api/quiz/questions?category={category}&level={level}&limit={limit}
+```
+
+| パラメータ | 型 | 必須 | 説明 |
+|-----------|-----|------|------|
+| `category` | string | ✅ | カテゴリ（科目スラッグ） |
+| `level` | string | ❌ | 難易度（beginner/intermediate/advanced） |
+| `limit` | number | ❌ | 問題数（デフォルト: 10） |
+
+### 5.2 クイズ結果送信（Server Action）
+
+```typescript
+async function submitQuizResult(data: {
+  category: string;
+  answers: Array<{
+    questionId: string;
+    selectedOptionId: string;
+  }>;
+  duration: number;  // 秒
+}): Promise<QuizResult>
+```
+
+---
+
+## 6. ユーザー統計 API
+
+### 6.1 ダッシュボード統計取得
+
+```
+GET /api/stats
+```
+
+**レスポンス（200）**:
+```json
+{
+  "success": true,
+  "data": {
+    "streak": 15,
+    "totalXP": 2450,
+    "level": 12,
+    "completedLessons": 85,
+    "totalLessons": 565,
+    "hoursLearned": 42,
+    "subjectProgress": [
+      { "subject": "aws", "progress": 65, "completedLessons": 39 },
+      { "subject": "fe", "progress": 89, "completedLessons": 89 }
+    ],
+    "recentActivity": [
+      {
+        "type": "lesson_complete",
+        "subject": "aws",
+        "lessonId": "aws/day-39",
+        "timestamp": "2026-05-20T10:00:00Z"
+      }
+    ],
+    "weeklyStreak": [true, true, false, true, true, true, false]
+  }
+}
+```
+
+---
+
+## 📎 関連ドキュメント
+
+- [DATABASE_DESIGN.md](./DATABASE_DESIGN.md) — データベース設計
+- [ARCHITECTURE.md](./ARCHITECTURE.md) — システムアーキテクチャ
+- [FEATURES_DETAIL.md](./FEATURES_DETAIL.md) — 機能要件

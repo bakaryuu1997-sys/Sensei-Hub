@@ -1,121 +1,130 @@
-# 📋 詳細バックログ (Detailed Backlog)
+# ✅ Sensei Hub — 詳細バックログ
 
-> 日次単位のタスクリストです。各タスクの担当（A, B, C）を明確にしています。  
-> **使い方:** 完了したタスクには `[x]` を付け、GitHub に push してください。
-
----
-
-## 🟢 第1週: Foundation (Day 1-5)
-
-### Day 1: キックオフ & 初期設定
-- [ ] **ALL:** GitHub リポジトリ作成、`main` / `develop` ブランチの用意。
-- [ ] **ALL:** `.env.example` の作成と共有。
-- [ ] **A:** AWSアカウント設定、デプロイ用IAM User (`gakushuu-deploy`) の作成。
-- [ ] **B:** `pnpm` インストール、`apps/web/` に Next.js 15 アプリを初期化。
-- [ ] **C:** リポジトリをクローンし、ローカルで起動確認。全ドキュメントの熟読。
-
-### Day 2: インフラストラクチャ & DBスキーマ
-- [ ] **A:** RDS PostgreSQL `db.t3.micro` の作成、接続情報の共有。
-- [ ] **A:** S3 Bucket `gakushuu-assets` の作成と Public 読み取り権限設定。
-- [ ] **B:** `prisma/schema.prisma` の記述（User, Vocab, Quiz等）。
-- [ ] **B:** RDS(Staging) に対して `prisma migrate dev` を実行。
-- [ ] **C:** Tailwind v4, Shadcn/UI のインストールと初期コンポーネントの追加。
-
-### Day 3: 認証(Auth) & コアレイアウト
-- [ ] **A:** Auth.js v5 のセットアップ（Credentials Provider）。
-- [ ] **A:** Google Cloud Console で OAuth を設定。
-- [ ] **B:** `lib/mdx.ts` の作成（`lessons/` からの `.md` ファイル読み込み関数）。
-- [ ] **C:** Sidebar コンポーネント（開閉可能、レスポンシブ）の構築。
-- [ ] **C:** Header コンポーネント（ロゴ、検索バー、言語切り替え）の構築。
-
-### Day 4: 多言語対応 (i18n) & ルーティング
-- [ ] **B:** `next-intl` のインストールと `/{locale}/` ルーティングの Middleware 設定。
-- [ ] **B:** `messages/vi.json`, `messages/ja.json`, `messages/en.json` の雛形作成。
-- [ ] **C:** アプリ全体を `[locale]` ルートグループでラップ。
-- [ ] **C:** 言語切り替え機能（URLによる変更）のテスト。
-
-### Day 5: 第1週レビュー & バッファ
-- [ ] **ALL:** Amplify (Staging) で第1週の成果をデモ。
-- [ ] **ALL:** レビューで出たバグの修正。
-- [ ] **A:** S3 用の CloudFront CDN 設定。
-- [ ] **B:** サンプル用IT用語50個の Seed スクリプト作成。
+> **バージョン**: 2.0.0  
+> **最終更新**: 2026-05-20
 
 ---
 
-## 🔵 第2週: Core Modules (Day 6-10)
+## 完了済みタスク ✅
 
-### Day 6: レッスン一覧のAPI & UI
-- [ ] **B:** API `GET /api/lessons` — フォルダをスキャンし、メタデータ付きのリストを返す。
-- [ ] **C:** `/lessons` ページ UI — レッスン一覧をカードグリッドで表示。
+### インフラストラクチャ
+- [x] Git リポジトリ作成・ブランチ戦略構築
+- [x] Next.js 16 プロジェクト初期化（`sensei-hub-dashboard/`）
+- [x] Tailwind CSS v4 + PostCSS 設定
+- [x] shadcn/ui セットアップ（57コンポーネント、new-yorkスタイル）
+- [x] TypeScript 厳格モード設定
+- [x] Docker Compose 設定（PostgreSQL）
+- [x] Prisma ORM セットアップ
+- [x] 全ブランチの同期（feat/infra-setup基準）
 
-### Day 7: レッスン詳細
-- [ ] **B:** API `GET /api/lessons/[slug]` — `.md` の読み込みと MDX コンパイル。
-- [ ] **C:** `/lessons/[slug]` ページ UI — Markdown ビュアーと目次 (TOC)。
-- [ ] **C:** 「完了にする」ボタンの実装 → `POST /api/lessons/[slug]/progress` を呼び出す。
+### ダッシュボードUI（19コンポーネント）
+- [x] Sidebar（サイドバーナビゲーション）
+- [x] TopBar（検索・ストリーク・言語・通知）
+- [x] HeroBanner（マスコット画像・CTA）
+- [x] StatsRow（4つの統計カード・スパークライン）
+- [x] SubjectsGrid（4列の科目カード）
+- [x] SubjectCard（グラデーション背景）
+- [x] DailyChallenge（デイリーチャレンジ）
+- [x] Leaderboard（XPランキング）
+- [x] StreakHeatmap（GitHubスタイル熱マップ）
+- [x] FeaturedCourses（おすすめコース）
+- [x] QuickActions（クイックアクション）
+- [x] RecentActivity（最近のアクティビティ）
+- [x] ProgressRing / ProgressRing3D（進捗リング）
+- [x] GlassCard / Card3D（特殊カード）
+- [x] LanguageSwitcher（言語切替）
+- [x] LessonCard（レッスンカード）
+- [x] StatsCard（統計カード）
 
-### Day 8: 用語集 API
-- [ ] **B:** API `GET /api/vocab` — 検索およびカテゴリフィルター機能。
-- [ ] **B:** API `GET /api/vocab/[id]` — 用語の詳細取得機能。
-- [ ] **B:** 実践的なIT用語500個をDBにSeed。
+### 科目詳細ページUI（3コンポーネント）
+- [x] SubjectHeader（パンくず・ヒーローカード・進捗リング）
+- [x] SubjectStats（4つの指標カード）
+- [x] ModulesList（モジュール一覧・ロック状態・難易度バッジ）
 
-### Day 9: 用語集 UI
-- [ ] **C:** `/vocabulary` ページ UI — 検索バーとリスト表示（Lazy loading考慮）。
-- [ ] **C:** クリック時に詳細を表示するポップアップ/ドロワー。
-- [ ] **C:** 「お気に入り登録」ボタン → `PATCH /api/vocab/[id]/favorite` 呼び出し。
+### 多言語対応（i18n）
+- [x] LanguageProvider（React Context）
+- [x] useLanguage() Hook
+- [x] 翻訳キー定義（~80キー × 3言語）
+- [x] localStorage 永続化
+- [x] フォールバック処理
 
-### Day 10: CI/CD & 第2週レビュー
-- [ ] **A:** Amplify CI/CD 設定 — `develop` ブランチ更新時の自動デプロイ。
-- [ ] **ALL:** 第2週デモ — レッスンと用語集の一連の動作確認。
+### データベース設計
+- [x] User モデル（認証・プロフィール・権限）
+- [x] LessonProgress モデル（進捗トラッキング）
+- [x] Vocabulary モデル（トリリンガル語彙）
+- [x] FavoriteVocab モデル（お気に入り）
+- [x] Question / Option モデル（クイズ問題）
+- [x] QuizResult / QuizAnswer モデル（クイズ結果）
+
+### レッスンコンテンツ（11コース × 3言語）
+- [x] AWS Cloud Engineering（60日 × 3言語）
+- [x] Blockchain & Web3 Fundamentals（20日 × 3言語）
+- [x] Business Japanese Test（120日 × 3言語）
+- [x] Cybersecurity Awareness（15日 × 3言語）
+- [x] Data Structures & Algorithms（60日 × 3言語）
+- [x] Database Engineering（30日 × 3言語）
+- [x] Developer Mindset（30日 × 3言語）
+- [x] DevOps Engineering（60日 × 3言語）
+- [x] Fundamental IT Engineer（100日 × 3言語）
+- [x] Git & GitHub（10日 × 3言語）
+- [x] System Design（60日 × 3言語）
+
+### デザイン・UX
+- [x] Premium Dark テーマ決定
+- [x] グラスモーフィズムカードデザイン
+- [x] メッシュグラデーション背景
+- [x] フローティングオーブアニメーション
+- [x] Framer Motion インタラクション
+- [x] レスポンシブ対応（モバイル/デスクトップ）
+
+### ドキュメント
+- [x] 全ドキュメント日本語化・詳細化（23ファイル）
 
 ---
 
-## 🟡 第3週: Interactive Features (Day 11-15)
+## 進行中タスク 🔧
 
-### Day 11: クイズ DB & API
-- [ ] **B:** 4択クイズ問題100問の Seed スクリプト作成。
-- [ ] **B:** API `GET /api/quiz/questions` — フィルタ付きランダム出題。
-- [ ] **B:** API `POST /api/quiz/submit` — 採点およびスコア保存。
-
-### Day 12: クイズ UI
-- [ ] **C:** クイズ画面 UI — 1問ずつの進行、プログレスバー。
-- [ ] **C:** クイズ結果画面 UI — スコア、正誤内訳、解説の表示。
-- [ ] **C:** 正解/不正解時のアニメーション（Framer Motion）。
-
-### Day 13: ユーザー進捗 & ダッシュボード API
-- [ ] **B:** API `GET /api/user/stats` — 学習進捗の集計データの提供。
-- [ ] **B:** 連続学習日数（ストリーク）の計算ロジック。
-
-### Day 14: ダッシュボード UI
-- [ ] **C:** ダッシュボード UI — 進捗バー、お気に入り用語一覧、クイズ履歴。
-- [ ] **C:** 連続学習日数のミニカレンダー表示。
-
-### Day 15: 第3週レビュー
-- [ ] **A:** CloudWatch 監視設定（RDS CPU使用率、Amplifyエラー率）。
-- [ ] **ALL:** 第3週デモ — ログインからダッシュボード、学習、クイズまでのフル機能確認。
+### 認証システム
+- [ ] Auth.js v5 Credentials Provider 統合
+- [ ] ログイン画面UI
+- [ ] 登録画面UI
+- [ ] セッション管理ミドルウェア
+- [ ] 保護ルート設定
 
 ---
 
-## 🔴 第4週: Polish & Launch (Day 16-20)
+## 予定タスク ⏳
 
-### Day 16-17: SEO & パフォーマンス
-- [ ] **C:** 全ページに `metadata` エクスポートを追加。
-- [ ] **C:** SNS共有用の OpenGraph(OGP) 画像設定。
-- [ ] **B:** DBインデックスの追加設定。
-- [ ] **B:** 必要なフィールドのみ取得（`select`）するようクエリを最適化。
+### バックエンド
+- [ ] Prisma マイグレーション実行
+- [ ] Server Actions 実装（進捗更新・お気に入り切替）
+- [ ] API Routes 実装（語彙・クイズ・統計）
+- [ ] シードデータ作成（語彙・クイズ問題）
 
-### Day 18: セキュリティ & 最終AWS設定
-- [ ] **A:** WAFの基本ルール（OWASP Top 10）有効化。
-- [ ] **A:** CloudWatch アラーム設定（CPU > 80% で通知等）。
-- [ ] **A:** 全シークレットキーの再確認と不要権限の削除。
+### フロントエンド
+- [ ] レッスンビューアコンポーネント
+- [ ] Markdown レンダリング（シンタックスハイライト・Mermaid）
+- [ ] 語彙辞典UI（一覧・検索・詳細・お気に入り）
+- [ ] クイズUI（問題表示・回答・タイマー・結果）
+- [ ] 設定画面UI（プロフィール・言語・テーマ）
+- [ ] 管理画面UI（コンテンツ・ユーザー管理）
 
-### Day 19: バグ退治 (Bug Bash)
-- [ ] **ALL:** スマホとPCの両方で全フローをテスト。
-- [ ] **ALL:** 発見したバグを GitHub Issues に登録。
-- [ ] **ALL:** 致命的なバグ（P0/P1）の修正。
-- [ ] **C:** Lighthouse スコアを全指標で90点以上に改善。
+### インフラ
+- [ ] AWS RDS PostgreSQL 構築
+- [ ] AWS S3 + CloudFront 設定
+- [ ] AWS Amplify デプロイ設定
+- [ ] CI/CD パイプライン構築
+- [ ] 環境変数管理（本番/ステージング）
 
-### Day 20: 本番公開 🚀 (LAUNCH)
-- [ ] **A:** `develop` を `main` にマージ → 本番環境へ自動デプロイ。
-- [ ] **A:** カスタムドメインとSSL証明書の設定。
-- [ ] **ALL:** 本番環境での最終確認（Smoke test）。
-- [ ] **ALL:** サービス公開とシェア！ 🎉
+### テスト・品質
+- [ ] E2Eテスト（Playwright）
+- [ ] パフォーマンス最適化（Core Web Vitals）
+- [ ] SEO対応（メタタグ・OGP・構造化データ）
+- [ ] セキュリティ監査
+
+---
+
+## 📎 関連ドキュメント
+
+- [ROADMAP.md](./ROADMAP.md) — ロードマップ
+- [MASTER_PHASE_TASKS.md](./MASTER_PHASE_TASKS.md) — タスクマトリックス
