@@ -91,15 +91,24 @@ export async function GET(
     const lang = searchParams.get("lang") || "en"
 
     const subjectFolder = slugToFolder[slug] || slug
-    const lessonsDir = path.join(process.cwd(), "../lessons")
+    const lessonsDir = path.resolve(process.cwd(), "../lessons")
 
     let langToUse = lang
-    let subjectPath = path.join(lessonsDir, langToUse, subjectFolder)
+    let subjectPath = path.resolve(lessonsDir, langToUse, subjectFolder)
+
+    // Security check: Prevent Path Traversal
+    if (!subjectPath.startsWith(lessonsDir)) {
+      return NextResponse.json({ error: "Access denied" }, { status: 403 })
+    }
 
     // Fallback to English if directory doesn't exist
     if (!fs.existsSync(subjectPath)) {
       langToUse = "en"
-      subjectPath = path.join(lessonsDir, "en", subjectFolder)
+      subjectPath = path.resolve(lessonsDir, "en", subjectFolder)
+      // Security check: Prevent Path Traversal for fallback path
+      if (!subjectPath.startsWith(lessonsDir)) {
+        return NextResponse.json({ error: "Access denied" }, { status: 403 })
+      }
     }
 
     if (!fs.existsSync(subjectPath)) {

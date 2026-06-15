@@ -21,31 +21,31 @@ marked.setOptions({
   breaks: true,
 })
 
-// Map Tailwind class names to theme hex/oklch values for CSS variables
+// Map Tailwind class names to high-contrast theme hex/oklch values for CSS variables
 const colorMapFrom: Record<string, string> = {
-  "from-violet-400": "oklch(0.75 0.18 290)", // Git & GitHub / DSA
-  "from-blue-500": "oklch(0.65 0.25 250)",   // FE
-  "from-orange-400": "oklch(0.75 0.18 65)",   // AWS
-  "from-emerald-400": "oklch(0.78 0.2 145)",  // Database
-  "from-pink-400": "oklch(0.7 0.22 340)",    // BJT
-  "from-cyan-400": "oklch(0.75 0.18 195)",   // DevOps
-  "from-red-400": "oklch(0.7 0.22 25)",      // System Design
-  "from-purple-400": "oklch(0.7 0.25 290)",  // DSA
-  "from-yellow-400": "oklch(0.8 0.18 85)",   // Mindset
-  "from-red-500": "oklch(0.6 0.25 25)",      // Security
-  "from-yellow-500": "oklch(0.75 0.2 85)",   // Blockchain
+  "from-violet-400": "oklch(0.85 0.15 290)", // Light bright violet
+  "from-blue-500": "oklch(0.82 0.18 250)",   // Light bright blue
+  "from-orange-400": "oklch(0.85 0.16 65)",   // Light bright orange
+  "from-emerald-400": "oklch(0.86 0.15 145)",  // Light bright emerald
+  "from-pink-400": "oklch(0.84 0.18 340)",    // Light bright pink
+  "from-cyan-400": "oklch(0.86 0.14 195)",   // Light bright cyan
+  "from-red-400": "oklch(0.82 0.18 25)",      // Light bright red
+  "from-purple-400": "oklch(0.83 0.18 290)",  // Light bright purple
+  "from-yellow-400": "oklch(0.88 0.15 85)",   // Light bright yellow
+  "from-red-500": "oklch(0.80 0.2 25)",      // Bright red
+  "from-yellow-500": "oklch(0.85 0.18 85)",   // Bright yellow
 }
 
 const colorMapTo: Record<string, string> = {
-  "to-indigo-500": "oklch(0.55 0.25 260)",
-  "to-indigo-600": "oklch(0.45 0.25 260)",
-  "to-amber-500": "oklch(0.75 0.18 75)",
-  "to-teal-500": "oklch(0.65 0.2 175)",
-  "to-rose-500": "oklch(0.6 0.22 350)",
-  "to-blue-500": "oklch(0.55 0.25 250)",
-  "to-violet-500": "oklch(0.6 0.25 290)",
-  "to-orange-500": "oklch(0.65 0.2 65)",
-  "to-red-700": "oklch(0.45 0.25 25)",
+  "to-indigo-500": "oklch(0.72 0.18 260)",
+  "to-indigo-600": "oklch(0.68 0.18 260)",
+  "to-amber-500": "oklch(0.78 0.15 75)",
+  "to-teal-500": "oklch(0.76 0.15 175)",
+  "to-rose-500": "oklch(0.72 0.18 350)",
+  "to-blue-500": "oklch(0.70 0.18 250)",
+  "to-violet-500": "oklch(0.73 0.18 290)",
+  "to-orange-500": "oklch(0.75 0.16 65)",
+  "to-red-700": "oklch(0.68 0.20 25)",
 }
 
 export default function LessonPage({
@@ -233,7 +233,14 @@ export default function LessonPage({
                   <div className={`absolute top-0 right-0 w-96 h-96 bg-gradient-to-br ${subject.colorFrom} ${subject.colorTo} opacity-[0.03] blur-3xl pointer-events-none`} />
 
                   <header className="space-y-3 pb-6 border-b border-white/5">
-                    <h1 className={cn("text-2xl lg:text-3xl font-extrabold tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r", subject.colorFrom, subject.colorTo)}>
+                    <h1 
+                      className="text-2xl lg:text-3xl font-extrabold tracking-tight leading-tight text-transparent bg-clip-text"
+                      style={{
+                        background: `linear-gradient(to right, ${colorMapFrom[subject.colorFrom] || "oklch(0.85 0.15 195)"}, ${colorMapTo[subject.colorTo] || "oklch(0.72 0.18 290)"})`,
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent"
+                      }}
+                    >
                       {lessonData?.title}
                     </h1>
                     {lessonData?.description && (

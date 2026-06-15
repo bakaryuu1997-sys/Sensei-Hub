@@ -115,15 +115,24 @@ export async function GET(
     }
 
     const subjectFolder = slugToFolder[slug] || slug
-    const lessonsDir = path.join(process.cwd(), "../lessons")
+    const lessonsDir = path.resolve(process.cwd(), "../lessons")
 
     // Try selected language, fallback to English
     let langToUse = lang
-    let fullFilePath = path.join(lessonsDir, langToUse, subjectFolder, `${lessonPath}.md`)
+    let fullFilePath = path.resolve(lessonsDir, langToUse, subjectFolder, `${lessonPath}.md`)
+
+    // Security check: Prevent Path Traversal
+    if (!fullFilePath.startsWith(lessonsDir)) {
+      return NextResponse.json({ error: "Access denied" }, { status: 403 })
+    }
 
     if (!fs.existsSync(fullFilePath)) {
       langToUse = "en"
-      fullFilePath = path.join(lessonsDir, "en", subjectFolder, `${lessonPath}.md`)
+      fullFilePath = path.resolve(lessonsDir, "en", subjectFolder, `${lessonPath}.md`)
+      // Security check: Prevent Path Traversal for fallback file
+      if (!fullFilePath.startsWith(lessonsDir)) {
+        return NextResponse.json({ error: "Access denied" }, { status: 403 })
+      }
     }
 
     if (!fs.existsSync(fullFilePath)) {
