@@ -2,17 +2,19 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { Play, ChevronRight, Sparkles, Users, Star } from "lucide-react"
+import { Play, ChevronRight, Sparkles, Layers, BookOpen, Clock } from "lucide-react"
 import { useLanguage } from "@/lib/i18n"
+import { computeOverallStats } from "@/lib/subjects"
 
 export function HeroBanner() {
   const { t } = useLanguage()
+  const overall = computeOverallStats()
 
   return (
     <motion.section
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+      transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as const }}
       className="relative overflow-hidden rounded-3xl border border-white/10"
     >
       {/* Background image */}
@@ -70,33 +72,24 @@ export function HeroBanner() {
             {t("hero.description")}
           </motion.p>
 
-          {/* Stats row */}
+          {/* Stats row - real aggregated data */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="flex items-center gap-5"
+            className="flex flex-wrap items-center gap-x-5 gap-y-2"
           >
-            <div className="flex items-center gap-2">
-              <div className="flex -space-x-2">
-                {["from-pink-400 to-rose-500", "from-cyan-400 to-blue-500", "from-amber-400 to-orange-500"].map(
-                  (g, i) => (
-                    <div
-                      key={i}
-                      className={`w-7 h-7 rounded-full bg-gradient-to-br ${g} border-2 border-slate-950`}
-                    />
-                  ),
-                )}
-              </div>
-              <span className="text-xs text-white/60">
-                <span className="font-bold text-white">12.4k</span> learners
-              </span>
+            <div className="flex items-center gap-1.5 text-xs text-white/70">
+              <Layers className="w-3.5 h-3.5 text-cyan-300" />
+              <span className="font-bold text-white">{overall.totalSubjects}</span> {t("nav.subjects").toLowerCase()}
             </div>
-            <div className="flex items-center gap-1">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-              ))}
-              <span className="text-xs text-white/60 ml-1">4.9</span>
+            <div className="flex items-center gap-1.5 text-xs text-white/70">
+              <BookOpen className="w-3.5 h-3.5 text-pink-300" />
+              <span className="font-bold text-white">{overall.totalLessons}</span> {t("subject.lessons")}
+            </div>
+            <div className="flex items-center gap-1.5 text-xs text-white/70">
+              <Clock className="w-3.5 h-3.5 text-amber-300" />
+              <span className="font-bold text-white">{overall.totalHours}h</span> {t("stats.hours").toLowerCase()}
             </div>
           </motion.div>
 
@@ -154,7 +147,7 @@ export function HeroBanner() {
               >
                 <div className="flex items-center gap-1.5">
                   <Sparkles className="w-3.5 h-3.5 text-white" />
-                  <span className="text-xs font-bold text-white">+250 XP</span>
+                  <span className="text-xs font-bold text-white">{overall.averageProgress}% avg</span>
                 </div>
               </motion.div>
 
@@ -165,8 +158,8 @@ export function HeroBanner() {
                 className="absolute -bottom-2 -left-3 px-3 py-2 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-white/15 shadow-xl"
               >
                 <div className="flex items-center gap-1.5">
-                  <Users className="w-3.5 h-3.5 text-cyan-400" />
-                  <span className="text-xs font-bold text-white">Live</span>
+                  <Layers className="w-3.5 h-3.5 text-cyan-400" />
+                  <span className="text-xs font-bold text-white">{overall.inProgressSubjects} active</span>
                 </div>
               </motion.div>
             </motion.div>

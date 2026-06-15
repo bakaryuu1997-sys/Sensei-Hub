@@ -1,12 +1,33 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Search, Bell, Command, Zap } from "lucide-react"
+import { Search, Bell, Command, Activity, Volume2, VolumeX } from "lucide-react"
 import { useLanguage } from "@/lib/i18n"
 import { LanguageSwitcher } from "./language-switcher"
+import { computeOverallStats } from "@/lib/subjects"
 
 export function TopBar() {
   const { t } = useLanguage()
+  const overall = computeOverallStats()
+  const [muted, setMuted] = useState(true)
+
+  useEffect(() => {
+    const stored = localStorage.getItem("cosmic-audio-muted")
+    // Default to unmuted (false) if not set, or read stored
+    if (stored !== null) {
+      setMuted(stored === "true")
+    } else {
+      setMuted(false)
+      localStorage.setItem("cosmic-audio-muted", "false")
+    }
+  }, [])
+
+  const toggleMute = () => {
+    const nextVal = !muted
+    setMuted(nextVal)
+    localStorage.setItem("cosmic-audio-muted", String(nextVal))
+  }
 
   return (
     <motion.header
@@ -31,14 +52,14 @@ export function TopBar() {
         </div>
       </div>
 
-      {/* Streak Pill */}
+      {/* Overall progress pill (real data) */}
       <motion.div
         whileHover={{ scale: 1.05 }}
-        className="hidden md:flex items-center gap-2 px-3 py-2 rounded-xl bg-gradient-to-r from-orange-500/20 to-pink-500/20 border border-orange-500/30"
+        className="hidden md:flex items-center gap-2 px-3 py-2 rounded-xl bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30"
       >
-        <Zap className="w-4 h-4 text-orange-400 fill-orange-400" />
-        <span className="text-sm font-bold text-white">12</span>
-        <span className="text-xs text-orange-200/80 hidden lg:inline">days</span>
+        <Activity className="w-4 h-4 text-cyan-300" />
+        <span className="text-sm font-bold text-white">{overall.averageProgress}%</span>
+        <span className="text-xs text-cyan-200/80 hidden lg:inline">{t("stats.progress").toLowerCase()}</span>
       </motion.div>
 
       {/* Language Switcher */}
@@ -52,9 +73,17 @@ export function TopBar() {
         aria-label="Notifications"
       >
         <Bell className="w-4 h-4 text-white/80" />
-        <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-pink-500 to-red-500 text-[9px] font-bold text-white border-2 border-slate-950">
-          3
-        </span>
+      </motion.button>
+
+      {/* Audio Toggle */}
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={toggleMute}
+        className="relative w-11 h-11 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center transition-colors text-white/80"
+        aria-label="Toggle Cosmic Audio"
+      >
+        {muted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-cyan-400" />}
       </motion.button>
 
       {/* Profile */}
@@ -71,7 +100,7 @@ export function TopBar() {
         </div>
         <div className="hidden md:block text-left">
           <div className="text-xs font-semibold text-white leading-tight">Developer</div>
-          <div className="text-[10px] text-cyan-300/80 font-mono">LV.12</div>
+          <div className="text-[10px] text-cyan-300/80 font-mono">{overall.completedLessons} {t("subject.lessons")}</div>
         </div>
       </motion.button>
     </motion.header>

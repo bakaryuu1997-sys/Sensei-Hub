@@ -129,14 +129,17 @@
   }
 }
 
-/* Vibrant Mesh Gradient Background */
+/* Cosmic Background with Galaxy Image and Colored Overlays */
 .mesh-gradient {
-  background: 
-    radial-gradient(ellipse 100% 80% at 10% 20%, oklch(0.65 0.25 250 / 0.2), transparent 50%),
-    radial-gradient(ellipse 80% 60% at 90% 30%, oklch(0.75 0.18 195 / 0.18), transparent 50%),
-    radial-gradient(ellipse 70% 70% at 50% 90%, oklch(0.7 0.25 290 / 0.15), transparent 50%),
-    radial-gradient(ellipse 60% 50% at 30% 60%, oklch(0.78 0.2 145 / 0.1), transparent 50%),
-    oklch(0.12 0.025 270);
+  background-image: 
+    radial-gradient(ellipse 100% 80% at 10% 20%, oklch(0.65 0.25 250 / 0.15), transparent 50%),
+    radial-gradient(ellipse 80% 60% at 90% 30%, oklch(0.75 0.18 195 / 0.15), transparent 50%),
+    url('/images/cosmic-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: oklch(0.08 0.02 270);
 }
 
 /* Glassmorphism Card */
@@ -371,3 +374,72 @@
 .glow-orange { box-shadow: 0 0 30px oklch(0.75 0.18 65 / 0.4); }
 .glow-yellow { box-shadow: 0 0 30px oklch(0.8 0.18 85 / 0.4); }
 .glow-pink { box-shadow: 0 0 30px oklch(0.65 0.22 340 / 0.4); }
+
+/* Twinkling and float keyframes for cosmic elements */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(15px) rotate(-3deg); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.animate-twinkle {
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+/* Subject-specific hover neon-glow effects */
+.glow-hover-aws { transition: all 0.3s ease; }
+.glow-hover-aws:hover {
+  border-color: var(--aws-color) !important;
+  box-shadow: 0 0 30px oklch(0.75 0.18 65 / 0.25), inset 0 1px 0 oklch(0.98 0 0 / 0.15) !important;
+}
+
+.glow-hover-bjt { transition: all 0.3s ease; }
+.glow-hover-bjt:hover {
+  border-color: var(--bjt-color) !important;
+  box-shadow: 0 0 30px oklch(0.65 0.22 340 / 0.25), inset 0 1px 0 oklch(0.98 0 0 / 0.15) !important;
+}
+
+.glow-hover-database { transition: all 0.3s ease; }
+.glow-hover-database:hover {
+  border-color: var(--database-color) !important;
+  box-shadow: 0 0 30px oklch(0.7 0.2 145 / 0.25), inset 0 1px 0 oklch(0.98 0 0 / 0.15) !important;
+}
+
+.glow-hover-devops { transition: all 0.3s ease; }
+.glow-hover-devops:hover {
+  border-color: var(--devops-color) !important;
+  box-shadow: 0 0 30px oklch(0.75 0.18 195 / 0.25), inset 0 1px 0 oklch(0.98 0 0 / 0.15) !important;
+}
+
+.glow-hover-dsa { transition: all 0.3s ease; }
+.glow-hover-dsa:hover {
+  border-color: var(--dsa-color) !important;
+  box-shadow: 0 0 30px oklch(0.7 0.25 290 / 0.25), inset 0 1px 0 oklch(0.98 0 0 / 0.15) !important;
+}
+
+.glow-hover-fe { transition: all 0.3s ease; }
+.glow-hover-fe:hover {
+  border-color: var(--fe-color) !important;
+  box-shadow: 0 0 30px oklch(0.65 0.25 250 / 0.25), inset 0 1px 0 oklch(0.98 0 0 / 0.15) !important;
+}
+
+.glow-hover-mindset { transition: all 0.3s ease; }
+.glow-hover-mindset:hover {
+  border-color: var(--mindset-color) !important;
+  box-shadow: 0 0 30px oklch(0.8 0.15 85 / 0.25), inset 0 1px 0 oklch(0.98 0 0 / 0.15) !important;
+}
+
+.glow-hover-sysdesign { transition: all 0.3s ease; }
+.glow-hover-sysdesign:hover {
+  border-color: var(--sysdesign-color) !important;
+  box-shadow: 0 0 30px oklch(0.7 0.2 20 / 0.25), inset 0 1px 0 oklch(0.98 0 0 / 0.15) !important;
+}

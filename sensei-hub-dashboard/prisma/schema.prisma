@@ -1,0 +1,117 @@
+// This is your Prisma schema file
+// Prepared for Sensei Hub
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum ProgressStatus {
+  IN_PROGRESS
+  COMPLETED
+}
+
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  password      String
+  name          String?
+  image         String?
+  role          Role      @default(USER)
+  preferredLang String    @default("vi")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  lessons       LessonProgress[]
+  quizResults   QuizResult[]
+  favorites     FavoriteVocab[]
+}
+
+model LessonProgress {
+  id        String         @id @default(uuid())
+  userId    String
+  user      User           @relation(fields: [userId], references: [id])
+  lessonId  String         // Path or Slug of the markdown file
+  status    ProgressStatus @default(IN_PROGRESS)
+  lastViewed DateTime      @default(now())
+
+  @@unique([userId, lessonId])
+}
+
+model Vocabulary {
+  id           String   @id @default(uuid())
+  termJa       String
+  termVi       String
+  termEn       String?
+  reading      String?
+  definitionJa String?
+  definitionVi String?
+  exampleJa    String?
+  exampleVi    String?
+  category     String?
+  createdAt    DateTime @default(now())
+
+  favoritedBy  FavoriteVocab[]
+}
+
+model FavoriteVocab {
+  userId    String
+  user      User       @relation(fields: [userId], references: [id])
+  vocabId   String
+  vocab     Vocabulary @relation(fields: [vocabId], references: [id])
+
+  @@id([userId, vocabId])
+}
+
+model Question {
+  id          String   @id @default(uuid())
+  type        String   @default("MULTIPLE_CHOICE")
+  contentJa   String
+  contentVi   String
+  explanation String?
+  category    String?
+  level       Int      @default(1)
+
+  options     Option[]
+  results     QuizAnswer[]
+}
+
+model Option {
+  id         String   @id @default(uuid())
+  questionId String
+  question   Question @relation(fields: [questionId], references: [id])
+  textJa     String
+  textVi     String
+  isCorrect  Boolean  @default(false)
+}
+
+model QuizResult {
+  id          String   @id @default(uuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  score       Int
+  totalItems  Int
+  duration    Int
+  createdAt   DateTime @default(now())
+  
+  answers     QuizAnswer[]
+}
+
+model QuizAnswer {
+  id           String     @id @default(uuid())
+  quizResultId String
+  quizResult   QuizResult @relation(fields: [quizResultId], references: [id])
+  questionId   String
+  question     Question   @relation(fields: [questionId], references: [id])
+  chosenOptionId String
+  isCorrect    Boolean
+}

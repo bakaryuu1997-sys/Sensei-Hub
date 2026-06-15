@@ -1,0 +1,614 @@
+import { Cloud, Languages, Database, GitBranch, Binary, Palette, Brain, Network, type LucideIcon } from "lucide-react"
+
+export type Subject = {
+  id: string
+  slug: string
+  name: string
+  fullName: string
+  tagline: string
+  description: string
+  icon: LucideIcon
+  gradient: string
+  colorFrom: string
+  colorTo: string
+  progress: number
+  totalLessons: number
+  completedLessons: number
+  hours: number
+  level: string
+  modules: Module[]
+}
+
+export type Module = {
+  id: string
+  title: string
+  description: string
+  lessons: number
+  duration: string
+  difficulty: "Beginner" | "Intermediate" | "Advanced"
+  progress: number
+  locked?: boolean
+}
+
+export const subjects: Subject[] = [
+  {
+    id: "aws",
+    slug: "aws",
+    name: "AWS",
+    fullName: "Amazon Web Services",
+    tagline: "Master the cloud, scale infinitely",
+    description:
+      "Build, deploy, and scale production applications on the world's leading cloud platform. From EC2 to Lambda, master 200+ AWS services.",
+    icon: Cloud,
+    gradient: "icon-gradient-aws",
+    colorFrom: "from-orange-400",
+    colorTo: "to-amber-500",
+    progress: 65,
+    totalLessons: 48,
+    completedLessons: 31,
+    hours: 42,
+    level: "Intermediate",
+    modules: [
+      {
+        id: "aws-1",
+        title: "AWS Fundamentals",
+        description: "IAM, regions, availability zones, and core services overview",
+        lessons: 8,
+        duration: "4h 30m",
+        difficulty: "Beginner",
+        progress: 100,
+      },
+      {
+        id: "aws-2",
+        title: "Compute: EC2 & Lambda",
+        description: "Virtual machines, serverless functions, and auto-scaling",
+        lessons: 12,
+        duration: "7h 15m",
+        difficulty: "Intermediate",
+        progress: 75,
+      },
+      {
+        id: "aws-3",
+        title: "Storage: S3, EBS & EFS",
+        description: "Object, block, and file storage solutions",
+        lessons: 9,
+        duration: "5h 00m",
+        difficulty: "Intermediate",
+        progress: 55,
+      },
+      {
+        id: "aws-4",
+        title: "Networking: VPC & Route 53",
+        description: "Virtual networks, subnets, security groups, DNS",
+        lessons: 10,
+        duration: "6h 20m",
+        difficulty: "Advanced",
+        progress: 20,
+      },
+      {
+        id: "aws-5",
+        title: "Database Services",
+        description: "RDS, DynamoDB, Aurora, and ElastiCache deep dive",
+        lessons: 9,
+        duration: "5h 45m",
+        difficulty: "Advanced",
+        progress: 0,
+        locked: true,
+      },
+    ],
+  },
+  {
+    id: "bjt",
+    slug: "bjt",
+    name: "BJT",
+    fullName: "Business Japanese Test",
+    tagline: "Speak business Japanese with confidence",
+    description:
+      "Master business-level Japanese for tech professionals. Keigo, technical vocabulary, meetings, and email etiquette.",
+    icon: Languages,
+    gradient: "icon-gradient-bjt",
+    colorFrom: "from-pink-500",
+    colorTo: "to-rose-500",
+    progress: 42,
+    totalLessons: 36,
+    completedLessons: 15,
+    hours: 28,
+    level: "Intermediate",
+    modules: [
+      {
+        id: "bjt-1",
+        title: "敬語 (Keigo) Basics",
+        description: "Honorific and humble forms for professional settings",
+        lessons: 10,
+        duration: "5h 30m",
+        difficulty: "Beginner",
+        progress: 100,
+      },
+      {
+        id: "bjt-2",
+        title: "Tech Vocabulary",
+        description: "Software development terms in Japanese",
+        lessons: 8,
+        duration: "4h 00m",
+        difficulty: "Intermediate",
+        progress: 65,
+      },
+      {
+        id: "bjt-3",
+        title: "Meeting Phrases",
+        description: "How to participate in Japanese business meetings",
+        lessons: 9,
+        duration: "5h 15m",
+        difficulty: "Intermediate",
+        progress: 30,
+      },
+      {
+        id: "bjt-4",
+        title: "Email & Documents",
+        description: "Writing business emails and technical documentation",
+        lessons: 9,
+        duration: "4h 45m",
+        difficulty: "Advanced",
+        progress: 0,
+        locked: true,
+      },
+    ],
+  },
+  {
+    id: "database",
+    slug: "database",
+    name: "Database",
+    fullName: "Database Engineering",
+    tagline: "Design data systems that scale",
+    description:
+      "From SQL fundamentals to distributed databases. Master indexing, transactions, replication, and modern NoSQL systems.",
+    icon: Database,
+    gradient: "icon-gradient-database",
+    colorFrom: "from-emerald-400",
+    colorTo: "to-green-500",
+    progress: 78,
+    totalLessons: 42,
+    completedLessons: 33,
+    hours: 38,
+    level: "Advanced",
+    modules: [
+      {
+        id: "db-1",
+        title: "SQL Foundations",
+        description: "SELECT, JOIN, GROUP BY, subqueries, and CTEs",
+        lessons: 10,
+        duration: "5h 45m",
+        difficulty: "Beginner",
+        progress: 100,
+      },
+      {
+        id: "db-2",
+        title: "Indexing & Performance",
+        description: "B-trees, hash indexes, query optimization",
+        lessons: 8,
+        duration: "4h 30m",
+        difficulty: "Intermediate",
+        progress: 100,
+      },
+      {
+        id: "db-3",
+        title: "Transactions & ACID",
+        description: "Isolation levels, locking, and concurrency control",
+        lessons: 9,
+        duration: "5h 15m",
+        difficulty: "Advanced",
+        progress: 88,
+      },
+      {
+        id: "db-4",
+        title: "NoSQL & Distributed",
+        description: "MongoDB, Cassandra, Redis, and CAP theorem",
+        lessons: 8,
+        duration: "5h 00m",
+        difficulty: "Advanced",
+        progress: 55,
+      },
+      {
+        id: "db-5",
+        title: "Replication & Sharding",
+        description: "Horizontal scaling strategies for big data",
+        lessons: 7,
+        duration: "4h 20m",
+        difficulty: "Advanced",
+        progress: 25,
+      },
+    ],
+  },
+  {
+    id: "devops",
+    slug: "devops",
+    name: "DevOps",
+    fullName: "DevOps & Infrastructure",
+    tagline: "Ship faster, ship safer",
+    description:
+      "Master CI/CD pipelines, containerization, infrastructure as code, and observability. Build production-grade automation.",
+    icon: GitBranch,
+    gradient: "icon-gradient-devops",
+    colorFrom: "from-cyan-400",
+    colorTo: "to-teal-500",
+    progress: 55,
+    totalLessons: 40,
+    completedLessons: 22,
+    hours: 32,
+    level: "Intermediate",
+    modules: [
+      {
+        id: "devops-1",
+        title: "Git & Version Control",
+        description: "Branching strategies, rebasing, and team workflows",
+        lessons: 8,
+        duration: "4h 00m",
+        difficulty: "Beginner",
+        progress: 100,
+      },
+      {
+        id: "devops-2",
+        title: "Docker & Containers",
+        description: "Dockerfile, multi-stage builds, Docker Compose",
+        lessons: 10,
+        duration: "5h 30m",
+        difficulty: "Intermediate",
+        progress: 80,
+      },
+      {
+        id: "devops-3",
+        title: "Kubernetes",
+        description: "Pods, deployments, services, and Helm charts",
+        lessons: 12,
+        duration: "7h 00m",
+        difficulty: "Advanced",
+        progress: 40,
+      },
+      {
+        id: "devops-4",
+        title: "CI/CD Pipelines",
+        description: "GitHub Actions, GitLab CI, and deployment strategies",
+        lessons: 10,
+        duration: "5h 45m",
+        difficulty: "Intermediate",
+        progress: 15,
+      },
+    ],
+  },
+  {
+    id: "dsa",
+    slug: "dsa",
+    name: "DSA",
+    fullName: "Data Structures & Algorithms",
+    tagline: "Think like an algorithm",
+    description:
+      "Crush coding interviews with mastery of arrays, trees, graphs, dynamic programming, and complexity analysis.",
+    icon: Binary,
+    gradient: "icon-gradient-dsa",
+    colorFrom: "from-violet-500",
+    colorTo: "to-purple-600",
+    progress: 33,
+    totalLessons: 60,
+    completedLessons: 20,
+    hours: 25,
+    level: "Intermediate",
+    modules: [
+      {
+        id: "dsa-1",
+        title: "Arrays & Strings",
+        description: "Two pointers, sliding window, prefix sums",
+        lessons: 12,
+        duration: "6h 30m",
+        difficulty: "Beginner",
+        progress: 100,
+      },
+      {
+        id: "dsa-2",
+        title: "Linked Lists & Stacks",
+        description: "Traversal patterns, monotonic stacks",
+        lessons: 10,
+        duration: "5h 15m",
+        difficulty: "Intermediate",
+        progress: 70,
+      },
+      {
+        id: "dsa-3",
+        title: "Trees & Graphs",
+        description: "BFS, DFS, traversal, and shortest paths",
+        lessons: 14,
+        duration: "8h 00m",
+        difficulty: "Intermediate",
+        progress: 20,
+      },
+      {
+        id: "dsa-4",
+        title: "Dynamic Programming",
+        description: "Memoization, tabulation, and classic DP problems",
+        lessons: 14,
+        duration: "8h 30m",
+        difficulty: "Advanced",
+        progress: 0,
+        locked: true,
+      },
+      {
+        id: "dsa-5",
+        title: "Greedy & Backtracking",
+        description: "Optimization strategies and constraint solving",
+        lessons: 10,
+        duration: "5h 45m",
+        difficulty: "Advanced",
+        progress: 0,
+        locked: true,
+      },
+    ],
+  },
+  {
+    id: "fe",
+    slug: "fe",
+    name: "基本情報",
+    fullName: "基本情報技術者試験 (Fundamental IT Engineer)",
+    tagline: "日本のIT資格をマスター",
+    description:
+      "Master the Japanese Fundamental Information Technology Engineer Examination. Covers algorithms, hardware, networks, databases, and project management.",
+    icon: Palette,
+    gradient: "icon-gradient-fe",
+    colorFrom: "from-blue-500",
+    colorTo: "to-indigo-600",
+    progress: 89,
+    totalLessons: 55,
+    completedLessons: 49,
+    hours: 65,
+    level: "Advanced",
+    modules: [
+      {
+        id: "fe-1",
+        title: "テクノロジ系 (Technology)",
+        description: "Hardware, software, algorithms, and programming fundamentals",
+        lessons: 15,
+        duration: "9h 00m",
+        difficulty: "Intermediate",
+        progress: 100,
+      },
+      {
+        id: "fe-2",
+        title: "マネジメント系 (Management)",
+        description: "Project management, service management, and audit",
+        lessons: 10,
+        duration: "5h 30m",
+        difficulty: "Intermediate",
+        progress: 100,
+      },
+      {
+        id: "fe-3",
+        title: "ストラテジ系 (Strategy)",
+        description: "Business strategy, corporate activities, legal affairs",
+        lessons: 10,
+        duration: "5h 00m",
+        difficulty: "Intermediate",
+        progress: 95,
+      },
+      {
+        id: "fe-4",
+        title: "アルゴリズム (Algorithms)",
+        description: "Detailed algorithm questions and pseudocode practice",
+        lessons: 12,
+        duration: "7h 30m",
+        difficulty: "Advanced",
+        progress: 80,
+      },
+      {
+        id: "fe-5",
+        title: "過去問演習 (Past Papers)",
+        description: "Real exam questions with detailed explanations",
+        lessons: 8,
+        duration: "6h 00m",
+        difficulty: "Advanced",
+        progress: 70,
+      },
+    ],
+  },
+  {
+    id: "mindset",
+    slug: "mindset",
+    name: "Mindset",
+    fullName: "Growth Mindset & Soft Skills",
+    tagline: "Engineer your mind for success",
+    description:
+      "Develop the mental frameworks of top engineers. Deep work, communication, learning how to learn, and handling complexity.",
+    icon: Brain,
+    gradient: "icon-gradient-mindset",
+    colorFrom: "from-yellow-400",
+    colorTo: "to-amber-500",
+    progress: 70,
+    totalLessons: 30,
+    completedLessons: 21,
+    hours: 18,
+    level: "All Levels",
+    modules: [
+      {
+        id: "mind-1",
+        title: "Deep Work & Focus",
+        description: "Eliminate distractions, build flow state habits",
+        lessons: 7,
+        duration: "3h 30m",
+        difficulty: "Beginner",
+        progress: 100,
+      },
+      {
+        id: "mind-2",
+        title: "Learning How to Learn",
+        description: "Spaced repetition, active recall, and metacognition",
+        lessons: 8,
+        duration: "4h 00m",
+        difficulty: "Beginner",
+        progress: 100,
+      },
+      {
+        id: "mind-3",
+        title: "Communication Skills",
+        description: "Technical writing, code reviews, and presentations",
+        lessons: 8,
+        duration: "4h 30m",
+        difficulty: "Intermediate",
+        progress: 60,
+      },
+      {
+        id: "mind-4",
+        title: "Handling Complexity",
+        description: "Decision frameworks, debugging mindset, and resilience",
+        lessons: 7,
+        duration: "3h 45m",
+        difficulty: "Advanced",
+        progress: 20,
+      },
+    ],
+  },
+  {
+    id: "system-design",
+    slug: "system-design",
+    name: "System Design",
+    fullName: "System Design & Architecture",
+    tagline: "Architect for billions",
+    description:
+      "Design scalable, fault-tolerant distributed systems. Caching, load balancing, message queues, and real-world case studies.",
+    icon: Network,
+    gradient: "icon-gradient-sysdesign",
+    colorFrom: "from-red-500",
+    colorTo: "to-orange-500",
+    progress: 48,
+    totalLessons: 38,
+    completedLessons: 18,
+    hours: 35,
+    level: "Advanced",
+    modules: [
+      {
+        id: "sd-1",
+        title: "Fundamentals",
+        description: "Scalability, reliability, latency vs throughput",
+        lessons: 8,
+        duration: "4h 30m",
+        difficulty: "Intermediate",
+        progress: 100,
+      },
+      {
+        id: "sd-2",
+        title: "Caching Strategies",
+        description: "Redis, CDN, write-through vs write-back",
+        lessons: 7,
+        duration: "4h 00m",
+        difficulty: "Intermediate",
+        progress: 80,
+      },
+      {
+        id: "sd-3",
+        title: "Load Balancing & Queues",
+        description: "L4/L7 LB, Kafka, RabbitMQ, message patterns",
+        lessons: 9,
+        duration: "5h 15m",
+        difficulty: "Advanced",
+        progress: 45,
+      },
+      {
+        id: "sd-4",
+        title: "Real-World Case Studies",
+        description: "Design Twitter, Netflix, Uber, and WhatsApp",
+        lessons: 8,
+        duration: "6h 00m",
+        difficulty: "Advanced",
+        progress: 15,
+      },
+      {
+        id: "sd-5",
+        title: "Microservices",
+        description: "Service mesh, API gateway, event-driven architecture",
+        lessons: 6,
+        duration: "4h 00m",
+        difficulty: "Advanced",
+        progress: 0,
+        locked: true,
+      },
+    ],
+  },
+]
+
+export function getSubjectBySlug(slug: string): Subject | undefined {
+  return subjects.find((s) => s.slug === slug)
+}
+
+export type SubjectStats = {
+  totalLessons: number
+  completedLessons: number
+  progress: number
+  totalMinutes: number
+  hours: number
+  minutes: number
+  moduleCount: number
+  completedModules: number
+}
+
+/** Parse a "4h 30m" style duration string into total minutes. */
+function parseDurationToMinutes(duration: string): number {
+  let minutes = 0
+  const hMatch = duration.match(/(\d+)\s*h/)
+  const mMatch = duration.match(/(\d+)\s*m/)
+  if (hMatch) minutes += Number.parseInt(hMatch[1], 10) * 60
+  if (mMatch) minutes += Number.parseInt(mMatch[1], 10)
+  return minutes
+}
+
+/**
+ * Computes real, consistent stats derived directly from a subject's modules,
+ * so every displayed number traces back to the underlying lesson data.
+ */
+export function computeSubjectStats(subject: Subject): SubjectStats {
+  const totalLessons = subject.modules.reduce((sum, m) => sum + m.lessons, 0)
+  const completedLessons = subject.modules.reduce(
+    (sum, m) => sum + Math.round((m.lessons * m.progress) / 100),
+    0,
+  )
+  const progress = totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0
+  const totalMinutes = subject.modules.reduce((sum, m) => sum + parseDurationToMinutes(m.duration), 0)
+  const completedModules = subject.modules.filter((m) => m.progress === 100).length
+
+  return {
+    totalLessons,
+    completedLessons,
+    progress,
+    totalMinutes,
+    hours: Math.floor(totalMinutes / 60),
+    minutes: totalMinutes % 60,
+    moduleCount: subject.modules.length,
+    completedModules,
+  }
+}
+
+export type OverallStats = {
+  totalLessons: number
+  completedLessons: number
+  totalSubjects: number
+  inProgressSubjects: number
+  totalHours: number
+  averageProgress: number
+  perSubjectProgress: number[]
+}
+
+/** Aggregates real stats across every subject for the dashboard overview. */
+export function computeOverallStats(): OverallStats {
+  const all = subjects.map((s) => computeSubjectStats(s))
+  const totalLessons = all.reduce((sum, s) => sum + s.totalLessons, 0)
+  const completedLessons = all.reduce((sum, s) => sum + s.completedLessons, 0)
+  const totalMinutes = all.reduce((sum, s) => sum + s.totalMinutes, 0)
+  const inProgressSubjects = all.filter((s) => s.progress > 0 && s.progress < 100).length
+  const averageProgress =
+    totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0
+
+  return {
+    totalLessons,
+    completedLessons,
+    totalSubjects: subjects.length,
+    inProgressSubjects,
+    totalHours: Math.round(totalMinutes / 60),
+    averageProgress,
+    perSubjectProgress: all.map((s) => s.progress),
+  }
+}

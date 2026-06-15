@@ -6,7 +6,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { useLanguage } from "@/lib/i18n"
-import { subjects } from "@/lib/subjects"
+import { subjects, computeSubjectStats } from "@/lib/subjects"
 
 const sidebarVariants = {
   hidden: { x: -20, opacity: 0 },
@@ -27,7 +27,7 @@ const itemVariants = {
     opacity: 1,
     transition: {
       duration: 0.35,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      ease: [0.25, 0.46, 0.45, 0.94] as const,
     },
   },
 }
@@ -102,6 +102,7 @@ export function Sidebar() {
             const href = `/subject/${subject.slug}`
             const isActive = pathname === href
             const Icon = subject.icon
+            const progress = computeSubjectStats(subject).progress
             return (
               <motion.div key={subject.id} variants={itemVariants}>
                 <Link
@@ -126,13 +127,13 @@ export function Sidebar() {
                     <div className="mt-1 h-1 w-full overflow-hidden rounded-full bg-white/10">
                       <motion.div
                         initial={{ width: 0 }}
-                        animate={{ width: `${subject.progress}%` }}
+                        animate={{ width: `${progress}%` }}
                         transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
                         className={cn("h-full rounded-full bg-gradient-to-r", subject.colorFrom, subject.colorTo)}
                       />
                     </div>
                   </div>
-                  <span className="text-xs text-white/50">{subject.progress}%</span>
+                  <span className="text-xs text-white/50">{progress}%</span>
                   {isActive && (
                     <motion.div
                       layoutId="activeIndicator"

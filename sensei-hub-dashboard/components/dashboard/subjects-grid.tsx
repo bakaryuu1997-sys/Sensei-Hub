@@ -5,7 +5,8 @@ import Link from "next/link"
 import { ArrowUpRight, BookOpen, Clock } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useLanguage } from "@/lib/i18n"
-import { subjects } from "@/lib/subjects"
+import { subjects, computeSubjectStats } from "@/lib/subjects"
+import { useCosmicAudio } from "@/hooks/use-cosmic-audio"
 
 const container = {
   hidden: { opacity: 0 },
@@ -20,19 +21,22 @@ const item = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
+    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as const },
   },
 }
 
 export function SubjectsGrid() {
   const { t } = useLanguage()
+  const { playHover } = useCosmicAudio()
 
   return (
     <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
       <div className="flex items-end justify-between mb-5">
         <div>
-          <h2 className="text-xl font-bold text-white tracking-tight">{t("section.subjects")}</h2>
-          <p className="text-xs text-white/50 mt-1">8 paths · {t("nav.subjects")}</p>
+          <h2 className="text-xl lg:text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-purple-400">{t("section.subjects")}</h2>
+          <p className="text-xs text-white/50 mt-1">
+            {subjects.length} {t("nav.subjects").toLowerCase()}
+          </p>
         </div>
       </div>
 
@@ -44,10 +48,19 @@ export function SubjectsGrid() {
       >
         {subjects.map((subject) => {
           const Icon = subject.icon
+          const s = computeSubjectStats(subject)
           return (
             <motion.div key={subject.id} variants={item}>
-              <Link href={`/subject/${subject.slug}`} className="group block h-full">
-                <div className="relative h-full rounded-2xl overflow-hidden glass-card border border-white/10 p-5 transition-all duration-300 hover:border-white/20 hover:-translate-y-1 hover:shadow-2xl">
+              <Link
+                href={`/subject/${subject.slug}`}
+                className="group block h-full"
+                onMouseEnter={playHover}
+                onClick={playHover}
+              >
+                <div className={cn(
+                  "relative h-full rounded-3xl overflow-hidden glass-card border border-white/10 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl",
+                  `glow-hover-${subject.slug}`
+                )}>
                   {/* Gradient glow on hover */}
                   <div
                     className={cn(
@@ -62,7 +75,7 @@ export function SubjectsGrid() {
                     <div className="flex items-start justify-between">
                       <div
                         className={cn(
-                          "flex h-12 w-12 items-center justify-center rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3",
+                          "flex h-12 w-12 items-center justify-center rounded-2xl shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3",
                           subject.gradient,
                         )}
                       >
@@ -75,22 +88,28 @@ export function SubjectsGrid() {
 
                     {/* Middle: title + tagline */}
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold text-white tracking-tight">{subject.name}</h3>
-                      <p className="text-[11px] text-white/40 font-mono uppercase tracking-wider mt-0.5">
+                      <h3 className={cn(
+                        "text-lg font-extrabold tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r",
+                        subject.colorFrom,
+                        subject.colorTo
+                      )}>
+                        {subject.name}
+                      </h3>
+                      <p className="text-[10px] text-cyan-300/80 font-mono uppercase tracking-wider mt-1.5">
                         {subject.level}
                       </p>
-                      <p className="text-xs text-white/60 mt-2 leading-relaxed line-clamp-2">{subject.tagline}</p>
+                      <p className="text-xs text-slate-300/90 mt-2.5 leading-relaxed line-clamp-2">{subject.tagline}</p>
                     </div>
 
                     {/* Stats */}
-                    <div className="flex items-center gap-3 text-[11px] text-white/50">
-                      <div className="flex items-center gap-1">
-                        <BookOpen className="h-3 w-3" />
-                        <span>{subject.totalLessons}</span>
+                    <div className="flex items-center gap-3 text-[11px] text-white/70 font-medium">
+                      <div className="flex items-center gap-1.5">
+                        <BookOpen className="h-3.5 w-3.5 text-cyan-400" />
+                        <span>{s.totalLessons} {t("subject.lessons")}</span>
                       </div>
-                      <div className="flex items-center gap-1">
-                        <Clock className="h-3 w-3" />
-                        <span>{subject.hours}h</span>
+                      <div className="flex items-center gap-1.5">
+                        <Clock className="h-3.5 w-3.5 text-pink-400" />
+                        <span>{s.hours}h</span>
                       </div>
                     </div>
 
@@ -98,12 +117,12 @@ export function SubjectsGrid() {
                     <div>
                       <div className="flex items-center justify-between mb-1.5">
                         <span className="text-[10px] text-white/40 font-mono uppercase tracking-wider">Progress</span>
-                        <span className="text-xs font-bold text-white">{subject.progress}%</span>
+                        <span className="text-xs font-extrabold text-cyan-200">{s.progress}%</span>
                       </div>
                       <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/10">
                         <motion.div
                           initial={{ width: 0 }}
-                          animate={{ width: `${subject.progress}%` }}
+                          animate={{ width: `${s.progress}%` }}
                           transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
                           className={cn(
                             "h-full rounded-full bg-gradient-to-r",

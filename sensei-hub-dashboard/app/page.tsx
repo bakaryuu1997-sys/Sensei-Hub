@@ -1,52 +1,66 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { Sidebar } from "@/components/dashboard/sidebar"
 import { TopBar } from "@/components/dashboard/top-bar"
 import { HeroBanner } from "@/components/dashboard/hero-banner"
 import { StatsRow } from "@/components/dashboard/stats-row"
 import { SubjectsGrid } from "@/components/dashboard/subjects-grid"
 import { useLanguage } from "@/lib/i18n"
+import { Starfield } from "@/components/dashboard/starfield"
+import { ConstellationMap } from "@/components/dashboard/constellation-map"
 
 export default function DashboardPage() {
   const { t } = useLanguage()
 
   return (
     <div className="relative min-h-screen">
-      {/* Decorative floating orbs */}
+      {/* Decorative floating planets and stars */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden z-0">
-        <div
-          className="floating-orb"
+        <Starfield />
+        {/* Planet 1 - Floating top left */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.35, scale: 1 }}
+          transition={{ duration: 2 }}
+          className="absolute -top-16 -left-16 w-64 h-64 lg:w-96 lg:h-96"
           style={{
-            top: "10%",
-            left: "60%",
-            width: "500px",
-            height: "500px",
-            background: "radial-gradient(circle, #22d3ee, transparent 70%)",
+            animation: "float-slow 25s ease-in-out infinite",
           }}
-        />
-        <div
-          className="floating-orb"
+        >
+          <Image
+            src="/images/planet-1.png"
+            alt="Cosmic planet 1"
+            fill
+            className="object-contain"
+          />
+        </motion.div>
+
+        {/* Planet 2 - Floating bottom right */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.25, scale: 1 }}
+          transition={{ duration: 2, delay: 0.5 }}
+          className="absolute -bottom-24 -right-24 w-80 h-80 lg:w-[480px] lg:h-[480px]"
           style={{
-            top: "50%",
-            left: "5%",
-            width: "400px",
-            height: "400px",
-            background: "radial-gradient(circle, #a855f7, transparent 70%)",
-            animationDelay: "-7s",
+            animation: "float-reverse 30s ease-in-out infinite",
           }}
-        />
-        <div
-          className="floating-orb"
-          style={{
-            bottom: "5%",
-            right: "10%",
-            width: "450px",
-            height: "450px",
-            background: "radial-gradient(circle, #ec4899, transparent 70%)",
-            animationDelay: "-14s",
-          }}
-        />
+        >
+          <Image
+            src="/images/planet-2.png"
+            alt="Cosmic planet 2"
+            fill
+            className="object-contain"
+          />
+        </motion.div>
+
+        {/* Twinkling star decorations */}
+        <div className="absolute top-[15%] left-[35%] w-1.5 h-1.5 bg-white rounded-full animate-twinkle opacity-70" />
+        <div className="absolute top-[60%] left-[80%] w-1 h-1 bg-cyan-300 rounded-full animate-twinkle opacity-90" style={{ animationDelay: "1s" }} />
+        <div className="absolute top-[80%] left-[25%] w-2 h-2 bg-purple-400 rounded-full animate-twinkle opacity-60" style={{ animationDelay: "2s", animationDuration: "5s" }} />
+        <div className="absolute top-[10%] right-[25%] w-1.5 h-1.5 bg-pink-400 rounded-full animate-twinkle opacity-50" style={{ animationDelay: "3s" }} />
+        <div className="absolute top-[45%] left-[50%] w-1 h-1 bg-white rounded-full animate-twinkle opacity-80" style={{ animationDelay: "1.5s", animationDuration: "3s" }} />
       </div>
 
       <Sidebar />
@@ -65,14 +79,14 @@ export default function DashboardPage() {
               className="flex flex-wrap items-end justify-between gap-3"
             >
               <div>
-                <h1 className="text-2xl lg:text-3xl font-bold tracking-tight text-white">
-                  {t("header.greeting")}, <span className="gradient-text-static">Dev</span>
+                <h1 className="text-3xl lg:text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-cyan-300">
+                  {t("header.greeting")}, <span className="gradient-text">Dev</span>
                 </h1>
-                <p className="mt-1 text-sm text-white/60">{t("header.subtitle")}</p>
+                <p className="mt-1 text-sm text-cyan-200/70 font-medium">{t("header.subtitle")}</p>
               </div>
-              <div className="flex items-center gap-1.5 text-xs text-white/50">
+              <div className="flex items-center gap-1.5 text-xs text-white/50 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full backdrop-blur-md">
                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="font-mono">All systems online</span>
+                <span className="font-mono text-cyan-300">All systems online</span>
               </div>
             </motion.div>
 
@@ -81,6 +95,9 @@ export default function DashboardPage() {
 
             {/* Stats Row */}
             <StatsRow />
+
+            {/* Constellation Map */}
+            <ConstellationMap />
 
             {/* Subjects grid (all 8 subjects) */}
             <SubjectsGrid />
