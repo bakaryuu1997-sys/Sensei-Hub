@@ -270,7 +270,7 @@ export default function LessonPage({
                       className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-white/10 bg-white/5 text-sm font-semibold text-white/80 hover:bg-white/10 hover:text-white transition-all active:scale-95"
                     >
                       <ChevronLeft className="h-4 w-4" />
-                      Bài trước
+                      {t("lesson.prev")}
                     </Link>
                   ) : (
                     <div className="hidden sm:block w-24" />
@@ -287,7 +287,7 @@ export default function LessonPage({
                     )}
                   >
                     <CheckCircle2 className={cn("h-4 w-4", isCompleted ? "text-emerald-400" : "text-white/60")} />
-                    {isCompleted ? "Đã hoàn thành" : "Hoàn thành bài học"}
+                    {isCompleted ? t("lesson.completed") : t("lesson.complete")}
                   </button>
 
                   {/* Next Button */}
@@ -296,7 +296,7 @@ export default function LessonPage({
                       href={`/subject/${slug}/lesson/${nextLesson.path}`}
                       className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-white/10 bg-white/5 text-sm font-semibold text-white/80 hover:bg-white/10 hover:text-white transition-all active:scale-95"
                     >
-                      Bài tiếp theo
+                      {t("lesson.next")}
                       <ChevronRight className="h-4 w-4" />
                     </Link>
                   ) : (
@@ -304,7 +304,7 @@ export default function LessonPage({
                       href={`/subject/${slug}`}
                       className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-white/10 bg-white/5 text-sm font-semibold text-white/80 hover:bg-white/10 hover:text-white transition-all active:scale-95"
                     >
-                      Quay lại môn học
+                      {t("lesson.back")}
                       <BookOpen className="h-4 w-4" />
                     </Link>
                   )}

@@ -77,6 +77,11 @@ export const translations: Translations = {
   "action.resume": { en: "Resume", ja: "再開", vi: "Tiếp tục" },
   "action.view_all": { en: "View all", ja: "すべて表示", vi: "Xem tất cả" },
   "action.complete": { en: "Complete", ja: "完了", vi: "Hoàn thành" },
+  "lesson.prev": { en: "Previous Lesson", ja: "前のレッスン", vi: "Bài trước" },
+  "lesson.next": { en: "Next Lesson", ja: "次のレッスン", vi: "Bài tiếp theo" },
+  "lesson.back": { en: "Back to Subject", ja: "科目に戻る", vi: "Quay lại môn học" },
+  "lesson.complete": { en: "Complete Lesson", ja: "レッスンを完了する", vi: "Hoàn thành bài học" },
+  "lesson.completed": { en: "Completed", ja: "完了済み", vi: "Đã hoàn thành" },
 
   // Challenge
   "challenge.title": { en: "Two Sum Problem", ja: "ツーサム問題", vi: "Bài toán Two Sum" },

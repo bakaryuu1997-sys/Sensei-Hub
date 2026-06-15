@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server"
 import fs from "fs"
 import path from "path"
+import { checkRateLimit } from "@/lib/rate-limiter"
+import { getCache, setCache } from "@/lib/api-cache"
 
 const slugToFolder: Record<string, string> = {
   "fe": "fundamental-it-engineer",
@@ -86,9 +88,20 @@ export async function GET(
   { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
+    const ip = request.headers.get("x-forwarded-for") || request.headers.get("x-real-ip") || (request as any).ip || "127.0.0.1"
+    if (!checkRateLimit(ip)) {
+      return NextResponse.json({ error: "Too many requests" }, { status: 429 })
+    }
+
     const { slug } = await params
     const { searchParams } = new URL(request.url)
     const lang = searchParams.get("lang") || "en"
+
+    const cacheKey = `lessons/${slug}/${lang}`
+    const cachedData = getCache(cacheKey)
+    if (cachedData) {
+      return NextResponse.json(cachedData)
+    }
 
     const subjectFolder = slugToFolder[slug] || slug
     const lessonsDir = path.resolve(process.cwd(), "../lessons")
@@ -177,7 +190,9 @@ export async function GET(
       return getNum(a.path) - getNum(b.path)
     })
 
-    return NextResponse.json({ lessons: filesList })
+    const result = { lessons: filesList }
+    setCache(cacheKey, result)
+    return NextResponse.json(result)
   } catch (error: any) {
     console.error("Error fetching lessons:", error)
     return NextResponse.json({ error: error.message }, { status: 500 })

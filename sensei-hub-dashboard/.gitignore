@@ -14,3 +14,10 @@ node_modules
 .next/
 .DS_Store
 .vercel
+
+# Playwright reports and test results
+playwright-report/
+test-results/
+
+# TS build cache
+*.tsbuildinfo
