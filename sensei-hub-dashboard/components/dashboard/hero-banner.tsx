@@ -20,7 +20,7 @@ export function HeroBanner() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/hero-banner.jpg"
+          src="/images/hero-banner.png"
           alt="Featured learning path background"
           fill
           priority
@@ -38,8 +38,8 @@ export function HeroBanner() {
       <div className="absolute bottom-10 right-32 w-40 h-40 rounded-full bg-cyan-500/30 blur-3xl" />
 
       {/* Content */}
-      <div className="relative grid lg:grid-cols-[1.3fr_1fr] gap-6 p-8 lg:p-12 min-h-[340px]">
-        <div className="flex flex-col justify-center gap-5 max-w-xl">
+      <div className="relative flex flex-col justify-center p-8 lg:p-12 min-h-[340px]">
+        <div className="flex flex-col justify-center gap-5 max-w-2xl">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -67,7 +67,7 @@ export function HeroBanner() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-base text-white/70 leading-relaxed text-pretty max-w-md"
+            className="text-base text-white/70 leading-relaxed text-pretty max-w-xl"
           >
             {t("hero.description")}
           </motion.p>
@@ -111,60 +111,6 @@ export function HeroBanner() {
             </button>
           </motion.div>
         </div>
-
-        {/* Right side - floating mascot card */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ delay: 0.8, type: "spring", bounce: 0.3 }}
-          className="hidden lg:flex items-center justify-center relative"
-        >
-          <div className="relative w-full max-w-[280px] aspect-square">
-            {/* Glow */}
-            <div className="absolute inset-4 rounded-full bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 blur-3xl opacity-40" />
-
-            {/* Floating animation */}
-            <motion.div
-              animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-              className="relative w-full h-full"
-            >
-              <div className="absolute inset-0 rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl shadow-purple-500/40">
-                <Image
-                  src="/images/sensei-mascot.jpg"
-                  alt="Sensei mascot character"
-                  fill
-                  className="object-cover"
-                  sizes="280px"
-                />
-              </div>
-
-              {/* Floating badge */}
-              <motion.div
-                animate={{ rotate: [0, 5, -5, 0] }}
-                transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY }}
-                className="absolute -top-2 -right-2 px-3 py-2 rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-500 shadow-xl shadow-orange-500/50 border-2 border-white/20"
-              >
-                <div className="flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-white" />
-                  <span className="text-xs font-bold text-white">{overall.averageProgress}% avg</span>
-                </div>
-              </motion.div>
-
-              {/* Floating users badge */}
-              <motion.div
-                animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, delay: 0.5 }}
-                className="absolute -bottom-2 -left-3 px-3 py-2 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-white/15 shadow-xl"
-              >
-                <div className="flex items-center gap-1.5">
-                  <Layers className="w-3.5 h-3.5 text-cyan-400" />
-                  <span className="text-xs font-bold text-white">{overall.inProgressSubjects} active</span>
-                </div>
-              </motion.div>
-            </motion.div>
-          </div>
-        </motion.div>
       </div>
     </motion.section>
   )

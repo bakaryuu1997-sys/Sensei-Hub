@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Layers, CheckCircle2, Clock, Activity } from "lucide-react"
 import { useLanguage } from "@/lib/i18n"
-import { computeOverallStats } from "@/lib/subjects"
+import { useUserProgress } from "@/components/user-progress-provider"
 
 function Sparkline({ data, color }: { data: number[]; color: string }) {
   if (data.length < 2) return null
@@ -28,7 +28,7 @@ function Sparkline({ data, color }: { data: number[]; color: string }) {
 
 export function StatsRow() {
   const { t } = useLanguage()
-  const overall = computeOverallStats()
+  const { overallStats: overall } = useUserProgress()
 
   const stats = [
     {

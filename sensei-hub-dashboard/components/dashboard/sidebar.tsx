@@ -6,7 +6,8 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { useLanguage } from "@/lib/i18n"
-import { subjects, computeSubjectStats } from "@/lib/subjects"
+import { computeSubjectStats } from "@/lib/subjects"
+import { useUserProgress } from "@/components/user-progress-provider"
 
 const sidebarVariants = {
   hidden: { x: -20, opacity: 0 },
@@ -35,6 +36,7 @@ const itemVariants = {
 export function Sidebar() {
   const pathname = usePathname()
   const { t } = useLanguage()
+  const { subjects } = useUserProgress()
 
   const isHome = pathname === "/"
   const isSubjects = pathname.startsWith("/subject")

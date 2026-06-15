@@ -31,11 +31,11 @@ export const translations: Translations = {
 
   // Hero
   "hero.featured": { en: "Featured Path", ja: "おすすめコース", vi: "Lộ trình nổi bật" },
-  "hero.title": { en: "Master Full-Stack Engineering", ja: "フルスタックエンジニアリングをマスター", vi: "Làm chủ Full-Stack Engineering" },
+  "hero.title": { en: "Master the Universe of IT Knowledge", ja: "IT知識の宇宙をマスターする", vi: "Chinh phục Vũ trụ Tri thức IT" },
   "hero.description": {
-    en: "Join thousands of developers building production-ready applications with modern stack",
-    ja: "モダンスタックで本番環境対応アプリを構築する開発者に参加",
-    vi: "Tham gia cùng hàng nghìn dev xây dựng ứng dụng production-ready",
+    en: "Explore 11 constellations of knowledge, mastering a comprehensive learning path from basic tools to advanced system design",
+    ja: "11の知識の星座を探索し、基本的なツールから高度なシステム設計までの包括的な学習パスをマスターします",
+    vi: "Khám phá 11 chòm sao tri thức, làm chủ lộ trình học tập toàn diện từ công cụ lập trình cơ bản đến thiết kế hệ thống chuyên sâu",
   },
   "hero.cta": { en: "Continue Learning", ja: "学習を続ける", vi: "Tiếp tục học" },
   "hero.explore": { en: "Explore Path", ja: "コースを見る", vi: "Khám phá" },

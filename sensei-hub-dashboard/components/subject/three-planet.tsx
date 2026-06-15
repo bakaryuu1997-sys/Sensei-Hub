@@ -25,6 +25,9 @@ export function ThreePlanet({ slug, size = 180 }: ThreePlanetProps) {
       fe: { primary: 0x3b82f6, secondary: 0x2563eb },        // Blue
       mindset: { primary: 0xfacc15, secondary: 0xd97706 },   // Yellow/Orange
       sysdesign: { primary: 0xef4444, secondary: 0xdc2626 }, // Red
+      "blockchain-and-web3-fundamentals": { primary: 0xeab308, secondary: 0xf59e0b }, // Gold/Amber
+      "cybersecurity-awareness": { primary: 0xef4444, secondary: 0xf43f5e },          // Red/Pink
+      "git-and-github": { primary: 0xa78bfa, secondary: 0x6366f1 },                   // Lavender/Indigo
     }
 
     const theme = colorMap[slug] || { primary: 0x22d3ee, secondary: 0x8b5cf6 }

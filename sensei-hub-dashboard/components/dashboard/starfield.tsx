@@ -78,7 +78,7 @@ export function Starfield() {
 
       stars.forEach((star) => {
         // Move star closer on Z axis
-        star.z -= 2 // Speed of warp
+        star.z -= 0.3 // Extremely slow, subtle ambient drift
 
         // Warp center offset based on mouse
         const ox = star.x - mouseX
@@ -94,11 +94,11 @@ export function Starfield() {
           star.y = Math.random() * height - height / 2
           star.z = maxDepth
         } else {
-          // Size based on depth
-          const size = (1 - star.z / maxDepth) * 2.5 + 0.5
+          // Size based on depth - smaller and less distracting
+          const size = (1 - star.z / maxDepth) * 1.5 + 0.3
 
-          // Opacity based on depth
-          const opacity = (1 - star.z / maxDepth) * 0.9
+          // Opacity based on depth - softer glow
+          const opacity = (1 - star.z / maxDepth) * 0.45
 
           ctx.fillStyle = star.color + opacity + ")"
           ctx.beginPath()

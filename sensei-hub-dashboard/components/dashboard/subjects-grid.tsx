@@ -5,8 +5,9 @@ import Link from "next/link"
 import { ArrowUpRight, BookOpen, Clock } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useLanguage } from "@/lib/i18n"
-import { subjects, computeSubjectStats } from "@/lib/subjects"
+import { computeSubjectStats } from "@/lib/subjects"
 import { useCosmicAudio } from "@/hooks/use-cosmic-audio"
+import { useUserProgress } from "@/components/user-progress-provider"
 
 const container = {
   hidden: { opacity: 0 },
@@ -28,6 +29,7 @@ const item = {
 export function SubjectsGrid() {
   const { t } = useLanguage()
   const { playHover } = useCosmicAudio()
+  const { subjects } = useUserProgress()
 
   return (
     <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>

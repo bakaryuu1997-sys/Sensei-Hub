@@ -2,27 +2,33 @@
 
 import { motion } from "framer-motion"
 import { Sparkles, CheckCircle2 } from "lucide-react"
-import { subjects, computeSubjectStats } from "@/lib/subjects"
+import { computeSubjectStats } from "@/lib/subjects"
 import { useLanguage } from "@/lib/i18n"
 import { useCosmicAudio } from "@/hooks/use-cosmic-audio"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
+import { useUserProgress } from "@/components/user-progress-provider"
+import { ConstellationPlanet } from "./constellation-planet"
 
-// Define positions for our 8 chòm sao (nodes) in the viewport (1000x200)
+// Define positions for our 11 chòm sao (nodes) in the viewport (1150x200)
 const positions = [
-  { x: 70, y: 100 },   // FE
-  { x: 190, y: 50 },   // AWS
-  { x: 310, y: 130 },  // SysDesign
-  { x: 430, y: 60 },   // Database
-  { x: 550, y: 140 },  // DevOps
-  { x: 670, y: 60 },   // DSA
-  { x: 790, y: 130 },  // BJT
-  { x: 910, y: 95 },   // Mindset
+  { x: 60, y: 100 },   // FE
+  { x: 160, y: 50 },   // AWS
+  { x: 260, y: 130 },  // SysDesign
+  { x: 360, y: 60 },   // Database
+  { x: 460, y: 140 },  // DevOps
+  { x: 560, y: 60 },   // DSA
+  { x: 660, y: 130 },  // BJT
+  { x: 760, y: 50 },   // Mindset
+  { x: 860, y: 120 },  // Blockchain & Web3
+  { x: 960, y: 60 },   // Cybersecurity
+  { x: 1060, y: 95 },  // Git & GitHub
 ]
 
 export function ConstellationMap() {
   const { t } = useLanguage()
   const { playHover } = useCosmicAudio()
+  const { subjects } = useUserProgress()
 
   const nodeStats = subjects.map((subject, idx) => {
     const stats = computeSubjectStats(subject)
@@ -49,7 +55,7 @@ export function ConstellationMap() {
 
       <div className="relative w-full overflow-x-auto scrollbar-none">
         {/* Constellation Canvas Viewport */}
-        <div className="min-w-[1000px] h-[200px] relative">
+        <div className="min-w-[1150px] h-[200px] relative">
           <svg className="absolute inset-0 w-full h-full pointer-events-none overflow-visible">
             {/* Draw Constellation Connecting Lines */}
             {nodeStats.map((node, idx) => {
@@ -121,40 +127,26 @@ export function ConstellationMap() {
                   onClick={playHover}
                   className="group relative flex flex-col items-center"
                 >
-                  {/* Outer glowing pulsing aura */}
-                  <div
-                    className={cn(
-                      "w-12 h-12 rounded-full absolute -inset-0 flex items-center justify-center transition-all duration-300 group-hover:scale-125",
-                      isCompleted
-                        ? "bg-yellow-500/10 border border-yellow-400/30 shadow-lg shadow-yellow-500/30"
-                        : isActive
-                        ? "bg-cyan-500/10 border border-cyan-400/30 shadow-lg shadow-cyan-500/30 animate-pulse"
-                        : "bg-white/5 border border-white/5",
-                    )}
-                  />
-
-                  {/* Core Star Circle */}
-                  <div
-                    className={cn(
-                      "w-7 h-7 rounded-full flex items-center justify-center border transition-all z-10",
-                      isCompleted
-                        ? "bg-gradient-to-br from-yellow-400 to-orange-500 border-yellow-300 text-white shadow-md"
-                        : isActive
-                        ? "bg-gradient-to-br from-cyan-400 to-blue-500 border-cyan-300 text-white"
-                        : "bg-slate-900 border-white/20 text-white/30",
-                    )}
-                  >
-                    {isCompleted ? (
-                      <CheckCircle2 className="w-4 h-4 text-white" />
-                    ) : (
-                      <span className="text-[10px] font-extrabold font-mono">
-                        {node.progress}%
-                      </span>
-                    )}
+                  {/* Core Planet Node (2D Canvas high-performance rendering) */}
+                  <div className="relative w-16 h-16 flex items-center justify-center z-10 transition-transform duration-300 group-hover:scale-110">
+                    <ConstellationPlanet slug={node.slug} size={56} isActive={isActive} />
+                    
+                    {/* Inner Content Badge (Check or Percentage) */}
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                      {isCompleted ? (
+                        <div className="bg-amber-400 text-slate-950 rounded-full p-0.5 shadow-lg shadow-amber-500/30 border border-white/20">
+                          <CheckCircle2 className="w-3 h-3 font-extrabold" />
+                        </div>
+                      ) : (
+                        <div className="bg-slate-950/80 border border-cyan-400/30 text-cyan-300 rounded-full px-1.5 py-0.5 text-[8px] font-black font-mono leading-none shadow-md">
+                          {node.progress}%
+                        </div>
+                      )}
+                    </div>
                   </div>
 
                   {/* Label / Tooltip */}
-                  <div className="absolute top-10 pointer-events-none select-none text-center whitespace-nowrap z-20 transition-all duration-300 group-hover:translate-y-1">
+                  <div className="absolute top-11 pointer-events-none select-none text-center whitespace-nowrap z-20 transition-all duration-300 group-hover:translate-y-1">
                     <span
                       className={cn(
                         "block text-[11px] font-bold tracking-wide transition-colors",
