@@ -21,14 +21,18 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
   const [completedLessons, setCompletedLessons] = useState<Record<string, boolean>>({})
   const { playSuccess } = useCosmicAudio()
 
-  // Load from localStorage on mount
+  // Load from localStorage and DB on mount
   useEffect(() => {
     const storedProgress = localStorage.getItem("sensei-user-progress")
     const storedLessons = localStorage.getItem("sensei-completed-lessons")
     
+    let localProgress: Record<string, number> = {}
+    let localLessons: Record<string, boolean> = {}
+
     if (storedProgress) {
       try {
-        setProgressMap(JSON.parse(storedProgress))
+        localProgress = JSON.parse(storedProgress)
+        setProgressMap(localProgress)
       } catch (e) {
         console.error(e)
       }
@@ -39,17 +43,61 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
           initialMap[m.id] = m.progress
         })
       })
+      localProgress = initialMap
       setProgressMap(initialMap)
       localStorage.setItem("sensei-user-progress", JSON.stringify(initialMap))
     }
 
     if (storedLessons) {
       try {
-        setCompletedLessons(JSON.parse(storedLessons))
+        localLessons = JSON.parse(storedLessons)
+        setCompletedLessons(localLessons)
       } catch (e) {
         console.error(e)
       }
     }
+
+    // Fetch from database to merge and sync
+    async function loadProgressFromDb() {
+      try {
+        const res = await fetch("/api/progress/load")
+        if (res.ok) {
+          const data = await res.json()
+          if (data.completedLessons && data.progressMap) {
+            const mergedLessons = { ...localLessons, ...data.completedLessons }
+            const mergedProgress = { ...localProgress, ...data.progressMap }
+
+            setCompletedLessons(mergedLessons)
+            setProgressMap(mergedProgress)
+
+            localStorage.setItem("sensei-completed-lessons", JSON.stringify(mergedLessons))
+            localStorage.setItem("sensei-user-progress", JSON.stringify(mergedProgress))
+
+            // Sync any local progress made offline back to DB
+            const localKeys = Object.keys(localLessons)
+            const outOfSync = localKeys.some(key => localLessons[key] && !data.completedLessons[key])
+            
+            if (outOfSync) {
+              const toSync = localKeys
+                .filter(key => localLessons[key])
+                .map(key => ({ lessonId: key, completed: true }))
+              
+              if (toSync.length > 0) {
+                await fetch("/api/progress/sync", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ lessons: toSync }),
+                })
+              }
+            }
+          }
+        }
+      } catch (e) {
+        console.error("Failed to load progress from DB:", e)
+      }
+    }
+
+    loadProgressFromDb()
   }, [])
 
   const updateModuleProgress = (moduleId: string, progress: number) => {
@@ -81,6 +129,18 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
             nextLessons[key] = nextProgress === 100
           })
           localStorage.setItem("sensei-completed-lessons", JSON.stringify(nextLessons))
+
+          // Sync to DB
+          const syncLessons = lessonKeys.map((key) => ({
+            lessonId: key,
+            completed: nextProgress === 100,
+          }))
+          fetch("/api/progress/sync", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ lessons: syncLessons }),
+          }).catch((e) => console.error("Failed to sync module progress:", e))
+
           return nextLessons
         })
       }
@@ -128,6 +188,15 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
         localStorage.setItem("sensei-user-progress", JSON.stringify(nextMap))
         return nextMap
       })
+
+      // Sync to DB
+      fetch("/api/progress/sync", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          lessons: [{ lessonId: lessonKey, completed: isCompleted }],
+        }),
+      }).catch((e) => console.error("Failed to sync lesson progress:", e))
 
       return next
     })

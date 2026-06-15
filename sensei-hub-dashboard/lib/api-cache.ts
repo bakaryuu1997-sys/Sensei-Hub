@@ -8,6 +8,27 @@ const cacheMap = new Map<string, CacheEntry<any>>()
 // 1 hour TTL (static markdown files do not change during runtime)
 const DEFAULT_TTL_MS = 60 * 60 * 1000 
 
+// Clean up expired cache entries every 30 minutes to prevent memory leaks
+const CLEANUP_INTERVAL_MS = 30 * 60 * 1000
+
+const globalForApiCache = global as unknown as { apiCacheCleanup?: NodeJS.Timeout }
+
+if (typeof global !== "undefined" && !globalForApiCache.apiCacheCleanup) {
+  const interval = setInterval(() => {
+    const now = Date.now()
+    for (const [key, entry] of cacheMap.entries()) {
+      if (now > entry.expiry) {
+        cacheMap.delete(key)
+      }
+    }
+  }, CLEANUP_INTERVAL_MS)
+
+  if (interval.unref) {
+    interval.unref()
+  }
+  globalForApiCache.apiCacheCleanup = interval
+}
+
 export function getCache<T>(key: string): T | null {
   const entry = cacheMap.get(key)
   if (!entry) return null

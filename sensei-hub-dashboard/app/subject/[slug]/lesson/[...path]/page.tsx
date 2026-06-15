@@ -4,7 +4,7 @@ import { use, useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { marked } from "marked"
+import DOMPurify from "isomorphic-dompurify"
 import confetti from "canvas-confetti"
 import { ChevronLeft, ChevronRight, CheckCircle2, ArrowLeft, BookOpen } from "lucide-react"
 
@@ -15,11 +15,8 @@ import { useLanguage } from "@/lib/i18n"
 import { useUserProgress } from "@/components/user-progress-provider"
 import { cn } from "@/lib/utils"
 
-// Set marked options for security and format
-marked.setOptions({
-  gfm: true,
-  breaks: true,
-})
+// Setup DOMPurify to allow target="_blank" on links if needed, or other options
+// marked setup is removed since parsing is shifted to the server.
 
 // Map Tailwind class names to high-contrast theme hex/oklch values for CSS variables
 const colorMapFrom: Record<string, string> = {
@@ -63,7 +60,7 @@ export default function LessonPage({
   const [lessonData, setLessonData] = useState<{
     title: string
     description: string
-    content: string
+    htmlContent: string
   } | null>(null)
   const [lessonsList, setLessonsList] = useState<any[]>([])
   const [isLoading, setIsLoading] = useState(true)
@@ -171,8 +168,8 @@ export default function LessonPage({
     }
   }
 
-  // Parse HTML markdown
-  const htmlContent = lessonData ? marked.parse(lessonData.content) : ""
+  // Sanitize HTML compiled from the server to prevent XSS
+  const htmlContent = lessonData ? DOMPurify.sanitize(lessonData.htmlContent) : ""
 
   return (
     <div className="relative min-h-screen bg-slate-950 text-slate-100">

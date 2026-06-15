@@ -1,8 +1,14 @@
 import { NextRequest, NextResponse } from "next/server"
 import fs from "fs"
 import path from "path"
+import { marked } from "marked"
 import { checkRateLimit } from "@/lib/rate-limiter"
 import { getCache, setCache } from "@/lib/api-cache"
+
+marked.setOptions({
+  gfm: true,
+  breaks: true,
+})
 
 const slugToFolder: Record<string, string> = {
   "fe": "fundamental-it-engineer",
@@ -153,7 +159,15 @@ export async function GET(
     }
 
     const fileContent = fs.readFileSync(fullFilePath, "utf8")
-    const result = parseFrontmatterAndContent(fileContent, lessonPath)
+    const parsedResult = parseFrontmatterAndContent(fileContent, lessonPath)
+
+    // Compile Markdown to HTML on the server
+    const htmlContent = marked.parse(parsedResult.content) as string
+    const result = {
+      title: parsedResult.title,
+      description: parsedResult.description,
+      htmlContent,
+    }
 
     setCache(cacheKey, result)
     return NextResponse.json(result)
