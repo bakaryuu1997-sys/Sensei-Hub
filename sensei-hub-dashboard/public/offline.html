@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline - Sensei Hub</title>
+  <style>
+    :root {
+      --bg-color: #030014;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255, 255, 255, 0.6);
+      --cyan: #22d3ee;
+      --purple: #8b5cf6;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    /* Cosmic background elements */
+    body::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      z-index: 1;
+    }
+    
+    body::after {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(34, 211, 238, 0.1) 0%, transparent 70%);
+      bottom: -150px;
+      left: -150px;
+      z-index: 1;
+    }
+    
+    .container {
+      position: relative;
+      z-index: 2;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 3rem 2rem;
+      border-radius: 24px;
+      width: 90%;
+      max-width: 450px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+    
+    .mascot-container {
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .mascot-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(circle, rgba(34, 211, 238, 0.4) 0%, transparent 75%);
+      z-index: -1;
+      border-radius: 50%;
+      animation: pulse 3s infinite alternate;
+    }
+    
+    .mascot-image {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 20px;
+    }
+    
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.025em;
+      background: linear-gradient(to right, var(--text-primary), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 2rem;
+      padding: 0 1rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      width: 100%;
+      max-width: 240px;
+      padding: 0.85rem 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--cyan) 0%, var(--purple) 100%);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+      opacity: 0.95;
+    }
+    
+    .btn:active {
+      transform: translateY(1px);
+    }
+    
+    @keyframes pulse {
+      0% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.6; }
+      100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="mascot-container">
+      <div class="mascot-glow"></div>
+      <img class="mascot-image" src="/images/sensei-mascot.png" alt="Sensei Mascot">
+    </div>
+    <h1>Kết nối bị gián đoạn</h1>
+    <p>Bạn đang ở chế độ ngoại tuyến. Hãy kiểm tra kết nối mạng và thử lại sau khi có internet.</p>
+    <button class="btn" onclick="window.location.reload()">Thử lại</button>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        const userLang = localStorage.getItem('sensei-lang') || navigator.language || 'vi';
+        const isEn = userLang.startsWith('en');
+        const isJa = userLang.startsWith('ja');
+        
+        const translations = {
+          en: {
+            title: "Offline - Sensei Hub",
+            heading: "Connection Lost",
+            message: "You are offline. Please check your internet connection and try again.",
+            button: "Retry"
+          },
+          ja: {
+            title: "オフライン - Sensei Hub",
+            heading: "接続が切断されました",
+            message: "オフライン状態です。インターネット接続を確認して、もう一度お試しください。",
+            button: "再試行"
+          },
+          vi: {
+            title: "Ngoại tuyến - Sensei Hub",
+            heading: "Kết nối bị gián đoạn",
+            message: "Bạn đang ở chế độ ngoại tuyến. Hãy kiểm tra kết nối mạng và thử lại sau khi có internet.",
+            button: "Thử lại"
+          }
+        };
+        
+        const lang = isEn ? 'en' : (isJa ? 'ja' : 'vi');
+        const text = translations[lang];
+        
+        document.title = text.title;
+        document.querySelector('h1').textContent = text.heading;
+        document.querySelector('p').textContent = text.message;
+        document.querySelector('.btn').textContent = text.button;
+      } catch (e) {
+        console.warn('Locale error:', e);
+      }
+    });
+  </script>
+</body>
+</html>

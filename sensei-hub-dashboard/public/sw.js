@@ -1,6 +1,6 @@
 const CACHE_NAME = 'sensei-hub-v1';
 const ASSETS_TO_CACHE = [
-  '/',
+  '/offline.html',
   '/manifest.json',
   '/images/sensei-mascot.png',
   '/images/mascot-robot.png',
@@ -103,7 +103,7 @@ self.addEventListener('fetch', (event) => {
             if (cachedResponse) {
               return cachedResponse;
             }
-            return isNavigation ? caches.match('/', { ignoreSearch: true }) : undefined;
+            return isNavigation ? caches.match('/offline.html') : undefined;
           });
         })
     );

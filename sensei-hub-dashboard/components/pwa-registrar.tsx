@@ -19,44 +19,39 @@ declare global {
 
 export function PwaRegistrar() {
   useEffect(() => {
-    let registeredSW = false
-    const registerSW = () => {
-      if (registeredSW) return
-      registeredSW = true
-      navigator.serviceWorker.register("/sw.js").then(
-        (registration) => {
-          console.log("ServiceWorker registration successful with scope: ", registration.scope)
-        },
-        (err) => {
-          console.log("ServiceWorker registration failed: ", err)
-        }
-      )
-    }
-
-    // Register Service Worker
-    if ("serviceWorker" in navigator) {
-      if (document.readyState === "complete") {
-        registerSW()
-      } else {
-        window.addEventListener("load", registerSW)
-      }
-    }
-
-    // Handle beforeinstallprompt
-    const handleBeforeInstallPrompt = (e: Event) => {
-      e.preventDefault()
-      window.deferredPrompt = e as BeforeInstallPromptEvent
-      // Dispatch custom event to notify buttons
+    // 1. Dispatch event if deferredPrompt was already captured by layout inline script
+    if (window.deferredPrompt) {
       window.dispatchEvent(new CustomEvent("pwa-prompt-active"))
     }
 
-    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt)
+    // 2. Conditionally Register Service Worker (Production only, or local debug override)
+    if ("serviceWorker" in navigator) {
+      const isProd = process.env.NODE_ENV === "production"
+      const debugSW = typeof window !== "undefined" && window.localStorage?.getItem("DEBUG_SW") === "true"
 
-    return () => {
-      if ("serviceWorker" in navigator) {
-        window.removeEventListener("load", registerSW)
+      if (isProd || debugSW) {
+        const registerSW = () => {
+          navigator.serviceWorker.register("/sw.js").then(
+            (registration) => {
+              if (process.env.NODE_ENV === "development") {
+                console.log("ServiceWorker registration successful with scope: ", registration.scope)
+              }
+            },
+            (err) => {
+              if (process.env.NODE_ENV === "development") {
+                console.log("ServiceWorker registration failed: ", err)
+              }
+            }
+          )
+        }
+
+        if (document.readyState === "complete") {
+          registerSW()
+        } else {
+          window.addEventListener("load", registerSW)
+          return () => window.removeEventListener("load", registerSW)
+        }
       }
-      window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt)
     }
   }, [])
 
