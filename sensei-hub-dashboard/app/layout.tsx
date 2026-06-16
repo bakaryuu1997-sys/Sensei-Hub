@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   title: 'SENSEI HUB - Focus & Flow Learning',
   description: 'Elevate your coding skills with focused learning experiences',
   generator: 'v0.app',
+  manifest: '/manifest.json',
   icons: {
     icon: [
       {
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#1e1b4b',
+  themeColor: '#030014',
   colorScheme: 'dark',
 }
 

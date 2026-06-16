@@ -1,0 +1,24 @@
+{
+  "name": "Sensei Hub",
+  "short_name": "SenseiHub",
+  "description": "Master the Universe of IT - Focus & Flow Learning",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030014",
+  "theme_color": "#030014",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/images/sensei-mascot.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/sensei-mascot.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
