@@ -4,6 +4,7 @@ import { checkRateLimit } from "@/lib/rate-limiter";
 import { subjects } from "@/lib/subjects";
 import fs from "fs";
 import path from "path";
+import { auth } from "@/auth";
 
 const slugToFolder: Record<string, string> = {
   "fe": "fundamental-it-engineer",
@@ -17,9 +18,14 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Too many requests" }, { status: 429 });
     }
 
-    const userId = "default-user-id";
+    const session = await auth()
+    const userId = session?.user?.id
 
-    // Ensure the default user exists safely (handles concurrency)
+    if (!userId) {
+      return NextResponse.json({ completedLessons: {}, progressMap: {} })
+    }
+
+    // Ensure the user exists safely (handles concurrency)
     const existingUser = await prisma.user.findUnique({
       where: { id: userId },
     });

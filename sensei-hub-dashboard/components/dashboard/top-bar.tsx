@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Search, Bell, Command, Activity, Volume2, VolumeX, Download } from "lucide-react"
+import { Search, Bell, Command, Activity, Volume2, VolumeX, Download, LogOut } from "lucide-react"
 import { useLanguage } from "@/lib/i18n"
 import { LanguageSwitcher } from "./language-switcher"
 import { computeOverallStats } from "@/lib/subjects"
 import { usePwaInstall } from "@/hooks/use-pwa-install"
+import { useSession, signOut } from "next-auth/react"
+import Link from "next/link"
 
 export function TopBar() {
   const { t } = useLanguage()
@@ -15,7 +17,6 @@ export function TopBar() {
 
   useEffect(() => {
     const stored = localStorage.getItem("cosmic-audio-muted")
-    // Default to unmuted (false) if not set, or read stored
     if (stored !== null) {
       setMuted(stored === "true")
     } else {
@@ -29,6 +30,9 @@ export function TopBar() {
     setMuted(nextVal)
     localStorage.setItem("cosmic-audio-muted", String(nextVal))
   }
+
+  const { data: session } = useSession()
+  const userInitial = session?.user?.name ? session.user.name.charAt(0).toUpperCase() : "U"
 
   return (
     <motion.header
@@ -90,23 +94,47 @@ export function TopBar() {
         {muted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-cyan-400" />}
       </motion.button>
 
-      {/* Profile */}
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="flex items-center gap-2.5 pl-1 pr-3 py-1 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
-      >
-        <div className="relative">
-          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-sm shadow-lg">
-            D
-          </div>
-          <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-400 border-2 border-slate-950" />
+      {/* Profile / Auth Controls */}
+      {session ? (
+        <div className="flex items-center gap-2">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center gap-2.5 pl-1 pr-3 py-1 rounded-xl bg-white/5 border border-white/10 transition-colors"
+          >
+            <div className="relative">
+              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                {userInitial}
+              </div>
+              <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-400 border-2 border-slate-950" />
+            </div>
+            <div className="hidden md:block text-left">
+              <div className="text-xs font-semibold text-white leading-tight max-w-[120px] truncate">
+                {session.user?.name || "Developer"}
+              </div>
+              <div className="text-[10px] text-cyan-300/80 font-mono">
+                {overall.completedLessons} {t("subject.lessons")}
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => signOut()}
+            className="relative w-11 h-11 rounded-xl bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 flex items-center justify-center transition-colors text-red-400 cursor-pointer"
+            title="Đăng xuất"
+          >
+            <LogOut className="w-4 h-4" />
+          </motion.button>
         </div>
-        <div className="hidden md:block text-left">
-          <div className="text-xs font-semibold text-white leading-tight">{t("common.developer")}</div>
-          <div className="text-[10px] text-cyan-300/80 font-mono">{overall.completedLessons} {t("subject.lessons")}</div>
-        </div>
-      </motion.button>
+      ) : (
+        <Link
+          href="/login"
+          className="flex items-center justify-center px-4 py-2 bg-gradient-to-r from-violet-500 to-indigo-600 hover:from-violet-600 hover:to-indigo-700 text-white font-medium rounded-xl text-sm transition shadow-lg shadow-violet-500/20"
+        >
+          Đăng nhập
+        </Link>
+      )}
     </motion.header>
   )
 }

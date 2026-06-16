@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { checkRateLimit } from "@/lib/rate-limiter";
+import { auth } from "@/auth";
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,9 +18,14 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Invalid request payload" }, { status: 400 });
     }
 
-    const userId = "default-user-id";
+    const session = await auth()
+    const userId = session?.user?.id
 
-    // Ensure the default user exists safely (handles concurrency)
+    if (!userId) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+    }
+
+    // Ensure the user exists safely (handles concurrency)
     const existingUser = await prisma.user.findUnique({
       where: { id: userId },
     });
