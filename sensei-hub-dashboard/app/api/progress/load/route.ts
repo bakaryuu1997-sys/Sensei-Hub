@@ -4,7 +4,7 @@ import { checkRateLimit } from "@/lib/rate-limiter";
 import { subjects } from "@/lib/subjects";
 import fs from "fs";
 import path from "path";
-import { auth } from "@/auth";
+import { auth } from "@clerk/nextjs/server";
 
 const slugToFolder: Record<string, string> = {
   "fe": "fundamental-it-engineer",
@@ -18,9 +18,8 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Too many requests" }, { status: 429 });
     }
 
-    const session = await auth()
-    const userId = session?.user?.id
-
+    const { userId } = await auth()
+    
     if (!userId) {
       return NextResponse.json({ completedLessons: {}, progressMap: {} })
     }

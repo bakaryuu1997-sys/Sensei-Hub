@@ -201,6 +201,130 @@ chore: ビルド・設定の変更
 
 ---
 
+## 🚀 Quy Trình Triển Khai Trên AWS EC2 (SQLite & Clerk Auth)
+
+Dưới đây là hướng dẫn chi tiết từng bước để triển khai **Sensei Hub Dashboard** lên một máy chủ ảo AWS EC2 chạy hệ điều hành Ubuntu/Linux.
+
+### 1. Chuẩn Bị Trên AWS EC2
+
+Đăng nhập vào EC2 qua SSH và cài đặt các công cụ cần thiết:
+
+```bash
+# Cập nhật hệ thống
+sudo apt update && sudo apt upgrade -y
+
+# Cài đặt Node.js v20 LTS
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Cài đặt pnpm và PM2 toàn cục
+sudo npm install -g pnpm pm2
+```
+
+### 2. Cấu Hình Thư Mục Database Cục Bộ (SQLite Persistence)
+
+Vì SQLite lưu trữ dữ liệu trong một tệp tin vật lý, chúng ta cần đặt tệp tin này ở **ngoài thư mục mã nguồn** của dự án. Điều này giúp dữ liệu học tập của học viên không bị ghi đè hoặc bị xóa khi bạn cập nhật code (ví dụ: chạy `git pull` hoặc re-deploy).
+
+```bash
+# Tạo một thư mục lưu trữ database độc lập trên EC2
+mkdir -p /home/ubuntu/database
+chmod 777 /home/ubuntu/database
+```
+
+### 3. Clone Mã Nguồn & Cài Đặt Dự Án
+
+```bash
+# Clone dự án từ GitHub
+git clone https://github.com/bakaryuu1997-sys/Sensei-Hub.git
+cd Sensei-Hub/sensei-hub-dashboard
+
+# Cài đặt các thư viện phụ thuộc
+pnpm install
+```
+
+### 4. Thiết Lập File Môi Trường `.env`
+
+Tạo file `.env` bên trong thư mục `sensei-hub-dashboard`:
+
+```bash
+nano .env
+```
+
+Thêm nội dung sau (thay thế các thông tin Clerk của bạn):
+
+```env
+# Trỏ đường dẫn database SQLite đến thư mục độc lập đã tạo ở Bước 2
+DATABASE_URL="file:/home/ubuntu/database/production.db"
+
+# Cấu hình Clerk Authentication (Lấy từ Dashboard của Clerk)
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="pk_live_xxxxxxxxx"
+CLERK_SECRET_KEY="sk_live_xxxxxxxxx"
+NEXT_PUBLIC_CLERK_SIGN_IN_URL="/login"
+NEXT_PUBLIC_CLERK_SIGN_UP_URL="/register"
+```
+
+### 5. Khởi Tạo Cơ Sở Dữ Liệu
+
+Đẩy cấu hình cơ sở dữ liệu lên file SQLite và chạy script seeding để tạo tài khoản Admin mặc định:
+
+```bash
+# Đồng bộ Schema với SQLite DB
+npx prisma db push
+
+# Chạy seed dữ liệu (Tạo tài khoản admin@senseihub.local / AdminPassword123!)
+npx prisma db seed
+```
+
+### 6. Build Dự Án và Khởi Chạy PM2
+
+Biên dịch dự án Next.js sang môi trường sản phẩm và chạy nền bằng PM2:
+
+```bash
+# Build dự án
+pnpm build
+
+# Chạy app Next.js qua PM2 trên port 3000
+pm2 start npm --name "sensei-hub" -- run start -- -p 3000
+
+# Cấu hình PM2 tự khởi động cùng hệ thống khi EC2 restart
+pm2 save
+pm2 startup
+```
+
+### 7. Cấu Hinh Nginx Reverse Proxy (Tùy chọn)
+
+Để người dùng truy cập trực tiếp bằng giao thức HTTP (cổng 80) thay vì phải gõ cổng 3000:
+
+```bash
+# Cài đặt Nginx
+sudo apt install nginx -y
+
+# Cấu hình reverse proxy
+sudo nano /etc/nginx/sites-available/default
+```
+
+Thay đổi khối `location /` thành:
+
+```nginx
+location / {
+    proxy_pass http://localhost:3000;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+}
+```
+
+Kiểm tra cấu hình Nginx và restart:
+
+```bash
+sudo nginx -t
+sudo systemctl restart nginx
+```
+
+---
+
 ## 📄 ライセンス
 
 このプロジェクトは [MIT License](./LICENSE) の下で公開されています。
@@ -214,3 +338,4 @@ chore: ビルド・設定の変更
 Built with ❤️ for IT Engineers in Japan
 
 </div>
+

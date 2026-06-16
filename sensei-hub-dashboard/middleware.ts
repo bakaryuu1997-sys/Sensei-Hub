@@ -1,9 +1,19 @@
-import NextAuth from "next-auth"
-import { authConfig } from "./auth.config"
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server"
 
-export default NextAuth(authConfig).auth
+const isPublicRoute = createRouteMatcher([
+  "/login(.*)",
+  "/register(.*)",
+  "/api/auth(.*)",
+  "/api/subject/(.*)/lesson(.*)",
+  "/api/subject/(.*)/lessons(.*)",
+])
+
+export default clerkMiddleware(async (auth, request) => {
+  if (!isPublicRoute(request)) {
+    await auth.protect()
+  }
+})
 
 export const config = {
-  // Protect all routes except static assets, api routes, and public files
   matcher: ["/((?!api|_next/static|_next/image|images|manifest.json|sw.js|favicon.ico|offline.html).*)"],
 }

@@ -21,3 +21,10 @@ test-results/
 
 # TS build cache
 *.tsbuildinfo
+
+# SQLite Databases
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+

@@ -7,7 +7,7 @@ import { useLanguage } from "@/lib/i18n"
 import { LanguageSwitcher } from "./language-switcher"
 import { computeOverallStats } from "@/lib/subjects"
 import { usePwaInstall } from "@/hooks/use-pwa-install"
-import { useSession, signOut } from "next-auth/react"
+import { UserButton, useUser } from "@clerk/nextjs"
 import Link from "next/link"
 
 export function TopBar() {
@@ -31,8 +31,7 @@ export function TopBar() {
     localStorage.setItem("cosmic-audio-muted", String(nextVal))
   }
 
-  const { data: session } = useSession()
-  const userInitial = session?.user?.name ? session.user.name.charAt(0).toUpperCase() : "U"
+  const { isSignedIn, user } = useUser()
 
   return (
     <motion.header
@@ -95,37 +94,17 @@ export function TopBar() {
       </motion.button>
 
       {/* Profile / Auth Controls */}
-      {session ? (
-        <div className="flex items-center gap-2">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-2.5 pl-1 pr-3 py-1 rounded-xl bg-white/5 border border-white/10 transition-colors"
-          >
-            <div className="relative">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-sm shadow-lg">
-                {userInitial}
-              </div>
-              <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-400 border-2 border-slate-950" />
+      {isSignedIn ? (
+        <div className="flex items-center gap-3">
+          <div className="hidden md:block text-right">
+            <div className="text-xs font-semibold text-white leading-tight">
+              {user?.fullName || user?.primaryEmailAddress?.emailAddress || "Student"}
             </div>
-            <div className="hidden md:block text-left">
-              <div className="text-xs font-semibold text-white leading-tight max-w-[120px] truncate">
-                {session.user?.name || "Developer"}
-              </div>
-              <div className="text-[10px] text-cyan-300/80 font-mono">
-                {overall.completedLessons} {t("subject.lessons")}
-              </div>
+            <div className="text-[10px] text-cyan-300/80 font-mono">
+              {overall.completedLessons} {t("subject.lessons")}
             </div>
-          </motion.div>
-
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => signOut()}
-            className="relative w-11 h-11 rounded-xl bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 flex items-center justify-center transition-colors text-red-400 cursor-pointer"
-            title="Đăng xuất"
-          >
-            <LogOut className="w-4 h-4" />
-          </motion.button>
+          </div>
+          <UserButton />
         </div>
       ) : (
         <Link

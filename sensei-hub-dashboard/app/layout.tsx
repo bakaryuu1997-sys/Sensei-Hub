@@ -4,7 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import { LanguageProvider } from '@/lib/i18n'
 import { UserProgressProvider } from '@/components/user-progress-provider'
 import { PwaRegistrar } from '@/components/pwa-registrar'
-import { SessionProvider } from "next-auth/react"
+import { ClerkProvider } from "@clerk/nextjs"
 import './globals.css'
 
 const inter = Inter({ 
@@ -67,13 +67,13 @@ export default function RootLayout({
             `
           }}
         />
-        <SessionProvider>
+        <ClerkProvider>
           <LanguageProvider>
             <UserProgressProvider>
               {children}
             </UserProgressProvider>
           </LanguageProvider>
-        </SessionProvider>
+        </ClerkProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
         <PwaRegistrar />
       </body>
