@@ -11,16 +11,22 @@ export function usePwaInstall() {
     }
     
     const handleActive = () => setIsInstallable(true)
+    const handleCleared = () => {
+      setIsInstallable(false)
+    }
     const handleInstalled = () => {
       setIsInstallable(false)
       window.deferredPrompt = null
+      window.dispatchEvent(new CustomEvent("pwa-prompt-cleared"))
     }
 
     window.addEventListener("pwa-prompt-active", handleActive)
+    window.addEventListener("pwa-prompt-cleared", handleCleared)
     window.addEventListener("appinstalled", handleInstalled)
     
     return () => {
       window.removeEventListener("pwa-prompt-active", handleActive)
+      window.removeEventListener("pwa-prompt-cleared", handleCleared)
       window.removeEventListener("appinstalled", handleInstalled)
     }
   }, [])
@@ -37,6 +43,7 @@ export function usePwaInstall() {
     } finally {
       window.deferredPrompt = null
       setIsInstallable(false)
+      window.dispatchEvent(new CustomEvent("pwa-prompt-cleared"))
     }
   }
 
