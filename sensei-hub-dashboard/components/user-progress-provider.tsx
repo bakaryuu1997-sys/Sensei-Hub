@@ -62,34 +62,39 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
       try {
         const res = await fetch("/api/progress/load")
         if (res.ok) {
-          const data = await res.json()
-          if (data.completedLessons && data.progressMap) {
-            const mergedLessons = { ...localLessons, ...data.completedLessons }
-            const mergedProgress = { ...localProgress, ...data.progressMap }
+          const contentType = res.headers.get("content-type")
+          if (contentType && contentType.includes("application/json")) {
+            const data = await res.json()
+            if (data.completedLessons && data.progressMap) {
+              const mergedLessons = { ...localLessons, ...data.completedLessons }
+              const mergedProgress = { ...localProgress, ...data.progressMap }
 
-            setCompletedLessons(mergedLessons)
-            setProgressMap(mergedProgress)
+              setCompletedLessons(mergedLessons)
+              setProgressMap(mergedProgress)
 
-            localStorage.setItem("sensei-completed-lessons", JSON.stringify(mergedLessons))
-            localStorage.setItem("sensei-user-progress", JSON.stringify(mergedProgress))
+              localStorage.setItem("sensei-completed-lessons", JSON.stringify(mergedLessons))
+              localStorage.setItem("sensei-user-progress", JSON.stringify(mergedProgress))
 
-            // Sync any local progress made offline back to DB
-            const localKeys = Object.keys(localLessons)
-            const outOfSync = localKeys.some(key => localLessons[key] && !data.completedLessons[key])
-            
-            if (outOfSync) {
-              const toSync = localKeys
-                .filter(key => localLessons[key])
-                .map(key => ({ lessonId: key, completed: true }))
+              // Sync any local progress made offline back to DB
+              const localKeys = Object.keys(localLessons)
+              const outOfSync = localKeys.some(key => localLessons[key] && !data.completedLessons[key])
               
-              if (toSync.length > 0) {
-                await fetch("/api/progress/sync", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({ lessons: toSync }),
-                })
+              if (outOfSync) {
+                const toSync = localKeys
+                  .filter(key => localLessons[key])
+                  .map(key => ({ lessonId: key, completed: true }))
+                
+                if (toSync.length > 0) {
+                  await fetch("/api/progress/sync", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ lessons: toSync }),
+                  })
+                }
               }
             }
+          } else {
+            console.warn("Expected JSON progress from DB, got", contentType)
           }
         }
       } catch (e) {
