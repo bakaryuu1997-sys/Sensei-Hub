@@ -159,44 +159,42 @@
     <button class="btn" onclick="window.location.reload()">Thử lại</button>
   </div>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      try {
-        const userLang = localStorage.getItem('sensei-lang') || navigator.language || 'vi';
-        const isEn = userLang.startsWith('en');
-        const isJa = userLang.startsWith('ja');
-        
-        const translations = {
-          en: {
-            title: "Offline - Sensei Hub",
-            heading: "Connection Lost",
-            message: "You are offline. Please check your internet connection and try again.",
-            button: "Retry"
-          },
-          ja: {
-            title: "オフライン - Sensei Hub",
-            heading: "接続が切断されました",
-            message: "オフライン状態です。インターネット接続を確認して、もう一度お試しください。",
-            button: "再試行"
-          },
-          vi: {
-            title: "Ngoại tuyến - Sensei Hub",
-            heading: "Kết nối bị gián đoạn",
-            message: "Bạn đang ở chế độ ngoại tuyến. Hãy kiểm tra kết nối mạng và thử lại sau khi có internet.",
-            button: "Thử lại"
-          }
-        };
-        
-        const lang = isEn ? 'en' : (isJa ? 'ja' : 'vi');
-        const text = translations[lang];
-        
-        document.title = text.title;
-        document.querySelector('h1').textContent = text.heading;
-        document.querySelector('p').textContent = text.message;
-        document.querySelector('.btn').textContent = text.button;
-      } catch (e) {
-        console.warn('Locale error:', e);
-      }
-    });
+    try {
+      const userLang = localStorage.getItem('sensei-lang') || navigator.language || 'vi';
+      const isEn = userLang.startsWith('en');
+      const isJa = userLang.startsWith('ja');
+      
+      const translations = {
+        en: {
+          title: "Offline - Sensei Hub",
+          heading: "Connection Lost",
+          message: "You are offline. Please check your internet connection and try again.",
+          button: "Retry"
+        },
+        ja: {
+          title: "オフライン - Sensei Hub",
+          heading: "接続が切断されました",
+          message: "オフライン状態です。インターネット接続を確認して、もう一度お試しください。",
+          button: "再試行"
+        },
+        vi: {
+          title: "Ngoại tuyến - Sensei Hub",
+          heading: "Kết nối bị gián đoạn",
+          message: "Bạn đang ở chế độ ngoại tuyến. Hãy kiểm tra kết nối mạng và thử lại sau khi có internet.",
+          button: "Thử lại"
+        }
+      };
+      
+      const lang = isEn ? 'en' : (isJa ? 'ja' : 'vi');
+      const text = translations[lang];
+      
+      document.title = text.title;
+      document.querySelector('h1').textContent = text.heading;
+      document.querySelector('p').textContent = text.message;
+      document.querySelector('.btn').textContent = text.button;
+    } catch (e) {
+      console.warn('Locale error:', e);
+    }
   </script>
 </body>
 </html>

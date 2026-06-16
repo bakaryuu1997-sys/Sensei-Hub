@@ -1,13 +1,14 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Home, BookOpen, Sparkles } from "lucide-react"
+import { Home, BookOpen, Sparkles, Download } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { useLanguage } from "@/lib/i18n"
 import { computeSubjectStats } from "@/lib/subjects"
 import { useUserProgress } from "@/components/user-progress-provider"
+import { usePwaInstall } from "@/hooks/use-pwa-install"
 
 const sidebarVariants = {
   hidden: { x: -20, opacity: 0 },
@@ -149,6 +150,9 @@ export function Sidebar() {
         </div>
       </nav>
 
+      {/* PWA Install Button */}
+      <PwaInstallButton />
+
       {/* Footer brand */}
       <div className="p-4 border-t border-white/5">
         <div className="text-[10px] text-white/30 font-mono tracking-widest text-center">
@@ -156,5 +160,24 @@ export function Sidebar() {
         </div>
       </div>
     </motion.aside>
+  )
+}
+
+function PwaInstallButton() {
+  const { isInstallable, install } = usePwaInstall()
+  const { t } = useLanguage()
+
+  if (!isInstallable) return null
+
+  return (
+    <motion.div variants={itemVariants} className="px-4 py-3 border-t border-white/5">
+      <button
+        onClick={install}
+        className="flex w-full items-center gap-3 rounded-xl bg-gradient-to-r from-cyan-500/20 to-purple-500/20 hover:from-cyan-500/30 hover:to-purple-500/30 border border-cyan-500/30 px-4 py-2.5 text-xs font-bold text-white transition-all cursor-pointer"
+      >
+        <Download className="h-4 w-4 text-cyan-300 animate-bounce" />
+        {t("pwa.install_sidebar")}
+      </button>
+    </motion.div>
   )
 }

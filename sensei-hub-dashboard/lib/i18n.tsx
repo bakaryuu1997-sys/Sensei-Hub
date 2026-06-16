@@ -97,6 +97,8 @@ export const translations: Translations = {
   "day.fri": { en: "Fri", ja: "金", vi: "T6" },
   "day.sat": { en: "Sat", ja: "土", vi: "T7" },
   "day.sun": { en: "Sun", ja: "日", vi: "CN" },
+  "pwa.install_sidebar": { en: "Download Sensei Hub", ja: "Sensei Hubをダウンロード", vi: "Tải App Sensei Hub" },
+  "pwa.install_topbar": { en: "Download App", ja: "アプリをダウンロード", vi: "Tải App" },
 }
 
 type LanguageContextType = {

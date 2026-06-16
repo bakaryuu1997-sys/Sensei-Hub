@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Search, Bell, Command, Activity, Volume2, VolumeX } from "lucide-react"
+import { Search, Bell, Command, Activity, Volume2, VolumeX, Download } from "lucide-react"
 import { useLanguage } from "@/lib/i18n"
 import { LanguageSwitcher } from "./language-switcher"
 import { computeOverallStats } from "@/lib/subjects"
+import { usePwaInstall } from "@/hooks/use-pwa-install"
 
 export function TopBar() {
   const { t } = useLanguage()
@@ -62,6 +63,9 @@ export function TopBar() {
         <span className="text-xs text-cyan-200/80 hidden lg:inline">{t("stats.progress").toLowerCase()}</span>
       </motion.div>
 
+      {/* PWA Install Button */}
+      <PwaInstallButton />
+
       {/* Language Switcher */}
       <LanguageSwitcher />
 
@@ -104,5 +108,24 @@ export function TopBar() {
         </div>
       </motion.button>
     </motion.header>
+  )
+}
+
+function PwaInstallButton() {
+  const { isInstallable, install } = usePwaInstall()
+  const { t } = useLanguage()
+
+  if (!isInstallable) return null
+
+  return (
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={install}
+      className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-gradient-to-r from-cyan-500/20 to-purple-500/20 hover:from-cyan-500/30 hover:to-purple-500/30 border border-cyan-500/30 text-xs font-bold text-white transition-all cursor-pointer"
+    >
+      <Download className="h-3.5 w-3.5 text-cyan-300" />
+      {t("pwa.install_topbar")}
+    </motion.button>
   )
 }
