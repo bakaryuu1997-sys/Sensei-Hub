@@ -5,14 +5,14 @@ import { motion } from "framer-motion"
 import { Search, Bell, Command, Activity, Volume2, VolumeX, Download, LogOut } from "lucide-react"
 import { useLanguage } from "@/lib/i18n"
 import { LanguageSwitcher } from "./language-switcher"
-import { computeOverallStats } from "@/lib/subjects"
+import { useUserProgress } from "@/components/user-progress-provider"
 import { usePwaInstall } from "@/hooks/use-pwa-install"
 import { UserButton, useUser } from "@clerk/nextjs"
 import Link from "next/link"
 
 export function TopBar() {
   const { t } = useLanguage()
-  const overall = computeOverallStats()
+  const { overallStats: overall } = useUserProgress()
   const [muted, setMuted] = useState(true)
 
   useEffect(() => {

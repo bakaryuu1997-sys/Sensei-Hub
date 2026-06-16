@@ -4,11 +4,11 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { Play, ChevronRight, Sparkles, Layers, BookOpen, Clock } from "lucide-react"
 import { useLanguage } from "@/lib/i18n"
-import { computeOverallStats } from "@/lib/subjects"
+import { useUserProgress } from "@/components/user-progress-provider"
 
 export function HeroBanner() {
   const { t } = useLanguage()
-  const overall = computeOverallStats()
+  const { overallStats: overall } = useUserProgress()
 
   return (
     <motion.section

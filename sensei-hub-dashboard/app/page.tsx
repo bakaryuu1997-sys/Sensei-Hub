@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Sidebar } from "@/components/dashboard/sidebar"
 import { TopBar } from "@/components/dashboard/top-bar"
@@ -10,9 +11,20 @@ import { useLanguage } from "@/lib/i18n"
 import { Starfield } from "@/components/dashboard/starfield"
 import { ConstellationMap } from "@/components/dashboard/constellation-map"
 import { DashboardPlanet } from "@/components/dashboard/dashboard-planet"
+import { useUser } from "@clerk/nextjs"
 
 export default function DashboardPage() {
   const { t } = useLanguage()
+  const { isSignedIn, user } = useUser()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const greetingName = mounted && isSignedIn && user
+    ? (user.firstName || user.fullName || "Student")
+    : t("common.dev")
 
   return (
     <div className="relative min-h-screen">
@@ -85,7 +97,7 @@ export default function DashboardPage() {
             >
               <div>
                 <h1 className="text-3xl lg:text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-cyan-300">
-                  {t("header.greeting")}, <span className="gradient-text">{t("common.dev")}</span>
+                  {t("header.greeting")}, <span className="gradient-text">{greetingName}</span>
                 </h1>
                 <p className="mt-1 text-sm text-cyan-200/70 font-medium">{t("header.subtitle")}</p>
               </div>

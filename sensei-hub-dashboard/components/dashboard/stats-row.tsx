@@ -87,6 +87,7 @@ export function StatsRow() {
           transition={{ delay: 0.1 + i * 0.1, duration: 0.5 }}
           whileHover={{ y: -4, scale: 1.02 }}
           className="group relative overflow-hidden rounded-3xl p-5 bg-gradient-to-br from-white/[0.06] to-white/[0.02] border border-white/10 backdrop-blur-xl"
+          suppressHydrationWarning
         >
           {/* Decorative glow */}
           <div className={`absolute -top-8 -right-8 w-24 h-24 rounded-full bg-gradient-to-br ${stat.gradient} blur-2xl opacity-30 group-hover:opacity-60 transition-opacity`} />
