@@ -114,6 +114,34 @@ export default function LessonPage({
     }
   }, [slug, lessonPath, lang])
 
+  // Render Mermaid diagrams dynamically on the client side
+  useEffect(() => {
+    const codeElements = document.querySelectorAll("pre code.language-mermaid");
+    if (codeElements.length > 0) {
+      import("mermaid").then(({ default: mermaid }) => {
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: "dark",
+          securityLevel: "loose",
+        });
+
+        codeElements.forEach((codeEl) => {
+          const preEl = codeEl.parentElement;
+          if (preEl && preEl.tagName === "PRE") {
+            const container = document.createElement("div");
+            container.className = "mermaid flex justify-center my-6 p-6 rounded-2xl bg-[#09051d]/40 border border-white/5 overflow-x-auto min-w-0 w-full";
+            container.textContent = codeEl.textContent || "";
+            preEl.replaceWith(container);
+
+            mermaid.run({ nodes: [container] }).catch((err) => {
+              console.error("Mermaid rendering error:", err);
+            });
+          }
+        });
+      });
+    }
+  }, [lessonData?.htmlContent]);
+
   if (!subject) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-slate-950 text-white">
