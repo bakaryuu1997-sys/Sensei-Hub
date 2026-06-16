@@ -1,0 +1,85 @@
+<h2>Giao diện Android & Tích hợp PWA</h2>
+<p class="subtitle">Hãy lựa chọn giải pháp thiết kế tối ưu nhất cho ứng dụng Android và PWA của bạn.</p>
+
+<div class="section">
+  <h3>Phần 1: Kiến trúc & Giao diện ứng dụng Android (Chọn 1)</h3>
+  <div class="options" data-choice-group="android-arch">
+    <div class="option" data-choice="compose-webview" onclick="toggleSelect(this)">
+      <div class="letter">A</div>
+      <div class="content">
+        <h3>Hybrid Wrapper (Khuyên dùng)</h3>
+        <p>Sử dụng WebView hiệu năng cao, tích hợp thêm thanh công cụ Native (tiêu đề, nút back/forward, refresh) và màn hình cấu hình Server IP để dễ dàng kết nối thử nghiệm trên thiết bị thật. Giữ nguyên 100% giao diện vũ trụ/starfield và logic dịch thuật mượt mà của Next.js.</p>
+        <div class="pros-cons">
+          <div class="pros">
+            <ul>
+              <li>Không cần viết lại 11 môn học trong Kotlin</li>
+              <li>Dễ cập nhật tính năng đồng thời với web</li>
+              <li>Hỗ trợ đổi IP Server linh hoạt</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <ul>
+              <li>Vẫn phụ thuộc vào WebView</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="option" data-choice="compose-bottom-nav" onclick="toggleSelect(this)">
+      <div class="letter">B</div>
+      <div class="content">
+        <h3>Compose Bottom Navigation Shell</h3>
+        <p>Bọc WebView bằng thanh điều hướng dưới (Bottom Navigation) dạng Native của Jetpack Compose (Home, Cài đặt, Offline). Khi chuyển tab sẽ ẩn/hiện WebView hoặc chuyển trang tương ứng.</p>
+        <div class="pros-cons">
+          <div class="pros">
+            <ul>
+              <li>Cảm giác ứng dụng native hơn</li>
+              <li>Quản lý tab độc lập</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <ul>
+              <li>Tạo độ trễ khi đồng bộ trạng thái tab giữa WebView và Compose</li>
+              <li>Thao tác back button phức tạp hơn</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="option" data-choice="full-native" onclick="toggleSelect(this)">
+      <div class="letter">C</div>
+      <div class="content">
+        <h3>100% Native Jetpack Compose</h3>
+        <p>Xây dựng lại toàn bộ giao diện học tập bằng Jetpack Compose thuần túy. Đọc bài học từ Next.js REST API và parse Markdown thành giao diện native bằng Jetpack Compose Markdown renderer.</p>
+        <div class="pros-cons">
+          <div class="pros">
+            <ul>
+              <li>Hiệu năng tối đa, mượt mà 120Hz</li>
+              <li>Trải nghiệm Android thuần chuẩn mực</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <ul>
+              <li>Tốn cực kỳ nhiều thời gian (vượt quá phạm vi hiện tại)</li>
+              <li>Khó tái hiện hiệu ứng starfield động và client translations động</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="section">
+  <h3>Phần 2: Phương án tích hợp PWA (Progressive Web App)</h3>
+  <p>Để ứng dụng Web hiện nút "Tải App PWA", chúng ta cần thiết lập:</p>
+  <ul>
+    <li><strong>Web App Manifest:</strong> Định nghĩa tên app, màu sắc chủ đạo, icon và chế độ hiển thị fullscreen độc lập.</li>
+    <li><strong>Service Worker:</strong> Đăng ký cache tĩnh để app có thể khởi động ngay cả khi offline.</li>
+    <li><strong>Install Prompt Handler:</strong> Bắt sự kiện <code>beforeinstallprompt</code> để hiện nút "Tải App" đẹp mắt trên thanh Navigation của trang Web khi mở bằng trình duyệt điện thoại/máy tính.</li>
+  </ul>
+</div>

@@ -1,3 +1,0 @@
-// Member C (Frontend): App Shell Layout
-// Chứa Sidebar và Header dùng chung cho Dashboard, Lessons, Vocab...
-export default function AppLayout({ children }: { children: React.ReactNode }) { return <div>{children}</div>; }

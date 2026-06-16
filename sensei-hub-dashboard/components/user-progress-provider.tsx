@@ -1,6 +1,6 @@
 "use client"
 
-import React, { createContext, useContext, useState, useEffect } from "react"
+import React, { createContext, useContext, useState, useEffect, useMemo } from "react"
 import { subjects as staticSubjects, computeSubjectStats, type Subject, type OverallStats } from "@/lib/subjects"
 import { useCosmicAudio } from "@/hooks/use-cosmic-audio"
 
@@ -209,49 +209,53 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
   }
 
   // Compute dynamic subjects list based on progressMap
-  const dynamicSubjects = staticSubjects.map((subject) => {
-    const updatedModules = subject.modules.map((mod) => {
-      const userProgress = progressMap[mod.id] !== undefined ? progressMap[mod.id] : mod.progress
+  const dynamicSubjects = useMemo(() => {
+    return staticSubjects.map((subject) => {
+      const updatedModules = subject.modules.map((mod) => {
+        const userProgress = progressMap[mod.id] !== undefined ? progressMap[mod.id] : mod.progress
+        return {
+          ...mod,
+          progress: userProgress,
+        }
+      })
+
+      const tempSubject = {
+        ...subject,
+        modules: updatedModules,
+      }
+
+      const stats = computeSubjectStats(tempSubject)
+
       return {
-        ...mod,
-        progress: userProgress,
+        ...tempSubject,
+        progress: stats.progress,
+        completedLessons: stats.completedLessons,
+        totalLessons: stats.totalLessons,
+        hours: stats.hours,
       }
     })
-
-    const tempSubject = {
-      ...subject,
-      modules: updatedModules,
-    }
-
-    const stats = computeSubjectStats(tempSubject)
-
-    return {
-      ...tempSubject,
-      progress: stats.progress,
-      completedLessons: stats.completedLessons,
-      totalLessons: stats.totalLessons,
-      hours: stats.hours,
-    }
-  })
+  }, [progressMap])
 
   // Compute dynamic overall stats
-  const allStats = dynamicSubjects.map((s) => computeSubjectStats(s))
-  const totalLessons = allStats.reduce((sum, s) => sum + s.totalLessons, 0)
-  const completedLessonsCount = allStats.reduce((sum, s) => sum + s.completedLessons, 0)
-  const totalMinutes = allStats.reduce((sum, s) => sum + s.totalMinutes, 0)
-  const inProgressSubjects = allStats.filter((s) => s.progress > 0 && s.progress < 100).length
-  const averageProgress =
-    totalLessons > 0 ? Math.round((completedLessonsCount / totalLessons) * 100) : 0
+  const overallStats = useMemo(() => {
+    const allStats = dynamicSubjects.map((s) => computeSubjectStats(s))
+    const totalLessons = allStats.reduce((sum, s) => sum + s.totalLessons, 0)
+    const completedLessonsCount = allStats.reduce((sum, s) => sum + s.completedLessons, 0)
+    const totalMinutes = allStats.reduce((sum, s) => sum + s.totalMinutes, 0)
+    const inProgressSubjects = allStats.filter((s) => s.progress > 0 && s.progress < 100).length
+    const averageProgress =
+      totalLessons > 0 ? Math.round((completedLessonsCount / totalLessons) * 100) : 0
 
-  const overallStats: OverallStats = {
-    totalLessons,
-    completedLessons: completedLessonsCount,
-    totalSubjects: dynamicSubjects.length,
-    inProgressSubjects,
-    totalHours: Math.round(totalMinutes / 60),
-    averageProgress,
-    perSubjectProgress: allStats.map((s) => s.progress),
-  }
+    return {
+      totalLessons,
+      completedLessons: completedLessonsCount,
+      totalSubjects: dynamicSubjects.length,
+      inProgressSubjects,
+      totalHours: Math.round(totalMinutes / 60),
+      averageProgress,
+      perSubjectProgress: allStats.map((s) => s.progress),
+    }
+  }, [dynamicSubjects])
 
   return (
     <UserProgressContext.Provider

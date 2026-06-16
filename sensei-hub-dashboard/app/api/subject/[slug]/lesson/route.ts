@@ -15,6 +15,11 @@ const slugToFolder: Record<string, string> = {
   "git-and-github": "git-and-github",
 };
 
+function isPathSafe(baseDir: string, targetPath: string): boolean {
+  const relative = path.relative(baseDir, targetPath);
+  return !!(relative && !relative.startsWith("..") && !path.isAbsolute(relative));
+}
+
 function decodeEscapedString(str: string): string {
   let decoded = str;
   // Decode \UXXXXXXXX (8 hex chars)
@@ -141,7 +146,7 @@ export async function GET(
     let fullFilePath = path.resolve(lessonsDir, langToUse, subjectFolder, `${lessonPath}.md`)
 
     // Security check: Prevent Path Traversal
-    if (!fullFilePath.startsWith(lessonsDir)) {
+    if (!isPathSafe(lessonsDir, fullFilePath)) {
       return NextResponse.json({ error: "Access denied" }, { status: 403 })
     }
 
@@ -149,7 +154,7 @@ export async function GET(
       langToUse = "en"
       fullFilePath = path.resolve(lessonsDir, "en", subjectFolder, `${lessonPath}.md`)
       // Security check: Prevent Path Traversal for fallback file
-      if (!fullFilePath.startsWith(lessonsDir)) {
+      if (!isPathSafe(lessonsDir, fullFilePath)) {
         return NextResponse.json({ error: "Access denied" }, { status: 403 })
       }
     }

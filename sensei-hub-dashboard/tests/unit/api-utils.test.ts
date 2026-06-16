@@ -41,3 +41,34 @@ describe("Unicode and Emoji Decoding", () => {
     expect(decodeEscapedString(input)).toBe('This is a "test" string')
   })
 })
+
+import path from "path";
+
+function isPathSafe(baseDir: string, targetPath: string): boolean {
+  const relative = path.relative(baseDir, targetPath);
+  return !!(relative && !relative.startsWith("..") && !path.isAbsolute(relative));
+}
+
+describe("Path Traversal Protection Helper", () => {
+  const baseDir = "/home/user/project/lessons";
+
+  it("should allow paths strictly inside the base directory", () => {
+    const target = "/home/user/project/lessons/vi/git/day-01.md";
+    expect(isPathSafe(baseDir, target)).toBe(true);
+  });
+
+  it("should block path traversal outside of the base directory via ..", () => {
+    const target = "/home/user/project/lessons/../../etc/passwd";
+    expect(isPathSafe(baseDir, target)).toBe(false);
+  });
+
+  it("should block sibling directories starting with same prefix", () => {
+    const target = "/home/user/project/lessons-backup/secret.md";
+    expect(isPathSafe(baseDir, target)).toBe(false);
+  });
+
+  it("should block absolute paths outside the base", () => {
+    const target = "/etc/passwd";
+    expect(isPathSafe(baseDir, target)).toBe(false);
+  });
+});
