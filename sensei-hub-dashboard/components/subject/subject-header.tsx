@@ -29,7 +29,7 @@ export function SubjectHeader({ subject }: { subject: Subject }) {
         <ChevronRight className="h-3 w-3" />
         <span className="text-white/70">{t("nav.subjects")}</span>
         <ChevronRight className="h-3 w-3" />
-        <span className="text-white font-medium">{subject.name}</span>
+        <span className="text-white font-medium">{t(`sub.${subject.slug}.name`)}</span>
       </motion.div>
 
       {/* Hero card */}
@@ -64,7 +64,7 @@ export function SubjectHeader({ subject }: { subject: Subject }) {
               <div className="flex flex-col gap-1.5">
                 <div className="flex items-center gap-2">
                   <span className="px-2 py-0.5 rounded-md bg-white/10 border border-white/10 text-[10px] font-mono uppercase tracking-wider text-white/70">
-                    {subject.level}
+                    {t(`level.${subject.level.toLowerCase().replace(" ", "")}`)}
                   </span>
                   <div className="flex items-center gap-1 text-[10px] text-emerald-300 font-mono uppercase tracking-wider">
                     <Sparkles className="h-3 w-3" />
@@ -72,7 +72,7 @@ export function SubjectHeader({ subject }: { subject: Subject }) {
                   </div>
                 </div>
                 <p className="text-xs text-white/50 font-mono tracking-wider truncate max-w-[280px] lg:max-w-md">
-                  {subject.fullName}
+                  {t(`sub.${subject.slug}.name`)}
                 </p>
               </div>
             </div>
@@ -82,7 +82,7 @@ export function SubjectHeader({ subject }: { subject: Subject }) {
               subject.colorFrom,
               subject.colorTo
             )}>
-              {subject.name}
+              {t(`sub.${subject.slug}.name`)}
             </h1>
             <p
               className={cn(
@@ -91,10 +91,10 @@ export function SubjectHeader({ subject }: { subject: Subject }) {
                 subject.colorTo,
               )}
             >
-              {subject.tagline}
+              {t(`sub.${subject.slug}.tagline`)}
             </p>
             <p className="mt-3.5 text-sm text-slate-300 leading-relaxed max-w-2xl text-pretty">
-              {subject.description}
+              {t(`sub.${subject.slug}.description`)}
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -133,6 +133,7 @@ function ProgressRing({
   colorFrom: string
   colorTo: string
 }) {
+  const { t } = useLanguage()
   const size = 180
   const stroke = 10
   const radius = (size - stroke) / 2
@@ -194,9 +195,9 @@ function ProgressRing({
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-[10px] text-white/50 font-mono uppercase tracking-widest">Progress</span>
+        <span className="text-[10px] text-white/50 font-mono uppercase tracking-widest">{t("common.progress")}</span>
         <span className="text-4xl font-bold text-white tracking-tight">{progress}%</span>
-        <span className="text-[10px] text-white/40 font-mono mt-1">Keep going</span>
+        <span className="text-[10px] text-white/40 font-mono mt-1">{t("action.keep_going")}</span>
       </div>
     </div>
   )

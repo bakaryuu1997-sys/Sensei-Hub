@@ -95,12 +95,12 @@ export function SubjectsGrid() {
                         subject.colorFrom,
                         subject.colorTo
                       )}>
-                        {subject.name}
+                        {t(`sub.${subject.slug}.name`)}
                       </h3>
                       <p className="text-[10px] text-cyan-300/80 font-mono uppercase tracking-wider mt-1.5">
-                        {subject.level}
+                        {t(`level.${subject.level.toLowerCase().replace(" ", "")}`)}
                       </p>
-                      <p className="text-xs text-slate-300/90 mt-2.5 leading-relaxed line-clamp-2">{subject.tagline}</p>
+                      <p className="text-xs text-slate-300/90 mt-2.5 leading-relaxed line-clamp-2">{t(`sub.${subject.slug}.tagline`)}</p>
                     </div>
 
                     {/* Stats */}
@@ -118,7 +118,7 @@ export function SubjectsGrid() {
                     {/* Progress */}
                     <div>
                       <div className="flex items-center justify-between mb-1.5">
-                        <span className="text-[10px] text-white/40 font-mono uppercase tracking-wider">Progress</span>
+                        <span className="text-[10px] text-white/40 font-mono uppercase tracking-wider">{t("common.progress")}</span>
                         <span className="text-xs font-extrabold text-cyan-200">{s.progress}%</span>
                       </div>
                       <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/10">

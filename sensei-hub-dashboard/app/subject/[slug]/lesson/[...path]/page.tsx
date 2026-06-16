@@ -191,11 +191,11 @@ export default function LessonPage({
                 className="flex items-center gap-2 text-sm font-semibold text-white/60 hover:text-cyan-400 transition-colors"
               >
                 <ArrowLeft className="h-4 w-4" />
-                Quay lại {subject.name}
+                {t("lesson.back_to_subject")} {subject.name}
               </Link>
               {lessonsList.length > 0 && currentIndex !== -1 && (
                 <span className="text-xs font-mono font-medium text-white/40">
-                  Bài học {currentIndex + 1} / {lessonsList.length}
+                  {t("lesson.count_label")} {currentIndex + 1} / {lessonsList.length}
                 </span>
               )}
             </div>
@@ -204,17 +204,17 @@ export default function LessonPage({
             {isLoading ? (
               <div className="flex flex-col items-center justify-center py-20 space-y-4">
                 <div className="h-10 w-10 animate-spin rounded-full border-4 border-cyan-500/20 border-t-cyan-400" />
-                <p className="text-sm text-white/50 font-mono">Đang tải nội dung bài học...</p>
+                <p className="text-sm text-white/50 font-mono">{t("lesson.loading_content")}</p>
               </div>
             ) : error ? (
               <div className="glass-card border border-rose-500/20 rounded-2xl p-8 text-center space-y-4">
-                <h2 className="text-lg font-bold text-rose-400">Không tìm thấy bài học</h2>
+                <h2 className="text-lg font-bold text-rose-400">{t("lesson.not_found_title")}</h2>
                 <p className="text-sm text-white/60">{error}</p>
                 <Link
                   href={`/subject/${slug}`}
                   className="px-4 py-2 bg-white/10 rounded-xl text-sm font-bold hover:bg-white/20 transition-all inline-block"
                 >
-                  Quay lại danh sách
+                  {t("lesson.back_to_list")}
                 </Link>
               </div>
             ) : (

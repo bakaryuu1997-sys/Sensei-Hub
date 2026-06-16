@@ -21,7 +21,7 @@ export function HeroBanner() {
       <div className="absolute inset-0">
         <Image
           src="/images/hero-banner.png"
-          alt="Featured learning path background"
+          alt={t("alt.hero_banner")}
           fill
           priority
           className="object-cover"

@@ -49,7 +49,7 @@ export function ConstellationMap() {
       <div className="flex items-center gap-2 mb-4">
         <Sparkles className="w-4 h-4 text-yellow-300 animate-pulse" />
         <h3 className="text-sm font-extrabold font-mono tracking-wider uppercase text-cyan-200">
-          {t("nav.dashboard")} · Chòm Sao Học Tập (Constellations)
+          {t("nav.dashboard")} · {t("constellation.title")}
         </h3>
       </div>
 
@@ -157,10 +157,10 @@ export function ConstellationMap() {
                           : "text-white/40 group-hover:text-white/60",
                       )}
                     >
-                      {node.name}
+                      {t(`sub.${node.slug}.name`)}
                     </span>
                     <span className="block text-[8px] font-mono text-white/30 uppercase tracking-widest mt-0.5">
-                      {node.level}
+                      {t(`level.${node.level.toLowerCase().replace(" ", "")}`)}
                     </span>
                   </div>
                 </Link>

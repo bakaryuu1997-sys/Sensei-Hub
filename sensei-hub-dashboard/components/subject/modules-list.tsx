@@ -163,7 +163,7 @@ function ModuleRow({
                 difficultyColor[module.difficulty],
               )}
             >
-              {module.difficulty}
+              {t(`level.${module.difficulty.toLowerCase()}_alt`)}
             </span>
           </div>
           <p className="text-sm text-slate-300/85 line-clamp-1 mb-3.5">{module.description}</p>
@@ -231,7 +231,7 @@ function ModuleRow({
           >
             <div className="px-5 py-4 space-y-3">
               {moduleLessons.length === 0 ? (
-                <div className="text-xs text-white/40 py-2 font-mono">Loading lessons...</div>
+                <div className="text-xs text-white/40 py-2 font-mono">{t("subject.loading_lessons")}</div>
               ) : (
                 moduleLessons.map((lesson) => {
                   const lessonKey = `${subjectSlug}/${lesson.path}`
@@ -266,7 +266,7 @@ function ModuleRow({
                             : "bg-white/10 text-white hover:bg-white/20"
                         )}
                       >
-                        {isLessonCompleted ? "Review" : "Study"}
+                        {isLessonCompleted ? t("action.review") : t("action.study")}
                       </Link>
                     </div>
                   )

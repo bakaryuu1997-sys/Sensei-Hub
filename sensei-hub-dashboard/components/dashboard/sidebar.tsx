@@ -156,7 +156,7 @@ export function Sidebar() {
       {/* Footer brand */}
       <div className="p-4 border-t border-white/5">
         <div className="text-[10px] text-white/30 font-mono tracking-widest text-center">
-          FOCUS · FLOW · MASTERY
+          {t("footer.motto")}
         </div>
       </div>
     </motion.aside>

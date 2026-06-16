@@ -74,7 +74,7 @@ export function TopBar() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className="relative w-11 h-11 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center transition-colors"
-        aria-label="Notifications"
+        aria-label={t("aria.notifications")}
       >
         <Bell className="w-4 h-4 text-white/80" />
       </motion.button>
@@ -85,7 +85,7 @@ export function TopBar() {
         whileTap={{ scale: 0.95 }}
         onClick={toggleMute}
         className="relative w-11 h-11 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center transition-colors text-white/80"
-        aria-label="Toggle Cosmic Audio"
+        aria-label={t("aria.toggle_audio")}
       >
         {muted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-cyan-400" />}
       </motion.button>
@@ -103,7 +103,7 @@ export function TopBar() {
           <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-400 border-2 border-slate-950" />
         </div>
         <div className="hidden md:block text-left">
-          <div className="text-xs font-semibold text-white leading-tight">Developer</div>
+          <div className="text-xs font-semibold text-white leading-tight">{t("common.developer")}</div>
           <div className="text-[10px] text-cyan-300/80 font-mono">{overall.completedLessons} {t("subject.lessons")}</div>
         </div>
       </motion.button>

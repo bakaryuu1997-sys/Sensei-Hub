@@ -85,13 +85,13 @@ export default function DashboardPage() {
             >
               <div>
                 <h1 className="text-3xl lg:text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-cyan-300">
-                  {t("header.greeting")}, <span className="gradient-text">Dev</span>
+                  {t("header.greeting")}, <span className="gradient-text">{t("common.dev")}</span>
                 </h1>
                 <p className="mt-1 text-sm text-cyan-200/70 font-medium">{t("header.subtitle")}</p>
               </div>
               <div className="flex items-center gap-1.5 text-xs text-white/50 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full backdrop-blur-md">
                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="font-mono text-cyan-300">All systems online</span>
+                <span className="font-mono text-cyan-300">{t("status.online")}</span>
               </div>
             </motion.div>
 
@@ -114,7 +114,7 @@ export default function DashboardPage() {
               transition={{ delay: 1 }}
               className="pt-8 pb-4 text-center text-[11px] text-white/30 font-mono"
             >
-              SENSEI HUB · Focus & Flow · 2026
+              {t("footer.brand")}
             </motion.footer>
           </div>
         </main>

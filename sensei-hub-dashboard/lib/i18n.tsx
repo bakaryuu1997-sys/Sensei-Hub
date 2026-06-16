@@ -99,6 +99,95 @@ export const translations: Translations = {
   "day.sun": { en: "Sun", ja: "日", vi: "CN" },
   "pwa.install_sidebar": { en: "Download Sensei Hub", ja: "Sensei Hubをダウンロード", vi: "Tải App Sensei Hub" },
   "pwa.install_topbar": { en: "Download App", ja: "アプリをダウンロード", vi: "Tải App" },
+
+  // System Status & Common
+  "status.online": { en: "All systems online", ja: "システム正常", vi: "Hệ thống sẵn sàng" },
+  "common.progress": { en: "Progress", ja: "進捗", vi: "Tiến độ" },
+  "common.loading": { en: "Loading...", ja: "読み込み中...", vi: "Đang tải..." },
+  "common.not_found": { en: "Not found", ja: "見つかりません", vi: "Không tìm thấy" },
+  "common.dev": { en: "Dev", ja: "開発者", vi: "Dev" },
+  "common.developer": { en: "Developer", ja: "開発者", vi: "Nhà phát triển" },
+
+  // Footer & Branding
+  "footer.brand": { en: "SENSEI HUB · Focus & Flow · 2026", ja: "SENSEI HUB · 集中とフロー · 2026", vi: "SENSEI HUB · Tập trung & Trải nghiệm · 2026" },
+  "footer.motto": { en: "FOCUS · FLOW · MASTERY", ja: "集中 · フロー · 習得", vi: "TẬP TRUNG · TRẢI NGHIỆM · TINH THÔNG" },
+  
+  // Constellation
+  "constellation.title": { en: "Learning Constellations", ja: "学習の星座", vi: "Chòm sao học tập" },
+
+  // Lesson Page
+  "lesson.loading_content": { en: "Loading lesson content...", ja: "レッスン内容を読み込み中...", vi: "Đang tải nội dung bài học..." },
+  "lesson.not_found_title": { en: "Lesson not found", ja: "レッスンが見つかりません", vi: "Không tìm thấy bài học" },
+  "lesson.back_to_list": { en: "Back to list", ja: "リストに戻る", vi: "Quay lại danh sách" },
+  "lesson.back_to_subject": { en: "Back to", ja: "に戻る", vi: "Quay lại" },
+  "lesson.count_label": { en: "Lesson", ja: "レッスン", vi: "Bài học" },
+
+  // Levels
+  "level.beginner": { en: "Beginner", ja: "初級", vi: "Cơ bản" },
+  "level.intermediate": { en: "Intermediate", ja: "中級", vi: "Trung cấp" },
+  "level.advanced": { en: "Advanced", ja: "上級", vi: "Nâng cao" },
+  "level.alllevels": { en: "All Levels", ja: "Mọi cấp độ", vi: "Mọi cấp độ" },
+  "level.beginner_alt": { en: "Beginner", ja: "初級", vi: "Cơ bản" },
+  "level.intermediate_alt": { en: "Intermediate", ja: "中級", vi: "Trung cấp" },
+  "level.advanced_alt": { en: "Advanced", ja: "上級", vi: "Nâng cao" },
+
+  // Module actions
+  "action.study": { en: "Study", ja: "学習する", vi: "Học tập" },
+  "action.review": { en: "Review", ja: "復習する", vi: "Ôn tập" },
+  "action.keep_going": { en: "Keep going", ja: "その調子で！", vi: "Tiếp tục cố gắng" },
+  "subject.loading_lessons": { en: "Loading lessons...", ja: "レッスンを読み込み中...", vi: "Đang tải bài học..." },
+
+  // Accessibility & SEO
+  "aria.notifications": { en: "Notifications", ja: "通知", vi: "Thông báo" },
+  "aria.toggle_audio": { en: "Toggle Cosmic Audio", ja: "オーディオを切り替える", vi: "Bật/Tắt âm thanh" },
+  "alt.hero_banner": { en: "Featured learning path background", ja: "おすすめコースの背景", vi: "Hình nền lộ trình học tập nổi bật" },
+  "seo.title": { en: "SENSEI HUB - Focus & Flow Learning", ja: "SENSEI HUB - 集中とフローの学習", vi: "SENSEI HUB - Học tập Tập trung & Hiệu quả" },
+  "seo.description": { en: "Elevate your coding skills with focused learning experiences", ja: "集中した学習体験でコーディングスキルを向上させる", vi: "Nâng tầm kỹ năng lập trình với trải nghiệm học tập tập trung" },
+
+  // Subject Details (Metadata)
+  "sub.git-and-github.name": { en: "Git & GitHub", ja: "Git & GitHub", vi: "Git & GitHub" },
+  "sub.git-and-github.tagline": { en: "Version control and collaborative coding", ja: "バージョン管理と共同開発", vi: "Quản lý mã nguồn & làm việc nhóm" },
+  "sub.git-and-github.description": { en: "Go from Git novice to pro. Master commits, branching strategies, pull requests, collaborative workflows, and conflict resolution.", ja: "Gitの初心者からプロへ。コミット、ブランチ戦略、プルリクエスト、共同ワークフロー、競合解決をマスターします。", vi: "Từ người mới bắt đầu đến chuyên gia Git. Làm chủ commit, chiến lược nhánh, pull request, quy trình cộng tác và xử lý xung đột." },
+  
+  "sub.fe.name": { en: "FE Exam", ja: "基本情報", vi: "Kỳ thi FE" },
+  "sub.fe.tagline": { en: "Master the Japanese IT Exam", ja: "日本のIT資格をマスターする", vi: "Chinh phục kỳ thi IT Nhật Bản" },
+  "sub.fe.description": { en: "Master the Japanese Fundamental Information Technology Engineer Examination. Covers algorithms, hardware, networks, databases, and project management.", ja: "日本の基本情報技術者試験をマスターします。アルゴリズム、ハードウェア、ネットワーク、データベース、プロジェクト管理を網羅。", vi: "Chinh phục kỳ thi Kỹ sư Công nghệ thông tin Cơ bản Nhật Bản. Bao gồm thuật toán, phần cứng, mạng, cơ sở dữ liệu và quản lý dự án." },
+
+  "sub.aws.name": { en: "AWS", ja: "AWS", vi: "AWS" },
+  "sub.aws.tagline": { en: "Master the cloud, scale infinitely", ja: "クラウドをマスターし、無限に拡張する", vi: "Làm chủ đám mây, mở rộng vô hạn" },
+  "sub.aws.description": { en: "Build, deploy, and scale production applications on the world's leading cloud platform. From EC2 to Lambda, master 200+ AWS services.", ja: "世界をリードするクラウドプラットフォームで本番アプリケーションを構築、デプロイ、拡張します。EC2からLambdaまで、200以上のAWSサービスをマスター。", vi: "Xây dựng, triển khai và mở rộng ứng dụng thực tế trên nền tảng đám mây hàng đầu thế giới. Từ EC2 đến Lambda, làm chủ hơn 200 dịch vụ AWS." },
+
+  "sub.database-engineering.name": { en: "Database", ja: "データベース", vi: "Cơ sở dữ liệu" },
+  "sub.database-engineering.tagline": { en: "Design, query, and optimize relational databases", ja: "データベースの設計、クエリ、最適化", vi: "Thiết kế & tối ưu hóa cơ sở dữ liệu" },
+  "sub.database-engineering.description": { en: "Learn schema design, advanced SQL querying, indexing strategies, transaction isolation levels, and performance tuning for production databases.", ja: "本番データベースのスキーマ設計、高度なSQLクエリ、インデックス戦略、トランザクション分離レベル、パフォーマンス調整を学びます。", vi: "Học thiết kế lược đồ, truy vấn SQL nâng cao, chiến lược đánh chỉ mục, các mức cô lập giao dịch và tối ưu hóa hiệu năng cho cơ sở dữ liệu thực tế." },
+
+  "sub.business-japanese-test.name": { en: "BJT", ja: "BJT ビジネス日本語", vi: "Tiếng Nhật thương mại" },
+  "sub.business-japanese-test.tagline": { en: "Master professional Japanese for career success", ja: "キャリア成功のためのビジネス日本語", vi: "Tiếng Nhật chuyên nghiệp cho sự nghiệp" },
+  "sub.business-japanese-test.description": { en: "Unlock high-level corporate Japanese. Practice honorifics (keigo), email etiquette, meetings protocols, and business customs for Japanese workplaces.", ja: "高度な企業日本語を習得します。敬語、メールのマナー、会議のプロトコル、日本の職場のビジネス習慣を練習します。", vi: "Mở khóa tiếng Nhật doanh nghiệp cấp độ cao. Thực hành kính ngữ (keigo), quy tắc viết email, giao thức họp hành và văn hóa kinh doanh Nhật Bản." },
+
+  "sub.devops-engineering.name": { en: "DevOps", ja: "DevOps", vi: "DevOps" },
+  "sub.devops-engineering.tagline": { en: "Automate, deploy, and monitor like a pro", ja: "プロのように自動化、デプロイ、監視する", vi: "Tự động hóa & triển khai hệ thống" },
+  "sub.devops-engineering.description": { en: "Bridge the gap between dev and ops. Learn Docker containers, Kubernetes orchestration, CI/CD pipelines, Infrastructure as Code, and monitoring.", ja: "開発と運用のギャップを埋めます。Dockerコンテナ、Kubernetesオーケストレーション、CI/CDパイプライン、Infrastructure as Code、監視を学びます。", vi: "Xóa bỏ khoảng cách giữa phát triển và vận hành. Học Docker, Kubernetes, CI/CD, hạ tầng dưới dạng mã (IaC) và giám sát hệ thống." },
+
+  "sub.system-design.name": { en: "System Design", ja: "システム設計", vi: "Thiết kế hệ thống" },
+  "sub.system-design.tagline": { en: "Build highly scalable, reliable systems", ja: "スケーラブルで信頼性の高いシステムを構築する", vi: "Xây dựng hệ thống quy mô lớn" },
+  "sub.system-design.description": { en: "Learn to design large-scale systems. Covers load balancing, caching, databases replication, microservices, message queues, and real-world case studies.", ja: "大規模なシステムの設計方法を学びます。ロードバランシング、キャッシュ、データベースのレプリケーション、マイクロサービス、メッセージキュー、実例を網羅。", vi: "Học cách thiết kế hệ thống quy mô lớn. Bao gồm cân bằng tải, bộ nhớ đệm, nhân bản cơ sở dữ liệu, microservices, hàng đợi thông điệp và các tình huống thực tế." },
+
+  "sub.data-structures-and-algorithms.name": { en: "DSA", ja: "データ構造とアルゴリズム", vi: "Thuật toán & Cấu trúc dữ liệu" },
+  "sub.data-structures-and-algorithms.tagline": { en: "Crack the coding interview and optimize code", ja: "コーディング面接に合格し、コードを最適化する", vi: "Vượt qua phỏng vấn & tối ưu mã nguồn" },
+  "sub.data-structures-and-algorithms.description": { en: "Master essential data structures and algorithms. From arrays and lists to trees, graphs, dynamic programming, and space-time complexity analysis.", ja: "必須のデータ構造とアルゴリズムをマスターします。配列やリストから、木、グラフ、動的計画法、時空間計算量分析まで。", vi: "Làm chủ các cấu trúc dữ liệu và thuật toán thiết yếu. Từ mảng, danh sách đến cây, đồ thị, quy hoạch động và phân tích độ phức tạp." },
+
+  "sub.developer-mindset.name": { en: "Mindset", ja: "マインドセット", vi: "Tư duy" },
+  "sub.developer-mindset.tagline": { en: "Be more than just a coder", ja: "単なるプログラマー以上の存在になる", vi: "Phát triển tư duy kỹ sư thực thụ" },
+  "sub.developer-mindset.description": { en: "Grow your soft skills, engineering culture, agile practices, project management methodologies, technical communication, and leadership skills.", ja: "ソフトスキル、エンジニアリング文化、アジャイル、プロジェクト管理手法、テクニカルコミュニケーション、リーダーシップスキルを高めます。", vi: "Phát triển kỹ năng mềm, văn hóa kỹ thuật, thực hành agile, phương pháp quản lý dự án, giao tiếp kỹ thuật và kỹ năng lãnh đạo." },
+
+  "sub.cybersecurity-awareness.name": { en: "Security", ja: "セキュリティ", vi: "Bảo mật" },
+  "sub.cybersecurity-awareness.tagline": { en: "Secure systems, analyze threats, defend networks", ja: "システムを保護し、脅威を分析し、ネットワークを守る", vi: "Bảo mật hệ thống & phòng chống tấn công" },
+  "sub.cybersecurity-awareness.description": { en: "Understand the security landscape. Learn about common vulnerabilities (OWASP Top 10), penetration testing basics, cryptography, and network defense.", ja: "セキュリティ情勢を理解します。一般的な脆弱性（OWASP Top 10）、ペネトレーションテストの基礎、暗号化、ネットワーク防御について学びます。", vi: "Hiểu về bối cảnh an ninh mạng. Học về các lỗ hổng phổ biến (OWASP Top 10), cơ bản về kiểm thử xâm nhập, mật mã học và phòng thủ mạng." },
+
+  "sub.blockchain-and-web3-fundamentals.name": { en: "Blockchain", ja: "ブロックチェーン", vi: "Blockchain" },
+  "sub.blockchain-and-web3-fundamentals.tagline": { en: "Decentralize the future", ja: "未来を分散化する", vi: "Công nghệ tương lai phi tập trung" },
+  "sub.blockchain-and-web3-fundamentals.description": { en: "Understand blockchain mechanics, cryptography, smart contracts, Ethereum Virtual Machine, decentralized finance (DeFi), and consensus protocols.", ja: "ブロックチェーンの仕組み、暗号化、スマートコントラクト、EVM、DeFi、コンセンサスプロトコルを理解します。", vi: "Tìm hiểu cơ chế blockchain, mật mã học, hợp đồng thông minh, EVM, tài chính phi tập trung (DeFi) và các giao thức đồng thuận." },
 }
 
 type LanguageContextType = {
