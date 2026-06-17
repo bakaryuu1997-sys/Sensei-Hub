@@ -1,14 +1,22 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { Play, ChevronRight, Sparkles, Layers, BookOpen, Clock } from "lucide-react"
 import { useLanguage } from "@/lib/i18n"
 import { useUserProgress } from "@/components/user-progress-provider"
+import { getResumeHref } from "@/lib/last-lesson"
 
 export function HeroBanner() {
   const { t } = useLanguage()
   const { overallStats: overall } = useUserProgress()
+  const [resumeHref, setResumeHref] = useState("/subject/aws")
+
+  useEffect(() => {
+    setResumeHref(getResumeHref())
+  }, [])
 
   return (
     <motion.section
@@ -100,15 +108,15 @@ export function HeroBanner() {
             transition={{ delay: 0.7 }}
             className="flex flex-wrap items-center gap-3 mt-2"
           >
-            <button className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 text-white font-semibold text-sm shadow-xl shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:scale-[1.03] active:scale-[0.97] transition-all overflow-hidden">
+            <Link href={resumeHref} className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 text-white font-semibold text-sm shadow-xl shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:scale-[1.03] active:scale-[0.97] transition-all overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity" />
               <Play className="relative w-4 h-4 fill-white" />
               <span className="relative">{t("hero.cta")}</span>
               <ChevronRight className="relative w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/15 text-white font-semibold text-sm transition-colors">
+            </Link>
+            <Link href="/subject/aws" className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/15 text-white font-semibold text-sm transition-colors">
               {t("hero.explore")}
-            </button>
+            </Link>
           </motion.div>
         </div>
       </div>

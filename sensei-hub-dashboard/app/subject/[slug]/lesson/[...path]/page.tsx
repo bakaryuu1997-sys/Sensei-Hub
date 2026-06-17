@@ -13,6 +13,7 @@ import { TopBar } from "@/components/dashboard/top-bar"
 import { Starfield } from "@/components/dashboard/starfield"
 import { useLanguage } from "@/lib/i18n"
 import { useUserProgress } from "@/components/user-progress-provider"
+import { setLastLesson } from "@/lib/last-lesson"
 import { cn } from "@/lib/utils"
 
 // Setup DOMPurify to allow target="_blank" on links if needed, or other options
@@ -97,6 +98,12 @@ export default function LessonPage({
           setLessonData(contentData)
           setLessonsList(listData.lessons || [])
           setIsLoading(false)
+          setLastLesson({
+            slug,
+            path: lessonPath,
+            title: contentData?.title || lessonPath,
+            ts: Date.now(),
+          })
         }
       } catch (err: any) {
         console.error("Error loading lesson:", err)
