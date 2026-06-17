@@ -1,341 +1,151 @@
-# 🎓 Sensei Hub（センセイハブ）
+# 🎓 Sensei Hub
 
-> **「母国語でIT・AWS・基本情報をマスターする」**
+> **Master IT in your native language** — a trilingual (English / 日本語 / Tiếng Việt) learning platform for IT engineers.
 
-[![Next.js](https://img.shields.io/badge/Next.js-16.2.6-black?logo=next.js)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.2-black?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7.3-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)
-[![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?logo=prisma)](https://www.prisma.io/)
+[![Clerk](https://img.shields.io/badge/Auth-Clerk-6C47FF?logo=clerk)](https://clerk.com/)
+[![Prisma](https://img.shields.io/badge/Prisma-libSQL/SQLite-2D3748?logo=prisma)](https://www.prisma.io/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 
 ---
 
-## 🌟 プロジェクト概要
+## Overview
 
-**Sensei Hub** は、日本で働くITエンジニア（特にベトナム人・外国人エンジニア）向けの、実践的でモダンなトリリンガル学習プラットフォームです。
+Sensei Hub is a self-study dashboard. Lessons are authored as Markdown files on
+disk and rendered in the browser; learners track their progress per lesson and
+module, in any of three languages. Authentication is handled by **Clerk**, and
+progress is persisted in **SQLite** (via the Prisma libSQL adapter) keyed by the
+Clerk user id, with a localStorage cache so the UI works offline-first.
 
-- 🌐 **3言語対応**: 英語（EN）・日本語（JA）・ベトナム語（VI）で並行して学習可能
-- 📚 **11の専門コース**: AWS、基本情報、System Design、DSA、Database、DevOps、BJT、Blockchain、サイバーセキュリティ、Git & GitHub、Developer Mindset
-- 🎮 **ゲーミフィケーション**: XP、ストリーク、レベルシステム、リーダーボード、デイリーチャレンジ
-- 🎨 **プレミアムUI**: ダークテーマ、グラスモーフィズム、メッシュグラデーション、Framer Motionアニメーション
+### Courses (11)
 
----
+| Course | Days | Level |
+|--------|------|-------|
+| Git & GitHub | 10 | Beginner |
+| 基本情報技術者試験 (FE) | 100 | Advanced |
+| AWS | 60 | Intermediate |
+| Database Engineering | 30 | Advanced |
+| Business Japanese Test (BJT) | ~120 | Intermediate |
+| DevOps Engineering | 60 | Intermediate |
+| System Design | 60 | Advanced |
+| Data Structures & Algorithms | 60 | Intermediate |
+| Developer Mindset | 30 | All levels |
+| Cybersecurity Awareness | 15 | Beginner |
+| Blockchain & Web3 | 20 | Beginner |
 
-## 📚 コースカリキュラム一覧
-
-| # | コース名 | 日数 | レベル | 構造 |
-|---|---------|------|--------|------|
-| 1 | ☁️ AWS Cloud Engineering | 60日 | 中級 | フラットフォルダ |
-| 2 | ⛓️ Blockchain & Web3 Fundamentals | 20日 | 入門 | フラットファイル |
-| 3 | 🗣️ Business Japanese Test（BJT） | 120日 | 中級 | フラットフォルダ（3桁） |
-| 4 | 🛡️ Cybersecurity Awareness | 15日 | 入門 | フラットファイル |
-| 5 | 🧮 Data Structures & Algorithms | 60日 | 中級 | フラットフォルダ |
-| 6 | 🗄️ Database Engineering | 30日 | 上級 | フラットフォルダ |
-| 7 | 🧠 Developer Mindset | 30日 | 全レベル | フェーズ制（3フェーズ） |
-| 8 | 🔧 DevOps Engineering | 60日 | 中級 | フラットフォルダ |
-| 9 | 📋 基本情報技術者試験（FE） | 100日 | 上級 | フェーズ制（13フェーズ） |
-| 10 | 🐙 Git & GitHub | 10日 | 入門 | フラットファイル |
-| 11 | 🏗️ System Design & Architecture | 60日 | 上級 | フェーズ制（4フェーズ） |
-
-> **合計: 11コース × 3言語 = 約1,560以上のレッスンファイル**
+Each course exists in `lessons/en`, `lessons/ja`, and `lessons/vi`.
 
 ---
 
-## 🛠 テックスタック
+## Tech stack
 
-| カテゴリ | テクノロジー | バージョン |
-|---------|------------|-----------|
-| フレームワーク | Next.js (App Router) | 16.2.6 |
-| UIライブラリ | React | 19 |
-| 言語 | TypeScript | 5.7.3 |
-| スタイリング | Tailwind CSS | 4.2.0 |
-| UIコンポーネント | shadcn/ui (new-york) | 57コンポーネント |
-| アニメーション | Framer Motion | 12.38.0 |
-| アイコン | Lucide React | 0.564.0 |
-| チャート | Recharts | 2.15.0 |
-| フォーム | React Hook Form + Zod | 7.54.1 / 3.24.1 |
-| データベース | PostgreSQL + Prisma ORM | — |
-| テーマ | next-themes | 0.4.6 |
-| アナリティクス | @vercel/analytics | 1.6.1 |
-| パッケージマネージャ | pnpm | — |
-| フォント | Inter + JetBrains Mono | Google Fonts |
+| Area | Technology |
+|------|-----------|
+| Framework | Next.js 16 (App Router), React 19 |
+| Language | TypeScript 5.7 |
+| Styling | Tailwind CSS v4, shadcn/ui (dark theme) |
+| Auth | Clerk (`@clerk/nextjs`) |
+| Database | SQLite via Prisma 7 + `@prisma/adapter-libsql` |
+| Content | Markdown on disk, compiled with `marked`, sanitized with DOMPurify, diagrams via Mermaid |
+| UX | Framer Motion, three.js (decorative), canvas-confetti, sonner, cmdk |
+| PWA | Service worker + manifest (installable) |
+| Package manager | pnpm |
+| Deploy | Docker on a single AWS EC2 instance |
+
+See [docs/TECH_STACK.md](./docs/TECH_STACK.md) for details.
 
 ---
 
-## 📁 プロジェクト構成
+## Repository layout
 
 ```
 Sensei-Hub/
-├── 📚 lessons/                     # レッスンコンテンツ（Markdown）
-│   ├── en/                         # 英語（11コース）
-│   ├── ja/                         # 日本語（11コース）
-│   └── vi/                         # ベトナム語（11コース）
-├── 🖥️ sensei-hub-dashboard/        # Next.js 16 ダッシュボードアプリ
-│   ├── app/                        # App Router（ページ・レイアウト）
-│   ├── components/                 # UIコンポーネント（79個）
-│   ├── lib/                        # ユーティリティ・i18n・データ
-│   ├── prisma/                     # データベーススキーマ
-│   └── public/                     # 静的アセット
-├── 📖 docs/                        # プロジェクトドキュメント
-│   ├── design/                     # デザイン仕様
-│   ├── specs/                      # ソフトウェア要件仕様書
-│   └── assets/                     # モックアップ画像
-├── 🐳 docker-compose.yml           # ローカル開発用Docker設定
-└── 📄 README.md                    # このファイル
+├── lessons/                  # Markdown content: en/ ja/ vi/, one folder per course
+├── sensei-hub-dashboard/     # Next.js application
+│   ├── app/                  # App Router pages + API routes
+│   ├── components/           # UI components (incl. shadcn/ui in components/ui)
+│   ├── lib/                  # i18n, subjects data, markdown/search helpers, prisma
+│   ├── prisma/               # schema.prisma (SQLite)
+│   ├── Dockerfile            # production image
+│   └── docker-entrypoint.sh  # prisma db push + next start
+├── docker-compose.yml        # single-instance EC2 deployment
+├── docs/                     # project documentation
+└── LICENSE                   # MIT
 ```
+
+> `sensei-hub-android/` (a separate native shell) is not part of the web deploy.
 
 ---
 
-## 🚀 開発の始め方
+## Local development
 
-### 前提条件
-
-- **Node.js** 20以上
-- **pnpm** パッケージマネージャ
-- **Docker**（PostgreSQL用）
-
-### セットアップ手順
+Prerequisites: **Node.js 20+** and **pnpm**.
 
 ```bash
-# 1. リポジトリのクローン
-git clone https://github.com/bakaryuu1997-sys/Sensei-Hub.git
-cd Sensei-Hub
-
-# 2. PostgreSQL起動（Docker Compose）
-docker-compose up -d
-
-# 3. ダッシュボードアプリのセットアップ
-cd sensei-hub-dashboard
-pnpm install
-
-# 4. 環境変数の設定
-cp .env.example .env
-# .envファイルを編集してDATABASE_URLを設定
-
-# 5. データベースマイグレーション
-pnpm prisma migrate dev
-
-# 6. 開発サーバー起動
-pnpm dev
-```
-
-ブラウザで `http://localhost:3000` を開いてダッシュボードにアクセスできます。
-
----
-
-## 📖 ドキュメント一覧
-
-### コアドキュメント
-
-| ドキュメント | 説明 |
-|------------|------|
-| [INDEX.md](./docs/INDEX.md) | 📋 マスターインデックス — ドキュメント全体の目次 |
-| [BRIEF.md](./docs/BRIEF.md) | 📝 プロジェクト概要書 |
-| [TECH_STACK.md](./docs/TECH_STACK.md) | 🛠 テックスタック詳細 |
-| [ARCHITECTURE.md](./docs/ARCHITECTURE.md) | 🏛 システムアーキテクチャ |
-| [PROJECT_STRUCTURE.md](./docs/PROJECT_STRUCTURE.md) | 📁 プロジェクト構成詳細 |
-
-### 技術ドキュメント
-
-| ドキュメント | 説明 |
-|------------|------|
-| [DATABASE_DESIGN.md](./docs/DATABASE_DESIGN.md) | 🗄 データベース設計（Prismaスキーマ） |
-| [API_SPECS.md](./docs/API_SPECS.md) | 🔌 API仕様書 |
-| [LESSON_ENGINE.md](./docs/LESSON_ENGINE.md) | 📝 レッスンエンジン設計 |
-| [I18N_STRATEGY.md](./docs/I18N_STRATEGY.md) | 🌐 国際化戦略 |
-
-### デザインドキュメント
-
-| ドキュメント | 説明 |
-|------------|------|
-| [UI_UX_SPEC.md](./docs/UI_UX_SPEC.md) | 🎨 UI/UX仕様書 |
-| [MOCKUPS.md](./docs/MOCKUPS.md) | 🖼 モックアップ集 |
-| [design/UI_KIT_JA.md](./docs/design/UI_KIT_JA.md) | 🎨 UIキット |
-| [design/SCREEN_FLOW.md](./docs/design/SCREEN_FLOW.md) | 🔄 画面フロー |
-| [design/DATABASE_SCHEMA.md](./docs/design/DATABASE_SCHEMA.md) | 📊 ERD図 |
-
-### プロジェクト管理
-
-| ドキュメント | 説明 |
-|------------|------|
-| [ROADMAP.md](./docs/ROADMAP.md) | 🗺 ロードマップ |
-| [MASTER_PHASE_TASKS.md](./docs/MASTER_PHASE_TASKS.md) | 📊 フェーズ別タスクマトリックス |
-| [DETAILED_BACKLOG.md](./docs/DETAILED_BACKLOG.md) | ✅ 詳細バックログ |
-| [FEATURES_DETAIL.md](./docs/FEATURES_DETAIL.md) | ⚙️ 機能要件詳細 |
-| [TEAM_ROLES.md](./docs/TEAM_ROLES.md) | 👥 チーム役割分担 |
-| [DEPLOYMENT.md](./docs/DEPLOYMENT.md) | 🚀 デプロイメントガイド |
-| [BRSE_INPUT_CHECKLIST.md](./docs/BRSE_INPUT_CHECKLIST.md) | ✅ BrSEインプットチェックリスト |
-| [specs/SRS_SENSEI_HUB.md](./docs/specs/SRS_SENSEI_HUB.md) | 📋 ソフトウェア要件仕様書 |
-
----
-
-## 🤝 コントリビューション
-
-1. フィーチャーブランチを作成: `git checkout -b feat/your-feature`
-2. 変更をコミット: `git commit -m 'feat: add new feature'`
-3. ブランチをプッシュ: `git push origin feat/your-feature`
-4. プルリクエストを作成
-
-### ブランチ戦略
-
-| ブランチ | 用途 |
-|---------|------|
-| `main` | 本番環境 |
-| `develop` | 開発統合 |
-| `feat/infra-setup` | インフラ構築 |
-| `feat/backend-core` | バックエンド開発 |
-| `feat/frontend-ui` | フロントエンド開発 |
-
-### コミット規約
-
-```
-feat: 新機能の追加
-fix: バグ修正
-docs: ドキュメント更新
-style: コードスタイルの変更
-refactor: リファクタリング
-test: テストの追加・修正
-chore: ビルド・設定の変更
-```
-
----
-
-## 🚀 Quy Trình Triển Khai Trên AWS EC2 (SQLite & Clerk Auth)
-
-Dưới đây là hướng dẫn chi tiết từng bước để triển khai **Sensei Hub Dashboard** lên một máy chủ ảo AWS EC2 chạy hệ điều hành Ubuntu/Linux.
-
-### 1. Chuẩn Bị Trên AWS EC2
-
-Đăng nhập vào EC2 qua SSH và cài đặt các công cụ cần thiết:
-
-```bash
-# Cập nhật hệ thống
-sudo apt update && sudo apt upgrade -y
-
-# Cài đặt Node.js v20 LTS
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Cài đặt pnpm và PM2 toàn cục
-sudo npm install -g pnpm pm2
-```
-
-### 2. Cấu Hình Thư Mục Database Cục Bộ (SQLite Persistence)
-
-Vì SQLite lưu trữ dữ liệu trong một tệp tin vật lý, chúng ta cần đặt tệp tin này ở **ngoài thư mục mã nguồn** của dự án. Điều này giúp dữ liệu học tập của học viên không bị ghi đè hoặc bị xóa khi bạn cập nhật code (ví dụ: chạy `git pull` hoặc re-deploy).
-
-```bash
-# Tạo một thư mục lưu trữ database độc lập trên EC2
-mkdir -p /home/ubuntu/database
-chmod 777 /home/ubuntu/database
-```
-
-### 3. Clone Mã Nguồn & Cài Đặt Dự Án
-
-```bash
-# Clone dự án từ GitHub
 git clone https://github.com/bakaryuu1997-sys/Sensei-Hub.git
 cd Sensei-Hub/sensei-hub-dashboard
 
-# Cài đặt các thư viện phụ thuộc
 pnpm install
+cp .env.example .env          # then fill in your Clerk keys
+pnpm prisma db push           # create the SQLite schema
+pnpm dev                      # http://localhost:3000
 ```
 
-### 4. Thiết Lập File Môi Trường `.env`
+Required environment variables (see [.env.example](./sensei-hub-dashboard/.env.example)):
+`DATABASE_URL`, `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`, `CLERK_SECRET_KEY`,
+`NEXT_PUBLIC_CLERK_SIGN_IN_URL`, `NEXT_PUBLIC_CLERK_SIGN_UP_URL`.
 
-Tạo file `.env` bên trong thư mục `sensei-hub-dashboard`:
+Useful scripts: `pnpm build`, `pnpm start`, `pnpm lint`, `pnpm test:unit`, `pnpm test:e2e`.
+
+---
+
+## Deploy to AWS EC2 (Docker)
+
+The full step-by-step guide is in [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md). In short:
 
 ```bash
+# On the EC2 host (Docker + compose plugin installed)
+git clone https://github.com/bakaryuu1997-sys/Sensei-Hub.git
+cd Sensei-Hub
+
+# Create .env next to docker-compose.yml with your Clerk keys:
+#   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_live_...
+#   CLERK_SECRET_KEY=sk_live_...
 nano .env
+
+docker compose up -d --build
 ```
 
-Thêm nội dung sau (thay thế các thông tin Clerk của bạn):
-
-```env
-# Trỏ đường dẫn database SQLite đến thư mục độc lập đã tạo ở Bước 2
-DATABASE_URL="file:/home/ubuntu/database/production.db"
-
-# Cấu hình Clerk Authentication (Lấy từ Dashboard của Clerk)
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="pk_live_xxxxxxxxx"
-CLERK_SECRET_KEY="sk_live_xxxxxxxxx"
-NEXT_PUBLIC_CLERK_SIGN_IN_URL="/login"
-NEXT_PUBLIC_CLERK_SIGN_UP_URL="/register"
-```
-
-### 5. Khởi Tạo Cơ Sở Dữ Liệu
-
-Đẩy cấu hình cơ sở dữ liệu lên file SQLite và chạy script seeding để tạo tài khoản Admin mặc định:
-
-```bash
-# Đồng bộ Schema với SQLite DB
-npx prisma db push
-
-# Chạy seed dữ liệu (Tạo tài khoản admin@senseihub.local / AdminPassword123!)
-npx prisma db seed
-```
-
-### 6. Build Dự Án và Khởi Chạy PM2
-
-Biên dịch dự án Next.js sang môi trường sản phẩm và chạy nền bằng PM2:
-
-```bash
-# Build dự án
-pnpm build
-
-# Chạy app Next.js qua PM2 trên port 3000
-pm2 start npm --name "sensei-hub" -- run start -- -p 3000
-
-# Cấu hình PM2 tự khởi động cùng hệ thống khi EC2 restart
-pm2 save
-pm2 startup
-```
-
-### 7. Cấu Hinh Nginx Reverse Proxy (Tùy chọn)
-
-Để người dùng truy cập trực tiếp bằng giao thức HTTP (cổng 80) thay vì phải gõ cổng 3000:
-
-```bash
-# Cài đặt Nginx
-sudo apt install nginx -y
-
-# Cấu hình reverse proxy
-sudo nano /etc/nginx/sites-available/default
-```
-
-Thay đổi khối `location /` thành:
-
-```nginx
-location / {
-    proxy_pass http://localhost:3000;
-    proxy_http_version 1.1;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection 'upgrade';
-    proxy_set_header Host $host;
-    proxy_cache_bypass $http_upgrade;
-}
-```
-
-Kiểm tra cấu hình Nginx và restart:
-
-```bash
-sudo nginx -t
-sudo systemctl restart nginx
-```
+The app listens on port 3000 (put Nginx/ALB in front for 80/443). The SQLite
+database lives on the `web_data` volume and survives redeploys; lessons are
+mounted read-only from `./lessons`. Because `NEXT_PUBLIC_*` values are inlined at
+build time, changing the Clerk publishable key requires `docker compose up -d --build`.
 
 ---
 
-## 📄 ライセンス
+## Documentation
 
-このプロジェクトは [MIT License](./LICENSE) の下で公開されています。
+| Doc | Purpose |
+|-----|---------|
+| [goal.md](./docs/goal.md) | Roadmap & remaining task breakdown |
+| [ARCHITECTURE.md](./docs/ARCHITECTURE.md) | System architecture & data flow |
+| [TECH_STACK.md](./docs/TECH_STACK.md) | Technology choices |
+| [DATABASE_DESIGN.md](./docs/DATABASE_DESIGN.md) | Prisma schema |
+| [LESSON_ENGINE.md](./docs/LESSON_ENGINE.md) | How Markdown lessons are served |
+| [I18N_STRATEGY.md](./docs/I18N_STRATEGY.md) | Internationalization |
+| [DEPLOYMENT.md](./docs/DEPLOYMENT.md) | EC2 + Docker deployment |
 
 ---
+
+## License
+
+Released under the [MIT License](./LICENSE).
 
 <div align="center">
 
-**🎓 Sensei Hub** — *Master IT in Your Native Language*
-
-Built with ❤️ for IT Engineers in Japan
+**🎓 Sensei Hub** — Built for IT engineers.
 
 </div>
-

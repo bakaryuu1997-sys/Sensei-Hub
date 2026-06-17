@@ -1,233 +1,114 @@
-# 🚀 Sensei Hub — デプロイメントガイド
+# Deployment — AWS EC2 (Docker)
 
-> **バージョン**: 2.0.0  
-> **最終更新**: 2026-05-20
+> Updated: 2026-06-17
 
----
+Sensei Hub deploys to a **single AWS EC2 instance** using Docker Compose. There
+is no managed database — the app uses SQLite on a Docker volume.
 
-## 1. ローカル開発環境
+## 1. Prerequisites
 
-### 1.1 Docker Compose（PostgreSQL）
+- An EC2 instance (Ubuntu 22.04+ recommended, `t3.small` or larger).
+- Security group inbound: `22` (SSH), `80`/`443` (web). The app's port `3000`
+  does not need to be public if you front it with Nginx/ALB.
+- A Clerk application (production instance) with its publishable and secret keys.
 
-```yaml
-# docker-compose.yml
-version: '3.8'
-services:
-  postgres:
-    image: postgres:16
-    container_name: sensei-hub-db
-    environment:
-      POSTGRES_USER: sensei
-      POSTGRES_PASSWORD: sensei_pass
-      POSTGRES_DB: sensei_hub
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-volumes:
-  postgres_data:
-```
-
-### 1.2 セットアップ手順
+## 2. Install Docker on the host
 
 ```bash
-# 1. PostgreSQLコンテナ起動
-docker-compose up -d
+sudo apt update && sudo apt upgrade -y
+curl -fsSL https://get.docker.com | sudo sh
+sudo usermod -aG docker $USER   # re-login afterwards
+```
 
-# 2. ダッシュボードアプリのセットアップ
-cd sensei-hub-dashboard
-pnpm install
+The Docker Engine ships the `docker compose` plugin.
 
-# 3. 環境変数設定
-cat > .env << EOF
-DATABASE_URL="postgresql://sensei:sensei_pass@localhost:5432/sensei_hub?schema=public"
-AUTH_SECRET="your-dev-auth-secret-at-least-32-chars"
-AUTH_URL="http://localhost:3000"
+## 3. Get the code and configure secrets
+
+```bash
+git clone https://github.com/bakaryuu1997-sys/Sensei-Hub.git
+cd Sensei-Hub
+
+# Create a .env next to docker-compose.yml (read by Compose):
+cat > .env <<'EOF'
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_live_xxxxxxxx
+CLERK_SECRET_KEY=sk_live_xxxxxxxx
 EOF
-
-# 4. データベースマイグレーション
-pnpm prisma migrate dev --name init
-
-# 5. Prisma Client 生成
-pnpm prisma generate
-
-# 6. 開発サーバー起動
-pnpm dev
 ```
 
-### 1.3 確認
+`DATABASE_URL`, `LESSONS_DIR`, and the Clerk sign-in/up URLs are already set in
+`docker-compose.yml`. Note that `NEXT_PUBLIC_*` values are **build-time** — they
+are baked into the image during `docker compose build`.
 
-- ブラウザで `http://localhost:3000` にアクセス
-- Prisma Studio: `pnpm prisma studio`（`http://localhost:5555`）
-
----
-
-## 2. AWS デプロイメント
-
-### 2.1 事前準備
-
-- AWSアカウント
-- AWS CLI インストール・設定済み
-- カスタムドメイン（オプション）
-
-### 2.2 Step 1: IAMユーザー作成
+## 4. Build and run
 
 ```bash
-# デプロイ専用IAMユーザー作成
-aws iam create-user --user-name sensei-hub-deploy
-
-# 必要なポリシーをアタッチ
-aws iam attach-user-policy \
-  --user-name sensei-hub-deploy \
-  --policy-arn arn:aws:iam::aws:policy/AmazonRDSFullAccess
-
-aws iam attach-user-policy \
-  --user-name sensei-hub-deploy \
-  --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
-
-aws iam attach-user-policy \
-  --user-name sensei-hub-deploy \
-  --policy-arn arn:aws:iam::aws:policy/CloudFrontFullAccess
+docker compose up -d --build
 ```
 
-### 2.3 Step 2: RDS PostgreSQL
+What happens:
+
+- The image is built from `sensei-hub-dashboard/Dockerfile` (build context is the
+  repo root, so `lessons/` is included).
+- On start, `docker-entrypoint.sh` runs `prisma db push` to create the SQLite
+  schema, then `next start` on port 3000.
+- The SQLite file is stored on the named volume `web_data` (`/app/data/production.db`)
+  and survives `docker compose down` / redeploys.
+- `lessons/` is mounted read-only at `/lessons`.
+
+Check it:
 
 ```bash
-# PostgreSQL インスタンス作成
-aws rds create-db-instance \
-  --db-instance-identifier sensei-hub-db \
-  --db-instance-class db.t3.micro \
-  --engine postgres \
-  --engine-version 16 \
-  --master-username sensei_admin \
-  --master-user-password <STRONG_PASSWORD> \
-  --allocated-storage 20 \
-  --db-name sensei_hub \
-  --vpc-security-group-ids <SG_ID> \
-  --availability-zone ap-northeast-1a \
-  --backup-retention-period 7 \
-  --storage-encrypted
+docker compose ps
+docker compose logs -f web
+curl -I http://localhost:3000
 ```
 
-> ⚠️ **セキュリティ警告**: Security Groupでは、本番環境ではポート5432への接続元を**アプリケーションサーバーのIPのみ**に制限してください。`0.0.0.0/0`（全公開）は絶対に避けてください。
+## 5. Reverse proxy (recommended)
 
-### 2.4 Step 3: S3 + CloudFront
+Put Nginx in front to serve HTTP/HTTPS on 80/443:
+
+```nginx
+server {
+    listen 80;
+    server_name your-domain.com;
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+```
+
+Use Certbot (Let's Encrypt) for TLS.
+
+## 6. Updating
 
 ```bash
-# S3バケット作成（静的アセット用）
-aws s3 mb s3://sensei-hub-assets --region ap-northeast-1
-
-# バケットポリシー設定（CloudFrontからのアクセスのみ許可）
-aws s3api put-bucket-policy \
-  --bucket sensei-hub-assets \
-  --policy file://s3-policy.json
-
-# CloudFrontディストリビューション作成
-aws cloudfront create-distribution \
-  --origin-domain-name sensei-hub-assets.s3.ap-northeast-1.amazonaws.com \
-  --default-root-object index.html
+git pull
+docker compose up -d --build
 ```
 
-### 2.5 Step 4: AWS Amplify ホスティング
+- Lesson content updates take effect on the next request (read from the mounted
+  `lessons/`); no rebuild strictly required for content-only changes.
+- Changing the **Clerk publishable key** requires a rebuild (it is inlined at
+  build time).
 
-1. **Amplify Console** にアクセス
-2. **GitHub リポジトリを接続**
-3. **ビルド設定**:
+## 7. Backups & operational notes
 
-```yaml
-# amplify.yml
-version: 1
-applications:
-  - appRoot: sensei-hub-dashboard
-    frontend:
-      phases:
-        preBuild:
-          commands:
-            - npm install -g pnpm
-            - pnpm install
-        build:
-          commands:
-            - pnpm prisma generate
-            - pnpm build
-      artifacts:
-        baseDirectory: .next
-        files:
-          - '**/*'
-      cache:
-        paths:
-          - node_modules/**/*
-          - .next/cache/**/*
-```
+- **Backup** the `web_data` volume to preserve learner progress:
+  ```bash
+  docker run --rm -v sensei-hub_web_data:/data -v $PWD:/backup alpine \
+    tar czf /backup/sensei-db-$(date +%F).tar.gz -C /data .
+  ```
+- The in-memory **cache and rate-limiter reset** whenever the container restarts,
+  and are per-process — fine for one instance, not for horizontal scaling.
+- Logs: `docker compose logs -f web`.
 
-4. **環境変数設定**（Amplify Console）:
+## 8. Schema note
 
-```
-DATABASE_URL=postgresql://sensei_admin:<password>@<rds-endpoint>:5432/sensei_hub
-AUTH_SECRET=<production-secret-at-least-32-chars>
-AUTH_URL=https://your-domain.com
-```
-
-### 2.6 Step 5: カスタムドメイン + SSL
-
-1. **Amplify Console** → **ドメイン管理**
-2. カスタムドメインを追加
-3. CNAME レコードを設定（DNS）
-4. SSL証明書は自動発行（AWS Certificate Manager）
-
----
-
-## 3. CI/CDパイプライン（GitHub Actions）
-
-```yaml
-# .github/workflows/deploy.yml
-name: Deploy to AWS Amplify
-
-on:
-  push:
-    branches: [main]
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      
-      - name: Install pnpm
-        run: npm install -g pnpm
-      
-      - name: Install dependencies
-        run: cd sensei-hub-dashboard && pnpm install
-      
-      - name: Run type check
-        run: cd sensei-hub-dashboard && pnpm tsc --noEmit
-      
-      - name: Build
-        run: cd sensei-hub-dashboard && pnpm build
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-```
-
----
-
-## 4. 本番環境チェックリスト
-
-- [ ] RDS のセキュリティグループをアプリサーバーIPのみに制限
-- [ ] `AUTH_SECRET` を十分な長さの安全な値に設定
-- [ ] `next.config.mjs` の `ignoreBuildErrors` を `false` に変更
-- [ ] 画像最適化を有効化（`unoptimized: false`）
-- [ ] アクセスログの有効化（CloudFront）
-- [ ] バックアップポリシーの確認（RDS）
-- [ ] HTTPS リダイレクトの設定
-
----
-
-## 📎 関連ドキュメント
-
-- [ARCHITECTURE.md](./ARCHITECTURE.md) — システムアーキテクチャ
-- [TECH_STACK.md](./TECH_STACK.md) — テックスタック
+`User.password` was removed (Clerk is the only auth). If you have an old
+`dev.db`/`production.db` created before this change, `prisma db push` reconciles
+the schema automatically; no manual migration is needed.
