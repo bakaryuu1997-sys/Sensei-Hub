@@ -1,0 +1,7 @@
+# Force LF for files that must use Unix line endings (shell scripts run in the
+# Alpine container; CRLF would break the shebang / interpreter).
+*.sh            text eol=lf
+docker-entrypoint.sh text eol=lf
+Dockerfile      text eol=lf
+*.yml           text eol=lf
+*.yaml          text eol=lf
