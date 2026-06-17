@@ -513,11 +513,9 @@
   font-size: 1.75rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 0.5rem;
-  background: linear-gradient(to right, var(--subject-from, #ffffff), var(--subject-to, oklch(0.75 0.18 195)));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  /* 文字を透明にするグラデ clip は background-clip:text が効かない環境で
+     「青いバーが文字を隠す」不具合になるため、確実に読める単色にする。 */
+  color: var(--subject-from, oklch(0.86 0.06 230));
 }
 
 .markdown-content h2 {

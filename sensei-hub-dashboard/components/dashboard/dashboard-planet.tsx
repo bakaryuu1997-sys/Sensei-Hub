@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import * as THREE from "three"
+import { useVisible } from "@/hooks/use-visible"
 
 interface DashboardPlanetProps {
   size?: number
@@ -25,6 +26,7 @@ export function DashboardPlanet({
   planetRadius = 1.8,
 }: DashboardPlanetProps) {
   const containerRef = useRef<HTMLCanvasElement>(null)
+  const visibleRef = useVisible(containerRef)
 
   useEffect(() => {
     const canvas = containerRef.current
@@ -44,7 +46,8 @@ export function DashboardPlanet({
       alpha: true,
     })
     renderer.setSize(size, size)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    // 装飾用途なので等倍で十分（高 DPR 画面でのフラグメント負荷を抑える）
+    renderer.setPixelRatio(1)
 
     // Main Group
     const mainGroup = new THREE.Group()
@@ -96,7 +99,7 @@ export function DashboardPlanet({
     const planetTexture = createPlanetTexture(colorPrimary, colorSecondary)
 
     // 1. Planet Sphere Mesh
-    const sphereGeo = new THREE.SphereGeometry(planetRadius, 64, 64)
+    const sphereGeo = new THREE.SphereGeometry(planetRadius, 32, 32)
     const sphereMat = new THREE.MeshStandardMaterial({
       map: planetTexture || undefined,
       color: planetTexture ? 0xffffff : colorPrimary,
@@ -223,6 +226,12 @@ export function DashboardPlanet({
     let animId: number
 
     const animate = () => {
+      // 画面外・非表示タブのときは描画をスキップ（負荷削減）
+      if (!visibleRef.current) {
+        animId = requestAnimationFrame(animate)
+        return
+      }
+
       // Rotation
       if (!isDragging) {
         mainGroup.rotation.y += rotationSpeed

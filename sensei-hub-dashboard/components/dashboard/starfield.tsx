@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import { useVisible } from "@/hooks/use-visible"
 
 interface Star {
   x: number
@@ -11,6 +12,7 @@ interface Star {
 
 export function Starfield() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const visibleRef = useVisible(canvasRef)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -23,7 +25,7 @@ export function Starfield() {
     let width = (canvas.width = window.innerWidth)
     let height = (canvas.height = window.innerHeight)
 
-    const numStars = 250
+    const numStars = 140
     const maxDepth = 1000
     const fov = 150 // Field of view
     const stars: Star[] = []
@@ -68,6 +70,12 @@ export function Starfield() {
 
     // Main render loop
     const render = () => {
+      // 非表示タブのときは描画をスキップ（負荷削減）
+      if (!visibleRef.current) {
+        animationId = requestAnimationFrame(render)
+        return
+      }
+
       // Clear with very slight alpha to create trailing/motion blur effect
       ctx.fillStyle = "rgba(8, 2, 20, 0.2)"
       ctx.fillRect(0, 0, width, height)

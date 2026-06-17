@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import * as THREE from "three"
+import { useVisible } from "@/hooks/use-visible"
 
 interface ThreePlanetProps {
   slug: string
@@ -10,6 +11,7 @@ interface ThreePlanetProps {
 
 export function ThreePlanet({ slug, size = 180 }: ThreePlanetProps) {
   const containerRef = useRef<HTMLCanvasElement>(null)
+  const visibleRef = useVisible(containerRef)
 
   useEffect(() => {
     const canvas = containerRef.current
@@ -46,14 +48,14 @@ export function ThreePlanet({ slug, size = 180 }: ThreePlanetProps) {
       alpha: true,
     })
     renderer.setSize(size, size)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5))
 
     // Group to hold planet and its rings
     const mainGroup = new THREE.Group()
     scene.add(mainGroup)
 
     // 1. Planet Sphere
-    const sphereGeo = new THREE.SphereGeometry(1.8, 64, 64)
+    const sphereGeo = new THREE.SphereGeometry(1.8, 36, 36)
     const sphereMat = new THREE.MeshStandardMaterial({
       color: theme.primary,
       roughness: 0.3,
@@ -137,6 +139,12 @@ export function ThreePlanet({ slug, size = 180 }: ThreePlanetProps) {
     let animationId: number
 
     const animate = () => {
+      // 画面外・非表示タブのときは描画をスキップ（負荷削減）
+      if (!visibleRef.current) {
+        animationId = requestAnimationFrame(animate)
+        return
+      }
+
       // Auto-rotation when not dragging
       if (!isDragging) {
         mainGroup.rotation.y += 0.006

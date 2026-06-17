@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import { useVisible } from "@/hooks/use-visible"
 
 interface ConstellationPlanetProps {
   slug: string
@@ -14,6 +15,7 @@ export function ConstellationPlanet({
   isActive = true,
 }: ConstellationPlanetProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const visibleRef = useVisible(canvasRef)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -47,6 +49,12 @@ export function ConstellationPlanet({
     const cy = size / 2
 
     const draw = () => {
+      // 画面外・非表示タブのときは描画をスキップ（負荷削減）
+      if (!visibleRef.current) {
+        animationId = requestAnimationFrame(draw)
+        return
+      }
+
       ctx.clearRect(0, 0, size, size)
 
       // 1. Calculate moon position & Z-depth
