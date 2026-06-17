@@ -2,18 +2,21 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Search, Bell, Command, Activity, Volume2, VolumeX, Download, LogOut } from "lucide-react"
+import { Search, Bell, Command, Activity, Volume2, VolumeX, Download, Menu } from "lucide-react"
 import { useLanguage } from "@/lib/i18n"
 import { LanguageSwitcher } from "./language-switcher"
 import { useUserProgress } from "@/components/user-progress-provider"
 import { usePwaInstall } from "@/hooks/use-pwa-install"
 import { UserButton, useUser } from "@clerk/nextjs"
 import Link from "next/link"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
+import { SidebarContent } from "@/components/dashboard/sidebar"
 
 export function TopBar() {
   const { t } = useLanguage()
   const { overallStats: overall } = useUserProgress()
   const [muted, setMuted] = useState(true)
+  const [mobileNavOpen, setMobileNavOpen] = useState(false)
 
   useEffect(() => {
     const stored = localStorage.getItem("cosmic-audio-muted")
@@ -40,6 +43,22 @@ export function TopBar() {
       transition={{ duration: 0.5 }}
       className="sticky top-0 z-30 flex items-center gap-4 px-6 lg:px-8 py-4 backdrop-blur-xl bg-slate-950/40 border-b border-white/5"
     >
+      {/* Mobile nav trigger */}
+      <Sheet open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
+        <SheetTrigger asChild>
+          <button
+            className="lg:hidden flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white/80 transition-colors"
+            aria-label={t("nav.menu")}
+          >
+            <Menu className="h-5 w-5" />
+          </button>
+        </SheetTrigger>
+        <SheetContent side="left" className="w-72 p-0 sidebar-glass border-white/10">
+          <SheetTitle className="sr-only">{t("nav.menu")}</SheetTitle>
+          <SidebarContent onNavigate={() => setMobileNavOpen(false)} />
+        </SheetContent>
+      </Sheet>
+
       {/* Search */}
       <div className="flex-1 max-w-2xl">
         <div className="group relative">

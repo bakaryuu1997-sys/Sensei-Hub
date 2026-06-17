@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Home, BookOpen, Sparkles, Download } from "lucide-react"
+import { Home, BookOpen, Sparkles, Download, Settings } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
@@ -11,9 +11,8 @@ import { useUserProgress } from "@/components/user-progress-provider"
 import { usePwaInstall } from "@/hooks/use-pwa-install"
 
 const sidebarVariants = {
-  hidden: { x: -20, opacity: 0 },
+  hidden: { opacity: 0 },
   visible: {
-    x: 0,
     opacity: 1,
     transition: {
       staggerChildren: 0.05,
@@ -34,23 +33,28 @@ const itemVariants = {
   },
 }
 
-export function Sidebar() {
+/**
+ * The inner sidebar (logo + navigation + PWA + footer). Shared by the desktop
+ * fixed aside and the mobile Sheet so there is a single source of truth.
+ */
+export function SidebarContent({ onNavigate }: { onNavigate?: () => void } = {}) {
   const pathname = usePathname()
   const { t } = useLanguage()
   const { subjects } = useUserProgress()
 
   const isHome = pathname === "/"
   const isSubjects = pathname.startsWith("/subject")
+  const isSettings = pathname.startsWith("/settings")
 
   return (
-    <motion.aside
+    <motion.div
       variants={sidebarVariants}
       initial="hidden"
       animate="visible"
-      className="sidebar-glass fixed left-0 top-0 z-40 hidden h-screen w-72 flex-col lg:flex"
+      className="flex h-full flex-col"
     >
       {/* Logo */}
-      <Link href="/" className="flex items-center gap-3 p-6">
+      <Link href="/" onClick={onNavigate} className="flex items-center gap-3 p-6">
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-purple-600 blur-xl opacity-60" />
           <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 shadow-lg shadow-purple-500/40">
@@ -71,6 +75,7 @@ export function Sidebar() {
           <motion.div variants={itemVariants}>
             <Link
               href="/"
+              onClick={onNavigate}
               className={cn(
                 "flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all",
                 isHome
@@ -85,6 +90,7 @@ export function Sidebar() {
           <motion.div variants={itemVariants}>
             <Link
               href="/subject/aws"
+              onClick={onNavigate}
               className={cn(
                 "flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all",
                 isSubjects
@@ -110,6 +116,7 @@ export function Sidebar() {
               <motion.div key={subject.id} variants={itemVariants}>
                 <Link
                   href={href}
+                  onClick={onNavigate}
                   className={cn(
                     "group relative flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all",
                     isActive
@@ -148,6 +155,25 @@ export function Sidebar() {
             )
           })}
         </div>
+
+        {/* Settings */}
+        <div className="mt-6 space-y-1 border-t border-white/5 pt-4">
+          <motion.div variants={itemVariants}>
+            <Link
+              href="/settings"
+              onClick={onNavigate}
+              className={cn(
+                "flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all",
+                isSettings
+                  ? "bg-gradient-to-r from-cyan-500/20 to-purple-500/10 text-white border border-white/10"
+                  : "text-white/60 hover:bg-white/5 hover:text-white",
+              )}
+            >
+              <Settings className={cn("h-5 w-5", isSettings && "text-cyan-300")} />
+              {t("nav.settings")}
+            </Link>
+          </motion.div>
+        </div>
       </nav>
 
       {/* PWA Install Button */}
@@ -159,7 +185,15 @@ export function Sidebar() {
           {t("footer.motto")}
         </div>
       </div>
-    </motion.aside>
+    </motion.div>
+  )
+}
+
+export function Sidebar() {
+  return (
+    <aside className="sidebar-glass fixed left-0 top-0 z-40 hidden h-screen w-72 lg:block">
+      <SidebarContent />
+    </aside>
   )
 }
 
