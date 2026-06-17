@@ -11,12 +11,26 @@ import { UserButton, useUser } from "@clerk/nextjs"
 import Link from "next/link"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { SidebarContent } from "@/components/dashboard/sidebar"
+import { SearchCommand } from "@/components/search-command"
 
 export function TopBar() {
   const { t } = useLanguage()
   const { overallStats: overall } = useUserProgress()
   const [muted, setMuted] = useState(true)
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
+
+  // Open the search palette with Cmd/Ctrl+K.
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault()
+        setSearchOpen((v) => !v)
+      }
+    }
+    document.addEventListener("keydown", onKeyDown)
+    return () => document.removeEventListener("keydown", onKeyDown)
+  }, [])
 
   useEffect(() => {
     const stored = localStorage.getItem("cosmic-audio-muted")
@@ -61,19 +75,21 @@ export function TopBar() {
 
       {/* Search */}
       <div className="flex-1 max-w-2xl">
-        <div className="group relative">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40 group-focus-within:text-cyan-400 transition-colors" />
-          <input
-            type="text"
-            placeholder={t("header.search")}
-            className="w-full h-11 pl-11 pr-24 rounded-2xl bg-white/5 hover:bg-white/[0.07] focus:bg-white/[0.07] border border-white/10 focus:border-cyan-400/50 outline-none text-sm text-white placeholder:text-white/40 transition-all"
-          />
+        <button
+          type="button"
+          onClick={() => setSearchOpen(true)}
+          className="group relative w-full h-11 flex items-center rounded-2xl bg-white/5 hover:bg-white/[0.07] border border-white/10 hover:border-cyan-400/40 text-left transition-all"
+        >
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40 group-hover:text-cyan-400 transition-colors" />
+          <span className="pl-11 pr-24 text-sm text-white/40 truncate">{t("header.search")}</span>
           <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1 px-2 py-1 rounded-lg bg-white/5 border border-white/10">
             <Command className="w-3 h-3 text-white/50" />
             <span className="text-[10px] font-mono text-white/50">K</span>
           </div>
-        </div>
+        </button>
       </div>
+
+      <SearchCommand open={searchOpen} onOpenChange={setSearchOpen} />
 
       {/* Overall progress pill (real data) */}
       <motion.div
