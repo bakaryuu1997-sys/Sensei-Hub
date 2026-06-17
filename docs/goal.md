@@ -1,97 +1,107 @@
-# 🎯 Sensei Hub — Mục tiêu & Lộ trình hoàn thiện
+# 🎯 Sensei Hub — 目標と完成ロードマップ
 
-> Cập nhật: 2026-06-17
-> Tài liệu này là nguồn duy nhất theo dõi công việc còn lại. Đánh dấu `[x]` khi xong.
+> 更新日: 2026-06-17
+> 本書は残作業を追跡する唯一の情報源。完了したら `[x]` を付ける。
 
-## Tầm nhìn
+## ビジョン
 
-Một nền tảng học tập 3 ngôn ngữ (EN/JA/VI) cho kỹ sư IT: đọc bài học Markdown,
-theo dõi tiến độ, đơn giản — đẹp — ổn định, deploy gọn trên 1 EC2.
+IT エンジニア向けの 3 言語（EN/JA/VI）学習プラットフォーム。Markdown レッスンを
+読み、進捗を記録する。シンプル・美しい・使いやすい・安定。1 台の EC2 に手軽にデプロイ。
 
-## Trạng thái hiện tại
+## 現状
 
-- ✅ Đọc bài học Markdown đa ngôn ngữ (server render + DOMPurify + Mermaid)
-- ✅ Theo dõi tiến độ (localStorage + đồng bộ SQLite theo Clerk userId)
-- ✅ Auth bằng Clerk; deploy Docker trên EC2
-- ✅ PWA cài đặt được
-- 🚧 Quiz, AI chat: mới có khung (scaffold), chưa có nội dung/logic thật
-
----
-
-## Phase A — Bảo mật & Deploy EC2 ✅ (đã xong)
-
-- [x] Gỡ `.env` khỏi git, thêm `.gitignore` rule + `.env.example`
-- [x] Viết lại `Dockerfile` (build context repo root, `next start`, Clerk build args)
-- [x] `docker-entrypoint.sh` chạy `prisma db push` rồi start
-- [x] `.gitattributes` ép LF cho shell script (tránh lỗi CRLF trong Alpine)
-- [x] Viết lại `docker-compose.yml` (1 service, bỏ Postgres, volume SQLite + lessons)
-- [x] Thêm `LICENSE` (MIT), xoá `amplify.yml`
-- ⚠️ **Việc của bạn**: rotate lại Clerk key trên dashboard (key cũ còn trong git history)
-
-## Phase B — Sửa lỗi P0/P1 ✅ (đã xong)
-
-- [x] Tách `lib/markdown.ts` dùng chung 2 API route (có unit test)
-- [x] Điều hướng mobile: hamburger + Sheet (tái dùng `SidebarContent`)
-- [x] Dọn auth thừa: xoá register API, bcrypt, cột `password`, seed admin, root prisma/package.json
-- [x] Fix i18n: `level.alllevels` (ja), bỏ text cứng, `<html lang>` động
-- [x] Bỏ `next-themes`/`ThemeProvider` không dùng (app dark-only)
-
-## Phase C — Khung Quiz & Chat ✅ (đã xong)
-
-- [x] Nút **Quiz** ở trang môn → route `/subject/[slug]/quiz` (trang "Sắp ra mắt")
-- [x] Icon **chat nổi** góc dưới phải (placeholder cho AI chat)
-
-## Phase D — Tính năng mới ✅ (đã xong)
-
-- [x] **Continue learning**: lưu bài gần nhất, nút Hero điều hướng tới đó
-- [x] **/settings**: tiến độ tổng + ngôn ngữ mặc định + khung AI provider (Gemini/OpenAI/Ollama)
-- [x] **Footer + trang tĩnh** (about/contact/privacy/terms/blog) + LICENSE
-- [x] **Search thật** bằng cmdk (⌘K), có unit test cho hàm lọc
-
-## Phase E — Docs ✅ (đã xong)
-
-- [x] Xoá docs thừa, giữ bộ gọn
-- [x] Viết lại docs cho khớp code (Clerk/SQLite/EC2)
-- [x] Tạo `goal.md` (file này)
+- ✅ 3 言語の Markdown レッスン表示（サーバー描画 + DOMPurify + Mermaid）
+- ✅ 進捗管理（localStorage + Clerk userId 紐付けで SQLite 同期）
+- ✅ Clerk 認証、EC2 への Docker デプロイ
+- ✅ PWA としてインストール可能
+- 🚧 Quiz・AI チャット: スキャフォールドのみ（中身・ロジックは未実装）
 
 ---
 
-## 🔮 Backlog tương lai (chia nhỏ — chưa làm)
+## フェーズ A — セキュリティ & EC2 デプロイ ✅（完了）
 
-### F. Quiz thật (ưu tiên cao)
-- [ ] Thiết kế nguồn câu hỏi (đề xuất: `lessons/<lang>/<subject>/quiz.json`)
-- [ ] Loader đọc quiz theo môn + ngôn ngữ (fallback EN), có cache như lesson
-- [ ] UI làm quiz: 1 câu/màn, chọn đáp án, chấm điểm, giải thích
-- [ ] Lưu kết quả (tận dụng model `QuizResult`/`QuizAnswer` đã có trong schema)
-- [ ] Hiển thị điểm + lịch sử ở trang môn / settings
-- Tiêu chí: chọn 1 môn → làm quiz → ra điểm → lưu lại được
+- [x] `.env` を git 追跡から除外、`.gitignore` ルール + `.env.example` を追加
+- [x] `Dockerfile` を書き直し（ビルドコンテキストはリポジトリルート、`next start`、Clerk のビルド引数）
+- [x] `docker-entrypoint.sh` で `prisma db push` → 起動
+- [x] `.gitattributes` でシェルスクリプトを LF 固定（Alpine での CRLF 問題回避）
+- [x] `docker-compose.yml` を書き直し（1 サービス、Postgres 撤去、SQLite + lessons ボリューム）
+- [x] `LICENSE`（MIT）追加、`amplify.yml` 削除
+- ⚠️ **要対応（あなた）**: Clerk のキーをダッシュボードでローテーション（旧キーが git 履歴に残存）
 
-### G. AI Chat thật (ưu tiên trung bình)
-- [ ] Đọc cấu hình từ `lib/ai-config.ts` (đã có)
-- [ ] Tầng gọi model: Gemini, OpenAI, Ollama (`/api/chat` proxy hoặc gọi trực tiếp client)
-- [ ] Khung chat trong `FloatingChat` (lịch sử hội thoại, streaming)
-- [ ] Bảo mật key: ưu tiên gọi qua server route, không lộ key client
-- [ ] Ngữ cảnh: cho AI biết bài học đang xem (RAG nhẹ tuỳ chọn)
-- Tiêu chí: nhập key → hỏi → nhận trả lời từ model đã chọn
+## フェーズ B — P0/P1 バグ修正 ✅（完了）
 
-### H. Hoàn thiện tiến độ & dữ liệu
-- [ ] Đồng bộ số đếm lesson trong `subjects.ts` với số file thật (vd BJT 119 vs 120)
-- [ ] Trang "Lịch sử học" (danh sách bài đã xem gần đây)
-- [ ] Streak/XP **thật** từ `LessonProgress.lastViewed` (hoặc bỏ hẳn khỏi UI nếu không làm)
+- [x] `lib/markdown.ts` を抽出し 2 つの API ルートで共有（ユニットテスト付き）
+- [x] モバイルナビ: ハンバーガー + Sheet（`SidebarContent` を再利用）
+- [x] 不要な認証コードの撤去: register API・bcrypt・`password` 列・admin seed・ルートの prisma/package.json
+- [x] i18n 修正: `level.alllevels`（ja）、直書きテキスト排除、`<html lang>` 動的化
+- [x] 未使用の `next-themes`/`ThemeProvider` 削除（ダークテーマ単一）
+- [x] **OOM 修正**: `progress/load` の全教科ファイル走査をキャッシュ化（毎回走査 → 実質1回）
 
-### I. Chất lượng & vận hành
-- [ ] Thêm E2E Playwright cho luồng đọc bài + tick hoàn thành
-- [ ] Healthcheck cho container + hướng dẫn backup volume định kỳ (cron)
-- [ ] CI: chạy `pnpm lint` + `pnpm test:unit` + `pnpm build` trên PR
-- [ ] Cân nhắc giảm tải three.js trên mobile (ảnh tĩnh thay planet 3D)
+## フェーズ C — Quiz・チャットのスキャフォールド ✅（完了）
 
-### J. Nội dung
-- [ ] Bổ sung/đồng bộ bản dịch còn thiếu giữa en/ja/vi
-- [ ] Quyết định số phận `lessons/vi/AI-Passport` (nối vào dashboard hoặc bỏ)
+- [x] 教科ページの **Quiz** ボタン → `/subject/[slug]/quiz`（「近日公開」ページ）
+- [x] 右下の **フローティングチャット**アイコン（AI チャットのプレースホルダー）
+
+## フェーズ D — 新機能 ✅（完了）
+
+- [x] **続きから学習**: 最後に見たレッスンを保存し、ヒーローの CTA で遷移
+- [x] **/settings**: 全体進捗 + 既定言語 + AI プロバイダー設定枠（Gemini/OpenAI/Ollama）
+- [x] **フッター + 静的ページ**（about/contact/privacy/terms/blog）+ LICENSE
+- [x] **本物の検索**（cmdk・⌘K）、フィルタ関数にユニットテスト
+
+## フェーズ E — ドキュメント ✅（完了）
+
+- [x] 不要ドキュメントを削除し、必要最小限に整理
+- [x] 残ドキュメントをコードに合わせて書き直し（Clerk/SQLite/EC2）
+- [x] `goal.md`（本書）を作成
+- [x] ドキュメント・コードコメントを日本語化（方針: 以後の回答・md・コメントは日本語）
 
 ---
 
-## Nguyên tắc giữ vững
-- Đơn giản, đẹp, dễ dùng, ổn định. Không thêm hiệu ứng/feature mới khi deploy chưa ổn.
-- Mỗi tính năng mới: thêm i18n đầy đủ 3 ngôn ngữ, không hardcode text.
-- Bảo mật: không commit secret; key AI ưu tiên xử lý phía server.
+## 🔮 今後のバックログ（細分化・未着手）
+
+### F. 本物の Quiz（優先度: 高）
+- [ ] 問題ソースの設計（推奨: `lessons/<lang>/<subject>/quiz.json`）
+- [ ] 教科・言語ごとに quiz を読むローダー（EN フォールバック、lesson と同様にキャッシュ）
+- [ ] 解答 UI: 1 問ずつ、選択、採点、解説
+- [ ] 結果保存（既存の `QuizResult`/`QuizAnswer` モデルを活用）
+- [ ] 教科ページ／設定でスコアと履歴を表示
+- 完了基準: 教科を選ぶ → quiz を解く → スコア表示 → 保存できる
+
+### G. 本物の AI チャット（優先度: 中）
+- [ ] `lib/ai-config.ts`（実装済み）から設定を読む
+- [ ] モデル呼び出し層: Gemini / OpenAI / Ollama（`/api/chat` プロキシ推奨）
+- [ ] `FloatingChat` 内のチャット UI（会話履歴、ストリーミング）
+- [ ] キーの安全管理: サーバールート経由で呼び、クライアントにキーを露出しない
+- [ ] 文脈: 表示中レッスンを AI に渡す（軽量 RAG は任意）
+- 完了基準: キーを入力 → 質問 → 選択モデルから回答
+
+### H. 進捗・データの仕上げ
+- [ ] `subjects.ts` のレッスン件数を実ファイル数と整合（例: BJT 119 vs 120）
+- [ ] 「学習履歴」ページ（最近見たレッスン一覧）
+- [ ] `LessonProgress.lastViewed` から**本物の** streak/XP を算出（やらないなら UI から撤去）
+
+### I. 品質・運用
+- [ ] レッスン閲覧 + 完了トグルの E2E（Playwright）を追加
+- [ ] コンテナの healthcheck + ボリューム定期バックアップ手順（cron）
+- [ ] CI: PR で `pnpm lint` + `pnpm test:unit` + `pnpm build`
+- [ ] モバイルでの three.js 負荷軽減を検討（惑星 3D を静止画に）
+
+### J. コンテンツ
+- [ ] en/ja/vi 間で欠けている翻訳を補完・整合
+- [ ] `lessons/vi/AI-Passport` の扱いを決定（ダッシュボード接続 or 撤去）
+
+### K. 外部スクリプト由来の再レンダリング（要観察）
+- [ ] `data-brse-scanned="true"` はブラウザ拡張／外部スクリプトが付与するもので
+      本体コードには無い。React（Framer Motion）の描画に干渉すると無限再レンダー →
+      `/api/progress/load` の連打 → OOM を誘発しうる。サーバー側の負荷は F. のキャッシュ
+      で大幅に軽減済み。拡張を無効化して再現確認し、必要なら provider 側に多重取得防止の
+      ガードを追加する。
+
+---
+
+## 守るべき原則
+- シンプル・美しい・使いやすい・安定。デプロイが安定するまで新規の演出／機能を足さない。
+- 新機能には 3 言語分の i18n を必ず用意し、テキストを直書きしない。
+- セキュリティ: 秘密情報をコミットしない。AI キーはサーバー側で扱うことを優先。
+- 言語方針: 回答・`.md`・新規コードコメントは日本語で記述する。

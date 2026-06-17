@@ -1,57 +1,57 @@
-# Database Design
+# データベース設計
 
-> Updated: 2026-06-17 · ORM: Prisma 7 · Engine: SQLite (libSQL adapter)
+> 更新日: 2026-06-17 · ORM: Prisma 7 · エンジン: SQLite（libSQL アダプター）
 
-The database stores **learner progress only**. Lesson content lives as Markdown
-on disk, and authentication/identity is owned by Clerk. The schema is applied
-with `prisma db push` (no migration history; SQLite file database).
+データベースは **学習進捗のみ** を保存します。レッスンコンテンツはディスク上の
+Markdown、認証／アイデンティティは Clerk が保持します。スキーマは `prisma db push`
+で適用します（マイグレーション履歴なし、SQLite ファイル DB）。
 
-## Active models
+## 使用中のモデル
 
-These models are used by the running app:
+実行中のアプリで使うモデル:
 
 ### User
-The Clerk user, created lazily on first progress write.
+Clerk ユーザー。初回の進捗書き込み時に遅延作成される。
 
-| Field | Type | Notes |
+| フィールド | 型 | 備考 |
 |-------|------|-------|
-| `id` | String (PK) | The Clerk `userId` (not auto-generated) |
-| `email` | String? @unique | Optional |
-| `name` | String? | Optional |
-| `image` | String? | Optional |
-| `role` | String | Default `"USER"` |
-| `preferredLang` | String | Default `"vi"` |
-| `createdAt` / `updatedAt` | DateTime | Timestamps |
+| `id` | String（PK） | Clerk の `userId`（自動生成ではない） |
+| `email` | String? @unique | 任意 |
+| `name` | String? | 任意 |
+| `image` | String? | 任意 |
+| `role` | String | 既定 `"USER"` |
+| `preferredLang` | String | 既定 `"vi"` |
+| `createdAt` / `updatedAt` | DateTime | タイムスタンプ |
 
-> There is **no** `password` field — Clerk handles authentication.
+> `password` フィールドは**ない** — 認証は Clerk が担う。
 
 ### LessonProgress
-One row per (user, lesson).
+（ユーザー, レッスン）ごとに 1 行。
 
-| Field | Type | Notes |
+| フィールド | 型 | 備考 |
 |-------|------|-------|
-| `id` | String (PK) | uuid |
+| `id` | String（PK） | uuid |
 | `userId` | String | → `User.id` |
 | `lessonId` | String | `"<subjectSlug>/<lessonPath>"` |
-| `status` | String | `"IN_PROGRESS"` or `"COMPLETED"` |
+| `status` | String | `"IN_PROGRESS"` または `"COMPLETED"` |
 | `lastViewed` | DateTime | |
 | | | `@@unique([userId, lessonId])` |
 
-## Reserved models (not yet used)
+## 予約モデル（未使用）
 
-`Vocabulary`, `FavoriteVocab`, `Question`, `Option`, `QuizResult`, `QuizAnswer`
-exist in `schema.prisma` for planned features (vocabulary lists, real quizzes).
-They are not read or written by the current code and can be treated as a forward
-design. The subject-level Quiz button currently links to a "coming soon" page.
+`Vocabulary`・`FavoriteVocab`・`Question`・`Option`・`QuizResult`・`QuizAnswer` は
+将来機能（語彙リスト、本物のクイズ）のために `schema.prisma` に定義されています。
+現状のコードでは読み書きされておらず、将来設計として扱います。教科レベルの Quiz
+ボタンは現在「近日公開」ページにリンクしています。
 
-## Applying the schema
+## スキーマの適用
 
 ```bash
-# Local
+# ローカル
 pnpm prisma db push
 
-# In the container (handled automatically by docker-entrypoint.sh)
+# コンテナ内（docker-entrypoint.sh が自動実行）
 prisma db push --skip-generate
 ```
 
-The source of truth is [`sensei-hub-dashboard/prisma/schema.prisma`](../sensei-hub-dashboard/prisma/schema.prisma).
+正本は [`sensei-hub-dashboard/prisma/schema.prisma`](../sensei-hub-dashboard/prisma/schema.prisma) です。

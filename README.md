@@ -1,6 +1,6 @@
-# 🎓 Sensei Hub
+# 🎓 Sensei Hub（センセイハブ）
 
-> **Master IT in your native language** — a trilingual (English / 日本語 / Tiếng Việt) learning platform for IT engineers.
+> **母国語で IT を学ぶ** — IT エンジニア向けの 3 言語（English / 日本語 / Tiếng Việt）学習プラットフォーム。
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.2-black?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev/)
@@ -12,106 +12,106 @@
 
 ---
 
-## Overview
+## 概要
 
-Sensei Hub is a self-study dashboard. Lessons are authored as Markdown files on
-disk and rendered in the browser; learners track their progress per lesson and
-module, in any of three languages. Authentication is handled by **Clerk**, and
-progress is persisted in **SQLite** (via the Prisma libSQL adapter) keyed by the
-Clerk user id, with a localStorage cache so the UI works offline-first.
+Sensei Hub は自習用ダッシュボードです。レッスンはディスク上の Markdown ファイル
+として執筆され、ブラウザで表示されます。学習者はレッスン・モジュールごとの進捗を
+3 言語のいずれかで記録できます。認証は **Clerk** に委譲し、進捗は Clerk のユーザー
+ID を主キーとして **SQLite**（Prisma の libSQL アダプター）に保存します。さらに
+localStorage にキャッシュするため、オフラインファーストで動作します。
 
-### Courses (11)
+### コース一覧（11 コース）
 
-| Course | Days | Level |
-|--------|------|-------|
-| Git & GitHub | 10 | Beginner |
-| 基本情報技術者試験 (FE) | 100 | Advanced |
-| AWS | 60 | Intermediate |
-| Database Engineering | 30 | Advanced |
-| Business Japanese Test (BJT) | ~120 | Intermediate |
-| DevOps Engineering | 60 | Intermediate |
-| System Design | 60 | Advanced |
-| Data Structures & Algorithms | 60 | Intermediate |
-| Developer Mindset | 30 | All levels |
-| Cybersecurity Awareness | 15 | Beginner |
-| Blockchain & Web3 | 20 | Beginner |
+| コース | 日数 | レベル |
+|--------|------|--------|
+| Git & GitHub | 10 | 入門 |
+| 基本情報技術者試験（FE） | 100 | 上級 |
+| AWS | 60 | 中級 |
+| Database Engineering | 30 | 上級 |
+| Business Japanese Test（BJT） | 約120 | 中級 |
+| DevOps Engineering | 60 | 中級 |
+| System Design | 60 | 上級 |
+| Data Structures & Algorithms | 60 | 中級 |
+| Developer Mindset | 30 | 全レベル |
+| Cybersecurity Awareness | 15 | 入門 |
+| Blockchain & Web3 | 20 | 入門 |
 
-Each course exists in `lessons/en`, `lessons/ja`, and `lessons/vi`.
-
----
-
-## Tech stack
-
-| Area | Technology |
-|------|-----------|
-| Framework | Next.js 16 (App Router), React 19 |
-| Language | TypeScript 5.7 |
-| Styling | Tailwind CSS v4, shadcn/ui (dark theme) |
-| Auth | Clerk (`@clerk/nextjs`) |
-| Database | SQLite via Prisma 7 + `@prisma/adapter-libsql` |
-| Content | Markdown on disk, compiled with `marked`, sanitized with DOMPurify, diagrams via Mermaid |
-| UX | Framer Motion, three.js (decorative), canvas-confetti, sonner, cmdk |
-| PWA | Service worker + manifest (installable) |
-| Package manager | pnpm |
-| Deploy | Docker on a single AWS EC2 instance |
-
-See [docs/TECH_STACK.md](./docs/TECH_STACK.md) for details.
+各コースは `lessons/en`・`lessons/ja`・`lessons/vi` に存在します。
 
 ---
 
-## Repository layout
+## 技術スタック
+
+| 分野 | 技術 |
+|------|------|
+| フレームワーク | Next.js 16（App Router）、React 19 |
+| 言語 | TypeScript 5.7 |
+| スタイリング | Tailwind CSS v4、shadcn/ui（ダークテーマ） |
+| 認証 | Clerk（`@clerk/nextjs`） |
+| データベース | SQLite（Prisma 7 + `@prisma/adapter-libsql`） |
+| コンテンツ | ディスク上の Markdown、`marked` で HTML 化、DOMPurify でサニタイズ、Mermaid 図 |
+| UX | Framer Motion、three.js（装飾）、canvas-confetti、sonner、cmdk |
+| PWA | Service Worker + manifest（インストール可能） |
+| パッケージ管理 | pnpm |
+| デプロイ | 単一の AWS EC2 インスタンス上の Docker |
+
+詳細は [docs/TECH_STACK.md](./docs/TECH_STACK.md) を参照。
+
+---
+
+## リポジトリ構成
 
 ```
 Sensei-Hub/
-├── lessons/                  # Markdown content: en/ ja/ vi/, one folder per course
-├── sensei-hub-dashboard/     # Next.js application
-│   ├── app/                  # App Router pages + API routes
-│   ├── components/           # UI components (incl. shadcn/ui in components/ui)
-│   ├── lib/                  # i18n, subjects data, markdown/search helpers, prisma
-│   ├── prisma/               # schema.prisma (SQLite)
-│   ├── Dockerfile            # production image
+├── lessons/                  # Markdown コンテンツ: en/ ja/ vi/、コースごとに 1 フォルダ
+├── sensei-hub-dashboard/     # Next.js アプリ
+│   ├── app/                  # App Router のページ + API ルート
+│   ├── components/           # UI コンポーネント（components/ui に shadcn/ui）
+│   ├── lib/                  # i18n、教科データ、markdown/検索ヘルパー、prisma
+│   ├── prisma/               # schema.prisma（SQLite）
+│   ├── Dockerfile            # 本番イメージ
 │   └── docker-entrypoint.sh  # prisma db push + next start
-├── docker-compose.yml        # single-instance EC2 deployment
-├── docs/                     # project documentation
+├── docker-compose.yml        # 単一 EC2 向けデプロイ
+├── docs/                     # プロジェクトドキュメント
 └── LICENSE                   # MIT
 ```
 
-> `sensei-hub-android/` (a separate native shell) is not part of the web deploy.
+> `sensei-hub-android/`（別のネイティブシェル）は Web デプロイには含まれません。
 
 ---
 
-## Local development
+## ローカル開発
 
-Prerequisites: **Node.js 20+** and **pnpm**.
+前提: **Node.js 20 以上** と **pnpm**。
 
 ```bash
 git clone https://github.com/bakaryuu1997-sys/Sensei-Hub.git
 cd Sensei-Hub/sensei-hub-dashboard
 
 pnpm install
-cp .env.example .env          # then fill in your Clerk keys
-pnpm prisma db push           # create the SQLite schema
+cp .env.example .env          # Clerk のキーを記入
+pnpm prisma db push           # SQLite スキーマを作成
 pnpm dev                      # http://localhost:3000
 ```
 
-Required environment variables (see [.env.example](./sensei-hub-dashboard/.env.example)):
-`DATABASE_URL`, `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`, `CLERK_SECRET_KEY`,
-`NEXT_PUBLIC_CLERK_SIGN_IN_URL`, `NEXT_PUBLIC_CLERK_SIGN_UP_URL`.
+必要な環境変数（[.env.example](./sensei-hub-dashboard/.env.example) 参照）:
+`DATABASE_URL`、`NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`、`CLERK_SECRET_KEY`、
+`NEXT_PUBLIC_CLERK_SIGN_IN_URL`、`NEXT_PUBLIC_CLERK_SIGN_UP_URL`。
 
-Useful scripts: `pnpm build`, `pnpm start`, `pnpm lint`, `pnpm test:unit`, `pnpm test:e2e`.
+主なスクリプト: `pnpm build`、`pnpm start`、`pnpm lint`、`pnpm test:unit`、`pnpm test:e2e`。
 
 ---
 
-## Deploy to AWS EC2 (Docker)
+## AWS EC2 へのデプロイ（Docker）
 
-The full step-by-step guide is in [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md). In short:
+詳細な手順は [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md) にあります。概要:
 
 ```bash
-# On the EC2 host (Docker + compose plugin installed)
+# EC2 ホスト上（Docker と compose プラグイン導入済み）
 git clone https://github.com/bakaryuu1997-sys/Sensei-Hub.git
 cd Sensei-Hub
 
-# Create .env next to docker-compose.yml with your Clerk keys:
+# docker-compose.yml の隣に .env を作成し、Clerk のキーを記入:
 #   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_live_...
 #   CLERK_SECRET_KEY=sk_live_...
 nano .env
@@ -119,33 +119,34 @@ nano .env
 docker compose up -d --build
 ```
 
-The app listens on port 3000 (put Nginx/ALB in front for 80/443). The SQLite
-database lives on the `web_data` volume and survives redeploys; lessons are
-mounted read-only from `./lessons`. Because `NEXT_PUBLIC_*` values are inlined at
-build time, changing the Clerk publishable key requires `docker compose up -d --build`.
+アプリはポート 3000 で待ち受けます（80/443 は Nginx/ALB を前段に置く）。SQLite の
+データベースは `web_data` ボリュームに保存され再デプロイでも残ります。レッスンは
+`./lessons` から読み取り専用でマウントされます。`NEXT_PUBLIC_*` はビルド時に埋め
+込まれるため、Clerk の publishable key を変更したら `docker compose up -d --build`
+で再ビルドが必要です。
 
 ---
 
-## Documentation
+## ドキュメント
 
-| Doc | Purpose |
+| ドキュメント | 目的 |
 |-----|---------|
-| [goal.md](./docs/goal.md) | Roadmap & remaining task breakdown |
-| [ARCHITECTURE.md](./docs/ARCHITECTURE.md) | System architecture & data flow |
-| [TECH_STACK.md](./docs/TECH_STACK.md) | Technology choices |
-| [DATABASE_DESIGN.md](./docs/DATABASE_DESIGN.md) | Prisma schema |
-| [LESSON_ENGINE.md](./docs/LESSON_ENGINE.md) | How Markdown lessons are served |
-| [I18N_STRATEGY.md](./docs/I18N_STRATEGY.md) | Internationalization |
-| [DEPLOYMENT.md](./docs/DEPLOYMENT.md) | EC2 + Docker deployment |
+| [goal.md](./docs/goal.md) | ロードマップと残タスク一覧 |
+| [ARCHITECTURE.md](./docs/ARCHITECTURE.md) | システム構成とデータフロー |
+| [TECH_STACK.md](./docs/TECH_STACK.md) | 技術選定 |
+| [DATABASE_DESIGN.md](./docs/DATABASE_DESIGN.md) | Prisma スキーマ |
+| [LESSON_ENGINE.md](./docs/LESSON_ENGINE.md) | Markdown レッスンの配信方式 |
+| [I18N_STRATEGY.md](./docs/I18N_STRATEGY.md) | 多言語対応 |
+| [DEPLOYMENT.md](./docs/DEPLOYMENT.md) | EC2 + Docker デプロイ |
 
 ---
 
-## License
+## ライセンス
 
-Released under the [MIT License](./LICENSE).
+[MIT License](./LICENSE) のもとで公開されています。
 
 <div align="center">
 
-**🎓 Sensei Hub** — Built for IT engineers.
+**🎓 Sensei Hub** — IT エンジニアのために。
 
 </div>

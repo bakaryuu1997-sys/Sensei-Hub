@@ -1,70 +1,70 @@
-# Tech Stack
+# 技術スタック
 
-> Updated: 2026-06-17
+> 更新日: 2026-06-17
 
-## Framework & runtime
+## フレームワーク & ランタイム
 
-| Technology | Version | Notes |
+| 技術 | バージョン | 備考 |
 |-----------|---------|-------|
-| Next.js (App Router) | 16.2 | Pages and API route handlers in one app |
-| React | 19 | `use()`, client components |
-| TypeScript | 5.7 | `strict: true`; build fails on type errors (`ignoreBuildErrors: false`) |
-| Node.js | 20+ | Runtime |
-| pnpm | — | Package manager |
+| Next.js（App Router） | 16.2 | ページと API ルートを 1 つのアプリに |
+| React | 19 | `use()`、クライアントコンポーネント |
+| TypeScript | 5.7 | `strict: true`、型エラーでビルド失敗（`ignoreBuildErrors: false`） |
+| Node.js | 20+ | ランタイム |
+| pnpm | — | パッケージマネージャ |
 
-`next.config.mjs` sets `images.unoptimized: true` and a cache header for the
-service worker. (Standalone output is intentionally **not** used — the Docker
-image runs `next start` so the Prisma CLI is available at boot.)
+`next.config.mjs` では `images.unoptimized: true` と Service Worker 用のキャッシュ
+ヘッダーを設定。standalone 出力はあえて**使わない**（Docker イメージは `next start` で
+起動し、起動時に Prisma CLI を使えるようにするため）。
 
 ## UI
 
-| Technology | Notes |
+| 技術 | 備考 |
 |-----------|-------|
-| Tailwind CSS v4 | OKLCH colors, CSS variables |
-| shadcn/ui (new-york) | Radix-based components in `components/ui` |
-| Framer Motion | Animations |
-| three.js | Decorative planets/starfield |
-| lucide-react | Icons |
-| canvas-confetti | Lesson-completion effect |
-| sonner | Toasts (fixed dark theme) |
-| cmdk | ⌘K search palette |
-| recharts | Charts (available) |
+| Tailwind CSS v4 | OKLCH カラー、CSS 変数 |
+| shadcn/ui（new-york） | `components/ui` 配下の Radix ベースコンポーネント |
+| Framer Motion | アニメーション |
+| three.js | 装飾的な惑星／星空 |
+| lucide-react | アイコン |
+| canvas-confetti | レッスン完了時の演出 |
+| sonner | トースト（ダークテーマ固定） |
+| cmdk | ⌘K 検索パレット |
+| recharts | チャート（利用可能） |
 
-The app uses a single dark theme (no light/dark toggle).
+アプリはダークテーマ単一（ライト／ダーク切り替えなし）。
 
-## Auth
+## 認証
 
-| Technology | Notes |
+| 技術 | 備考 |
 |-----------|-------|
-| Clerk (`@clerk/nextjs`) | Hosted auth. `<ClerkProvider>` wraps the app; `/login` and `/register` render Clerk's `<SignIn>`/`<SignUp>`. `middleware.ts` protects routes (lesson APIs are public). |
+| Clerk（`@clerk/nextjs`） | ホスト型認証。`<ClerkProvider>` でアプリを包み、`/login`・`/register` は Clerk の `<SignIn>`／`<SignUp>` を表示。`middleware.ts` がルートを保護（レッスン API は公開）。 |
 
-There is no local password storage; the Prisma `User.id` is the Clerk user id.
+ローカルにパスワードは保存しない。Prisma の `User.id` が Clerk のユーザー ID。
 
-## Data
+## データ
 
-| Technology | Notes |
+| 技術 | 備考 |
 |-----------|-------|
-| Prisma 7 | ORM / migrations (`prisma db push` for SQLite) |
-| `@prisma/adapter-libsql` + `@libsql/client` | SQLite driver adapter |
-| SQLite | File database (`DATABASE_URL=file:…`); on EC2 it lives on a Docker volume |
-| Markdown on disk | Lesson content under `lessons/{en,ja,vi}` |
-| `marked` | Markdown → HTML (server side) |
-| `isomorphic-dompurify` | HTML sanitization (client side) |
-| `mermaid` | Diagrams rendered client side |
-| Zod + React Hook Form | Validation / forms (available) |
+| Prisma 7 | ORM／マイグレーション（SQLite は `prisma db push`） |
+| `@prisma/adapter-libsql` + `@libsql/client` | SQLite ドライバアダプター |
+| SQLite | ファイル DB（`DATABASE_URL=file:…`）。EC2 では Docker ボリュームに配置 |
+| ディスク上の Markdown | `lessons/{en,ja,vi}` 配下のレッスンコンテンツ |
+| `marked` | Markdown → HTML（サーバー側） |
+| `isomorphic-dompurify` | HTML サニタイズ（クライアント側） |
+| `mermaid` | 図をクライアント側で描画 |
+| Zod + React Hook Form | バリデーション／フォーム（利用可能） |
 
-## PWA & analytics
+## PWA & アナリティクス
 
-`public/sw.js` + `public/manifest.json` make the app installable; `PwaRegistrar`
-registers the worker. `@vercel/analytics` loads only in production.
+`public/sw.js` + `public/manifest.json` でインストール可能にし、`PwaRegistrar` が
+Worker を登録する。`@vercel/analytics` は本番のみ読み込む。
 
-## Testing
+## テスト
 
-| Tool | Scope |
+| ツール | 範囲 |
 |------|-------|
-| Vitest | Unit tests (`tests/unit`) — markdown + search helpers |
-| Playwright | E2E (`tests/e2e`) |
+| Vitest | ユニットテスト（`tests/unit`）— markdown・検索ヘルパー |
+| Playwright | E2E（`tests/e2e`） |
 
-## Deployment
+## デプロイ
 
-Docker on a single AWS EC2 instance. See [DEPLOYMENT.md](./DEPLOYMENT.md).
+単一の AWS EC2 インスタンス上の Docker。[DEPLOYMENT.md](./DEPLOYMENT.md) を参照。

@@ -1,71 +1,71 @@
-# Lesson Engine
+# レッスンエンジン
 
-> Updated: 2026-06-17
+> 更新日: 2026-06-17
 
-Lessons are plain Markdown files on disk. There is no CMS or database for
-content — adding a `.md` file makes a new lesson available.
+レッスンはディスク上の素の Markdown ファイルです。コンテンツ用の CMS やデータベースは
+なく、`.md` ファイルを追加するだけで新しいレッスンが利用可能になります。
 
-## Content layout
+## コンテンツ構成
 
 ```
 lessons/
-├── en/<subject>/...      # English (source of truth for counts)
-├── ja/<subject>/...      # Japanese
-└── vi/<subject>/...      # Vietnamese
+├── en/<subject>/...      # 英語（件数の基準）
+├── ja/<subject>/...      # 日本語
+└── vi/<subject>/...      # ベトナム語
 ```
 
-A subject's folder may be flat (`day-01.md`) or nested by phase
-(`phase-01-foundations/day-01/lesson.md`). The directory is resolved from
-`LESSONS_DIR` (default `../lessons`, set to `/lessons` in Docker). A few slugs
-map to differently-named folders via `slugToFolder` (e.g. `fe` →
-`fundamental-it-engineer`).
+教科フォルダはフラット（`day-01.md`）でも、フェーズでネスト
+（`phase-01-foundations/day-01/lesson.md`）でも構いません。ディレクトリは
+`LESSONS_DIR`（既定 `../lessons`、Docker では `/lessons`）から解決します。一部の
+slug は `slugToFolder` で別名のフォルダに対応します（例: `fe` →
+`fundamental-it-engineer`）。
 
-## Frontmatter
+## フロントマター
 
-Optional YAML-style frontmatter is supported:
+YAML 風のフロントマターに対応:
 
 ```markdown
 ---
-title: Introduction to Branching
-description: Create and switch branches
+title: ブランチ入門
+description: ブランチの作成と切り替え
 ---
-# ...body...
+# ...本文...
 ```
 
-Parsing lives in [`lib/markdown.ts`](../sensei-hub-dashboard/lib/markdown.ts):
+解析は [`lib/markdown.ts`](../sensei-hub-dashboard/lib/markdown.ts) にあります:
 
 - `parseFrontmatter(content)` → `{ data, body }`
-- `extractTitle(data, body)` → frontmatter title, or the first heading when the
-  title is missing or a bare day marker (`day-01`)
-- `formatDayTitle(title, path)` → prepends `Day N:` when the path has a day number
-- `decodeEscapedString(s)` → decodes `\uXXXX` / `\UXXXXXXXX` / escaped quotes
+- `extractTitle(data, body)` → フロントマターのタイトル。タイトルが無い、または
+  単なる day マーカー（`day-01`）の場合は本文の最初の見出しを採用
+- `formatDayTitle(title, path)` → パスに day 番号があれば `Day N:` を前置
+- `decodeEscapedString(s)` → `\uXXXX` / `\UXXXXXXXX` / エスケープされた引用符をデコード
 
-These helpers are shared by both lesson API routes and covered by unit tests
-(`tests/unit/markdown.test.ts`).
+これらのヘルパーは両方のレッスン API ルートで共有され、ユニットテスト
+（`tests/unit/markdown.test.ts`）で検証されています。
 
-## API routes
+## API ルート
 
-| Route | Purpose |
+| ルート | 目的 |
 |-------|---------|
-| `GET /api/subject/[slug]/lesson?path=&lang=` | One lesson: parses frontmatter, compiles body to HTML with `marked`, returns `{ title, description, htmlContent }`. Falls back to English if the localized file is missing. |
-| `GET /api/subject/[slug]/lessons?lang=` | Ordered list of all lessons in a subject (titles + paths), used for navigation, module grouping, and search. |
+| `GET /api/subject/[slug]/lesson?path=&lang=` | 1 レッスン。フロントマターを解析し、本文を `marked` で HTML 化して `{ title, description, htmlContent }` を返す。localized ファイルが無ければ英語にフォールバック。 |
+| `GET /api/subject/[slug]/lessons?lang=` | 教科内の全レッスンの順序付き一覧（タイトル + パス）。ナビゲーション・モジュール分割・検索に使用。 |
 
-Both routes:
-- guard against path traversal (`isPathSafe` / prefix check),
-- rate-limit per IP (`lib/rate-limiter.ts`),
-- cache responses in-memory for 1h (`lib/api-cache.ts`),
-- are **public** (allowed in `middleware.ts`).
+両ルートとも:
+- パストラバーサルを防ぐ（`isPathSafe` / プレフィックスチェック）、
+- IP 単位でレート制限（`lib/rate-limiter.ts`）、
+- レスポンスを 1 時間メモリにキャッシュ（`lib/api-cache.ts`）、
+- **公開**ルート（`middleware.ts` で許可）。
 
-## Rendering
+## 描画
 
-The lesson page compiles nothing client-side except Mermaid: it fetches the
-server-rendered HTML, sanitizes it with DOMPurify, injects it via
-`dangerouslySetInnerHTML`, then upgrades ```` ```mermaid ```` blocks into diagrams.
-Lesson content is repo-authored and therefore trusted.
+レッスンページがクライアントでコンパイルするのは Mermaid だけです。サーバーで描画
+された HTML を取得し、DOMPurify でサニタイズし、`dangerouslySetInnerHTML` で注入した
+あと、```` ```mermaid ```` ブロックを図にアップグレードします。レッスンコンテンツは
+リポジトリ管理であり信頼済みです。
 
-## Progress & ordering
+## 進捗と並び順
 
-Modules are defined in [`lib/subjects.ts`](../sensei-hub-dashboard/lib/subjects.ts)
-by a per-module **lesson count**. The lessons list is sorted by day number and
-sliced into modules by those counts, so the declared counts should match the
-files on disk. Completion is tracked per lesson key `"<slug>/<path>"`.
+モジュールは [`lib/subjects.ts`](../sensei-hub-dashboard/lib/subjects.ts) で
+モジュールごとの**レッスン件数**として定義されます。レッスン一覧は day 番号で並べ替え、
+その件数でモジュールに分割するため、宣言した件数はディスク上のファイルと一致している
+必要があります。完了状態はレッスンキー `"<slug>/<path>"` 単位で記録します。

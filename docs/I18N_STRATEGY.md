@@ -1,38 +1,38 @@
-# Internationalization (i18n)
+# 多言語対応（i18n）
 
-> Updated: 2026-06-17
+> 更新日: 2026-06-17
 
-Sensei Hub supports three languages: **English (`en`)**, **Japanese (`ja`)**, and
-**Vietnamese (`vi`)**. There are two layers: UI strings and lesson content.
+Sensei Hub は 3 言語に対応します: **英語（`en`）**・**日本語（`ja`）**・
+**ベトナム語（`vi`）**。レイヤーは 2 つ: UI 文字列とレッスンコンテンツ。
 
-## UI strings
+## UI 文字列
 
-A lightweight context provider, [`lib/i18n.tsx`](../sensei-hub-dashboard/lib/i18n.tsx),
-holds a flat translation table:
+軽量なコンテキストプロバイダー [`lib/i18n.tsx`](../sensei-hub-dashboard/lib/i18n.tsx)
+がフラットな翻訳テーブルを保持します:
 
 ```ts
 translations["nav.dashboard"] = { en: "Dashboard", ja: "ダッシュボード", vi: "Tổng quan" }
 ```
 
-- `LanguageProvider` stores the active language, persists it to
-  `localStorage["sensei-lang"]`, and keeps `document.documentElement.lang` in sync.
-- Components call `const { t, lang, setLang } = useLanguage()` and use `t("key")`.
-- `t()` falls back to English if a key lacks the active language, and returns the
-  key itself if it is missing entirely (useful for spotting gaps).
+- `LanguageProvider` が現在の言語を保持し、`localStorage["sensei-lang"]` に永続化、
+  `document.documentElement.lang` も同期する。
+- コンポーネントは `const { t, lang, setLang } = useLanguage()` を使い `t("key")` で参照。
+- `t()` はアクティブ言語にキーが無ければ英語にフォールバックし、キー自体が存在しない
+  場合はキー名を返す（欠落の発見に便利）。
 
-Keys are grouped by area (nav, header, hero, stats, subject, lesson, quiz, chat,
-settings, footer, static pages, search, etc.). When adding UI text, add a key with
-all three languages rather than hardcoding a string.
+キーは領域ごとにグループ化（nav, header, hero, stats, subject, lesson, quiz, chat,
+settings, footer, 静的ページ, search など）。UI テキストを追加するときは、文字列を
+直書きせず 3 言語すべてを持つキーを追加すること。
 
-## Lesson content
+## レッスンコンテンツ
 
-Lesson Markdown is fully translated per language under `lessons/{en,ja,vi}`. The
-lesson APIs receive `lang` and serve the matching file, **falling back to English**
-when a localized file does not exist. See [LESSON_ENGINE.md](./LESSON_ENGINE.md).
+レッスン Markdown は言語ごとに `lessons/{en,ja,vi}` 配下で完全に翻訳されています。
+レッスン API は `lang` を受け取り該当ファイルを返し、localized ファイルが無い場合は
+**英語にフォールバック**します。[LESSON_ENGINE.md](./LESSON_ENGINE.md) を参照。
 
-## Conventions
+## 規約
 
-- One translation entry per UI string; keep all three languages present.
-- Don't put user-facing copy directly in components — route it through `t()`.
-- Subject names/taglines/descriptions live under `sub.<slug>.*` keys.
-- The default language is `vi` (and the Prisma `User.preferredLang` default).
+- UI 文字列は翻訳エントリを 1 つ持ち、3 言語すべてを揃える。
+- ユーザー向け文言をコンポーネントに直書きせず、必ず `t()` を経由する。
+- 教科名・タグライン・説明は `sub.<slug>.*` キー配下に置く。
+- 既定言語は `vi`（Prisma の `User.preferredLang` の既定値も同じ）。

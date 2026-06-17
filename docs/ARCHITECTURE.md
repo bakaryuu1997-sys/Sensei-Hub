@@ -1,83 +1,85 @@
-# Architecture
+# アーキテクチャ
 
-> Updated: 2026-06-17
+> 更新日: 2026-06-17
 
-## Overview
+## 概要
 
-Sensei Hub is a single Next.js 16 (App Router) application. There is no separate
-backend service — API routes inside the app read Markdown lessons from disk and
-persist learner progress to SQLite. Authentication is delegated to Clerk.
+Sensei Hub は単一の Next.js 16（App Router）アプリです。独立したバックエンドは
+なく、アプリ内の API ルートがディスクから Markdown レッスンを読み取り、学習進捗を
+SQLite に保存します。認証は Clerk に委譲します。
 
 ```mermaid
 graph TB
-    Browser["Browser (PWA)"]
+    Browser["ブラウザ（PWA）"]
 
-    subgraph App["Next.js 16 app (sensei-hub-dashboard)"]
-        Pages["App Router pages<br/>(client components)"]
-        API["Route handlers<br/>/api/subject/*, /api/progress/*"]
+    subgraph App["Next.js 16 アプリ（sensei-hub-dashboard）"]
+        Pages["App Router ページ<br/>（クライアントコンポーネント）"]
+        API["ルートハンドラ<br/>/api/subject/*, /api/progress/*"]
         Providers["LanguageProvider<br/>UserProgressProvider"]
     end
 
-    subgraph Data["Data"]
-        Lessons["Markdown files<br/>lessons/{en,ja,vi}"]
-        SQLite["SQLite (libSQL)<br/>via Prisma"]
+    subgraph Data["データ"]
+        Lessons["Markdown ファイル<br/>lessons/{en,ja,vi}"]
+        SQLite["SQLite（libSQL）<br/>Prisma 経由"]
     end
 
-    Clerk["Clerk (hosted auth)"]
+    Clerk["Clerk（ホスト型認証）"]
 
     Browser --> Pages
     Pages --> Providers
     Pages --> API
     API --> Lessons
     API --> SQLite
-    Browser -. sign in .-> Clerk
-    API -. verify session .-> Clerk
+    Browser -. サインイン .-> Clerk
+    API -. セッション検証 .-> Clerk
 ```
 
-## Request flows
+## リクエストフロー
 
-**Reading a lesson.** The lesson page calls `GET /api/subject/[slug]/lesson?path=…&lang=…`.
-The handler resolves the Markdown file under `LESSONS_DIR` (default `../lessons`),
-parses frontmatter (`lib/markdown.ts`), compiles the body to HTML with `marked`,
-and returns it. The client sanitizes the HTML with DOMPurify before rendering,
-and renders Mermaid code blocks on the client. Responses are cached in-memory
-(`lib/api-cache.ts`, 1h TTL) and rate-limited per IP (`lib/rate-limiter.ts`).
+**レッスンの表示。** レッスンページが `GET /api/subject/[slug]/lesson?path=…&lang=…`
+を呼び出す。ハンドラは `LESSONS_DIR`（既定は `../lessons`）配下の Markdown を解決し、
+フロントマターを解析（`lib/markdown.ts`）、本文を `marked` で HTML 化して返す。
+クライアント側は DOMPurify でサニタイズしてから描画し、Mermaid のコードブロックは
+クライアントで図に変換する。レスポンスはメモリにキャッシュ（`lib/api-cache.ts`、TTL 1
+時間）し、IP 単位でレート制限する（`lib/rate-limiter.ts`）。
 
-**Listing lessons.** `GET /api/subject/[slug]/lessons?lang=…` walks the subject
-directory, extracts titles, and returns an ordered list used for navigation,
-module grouping, and search.
+**レッスン一覧。** `GET /api/subject/[slug]/lessons?lang=…` は教科ディレクトリを走査し、
+タイトルを抽出して順序付きの一覧を返す。ナビゲーション・モジュール分割・検索に使う。
 
-**Progress.** `UserProgressProvider` loads progress from localStorage immediately,
-then merges server state from `GET /api/progress/load` and pushes local changes
-to `POST /api/progress/sync`. Both endpoints read the Clerk `userId` via
-`auth()`; the user row is created lazily on first write (id = Clerk userId).
+**進捗。** `UserProgressProvider` はまず localStorage から進捗を即座に読み込み、
+`GET /api/progress/load` のサーバー状態とマージし、ローカルの変更を
+`POST /api/progress/sync` に送る。両エンドポイントは `auth()` で Clerk の `userId` を
+取得し、初回書き込み時にユーザー行を遅延作成する（id = Clerk の userId）。
 
-## Key modules
+> パフォーマンス上の注意: `progress/load` は教科ごとのレッスンファイル一覧を
+> `lib/api-cache` にキャッシュする。これがないとリクエストのたびに全教科を再帰走査し、
+> メモリ／CPU を大量に消費して Heap out of memory を引き起こす。
 
-| Path | Responsibility |
+## 主なモジュール
+
+| パス | 責務 |
 |------|----------------|
-| `app/page.tsx` | Dashboard |
-| `app/subject/[slug]/page.tsx` | Subject detail (modules, quiz button) |
-| `app/subject/[slug]/lesson/[...path]/page.tsx` | Lesson viewer |
-| `app/subject/[slug]/quiz/page.tsx` | Quiz placeholder (coming soon) |
-| `app/settings/page.tsx` | Language + AI provider config |
-| `app/{about,contact,privacy,terms,blog}/page.tsx` | Static pages |
-| `lib/subjects.ts` | Static course/module metadata |
-| `lib/i18n.tsx` | `LanguageProvider` + translation table (en/ja/vi) |
-| `lib/markdown.ts` | Frontmatter parsing & title formatting (shared) |
-| `lib/search.ts` | Pure search/ranking used by the ⌘K palette |
-| `lib/prisma.ts` | Prisma client (libSQL adapter, singleton) |
-| `components/dashboard/*` | Sidebar, top bar, hero, search, etc. |
-| `components/floating-chat.tsx` | AI chat launcher scaffold |
-| `middleware.ts` | Clerk route protection (lesson APIs are public) |
+| `app/page.tsx` | ダッシュボード |
+| `app/subject/[slug]/page.tsx` | 教科詳細（モジュール、Quiz ボタン） |
+| `app/subject/[slug]/lesson/[...path]/page.tsx` | レッスンビューア |
+| `app/subject/[slug]/quiz/page.tsx` | Quiz プレースホルダー（近日公開） |
+| `app/settings/page.tsx` | 言語 + AI プロバイダー設定 |
+| `app/{about,contact,privacy,terms,blog}/page.tsx` | 静的ページ |
+| `lib/subjects.ts` | コース／モジュールの静的メタデータ |
+| `lib/i18n.tsx` | `LanguageProvider` + 翻訳テーブル（en/ja/vi） |
+| `lib/markdown.ts` | フロントマター解析・タイトル整形（共通） |
+| `lib/search.ts` | ⌘K パレットで使う純粋な検索／ランキング |
+| `lib/prisma.ts` | Prisma クライアント（libSQL アダプター、シングルトン） |
+| `components/dashboard/*` | サイドバー、トップバー、ヒーロー、検索など |
+| `components/floating-chat.tsx` | AI チャット起動ボタン（スキャフォールド） |
+| `middleware.ts` | Clerk のルート保護（レッスン API は公開） |
 
-## Notable constraints
+## 留意点・制約
 
-- The in-memory cache and rate-limiter are per-process; they reset on restart and
-  do not coordinate across instances. This is acceptable for the single-instance
-  EC2 target. Horizontal scaling would require externalizing them.
-- Lesson HTML is repo-authored (trusted); Mermaid runs with `securityLevel: loose`
-  and content is injected via `dangerouslySetInnerHTML` after DOMPurify.
-- The app ships a single dark theme.
+- メモリ内キャッシュとレート制限はプロセス単位。再起動でリセットされ、インスタンス間で
+  共有されない。単一 EC2 構成では許容範囲。水平スケールには外部化が必要。
+- レッスン HTML はリポジトリ管理の信頼済みコンテンツ。Mermaid は `securityLevel: loose`
+  で動作し、DOMPurify 後に `dangerouslySetInnerHTML` で注入する。
+- アプリはダークテーマ単一。
 
-See [DEPLOYMENT.md](./DEPLOYMENT.md) and [DATABASE_DESIGN.md](./DATABASE_DESIGN.md).
+[DEPLOYMENT.md](./DEPLOYMENT.md) と [DATABASE_DESIGN.md](./DATABASE_DESIGN.md) も参照。

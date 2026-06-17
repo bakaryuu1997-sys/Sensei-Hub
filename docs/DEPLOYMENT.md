@@ -1,61 +1,61 @@
-# Deployment — AWS EC2 (Docker)
+# デプロイ — AWS EC2（Docker）
 
-> Updated: 2026-06-17
+> 更新日: 2026-06-17
 
-Sensei Hub deploys to a **single AWS EC2 instance** using Docker Compose. There
-is no managed database — the app uses SQLite on a Docker volume.
+Sensei Hub は **単一の AWS EC2 インスタンス** に Docker Compose でデプロイします。
+マネージド DB は使わず、SQLite を Docker ボリュームに置きます。
 
-## 1. Prerequisites
+## 1. 前提条件
 
-- An EC2 instance (Ubuntu 22.04+ recommended, `t3.small` or larger).
-- Security group inbound: `22` (SSH), `80`/`443` (web). The app's port `3000`
-  does not need to be public if you front it with Nginx/ALB.
-- A Clerk application (production instance) with its publishable and secret keys.
+- EC2 インスタンス（Ubuntu 22.04 以降推奨、`t3.small` 以上）。
+- セキュリティグループのインバウンド: `22`（SSH）、`80`/`443`（Web）。前段に
+  Nginx/ALB を置く場合、アプリのポート `3000` を公開する必要はない。
+- Clerk アプリ（本番インスタンス）と publishable / secret キー。
 
-## 2. Install Docker on the host
+## 2. ホストへ Docker をインストール
 
 ```bash
 sudo apt update && sudo apt upgrade -y
 curl -fsSL https://get.docker.com | sudo sh
-sudo usermod -aG docker $USER   # re-login afterwards
+sudo usermod -aG docker $USER   # 実行後に再ログイン
 ```
 
-The Docker Engine ships the `docker compose` plugin.
+Docker Engine には `docker compose` プラグインが同梱されています。
 
-## 3. Get the code and configure secrets
+## 3. コード取得と秘密情報の設定
 
 ```bash
 git clone https://github.com/bakaryuu1997-sys/Sensei-Hub.git
 cd Sensei-Hub
 
-# Create a .env next to docker-compose.yml (read by Compose):
+# docker-compose.yml の隣に .env を作成（Compose が読み込む）:
 cat > .env <<'EOF'
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_live_xxxxxxxx
 CLERK_SECRET_KEY=sk_live_xxxxxxxx
 EOF
 ```
 
-`DATABASE_URL`, `LESSONS_DIR`, and the Clerk sign-in/up URLs are already set in
-`docker-compose.yml`. Note that `NEXT_PUBLIC_*` values are **build-time** — they
-are baked into the image during `docker compose build`.
+`DATABASE_URL`・`LESSONS_DIR`・Clerk のサインイン／アップ URL は `docker-compose.yml`
+に設定済みです。`NEXT_PUBLIC_*` は**ビルド時**の値で、`docker compose build` の際に
+イメージへ埋め込まれます。
 
-## 4. Build and run
+## 4. ビルドと起動
 
 ```bash
 docker compose up -d --build
 ```
 
-What happens:
+処理の流れ:
 
-- The image is built from `sensei-hub-dashboard/Dockerfile` (build context is the
-  repo root, so `lessons/` is included).
-- On start, `docker-entrypoint.sh` runs `prisma db push` to create the SQLite
-  schema, then `next start` on port 3000.
-- The SQLite file is stored on the named volume `web_data` (`/app/data/production.db`)
-  and survives `docker compose down` / redeploys.
-- `lessons/` is mounted read-only at `/lessons`.
+- イメージは `sensei-hub-dashboard/Dockerfile` からビルド（ビルドコンテキストはリポジトリ
+  ルートなので `lessons/` も含まれる）。
+- 起動時に `docker-entrypoint.sh` が `prisma db push` で SQLite スキーマを作成し、
+  ポート 3000 で `next start` を実行。
+- SQLite ファイルは名前付きボリューム `web_data`（`/app/data/production.db`）に保存され、
+  `docker compose down`／再デプロイでも残る。
+- `lessons/` は `/lessons` に読み取り専用でマウントされる。
 
-Check it:
+確認:
 
 ```bash
 docker compose ps
@@ -63,9 +63,9 @@ docker compose logs -f web
 curl -I http://localhost:3000
 ```
 
-## 5. Reverse proxy (recommended)
+## 5. リバースプロキシ（推奨）
 
-Put Nginx in front to serve HTTP/HTTPS on 80/443:
+Nginx を前段に置き 80/443 で HTTP/HTTPS を提供:
 
 ```nginx
 server {
@@ -82,33 +82,32 @@ server {
 }
 ```
 
-Use Certbot (Let's Encrypt) for TLS.
+TLS は Certbot（Let's Encrypt）を利用。
 
-## 6. Updating
+## 6. 更新
 
 ```bash
 git pull
 docker compose up -d --build
 ```
 
-- Lesson content updates take effect on the next request (read from the mounted
-  `lessons/`); no rebuild strictly required for content-only changes.
-- Changing the **Clerk publishable key** requires a rebuild (it is inlined at
-  build time).
+- レッスンコンテンツの更新は次のリクエストから反映される（マウントした `lessons/` を
+  読むため）。コンテンツのみの変更なら再ビルドは必須ではない。
+- **Clerk の publishable key** を変更した場合は再ビルドが必要（ビルド時に埋め込まれる）。
 
-## 7. Backups & operational notes
+## 7. バックアップ・運用メモ
 
-- **Backup** the `web_data` volume to preserve learner progress:
+- 学習進捗を保全するため `web_data` ボリュームを**バックアップ**:
   ```bash
   docker run --rm -v sensei-hub_web_data:/data -v $PWD:/backup alpine \
     tar czf /backup/sensei-db-$(date +%F).tar.gz -C /data .
   ```
-- The in-memory **cache and rate-limiter reset** whenever the container restarts,
-  and are per-process — fine for one instance, not for horizontal scaling.
-- Logs: `docker compose logs -f web`.
+- メモリ内の**キャッシュとレート制限はコンテナ再起動でリセット**され、プロセス単位。
+  単一インスタンスなら問題ないが、水平スケールには不向き。
+- ログ: `docker compose logs -f web`。
 
-## 8. Schema note
+## 8. スキーマに関する注意
 
-`User.password` was removed (Clerk is the only auth). If you have an old
-`dev.db`/`production.db` created before this change, `prisma db push` reconciles
-the schema automatically; no manual migration is needed.
+`User.password` は削除済み（認証は Clerk のみ）。この変更前に作成した
+`dev.db`／`production.db` がある場合でも、`prisma db push` がスキーマを自動的に
+合わせるため手動マイグレーションは不要。
