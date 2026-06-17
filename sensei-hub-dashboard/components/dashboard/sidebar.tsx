@@ -34,8 +34,8 @@ const itemVariants = {
 }
 
 /**
- * The inner sidebar (logo + navigation + PWA + footer). Shared by the desktop
- * fixed aside and the mobile Sheet so there is a single source of truth.
+ * サイドバーの中身（ロゴ + ナビ + PWA + フッター）。デスクトップの固定 aside と
+ * モバイルの Sheet で共有し、単一の情報源とする。
  */
 export function SidebarContent({ onNavigate }: { onNavigate?: () => void } = {}) {
   const pathname = usePathname()

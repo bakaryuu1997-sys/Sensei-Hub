@@ -1,4 +1,4 @@
-// Tracks the most recently viewed lesson so the dashboard can offer "resume".
+// ダッシュボードで「続きから」を出すため、最後に見たレッスンを記録する。
 
 const KEY = "sensei-last-lesson"
 
@@ -27,11 +27,11 @@ export function setLastLesson(lesson: LastLesson): void {
   try {
     localStorage.setItem(KEY, JSON.stringify(lesson))
   } catch {
-    // ignore quota / serialization errors
+    // 容量超過やシリアライズのエラーは無視
   }
 }
 
-/** Href to resume the last lesson, or a sensible default. */
+/** 最後のレッスンを再開する href。無ければ妥当な既定値を返す。 */
 export function getResumeHref(fallback = "/subject/aws"): string {
   const last = getLastLesson()
   return last ? `/subject/${last.slug}/lesson/${last.path}` : fallback

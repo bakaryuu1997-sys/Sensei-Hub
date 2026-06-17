@@ -8,15 +8,15 @@ import Link from "next/link"
 import { useLanguage } from "@/lib/i18n"
 
 /**
- * Floating AI-assistant launcher (bottom-right). Scaffold only — the actual
- * chat + provider integration is configured later in Settings.
+ * フローティングの AI アシスタント起動ボタン（右下）。スキャフォールドのみ。
+ * 実際のチャット + プロバイダー連携は後日、設定画面から構成する。
  */
 export function FloatingChat() {
   const pathname = usePathname()
   const { t } = useLanguage()
   const [open, setOpen] = useState(false)
 
-  // Hide on the auth screens.
+  // 認証画面では非表示。
   if (pathname?.startsWith("/login") || pathname?.startsWith("/register")) {
     return null
   }

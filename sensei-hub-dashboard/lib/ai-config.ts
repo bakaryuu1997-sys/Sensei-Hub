@@ -1,5 +1,5 @@
-// Client-side storage for the (upcoming) AI chat provider configuration.
-// Stored only in the browser; no keys ever leave the device today.
+// （将来の）AI チャットのプロバイダー設定をクライアント側に保存する。
+// ブラウザ内のみに保存し、現状キーが端末外に出ることはない。
 
 const KEY = "sensei-ai-config"
 
@@ -29,11 +29,13 @@ export function getAiConfig(): AiConfig {
   }
 }
 
+// 設定を localStorage に保存する
+
 export function setAiConfig(config: AiConfig): void {
   if (typeof window === "undefined") return
   try {
     localStorage.setItem(KEY, JSON.stringify(config))
   } catch {
-    // ignore
+    // エラーは無視
   }
 }

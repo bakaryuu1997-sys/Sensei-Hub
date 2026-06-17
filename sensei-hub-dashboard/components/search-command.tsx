@@ -43,7 +43,7 @@ export function SearchCommand({
     [subjects],
   )
 
-  // Lazily load lesson titles for all subjects the first time the palette opens.
+  // パレットを初めて開いたときに、全教科のレッスンタイトルを遅延読み込みする。
   useEffect(() => {
     if (!open || loaded) return
     let active = true

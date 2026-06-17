@@ -2,7 +2,7 @@
 
 import { Toaster as Sonner, ToasterProps } from 'sonner'
 
-// The app uses a single dark theme.
+// アプリはダークテーマ単一。
 const Toaster = ({ ...props }: ToasterProps) => {
   return (
     <Sonner

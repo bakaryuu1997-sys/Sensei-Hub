@@ -1,29 +1,29 @@
-# Production Dockerfile for Sensei Hub Dashboard (single-instance EC2)
+# Sensei Hub ダッシュボードの本番用 Dockerfile（単一 EC2 向け）
 #
-# Build context MUST be the repository root (see docker-compose.yml), because
-# the app lives in ./sensei-hub-dashboard and the lessons content lives in
-# ./lessons — both are needed in the image.
+# ビルドコンテキストはリポジトリルートでなければならない（docker-compose.yml 参照）。
+# アプリは ./sensei-hub-dashboard に、レッスンは ./lessons にあり、どちらもイメージに
+# 必要なため。
 #
-# Runs with `next start` (not standalone) so that the Prisma CLI and the libSQL
-# SQLite database can be initialised at container start via `prisma db push`.
+# standalone ではなく `next start` で起動する。コンテナ起動時に `prisma db push` を
+# 実行できるよう、Prisma CLI と libSQL の SQLite を利用可能にするため。
 
 FROM node:20-alpine AS base
 RUN apk add --no-cache libc6-compat
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
-# 1. Install dependencies
+# 1. 依存関係のインストール
 FROM base AS deps
 WORKDIR /app
 COPY sensei-hub-dashboard/package.json sensei-hub-dashboard/pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
 
-# 2. Build the app
+# 2. アプリのビルド
 FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY sensei-hub-dashboard/ ./
 
-# NEXT_PUBLIC_* are inlined at build time, so they must be build args.
+# NEXT_PUBLIC_* はビルド時に埋め込まれるため、ビルド引数として渡す必要がある。
 ARG NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
 ARG NEXT_PUBLIC_CLERK_SIGN_IN_URL="/login"
 ARG NEXT_PUBLIC_CLERK_SIGN_UP_URL="/register"
@@ -35,7 +35,7 @@ ENV NEXT_TELEMETRY_DISABLED=1
 RUN pnpm prisma generate
 RUN pnpm build
 
-# 3. Runtime image
+# 3. 実行用イメージ
 FROM base AS runner
 WORKDIR /app
 
@@ -48,7 +48,7 @@ ENV LESSONS_DIR=/lessons
 RUN addgroup --system --gid 1001 nodejs \
  && adduser --system --uid 1001 nextjs
 
-# App + dependencies (full node_modules so the Prisma CLI is available at runtime)
+# アプリ + 依存関係（実行時に Prisma CLI を使えるよう node_modules 全体をコピー）
 COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
@@ -57,10 +57,10 @@ COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
 COPY --from=builder --chown=nextjs:nodejs /app/next.config.mjs ./next.config.mjs
 COPY --from=builder --chown=nextjs:nodejs /app/docker-entrypoint.sh ./docker-entrypoint.sh
 
-# Lessons content (read at request time from $LESSONS_DIR)
+# レッスンコンテンツ（リクエスト時に $LESSONS_DIR から読む）
 COPY --chown=nextjs:nodejs lessons/ /lessons
 
-# Persistent SQLite location (mount a volume here in compose)
+# SQLite の永続化先（compose でここにボリュームをマウント）
 RUN mkdir -p /app/data && chown nextjs:nodejs /app/data
 RUN chmod +x ./docker-entrypoint.sh
 

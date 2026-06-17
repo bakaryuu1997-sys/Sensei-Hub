@@ -1,9 +1,9 @@
-// Shared helpers for parsing lesson Markdown files.
-// Used by both /api/subject/[slug]/lesson and /api/subject/[slug]/lessons.
+// レッスン Markdown を解析する共通ヘルパー。
+// /api/subject/[slug]/lesson と /api/subject/[slug]/lessons の両方で使用する。
 
 /**
- * Decode escape sequences that occasionally appear in authored frontmatter:
- * \UXXXXXXXX (codepoint), \uXXXX (utf-16), and escaped quotes.
+ * フロントマターに稀に現れるエスケープ列をデコードする:
+ * \UXXXXXXXX（コードポイント）、\uXXXX（utf-16）、エスケープされた引用符。
  */
 export function decodeEscapedString(str: string): string {
   let decoded = str
@@ -31,8 +31,8 @@ export type Frontmatter = {
 }
 
 /**
- * Split a Markdown file into its YAML-ish frontmatter map and the body.
- * Returns an empty data map and the whole input as body when no frontmatter.
+ * Markdown を YAML 風フロントマターのマップと本文に分割する。
+ * フロントマターが無い場合は空のマップと、入力全体を本文として返す。
  */
 export function parseFrontmatter(fileContent: string): Frontmatter {
   const match = fileContent.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n)?([\s\S]*)/)
@@ -66,8 +66,8 @@ export function parseFrontmatter(fileContent: string): Frontmatter {
 const BARE_DAY = /^day[- ]?\d+$/i
 
 /**
- * Choose the lesson title: the frontmatter title unless it is missing or a bare
- * day marker (e.g. "day-01"), in which case fall back to the first heading.
+ * レッスンタイトルを決める: 基本はフロントマターのタイトル。ただし欠落、または
+ * 単なる day マーカー（例 "day-01"）の場合は本文の最初の見出しにフォールバックする。
  */
 export function extractTitle(data: Record<string, string>, body: string): string {
   let title = data.title || ""
@@ -95,8 +95,8 @@ export function extractTitle(data: Record<string, string>, body: string): string
 }
 
 /**
- * Prepend "Day N: " to a title when the lesson path carries a day number and
- * the title does not already start with a day marker (EN or VI).
+ * レッスンパスに day 番号があり、タイトルがまだ day マーカー（EN/VI）で始まって
+ * いない場合に、タイトルへ "Day N: " を前置する。
  */
 export function formatDayTitle(title: string, lessonPath: string): string {
   const dayMatch = lessonPath.match(/day-(\d+)/i)

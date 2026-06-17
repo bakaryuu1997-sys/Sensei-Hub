@@ -1,4 +1,4 @@
-// Pure, client-side search filtering over subjects and lessons.
+// 教科とレッスンに対する、純粋なクライアント側の検索フィルタ。
 
 export type SearchItem = {
   id: string
@@ -9,11 +9,11 @@ export type SearchItem = {
 }
 
 /**
- * Filter and rank items by a free-text query (case-insensitive).
- * Empty/whitespace query returns all items unchanged. Ranking:
- *   0 — title starts with query
- *   1 — title contains query
- *   2 — subtitle contains query
+ * フリーテキストのクエリで項目を絞り込み、順位付けする（大文字小文字を無視）。
+ * 空白のみ／空クエリは全項目をそのまま返す。順位:
+ *   0 — タイトルがクエリで始まる
+ *   1 — タイトルがクエリを含む
+ *   2 — サブタイトルがクエリを含む
  */
 export function filterSearchItems(items: SearchItem[], query: string): SearchItem[] {
   const q = query.trim().toLowerCase()

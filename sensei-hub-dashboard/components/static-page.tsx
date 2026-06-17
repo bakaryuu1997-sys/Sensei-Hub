@@ -8,8 +8,8 @@ import { Footer } from "@/components/footer"
 import { useLanguage } from "@/lib/i18n"
 
 /**
- * Shared shell for simple informational pages (about, contact, legal, blog).
- * Pass i18n keys for the title and body.
+ * 簡易な情報ページ（about・contact・法的事項・blog）の共通シェル。
+ * タイトルと本文の i18n キーを渡す。
  */
 export function StaticPage({ titleKey, bodyKey }: { titleKey: string; bodyKey: string }) {
   const { t } = useLanguage()

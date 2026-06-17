@@ -1,12 +1,12 @@
-# Sensei Hub — single-instance deployment (e.g. one AWS EC2 host).
+# Sensei Hub — 単一インスタンス向けデプロイ（例: AWS EC2 1 台）。
 #
-# Usage on EC2:
-#   1. Put the secrets below in a `.env` file next to this file (see keys).
+# EC2 での使い方:
+#   1. このファイルの隣の `.env` に下記の秘密情報を記載（キーは下記参照）。
 #   2. docker compose up -d --build
 #
-# The app uses SQLite (libSQL adapter); there is no separate database server.
-# NEXT_PUBLIC_* values are inlined at BUILD time, so they are passed as build
-# args — changing them requires `docker compose up -d --build`.
+# アプリは SQLite（libSQL アダプター）を使い、独立した DB サーバーは無い。
+# NEXT_PUBLIC_* はビルド時に埋め込まれるためビルド引数で渡す。変更時は
+# `docker compose up -d --build` が必要。
 
 services:
   web:
@@ -22,7 +22,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      # SQLite file lives on the persistent named volume mounted at /app/data
+      # SQLite ファイルは /app/data にマウントした永続ボリューム上に置く
       DATABASE_URL: "file:/app/data/production.db"
       LESSONS_DIR: /lessons
       CLERK_SECRET_KEY: ${CLERK_SECRET_KEY}
@@ -30,9 +30,9 @@ services:
       NEXT_PUBLIC_CLERK_SIGN_IN_URL: /login
       NEXT_PUBLIC_CLERK_SIGN_UP_URL: /register
     volumes:
-      # Persist the learner progress database across re-deploys
+      # 学習進捗 DB を再デプロイ後も保持する
       - web_data:/app/data
-      # Lessons content (read-only); update via git pull + redeploy
+      # レッスンコンテンツ（読み取り専用）。更新は git pull + 再デプロイ
       - ./lessons:/lessons:ro
 
 volumes:
