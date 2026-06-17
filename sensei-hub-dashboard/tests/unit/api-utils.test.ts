@@ -1,28 +1,5 @@
 import { describe, it, expect } from "vitest"
-
-// Simple mock helper representing decodeEscapedString logic
-function decodeEscapedString(str: string): string {
-  let decoded = str;
-  // Decode \UXXXXXXXX (8 hex chars)
-  decoded = decoded.replace(/\\U([0-9a-fA-F]{8})/g, (match, p1) => {
-    try {
-      return String.fromCodePoint(parseInt(p1, 16));
-    } catch (e) {
-      return match;
-    }
-  });
-  // Decode \uXXXX (4 hex chars)
-  decoded = decoded.replace(/\\u([0-9a-fA-F]{4})/g, (match, p1) => {
-    try {
-      return String.fromCharCode(parseInt(p1, 16));
-    } catch (e) {
-      return match;
-    }
-  });
-  // Decode backslash escapes like \" and \'
-  decoded = decoded.replace(/\\"/g, '"').replace(/\\'/g, "'");
-  return decoded;
-}
+import { decodeEscapedString } from "@/lib/markdown"
 
 describe("Unicode and Emoji Decoding", () => {
   it("should successfully decode large unicode values (emoji hooks)", () => {

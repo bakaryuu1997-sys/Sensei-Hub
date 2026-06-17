@@ -4,6 +4,7 @@ import path from "path"
 import { marked } from "marked"
 import { checkRateLimit } from "@/lib/rate-limiter"
 import { getCache, setCache } from "@/lib/api-cache"
+import { parseFrontmatter, extractTitle, formatDayTitle } from "@/lib/markdown"
 
 marked.setOptions({
   gfm: true,
@@ -20,97 +21,14 @@ function isPathSafe(baseDir: string, targetPath: string): boolean {
   return !!(relative && !relative.startsWith("..") && !path.isAbsolute(relative));
 }
 
-function decodeEscapedString(str: string): string {
-  let decoded = str;
-  // Decode \UXXXXXXXX (8 hex chars)
-  decoded = decoded.replace(/\\U([0-9a-fA-F]{8})/g, (match, p1) => {
-    try {
-      return String.fromCodePoint(parseInt(p1, 16));
-    } catch (e) {
-      return match;
-    }
-  });
-  // Decode \uXXXX (4 hex chars)
-  decoded = decoded.replace(/\\u([0-9a-fA-F]{4})/g, (match, p1) => {
-    try {
-      return String.fromCharCode(parseInt(p1, 16));
-    } catch (e) {
-      return match;
-    }
-  });
-  // Decode backslash escapes like \" and \'
-  decoded = decoded.replace(/\\"/g, '"').replace(/\\'/g, "'");
-  return decoded;
-}
-
 function parseFrontmatterAndContent(fileContent: string, lessonPath: string) {
-  const match = fileContent.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n)?([\s\S]*)/);
-  if (!match) {
-    return { title: "", description: "", content: fileContent };
-  }
-  const yaml = match[1];
-  const content = match[2] ? match[2].trim() : "";
-  const obj: Record<string, string> = {};
-  yaml.split("\n").forEach((line) => {
-    const parts = line.split(":");
-    if (parts.length >= 2) {
-      const key = parts[0].trim();
-      const val = decodeEscapedString(
-        parts
-          .slice(1)
-          .join(":")
-          .trim()
-          .replace(/^"(.*)"$/, "$1")
-          .replace(/^'(.*)'$/, "$1")
-      );
-      obj[key] = val;
-    }
-  });
-
-  let parsedTitle = obj.title || "";
-  if (!parsedTitle || /^day[- ]?\d+$/i.test(parsedTitle)) {
-    // Extract first heading from content
-    const lines = content.split(/\r?\n/);
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i].trim();
-      const headingMatch = line.match(/^#{1,3}\s+(.+)$/);
-      if (headingMatch) {
-        let hText = headingMatch[1].trim();
-        if ((hText.endsWith(":") || hText.endsWith("：")) && i + 1 < lines.length) {
-          const nextLine = lines[i + 1].trim();
-          if (nextLine && !nextLine.startsWith("#") && !nextLine.startsWith("-")) {
-            hText = `${hText} ${nextLine}`;
-          }
-        }
-        parsedTitle = hText;
-        break;
-      }
-    }
-  }
-
-  let formattedTitle = parsedTitle
-
-  // Find day number from path
-  const dayMatch = lessonPath.match(/day-(\d+)/i)
-  if (dayMatch) {
-    const dayNum = parseInt(dayMatch[1], 10)
-    const dayPrefix = `Day ${dayNum}: `
-    if (
-      !parsedTitle.toLowerCase().startsWith("day ") &&
-      !parsedTitle.toLowerCase().startsWith("ngày ") &&
-      !parsedTitle.toLowerCase().startsWith(`day-${dayNum}`) &&
-      !parsedTitle.toLowerCase().startsWith(`day ${dayNum}`) &&
-      !parsedTitle.toLowerCase().startsWith(`ngày ${dayNum}`)
-    ) {
-      formattedTitle = `${dayPrefix}${parsedTitle}`
-    }
-  }
-
+  const { data, body } = parseFrontmatter(fileContent)
+  const title = formatDayTitle(extractTitle(data, body), lessonPath)
   return {
-    title: formattedTitle,
-    description: obj.description || "",
-    content,
-  };
+    title,
+    description: data.description || "",
+    content: body,
+  }
 }
 
 export async function GET(
