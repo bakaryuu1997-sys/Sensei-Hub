@@ -56,7 +56,7 @@ export async function GET(request: NextRequest) {
 
     // Compute progressMap based on completedLessons and subjects
     const progressMap: Record<string, number> = {};
-    const lessonsDir = path.resolve(process.cwd(), "../lessons");
+    const lessonsDir = process.env.LESSONS_DIR || path.resolve(process.cwd(), "../lessons");
 
     subjects.forEach((subject) => {
       // Find all lessons for this subject (read from disk, using 'en' as standard source of truth)

@@ -139,7 +139,7 @@ export async function GET(
     }
 
     const subjectFolder = slugToFolder[slug] || slug
-    const lessonsDir = path.resolve(process.cwd(), "../lessons")
+    const lessonsDir = process.env.LESSONS_DIR || path.resolve(process.cwd(), "../lessons")
 
     // Try selected language, fallback to English
     let langToUse = lang
