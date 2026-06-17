@@ -1,4 +1,22 @@
 services:
+  web:
+    build:
+      context: .
+      dockerfile: ./sensei-hub-dashboard/Dockerfile
+    container_name: sensei-hub-web
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=file:./prisma/dev.db
+      - NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+      - CLERK_SECRET_KEY=${CLERK_SECRET_KEY}
+      - NEXT_PUBLIC_CLERK_SIGN_IN_URL=/login
+      - NEXT_PUBLIC_CLERK_SIGN_UP_URL=/register
+    volumes:
+      - ./lessons:/lessons
+      - web_data:/app/prisma
+
   db:
     image: postgres:15-alpine
     container_name: sensei-hub-db
@@ -14,3 +32,4 @@ services:
 
 volumes:
   postgres_data:
+  web_data:
