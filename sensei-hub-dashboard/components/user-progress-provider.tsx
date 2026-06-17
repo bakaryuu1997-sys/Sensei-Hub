@@ -29,12 +29,12 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
     let localProgress: Record<string, number> = {}
     let localLessons: Record<string, boolean> = {}
 
-    if (storedProgress) {
+    if (storedProgress && storedProgress !== "undefined") {
       try {
         localProgress = JSON.parse(storedProgress)
         setProgressMap(localProgress)
       } catch (e) {
-        console.error(e)
+        console.error("Failed to parse storedProgress:", e)
       }
     } else {
       const initialMap: Record<string, number> = {}
@@ -48,12 +48,12 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
       localStorage.setItem("sensei-user-progress", JSON.stringify(initialMap))
     }
 
-    if (storedLessons) {
+    if (storedLessons && storedLessons !== "undefined") {
       try {
         localLessons = JSON.parse(storedLessons)
         setCompletedLessons(localLessons)
       } catch (e) {
-        console.error(e)
+        console.error("Failed to parse storedLessons:", e)
       }
     }
 
