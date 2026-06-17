@@ -11,6 +11,7 @@ import { ModulesList } from "@/components/subject/modules-list"
 import { Starfield } from "@/components/dashboard/starfield"
 import { useUserProgress } from "@/components/user-progress-provider"
 import { DashboardPlanet } from "@/components/dashboard/dashboard-planet"
+import { Footer } from "@/components/footer"
 
 export default function SubjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params)
@@ -86,6 +87,8 @@ export default function SubjectPage({ params }: { params: Promise<{ slug: string
             <ModulesList subject={subject} />
           </div>
         </main>
+
+        <Footer />
       </div>
     </div>
   )

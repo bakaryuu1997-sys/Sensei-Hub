@@ -11,6 +11,7 @@ import { useLanguage } from "@/lib/i18n"
 import { Starfield } from "@/components/dashboard/starfield"
 import { ConstellationMap } from "@/components/dashboard/constellation-map"
 import { DashboardPlanet } from "@/components/dashboard/dashboard-planet"
+import { Footer } from "@/components/footer"
 import { useUser } from "@clerk/nextjs"
 
 export default function DashboardPage() {
@@ -130,6 +131,8 @@ export default function DashboardPage() {
             </motion.footer>
           </div>
         </main>
+
+        <Footer />
       </div>
     </div>
   )
