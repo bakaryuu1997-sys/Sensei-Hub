@@ -126,7 +126,7 @@ export const translations: Translations = {
   "level.beginner": { en: "Beginner", ja: "初級", vi: "Cơ bản" },
   "level.intermediate": { en: "Intermediate", ja: "中級", vi: "Trung cấp" },
   "level.advanced": { en: "Advanced", ja: "上級", vi: "Nâng cao" },
-  "level.alllevels": { en: "All Levels", ja: "Mọi cấp độ", vi: "Mọi cấp độ" },
+  "level.alllevels": { en: "All Levels", ja: "全レベル", vi: "Mọi cấp độ" },
   "level.beginner_alt": { en: "Beginner", ja: "初級", vi: "Cơ bản" },
   "level.intermediate_alt": { en: "Intermediate", ja: "中級", vi: "Trung cấp" },
   "level.advanced_alt": { en: "Advanced", ja: "上級", vi: "Nâng cao" },
@@ -188,6 +188,110 @@ export const translations: Translations = {
   "sub.blockchain-and-web3-fundamentals.name": { en: "Blockchain", ja: "ブロックチェーン", vi: "Blockchain" },
   "sub.blockchain-and-web3-fundamentals.tagline": { en: "Decentralize the future", ja: "未来を分散化する", vi: "Công nghệ tương lai phi tập trung" },
   "sub.blockchain-and-web3-fundamentals.description": { en: "Understand blockchain mechanics, cryptography, smart contracts, Ethereum Virtual Machine, decentralized finance (DeFi), and consensus protocols.", ja: "ブロックチェーンの仕組み、暗号化、スマートコントラクト、EVM、DeFi、コンセンサスプロトコルを理解します。", vi: "Tìm hiểu cơ chế blockchain, mật mã học, hợp đồng thông minh, EVM, tài chính phi tập trung (DeFi) và các giao thức đồng thuận." },
+
+  // Navigation & auth
+  "nav.menu": { en: "Menu", ja: "メニュー", vi: "Menu" },
+  "auth.login": { en: "Sign in", ja: "ログイン", vi: "Đăng nhập" },
+
+  // Lesson page (previously hardcoded)
+  "lesson.subject_not_found": { en: "Subject not found", ja: "科目が見つかりません", vi: "Không tìm thấy môn học" },
+  "lesson.back_to_dashboard": { en: "Back to Dashboard", ja: "ダッシュボードに戻る", vi: "Về trang chủ" },
+
+  // Quiz (subject-level)
+  "action.quiz": { en: "Quiz", ja: "クイズ", vi: "Quiz" },
+  "quiz.coming_soon_title": { en: "Quiz — coming soon", ja: "クイズ — 近日公開", vi: "Quiz — Sắp ra mắt" },
+  "quiz.coming_soon_desc": {
+    en: "Practice questions for this subject are being prepared. Check back soon!",
+    ja: "この科目の練習問題を準備中です。近日公開予定です。",
+    vi: "Câu hỏi luyện tập cho môn này đang được chuẩn bị. Hãy quay lại sau nhé!",
+  },
+
+  // Floating AI chat
+  "chat.title": { en: "AI Assistant", ja: "AIアシスタント", vi: "Trợ lý AI" },
+  "chat.open": { en: "Open AI assistant", ja: "AIアシスタントを開く", vi: "Mở trợ lý AI" },
+  "chat.coming_soon": { en: "AI chat is coming soon.", ja: "AIチャットは近日公開予定です。", vi: "Chat AI sắp ra mắt." },
+  "chat.configure_hint": {
+    en: "You'll be able to connect Gemini, OpenAI, or a local Ollama model in Settings.",
+    ja: "設定で Gemini、OpenAI、またはローカルの Ollama モデルを接続できるようになります。",
+    vi: "Bạn sẽ có thể kết nối Gemini, OpenAI hoặc model Ollama cục bộ trong phần Cài đặt.",
+  },
+
+  // Settings page
+  "settings.title": { en: "Settings", ja: "設定", vi: "Cài đặt" },
+  "settings.subtitle": { en: "Manage your learning preferences", ja: "学習設定を管理する", vi: "Quản lý tuỳ chọn học tập của bạn" },
+  "settings.progress_title": { en: "Your progress", ja: "あなたの進捗", vi: "Tiến độ của bạn" },
+  "settings.language_title": { en: "Default language", ja: "デフォルト言語", vi: "Ngôn ngữ mặc định" },
+  "settings.language_desc": { en: "Language used for the interface and lessons.", ja: "インターフェースとレッスンで使用する言語。", vi: "Ngôn ngữ dùng cho giao diện và bài học." },
+  "settings.ai_title": { en: "AI provider", ja: "AIプロバイダー", vi: "Nhà cung cấp AI" },
+  "settings.ai_desc": {
+    en: "Configure the AI used by the upcoming chat assistant. Keys are stored only in your browser.",
+    ja: "近日公開のチャットアシスタントで使用するAIを設定します。キーはブラウザにのみ保存されます。",
+    vi: "Cấu hình AI cho trợ lý chat sắp ra mắt. Khoá chỉ được lưu trong trình duyệt của bạn.",
+  },
+  "settings.provider": { en: "Provider", ja: "プロバイダー", vi: "Nhà cung cấp" },
+  "settings.api_key": { en: "API key", ja: "APIキー", vi: "Khoá API" },
+  "settings.base_url": { en: "Base URL", ja: "ベースURL", vi: "Base URL" },
+  "settings.save": { en: "Save", ja: "保存", vi: "Lưu" },
+  "settings.saved": { en: "Saved", ja: "保存しました", vi: "Đã lưu" },
+  "settings.ollama_hint": {
+    en: "For Ollama, install it from ollama.com, run a lightweight model (e.g. `ollama run llama3.2`), and set the Base URL to http://localhost:11434.",
+    ja: "Ollama の場合は ollama.com からインストールし、軽量モデル（例: `ollama run llama3.2`）を実行し、Base URL を http://localhost:11434 に設定してください。",
+    vi: "Với Ollama, cài từ ollama.com, chạy một model nhẹ (vd `ollama run llama3.2`) và đặt Base URL là http://localhost:11434.",
+  },
+
+  // Footer
+  "footer.links_title": { en: "Useful links", ja: "便利なリンク", vi: "Liên kết hữu ích" },
+  "footer.legal_title": { en: "Legal", ja: "法的事項", vi: "Pháp lý" },
+  "footer.connect_title": { en: "Connect", ja: "つながる", vi: "Kết nối" },
+  "footer.home": { en: "Home", ja: "ホーム", vi: "Trang chủ" },
+  "footer.blog": { en: "Blog & News", ja: "ブログ・ニュース", vi: "Blog & Tin tức" },
+  "footer.login": { en: "Sign in", ja: "ログイン", vi: "Đăng nhập" },
+  "footer.privacy": { en: "Privacy Policy", ja: "プライバシーポリシー", vi: "Chính sách bảo mật" },
+  "footer.terms": { en: "Terms of Service", ja: "利用規約", vi: "Điều khoản dịch vụ" },
+  "footer.about": { en: "About us", ja: "私たちについて", vi: "Về chúng tôi" },
+  "footer.contact": { en: "Contact", ja: "お問い合わせ", vi: "Liên hệ" },
+  "footer.rights": { en: "All rights reserved.", ja: "全著作権所有。", vi: "Bảo lưu mọi quyền." },
+
+  // Static pages
+  "page.about.title": { en: "About Sensei Hub", ja: "Sensei Hub について", vi: "Về Sensei Hub" },
+  "page.about.body": {
+    en: "Sensei Hub is a trilingual (English, Japanese, Vietnamese) learning platform for IT engineers, with hands-on courses from Git and AWS to System Design.",
+    ja: "Sensei Hub は、Git や AWS からシステム設計まで実践的なコースを備えた、ITエンジニア向けの3言語（英語・日本語・ベトナム語）学習プラットフォームです。",
+    vi: "Sensei Hub là nền tảng học tập 3 ngôn ngữ (Anh, Nhật, Việt) cho kỹ sư IT, với các khoá thực hành từ Git, AWS đến Thiết kế hệ thống.",
+  },
+  "page.contact.title": { en: "Contact", ja: "お問い合わせ", vi: "Liên hệ" },
+  "page.contact.body": {
+    en: "Questions or feedback? Reach us via the project repository on GitHub.",
+    ja: "ご質問やご意見は、GitHub のプロジェクトリポジトリからお寄せください。",
+    vi: "Có câu hỏi hay góp ý? Liên hệ với chúng tôi qua kho mã nguồn dự án trên GitHub.",
+  },
+  "page.privacy.title": { en: "Privacy Policy", ja: "プライバシーポリシー", vi: "Chính sách bảo mật" },
+  "page.privacy.body": {
+    en: "We store only your learning progress, linked to your account. Lesson content is served as static files. We do not sell your data.",
+    ja: "当サービスは、アカウントに紐づく学習進捗のみを保存します。レッスンコンテンツは静的ファイルとして提供されます。データを販売することはありません。",
+    vi: "Chúng tôi chỉ lưu tiến độ học tập gắn với tài khoản của bạn. Nội dung bài học được phục vụ dưới dạng tệp tĩnh. Chúng tôi không bán dữ liệu của bạn.",
+  },
+  "page.terms.title": { en: "Terms of Service", ja: "利用規約", vi: "Điều khoản dịch vụ" },
+  "page.terms.body": {
+    en: "Sensei Hub is provided for educational use under the MIT License, without warranty. Use it responsibly.",
+    ja: "Sensei Hub は MIT ライセンスのもと、教育目的で無保証で提供されます。責任を持ってご利用ください。",
+    vi: "Sensei Hub được cung cấp cho mục đích học tập theo Giấy phép MIT, không có bảo hành. Hãy sử dụng có trách nhiệm.",
+  },
+  "page.blog.title": { en: "Blog & News", ja: "ブログ・ニュース", vi: "Blog & Tin tức" },
+  "page.blog.body": {
+    en: "Articles and product updates are coming soon.",
+    ja: "記事や製品アップデートは近日公開予定です。",
+    vi: "Các bài viết và cập nhật sản phẩm sẽ sớm ra mắt.",
+  },
+
+  // Search command palette
+  "search.placeholder": { en: "Search subjects and lessons...", ja: "科目やレッスンを検索...", vi: "Tìm môn học và bài học..." },
+  "search.no_results": { en: "No results found.", ja: "結果が見つかりません。", vi: "Không tìm thấy kết quả." },
+  "search.subjects": { en: "Subjects", ja: "科目", vi: "Môn học" },
+  "search.lessons": { en: "Lessons", ja: "レッスン", vi: "Bài học" },
+
+  // Continue learning
+  "continue.none": { en: "Start with the first lesson", ja: "最初のレッスンから始める", vi: "Bắt đầu từ bài đầu tiên" },
 }
 
 type LanguageContextType = {
@@ -207,6 +311,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       setLangState(stored)
     }
   }, [])
+
+  // Keep the document language in sync for accessibility / SEO.
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = lang
+    }
+  }, [lang])
 
   const setLang = (newLang: Language) => {
     setLangState(newLang)

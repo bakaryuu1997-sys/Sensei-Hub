@@ -130,7 +130,7 @@ export function TopBar() {
           href="/login"
           className="flex items-center justify-center px-4 py-2 bg-gradient-to-r from-violet-500 to-indigo-600 hover:from-violet-600 hover:to-indigo-700 text-white font-medium rounded-xl text-sm transition shadow-lg shadow-violet-500/20"
         >
-          Đăng nhập
+          {t("auth.login")}
         </Link>
       )}
     </motion.header>

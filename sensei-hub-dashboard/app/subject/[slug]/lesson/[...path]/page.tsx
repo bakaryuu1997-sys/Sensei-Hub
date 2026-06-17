@@ -146,9 +146,9 @@ export default function LessonPage({
     return (
       <div className="flex min-h-screen items-center justify-center bg-slate-950 text-white">
         <div className="text-center">
-          <h1 className="text-2xl font-bold">Subject not found</h1>
+          <h1 className="text-2xl font-bold">{t("lesson.subject_not_found")}</h1>
           <Link href="/" className="mt-4 inline-block text-cyan-400 hover:underline">
-            Back to Dashboard
+            {t("lesson.back_to_dashboard")}
           </Link>
         </div>
       </div>
