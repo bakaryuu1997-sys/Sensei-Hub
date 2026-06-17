@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import { LanguageProvider } from '@/lib/i18n'
 import { UserProgressProvider } from '@/components/user-progress-provider'
 import { PwaRegistrar } from '@/components/pwa-registrar'
+import { FloatingChat } from '@/components/floating-chat'
 import { ClerkProvider } from "@clerk/nextjs"
 import './globals.css'
 
@@ -71,6 +72,7 @@ export default function RootLayout({
           <LanguageProvider>
             <UserProgressProvider>
               {children}
+              <FloatingChat />
             </UserProgressProvider>
           </LanguageProvider>
         </ClerkProvider>
