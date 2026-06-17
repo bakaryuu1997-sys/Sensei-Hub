@@ -1,36 +1,39 @@
+# Sensei Hub — single-instance deployment (e.g. one AWS EC2 host).
+#
+# Usage on EC2:
+#   1. Put the secrets below in a `.env` file next to this file (see keys).
+#   2. docker compose up -d --build
+#
+# The app uses SQLite (libSQL adapter); there is no separate database server.
+# NEXT_PUBLIC_* values are inlined at BUILD time, so they are passed as build
+# args — changing them requires `docker compose up -d --build`.
+
 services:
   web:
     build:
       context: .
       dockerfile: ./sensei-hub-dashboard/Dockerfile
+      args:
+        NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+        NEXT_PUBLIC_CLERK_SIGN_IN_URL: /login
+        NEXT_PUBLIC_CLERK_SIGN_UP_URL: /register
     container_name: sensei-hub-web
     restart: always
     ports:
       - "3000:3000"
     environment:
-      - DATABASE_URL=file:/app/prisma/dev.db
-      - LESSONS_DIR=/lessons
-      - NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=\${NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
-      - CLERK_SECRET_KEY=${CLERK_SECRET_KEY}
-      - NEXT_PUBLIC_CLERK_SIGN_IN_URL=/login
-      - NEXT_PUBLIC_CLERK_SIGN_UP_URL=/register
+      # SQLite file lives on the persistent named volume mounted at /app/data
+      DATABASE_URL: "file:/app/data/production.db"
+      LESSONS_DIR: /lessons
+      CLERK_SECRET_KEY: ${CLERK_SECRET_KEY}
+      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+      NEXT_PUBLIC_CLERK_SIGN_IN_URL: /login
+      NEXT_PUBLIC_CLERK_SIGN_UP_URL: /register
     volumes:
-      - ./lessons:/lessons
-      - web_data:/app/prisma
-
-  db:
-    image: postgres:15-alpine
-    container_name: sensei-hub-db
-    restart: always
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: sensei_hub
-    ports:
-      - "5433:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
+      # Persist the learner progress database across re-deploys
+      - web_data:/app/data
+      # Lessons content (read-only); update via git pull + redeploy
+      - ./lessons:/lessons:ro
 
 volumes:
-  postgres_data:
   web_data:
