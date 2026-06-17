@@ -31,12 +31,7 @@ export async function GET(request: NextRequest) {
     if (!existingUser) {
       try {
         await prisma.user.create({
-          data: {
-            id: userId,
-            email: "default@senseihub.local",
-            password: "default-password-hash",
-            name: "Default Student",
-          },
+          data: { id: userId },
         });
       } catch (e) {
         // Ignore unique constraint error from concurrent requests
