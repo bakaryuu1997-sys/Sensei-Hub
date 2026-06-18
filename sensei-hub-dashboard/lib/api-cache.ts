@@ -3,7 +3,10 @@ interface CacheEntry<T> {
   expiry: number
 }
 
-const cacheMap = new Map<string, CacheEntry<any>>()
+// dev の HMR でモジュールが再評価されてもキャッシュが消えないよう globalThis に保持する
+const globalForCache = global as unknown as { apiCacheMap?: Map<string, CacheEntry<any>> }
+const cacheMap = globalForCache.apiCacheMap ?? new Map<string, CacheEntry<any>>()
+globalForCache.apiCacheMap = cacheMap
 
 // 1 hour TTL (static markdown files do not change during runtime)
 const DEFAULT_TTL_MS = 60 * 60 * 1000 

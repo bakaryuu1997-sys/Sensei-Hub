@@ -56,6 +56,8 @@ COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
 COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
 COPY --from=builder --chown=nextjs:nodejs /app/next.config.mjs ./next.config.mjs
 COPY --from=builder --chown=nextjs:nodejs /app/docker-entrypoint.sh ./docker-entrypoint.sh
+# レッスンインデックス生成スクリプト（entrypoint で実行）
+COPY --from=builder --chown=nextjs:nodejs /app/scripts ./scripts
 
 # レッスンコンテンツ（リクエスト時に $LESSONS_DIR から読む）
 COPY --chown=nextjs:nodejs lessons/ /lessons

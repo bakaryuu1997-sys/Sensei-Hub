@@ -4,6 +4,7 @@ import path from "path"
 import { checkRateLimit } from "@/lib/rate-limiter"
 import { getCache, setCache } from "@/lib/api-cache"
 import { parseFrontmatter, extractTitle, formatDayTitle } from "@/lib/markdown"
+import { getIndexedLessons } from "@/lib/lessons-index"
 
 const slugToFolder: Record<string, string> = {
   "fe": "fundamental-it-engineer",
@@ -31,6 +32,15 @@ export async function GET(
     }
 
     const subjectFolder = slugToFolder[slug] || slug
+
+    // まず静的インデックスを使う（数百ファイルの走査を回避）。無ければ従来の走査へ。
+    const indexed = getIndexedLessons(lang, subjectFolder)
+    if (indexed) {
+      const result = { lessons: indexed }
+      setCache(cacheKey, result)
+      return NextResponse.json(result)
+    }
+
     const lessonsDir = process.env.LESSONS_DIR || path.resolve(process.cwd(), "../lessons")
 
     let langToUse = lang

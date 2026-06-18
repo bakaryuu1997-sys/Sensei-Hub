@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { checkRateLimit } from "@/lib/rate-limiter";
 import { getCache, setCache } from "@/lib/api-cache";
+import { getIndexedLessons } from "@/lib/lessons-index";
 import { subjects, type Subject } from "@/lib/subjects";
 import fs from "fs";
 import path from "path";
@@ -22,6 +23,11 @@ const slugToFolder: Record<string, string> = {
  */
 function getSubjectLessonPaths(subject: Subject, lessonsDir: string): string[] {
   const subjectFolder = slugToFolder[subject.slug] || subject.slug;
+
+  // 静的インデックスがあればそれを使う（ファイル走査を完全に回避）。
+  const indexed = getIndexedLessons("en", subjectFolder);
+  if (indexed) return indexed.map((l) => l.path);
+
   const cacheKey = `progress-files/${subject.slug}/en`;
   const cached = getCache<string[]>(cacheKey);
   if (cached) return cached;

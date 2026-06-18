@@ -1,1 +1,4 @@
 .superpowers/
+
+# 自動生成されるレッスンインデックス（predev/prebuild/entrypoint で再生成）
+lessons/lessons-index.json
