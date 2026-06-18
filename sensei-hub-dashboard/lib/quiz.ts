@@ -14,9 +14,17 @@ export type QuizQuestion = {
   explanation: QuizText
 }
 
+export type QuizSet = {
+  id: string
+  title: QuizText
+  description: QuizText
+  questions: QuizQuestion[]
+}
+
 export type Quiz = {
   title: QuizText
-  questions: QuizQuestion[]
+  questions?: QuizQuestion[] // Backward compatibility for single quiz
+  sets?: QuizSet[]           // For multiple quiz sets
 }
 
 /** 3 言語テキストを現在の言語で取り出す（無ければ英語にフォールバック）。 */
@@ -47,8 +55,10 @@ export function getQuizResults(): QuizResultRecord[] {
   }
 }
 
-export function getBestScore(slug: string): QuizResultRecord | null {
-  const results = getQuizResults().filter((r) => r.slug === slug)
+// Support checking best score by set id
+export function getBestScore(slug: string, setId?: string): QuizResultRecord | null {
+  const key = setId ? `${slug}/${setId}` : slug
+  const results = getQuizResults().filter((r) => r.slug === key)
   if (results.length === 0) return null
   return results.reduce((best, r) => (r.score / r.total > best.score / best.total ? r : best))
 }
