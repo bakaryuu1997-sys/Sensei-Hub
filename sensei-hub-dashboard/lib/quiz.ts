@@ -69,11 +69,12 @@ export function getBestScore(slug: string, setId?: string): QuizResultRecord | n
   })
 }
 
-export function saveQuizResult(record: QuizResultRecord): void {
+export function saveQuizResult(record: QuizResultRecord, setId?: string): void {
   if (typeof window === "undefined") return
   try {
     const all = getQuizResults()
-    all.push(record)
+    const targetSlug = setId ? `${record.slug}/${setId}` : record.slug
+    all.push({ ...record, slug: targetSlug })
     // 直近 MAX_HISTORY_RECORDS 件だけ保持
     localStorage.setItem(KEY, JSON.stringify(all.slice(-MAX_HISTORY_RECORDS)))
   } catch {
