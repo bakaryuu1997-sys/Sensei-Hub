@@ -1,0 +1,105 @@
+{
+  "title": { "en": "Database Engineering Quiz", "ja": "データベース クイズ", "vi": "Quiz Cơ sở dữ liệu" },
+  "questions": [
+    {
+      "id": "q1",
+      "question": {
+        "en": "Which SQL clause filters rows based on a condition?",
+        "ja": "条件に基づいて行を絞り込む SQL 句はどれ？",
+        "vi": "Mệnh đề SQL nào lọc hàng dựa trên điều kiện?"
+      },
+      "options": [
+        { "en": "ORDER BY", "ja": "ORDER BY", "vi": "ORDER BY" },
+        { "en": "WHERE", "ja": "WHERE", "vi": "WHERE" },
+        { "en": "GROUP BY", "ja": "GROUP BY", "vi": "GROUP BY" },
+        { "en": "SELECT", "ja": "SELECT", "vi": "SELECT" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "WHERE filters rows; ORDER BY sorts, GROUP BY aggregates, SELECT chooses columns.",
+        "ja": "WHERE は行を絞り込みます。ORDER BY は並べ替え、GROUP BY は集約、SELECT は列の選択です。",
+        "vi": "WHERE lọc hàng; ORDER BY sắp xếp, GROUP BY gộp nhóm, SELECT chọn cột."
+      }
+    },
+    {
+      "id": "q2",
+      "question": {
+        "en": "What does adding an index to a column primarily improve?",
+        "ja": "列にインデックスを追加すると主に何が改善する？",
+        "vi": "Thêm chỉ mục (index) cho một cột chủ yếu cải thiện điều gì?"
+      },
+      "options": [
+        { "en": "Write/insert speed", "ja": "書き込み・挿入の速度", "vi": "Tốc độ ghi/chèn" },
+        { "en": "Read/lookup speed for matching queries", "ja": "該当クエリの読み取り・検索速度", "vi": "Tốc độ đọc/tra cứu cho truy vấn phù hợp" },
+        { "en": "Disk space usage", "ja": "ディスク使用量", "vi": "Dung lượng đĩa" },
+        { "en": "Backup speed", "ja": "バックアップ速度", "vi": "Tốc độ sao lưu" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Indexes speed up lookups but add overhead to writes and use extra storage.",
+        "ja": "インデックスは検索を高速化しますが、書き込みに負荷がかかり、追加の容量も使います。",
+        "vi": "Chỉ mục tăng tốc tra cứu nhưng làm chậm ghi và tốn thêm bộ nhớ."
+      }
+    },
+    {
+      "id": "q3",
+      "question": {
+        "en": "In ACID transactions, what does 'A' stand for?",
+        "ja": "ACID トランザクションの 'A' は何を表す？",
+        "vi": "Trong giao dịch ACID, chữ 'A' viết tắt cho gì?"
+      },
+      "options": [
+        { "en": "Availability", "ja": "可用性（Availability）", "vi": "Availability" },
+        { "en": "Atomicity", "ja": "原子性（Atomicity）", "vi": "Atomicity" },
+        { "en": "Authentication", "ja": "認証（Authentication）", "vi": "Authentication" },
+        { "en": "Aggregation", "ja": "集約（Aggregation）", "vi": "Aggregation" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "ACID = Atomicity, Consistency, Isolation, Durability. Atomicity means all-or-nothing.",
+        "ja": "ACID = 原子性・一貫性・独立性・永続性。原子性は「全て成功か全て失敗か」を意味します。",
+        "vi": "ACID = Atomicity, Consistency, Isolation, Durability. Atomicity nghĩa là tất-cả-hoặc-không."
+      }
+    },
+    {
+      "id": "q4",
+      "question": {
+        "en": "Which JOIN returns only rows that match in both tables?",
+        "ja": "両方のテーブルで一致する行だけを返す JOIN はどれ？",
+        "vi": "JOIN nào chỉ trả về các hàng khớp ở cả hai bảng?"
+      },
+      "options": [
+        { "en": "LEFT JOIN", "ja": "LEFT JOIN", "vi": "LEFT JOIN" },
+        { "en": "FULL OUTER JOIN", "ja": "FULL OUTER JOIN", "vi": "FULL OUTER JOIN" },
+        { "en": "INNER JOIN", "ja": "INNER JOIN", "vi": "INNER JOIN" },
+        { "en": "CROSS JOIN", "ja": "CROSS JOIN", "vi": "CROSS JOIN" }
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "INNER JOIN returns only matching rows. LEFT/FULL keep unmatched rows; CROSS is a Cartesian product.",
+        "ja": "INNER JOIN は一致行のみ返します。LEFT/FULL は非一致も残し、CROSS は直積です。",
+        "vi": "INNER JOIN chỉ trả hàng khớp. LEFT/FULL giữ cả hàng không khớp; CROSS là tích Descartes."
+      }
+    },
+    {
+      "id": "q5",
+      "question": {
+        "en": "A table is in 1NF and every non-key column depends on the whole primary key. Which form is this?",
+        "ja": "1NF を満たし、非キー列がすべて主キー全体に依存している。これは何正規形？",
+        "vi": "Bảng đạt 1NF và mọi cột không khóa phụ thuộc vào toàn bộ khóa chính. Đây là dạng chuẩn nào?"
+      },
+      "options": [
+        { "en": "1NF", "ja": "第1正規形（1NF）", "vi": "1NF" },
+        { "en": "2NF", "ja": "第2正規形（2NF）", "vi": "2NF" },
+        { "en": "3NF", "ja": "第3正規形（3NF）", "vi": "3NF" },
+        { "en": "BCNF", "ja": "ボイス・コッド正規形（BCNF）", "vi": "BCNF" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "2NF removes partial dependencies: non-key attributes must depend on the entire primary key.",
+        "ja": "2NF は部分関数従属を除きます。非キー属性は主キー全体に依存しなければなりません。",
+        "vi": "2NF loại bỏ phụ thuộc bộ phận: thuộc tính không khóa phải phụ thuộc toàn bộ khóa chính."
+      }
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "title": { "en": "Cybersecurity Awareness Quiz", "ja": "サイバーセキュリティ クイズ", "vi": "Quiz An ninh mạng" },
+  "questions": [
+    {
+      "id": "q1",
+      "question": {
+        "en": "What is 'phishing'?",
+        "ja": "「フィッシング」とは？",
+        "vi": "“Phishing” là gì?"
+      },
+      "options": [
+        { "en": "A hardware failure", "ja": "ハードウェアの故障", "vi": "Lỗi phần cứng" },
+        { "en": "Tricking users into revealing credentials via fake messages", "ja": "偽のメッセージでユーザーに認証情報を漏らさせる手口", "vi": "Lừa người dùng tiết lộ thông tin đăng nhập qua tin nhắn giả" },
+        { "en": "A type of data backup", "ja": "データバックアップの一種", "vi": "Một loại sao lưu dữ liệu" },
+        { "en": "A network protocol", "ja": "ネットワークプロトコル", "vi": "Một giao thức mạng" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Phishing uses fake emails/sites to trick people into revealing passwords or sensitive data.",
+        "ja": "フィッシングは偽のメールやサイトで、パスワードや機密情報を入力させる攻撃です。",
+        "vi": "Phishing dùng email/trang web giả để lừa người dùng để lộ mật khẩu hoặc dữ liệu nhạy cảm."
+      }
+    },
+    {
+      "id": "q2",
+      "question": {
+        "en": "Which is a well-known item in the OWASP Top 10 web risks?",
+        "ja": "OWASP Top 10（Web の脆弱性）に含まれる有名な項目はどれ？",
+        "vi": "Đâu là một mục nổi tiếng trong OWASP Top 10 rủi ro web?"
+      },
+      "options": [
+        { "en": "SQL injection", "ja": "SQL インジェクション", "vi": "SQL injection" },
+        { "en": "Faster CPUs", "ja": "高速な CPU", "vi": "CPU nhanh hơn" },
+        { "en": "More RAM", "ja": "メモリ増設", "vi": "Nhiều RAM hơn" },
+        { "en": "Bigger monitors", "ja": "大きなモニター", "vi": "Màn hình lớn hơn" }
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Injection (e.g. SQL injection) is a classic OWASP Top 10 vulnerability; use parameterized queries.",
+        "ja": "インジェクション（SQL インジェクション等）は OWASP Top 10 の代表例。対策はパラメータ化クエリです。",
+        "vi": "Injection (vd SQL injection) là lỗ hổng kinh điển trong OWASP Top 10; hãy dùng truy vấn tham số hóa."
+      }
+    },
+    {
+      "id": "q3",
+      "question": {
+        "en": "What does HTTPS/TLS provide?",
+        "ja": "HTTPS/TLS が提供するものは？",
+        "vi": "HTTPS/TLS cung cấp điều gì?"
+      },
+      "options": [
+        { "en": "Faster page rendering", "ja": "ページ描画の高速化", "vi": "Render trang nhanh hơn" },
+        { "en": "Encryption of data in transit", "ja": "通信中データの暗号化", "vi": "Mã hóa dữ liệu khi truyền" },
+        { "en": "Free hosting", "ja": "無料のホスティング", "vi": "Hosting miễn phí" },
+        { "en": "Automatic backups", "ja": "自動バックアップ", "vi": "Sao lưu tự động" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "TLS encrypts traffic between client and server, protecting it from eavesdropping and tampering.",
+        "ja": "TLS はクライアントとサーバー間の通信を暗号化し、盗聴や改ざんから守ります。",
+        "vi": "TLS mã hóa lưu lượng giữa client và server, chống nghe lén và giả mạo."
+      }
+    },
+    {
+      "id": "q4",
+      "question": {
+        "en": "Which is the best password practice?",
+        "ja": "最も望ましいパスワード運用はどれ？",
+        "vi": "Thực hành mật khẩu nào tốt nhất?"
+      },
+      "options": [
+        { "en": "Reuse one simple password everywhere", "ja": "簡単なパスワードを使い回す", "vi": "Dùng lại một mật khẩu đơn giản ở mọi nơi" },
+        { "en": "Long, unique passwords plus multi-factor authentication", "ja": "長くて固有のパスワード + 多要素認証", "vi": "Mật khẩu dài, duy nhất kèm xác thực đa yếu tố" },
+        { "en": "Write passwords on a sticky note", "ja": "付箋に書いて貼る", "vi": "Ghi mật khẩu lên giấy nhớ" },
+        { "en": "Use your birthday", "ja": "誕生日を使う", "vi": "Dùng ngày sinh" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Use long, unique passwords (a manager helps) and enable MFA for an extra layer of protection.",
+        "ja": "長く固有のパスワード（管理ツール推奨）を使い、MFA を有効にして保護層を増やします。",
+        "vi": "Dùng mật khẩu dài, duy nhất (nên dùng trình quản lý) và bật MFA để thêm lớp bảo vệ."
+      }
+    },
+    {
+      "id": "q5",
+      "question": {
+        "en": "The 'principle of least privilege' means…",
+        "ja": "「最小権限の原則」とは…",
+        "vi": "“Nguyên tắc đặc quyền tối thiểu” nghĩa là…"
+      },
+      "options": [
+        { "en": "Give everyone admin access", "ja": "全員に管理者権限を与える", "vi": "Cấp quyền admin cho mọi người" },
+        { "en": "Grant only the minimum access needed for a task", "ja": "作業に必要な最小限の権限だけを与える", "vi": "Chỉ cấp quyền tối thiểu cần cho công việc" },
+        { "en": "Disable all logging", "ja": "すべてのログを無効化する", "vi": "Tắt mọi ghi log" },
+        { "en": "Share one account for the whole team", "ja": "チームで1つのアカウントを共有する", "vi": "Cả nhóm dùng chung một tài khoản" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Least privilege limits each user/service to only the access they truly need, reducing risk.",
+        "ja": "最小権限は、各ユーザー/サービスに本当に必要な権限だけを与え、リスクを下げます。",
+        "vi": "Đặc quyền tối thiểu giới hạn mỗi người/dịch vụ chỉ ở quyền thật sự cần, giảm rủi ro."
+      }
+    }
+  ]
+}

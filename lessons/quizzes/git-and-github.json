@@ -1,0 +1,105 @@
+{
+  "title": { "en": "Git & GitHub Quiz", "ja": "Git & GitHub クイズ", "vi": "Quiz Git & GitHub" },
+  "questions": [
+    {
+      "id": "q1",
+      "question": {
+        "en": "Which command creates a new branch and switches to it in one step?",
+        "ja": "新しいブランチを作成し、同時にそのブランチへ切り替えるコマンドはどれ？",
+        "vi": "Lệnh nào tạo một nhánh mới và chuyển sang nhánh đó trong một bước?"
+      },
+      "options": [
+        { "en": "git branch -b new", "ja": "git branch -b new", "vi": "git branch -b new" },
+        { "en": "git checkout -b new", "ja": "git checkout -b new", "vi": "git checkout -b new" },
+        { "en": "git merge new", "ja": "git merge new", "vi": "git merge new" },
+        { "en": "git clone new", "ja": "git clone new", "vi": "git clone new" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "`git checkout -b new` (or `git switch -c new`) creates the branch and checks it out at once.",
+        "ja": "`git checkout -b new`（または `git switch -c new`）でブランチ作成と切り替えを同時に行えます。",
+        "vi": "`git checkout -b new` (hoặc `git switch -c new`) vừa tạo nhánh vừa chuyển sang nhánh đó."
+      }
+    },
+    {
+      "id": "q2",
+      "question": {
+        "en": "What does `git pull` do?",
+        "ja": "`git pull` は何をする？",
+        "vi": "`git pull` làm gì?"
+      },
+      "options": [
+        { "en": "Only uploads local commits to the remote", "ja": "ローカルのコミットをリモートに送るだけ", "vi": "Chỉ tải commit cục bộ lên remote" },
+        { "en": "Fetches from the remote and merges into the current branch", "ja": "リモートから取得し、現在のブランチにマージする", "vi": "Lấy về từ remote và merge vào nhánh hiện tại" },
+        { "en": "Deletes the local branch", "ja": "ローカルブランチを削除する", "vi": "Xóa nhánh cục bộ" },
+        { "en": "Creates a new repository", "ja": "新しいリポジトリを作成する", "vi": "Tạo repository mới" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "`git pull` = `git fetch` + `git merge` (or rebase) into your current branch.",
+        "ja": "`git pull` は `git fetch` と、現在のブランチへの `git merge`（またはリベース）を合わせた操作です。",
+        "vi": "`git pull` = `git fetch` + `git merge` (hoặc rebase) vào nhánh hiện tại."
+      }
+    },
+    {
+      "id": "q3",
+      "question": {
+        "en": "Which command stages a file for the next commit?",
+        "ja": "次のコミットに含めるためファイルをステージするコマンドは？",
+        "vi": "Lệnh nào đưa một tệp vào staging cho commit kế tiếp?"
+      },
+      "options": [
+        { "en": "git stage --commit", "ja": "git stage --commit", "vi": "git stage --commit" },
+        { "en": "git push file", "ja": "git push file", "vi": "git push file" },
+        { "en": "git add <file>", "ja": "git add <file>", "vi": "git add <file>" },
+        { "en": "git commit <file>", "ja": "git commit <file>", "vi": "git commit <file>" }
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "`git add` moves changes into the staging area; `git commit` then records them.",
+        "ja": "`git add` で変更をステージングエリアに移し、`git commit` で記録します。",
+        "vi": "`git add` đưa thay đổi vào vùng staging; sau đó `git commit` ghi lại."
+      }
+    },
+    {
+      "id": "q4",
+      "question": {
+        "en": "You see `<<<<<<<`, `=======`, `>>>>>>>` markers in a file. What happened?",
+        "ja": "ファイルに `<<<<<<<`、`=======`、`>>>>>>>` の印が出た。何が起きた？",
+        "vi": "Bạn thấy các dấu `<<<<<<<`, `=======`, `>>>>>>>` trong tệp. Điều gì đã xảy ra?"
+      },
+      "options": [
+        { "en": "The file is corrupted", "ja": "ファイルが壊れている", "vi": "Tệp bị hỏng" },
+        { "en": "A merge conflict needs to be resolved", "ja": "マージ競合を解決する必要がある", "vi": "Có xung đột merge cần giải quyết" },
+        { "en": "The commit succeeded", "ja": "コミットが成功した", "vi": "Commit đã thành công" },
+        { "en": "Git is encrypting the file", "ja": "Git がファイルを暗号化している", "vi": "Git đang mã hóa tệp" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Those markers indicate a merge conflict; edit the file to keep the correct content, then commit.",
+        "ja": "これらの印はマージ競合を表します。正しい内容に編集してからコミットします。",
+        "vi": "Các dấu đó báo xung đột merge; hãy sửa tệp giữ nội dung đúng rồi commit."
+      }
+    },
+    {
+      "id": "q5",
+      "question": {
+        "en": "On a shared branch, which is the safest way to undo a pushed commit?",
+        "ja": "共有ブランチで、プッシュ済みコミットを取り消す最も安全な方法は？",
+        "vi": "Trên nhánh dùng chung, cách an toàn nhất để hoàn tác một commit đã push là gì?"
+      },
+      "options": [
+        { "en": "git reset --hard then force push", "ja": "git reset --hard して強制プッシュ", "vi": "git reset --hard rồi force push" },
+        { "en": "git revert <commit>", "ja": "git revert <commit>", "vi": "git revert <commit>" },
+        { "en": "Delete the .git folder", "ja": ".git フォルダを削除する", "vi": "Xóa thư mục .git" },
+        { "en": "git commit --amend and force push", "ja": "git commit --amend して強制プッシュ", "vi": "git commit --amend rồi force push" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "`git revert` adds a new commit that undoes the change without rewriting shared history.",
+        "ja": "`git revert` は履歴を書き換えず、変更を打ち消す新しいコミットを追加します。",
+        "vi": "`git revert` tạo commit mới hoàn tác thay đổi mà không viết lại lịch sử chung."
+      }
+    }
+  ]
+}

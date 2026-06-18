@@ -1,0 +1,105 @@
+{
+  "title": { "en": "DevOps Engineering Quiz", "ja": "DevOps クイズ", "vi": "Quiz DevOps" },
+  "questions": [
+    {
+      "id": "q1",
+      "question": {
+        "en": "What does CI/CD stand for?",
+        "ja": "CI/CD は何の略？",
+        "vi": "CI/CD viết tắt cho gì?"
+      },
+      "options": [
+        { "en": "Continuous Integration / Continuous Delivery", "ja": "継続的インテグレーション / 継続的デリバリー", "vi": "Continuous Integration / Continuous Delivery" },
+        { "en": "Code Inspection / Code Deployment", "ja": "コード検査 / コードデプロイ", "vi": "Code Inspection / Code Deployment" },
+        { "en": "Central Image / Container Daemon", "ja": "中央イメージ / コンテナデーモン", "vi": "Central Image / Container Daemon" },
+        { "en": "Cluster Init / Cluster Down", "ja": "クラスタ初期化 / クラスタ停止", "vi": "Cluster Init / Cluster Down" }
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "CI = Continuous Integration (auto build/test on each change); CD = Continuous Delivery/Deployment.",
+        "ja": "CI は継続的インテグレーション（変更ごとに自動ビルド/テスト）、CD は継続的デリバリー/デプロイです。",
+        "vi": "CI = Continuous Integration (tự build/test mỗi thay đổi); CD = Continuous Delivery/Deployment."
+      }
+    },
+    {
+      "id": "q2",
+      "question": {
+        "en": "How does a Docker container differ from a virtual machine?",
+        "ja": "Docker コンテナは仮想マシンとどう違う？",
+        "vi": "Container Docker khác máy ảo (VM) như thế nào?"
+      },
+      "options": [
+        { "en": "Containers include a full guest OS", "ja": "コンテナは完全なゲスト OS を含む", "vi": "Container chứa cả một OS khách đầy đủ" },
+        { "en": "Containers share the host OS kernel and are lighter", "ja": "コンテナはホスト OS のカーネルを共有し、より軽量", "vi": "Container chia sẻ kernel của OS host và nhẹ hơn" },
+        { "en": "Containers cannot be networked", "ja": "コンテナはネットワーク接続できない", "vi": "Container không thể kết nối mạng" },
+        { "en": "Containers run only on Windows", "ja": "コンテナは Windows でしか動かない", "vi": "Container chỉ chạy trên Windows" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Containers virtualize the OS and share the host kernel, so they start faster and use less memory than VMs.",
+        "ja": "コンテナは OS レベルの仮想化でホストのカーネルを共有するため、VM より起動が速くメモリ消費も少ないです。",
+        "vi": "Container ảo hóa ở mức OS và dùng chung kernel host nên khởi động nhanh, tốn ít bộ nhớ hơn VM."
+      }
+    },
+    {
+      "id": "q3",
+      "question": {
+        "en": "What is Kubernetes primarily used for?",
+        "ja": "Kubernetes は主に何に使う？",
+        "vi": "Kubernetes chủ yếu dùng để làm gì?"
+      },
+      "options": [
+        { "en": "Writing application code", "ja": "アプリのコードを書く", "vi": "Viết mã ứng dụng" },
+        { "en": "Orchestrating and scaling containers", "ja": "コンテナのオーケストレーションとスケーリング", "vi": "Điều phối và mở rộng container" },
+        { "en": "Designing UI mockups", "ja": "UI モックアップの設計", "vi": "Thiết kế mockup UI" },
+        { "en": "Compiling C++ programs", "ja": "C++ プログラムのコンパイル", "vi": "Biên dịch chương trình C++" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Kubernetes automates deployment, scaling, and management of containerized applications.",
+        "ja": "Kubernetes はコンテナ化アプリのデプロイ・スケーリング・管理を自動化します。",
+        "vi": "Kubernetes tự động hóa triển khai, mở rộng và quản lý ứng dụng container."
+      }
+    },
+    {
+      "id": "q4",
+      "question": {
+        "en": "Which tool is a common example of Infrastructure as Code (IaC)?",
+        "ja": "Infrastructure as Code（IaC）の代表的なツールはどれ？",
+        "vi": "Công cụ nào là ví dụ phổ biến của Infrastructure as Code (IaC)?"
+      },
+      "options": [
+        { "en": "Photoshop", "ja": "Photoshop", "vi": "Photoshop" },
+        { "en": "Terraform", "ja": "Terraform", "vi": "Terraform" },
+        { "en": "Excel", "ja": "Excel", "vi": "Excel" },
+        { "en": "Postman", "ja": "Postman", "vi": "Postman" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Terraform (and Ansible, CloudFormation) define infrastructure declaratively in code.",
+        "ja": "Terraform（や Ansible、CloudFormation）はインフラをコードで宣言的に定義します。",
+        "vi": "Terraform (và Ansible, CloudFormation) định nghĩa hạ tầng bằng mã một cách khai báo."
+      }
+    },
+    {
+      "id": "q5",
+      "question": {
+        "en": "What is the main purpose of a load balancer?",
+        "ja": "ロードバランサーの主な目的は？",
+        "vi": "Mục đích chính của bộ cân bằng tải (load balancer) là gì?"
+      },
+      "options": [
+        { "en": "Encrypt the database", "ja": "データベースを暗号化する", "vi": "Mã hóa cơ sở dữ liệu" },
+        { "en": "Distribute traffic across multiple servers", "ja": "複数のサーバーにトラフィックを分散する", "vi": "Phân phối lưu lượng tới nhiều máy chủ" },
+        { "en": "Store application logs", "ja": "アプリのログを保存する", "vi": "Lưu nhật ký ứng dụng" },
+        { "en": "Compile source code", "ja": "ソースコードをコンパイルする", "vi": "Biên dịch mã nguồn" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "A load balancer spreads requests across servers to improve availability and scalability.",
+        "ja": "ロードバランサーはリクエストを複数サーバーに分散し、可用性とスケーラビリティを高めます。",
+        "vi": "Load balancer phân tán yêu cầu tới nhiều máy chủ để tăng tính sẵn sàng và khả năng mở rộng."
+      }
+    }
+  ]
+}

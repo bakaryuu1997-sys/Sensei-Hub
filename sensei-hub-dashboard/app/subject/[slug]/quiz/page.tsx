@@ -1,21 +1,104 @@
 "use client"
 
-import { use } from "react"
+import { use, useEffect, useState } from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
-import { ArrowLeft, ListChecks } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
+import confetti from "canvas-confetti"
+import { ArrowLeft, ListChecks, CheckCircle2, XCircle, RotateCcw, Trophy } from "lucide-react"
 
 import { Sidebar } from "@/components/dashboard/sidebar"
 import { TopBar } from "@/components/dashboard/top-bar"
 import { Starfield } from "@/components/dashboard/starfield"
 import { useLanguage } from "@/lib/i18n"
 import { useUserProgress } from "@/components/user-progress-provider"
+import { cn } from "@/lib/utils"
+import {
+  pickText,
+  saveQuizResult,
+  getBestScore,
+  type Quiz,
+  type QuizResultRecord,
+} from "@/lib/quiz"
+
+type Phase = "intro" | "playing" | "done"
 
 export default function SubjectQuizPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params)
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   const { subjects } = useUserProgress()
   const subject = subjects.find((s) => s.slug === slug)
+
+  const [quiz, setQuiz] = useState<Quiz | null>(null)
+  const [status, setStatus] = useState<"loading" | "missing" | "ready">("loading")
+  const [phase, setPhase] = useState<Phase>("intro")
+  const [current, setCurrent] = useState(0)
+  const [selected, setSelected] = useState<number | null>(null)
+  const [revealed, setRevealed] = useState(false)
+  const [answers, setAnswers] = useState<number[]>([])
+  const [best, setBest] = useState<QuizResultRecord | null>(null)
+
+  useEffect(() => {
+    let active = true
+    setStatus("loading")
+    fetch(`/api/subject/${slug}/quiz`)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data: Quiz | null) => {
+        if (!active) return
+        if (data && Array.isArray(data.questions) && data.questions.length > 0) {
+          setQuiz(data)
+          setStatus("ready")
+        } else {
+          setStatus("missing")
+        }
+      })
+      .catch(() => active && setStatus("missing"))
+    return () => {
+      active = false
+    }
+  }, [slug])
+
+  useEffect(() => {
+    setBest(getBestScore(slug))
+  }, [slug, phase])
+
+  const total = quiz?.questions.length ?? 0
+  const score = quiz ? answers.filter((a, i) => a === quiz.questions[i]?.answer).length : 0
+
+  const start = () => {
+    setPhase("playing")
+    setCurrent(0)
+    setSelected(null)
+    setRevealed(false)
+    setAnswers([])
+  }
+
+  const submit = () => {
+    if (selected === null) return
+    setRevealed(true)
+    setAnswers((prev) => {
+      const next = [...prev]
+      next[current] = selected
+      return next
+    })
+  }
+
+  const next = () => {
+    if (!quiz) return
+    if (current < total - 1) {
+      setCurrent((c) => c + 1)
+      setSelected(null)
+      setRevealed(false)
+    } else {
+      const finalScore = answers.filter((a, i) => a === quiz.questions[i]?.answer).length
+      saveQuizResult({ slug, score: finalScore, total, ts: Date.now() })
+      setPhase("done")
+      if (total > 0 && finalScore / total >= 0.8) {
+        confetti({ particleCount: 140, spread: 80, origin: { y: 0.7 }, colors: ["#22d3ee", "#8b5cf6", "#f43f5e", "#10b981"] })
+      }
+    }
+  }
+
+  const q = quiz?.questions[current]
 
   return (
     <div className="relative min-h-screen bg-slate-950 text-slate-100">
@@ -38,22 +121,205 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
               {t("lesson.back_to_subject")} {subject?.name ?? ""}
             </Link>
 
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              className="glass-card border border-white/10 rounded-2xl p-10 text-center space-y-4"
-            >
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10">
-                <ListChecks className="h-8 w-8 text-cyan-300" />
+            {/* Loading */}
+            {status === "loading" && (
+              <div className="flex flex-col items-center justify-center py-20 space-y-4">
+                <div className="h-10 w-10 animate-spin rounded-full border-4 border-cyan-500/20 border-t-cyan-400" />
+                <p className="text-sm text-white/50 font-mono">{t("common.loading")}</p>
               </div>
-              <h1 className="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-purple-400">
-                {t("quiz.coming_soon_title")}
-              </h1>
-              <p className="text-sm text-white/60 max-w-md mx-auto leading-relaxed">
-                {t("quiz.coming_soon_desc")}
-              </p>
-            </motion.div>
+            )}
+
+            {/* No quiz available */}
+            {status === "missing" && (
+              <div className="glass-card border border-white/10 rounded-2xl p-10 text-center space-y-4">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10">
+                  <ListChecks className="h-8 w-8 text-cyan-300" />
+                </div>
+                <h1 className="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-purple-400">
+                  {t("quiz.coming_soon_title")}
+                </h1>
+                <p className="text-sm text-white/60 max-w-md mx-auto">{t("quiz.coming_soon_desc")}</p>
+              </div>
+            )}
+
+            {/* Intro */}
+            {status === "ready" && quiz && phase === "intro" && (
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="glass-card border border-white/10 rounded-2xl p-8 lg:p-10 text-center space-y-5"
+              >
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10">
+                  <ListChecks className="h-8 w-8 text-cyan-300" />
+                </div>
+                <h1 className="text-2xl lg:text-3xl font-extrabold tracking-tight text-white">
+                  {pickText(quiz.title, lang)}
+                </h1>
+                <p className="text-sm text-white/60">{t("quiz.intro")}</p>
+                <div className="flex items-center justify-center gap-4 text-sm text-cyan-200/70 font-mono">
+                  <span>{total} {t("quiz.questions")}</span>
+                  {best && (
+                    <span className="flex items-center gap-1">
+                      <Trophy className="h-4 w-4 text-amber-300" />
+                      {t("quiz.best_score")}: {best.score}/{best.total}
+                    </span>
+                  )}
+                </div>
+                <button
+                  onClick={start}
+                  className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:opacity-90 transition-opacity"
+                >
+                  {t("quiz.start")}
+                </button>
+              </motion.div>
+            )}
+
+            {/* Playing */}
+            {status === "ready" && quiz && phase === "playing" && q && (
+              <div className="space-y-5">
+                {/* Progress */}
+                <div className="flex items-center justify-between text-xs font-mono text-white/50">
+                  <span>{t("quiz.question")} {current + 1} / {total}</span>
+                  <span>{score} ✓</span>
+                </div>
+                <div className="h-1.5 w-full rounded-full bg-white/10 overflow-hidden">
+                  <motion.div
+                    className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-purple-500"
+                    initial={{ width: 0 }}
+                    animate={{ width: `${(current / total) * 100}%` }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </div>
+
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={q.id}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.2 }}
+                    className="glass-card border border-white/10 rounded-2xl p-6 lg:p-8 space-y-5"
+                  >
+                    <h2 className="text-lg lg:text-xl font-bold text-white leading-relaxed">
+                      {pickText(q.question, lang)}
+                    </h2>
+
+                    <div className="space-y-3">
+                      {q.options.map((opt, idx) => {
+                        const isCorrect = idx === q.answer
+                        const isChosen = idx === selected
+                        let state = "idle"
+                        if (revealed) {
+                          if (isCorrect) state = "correct"
+                          else if (isChosen) state = "wrong"
+                        } else if (isChosen) {
+                          state = "chosen"
+                        }
+                        return (
+                          <button
+                            key={idx}
+                            disabled={revealed}
+                            onClick={() => setSelected(idx)}
+                            className={cn(
+                              "w-full flex items-center gap-3 rounded-xl border px-4 py-3 text-left text-sm transition-all",
+                              state === "idle" && "border-white/10 bg-white/5 hover:bg-white/10 text-white/85",
+                              state === "chosen" && "border-cyan-400/50 bg-cyan-500/10 text-white",
+                              state === "correct" && "border-emerald-500/40 bg-emerald-500/10 text-emerald-200",
+                              state === "wrong" && "border-rose-500/40 bg-rose-500/10 text-rose-200",
+                            )}
+                          >
+                            <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-md border border-white/15 text-xs font-mono">
+                              {String.fromCharCode(65 + idx)}
+                            </span>
+                            <span className="flex-1">{pickText(opt, lang)}</span>
+                            {revealed && isCorrect && <CheckCircle2 className="h-5 w-5 text-emerald-400" />}
+                            {revealed && state === "wrong" && <XCircle className="h-5 w-5 text-rose-400" />}
+                          </button>
+                        )
+                      })}
+                    </div>
+
+                    {/* Explanation */}
+                    {revealed && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        className="rounded-xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75"
+                      >
+                        <span className="font-bold text-cyan-300">{t("quiz.explanation")}: </span>
+                        {pickText(q.explanation, lang)}
+                      </motion.div>
+                    )}
+
+                    {/* Actions */}
+                    <div className="flex justify-end pt-1">
+                      {!revealed ? (
+                        <button
+                          onClick={submit}
+                          disabled={selected === null}
+                          className={cn(
+                            "rounded-xl px-6 py-2.5 text-sm font-bold transition-all",
+                            selected === null
+                              ? "bg-white/5 text-white/30 cursor-not-allowed"
+                              : "text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:opacity-90",
+                          )}
+                        >
+                          {t("quiz.submit")}
+                        </button>
+                      ) : (
+                        <button
+                          onClick={next}
+                          className="rounded-xl px-6 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:opacity-90 transition-opacity"
+                        >
+                          {current < total - 1 ? t("quiz.next") : t("quiz.finish")}
+                        </button>
+                      )}
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            )}
+
+            {/* Done */}
+            {status === "ready" && quiz && phase === "done" && (
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="glass-card border border-white/10 rounded-2xl p-8 lg:p-10 text-center space-y-5"
+              >
+                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10">
+                  <Trophy className="h-10 w-10 text-amber-300" />
+                </div>
+                <div>
+                  <p className="text-sm uppercase tracking-wider text-white/50 font-mono">{t("quiz.your_score")}</p>
+                  <p className="text-5xl font-extrabold text-white mt-1">
+                    {score}<span className="text-2xl text-white/40">/{total}</span>
+                  </p>
+                </div>
+                <p className="text-sm text-white/65">
+                  {score / total >= 0.8
+                    ? t("quiz.result_great")
+                    : score / total >= 0.5
+                      ? t("quiz.result_good")
+                      : t("quiz.result_retry")}
+                </p>
+                <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
+                  <button
+                    onClick={start}
+                    className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:opacity-90 transition-opacity"
+                  >
+                    <RotateCcw className="h-4 w-4" />
+                    {t("quiz.retry")}
+                  </button>
+                  <Link
+                    href={`/subject/${slug}`}
+                    className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white/80 bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                  >
+                    {t("lesson.back")}
+                  </Link>
+                </div>
+              </motion.div>
+            )}
           </div>
         </main>
       </div>

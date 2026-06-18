@@ -1,0 +1,105 @@
+{
+  "title": { "en": "Developer Mindset Quiz", "ja": "デベロッパーマインドセット クイズ", "vi": "Quiz Tư duy Lập trình viên" },
+  "questions": [
+    {
+      "id": "q1",
+      "question": {
+        "en": "In Scrum, what is a short, fixed-length iteration called?",
+        "ja": "スクラムにおける、期間を固定した短い反復を何と呼ぶ？",
+        "vi": "Trong Scrum, một chu kỳ lặp ngắn có độ dài cố định gọi là gì?"
+      },
+      "options": [
+        { "en": "Sprint", "ja": "スプリント", "vi": "Sprint" },
+        { "en": "Backlog", "ja": "バックログ", "vi": "Backlog" },
+        { "en": "Release", "ja": "リリース", "vi": "Release" },
+        { "en": "Epic", "ja": "エピック", "vi": "Epic" }
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "A sprint is a fixed time-box (often 1–2 weeks) in which a usable increment is built.",
+        "ja": "スプリントは固定の期間（多くは1〜2週間）で、使える成果物の増分を作ります。",
+        "vi": "Sprint là khung thời gian cố định (thường 1–2 tuần) để tạo ra một phần sản phẩm dùng được."
+      }
+    },
+    {
+      "id": "q2",
+      "question": {
+        "en": "What is the main purpose of a code review?",
+        "ja": "コードレビューの主な目的は？",
+        "vi": "Mục đích chính của code review là gì?"
+      },
+      "options": [
+        { "en": "To blame the author for mistakes", "ja": "作者のミスを責めること", "vi": "Đổ lỗi cho tác giả vì sai sót" },
+        { "en": "To catch issues early and share knowledge", "ja": "問題を早期に発見し、知識を共有すること", "vi": "Phát hiện sớm vấn đề và chia sẻ kiến thức" },
+        { "en": "To slow down releases", "ja": "リリースを遅らせること", "vi": "Làm chậm việc phát hành" },
+        { "en": "To rewrite everything from scratch", "ja": "すべてを一から書き直すこと", "vi": "Viết lại mọi thứ từ đầu" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Reviews improve quality, catch bugs early, and spread knowledge across the team — not to assign blame.",
+        "ja": "レビューは品質を高め、バグを早く見つけ、チームに知識を広めるためのもので、責任追及ではありません。",
+        "vi": "Review nâng chất lượng, bắt lỗi sớm và lan tỏa kiến thức trong nhóm — không phải để đổ lỗi."
+      }
+    },
+    {
+      "id": "q3",
+      "question": {
+        "en": "What does the DRY principle stand for?",
+        "ja": "DRY 原則とは何の略？",
+        "vi": "Nguyên tắc DRY viết tắt cho gì?"
+      },
+      "options": [
+        { "en": "Do Repeat Yourself", "ja": "Do Repeat Yourself", "vi": "Do Repeat Yourself" },
+        { "en": "Don't Repeat Yourself", "ja": "Don't Repeat Yourself", "vi": "Don't Repeat Yourself" },
+        { "en": "Document Right Yearly", "ja": "Document Right Yearly", "vi": "Document Right Yearly" },
+        { "en": "Deploy Rapidly Yourself", "ja": "Deploy Rapidly Yourself", "vi": "Deploy Rapidly Yourself" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "DRY = Don't Repeat Yourself: avoid duplicating logic; extract reusable pieces.",
+        "ja": "DRY は Don't Repeat Yourself：ロジックの重複を避け、再利用できる形に切り出します。",
+        "vi": "DRY = Don't Repeat Yourself: tránh lặp logic; tách thành phần dùng lại được."
+      }
+    },
+    {
+      "id": "q4",
+      "question": {
+        "en": "What is a daily stand-up meeting for?",
+        "ja": "デイリースタンドアップ（朝会）の目的は？",
+        "vi": "Họp stand-up hằng ngày để làm gì?"
+      },
+      "options": [
+        { "en": "A long detailed design discussion", "ja": "長い詳細設計の議論", "vi": "Thảo luận thiết kế chi tiết kéo dài" },
+        { "en": "A short sync on progress and blockers", "ja": "進捗と障害を短く共有すること", "vi": "Đồng bộ ngắn về tiến độ và vướng mắc" },
+        { "en": "Performance reviews", "ja": "人事評価", "vi": "Đánh giá hiệu suất" },
+        { "en": "Client sales calls", "ja": "顧客への営業電話", "vi": "Gọi bán hàng cho khách" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Stand-ups are brief daily check-ins: what was done, what's next, and any blockers.",
+        "ja": "スタンドアップは短い日次の共有：やったこと・次にやること・障害を確認します。",
+        "vi": "Stand-up là buổi đồng bộ ngắn mỗi ngày: đã làm gì, sẽ làm gì và có gì cản trở."
+      }
+    },
+    {
+      "id": "q5",
+      "question": {
+        "en": "With a growth mindset, how should you treat critical feedback?",
+        "ja": "成長マインドセットでは、批判的なフィードバックをどう捉える？",
+        "vi": "Với tư duy phát triển, bạn nên xem phản hồi mang tính phê bình thế nào?"
+      },
+      "options": [
+        { "en": "Ignore it entirely", "ja": "完全に無視する", "vi": "Phớt lờ hoàn toàn" },
+        { "en": "Take it personally and give up", "ja": "個人攻撃と受け取り諦める", "vi": "Coi là công kích cá nhân và bỏ cuộc" },
+        { "en": "As an opportunity to learn and improve", "ja": "学んで改善する機会として受け止める", "vi": "Như một cơ hội để học hỏi và cải thiện" },
+        { "en": "As proof you should never try again", "ja": "二度と挑戦すべきでない証拠", "vi": "Bằng chứng rằng đừng bao giờ thử lại" }
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "A growth mindset views feedback and setbacks as chances to learn and get better.",
+        "ja": "成長マインドセットは、フィードバックや失敗を学び成長する機会と捉えます。",
+        "vi": "Tư duy phát triển xem phản hồi và thất bại là cơ hội để học và tiến bộ."
+      }
+    }
+  ]
+}

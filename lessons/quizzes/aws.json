@@ -1,0 +1,105 @@
+{
+  "title": { "en": "AWS Quiz", "ja": "AWS クイズ", "vi": "Quiz AWS" },
+  "questions": [
+    {
+      "id": "q1",
+      "question": {
+        "en": "Which AWS service provides scalable object storage?",
+        "ja": "スケーラブルなオブジェクトストレージを提供する AWS サービスは？",
+        "vi": "Dịch vụ AWS nào cung cấp lưu trữ đối tượng có thể mở rộng?"
+      },
+      "options": [
+        { "en": "Amazon EC2", "ja": "Amazon EC2", "vi": "Amazon EC2" },
+        { "en": "Amazon S3", "ja": "Amazon S3", "vi": "Amazon S3" },
+        { "en": "Amazon RDS", "ja": "Amazon RDS", "vi": "Amazon RDS" },
+        { "en": "Amazon VPC", "ja": "Amazon VPC", "vi": "Amazon VPC" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Amazon S3 (Simple Storage Service) stores objects (files) with high durability.",
+        "ja": "Amazon S3（Simple Storage Service）は高い耐久性でオブジェクト（ファイル）を保存します。",
+        "vi": "Amazon S3 (Simple Storage Service) lưu các đối tượng (tệp) với độ bền cao."
+      }
+    },
+    {
+      "id": "q2",
+      "question": {
+        "en": "What does Amazon EC2 primarily provide?",
+        "ja": "Amazon EC2 が主に提供するものは？",
+        "vi": "Amazon EC2 chủ yếu cung cấp gì?"
+      },
+      "options": [
+        { "en": "Resizable virtual servers (compute)", "ja": "サイズ変更可能な仮想サーバー（コンピューティング）", "vi": "Máy chủ ảo có thể thay đổi kích thước (tính toán)" },
+        { "en": "A managed message queue", "ja": "マネージドメッセージキュー", "vi": "Hàng đợi tin nhắn được quản lý" },
+        { "en": "A NoSQL database", "ja": "NoSQL データベース", "vi": "Cơ sở dữ liệu NoSQL" },
+        { "en": "A content delivery network", "ja": "コンテンツ配信ネットワーク", "vi": "Mạng phân phối nội dung" }
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "EC2 (Elastic Compute Cloud) provides virtual machines you can scale up or down.",
+        "ja": "EC2（Elastic Compute Cloud）は、拡張・縮小できる仮想マシンを提供します。",
+        "vi": "EC2 (Elastic Compute Cloud) cung cấp máy ảo có thể tăng/giảm quy mô."
+      }
+    },
+    {
+      "id": "q3",
+      "question": {
+        "en": "Which service runs code without provisioning servers (serverless)?",
+        "ja": "サーバーを用意せずにコードを実行できる（サーバーレス）サービスは？",
+        "vi": "Dịch vụ nào chạy mã mà không cần cấp phát máy chủ (serverless)?"
+      },
+      "options": [
+        { "en": "AWS Lambda", "ja": "AWS Lambda", "vi": "AWS Lambda" },
+        { "en": "Amazon EBS", "ja": "Amazon EBS", "vi": "Amazon EBS" },
+        { "en": "Amazon Route 53", "ja": "Amazon Route 53", "vi": "Amazon Route 53" },
+        { "en": "AWS CloudTrail", "ja": "AWS CloudTrail", "vi": "AWS CloudTrail" }
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "AWS Lambda runs functions on demand; you pay only for execution time, no servers to manage.",
+        "ja": "AWS Lambda は必要なときに関数を実行し、実行時間だけ課金されます。サーバー管理は不要です。",
+        "vi": "AWS Lambda chạy hàm theo nhu cầu; bạn chỉ trả cho thời gian chạy, không phải quản lý máy chủ."
+      }
+    },
+    {
+      "id": "q4",
+      "question": {
+        "en": "What is AWS IAM used for?",
+        "ja": "AWS IAM は何のために使う？",
+        "vi": "AWS IAM được dùng để làm gì?"
+      },
+      "options": [
+        { "en": "Storing large files", "ja": "大きなファイルを保存する", "vi": "Lưu trữ tệp lớn" },
+        { "en": "Managing users, roles and permissions", "ja": "ユーザー・ロール・権限を管理する", "vi": "Quản lý người dùng, vai trò và quyền" },
+        { "en": "Sending emails", "ja": "メールを送信する", "vi": "Gửi email" },
+        { "en": "Caching web content", "ja": "Web コンテンツをキャッシュする", "vi": "Cache nội dung web" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "IAM (Identity and Access Management) controls who can access which AWS resources.",
+        "ja": "IAM（Identity and Access Management）は、誰がどの AWS リソースにアクセスできるかを制御します。",
+        "vi": "IAM (Identity and Access Management) kiểm soát ai được truy cập tài nguyên AWS nào."
+      }
+    },
+    {
+      "id": "q5",
+      "question": {
+        "en": "Which service is a managed relational database?",
+        "ja": "マネージドなリレーショナルデータベースサービスはどれ？",
+        "vi": "Dịch vụ nào là cơ sở dữ liệu quan hệ được quản lý?"
+      },
+      "options": [
+        { "en": "Amazon DynamoDB", "ja": "Amazon DynamoDB", "vi": "Amazon DynamoDB" },
+        { "en": "Amazon RDS", "ja": "Amazon RDS", "vi": "Amazon RDS" },
+        { "en": "Amazon S3", "ja": "Amazon S3", "vi": "Amazon S3" },
+        { "en": "Amazon SNS", "ja": "Amazon SNS", "vi": "Amazon SNS" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Amazon RDS manages relational databases (MySQL, PostgreSQL, etc.). DynamoDB is NoSQL.",
+        "ja": "Amazon RDS はリレーショナル DB（MySQL、PostgreSQL など）を管理します。DynamoDB は NoSQL です。",
+        "vi": "Amazon RDS quản lý cơ sở dữ liệu quan hệ (MySQL, PostgreSQL...). DynamoDB là NoSQL."
+      }
+    }
+  ]
+}

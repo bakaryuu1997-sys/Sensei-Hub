@@ -1,0 +1,105 @@
+{
+  "title": { "en": "FE Exam Quiz", "ja": "基本情報技術者 クイズ", "vi": "Quiz Kỳ thi FE" },
+  "questions": [
+    {
+      "id": "q1",
+      "question": {
+        "en": "What is the binary number 1010 in decimal?",
+        "ja": "2進数 1010 を10進数で表すといくつ？",
+        "vi": "Số nhị phân 1010 bằng bao nhiêu trong hệ thập phân?"
+      },
+      "options": [
+        { "en": "8", "ja": "8", "vi": "8" },
+        { "en": "10", "ja": "10", "vi": "10" },
+        { "en": "12", "ja": "12", "vi": "12" },
+        { "en": "16", "ja": "16", "vi": "16" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "1010(2) = 8 + 0 + 2 + 0 = 10.",
+        "ja": "1010(2) = 8 + 0 + 2 + 0 = 10 です。",
+        "vi": "1010(2) = 8 + 0 + 2 + 0 = 10."
+      }
+    },
+    {
+      "id": "q2",
+      "question": {
+        "en": "Which sorting algorithm has an average time complexity of O(n log n)?",
+        "ja": "平均計算量が O(n log n) のソートアルゴリズムはどれ？",
+        "vi": "Thuật toán sắp xếp nào có độ phức tạp trung bình O(n log n)?"
+      },
+      "options": [
+        { "en": "Bubble sort", "ja": "バブルソート", "vi": "Bubble sort" },
+        { "en": "Insertion sort", "ja": "挿入ソート", "vi": "Insertion sort" },
+        { "en": "Merge sort", "ja": "マージソート", "vi": "Merge sort" },
+        { "en": "Selection sort", "ja": "選択ソート", "vi": "Selection sort" }
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "Merge sort (and quicksort on average) runs in O(n log n); the others are O(n^2).",
+        "ja": "マージソート（および平均のクイックソート）は O(n log n)。他は O(n^2) です。",
+        "vi": "Merge sort (và quicksort trung bình) là O(n log n); các thuật toán còn lại là O(n^2)."
+      }
+    },
+    {
+      "id": "q3",
+      "question": {
+        "en": "What is the main role of DNS?",
+        "ja": "DNS の主な役割は？",
+        "vi": "Vai trò chính của DNS là gì?"
+      },
+      "options": [
+        { "en": "Encrypt network traffic", "ja": "通信を暗号化する", "vi": "Mã hóa lưu lượng mạng" },
+        { "en": "Resolve domain names to IP addresses", "ja": "ドメイン名を IP アドレスに変換する", "vi": "Phân giải tên miền thành địa chỉ IP" },
+        { "en": "Assign IP addresses dynamically", "ja": "IP アドレスを動的に割り当てる", "vi": "Cấp phát IP động" },
+        { "en": "Route packets between networks", "ja": "ネットワーク間でパケットを転送する", "vi": "Định tuyến gói tin giữa các mạng" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "DNS maps human-readable names (example.com) to IP addresses. Dynamic IPs are DHCP; routing is the router's job.",
+        "ja": "DNS は名前（example.com）を IP に対応付けます。動的 IP は DHCP、ルーティングはルータの役割です。",
+        "vi": "DNS ánh xạ tên (example.com) sang IP. Cấp IP động là DHCP; định tuyến là việc của router."
+      }
+    },
+    {
+      "id": "q4",
+      "question": {
+        "en": "What is the primary purpose of database normalization?",
+        "ja": "データベース正規化の主な目的は？",
+        "vi": "Mục đích chính của chuẩn hóa cơ sở dữ liệu là gì?"
+      },
+      "options": [
+        { "en": "Increase data redundancy", "ja": "データの重複を増やす", "vi": "Tăng dư thừa dữ liệu" },
+        { "en": "Reduce redundancy and update anomalies", "ja": "重複や更新時の不整合を減らす", "vi": "Giảm dư thừa và bất thường khi cập nhật" },
+        { "en": "Make queries always faster", "ja": "クエリを常に高速化する", "vi": "Luôn làm truy vấn nhanh hơn" },
+        { "en": "Remove the need for primary keys", "ja": "主キーを不要にする", "vi": "Loại bỏ nhu cầu khóa chính" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Normalization organizes data to minimize redundancy and avoid update/insert/delete anomalies.",
+        "ja": "正規化はデータを整理し、重複と更新・挿入・削除時の不整合を最小化します。",
+        "vi": "Chuẩn hóa tổ chức dữ liệu để giảm dư thừa và tránh bất thường khi thêm/sửa/xóa."
+      }
+    },
+    {
+      "id": "q5",
+      "question": {
+        "en": "An arithmetic overflow occurs when…",
+        "ja": "算術オーバーフローが起きるのは…",
+        "vi": "Tràn số học (overflow) xảy ra khi…"
+      },
+      "options": [
+        { "en": "A program runs out of disk space", "ja": "ディスク容量が不足したとき", "vi": "Chương trình hết dung lượng đĩa" },
+        { "en": "A result exceeds the range representable by the data type", "ja": "結果がデータ型で表せる範囲を超えたとき", "vi": "Kết quả vượt quá phạm vi biểu diễn của kiểu dữ liệu" },
+        { "en": "Two threads access the same variable", "ja": "2つのスレッドが同じ変数にアクセスしたとき", "vi": "Hai luồng truy cập cùng một biến" },
+        { "en": "A pointer is set to null", "ja": "ポインタが null になったとき", "vi": "Con trỏ được gán null" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Overflow happens when a computed value is larger (or smaller) than the type can store.",
+        "ja": "オーバーフローは、計算結果がその型で保持できる範囲を超えたときに発生します。",
+        "vi": "Overflow xảy ra khi giá trị tính được lớn (hoặc nhỏ) hơn mức kiểu dữ liệu có thể lưu."
+      }
+    }
+  ]
+}

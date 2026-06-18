@@ -1,0 +1,105 @@
+{
+  "title": { "en": "Data Structures & Algorithms Quiz", "ja": "データ構造とアルゴリズム クイズ", "vi": "Quiz Cấu trúc dữ liệu & Giải thuật" },
+  "questions": [
+    {
+      "id": "q1",
+      "question": {
+        "en": "What is the time complexity of accessing an array element by its index?",
+        "ja": "配列の要素にインデックスでアクセスする計算量は？",
+        "vi": "Độ phức tạp thời gian khi truy cập phần tử mảng theo chỉ số là gì?"
+      },
+      "options": [
+        { "en": "O(1)", "ja": "O(1)", "vi": "O(1)" },
+        { "en": "O(log n)", "ja": "O(log n)", "vi": "O(log n)" },
+        { "en": "O(n)", "ja": "O(n)", "vi": "O(n)" },
+        { "en": "O(n^2)", "ja": "O(n^2)", "vi": "O(n^2)" }
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Arrays allow constant-time O(1) random access because elements are contiguous in memory.",
+        "ja": "配列は要素がメモリ上で連続するため、O(1) のランダムアクセスが可能です。",
+        "vi": "Mảng cho truy cập ngẫu nhiên O(1) vì các phần tử nằm liền nhau trong bộ nhớ."
+      }
+    },
+    {
+      "id": "q2",
+      "question": {
+        "en": "Which data structure follows Last-In-First-Out (LIFO)?",
+        "ja": "後入れ先出し（LIFO）に従うデータ構造はどれ？",
+        "vi": "Cấu trúc dữ liệu nào theo nguyên tắc vào sau ra trước (LIFO)?"
+      },
+      "options": [
+        { "en": "Queue", "ja": "キュー", "vi": "Queue (Hàng đợi)" },
+        { "en": "Stack", "ja": "スタック", "vi": "Stack (Ngăn xếp)" },
+        { "en": "Linked list", "ja": "連結リスト", "vi": "Danh sách liên kết" },
+        { "en": "Hash table", "ja": "ハッシュ表", "vi": "Bảng băm" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "A stack is LIFO (push/pop from the top). A queue is FIFO.",
+        "ja": "スタックは LIFO（上から push/pop）。キューは FIFO です。",
+        "vi": "Stack là LIFO (push/pop ở đỉnh). Queue là FIFO."
+      }
+    },
+    {
+      "id": "q3",
+      "question": {
+        "en": "Binary search requires that the input array is…",
+        "ja": "二分探索が前提とする入力配列の状態は…",
+        "vi": "Tìm kiếm nhị phân yêu cầu mảng đầu vào phải…"
+      },
+      "options": [
+        { "en": "Sorted", "ja": "ソート済みであること", "vi": "Đã được sắp xếp" },
+        { "en": "Unsorted", "ja": "未ソートであること", "vi": "Chưa sắp xếp" },
+        { "en": "All unique values", "ja": "すべて異なる値であること", "vi": "Tất cả giá trị khác nhau" },
+        { "en": "Stored in a linked list", "ja": "連結リストに格納されていること", "vi": "Lưu trong danh sách liên kết" }
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Binary search works by halving a sorted range; it needs sorted data.",
+        "ja": "二分探索はソート済みの範囲を半分にして探すため、データのソートが必要です。",
+        "vi": "Tìm kiếm nhị phân chia đôi khoảng đã sắp xếp, nên cần dữ liệu đã sắp xếp."
+      }
+    },
+    {
+      "id": "q4",
+      "question": {
+        "en": "What is the time complexity of binary search on n elements?",
+        "ja": "n 個の要素に対する二分探索の計算量は？",
+        "vi": "Độ phức tạp của tìm kiếm nhị phân trên n phần tử là gì?"
+      },
+      "options": [
+        { "en": "O(1)", "ja": "O(1)", "vi": "O(1)" },
+        { "en": "O(log n)", "ja": "O(log n)", "vi": "O(log n)" },
+        { "en": "O(n)", "ja": "O(n)", "vi": "O(n)" },
+        { "en": "O(n log n)", "ja": "O(n log n)", "vi": "O(n log n)" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Each step halves the search space, giving O(log n).",
+        "ja": "毎ステップで探索範囲が半分になるため O(log n) です。",
+        "vi": "Mỗi bước giảm một nửa phạm vi tìm kiếm, cho O(log n)."
+      }
+    },
+    {
+      "id": "q5",
+      "question": {
+        "en": "Which structure is best for implementing a breadth-first search (BFS)?",
+        "ja": "幅優先探索（BFS）の実装に最適な構造はどれ？",
+        "vi": "Cấu trúc nào phù hợp nhất để cài đặt duyệt theo chiều rộng (BFS)?"
+      },
+      "options": [
+        { "en": "Stack", "ja": "スタック", "vi": "Stack" },
+        { "en": "Queue", "ja": "キュー", "vi": "Queue" },
+        { "en": "Priority queue", "ja": "優先度付きキュー", "vi": "Hàng đợi ưu tiên" },
+        { "en": "Binary tree", "ja": "二分木", "vi": "Cây nhị phân" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "BFS uses a FIFO queue to visit nodes level by level. DFS uses a stack/recursion.",
+        "ja": "BFS は FIFO のキューでノードを階層ごとに訪問します。DFS はスタック/再帰を使います。",
+        "vi": "BFS dùng queue FIFO để duyệt theo từng mức. DFS dùng stack/đệ quy."
+      }
+    }
+  ]
+}

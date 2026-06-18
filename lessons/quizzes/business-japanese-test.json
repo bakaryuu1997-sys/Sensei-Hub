@@ -1,0 +1,105 @@
+{
+  "title": { "en": "Business Japanese (BJT) Quiz", "ja": "ビジネス日本語（BJT） クイズ", "vi": "Quiz Tiếng Nhật thương mại (BJT)" },
+  "questions": [
+    {
+      "id": "q1",
+      "question": {
+        "en": "Which is the humble form (kenjougo) of 「見る」 when viewing a client's document?",
+        "ja": "取引先の資料を「見る」とき、謙譲語として正しいのは？",
+        "vi": "Đâu là dạng khiêm nhường (kenjougo) của 「見る」 khi xem tài liệu của khách hàng?"
+      },
+      "options": [
+        { "en": "拝見する", "ja": "拝見する", "vi": "拝見する" },
+        { "en": "ご覧になる", "ja": "ご覧になる", "vi": "ご覧になる" },
+        { "en": "見てやる", "ja": "見てやる", "vi": "見てやる" },
+        { "en": "見られる", "ja": "見られる", "vi": "見られる" }
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "「拝見する」 is kenjougo (humble) for 見る. 「ご覧になる」 is sonkeigo (respectful) for the other person.",
+        "ja": "「拝見する」は見るの謙譲語。「ご覧になる」は相手の動作に使う尊敬語です。",
+        "vi": "「拝見する」 là kenjougo (khiêm nhường) của 見る. 「ご覧になる」 là tôn kính dùng cho đối phương."
+      }
+    },
+    {
+      "id": "q2",
+      "question": {
+        "en": "What is the standard opening phrase in a business email to a client?",
+        "ja": "取引先へのビジネスメール冒頭の定番表現は？",
+        "vi": "Câu mở đầu chuẩn trong email công việc gửi khách hàng là gì?"
+      },
+      "options": [
+        { "en": "お疲れ様でした", "ja": "お疲れ様でした", "vi": "お疲れ様でした" },
+        { "en": "いつもお世話になっております", "ja": "いつもお世話になっております", "vi": "いつもお世話になっております" },
+        { "en": "ご苦労様です", "ja": "ご苦労様です", "vi": "ご苦労様です" },
+        { "en": "どうも", "ja": "どうも", "vi": "どうも" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "「いつもお世話になっております」 is the standard polite opening to clients/partners.",
+        "ja": "「いつもお世話になっております」は取引先への定番の丁寧な挨拶です。",
+        "vi": "「いつもお世話になっております」 là câu chào lịch sự chuẩn mực gửi khách hàng/đối tác."
+      }
+    },
+    {
+      "id": "q3",
+      "question": {
+        "en": "Replying to a superior's instruction, which is more appropriate?",
+        "ja": "上司の指示への返答として、より適切なのは？",
+        "vi": "Khi đáp lại chỉ thị của cấp trên, cách nào phù hợp hơn?"
+      },
+      "options": [
+        { "en": "了解しました", "ja": "了解しました", "vi": "了解しました" },
+        { "en": "承知しました", "ja": "承知しました", "vi": "承知しました" },
+        { "en": "オッケーです", "ja": "オッケーです", "vi": "オッケーです" },
+        { "en": "わかった", "ja": "わかった", "vi": "わかった" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "「承知しました」 is the polite/humble acknowledgement for superiors and clients; 「了解しました」 is more casual.",
+        "ja": "「承知しました」は上司や取引先への丁寧な了承表現。「了解しました」はややくだけた印象です。",
+        "vi": "「承知しました」 lịch sự/khiêm nhường, dùng với cấp trên và khách; 「了解しました」 thân mật hơn."
+      }
+    },
+    {
+      "id": "q4",
+      "question": {
+        "en": "Which is the respectful form (sonkeigo) of 「いる」?",
+        "ja": "「いる」の尊敬語はどれ？",
+        "vi": "Đâu là dạng tôn kính (sonkeigo) của 「いる」?"
+      },
+      "options": [
+        { "en": "おる", "ja": "おる", "vi": "おる" },
+        { "en": "いらっしゃる", "ja": "いらっしゃる", "vi": "いらっしゃる" },
+        { "en": "いたす", "ja": "いたす", "vi": "いたす" },
+        { "en": "もうす", "ja": "もうす", "vi": "もうす" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "「いらっしゃる」 is sonkeigo for いる/来る/行く. 「おる」 is humble (kenjougo) for いる.",
+        "ja": "「いらっしゃる」は いる/来る/行く の尊敬語。「おる」は いる の謙譲語です。",
+        "vi": "「いらっしゃる」 là tôn kính của いる/来る/行く. 「おる」 là khiêm nhường của いる."
+      }
+    },
+    {
+      "id": "q5",
+      "question": {
+        "en": "How do you humbly say that you (will) 「する」 something for a client?",
+        "ja": "自分が「する」をへりくだって言うと？",
+        "vi": "Bạn nói khiêm nhường cho việc mình 「する」 (làm) như thế nào?"
+      },
+      "options": [
+        { "en": "なさる", "ja": "なさる", "vi": "なさる" },
+        { "en": "いたす", "ja": "いたす", "vi": "いたす" },
+        { "en": "される", "ja": "される", "vi": "される" },
+        { "en": "やらせる", "ja": "やらせる", "vi": "やらせる" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "「いたす」 is kenjougo (humble) for する (e.g. ご連絡いたします). 「なさる」 is sonkeigo for the other person.",
+        "ja": "「いたす」は する の謙譲語（例：ご連絡いたします）。「なさる」は相手に使う尊敬語です。",
+        "vi": "「いたす」 là khiêm nhường của する (vd ご連絡いたします). 「なさる」 là tôn kính dùng cho đối phương."
+      }
+    }
+  ]
+}

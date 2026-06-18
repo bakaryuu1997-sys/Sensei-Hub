@@ -1,0 +1,105 @@
+{
+  "title": { "en": "Blockchain & Web3 Quiz", "ja": "ブロックチェーン & Web3 クイズ", "vi": "Quiz Blockchain & Web3" },
+  "questions": [
+    {
+      "id": "q1",
+      "question": {
+        "en": "What best describes a blockchain?",
+        "ja": "ブロックチェーンを最もよく説明するのは？",
+        "vi": "Mô tả nào đúng nhất về blockchain?"
+      },
+      "options": [
+        { "en": "A single central database", "ja": "単一の中央データベース", "vi": "Một cơ sở dữ liệu trung tâm duy nhất" },
+        { "en": "A distributed, append-only (immutable) ledger", "ja": "分散型で追記のみ（改ざん困難）の台帳", "vi": "Sổ cái phân tán, chỉ ghi thêm (bất biến)" },
+        { "en": "A type of web browser", "ja": "Web ブラウザの一種", "vi": "Một loại trình duyệt web" },
+        { "en": "A cloud storage service", "ja": "クラウドストレージサービス", "vi": "Dịch vụ lưu trữ đám mây" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "A blockchain is a distributed ledger of blocks that is very hard to alter once written.",
+        "ja": "ブロックチェーンはブロックの分散台帳で、一度書き込むと改ざんが非常に困難です。",
+        "vi": "Blockchain là sổ cái phân tán gồm các khối, rất khó thay đổi sau khi đã ghi."
+      }
+    },
+    {
+      "id": "q2",
+      "question": {
+        "en": "What cryptographically links one block to the next?",
+        "ja": "あるブロックを次のブロックに暗号的につなぐものは？",
+        "vi": "Điều gì liên kết khối này với khối kế tiếp về mặt mật mã?"
+      },
+      "options": [
+        { "en": "A shared password", "ja": "共有パスワード", "vi": "Mật khẩu dùng chung" },
+        { "en": "Each block stores the previous block's hash", "ja": "各ブロックが直前ブロックのハッシュを保持する", "vi": "Mỗi khối lưu hash của khối trước" },
+        { "en": "A central server index", "ja": "中央サーバーのインデックス", "vi": "Chỉ mục máy chủ trung tâm" },
+        { "en": "An email confirmation", "ja": "メールの確認", "vi": "Xác nhận qua email" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Each block contains the hash of the previous block, forming a tamper-evident chain.",
+        "ja": "各ブロックは直前ブロックのハッシュを含み、改ざんを検知できる連鎖を形成します。",
+        "vi": "Mỗi khối chứa hash của khối trước, tạo thành chuỗi phát hiện được giả mạo."
+      }
+    },
+    {
+      "id": "q3",
+      "question": {
+        "en": "What is a smart contract?",
+        "ja": "スマートコントラクトとは？",
+        "vi": "Hợp đồng thông minh (smart contract) là gì?"
+      },
+      "options": [
+        { "en": "A legal paper document", "ja": "紙の法的文書", "vi": "Một văn bản pháp lý giấy" },
+        { "en": "Self-executing code that runs on a blockchain", "ja": "ブロックチェーン上で実行される自己実行コード", "vi": "Mã tự thực thi chạy trên blockchain" },
+        { "en": "A customer support chatbot", "ja": "カスタマーサポートのチャットボット", "vi": "Chatbot hỗ trợ khách hàng" },
+        { "en": "A spreadsheet macro", "ja": "表計算のマクロ", "vi": "Macro bảng tính" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Smart contracts are programs deployed on a blockchain that execute automatically when conditions are met.",
+        "ja": "スマートコントラクトはブロックチェーン上に配置され、条件成立時に自動実行されるプログラムです。",
+        "vi": "Smart contract là chương trình triển khai trên blockchain, tự chạy khi điều kiện được thỏa mãn."
+      }
+    },
+    {
+      "id": "q4",
+      "question": {
+        "en": "Which is a blockchain consensus mechanism?",
+        "ja": "ブロックチェーンの合意形成（コンセンサス）方式はどれ？",
+        "vi": "Đâu là một cơ chế đồng thuận của blockchain?"
+      },
+      "options": [
+        { "en": "Proof of Stake", "ja": "Proof of Stake（PoS）", "vi": "Proof of Stake" },
+        { "en": "Round Robin DNS", "ja": "ラウンドロビン DNS", "vi": "Round Robin DNS" },
+        { "en": "RAID 5", "ja": "RAID 5", "vi": "RAID 5" },
+        { "en": "OAuth 2.0", "ja": "OAuth 2.0", "vi": "OAuth 2.0" }
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Proof of Stake and Proof of Work are consensus mechanisms used to agree on the ledger state.",
+        "ja": "Proof of Stake や Proof of Work は、台帳の状態に合意するためのコンセンサス方式です。",
+        "vi": "Proof of Stake và Proof of Work là các cơ chế đồng thuận để thống nhất trạng thái sổ cái."
+      }
+    },
+    {
+      "id": "q5",
+      "question": {
+        "en": "What is a private key used for in a crypto wallet?",
+        "ja": "暗号資産ウォレットで秘密鍵は何に使う？",
+        "vi": "Khóa riêng tư (private key) trong ví crypto dùng để làm gì?"
+      },
+      "options": [
+        { "en": "To publicly share your balance", "ja": "残高を公開して共有する", "vi": "Chia sẻ công khai số dư" },
+        { "en": "To sign transactions and prove ownership", "ja": "取引に署名し、所有権を証明する", "vi": "Ký giao dịch và chứng minh quyền sở hữu" },
+        { "en": "To increase transaction speed", "ja": "取引速度を上げる", "vi": "Tăng tốc độ giao dịch" },
+        { "en": "To translate the website", "ja": "Web サイトを翻訳する", "vi": "Dịch trang web" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The private key signs transactions and must be kept secret; anyone with it controls the funds.",
+        "ja": "秘密鍵は取引に署名するもので、秘匿が必須です。鍵を持つ者が資金を支配できます。",
+        "vi": "Khóa riêng ký giao dịch và phải giữ bí mật; ai có nó sẽ kiểm soát được tài sản."
+      }
+    }
+  ]
+}

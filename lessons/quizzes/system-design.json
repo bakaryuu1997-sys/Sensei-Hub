@@ -1,0 +1,105 @@
+{
+  "title": { "en": "System Design Quiz", "ja": "システム設計 クイズ", "vi": "Quiz Thiết kế hệ thống" },
+  "questions": [
+    {
+      "id": "q1",
+      "question": {
+        "en": "What is the main benefit of caching?",
+        "ja": "キャッシュの主な利点は？",
+        "vi": "Lợi ích chính của caching là gì?"
+      },
+      "options": [
+        { "en": "It permanently stores all data", "ja": "すべてのデータを永続保存する", "vi": "Lưu trữ vĩnh viễn toàn bộ dữ liệu" },
+        { "en": "It reduces latency and load by serving frequent data fast", "ja": "頻繁に使うデータを高速に返し、遅延と負荷を下げる", "vi": "Giảm độ trễ và tải bằng cách phục vụ nhanh dữ liệu hay dùng" },
+        { "en": "It encrypts network traffic", "ja": "通信を暗号化する", "vi": "Mã hóa lưu lượng mạng" },
+        { "en": "It guarantees strong consistency", "ja": "強整合性を保証する", "vi": "Bảo đảm tính nhất quán mạnh" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Caches store frequently accessed data closer/faster, reducing latency and backend load.",
+        "ja": "キャッシュはよく使うデータを近く・高速に保持し、遅延とバックエンド負荷を減らします。",
+        "vi": "Cache lưu dữ liệu hay truy cập ở nơi gần/nhanh hơn, giảm độ trễ và tải backend."
+      }
+    },
+    {
+      "id": "q2",
+      "question": {
+        "en": "What does 'horizontal scaling' mean?",
+        "ja": "「水平スケーリング」とは？",
+        "vi": "“Mở rộng theo chiều ngang” nghĩa là gì?"
+      },
+      "options": [
+        { "en": "Adding more CPU/RAM to one machine", "ja": "1台のマシンに CPU/RAM を追加する", "vi": "Thêm CPU/RAM cho một máy" },
+        { "en": "Adding more machines to share the load", "ja": "マシンを増やして負荷を分担する", "vi": "Thêm nhiều máy để chia tải" },
+        { "en": "Reducing the number of servers", "ja": "サーバー数を減らす", "vi": "Giảm số máy chủ" },
+        { "en": "Compressing the database", "ja": "データベースを圧縮する", "vi": "Nén cơ sở dữ liệu" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Horizontal scaling adds more nodes; vertical scaling adds resources to a single node.",
+        "ja": "水平スケーリングはノードを追加すること。垂直スケーリングは1ノードに資源を足すことです。",
+        "vi": "Mở rộng ngang là thêm node; mở rộng dọc là tăng tài nguyên cho một node."
+      }
+    },
+    {
+      "id": "q3",
+      "question": {
+        "en": "What does a CDN (Content Delivery Network) do?",
+        "ja": "CDN（コンテンツ配信ネットワーク）は何をする？",
+        "vi": "CDN (mạng phân phối nội dung) làm gì?"
+      },
+      "options": [
+        { "en": "Serves content from edge servers near the user", "ja": "ユーザーに近いエッジサーバーからコンテンツを配信する", "vi": "Phục vụ nội dung từ máy chủ biên gần người dùng" },
+        { "en": "Runs the main application database", "ja": "メインのアプリ DB を実行する", "vi": "Chạy cơ sở dữ liệu chính của ứng dụng" },
+        { "en": "Replaces the need for a backend", "ja": "バックエンドを不要にする", "vi": "Thay thế nhu cầu backend" },
+        { "en": "Encrypts user passwords", "ja": "ユーザーのパスワードを暗号化する", "vi": "Mã hóa mật khẩu người dùng" }
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "A CDN caches static content at edge locations to reduce latency for global users.",
+        "ja": "CDN は静的コンテンツをエッジに配置し、世界中のユーザーの遅延を減らします。",
+        "vi": "CDN cache nội dung tĩnh ở các điểm biên để giảm độ trễ cho người dùng toàn cầu."
+      }
+    },
+    {
+      "id": "q4",
+      "question": {
+        "en": "Per the CAP theorem, during a network partition a system must trade off between…",
+        "ja": "CAP 定理によれば、ネットワーク分断時にシステムが取捨選択するのは…",
+        "vi": "Theo định lý CAP, khi mạng bị phân vùng, hệ thống phải đánh đổi giữa…"
+      },
+      "options": [
+        { "en": "Consistency and Availability", "ja": "一貫性と可用性", "vi": "Tính nhất quán và Tính sẵn sàng" },
+        { "en": "Latency and Bandwidth", "ja": "遅延と帯域", "vi": "Độ trễ và Băng thông" },
+        { "en": "Security and Speed", "ja": "セキュリティと速度", "vi": "Bảo mật và Tốc độ" },
+        { "en": "Storage and Compute", "ja": "ストレージと計算", "vi": "Lưu trữ và Tính toán" }
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "CAP: under a partition (P), you choose between Consistency and Availability.",
+        "ja": "CAP：分断（P）が起きると、一貫性（C）と可用性（A）のどちらかを選ぶ必要があります。",
+        "vi": "CAP: khi có phân vùng (P), bạn phải chọn giữa Nhất quán (C) và Sẵn sàng (A)."
+      }
+    },
+    {
+      "id": "q5",
+      "question": {
+        "en": "Why use a message queue between services?",
+        "ja": "サービス間にメッセージキューを置く理由は？",
+        "vi": "Vì sao dùng hàng đợi tin nhắn giữa các dịch vụ?"
+      },
+      "options": [
+        { "en": "To couple services tightly", "ja": "サービスを密結合にするため", "vi": "Để các dịch vụ gắn kết chặt" },
+        { "en": "To decouple producers and consumers and handle work asynchronously", "ja": "生産者と消費者を疎結合にし、非同期で処理するため", "vi": "Để tách rời bên gửi và bên nhận, xử lý bất đồng bộ" },
+        { "en": "To store the primary database", "ja": "主要データベースを保存するため", "vi": "Để lưu cơ sở dữ liệu chính" },
+        { "en": "To render HTML faster", "ja": "HTML を速く描画するため", "vi": "Để render HTML nhanh hơn" }
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Queues decouple services, smooth traffic spikes, and enable reliable asynchronous processing.",
+        "ja": "キューはサービスを疎結合にし、急なトラフィックを吸収し、信頼性のある非同期処理を可能にします。",
+        "vi": "Hàng đợi tách rời dịch vụ, làm mượt đỉnh tải và cho phép xử lý bất đồng bộ tin cậy."
+      }
+    }
+  ]
+}
