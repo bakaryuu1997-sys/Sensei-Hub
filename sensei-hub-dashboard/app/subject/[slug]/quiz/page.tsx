@@ -4,7 +4,7 @@ import { use, useEffect, useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import confetti from "canvas-confetti"
-import { ArrowLeft, ListChecks, CheckCircle2, XCircle, RotateCcw, Trophy } from "lucide-react"
+import { ArrowLeft, ListChecks, CheckCircle2, XCircle, RotateCcw, Trophy, ArrowRight } from "lucide-react"
 
 import { Sidebar } from "@/components/dashboard/sidebar"
 import { TopBar } from "@/components/dashboard/top-bar"
@@ -17,6 +17,8 @@ import {
   saveQuizResult,
   getBestScore,
   type Quiz,
+  type QuizQuestion,
+  type QuizSet,
   type QuizResultRecord,
 } from "@/lib/quiz"
 
@@ -30,6 +32,7 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
 
   const [quiz, setQuiz] = useState<Quiz | null>(null)
   const [status, setStatus] = useState<"loading" | "missing" | "ready">("loading")
+  const [selectedSet, setSelectedSet] = useState<QuizSet | null>(null)
   const [phase, setPhase] = useState<Phase>("intro")
   const [current, setCurrent] = useState(0)
   const [selected, setSelected] = useState<number | null>(null)
@@ -44,7 +47,11 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
       .then((res) => (res.ok ? res.json() : null))
       .then((data: Quiz | null) => {
         if (!active) return
-        if (data && Array.isArray(data.questions) && data.questions.length > 0) {
+        if (
+          data &&
+          ((Array.isArray(data.questions) && data.questions.length > 0) ||
+            (Array.isArray(data.sets) && data.sets.length > 0))
+        ) {
           setQuiz(data)
           setStatus("ready")
         } else {
@@ -58,11 +65,17 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
   }, [slug])
 
   useEffect(() => {
-    setBest(getBestScore(slug))
-  }, [slug, phase])
+    if (!quiz) return
+    if (quiz.sets && selectedSet) {
+      setBest(getBestScore(slug, selectedSet.id))
+    } else {
+      setBest(getBestScore(slug))
+    }
+  }, [slug, quiz, selectedSet, phase])
 
-  const total = quiz?.questions?.length ?? 0
-  const score = quiz ? answers.filter((a, i) => a === quiz.questions?.[i]?.answer).length : 0
+  const questions = selectedSet ? selectedSet.questions : (quiz?.questions || [])
+  const total = questions.length
+  const score = quiz ? answers.filter((a, i) => a === questions[i]?.answer).length : 0
 
   const start = () => {
     setPhase("playing")
@@ -89,16 +102,21 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
       setSelected(null)
       setRevealed(false)
     } else {
-      const finalScore = answers.filter((a, i) => a === quiz.questions?.[i]?.answer).length
-      saveQuizResult({ slug, score: finalScore, total, ts: Date.now() })
+      const finalScore = answers.filter((a, i) => a === questions[i]?.answer).length
+      saveQuizResult({ slug, score: finalScore, total, ts: Date.now() }, selectedSet?.id)
       setPhase("done")
       if (total > 0 && finalScore / total >= 0.8) {
-        confetti({ particleCount: 140, spread: 80, origin: { y: 0.7 }, colors: ["#22d3ee", "#8b5cf6", "#f43f5e", "#10b981"] })
+        confetti({
+          particleCount: 140,
+          spread: 80,
+          origin: { y: 0.7 },
+          colors: ["#22d3ee", "#8b5cf6", "#f43f5e", "#10b981"],
+        })
       }
     }
   }
 
-  const q = quiz?.questions?.[current]
+  const q = questions[current]
 
   return (
     <div className="relative min-h-screen bg-slate-950 text-slate-100">
@@ -113,13 +131,33 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
 
         <main className="flex-1 px-4 lg:px-8 py-6 lg:py-8">
           <div className="mx-auto max-w-3xl space-y-6">
-            <Link
-              href={`/subject/${slug}`}
-              className="inline-flex items-center gap-2 text-sm font-semibold text-white/60 hover:text-cyan-400 transition-colors"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              {t("lesson.back_to_subject")} {subject?.name ?? ""}
-            </Link>
+            {/* Back button */}
+            {!(status === "ready" && quiz?.sets && !selectedSet) ? (
+              <button
+                onClick={() => {
+                  if (selectedSet) {
+                    setSelectedSet(null)
+                    setPhase("intro")
+                  } else {
+                    window.location.href = `/subject/${slug}`
+                  }
+                }}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-white/60 hover:text-cyan-400 transition-colors"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                {quiz?.sets && selectedSet
+                  ? t("quiz.back_to_sets")
+                  : `${t("lesson.back_to_subject")} ${subject?.name ?? ""}`}
+              </button>
+            ) : (
+              <Link
+                href={`/subject/${slug}`}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-white/60 hover:text-cyan-400 transition-colors"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                {t("lesson.back_to_subject")} {subject?.name ?? ""}
+              </Link>
+            )}
 
             {/* Loading */}
             {status === "loading" && (
@@ -142,8 +180,75 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
               </div>
             )}
 
-            {/* Intro */}
-            {status === "ready" && quiz && phase === "intro" && (
+            {/* Selection Screen (Multiple Sets) */}
+            {status === "ready" && quiz && quiz.sets && !selectedSet && (
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="space-y-6"
+              >
+                <div className="glass-card border border-white/10 rounded-2xl p-6 lg:p-8 space-y-3 text-center">
+                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10">
+                    <ListChecks className="h-7 w-7 text-cyan-300" />
+                  </div>
+                  <h1 className="text-2xl lg:text-3xl font-extrabold tracking-tight text-white mt-2">
+                    {pickText(quiz.title, lang)}
+                  </h1>
+                  <p className="text-sm text-white/60 max-w-md mx-auto">
+                    {t("quiz.select_set")}
+                  </p>
+                </div>
+
+                <div className="grid gap-4 md:grid-cols-2">
+                  {quiz.sets.map((set) => {
+                    const setBest = getBestScore(slug, set.id)
+                    return (
+                      <motion.button
+                        key={set.id}
+                        whileHover={{ y: -4, scale: 1.01 }}
+                        onClick={() => {
+                          setSelectedSet(set)
+                          setPhase("intro")
+                        }}
+                        className="glass-card border border-white/10 hover:border-cyan-500/30 rounded-2xl p-5 text-left flex flex-col justify-between space-y-4 hover:bg-white/[0.02] transition-colors group"
+                      >
+                        <div className="space-y-2 w-full">
+                          <div className="flex items-start justify-between gap-4">
+                            <h3 className="font-bold text-white group-hover:text-cyan-300 transition-colors text-base leading-tight">
+                              {pickText(set.title, lang)}
+                            </h3>
+                            {setBest ? (
+                              <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 px-2.5 py-0.5 text-xs font-semibold text-amber-300 border border-amber-500/20 font-mono flex-shrink-0">
+                                <Trophy className="h-3 w-3" />
+                                {setBest.score}/{setBest.total}
+                              </span>
+                            ) : (
+                              <span className="inline-flex items-center rounded-full bg-white/5 px-2.5 py-0.5 text-xs font-medium text-white/50 border border-white/10 font-mono flex-shrink-0">
+                                {t("quiz.unattempted")}
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-xs text-white/60 line-clamp-2 leading-relaxed">
+                            {pickText(set.description, lang)}
+                          </p>
+                        </div>
+                        <div className="flex items-center justify-between pt-2 border-t border-white/5 text-xs font-mono w-full">
+                          <span className="text-cyan-200/70">
+                            {set.questions.length} {t("quiz.questions")}
+                          </span>
+                          <span className="inline-flex items-center gap-1 text-cyan-400 font-bold group-hover:translate-x-1 transition-transform">
+                            {t("action.start")} <ArrowRight className="h-3 w-3" />
+                          </span>
+                        </div>
+                      </motion.button>
+                    )
+                  })}
+                </div>
+              </motion.div>
+            )}
+
+            {/* Intro (Single quiz, or selected set intro) */}
+            {status === "ready" && quiz && (!quiz.sets || selectedSet) && phase === "intro" && (
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -153,11 +258,15 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                   <ListChecks className="h-8 w-8 text-cyan-300" />
                 </div>
                 <h1 className="text-2xl lg:text-3xl font-extrabold tracking-tight text-white">
-                  {pickText(quiz.title, lang)}
+                  {selectedSet ? pickText(selectedSet.title, lang) : pickText(quiz.title, lang)}
                 </h1>
-                <p className="text-sm text-white/60">{t("quiz.intro")}</p>
+                <p className="text-sm text-white/60">
+                  {selectedSet ? pickText(selectedSet.description, lang) : t("quiz.intro")}
+                </p>
                 <div className="flex items-center justify-center gap-4 text-sm text-cyan-200/70 font-mono">
-                  <span>{total} {t("quiz.questions")}</span>
+                  <span>
+                    {total} {t("quiz.questions")}
+                  </span>
                   {best && (
                     <span className="flex items-center gap-1">
                       <Trophy className="h-4 w-4 text-amber-300" />
@@ -179,7 +288,9 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
               <div className="space-y-5">
                 {/* Progress */}
                 <div className="flex items-center justify-between text-xs font-mono text-white/50">
-                  <span>{t("quiz.question")} {current + 1} / {total}</span>
+                  <span>
+                    {t("quiz.question")} {current + 1} / {total}
+                  </span>
                   <span>{score} ✓</span>
                 </div>
                 <div className="h-1.5 w-full rounded-full bg-white/10 overflow-hidden">
@@ -291,9 +402,12 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                   <Trophy className="h-10 w-10 text-amber-300" />
                 </div>
                 <div>
-                  <p className="text-sm uppercase tracking-wider text-white/50 font-mono">{t("quiz.your_score")}</p>
+                  <p className="text-sm uppercase tracking-wider text-white/50 font-mono">
+                    {t("quiz.your_score")}
+                  </p>
                   <p className="text-5xl font-extrabold text-white mt-1">
-                    {score}<span className="text-2xl text-white/40">/{total}</span>
+                    {score}
+                    <span className="text-2xl text-white/40">/{total}</span>
                   </p>
                 </div>
                 <p className="text-sm text-white/65">
@@ -311,12 +425,24 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                     <RotateCcw className="h-4 w-4" />
                     {t("quiz.retry")}
                   </button>
-                  <Link
-                    href={`/subject/${slug}`}
-                    className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white/80 bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-                  >
-                    {t("lesson.back")}
-                  </Link>
+                  {quiz.sets ? (
+                    <button
+                      onClick={() => {
+                        setSelectedSet(null)
+                        setPhase("intro")
+                      }}
+                      className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white/80 bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                    >
+                      {t("quiz.back_to_sets")}
+                    </button>
+                  ) : (
+                    <Link
+                      href={`/subject/${slug}`}
+                      className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white/80 bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                    >
+                      {t("lesson.back")}
+                    </Link>
+                  )}
                 </div>
               </motion.div>
             )}
