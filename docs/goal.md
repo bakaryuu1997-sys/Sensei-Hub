@@ -58,15 +58,23 @@ IT エンジニア向けの 3 言語（EN/JA/VI）学習プラットフォーム
 
 ---
 
-## 🔮 今後のバックログ（細分化・未着手）
+## 🔮 今後のバックログ（細分化）
 
-### F. 本物の Quiz（優先度: 高）
-- [ ] 問題ソースの設計（推奨: `lessons/<lang>/<subject>/quiz.json`）
-- [ ] 教科・言語ごとに quiz を読むローダー（EN フォールバック、lesson と同様にキャッシュ）
-- [ ] 解答 UI: 1 問ずつ、選択、採点、解説
-- [ ] 結果保存（既存の `QuizResult`/`QuizAnswer` モデルを活用）
-- [ ] 教科ページ／設定でスコアと履歴を表示
-- 完了基準: 教科を選ぶ → quiz を解く → スコア表示 → 保存できる
+### F. 本物の Quiz（優先度: 高）— ✅ ほぼ完了
+- [x] 問題ソースの設計（`lessons/quizzes/<slug>.json`、3 言語フィールド内包）
+- [x] quiz を読む API（`/api/subject/[slug]/quiz`、キャッシュ・レート制限・公開）
+- [x] 解答 UI: 1 問ずつ、選択、採点、解説、80%以上で confetti
+- [x] 11 教科 × 5 問（試験内容に即した内容、en/ja/vi）
+- [x] 結果をスコアとして保存（localStorage、ベストスコア表示）
+- [ ] 残: DB 永続化（`QuizResult`/`QuizAnswer`）と、教科ページでのスコア常時表示
+- [ ] 残: 問題数の拡充（各教科 5 → 10〜20 問）
+
+### P. パフォーマンス（brute-force 走査の解消）— ✅ 完了
+- [x] レッスンの静的インデックス化（`lessons-index.json`、全走査を排除）
+- [x] `progress/load` のファイル走査をキャッシュ/インデックス化（OOM 対策）
+- [x] in-memory キャッシュを globalThis 化（dev HMR でも保持）
+- [x] 画面外・非表示タブで three.js/canvas 描画を停止、惑星の解像度削減
+- [ ] 残: 巨大教科のページネーション/Virtual Scrolling（現状は折りたたみ表示で回避）
 
 ### G. 本物の AI チャット（優先度: 中）
 - [ ] `lib/ai-config.ts`（実装済み）から設定を読む
