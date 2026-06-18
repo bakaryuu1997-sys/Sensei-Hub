@@ -42,6 +42,7 @@ export type QuizResultRecord = {
 }
 
 const KEY = "sensei-quiz-results"
+const MAX_HISTORY_RECORDS = 50
 
 export function getQuizResults(): QuizResultRecord[] {
   if (typeof window === "undefined") return []
@@ -55,12 +56,17 @@ export function getQuizResults(): QuizResultRecord[] {
   }
 }
 
-// Support checking best score by set id
+// Support checking best score by set id.
+// Local storage record slug format: "${slug}/${setId}" for sets, or "${slug}" for single quiz.
 export function getBestScore(slug: string, setId?: string): QuizResultRecord | null {
   const key = setId ? `${slug}/${setId}` : slug
   const results = getQuizResults().filter((r) => r.slug === key)
   if (results.length === 0) return null
-  return results.reduce((best, r) => (r.score / r.total > best.score / best.total ? r : best))
+  return results.reduce((best, r) => {
+    const rRatio = r.total > 0 ? r.score / r.total : 0
+    const bestRatio = best.total > 0 ? best.score / best.total : 0
+    return rRatio > bestRatio ? r : best
+  })
 }
 
 export function saveQuizResult(record: QuizResultRecord): void {
@@ -68,8 +74,8 @@ export function saveQuizResult(record: QuizResultRecord): void {
   try {
     const all = getQuizResults()
     all.push(record)
-    // 直近 50 件だけ保持
-    localStorage.setItem(KEY, JSON.stringify(all.slice(-50)))
+    // 直近 MAX_HISTORY_RECORDS 件だけ保持
+    localStorage.setItem(KEY, JSON.stringify(all.slice(-MAX_HISTORY_RECORDS)))
   } catch {
     // 容量超過などは無視
   }

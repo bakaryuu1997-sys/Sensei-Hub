@@ -61,8 +61,8 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
     setBest(getBestScore(slug))
   }, [slug, phase])
 
-  const total = quiz?.questions.length ?? 0
-  const score = quiz ? answers.filter((a, i) => a === quiz.questions[i]?.answer).length : 0
+  const total = quiz?.questions?.length ?? 0
+  const score = quiz ? answers.filter((a, i) => a === quiz.questions?.[i]?.answer).length : 0
 
   const start = () => {
     setPhase("playing")
@@ -89,7 +89,7 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
       setSelected(null)
       setRevealed(false)
     } else {
-      const finalScore = answers.filter((a, i) => a === quiz.questions[i]?.answer).length
+      const finalScore = answers.filter((a, i) => a === quiz.questions?.[i]?.answer).length
       saveQuizResult({ slug, score: finalScore, total, ts: Date.now() })
       setPhase("done")
       if (total > 0 && finalScore / total >= 0.8) {
@@ -98,7 +98,7 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
     }
   }
 
-  const q = quiz?.questions[current]
+  const q = quiz?.questions?.[current]
 
   return (
     <div className="relative min-h-screen bg-slate-950 text-slate-100">
