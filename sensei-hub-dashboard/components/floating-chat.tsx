@@ -37,12 +37,15 @@ export function FloatingChat() {
   const [streaming, setStreaming] = useState(false)
   const [view, setView] = useState<"chat" | "history">("chat")
   const [conversations, setConversations] = useState<Conversation[]>([])
-  const convIdRef = useRef<string>(newConversationId())
+  // 空で初期化し、初回オープン時に ID を採番（newConversationId は Date.now/Math.random を
+  // 使うため、レンダー中に呼ぶと react-hooks/purity に反する）
+  const convIdRef = useRef<string>("")
   const abortRef = useRef<AbortController | null>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (!open) return
+    if (!convIdRef.current) convIdRef.current = newConversationId()
     const s = getAiSettings()
     setSettings(s)
     const ready = readyProviders(s)

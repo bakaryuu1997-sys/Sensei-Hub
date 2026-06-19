@@ -276,6 +276,12 @@ export const translations: Translations = {
   "settings.api_key": { en: "API key", ja: "APIキー", vi: "Khoá API" },
   "settings.base_url": { en: "Base URL", ja: "ベースURL", vi: "Base URL" },
   "settings.model": { en: "Model (optional)", ja: "モデル（任意）", vi: "Model (tùy chọn)" },
+  "settings.load_models": { en: "Load models", ja: "モデル取得", vi: "Tải model" },
+  "settings.model_hint": {
+    en: "Click the field to pick a model, or type one. Use “Load models” to fetch the ones your key supports.",
+    ja: "欄をクリックして候補から選ぶか、手入力できます。「モデル取得」でキーが使えるモデルを取得できます。",
+    vi: "Nhấp vào ô để chọn model, hoặc tự nhập. Dùng “Tải model” để lấy danh sách model mà khóa của bạn hỗ trợ.",
+  },
   "settings.save": { en: "Save", ja: "保存", vi: "Lưu" },
   "settings.saved": { en: "Saved", ja: "保存しました", vi: "Đã lưu" },
   "settings.ollama_hint": {

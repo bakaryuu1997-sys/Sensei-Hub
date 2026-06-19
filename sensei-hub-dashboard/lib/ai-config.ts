@@ -25,22 +25,26 @@ export const PROVIDER_LABELS: Record<AiProvider, string> = {
 /** プロバイダーごとの既定モデル（ユーザー未指定時）。 */
 export const DEFAULT_MODELS: Record<AiProvider, string> = {
   gemini: "gemini-2.5-flash",
-  openai: "gpt-4o-mini",
+  openai: "gpt-5.5",
   ollama: "llama3.2:3b",
 }
 
-/** プルダウンに出す代表モデル（手入力も可能）。 */
+/**
+ * プルダウンに出す代表モデル（手入力も可能、設定の「モデル取得」で実際の一覧も追加可能）。
+ * Gemini は 2026-06 時点で動作確認済みのモデルを含む。
+ */
 export const MODEL_PRESETS: Record<AiProvider, string[]> = {
   gemini: [
+    "gemini-3.5-flash",
+    "gemini-3.1-flash-lite-preview",
+    "gemini-3-flash-preview",
     "gemini-2.5-flash",
+    "gemini-2.5-flash-lite",
     "gemini-2.5-pro",
-    "gemini-2.0-flash",
-    "gemini-2.0-flash-lite",
-    "gemini-1.5-flash",
-    "gemini-1.5-flash-8b",
-    "gemini-1.5-pro",
+    "gemma-4-31b-it",
+    "gemma-4-26b-a4b-it",
   ],
-  openai: ["gpt-4o-mini", "gpt-4o", "gpt-4.1-mini", "gpt-4.1", "o4-mini", "gpt-3.5-turbo"],
+  openai: ["gpt-5.5", "gpt-5", "gpt-4.1", "gpt-4.1-mini", "gpt-4o", "gpt-4o-mini", "o4-mini"],
   ollama: ["llama3.2:3b", "llama3.2:1b", "qwen2.5:3b", "gemma2:2b", "phi3:mini", "mistral", "llama3.1:8b"],
 }
 

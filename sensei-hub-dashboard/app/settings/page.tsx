@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import { Check, Cpu, Globe, Settings as SettingsIcon } from "lucide-react"
+import { Check, Cpu, Globe, Settings as SettingsIcon, RefreshCw } from "lucide-react"
 
 import { Sidebar } from "@/components/dashboard/sidebar"
 import { TopBar } from "@/components/dashboard/top-bar"
@@ -17,11 +17,13 @@ import {
   DEFAULT_SETTINGS,
   PROVIDERS,
   PROVIDER_LABELS,
+  MODEL_PRESETS,
   usesBaseUrl,
   type AiProvider,
   type AiSettings,
   type ProviderConfig,
 } from "@/lib/ai-config"
+import { fetchModels } from "@/lib/ai-models"
 import { cn } from "@/lib/utils"
 
 const LANGUAGES: { code: Language; label: string }[] = [
@@ -38,12 +40,30 @@ export default function SettingsPage() {
   const [settings, setSettings] = useState<AiSettings>(DEFAULT_SETTINGS)
   const [editing, setEditing] = useState<AiProvider>("gemini")
   const [saved, setSaved] = useState(false)
+  const [fetchedModels, setFetchedModels] = useState<Partial<Record<AiProvider, string[]>>>({})
+  const [loadingModels, setLoadingModels] = useState(false)
+  const [modelsError, setModelsError] = useState<string | null>(null)
 
   useEffect(() => {
     setSettings(getAiSettings())
   }, [])
 
   const cfg = settings.providers[editing]
+
+  // モデル候補 = プリセット + 取得済みモデル（重複排除）
+  const modelOptions = Array.from(new Set([...(fetchedModels[editing] || []), ...MODEL_PRESETS[editing]]))
+
+  const loadModels = async () => {
+    setLoadingModels(true)
+    setModelsError(null)
+    const outcome = await fetchModels(editing, cfg)
+    setLoadingModels(false)
+    if (outcome.ok) {
+      setFetchedModels((m) => ({ ...m, [editing]: outcome.models }))
+    } else {
+      setModelsError(outcome.error)
+    }
+  }
   const updateCfg = (patch: Partial<ProviderConfig>) =>
     setSettings((s) => ({
       ...s,
@@ -200,7 +220,18 @@ export default function SettingsPage() {
               )}
 
               <div className="mb-4">
-                <label className="block text-xs font-semibold text-white/60 mb-1.5">{t("settings.model")}</label>
+                <div className="flex items-center justify-between mb-1.5">
+                  <label className="block text-xs font-semibold text-white/60">{t("settings.model")}</label>
+                  <button
+                    type="button"
+                    onClick={loadModels}
+                    disabled={loadingModels || (editing !== "ollama" && !cfg.apiKey)}
+                    className="inline-flex items-center gap-1 text-[10px] text-cyan-400 hover:text-cyan-300 hover:underline transition-colors font-semibold disabled:opacity-40 disabled:no-underline"
+                  >
+                    <RefreshCw className={cn("h-3 w-3", loadingModels && "animate-spin")} />
+                    {t("settings.load_models")}
+                  </button>
+                </div>
                 <input
                   type="text"
                   list={`models-${editing}`}
@@ -209,6 +240,16 @@ export default function SettingsPage() {
                   placeholder={DEFAULT_MODELS[editing]}
                   className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/10 focus:border-cyan-400/50 outline-none text-sm text-white placeholder:text-white/30"
                 />
+                <datalist id={`models-${editing}`}>
+                  {modelOptions.map((m) => (
+                    <option key={m} value={m} />
+                  ))}
+                </datalist>
+                {modelsError ? (
+                  <p className="mt-1.5 text-[11px] text-rose-300/80">{modelsError}</p>
+                ) : (
+                  <p className="mt-1.5 text-[11px] text-white/35">{t("settings.model_hint")}</p>
+                )}
               </div>
 
               {editing === "ollama" && (
