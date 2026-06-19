@@ -175,22 +175,29 @@ describe("Quiz Content Schema Validation", () => {
     expect(quiz.title.vi).toBeDefined()
     expect(quiz.sets).toBeDefined()
     expect(Array.isArray(quiz.sets)).toBe(true)
-    expect(quiz.sets?.length).toBe(10) // Exactly 10 sets
+    expect(quiz.sets?.length).toBe(15) // 10 sets of Part A + 5 sets of Part B
 
     quiz.sets?.forEach((set, setIdx) => {
       // Verify set structure
-      expect(set.id).toBe(`fe-a-${setIdx + 1}`)
-      expect(set.category).toBe("part-a")
+      if (setIdx < 10) {
+        expect(set.id).toBe(`fe-a-${setIdx + 1}`)
+        expect(set.category).toBe("part-a")
+        expect(set.questions).toBeDefined()
+        expect(Array.isArray(set.questions)).toBe(true)
+        expect(set.questions.length).toBe(10) // Exactly 10 questions each
+      } else {
+        expect(set.id).toBe(`fe-b-${setIdx - 9}`)
+        expect(set.category).toBe("part-b")
+        expect(set.questions).toBeDefined()
+        expect(Array.isArray(set.questions)).toBe(true)
+        expect(set.questions.length).toBe(5) // Exactly 5 questions each
+      }
+
       expect(set.title).toBeDefined()
       expect(set.title.en).toBeDefined()
       expect(set.title.ja).toBeDefined()
       expect(set.title.vi).toBeDefined()
       expect(set.description).toBeDefined()
-
-      // Verify questions
-      expect(set.questions).toBeDefined()
-      expect(Array.isArray(set.questions)).toBe(true)
-      expect(set.questions.length).toBe(10) // Exactly 10 questions each
 
       set.questions.forEach((q, qIdx) => {
         expect(q.id).toBe(`fe_s${setIdx + 1}_q${qIdx + 1}`)
