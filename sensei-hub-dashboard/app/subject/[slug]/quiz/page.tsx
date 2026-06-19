@@ -40,6 +40,7 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
   const [revealed, setRevealed] = useState(false)
   const [answers, setAnswers] = useState<number[]>([])
   const [best, setBest] = useState<QuizResultRecord | null>(null)
+  const [activeTab, setActiveTab] = useState<"part-a" | "part-b">("part-a")
 
   useEffect(() => {
     let active = true
@@ -80,6 +81,13 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
   const questions = selectedSet ? selectedSet.questions : (quiz?.questions || [])
   const total = questions.length
   const score = quiz ? answers.filter((a, i) => a === questions[i]?.answer).length : 0
+
+  const hasCategories = quiz?.sets?.some((set) => set.category) ?? false
+  const filteredSets = quiz?.sets
+    ? hasCategories
+      ? quiz.sets.filter((set) => set.category === activeTab)
+      : quiz.sets
+    : []
 
   const start = () => {
     setPhase("playing")
@@ -198,51 +206,93 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                   </p>
                 </div>
 
-                <div className="grid gap-4 md:grid-cols-2">
-                  {quiz.sets.map((set) => {
-                    const setBest = getBestScore(slug, set.id)
-                    return (
-                      <motion.button
-                        key={set.id}
-                        whileHover={{ y: -4, scale: 1.01 }}
-                        onClick={() => {
-                          setSelectedSet(set)
-                          setPhase("intro")
-                        }}
-                        className="glass-card border border-white/10 hover:border-cyan-500/30 rounded-2xl p-5 text-left flex flex-col justify-between space-y-4 hover:bg-white/[0.02] transition-colors group"
+                {/* Category Tabs */}
+                {hasCategories && (
+                  <div className="flex justify-center">
+                    <div className="bg-white/5 border border-white/10 rounded-xl p-1 flex gap-1">
+                      <button
+                        onClick={() => setActiveTab("part-a")}
+                        className={cn(
+                          "px-4 py-1.5 text-sm font-bold rounded-lg transition-all",
+                          activeTab === "part-a"
+                            ? "bg-white/10 text-cyan-400 shadow-sm"
+                            : "text-white/60 hover:text-white"
+                        )}
                       >
-                        <div className="space-y-2 w-full">
-                          <div className="flex items-start justify-between gap-4">
-                            <h3 className="font-bold text-white group-hover:text-cyan-300 transition-colors text-base leading-tight">
-                              {pickText(set.title, lang)}
-                            </h3>
-                            {setBest ? (
-                              <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 px-2.5 py-0.5 text-xs font-semibold text-amber-300 border border-amber-500/20 font-mono flex-shrink-0">
-                                <Trophy className="h-3 w-3" />
-                                {setBest.score}/{setBest.total}
-                              </span>
-                            ) : (
-                              <span className="inline-flex items-center rounded-full bg-white/5 px-2.5 py-0.5 text-xs font-medium text-white/50 border border-white/10 font-mono flex-shrink-0">
-                                {t("quiz.unattempted")}
-                              </span>
-                            )}
+                        {t("quiz.part_a")}
+                      </button>
+                      <button
+                        onClick={() => setActiveTab("part-b")}
+                        className={cn(
+                          "px-4 py-1.5 text-sm font-bold rounded-lg transition-all",
+                          activeTab === "part-b"
+                            ? "bg-white/10 text-cyan-400 shadow-sm"
+                            : "text-white/60 hover:text-white"
+                        )}
+                      >
+                        {t("quiz.part_b")}
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {filteredSets.length > 0 ? (
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {filteredSets.map((set) => {
+                      const setBest = getBestScore(slug, set.id)
+                      return (
+                        <motion.button
+                          key={set.id}
+                          whileHover={{ y: -4, scale: 1.01 }}
+                          onClick={() => {
+                            setSelectedSet(set)
+                            setPhase("intro")
+                          }}
+                          className="glass-card border border-white/10 hover:border-cyan-500/30 rounded-2xl p-5 text-left flex flex-col justify-between space-y-4 hover:bg-white/[0.02] transition-colors group"
+                        >
+                          <div className="space-y-2 w-full">
+                            <div className="flex items-start justify-between gap-4">
+                              <h3 className="font-bold text-white group-hover:text-cyan-300 transition-colors text-base leading-tight">
+                                {pickText(set.title, lang)}
+                              </h3>
+                              {setBest ? (
+                                <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 px-2.5 py-0.5 text-xs font-semibold text-amber-300 border border-amber-500/20 font-mono flex-shrink-0">
+                                  <Trophy className="h-3 w-3" />
+                                  {setBest.score}/{setBest.total}
+                                </span>
+                              ) : (
+                                <span className="inline-flex items-center rounded-full bg-white/5 px-2.5 py-0.5 text-xs font-medium text-white/50 border border-white/10 font-mono flex-shrink-0">
+                                  {t("quiz.unattempted")}
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-xs text-white/60 line-clamp-2 leading-relaxed">
+                              {pickText(set.description, lang)}
+                            </p>
                           </div>
-                          <p className="text-xs text-white/60 line-clamp-2 leading-relaxed">
-                            {pickText(set.description, lang)}
-                          </p>
-                        </div>
-                        <div className="flex items-center justify-between pt-2 border-t border-white/5 text-xs font-mono w-full">
-                          <span className="text-cyan-200/70">
-                            {set.questions.length} {t("quiz.questions")}
-                          </span>
-                          <span className="inline-flex items-center gap-1 text-cyan-400 font-bold group-hover:translate-x-1 transition-transform">
-                            {t("action.start")} <ArrowRight className="h-3 w-3" />
-                          </span>
-                        </div>
-                      </motion.button>
-                    )
-                  })}
-                </div>
+                          <div className="flex items-center justify-between pt-2 border-t border-white/5 text-xs font-mono w-full">
+                            <span className="text-cyan-200/70">
+                              {set.questions.length} {t("quiz.questions")}
+                            </span>
+                            <span className="inline-flex items-center gap-1 text-cyan-400 font-bold group-hover:translate-x-1 transition-transform">
+                              {t("action.start")} <ArrowRight className="h-3 w-3" />
+                            </span>
+                          </div>
+                        </motion.button>
+                      )
+                    })}
+                  </div>
+                ) : (
+                  <div className="glass-card border border-white/10 rounded-2xl p-10 text-center space-y-4">
+                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10">
+                      <ListChecks className="h-8 w-8 text-cyan-300" />
+                    </div>
+                    <h2 className="text-xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-purple-400">
+                      {t("quiz.coming_soon_title")}
+                    </h2>
+                    <p className="text-sm text-white/60 max-w-md mx-auto">{t("quiz.coming_soon_desc")}</p>
+                  </div>
+                )}
               </motion.div>
             )}
 
