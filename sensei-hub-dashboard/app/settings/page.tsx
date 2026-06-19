@@ -131,8 +131,18 @@ export default function SettingsPage() {
               </div>
 
               {config.provider !== "ollama" && (
-                <div className="mb-4">
-                  <label className="block text-xs font-semibold text-white/60 mb-1.5">{t("settings.api_key")}</label>
+                <div className="mb-4 space-y-1.5">
+                  <div className="flex items-center justify-between">
+                    <label className="block text-xs font-semibold text-white/60">{t("settings.api_key")}</label>
+                    <a
+                      href={config.provider === "gemini" ? "https://aistudio.google.com/app/apikey" : "https://platform.openai.com/api-keys"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[10px] text-cyan-400 hover:text-cyan-300 hover:underline transition-colors font-semibold"
+                    >
+                      {config.provider === "gemini" ? t("settings.get_gemini_key") : t("settings.get_openai_key")}
+                    </a>
+                  </div>
                   <input
                     type="password"
                     value={config.apiKey}
@@ -143,8 +153,19 @@ export default function SettingsPage() {
                 </div>
               )}
 
-              <div className="mb-4">
-                <label className="block text-xs font-semibold text-white/60 mb-1.5">{t("settings.base_url")}</label>
+              <div className="mb-4 space-y-1.5">
+                <div className="flex items-center justify-between">
+                  <label className="block text-xs font-semibold text-white/60">{t("settings.base_url")}</label>
+                  {config.provider === "ollama" && (
+                    <button
+                      type="button"
+                      onClick={() => setConfig((c) => ({ ...c, baseUrl: "http://localhost:11434" }))}
+                      className="text-[10px] text-cyan-400 hover:text-cyan-300 hover:underline transition-colors font-semibold bg-transparent border-none cursor-pointer p-0"
+                    >
+                      {t("settings.use_default_ollama")}
+                    </button>
+                  )}
+                </div>
                 <input
                   type="text"
                   value={config.baseUrl}

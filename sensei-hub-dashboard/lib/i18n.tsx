@@ -279,6 +279,22 @@ export const translations: Translations = {
     ja: "Ollama の場合は ollama.com からインストールし、軽量モデル（例: `ollama run llama3.2`）を実行し、Base URL を http://localhost:11434 に設定してください。",
     vi: "Với Ollama, cài từ ollama.com, chạy một model nhẹ (vd `ollama run llama3.2`) và đặt Base URL là http://localhost:11434.",
   },
+  "settings.get_gemini_key": {
+    en: "Get a Gemini API Key from Google AI Studio",
+    ja: "Google AI Studio から Gemini API キーを取得する",
+    vi: "Lấy khóa Gemini API Key từ Google AI Studio",
+  },
+  "settings.get_openai_key": {
+    en: "Get an OpenAI API Key from OpenAI Platform",
+    ja: "OpenAI Platform から OpenAI API キーを取得する",
+    vi: "Lấy khóa OpenAI API Key từ OpenAI Platform",
+  },
+  "settings.use_default_ollama": {
+    en: "Use http://localhost:11434",
+    ja: "http://localhost:11434 を使用する",
+    vi: "Sử dụng http://localhost:11434",
+  },
+
 
   // Footer
   "footer.links_title": { en: "Useful links", ja: "便利なリンク", vi: "Liên kết hữu ích" },
