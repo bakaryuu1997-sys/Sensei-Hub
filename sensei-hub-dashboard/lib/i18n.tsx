@@ -255,6 +255,10 @@ export const translations: Translations = {
   "chat.placeholder": { en: "Type a message…", ja: "メッセージを入力…", vi: "Nhập tin nhắn…" },
   "chat.send": { en: "Send", ja: "送信", vi: "Gửi" },
   "chat.error": { en: "Something went wrong", ja: "エラーが発生しました", vi: "Đã xảy ra lỗi" },
+  "chat.stop": { en: "Stop", ja: "停止", vi: "Dừng" },
+  "chat.new": { en: "New chat", ja: "新しいチャット", vi: "Trò chuyện mới" },
+  "chat.history": { en: "History", ja: "履歴", vi: "Lịch sử" },
+  "chat.no_history": { en: "No saved chats yet.", ja: "保存されたチャットはまだありません。", vi: "Chưa có cuộc trò chuyện nào." },
 
   // Settings page
   "settings.title": { en: "Settings", ja: "設定", vi: "Cài đặt" },
@@ -264,9 +268,9 @@ export const translations: Translations = {
   "settings.language_desc": { en: "Language used for the interface and lessons.", ja: "インターフェースとレッスンで使用する言語。", vi: "Ngôn ngữ dùng cho giao diện và bài học." },
   "settings.ai_title": { en: "AI provider", ja: "AIプロバイダー", vi: "Nhà cung cấp AI" },
   "settings.ai_desc": {
-    en: "Configure the AI used by the upcoming chat assistant. Keys are stored only in your browser.",
-    ja: "近日公開のチャットアシスタントで使用するAIを設定します。キーはブラウザにのみ保存されます。",
-    vi: "Cấu hình AI cho trợ lý chat sắp ra mắt. Khoá chỉ được lưu trong trình duyệt của bạn.",
+    en: "Set up each provider separately — you can configure several and switch between them in the chat. Keys are stored only in your browser.",
+    ja: "プロバイダーごとに設定できます。複数登録して、チャット側で切り替えられます。キーはブラウザにのみ保存されます。",
+    vi: "Cấu hình từng nhà cung cấp riêng — bạn có thể thêm nhiều và chuyển đổi ngay trong khung chat. Khoá chỉ lưu trong trình duyệt.",
   },
   "settings.provider": { en: "Provider", ja: "プロバイダー", vi: "Nhà cung cấp" },
   "settings.api_key": { en: "API key", ja: "APIキー", vi: "Khoá API" },
@@ -275,9 +279,9 @@ export const translations: Translations = {
   "settings.save": { en: "Save", ja: "保存", vi: "Lưu" },
   "settings.saved": { en: "Saved", ja: "保存しました", vi: "Đã lưu" },
   "settings.ollama_hint": {
-    en: "For Ollama, install it from ollama.com, run a lightweight model (e.g. `ollama run llama3.2`), and set the Base URL to http://localhost:11434.",
-    ja: "Ollama の場合は ollama.com からインストールし、軽量モデル（例: `ollama run llama3.2`）を実行し、Base URL を http://localhost:11434 に設定してください。",
-    vi: "Với Ollama, cài từ ollama.com, chạy một model nhẹ (vd `ollama run llama3.2`) và đặt Base URL là http://localhost:11434.",
+    en: "For Ollama: install from ollama.com and set Base URL to http://localhost:11434. On a low-spec machine, prefer a small model — `llama3.2:3b`, `qwen2.5:3b`, `gemma2:2b` or `phi3:mini` are far faster than 12B+ models. Responses stream in as they are generated.",
+    ja: "Ollama: ollama.com からインストールし、Base URL を http://localhost:11434 に設定。低スペック PC では小さいモデル（`llama3.2:3b`・`qwen2.5:3b`・`gemma2:2b`・`phi3:mini` など）が 12B 以上より大幅に高速です。応答は生成されるそばからストリーミング表示されます。",
+    vi: "Với Ollama: cài từ ollama.com và đặt Base URL là http://localhost:11434. Máy yếu nên dùng model nhỏ — `llama3.2:3b`, `qwen2.5:3b`, `gemma2:2b` hoặc `phi3:mini` nhanh hơn nhiều so với model 12B+. Câu trả lời hiển thị dần khi đang sinh.",
   },
   "settings.get_gemini_key": {
     en: "Get a Gemini API Key from Google AI Studio",

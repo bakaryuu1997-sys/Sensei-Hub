@@ -9,7 +9,18 @@ import { TopBar } from "@/components/dashboard/top-bar"
 import { Starfield } from "@/components/dashboard/starfield"
 import { useLanguage, type Language } from "@/lib/i18n"
 import { useUserProgress } from "@/components/user-progress-provider"
-import { getAiConfig, setAiConfig, DEFAULT_MODELS, type AiConfig, type AiProvider } from "@/lib/ai-config"
+import {
+  getAiSettings,
+  setAiSettings,
+  isProviderReady,
+  DEFAULT_MODELS,
+  DEFAULT_SETTINGS,
+  PROVIDERS,
+  PROVIDER_LABELS,
+  type AiProvider,
+  type AiSettings,
+  type ProviderConfig,
+} from "@/lib/ai-config"
 import { cn } from "@/lib/utils"
 
 const LANGUAGES: { code: Language; label: string }[] = [
@@ -18,21 +29,28 @@ const LANGUAGES: { code: Language; label: string }[] = [
   { code: "vi", label: "Tiếng Việt" },
 ]
 
-const PROVIDERS: AiProvider[] = ["gemini", "openai", "ollama"]
-
 export default function SettingsPage() {
   const { t, lang, setLang } = useLanguage()
   const { overallStats: overall } = useUserProgress()
 
-  const [config, setConfig] = useState<AiConfig>({ provider: "gemini", apiKey: "", baseUrl: "", model: "" })
+  // プロバイダーごとに設定を保持（複数キーを同時に持てる）
+  const [settings, setSettings] = useState<AiSettings>(DEFAULT_SETTINGS)
+  const [editing, setEditing] = useState<AiProvider>("gemini")
   const [saved, setSaved] = useState(false)
 
   useEffect(() => {
-    setConfig(getAiConfig())
+    setSettings(getAiSettings())
   }, [])
 
+  const cfg = settings.providers[editing]
+  const updateCfg = (patch: Partial<ProviderConfig>) =>
+    setSettings((s) => ({
+      ...s,
+      providers: { ...s.providers, [editing]: { ...s.providers[editing], ...patch } },
+    }))
+
   const handleSave = () => {
-    setAiConfig(config)
+    setAiSettings(settings)
     setSaved(true)
     setTimeout(() => setSaved(false), 2000)
   }
@@ -114,39 +132,43 @@ export default function SettingsPage() {
 
               <label className="block text-xs font-semibold text-white/60 mb-1.5">{t("settings.provider")}</label>
               <div className="flex flex-wrap gap-2 mb-4">
-                {PROVIDERS.map((p) => (
-                  <button
-                    key={p}
-                    onClick={() => setConfig((c) => ({ ...c, provider: p }))}
-                    className={cn(
-                      "rounded-xl px-4 py-2 text-sm font-semibold border capitalize transition-all",
-                      config.provider === p
-                        ? "bg-gradient-to-r from-cyan-500/30 to-purple-500/20 text-white border-cyan-400/40"
-                        : "bg-white/5 text-white/70 border-white/10 hover:bg-white/10",
-                    )}
-                  >
-                    {p}
-                  </button>
-                ))}
+                {PROVIDERS.map((p) => {
+                  const ready = isProviderReady(p, settings.providers[p])
+                  return (
+                    <button
+                      key={p}
+                      onClick={() => setEditing(p)}
+                      className={cn(
+                        "flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold border transition-all",
+                        editing === p
+                          ? "bg-gradient-to-r from-cyan-500/30 to-purple-500/20 text-white border-cyan-400/40"
+                          : "bg-white/5 text-white/70 border-white/10 hover:bg-white/10",
+                      )}
+                    >
+                      {PROVIDER_LABELS[p]}
+                      {ready && <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" title="configured" />}
+                    </button>
+                  )
+                })}
               </div>
 
-              {config.provider !== "ollama" && (
+              {editing !== "ollama" && (
                 <div className="mb-4 space-y-1.5">
                   <div className="flex items-center justify-between">
                     <label className="block text-xs font-semibold text-white/60">{t("settings.api_key")}</label>
                     <a
-                      href={config.provider === "gemini" ? "https://aistudio.google.com/app/apikey" : "https://platform.openai.com/api-keys"}
+                      href={editing === "gemini" ? "https://aistudio.google.com/app/apikey" : "https://platform.openai.com/api-keys"}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[10px] text-cyan-400 hover:text-cyan-300 hover:underline transition-colors font-semibold"
                     >
-                      {config.provider === "gemini" ? t("settings.get_gemini_key") : t("settings.get_openai_key")}
+                      {editing === "gemini" ? t("settings.get_gemini_key") : t("settings.get_openai_key")}
                     </a>
                   </div>
                   <input
                     type="password"
-                    value={config.apiKey}
-                    onChange={(e) => setConfig((c) => ({ ...c, apiKey: e.target.value }))}
+                    value={cfg.apiKey}
+                    onChange={(e) => updateCfg({ apiKey: e.target.value })}
                     placeholder="sk-..."
                     className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/10 focus:border-cyan-400/50 outline-none text-sm text-white placeholder:text-white/30"
                   />
@@ -156,10 +178,10 @@ export default function SettingsPage() {
               <div className="mb-4 space-y-1.5">
                 <div className="flex items-center justify-between">
                   <label className="block text-xs font-semibold text-white/60">{t("settings.base_url")}</label>
-                  {config.provider === "ollama" && (
+                  {editing === "ollama" && (
                     <button
                       type="button"
-                      onClick={() => setConfig((c) => ({ ...c, baseUrl: "http://localhost:11434" }))}
+                      onClick={() => updateCfg({ baseUrl: "http://localhost:11434" })}
                       className="text-[10px] text-cyan-400 hover:text-cyan-300 hover:underline transition-colors font-semibold bg-transparent border-none cursor-pointer p-0"
                     >
                       {t("settings.use_default_ollama")}
@@ -168,9 +190,9 @@ export default function SettingsPage() {
                 </div>
                 <input
                   type="text"
-                  value={config.baseUrl}
-                  onChange={(e) => setConfig((c) => ({ ...c, baseUrl: e.target.value }))}
-                  placeholder={config.provider === "ollama" ? "http://localhost:11434" : ""}
+                  value={cfg.baseUrl}
+                  onChange={(e) => updateCfg({ baseUrl: e.target.value })}
+                  placeholder={editing === "ollama" ? "http://localhost:11434" : ""}
                   className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/10 focus:border-cyan-400/50 outline-none text-sm text-white placeholder:text-white/30"
                 />
               </div>
@@ -179,14 +201,14 @@ export default function SettingsPage() {
                 <label className="block text-xs font-semibold text-white/60 mb-1.5">{t("settings.model")}</label>
                 <input
                   type="text"
-                  value={config.model}
-                  onChange={(e) => setConfig((c) => ({ ...c, model: e.target.value }))}
-                  placeholder={DEFAULT_MODELS[config.provider]}
+                  value={cfg.model}
+                  onChange={(e) => updateCfg({ model: e.target.value })}
+                  placeholder={DEFAULT_MODELS[editing]}
                   className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/10 focus:border-cyan-400/50 outline-none text-sm text-white placeholder:text-white/30"
                 />
               </div>
 
-              {config.provider === "ollama" && (
+              {editing === "ollama" && (
                 <p className="text-xs text-amber-200/70 bg-amber-500/5 border border-amber-500/15 rounded-xl p-3 mb-4 leading-relaxed">
                   {t("settings.ollama_hint")}
                 </p>
