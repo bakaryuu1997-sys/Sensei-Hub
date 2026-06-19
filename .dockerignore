@@ -1,0 +1,43 @@
+# Docker ビルドコンテキストから除外する（ビルドコンテキストはリポジトリルート）。
+# イメージの軽量化・ビルド高速化に加え、秘密情報（.env）や開発 DB の混入を防ぐ。
+
+# Git / CI
+.git
+.github
+.gitignore
+
+# 依存とビルド成果物（deps ステージで作り直す）
+**/node_modules
+**/.next
+**/*.tsbuildinfo
+
+# 秘密情報・ローカル env（.env.example だけは残す）
+**/.env
+**/.env.*
+!**/.env.example
+
+# 開発用 SQLite
+**/*.db
+**/*.db-journal
+**/*.db-shm
+**/*.db-wal
+
+# テスト成果物
+**/playwright-report
+**/test-results
+**/playwright/.clerk
+
+# Web イメージに不要なもの
+sensei-hub-android
+docs
+main.py
+test_*.py
+test_all_responses.py
+test_models.py
+test_remaining_models.py
+*.log
+
+# エディタ / OS
+.vscode
+.idea
+.DS_Store
