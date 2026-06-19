@@ -16,6 +16,7 @@ export type QuizQuestion = {
 
 export type QuizSet = {
   id: string
+  category?: string // "part-a" | "part-b" etc
   title: QuizText
   description: QuizText
   questions: QuizQuestion[]
