@@ -6,13 +6,14 @@ import { TopBar } from "@/components/dashboard/top-bar"
 import { Starfield } from "@/components/dashboard/starfield"
 import { Footer } from "@/components/footer"
 import { useLanguage } from "@/lib/i18n"
+import type { LegalDoc } from "@/lib/legal-content"
 
 /**
- * 簡易な情報ページ（about・contact・法的事項・blog）の共通シェル。
- * タイトルと本文の i18n キーを渡す。
+ * 情報ページ（about・contact・法的事項）の共通シェル。
+ * 3 言語の構造化コンテンツ（LegalDoc）を見出し＋段落として描画する。
  */
-export function StaticPage({ titleKey, bodyKey }: { titleKey: string; bodyKey: string }) {
-  const { t } = useLanguage()
+export function StaticPage({ doc }: { doc: LegalDoc }) {
+  const { lang } = useLanguage()
 
   return (
     <div className="relative min-h-screen bg-slate-950 text-slate-100">
@@ -31,12 +32,33 @@ export function StaticPage({ titleKey, bodyKey }: { titleKey: string; bodyKey: s
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="glass-card border border-white/10 rounded-2xl p-8 lg:p-10 space-y-4"
+              className="glass-card border border-white/10 rounded-2xl p-8 lg:p-10 space-y-6"
             >
-              <h1 className="text-2xl lg:text-3xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-purple-400">
-                {t(titleKey)}
-              </h1>
-              <p className="text-sm lg:text-base text-slate-300/85 leading-relaxed">{t(bodyKey)}</p>
+              <header className="space-y-1 pb-4 border-b border-white/5">
+                <h1 className="text-2xl lg:text-3xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-purple-400">
+                  {doc.title[lang] || doc.title.en}
+                </h1>
+                {doc.updated && (
+                  <p className="text-xs text-white/40 font-mono">Last updated: {doc.updated}</p>
+                )}
+              </header>
+
+              <div className="space-y-6">
+                {doc.sections.map((section, i) => (
+                  <section key={i} className="space-y-2">
+                    {section.heading && (
+                      <h2 className="text-lg font-bold text-cyan-200">
+                        {section.heading[lang] || section.heading.en}
+                      </h2>
+                    )}
+                    {section.body.map((p, j) => (
+                      <p key={j} className="text-sm lg:text-base text-slate-300/85 leading-relaxed">
+                        {p[lang] || p.en}
+                      </p>
+                    ))}
+                  </section>
+                ))}
+              </div>
             </motion.article>
           </div>
         </main>

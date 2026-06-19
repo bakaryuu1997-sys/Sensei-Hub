@@ -1,5 +1,6 @@
 import { StaticPage } from "@/components/static-page"
+import { termsDoc } from "@/lib/legal-content"
 
 export default function TermsPage() {
-  return <StaticPage titleKey="page.terms.title" bodyKey="page.terms.body" />
+  return <StaticPage doc={termsDoc} />
 }
