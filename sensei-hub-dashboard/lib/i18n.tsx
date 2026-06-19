@@ -232,6 +232,8 @@ export const translations: Translations = {
   "quiz.unattempted": { en: "Unattempted", ja: "未挑戦", vi: "Chưa thử sức" },
   "quiz.questions_count": { en: "10 questions", ja: "10問", vi: "10 câu hỏi" },
   "quiz.back_to_sets": { en: "Back to sets", ja: "セット選択に戻る", vi: "Quay lại chọn đề" },
+  "quiz.part_a": { en: "Part A", ja: "科目A", vi: "Phần A" },
+  "quiz.part_b": { en: "Part B", ja: "科目B", vi: "Phần B" },
   "quiz.result_great": { en: "Excellent work!", ja: "素晴らしい！", vi: "Xuất sắc!" },
   "quiz.result_good": { en: "Good job — keep practicing.", ja: "良い調子です。練習を続けましょう。", vi: "Tốt lắm — hãy luyện tập thêm." },
   "quiz.result_retry": { en: "Review the lessons and try again.", ja: "レッスンを復習してもう一度挑戦しましょう。", vi: "Hãy ôn lại bài học và thử lại." },
@@ -321,6 +323,24 @@ export const translations: Translations = {
     en: "Articles and product updates are coming soon.",
     ja: "記事や製品アップデートは近日公開予定です。",
     vi: "Các bài viết và cập nhật sản phẩm sẽ sớm ra mắt.",
+  },
+
+  // Blog / AI news
+  "blog.title": { en: "Blog & News", ja: "ブログ・ニュース", vi: "Blog & Tin tức" },
+  "blog.subtitle": {
+    en: "Latest AI news, refreshed automatically in your language",
+    ja: "最新の AI ニュースをあなたの言語で自動更新",
+    vi: "Tin tức AI mới nhất, tự động cập nhật theo ngôn ngữ của bạn",
+  },
+  "blog.empty": {
+    en: "Couldn't load news right now. Please try again later.",
+    ja: "現在ニュースを読み込めませんでした。しばらくしてからお試しください。",
+    vi: "Hiện chưa tải được tin tức. Vui lòng thử lại sau.",
+  },
+  "blog.source_note": {
+    en: "Headlines via Google News · updated every 30 minutes",
+    ja: "見出しは Google ニュース提供・30 分ごとに更新",
+    vi: "Tiêu đề từ Google News · cập nhật mỗi 30 phút",
   },
 
   // Search command palette
