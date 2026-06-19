@@ -36,6 +36,12 @@ services:
       - web_data:/app/data
       # レッスンコンテンツ（読み取り専用）。更新は git pull + 再デプロイ
       - ./lessons:/lessons:ro
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 40s
 
 volumes:
   web_data:
