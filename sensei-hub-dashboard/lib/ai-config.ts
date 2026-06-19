@@ -9,12 +9,21 @@ export type AiConfig = {
   provider: AiProvider
   apiKey: string
   baseUrl: string
+  model: string
 }
 
 export const DEFAULT_AI_CONFIG: AiConfig = {
   provider: "gemini",
   apiKey: "",
   baseUrl: "",
+  model: "",
+}
+
+/** プロバイダーごとの既定モデル（ユーザーが未指定のとき使う）。 */
+export const DEFAULT_MODELS: Record<AiProvider, string> = {
+  gemini: "gemini-1.5-flash",
+  openai: "gpt-4o-mini",
+  ollama: "llama3.2",
 }
 
 export function getAiConfig(): AiConfig {

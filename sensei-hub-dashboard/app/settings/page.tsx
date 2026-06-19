@@ -9,7 +9,7 @@ import { TopBar } from "@/components/dashboard/top-bar"
 import { Starfield } from "@/components/dashboard/starfield"
 import { useLanguage, type Language } from "@/lib/i18n"
 import { useUserProgress } from "@/components/user-progress-provider"
-import { getAiConfig, setAiConfig, type AiConfig, type AiProvider } from "@/lib/ai-config"
+import { getAiConfig, setAiConfig, DEFAULT_MODELS, type AiConfig, type AiProvider } from "@/lib/ai-config"
 import { cn } from "@/lib/utils"
 
 const LANGUAGES: { code: Language; label: string }[] = [
@@ -24,7 +24,7 @@ export default function SettingsPage() {
   const { t, lang, setLang } = useLanguage()
   const { overallStats: overall } = useUserProgress()
 
-  const [config, setConfig] = useState<AiConfig>({ provider: "gemini", apiKey: "", baseUrl: "" })
+  const [config, setConfig] = useState<AiConfig>({ provider: "gemini", apiKey: "", baseUrl: "", model: "" })
   const [saved, setSaved] = useState(false)
 
   useEffect(() => {
@@ -150,6 +150,17 @@ export default function SettingsPage() {
                   value={config.baseUrl}
                   onChange={(e) => setConfig((c) => ({ ...c, baseUrl: e.target.value }))}
                   placeholder={config.provider === "ollama" ? "http://localhost:11434" : ""}
+                  className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/10 focus:border-cyan-400/50 outline-none text-sm text-white placeholder:text-white/30"
+                />
+              </div>
+
+              <div className="mb-4">
+                <label className="block text-xs font-semibold text-white/60 mb-1.5">{t("settings.model")}</label>
+                <input
+                  type="text"
+                  value={config.model}
+                  onChange={(e) => setConfig((c) => ({ ...c, model: e.target.value }))}
+                  placeholder={DEFAULT_MODELS[config.provider]}
                   className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/10 focus:border-cyan-400/50 outline-none text-sm text-white placeholder:text-white/30"
                 />
               </div>

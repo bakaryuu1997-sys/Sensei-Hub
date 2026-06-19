@@ -235,10 +235,18 @@ export const translations: Translations = {
   "chat.open": { en: "Open AI assistant", ja: "AIアシスタントを開く", vi: "Mở trợ lý AI" },
   "chat.coming_soon": { en: "AI chat is coming soon.", ja: "AIチャットは近日公開予定です。", vi: "Chat AI sắp ra mắt." },
   "chat.configure_hint": {
-    en: "You'll be able to connect Gemini, OpenAI, or a local Ollama model in Settings.",
-    ja: "設定で Gemini、OpenAI、またはローカルの Ollama モデルを接続できるようになります。",
-    vi: "Bạn sẽ có thể kết nối Gemini, OpenAI hoặc model Ollama cục bộ trong phần Cài đặt.",
+    en: "Connect Gemini, OpenAI, or a local Ollama model in Settings to start chatting.",
+    ja: "設定で Gemini、OpenAI、またはローカルの Ollama モデルを接続するとチャットを開始できます。",
+    vi: "Kết nối Gemini, OpenAI hoặc model Ollama cục bộ trong Cài đặt để bắt đầu trò chuyện.",
   },
+  "chat.greeting": {
+    en: "Ask me anything about your lessons.",
+    ja: "学習内容について何でも聞いてください。",
+    vi: "Hỏi mình bất cứ điều gì về bài học của bạn.",
+  },
+  "chat.placeholder": { en: "Type a message…", ja: "メッセージを入力…", vi: "Nhập tin nhắn…" },
+  "chat.send": { en: "Send", ja: "送信", vi: "Gửi" },
+  "chat.error": { en: "Something went wrong", ja: "エラーが発生しました", vi: "Đã xảy ra lỗi" },
 
   // Settings page
   "settings.title": { en: "Settings", ja: "設定", vi: "Cài đặt" },
@@ -255,6 +263,7 @@ export const translations: Translations = {
   "settings.provider": { en: "Provider", ja: "プロバイダー", vi: "Nhà cung cấp" },
   "settings.api_key": { en: "API key", ja: "APIキー", vi: "Khoá API" },
   "settings.base_url": { en: "Base URL", ja: "ベースURL", vi: "Base URL" },
+  "settings.model": { en: "Model (optional)", ja: "モデル（任意）", vi: "Model (tùy chọn)" },
   "settings.save": { en: "Save", ja: "保存", vi: "Lưu" },
   "settings.saved": { en: "Saved", ja: "保存しました", vi: "Đã lưu" },
   "settings.ollama_hint": {
