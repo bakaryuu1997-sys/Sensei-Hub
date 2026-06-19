@@ -1,105 +1,2125 @@
 {
   "title": { "en": "FE Exam Quiz", "ja": "基本情報技術者 クイズ", "vi": "Quiz Kỳ thi FE" },
-  "questions": [
+  "sets": [
     {
-      "id": "q1",
-      "question": {
-        "en": "What is the binary number 1010 in decimal?",
-        "ja": "2進数 1010 を10進数で表すといくつ？",
-        "vi": "Số nhị phân 1010 bằng bao nhiêu trong hệ thập phân?"
+      "id": "fe-a-1",
+      "category": "part-a",
+      "title": { "en": "Set 1: Basic Theory", "ja": "セット1：基礎理論", "vi": "Đề 1: Lý thuyết cơ bản" },
+      "description": {
+        "en": "Binary representations, two's complement, floating-point math, logical operations, and probability.",
+        "ja": "2進数、補数計算、浮動小数点数、論理代数、確率、集合など基礎知識を問います。",
+        "vi": "Số nhị phân, số bù 2, số thực dấu phẩy động, đại số logic, xác suất và lý thuyết tập hợp."
       },
-      "options": [
-        { "en": "8", "ja": "8", "vi": "8" },
-        { "en": "10", "ja": "10", "vi": "10" },
-        { "en": "12", "ja": "12", "vi": "12" },
-        { "en": "16", "ja": "16", "vi": "16" }
-      ],
-      "answer": 1,
-      "explanation": {
-        "en": "1010(2) = 8 + 0 + 2 + 0 = 10.",
-        "ja": "1010(2) = 8 + 0 + 2 + 0 = 10 です。",
-        "vi": "1010(2) = 8 + 0 + 2 + 0 = 10."
-      }
+      "questions": [
+        {
+          "id": "fe_s1_q1",
+          "question": {
+            "en": "What is the decimal representation of the 8-bit binary number 11011010 when represented in two's complement form?",
+            "ja": "8ビットの2進数 11011010 を2の補数形式で表現した場合、10進数で表すといくつ？",
+            "vi": "Giá trị thập phân của số nhị phân 8-bit 11011010 biểu diễn dưới dạng số bù 2 là bao nhiêu?"
+          },
+          "options": [
+            { "en": "-38", "ja": "-38", "vi": "-38" },
+            { "en": "-37", "ja": "-37", "vi": "-37" },
+            { "en": "218", "ja": "218", "vi": "218" },
+            { "en": "-90", "ja": "-90", "vi": "-90" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "In two's complement, the most significant bit (MSB) is negative. 11011010 = -128 + 64 + 16 + 8 + 2 = -38. Alternatively, invert the bits (00100101 -> 37) and add 1 -> 38, then add negative sign -> -38.",
+            "ja": "最上位ビット(MSB)が1のため負の数です。ビットを反転して1を加えると 00100101(37) + 1 = 38 となり、マイナスを付けて -38 となります。",
+            "vi": "Vì bit cao nhất (MSB) là 1 nên đây là số âm. Đảo ngược các bit (00100101 -> 37) rồi cộng thêm 1 -> 38, thêm dấu âm ta được -38."
+          }
+        },
+        {
+          "id": "fe_s1_q2",
+          "question": {
+            "en": "Which of the following describes the dynamic range of an 8-bit floating-point format relative to an 8-bit fixed-point format?",
+            "ja": "8ビットの浮動小数点表現と8ビットの固定小数点表現を比較したとき、浮動小数点の利点・特徴はどれ？",
+            "vi": "Đặc điểm về dải biểu diễn động (dynamic range) của số dấu phẩy động 8-bit so với số dấu phẩy tĩnh 8-bit là gì?"
+          },
+          "options": [
+            { "en": "It can represent a wider range of values but with less precision for very large numbers", "ja": "表現できる値の範囲（絶対値の最大値と最小値の比）は広いが、大きな数値での精度は低くなる", "vi": "Có thể biểu diễn dải giá trị rộng hơn nhưng độ chính xác sẽ thấp hơn đối với các số rất lớn" },
+            { "en": "It can represent values with higher precision but over a narrower range", "ja": "表現できる範囲は狭くなるが、常に一様な高い精度で表現できる", "vi": "Biểu diễn dải hẹp hơn nhưng độ chính xác đồng đều hơn" },
+            { "en": "It is faster to process mathematically in hardware than fixed-point", "ja": "ハードウェアでの演算処理速度が固定小数点よりも常に高速である", "vi": "Tốc độ xử lý tính toán bằng phần cứng luôn nhanh hơn số dấu phẩy tĩnh" },
+            { "en": "It eliminates rounding errors during division", "ja": "除算の際、丸め誤差が完全に発生しなくなる", "vi": "Loại bỏ hoàn toàn sai số làm tròn khi thực hiện phép chia" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Floating-point format allocates bits for exponents, allowing a vast dynamic range at the cost of precision (significand bits) for very large values.",
+            "ja": "浮動小数点数は指数部を持つため、固定小数点数に比べて非常に広い範囲の数値を表現できますが、仮数部のビット数が限られるため、絶対値が極めて大きい数値では有効桁数（精度）が低くなります。",
+            "vi": "Số dấu phẩy động phân bổ các bit cho phần mũ (exponent), cho phép biểu diễn dải giá trị cực rộng nhưng phải đánh đổi bằng độ chính xác (các bit phần lẻ) đối với các số lớn."
+          }
+        },
+        {
+          "id": "fe_s1_q3",
+          "question": {
+            "en": "According to boolean algebra, which of the following logical expressions is equivalent to the expression A + (A . B)?",
+            "ja": "論理代数の公式において、論理式 A ＋ (A ・ B) と等価なものはどれ？",
+            "vi": "Theo đại số boolean, biểu thức logic nào sau đây tương đương với biểu thức A + (A . B)?"
+          },
+          "options": [
+            { "en": "A", "ja": "A", "vi": "A" },
+            { "en": "B", "ja": "B", "vi": "B" },
+            { "en": "A + B", "ja": "A + B", "vi": "A + B" },
+            { "en": "A . B", "ja": "A ・ B", "vi": "A . B" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "This is the Absorption Law in Boolean algebra: A + (A . B) = A . (1 + B) = A . 1 = A.",
+            "ja": "これは論理代数における「吸収律」です。A ＋ (A ・ B) ＝ A ・ (1 ＋ B) ＝ A ・ 1 ＝ A となります。",
+            "vi": "Đây là Luật Hấp thụ trong đại số Boolean: A + (A . B) = A . (1 + B) = A . 1 = A."
+          }
+        },
+        {
+          "id": "fe_s1_q4",
+          "question": {
+            "en": "A system consists of three independent components, each with a probability of failure of 0.1. What is the probability that at least one component operates correctly?",
+            "ja": "それぞれ独立して動作し、故障確率が 0.1 である3つの部品で構成されるシステムがある。少なくとも1つの部品が正常に動作する確率はどれ？",
+            "vi": "Một hệ thống gồm ba thành phần hoạt động độc lập, mỗi thành phần có xác suất hỏng là 0.1. Xác suất để có ít nhất một thành phần hoạt động bình thường là bao nhiêu?"
+          },
+          "options": [
+            { "en": "0.999", "ja": "0.999", "vi": "0.999" },
+            { "en": "0.9", "ja": "0.9", "vi": "0.9" },
+            { "en": "0.729", "ja": "0.729", "vi": "0.729" },
+            { "en": "0.271", "ja": "0.271", "vi": "0.271" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Use the complement: The probability of all components failing is 0.1 * 0.1 * 0.1 = 0.001. Therefore, the probability of at least one operating correctly is 1 - 0.001 = 0.999.",
+            "ja": "余事象（すべて故障する確率）を計算します。すべて故障する確率は 0.1 × 0.1 × 0.1 ＝ 0.001 です。したがって、少なくとも1つが正常に動く確率は 1 − 0.001 ＝ 0.999 です。",
+            "vi": "Sử dụng biến cố đối (tất cả đều hỏng): Xác suất cả ba thành phần cùng hỏng là 0.1 * 0.1 * 0.1 = 0.001. Do đó xác suất ít nhất một cái chạy tốt là 1 - 0.001 = 0.999."
+          }
+        },
+        {
+          "id": "fe_s1_q5",
+          "question": {
+            "en": "In information theory, how much information (in bits) is gained by rolling a fair 8-sided die and observing the outcome?",
+            "ja": "情報理論において、同様に確からしい8面サイコロを1回振って出た目を知ったとき、得られる情報量は何ビット？",
+            "vi": "Trong lý thuyết thông tin, lượng thông tin (tính bằng bit) nhận được khi gieo một con xúc xắc cân đối 8 mặt và quan sát kết quả là bao nhiêu?"
+          },
+          "options": [
+            { "en": "3 bits", "ja": "3 ビット", "vi": "3 bits" },
+            { "en": "8 bits", "ja": "8 ビット", "vi": "8 bits" },
+            { "en": "1 bit", "ja": "1 ビット", "vi": "1 bit" },
+            { "en": "2.5 bits", "ja": "2.5 ビット", "vi": "2.5 bits" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The formula for self-information is I(x) = log2(1/P(x)). Since each side has probability 1/8, I = log2(8) = 3 bits.",
+            "ja": "選択肢が等確率で8つあるため、情報量 I ＝ log2(8) ＝ 3 ビットとなります。",
+            "vi": "Công thức tính lượng thông tin là I(x) = log2(1/P(x)). Vì xác suất mỗi mặt là 1/8, ta có I = log2(8) = 3 bits."
+          }
+        },
+        {
+          "id": "fe_s1_q6",
+          "question": {
+            "en": "Which of the following is equivalent to the NAND operation (A NAND B) using basic NOT, AND, or OR operators?",
+            "ja": "基本論理演算のみを用いて、NAND演算 (A NAND B) と同じ結果を得られる論理式はどれ？",
+            "vi": "Biểu thức nào sau đây tương đương với phép toán NAND (A NAND B) sử dụng các cổng logic cơ bản NOT, AND, hoặc OR?"
+          },
+          "options": [
+            { "en": "NOT A OR NOT B", "ja": "NOT A OR NOT B", "vi": "NOT A OR NOT B" },
+            { "en": "NOT A AND NOT B", "ja": "NOT A AND NOT B", "vi": "NOT A AND NOT B" },
+            { "en": "NOT (A OR B)", "ja": "NOT (A OR B)", "vi": "NOT (A OR B)" },
+            { "en": "A OR NOT B", "ja": "A OR NOT B", "vi": "A OR NOT B" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "By De Morgan's Law: NOT (A AND B) = NOT A OR NOT B.",
+            "ja": "ド・モルガンの法則により、NOT(A ・ B) ＝ NOT A ＋ NOT B となります。",
+            "vi": "Theo Định luật De Morgan: NOT (A AND B) = NOT A OR NOT B."
+          }
+        },
+        {
+          "id": "fe_s1_q7",
+          "question": {
+            "en": "In a Venn diagram of two sets X and Y, which region represents the logical expression (X AND NOT Y)?",
+            "ja": "2つの集合 X と Y のベン図において、論理式 (X AND NOT Y) が表す領域はどれ？",
+            "vi": "Trong biểu đồ Venn của hai tập hợp X và Y, vùng nào biểu diễn biểu thức logic (X AND NOT Y)?"
+          },
+          "options": [
+            { "en": "Elements in X but not in Y", "ja": "X に含まれるが、Y には含まれない部分", "vi": "Các phần tử thuộc X nhưng không thuộc Y" },
+            { "en": "Elements in the intersection of X and Y", "ja": "X と Y の共通部分（積集合）", "vi": "Các phần tử thuộc giao của X và Y" },
+            { "en": "Elements in Y but not in X", "ja": "Y に含まれるが、X には含まれない部分", "vi": "Các phần tử thuộc Y nhưng không thuộc X" },
+            { "en": "Elements outside both X and Y", "ja": "X と Y のどちらにも含まれない外側の部分", "vi": "Các phần tử nằm ngoài cả X và Y" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "(X AND NOT Y) corresponds to the relative complement of Y in X (often denoted as X \\ Y), which represents elements in X that do not belong to Y.",
+            "ja": "(X AND NOT Y) は、XからYの部分を除いた差集合（X ＼ Y）に該当します。",
+            "vi": "(X AND NOT Y) tương ứng với hiệu của hai tập hợp X và Y (ký hiệu X \\ Y), tức các phần tử thuộc X và không thuộc Y."
+          }
+        },
+        {
+          "id": "fe_s1_q8",
+          "question": {
+            "en": "If we want to represent decimal fraction 0.625 in 8-bit binary representation, what is the correct result?",
+            "ja": "10進数 0.625 を2進数で表現したとき、正しいものはどれ？",
+            "vi": "Số thập phân lẻ 0.625 được biểu diễn dưới dạng số nhị phân là gì?"
+          },
+          "options": [
+            { "en": "0.101", "ja": "0.101", "vi": "0.101" },
+            { "en": "0.11", "ja": "0.11", "vi": "0.11" },
+            { "en": "0.011", "ja": "0.011", "vi": "0.011" },
+            { "en": "0.1001", "ja": "0.1001", "vi": "0.1001" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "0.625 = 0.5 (2^-1) + 0.125 (2^-3) -> 0.101 in binary.",
+            "ja": "0.625 ＝ 0.5(2の-1乗) ＋ 0.125(2の-3乗) なので、2進数では 0.101 となります。",
+            "vi": "0.625 = 0.5 (2^-1) + 0.125 (2^-3) -> dạng nhị phân là 0.101."
+          }
+        },
+        {
+          "id": "fe_s1_q9",
+          "question": {
+            "en": "Which of the following states is guaranteed to happen when adding two positive binary numbers and getting a negative sign bit in a two's complement system?",
+            "ja": "2の補数表現システムにおいて、正の数同士を加算した結果、符号ビットが1（負）になった場合に発生している現象はどれ？",
+            "vi": "Trong hệ thống số bù 2, khi cộng hai số nhị phân dương mà kết quả lại có bit dấu bằng 1 (âm) thì hiện tượng gì đã xảy ra?"
+          },
+          "options": [
+            { "en": "Arithmetic Overflow", "ja": "算術オーバーフロー（桁あふれ）", "vi": "Tràn số học (Arithmetic Overflow)" },
+            { "en": "Underflow", "ja": "アンダーフロー", "vi": "Tràn dưới (Underflow)" },
+            { "en": "Zero Division Error", "ja": "ゼロ除算エラー", "vi": "Lỗi chia cho 0 (Zero Division)" },
+            { "en": "Parity Error", "ja": "パリティエラー", "vi": "Lỗi Parity (Parity Error)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Adding two positive numbers should yield a positive number. A negative result indicates that the value exceeded the maximum positive limit, causing an overflow into the sign bit.",
+            "ja": "正の数同士を加算した結果が負になるのは、表現できる最大正値を超えたために符号ビットに値が回り込んだこと（オーバーフロー）を意味します。",
+            "vi": "Cộng hai số dương thì kết quả phải là số dương. Việc nhận được số âm chỉ ra kết quả vượt quá giới hạn dương lớn nhất, gây ra tràn số vào bit dấu."
+          }
+        },
+        {
+          "id": "fe_s1_q10",
+          "question": {
+            "en": "What is the primary role of a generator polynomial in cyclic redundancy check (CRC) error detection?",
+            "ja": "巡回冗長検査(CRC)エラー検出における「生成多項式」の主な役割はどれ？",
+            "vi": "Vai trò chính của đa thức sinh (generator polynomial) trong phát hiện lỗi bằng mã CRC là gì?"
+          },
+          "options": [
+            { "en": "To divide the data block bit string to compute the remainder for the checksum", "ja": "送信データビット列を除算し、送信データに付加する剰余（チェックサム）を算出する", "vi": "Dùng để thực hiện phép chia dãy bit dữ liệu nhằm tính số dư làm checksum" },
+            { "en": "To encrypt the payload during network transit", "ja": "ネットワーク送信中にデータを暗号化する", "vi": "Mã hóa dữ liệu trong quá trình truyền tải trên mạng" },
+            { "en": "To synchronize clock timings between sender and receiver", "ja": "送信側と受信側のクロックタイミングを同期する", "vi": "Đồng bộ hóa xung nhịp giữa thiết bị gửi và nhận" },
+            { "en": "To compress data packets to reduce transfer size", "ja": "転送サイズを減らすためにデータパケットを圧縮する", "vi": "Nén các gói dữ liệu để giảm dung lượng đường truyền" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "In CRC, the sender divides the data bit string by a predefined generator polynomial using modulo-2 arithmetic. The remainder is appended as the checksum.",
+            "ja": "CRC方式では、送信データを特定のビットパターン（生成多項式）で2進の余りなし除算（XOR演算）し、得られた余り（剰余）をチェック用コードとしてデータに付加します。",
+            "vi": "Trong CRC, bên gửi chia dãy bit dữ liệu cho một đa thức sinh quy định trước bằng phép chia modulo-2. Phần dư thu được sẽ được gắn kèm làm checksum."
+          }
+        }
+      ]
     },
     {
-      "id": "q2",
-      "question": {
-        "en": "Which sorting algorithm has an average time complexity of O(n log n)?",
-        "ja": "平均計算量が O(n log n) のソートアルゴリズムはどれ？",
-        "vi": "Thuật toán sắp xếp nào có độ phức tạp trung bình O(n log n)?"
+      "id": "fe-a-2",
+      "category": "part-a",
+      "title": { "en": "Set 2: Computer Systems & Hardware", "ja": "セット2：システム構成 & ハードウェア", "vi": "Đề 2: Cấu trúc máy tính & Phần cứng" },
+      "description": {
+        "en": "CPU registers, cache memory access times, RAID systems, and system reliability (MTBF/MTTR).",
+        "ja": "プロセッサ、実効アクセス時間、RAIDの種類、信頼性指標（MTBF/MTTR・稼働率）について学びます。",
+        "vi": "Thanh ghi CPU, thời gian truy cập cache, các loại RAID và độ tin cậy hệ thống (MTBF/MTTR)."
       },
-      "options": [
-        { "en": "Bubble sort", "ja": "バブルソート", "vi": "Bubble sort" },
-        { "en": "Insertion sort", "ja": "挿入ソート", "vi": "Insertion sort" },
-        { "en": "Merge sort", "ja": "マージソート", "vi": "Merge sort" },
-        { "en": "Selection sort", "ja": "選択ソート", "vi": "Selection sort" }
-      ],
-      "answer": 2,
-      "explanation": {
-        "en": "Merge sort (and quicksort on average) runs in O(n log n); the others are O(n^2).",
-        "ja": "マージソート（および平均のクイックソート）は O(n log n)。他は O(n^2) です。",
-        "vi": "Merge sort (và quicksort trung bình) là O(n log n); các thuật toán còn lại là O(n^2)."
-      }
+      "questions": [
+        {
+          "id": "fe_s2_q1",
+          "question": {
+            "en": "In CPU architecture, what is the main purpose of the Program Counter (PC)?",
+            "ja": "CPU アーキテクチャにおいて、プログラムカウンタ(PC)の主な役割はどれ？",
+            "vi": "Trong kiến trúc CPU, mục đích chính của bộ đếm chương trình (Program Counter - PC) là gì?"
+          },
+          "options": [
+            { "en": "To store the address of the next instruction to be fetched and executed", "ja": "次にフェッチして実行すべき命令の格納アドレスを保持する", "vi": "Lưu trữ địa chỉ của lệnh tiếp theo cần được lấy ra và thực thi" },
+            { "en": "To count the total number of clock cycles since system boot", "ja": "起動後の総クロックサイクル数をカウントする", "vi": "Đếm tổng số chu kỳ xung nhịp kể từ khi khởi động hệ thống" },
+            { "en": "To hold the intermediate mathematical results of ALU operations", "ja": "ALUによる演算処理の中間結果を一時的に保持する", "vi": "Lưu giữ kết quả trung gian của các phép toán trong bộ ALU" },
+            { "en": "To store the decoded binary instruction code itself", "ja": "デコードされたバイナリ命令コードそのものを格納する", "vi": "Lưu trữ bản thân mã lệnh nhị phân sau khi đã giải mã" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The Program Counter (PC) holds the memory address of the next instruction. The Instruction Register (IR) holds the actual instruction, and the Accumulator (AC) holds ALU mathematical results.",
+            "ja": "プログラムカウンタ(PC)は「次に実行する命令のアドレス」を保持します。命令そのものを保持するのは命令レジスタ(IR)です。",
+            "vi": "Bộ đếm chương trình (PC) giữ địa chỉ ô nhớ chứa lệnh tiếp theo. Thanh ghi lệnh (IR) giữ bản thân mã lệnh, và bộ tích lũy (AC) giữ kết quả của ALU."
+          }
+        },
+        {
+          "id": "fe_s2_q2",
+          "question": {
+            "en": "A system has a cache memory access time of 10 nanoseconds and a main memory access time of 80 nanoseconds. If the cache hit ratio is 95%, what is the effective memory access time?",
+            "ja": "キャッシュメモリのアクセス時間が10ナノ秒、主記憶のアクセス時間が80ナノ秒のシステムにおいて、キャッシュのヒット率が95%のとき、実効アクセス時間は何ナノ秒？",
+            "vi": "Một hệ thống có thời gian truy cập cache là 10 nanosecond và thời gian truy cập bộ nhớ chính là 80 nanosecond. Nếu tỉ lệ trúng (hit ratio) của cache là 95%, thời gian truy cập bộ nhớ hiệu dụng là bao nhiêu?"
+          },
+          "options": [
+            { "en": "13.5 nanoseconds", "ja": "13.5 ナノ秒", "vi": "13.5 nanoseconds" },
+            { "en": "10.0 nanoseconds", "ja": "10.0 ナノ秒", "vi": "10.0 nanoseconds" },
+            { "en": "45.0 nanoseconds", "ja": "45.0 ナノ秒", "vi": "45.0 nanoseconds" },
+            { "en": "14.5 nanoseconds", "ja": "14.5 ナノ秒", "vi": "14.5 nanoseconds" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Effective access time = (Hit Ratio * Cache Time) + ((1 - Hit Ratio) * Main Memory Time). Here, (0.95 * 10) + (0.05 * 80) = 9.5 + 4.0 = 13.5 ns.",
+            "ja": "実効アクセス時間 ＝ （ヒット率 × キャッシュのアクセス時間） ＋ （（1 − ヒット率） × 主記憶のアクセス時間） で計算します。0.95 × 10 ＋ 0.05 × 80 ＝ 9.5 ＋ 4.0 ＝ 13.5 ナノ秒となります。",
+            "vi": "Thời gian truy cập hiệu dụng = (Tỉ lệ trúng * Thời gian cache) + ((1 - Tỉ lệ trúng) * Thời gian bộ nhớ chính) = (0.95 * 10) + (0.05 * 80) = 9.5 + 4.0 = 13.5 ns."
+          }
+        },
+        {
+          "id": "fe_s2_q3",
+          "question": {
+            "en": "Which of the following RAID configurations striping data across drives and writes parity information onto a single dedicated parity drive?",
+            "ja": "複数台のドライブにデータをストライピングし、かつ1台の「専用のパリティドライブ」に誤り訂正用のパリティ情報を書き込むRAID構成はどれ？",
+            "vi": "Cấu hình RAID nào phân tán dữ liệu dạng striping và ghi thông tin kiểm tra chẵn lẻ (parity) lên duy nhất một ổ đĩa parity chuyên dụng?"
+          },
+          "options": [
+            { "en": "RAID 3 / RAID 4", "ja": "RAID 3 / RAID 4", "vi": "RAID 3 / RAID 4" },
+            { "en": "RAID 0", "ja": "RAID 0", "vi": "RAID 0" },
+            { "en": "RAID 1", "ja": "RAID 1", "vi": "RAID 1" },
+            { "en": "RAID 5", "ja": "RAID 5", "vi": "RAID 5" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "RAID 3 (byte-level) and RAID 4 (block-level) use a dedicated parity drive. RAID 5 distributes parity across all drives. RAID 1 is mirroring, and RAID 0 is striping without parity.",
+            "ja": "パリティ専用ドライブを設けるのは RAID 3 や RAID 4 です。RAID 5 は全ドライブにパリティを分散して書き込みます。RAID 0 は冗長性がなく、RAID 1 はミラーリングです。",
+            "vi": "RAID 3 (theo byte) và RAID 4 (theo block) dùng một ổ đĩa parity riêng. RAID 5 phân bổ parity đều trên các ổ. RAID 1 là sao chép gương (mirroring), và RAID 0 là striping không có parity."
+          }
+        },
+        {
+          "id": "fe_s2_q4",
+          "question": {
+            "en": "A system operates for 900 hours on average between failures, and takes 100 hours on average to repair and bring back online. What is the availability of this system?",
+            "ja": "平均故障間隔(MTBF)が900時間、平均修復時間(MTTR)が100時間であるシステムの稼働率はどれ？",
+            "vi": "Một hệ thống hoạt động trung bình 900 giờ giữa các lần hỏng (MTBF) và mất trung bình 100 giờ để sửa chữa (MTTR). Hệ số sẵn sàng (availability) của hệ thống là bao nhiêu?"
+          },
+          "options": [
+            { "en": "0.90", "ja": "0.90", "vi": "0.90" },
+            { "en": "0.10", "ja": "0.10", "vi": "0.10" },
+            { "en": "0.95", "ja": "0.95", "vi": "0.95" },
+            { "en": "0.99", "ja": "0.99", "vi": "0.99" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Availability = MTBF / (MTBF + MTTR) = 900 / (900 + 100) = 900 / 1000 = 0.90 (90%).",
+            "ja": "稼働率の計算式は MTBF ÷ (MTBF ＋ MTTR) です。900 ÷ (900 ＋ 100) ＝ 0.90 (90%) となります。",
+            "vi": "Hệ số sẵn sàng = MTBF / (MTBF + MTTR) = 900 / (900 + 100) = 900 / 1000 = 0.90 (90%)."
+          }
+        },
+        {
+          "id": "fe_s2_q5",
+          "question": {
+            "en": "Two identical computer servers, each with an availability of 0.8, are configured in a parallel system. What is the overall availability of this parallel configuration?",
+            "ja": "稼働率がともに 0.8 である同性能のサーバー2台を並列に接続したシステム全体の稼働率はどれ？",
+            "vi": "Hai máy chủ giống hệt nhau, mỗi chiếc có hệ số sẵn sàng là 0.8, được thiết lập chạy song song. Hệ số sẵn sàng của cả hệ thống song song này là bao nhiêu?"
+          },
+          "options": [
+            { "en": "0.96", "ja": "0.96", "vi": "0.96" },
+            { "en": "0.64", "ja": "0.64", "vi": "0.64" },
+            { "en": "0.80", "ja": "0.80", "vi": "0.80" },
+            { "en": "0.99", "ja": "0.99", "vi": "0.99" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Parallel availability = 1 - (1 - a)^2. Here, 1 - (1 - 0.8)^2 = 1 - (0.2)^2 = 1 - 0.04 = 0.96.",
+            "ja": "並列システムの稼働率は 1 − (1 − 稼働率)の乗数 で計算します。1 − (1 − 0.8) × (1 − 0.8) ＝ 1 − 0.04 ＝ 0.96 となります。",
+            "vi": "Hệ số sẵn sàng chạy song song = 1 - (1 - a)^2. Ta có 1 - (1 - 0.8)^2 = 1 - (0.2)^2 = 1 - 0.04 = 0.96."
+          }
+        },
+        {
+          "id": "fe_s2_q6",
+          "question": {
+            "en": "Which memory type requires periodic electrical refresh cycles to maintain its stored data?",
+            "ja": "保持しているデータを維持するために、周期的な電荷のリフレッシュ（再書き込み）動作が必要なメモリチップはどれ？",
+            "vi": "Loại bộ nhớ nào yêu cầu các chu kỳ nạp lại điện tích (refresh) định kỳ để duy trì dữ liệu đã lưu?"
+          },
+          "options": [
+            { "en": "DRAM", "ja": "DRAM", "vi": "DRAM" },
+            { "en": "SRAM", "ja": "SRAM", "vi": "SRAM" },
+            { "en": "EEPROM", "ja": "EEPROM", "vi": "EEPROM" },
+            { "en": "Flash Memory", "ja": "フラッシュメモリ", "vi": "Flash Memory" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "DRAM (Dynamic RAM) stores bits using capacitors, which leak charge and require periodic refreshing. SRAM (Static RAM) uses flip-flops and does not require refreshing.",
+            "ja": "DRAMはコンデンサに電荷を蓄えることで情報を保持するため、放電対策として一定時間ごとのリフレッシュ動作が必要です。SRAMはフリップフロップ回路を用いるため不要です。",
+            "vi": "DRAM (Dynamic RAM) lưu dữ liệu bằng tụ điện, điện tích sẽ bị rò rỉ nên cần nạp lại định kỳ. SRAM dùng flip-flop nên không cần refresh."
+          }
+        },
+        {
+          "id": "fe_s2_q7",
+          "question": {
+            "en": "In microprocessors, what does 'pipelining' accomplish?",
+            "ja": "プロセッサの処理方式における「パイプライン処理」が実現することはどれ？",
+            "vi": "Trong bộ vi xử lý, kỹ thuật đường ống 'pipelining' đạt được mục đích gì?"
+          },
+          "options": [
+            { "en": "Overlapping the execution phases of multiple instructions to increase throughput", "ja": "複数の命令の実行ステージを重ね合わせて並行実行することで、スループットを向上させる", "vi": "Thực hiện gối đầu (chồng chéo) các giai đoạn của nhiều lệnh để tăng thông lượng xử lý" },
+            { "en": "Executing multiple separate threads of a program on different cores simultaneously", "ja": "プログラムの異なるスレッドを複数のコアで完全に同時に処理する", "vi": "Thực thi nhiều luồng của chương trình trên các nhân khác nhau cùng lúc" },
+            { "en": "Increasing the physical clock frequency of the processor chip", "ja": "プロセッサチップ自体の動作クロック周波数を引き上げる", "vi": "Tăng tần số xung nhịp vật lý của bộ vi xử lý" },
+            { "en": "Reducing the size of the CPU registers to consume less power", "ja": "消費電力を削減するためにCPUレジスタのサイズを小さくする", "vi": "Giảm kích thước các thanh ghi CPU để tiêu thụ ít điện năng hơn" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Pipelining divides instruction execution into stages (fetch, decode, execute, etc.) and executes them in an overlapping manner, boosting overall instruction throughput.",
+            "ja": "パイプライン処理は、命令実行ステップ（フェッチ、デコード、実行等）を分割し、1つの命令の処理が終わる前に次の命令の処理を開始することで、単位時間あたりの処理量（スループット）を向上させます。",
+            "vi": "Pipelining chia việc thực thi lệnh thành các giai đoạn (lấy lệnh, giải mã, thực thi,...) và chạy gối đầu chúng, giúp cải thiện tổng thông lượng lệnh."
+          }
+        },
+        {
+          "id": "fe_s2_q8",
+          "question": {
+            "en": "What is the key advantage of solid-state drives (SSDs) over traditional hard disk drives (HDDs)?",
+            "ja": "従来の磁気ハードディスク(HDD)と比較した、ソリッドステートドライブ(SSD)の主な利点はどれ？",
+            "vi": "Ưu điểm chính của ổ cứng thể rắn (SSD) so với ổ đĩa cứng truyền thống (HDD) là gì?"
+          },
+          "options": [
+            { "en": "Lower seek times and faster random data access due to lack of moving mechanical parts", "ja": "駆動部品がないためシーク動作が発生せず、ランダムアクセスが非常に高速である", "vi": "Thời gian tìm kiếm thấp và truy cập dữ liệu ngẫu nhiên nhanh hơn do không có các bộ phận cơ học chuyển động" },
+            { "en": "Infinite write cycle endurance limits", "ja": "書き込み寿命制限が一切なく、無限に書き換え可能である", "vi": "Độ bền ghi dữ liệu là vô hạn" },
+            { "en": "Lower cost per gigabyte of storage", "ja": "ストレージ容量1ギガバイトあたりの単価が非常に安い", "vi": "Chi phí trên mỗi gigabyte dung lượng rẻ hơn" },
+            { "en": "Higher sensitivity to high physical vibration environments", "ja": "物理的な振動に対してHDDよりも壊れやすい", "vi": "Nhạy cảm hơn với rung động vật lý mạnh" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "SSDs use flash memory and have no moving parts, resulting in near-zero seek times and superior random access speeds.",
+            "ja": "SSDはフラッシュメモリを利用するため機械的な駆動部がなく、HDDで発生するシーク待ち時間や回転待ち時間が存在しないため、ランダムアクセスが圧倒的に高速です。",
+            "vi": "SSD sử dụng bộ nhớ flash và không có bộ phận chuyển động, giúp thời gian tìm kiếm gần như bằng không và đạt tốc độ đọc ghi ngẫu nhiên vượt trội."
+          }
+        },
+        {
+          "id": "fe_s2_q9",
+          "question": {
+            "en": "Which of the following RAID levels provides only data striping without any form of redundancy or parity?",
+            "ja": "冗長化やパリティを一切行わず、データのストライピング（分散配置）のみを実行するRAIDレベルはどれ？",
+            "vi": "Cấp độ RAID nào chỉ cung cấp tính năng phân tách dữ liệu (striping) mà không có bất kỳ cơ chế sao lưu hay parity nào?"
+          },
+          "options": [
+            { "en": "RAID 0", "ja": "RAID 0", "vi": "RAID 0" },
+            { "en": "RAID 1", "ja": "RAID 1", "vi": "RAID 1" },
+            { "en": "RAID 5", "ja": "RAID 5", "vi": "RAID 5" },
+            { "en": "RAID 6", "ja": "RAID 6", "vi": "RAID 6" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "RAID 0 stripes data across multiple disks to improve performance. However, if one disk fails, all data is lost because there is no redundancy.",
+            "ja": "RAID 0 はデータを複数ディスクに分散して書き込む（ストライピング）ことで高速化しますが、ミラーリングやパリティ生成を行わないため、1台のディスク故障で全データが破損します。",
+            "vi": "RAID 0 chia nhỏ dữ liệu ra các ổ đĩa để tăng hiệu suất. Tuy nhiên chỉ cần một ổ hỏng là mất toàn bộ dữ liệu vì không có cơ chế dự phòng."
+          }
+        },
+        {
+          "id": "fe_s2_q10",
+          "question": {
+            "en": "What is the main purpose of virtual memory in operating systems?",
+            "ja": "オペレーティングシステムにおける「仮想メモリ（仮想記憶）」の主な目的はどれ？",
+            "vi": "Mục đích chính của bộ nhớ ảo (virtual memory) trong hệ điều hành là gì?"
+          },
+          "options": [
+            { "en": "To allow programs to run as if there is more physical memory (RAM) than is actually installed by utilizing secondary storage space", "ja": "補助記憶装置を利用し、実際に搭載されている物理メモリ（RAM）以上のメモリ空間をプログラムに提供する", "vi": "Sử dụng bộ nhớ phụ để cung cấp cho chương trình không gian bộ nhớ lớn hơn dung lượng RAM vật lý thực tế" },
+            { "en": "To clear unneeded memory space of background processes automatically", "ja": "バックグラウンドプロセスの不要なメモリ領域を自動的にクリアする", "vi": "Tự động dọn dẹp các vùng nhớ không dùng của tiến trình chạy ngầm" },
+            { "en": "To speed up graphic rendering in computer displays", "ja": "ディスプレイの描画速度を向上させる", "vi": "Tăng tốc độ hiển thị hình ảnh trên màn hình máy tính" },
+            { "en": "To prevent viruses from writing scripts inside the boot sector", "ja": "ウイルスがブートセクタに侵入してコードを書き換えるのを防止する", "vi": "Ngăn chặn virus ghi đè các đoạn mã vào boot sector" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Virtual memory creates an illusion of a large main memory space by mapping virtual addresses to physical RAM and secondary disk storage (swapping/paging).",
+            "ja": "仮想記憶は、主記憶装置（RAM）の容量限界を補うため、ハードディスクなどの補助記憶装置の一部を主記憶のように見せかけ、より大きなプログラムの実行を可能にします。",
+            "vi": "Bộ nhớ ảo tạo ra ảo giác về một không gian RAM lớn bằng cách ánh xạ các địa chỉ ảo vào RAM vật lý và một phần ổ đĩa cứng (quá trình swapping/paging)."
+          }
+        }
+      ]
     },
     {
-      "id": "q3",
-      "question": {
-        "en": "What is the main role of DNS?",
-        "ja": "DNS の主な役割は？",
-        "vi": "Vai trò chính của DNS là gì?"
+      "id": "fe-a-3",
+      "category": "part-a",
+      "title": { "en": "Set 3: Data Structures & Algorithms", "ja": "セット3：データ構造 & アルゴリズム", "vi": "Đề 3: Cấu trúc dữ liệu & Thuật toán" },
+      "description": {
+        "en": "Stacks, queues, binary trees, sorting algorithms, and binary search mechanics.",
+        "ja": "スタックとキューの仕組み、2分木の探索、各種ソートアルゴリズムの計算量を整理します。",
+        "vi": "Cơ chế ngăn xếp, hàng đợi, cây nhị phân, thuật toán sắp xếp và tìm kiếm nhị phân."
       },
-      "options": [
-        { "en": "Encrypt network traffic", "ja": "通信を暗号化する", "vi": "Mã hóa lưu lượng mạng" },
-        { "en": "Resolve domain names to IP addresses", "ja": "ドメイン名を IP アドレスに変換する", "vi": "Phân giải tên miền thành địa chỉ IP" },
-        { "en": "Assign IP addresses dynamically", "ja": "IP アドレスを動的に割り当てる", "vi": "Cấp phát IP động" },
-        { "en": "Route packets between networks", "ja": "ネットワーク間でパケットを転送する", "vi": "Định tuyến gói tin giữa các mạng" }
-      ],
-      "answer": 1,
-      "explanation": {
-        "en": "DNS maps human-readable names (example.com) to IP addresses. Dynamic IPs are DHCP; routing is the router's job.",
-        "ja": "DNS は名前（example.com）を IP に対応付けます。動的 IP は DHCP、ルーティングはルータの役割です。",
-        "vi": "DNS ánh xạ tên (example.com) sang IP. Cấp IP động là DHCP; định tuyến là việc của router."
-      }
+      "questions": [
+        {
+          "id": "fe_s3_q1",
+          "question": {
+            "en": "If characters 'A', 'B', and 'C' are pushed onto a stack in that order, and then two pop operations are performed, which character is left in the stack?",
+            "ja": "スタックに対して 'A'、'B'、'C' の順にデータを追加(push)し、その後2回データを取り出す(pop)操作を行ったとき、スタックに残っている文字はどれ？",
+            "vi": "Nếu các ký tự 'A', 'B', 'C' được lần lượt đưa vào (push) một ngăn xếp (stack), sau đó thực hiện 2 lệnh lấy ra (pop), ký tự nào còn lại trong ngăn xếp?"
+          },
+          "options": [
+            { "en": "A", "ja": "A", "vi": "A" },
+            { "en": "B", "ja": "B", "vi": "B" },
+            { "en": "C", "ja": "C", "vi": "C" },
+            { "en": "No characters left (empty)", "ja": "何も残っていない（空状態）", "vi": "Không còn ký tự nào (trống)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "A stack is Last-In, First-Out (LIFO). Pushing A, B, C makes the stack [A, B, C]. Popping twice removes C, then B, leaving [A] in the stack.",
+            "ja": "スタックは後入れ先出し(LIFO)です。A, B, C の順に追加した状態は [A, B, C] となり、1回目のpopで最上部の C が、2回目のpopで B が取り出され、底にある A が残ります。",
+            "vi": "Ngăn xếp hoạt động theo cơ chế vào sau ra trước (LIFO). Đưa vào A, B, C tạo cấu trúc [A, B, C]. Lấy ra 2 lần sẽ gỡ C rồi đến B, còn lại [A]."
+          }
+        },
+        {
+          "id": "fe_s3_q2",
+          "question": {
+            "en": "In a queue data structure, what is the behavior rule for insertion and deletion?",
+            "ja": "キューというデータ構造における、データの追加および取り出しの規則はどれ？",
+            "vi": "Quy tắc hoạt động khi thêm và xóa phần tử trong cấu trúc dữ liệu hàng đợi (queue) là gì?"
+          },
+          "options": [
+            { "en": "First-In, First-Out (FIFO)", "ja": "先入れ先出し (FIFO)", "vi": "Vào trước, ra trước (FIFO)" },
+            { "en": "Last-In, First-Out (LIFO)", "ja": "後入れ先出し (LIFO)", "vi": "Vào sau, ra trước (LIFO)" },
+            { "en": "Random access by memory index", "ja": "インデックスによるランダムアクセス", "vi": "Truy cập ngẫu nhiên theo chỉ mục bộ nhớ" },
+            { "en": "Highest priority key first", "ja": "優先度の高いデータから順に取り出す", "vi": "Lấy phần tử có độ ưu tiên cao nhất ra trước" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "A queue is First-In, First-Out (FIFO). The first element added is the first one to be removed, like a waiting line.",
+            "ja": "キューは先入れ先出し(FIFO)です。行列（レジの並びなど）と同じように、先に追加されたデータから順に取り出されます。スタックのLIFOと対比されます。",
+            "vi": "Hàng đợi hoạt động theo cơ chế vào trước ra trước (FIFO). Phần tử được thêm vào đầu tiên sẽ là phần tử đầu tiên được lấy ra."
+          }
+        },
+        {
+          "id": "fe_s3_q3",
+          "question": {
+            "en": "What is the worst-case time complexity of the bubble sort algorithm?",
+            "ja": "バブルソートアルゴリズムの最悪時間計算量はどれ？",
+            "vi": "Độ phức tạp thời gian trong trường hợp xấu nhất của thuật toán sắp xếp nổi bọt (bubble sort) là bao nhiêu?"
+          },
+          "options": [
+            { "en": "O(n^2)", "ja": "O(n^2)", "vi": "O(n^2)" },
+            { "en": "O(n log n)", "ja": "O(n log n)", "vi": "O(n log n)" },
+            { "en": "O(n)", "ja": "O(n)", "vi": "O(n)" },
+            { "en": "O(log n)", "ja": "O(log n)", "vi": "O(log n)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Bubble sort compares adjacent elements. In the worst case (reverse sorted array), it makes (n*(n-1))/2 comparisons, which is O(n^2).",
+            "ja": "バブルソートは隣り合う要素の比較と入れ替えを繰り返すため、最悪・平均ともに O(n^2) の計算量がかかります。",
+            "vi": "Bubble sort so sánh các phần tử kề nhau. Trường hợp xấu nhất (mảng bị ngược), nó thực hiện (n*(n-1))/2 phép so sánh, tương ứng O(n^2)."
+          }
+        },
+        {
+          "id": "fe_s3_q4",
+          "question": {
+            "en": "Which sorting algorithm operates by partitioning the array into sub-arrays around a pivot element such that elements smaller than pivot are on the left and larger on the right?",
+            "ja": "基準値（ピボット）を選択し、それより小さい要素を左側、大きい要素を右側に集める分割を繰り返すことで高速にソートするアルゴリズムはどれ？",
+            "vi": "Thuật toán sắp xếp nào hoạt động bằng cách chia mảng thành các mảng con xung quanh một phần tử chốt (pivot), sao cho các phần tử nhỏ hơn chốt ở bên trái và lớn hơn ở bên phải?"
+          },
+          "options": [
+            { "en": "Quicksort", "ja": "クイックソート", "vi": "Quicksort" },
+            { "en": "Mergesort", "ja": "マージソート", "vi": "Mergesort" },
+            { "en": "Heapsort", "ja": "ヒープソート", "vi": "Heapsort" },
+            { "en": "Selection sort", "ja": "選択ソート", "vi": "Selection sort" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Quicksort is a divide-and-conquer algorithm that partitions an array around a selected pivot, running in O(n log n) average time.",
+            "ja": "基準値（ピボット）をベースにしてデータを分割していくアプローチはクイックソートの特徴です。平均的な計算量は O(n log n) で極めて高速です。",
+            "vi": "Quicksort là thuật toán chia để trị, phân tách mảng dựa trên phần tử chốt (pivot) đã chọn, thời gian chạy trung bình đạt O(n log n)."
+          }
+        },
+        {
+          "id": "fe_s3_q5",
+          "question": {
+            "en": "What is the maximum number of comparisons required to find a target value in a sorted array of 1,024 elements using a binary search algorithm?",
+            "ja": "整列済みの1,024個の要素からなる配列に対して、2分探索法を用いて目的の値を探索する場合、最大で何回の比較が必要？",
+            "vi": "Số lần so sánh tối đa cần thiết để tìm giá trị trong một mảng đã sắp xếp gồm 1,024 phần tử bằng thuật toán tìm kiếm nhị phân là bao nhiêu?"
+          },
+          "options": [
+            { "en": "11 comparisons", "ja": "11 回", "vi": "11 comparisons" },
+            { "en": "10 comparisons", "ja": "10 回", "vi": "10 comparisons" },
+            { "en": "512 comparisons", "ja": "512 回", "vi": "512 comparisons" },
+            { "en": "1,024 comparisons", "ja": "1,024 回", "vi": "1,024 comparisons" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Binary search halves the search space each step. log2(1024) = 10, but in the worst case we make 11 comparisons (10 steps to reduce to size 1, plus 1 final check to confirm if matched).",
+            "ja": "2分探索の最悪比較回数は log2(N) ＋ 1（端数切り捨て）で求められます。1024 ＝ 2の10乗 なので、10 ＋ 1 ＝ 11 回となります。",
+            "vi": "Tìm kiếm nhị phân chia đôi không gian mỗi bước. log2(1024) = 10, nhưng trong trường hợp xấu nhất cần tối đa 11 lần so sánh để xác định có khớp hay không."
+          }
+        },
+        {
+          "id": "fe_s3_q6",
+          "question": {
+            "en": "In a binary search tree, where are elements smaller than the root node positioned?",
+            "ja": "2分探索木(Binary Search Tree)において、ルート（根）ノードよりも値が小さい要素はどこに配置される？",
+            "vi": "Trong cây nhị phân tìm kiếm, các phần tử có giá trị nhỏ hơn nút gốc (root node) được đặt ở đâu?"
+          },
+          "options": [
+            { "en": "In the left subtree of the root", "ja": "ルートノードの左側の部分木", "vi": "Ở cây con bên trái của nút gốc" },
+            { "en": "In the right subtree of the root", "ja": "ルートノードの右側の部分木", "vi": "Ở cây con bên phải của nút gốc" },
+            { "en": "Directly as the sibling of the root", "ja": "ルートノードの兄弟ノードとして並列に", "vi": "Trở thành nút anh em trực tiếp của nút gốc" },
+            { "en": "At the leaf node furthest to the right", "ja": "最も右端にあるリーフ（葉）ノード", "vi": "Tại nút lá nằm ngoài cùng bên phải" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "By definition, in a binary search tree, the left subtree of a node contains only nodes with keys lesser than the node's key, and the right subtree contains keys greater.",
+            "ja": "2分探索木では、「左の子ノード ＜ 親ノード ＜ 右の子ノード」という規則がすべての部分木で成り立ちます。したがって、親（ルート）より小さい値は必ず左側に配置されます。",
+            "vi": "Theo định nghĩa cây nhị phân tìm kiếm, cây con bên trái chỉ chứa các nút có giá trị nhỏ hơn nút cha, và cây con bên phải chứa các nút lớn hơn."
+          }
+        },
+        {
+          "id": "fe_s3_q7",
+          "question": {
+            "en": "Which traversal method visits nodes of a binary tree in the order: Left child -> Root -> Right child?",
+            "ja": "2分木の各ノードを「左部分木 → ルートノード → 右部分木」の順に訪問していく巡回（トラバーサル）方法はどれ？",
+            "vi": "Phương pháp duyệt cây nhị phân nào đi qua các nút theo thứ tự: Cây con trái -> Nút gốc -> Cây con phải?"
+          },
+          "options": [
+            { "en": "In-order traversal", "ja": "中間順巡回（通りがけ順 / In-order）", "vi": "Duyệt giữa (In-order)" },
+            { "en": "Pre-order traversal", "ja": "先行順巡回（前順 / Pre-order）", "vi": "Duyệt trước (Pre-order)" },
+            { "en": "Post-order traversal", "ja": "後行順巡回（後順 / Post-order）", "vi": "Duyệt sau (Post-order)" },
+            { "en": "Breadth-first traversal", "ja": "幅優先巡回（レベル順）", "vi": "Duyệt theo chiều rộng (Breadth-first)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "In-order traversal visits left, root, then right. Pre-order is root, left, right. Post-order is left, right, root.",
+            "ja": "通りがけ順(In-order)は「左→親→右」の順です。先行順(Pre-order)は「親→左→右」、後行順(Post-order)は「左→右→親」の順で走査します。",
+            "vi": "Duyệt In-order đi từ trái, gốc, đến phải. Pre-order là gốc, trái, phải. Post-order là trái, phải, gốc."
+          }
+        },
+        {
+          "id": "fe_s3_q8",
+          "question": {
+            "en": "What is the primary benefit of using a hash table instead of a simple array for searching elements?",
+            "ja": "要素の検索において、単なる配列ではなく「ハッシュテーブル」を使用する主なメリットはどれ？",
+            "vi": "Lợi ích chính của việc sử dụng bảng băm (hash table) thay vì mảng thông thường để tìm kiếm phần tử là gì?"
+          },
+          "options": [
+            { "en": "Average search time complexity is O(1) regardless of data size", "ja": "データ件数に依存せず、平均して O(1) （定数時間）で高速に検索できる", "vi": "Độ phức tạp thời gian tìm kiếm trung bình là O(1) bất kể kích thước dữ liệu" },
+            { "en": "It automatically keeps the elements in sorted order", "ja": "要素を追加した際に自動的にソート順に並び替えられる", "vi": "Tự động sắp xếp các phần tử theo thứ tự" },
+            { "en": "It uses significantly less physical memory space", "ja": "物理メモリの消費量が極めて少ない", "vi": "Tiêu tốn ít dung lượng bộ nhớ vật lý hơn" },
+            { "en": "It avoids key collision issues entirely", "ja": "キーの衝突（シノニムの発生）が完全に回避される", "vi": "Tránh được hoàn toàn sự cố xung đột khóa (collision)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Hash tables map keys to index buckets using a hash function, yielding average O(1) search complexity. However, collisions can still occur.",
+            "ja": "ハッシュ関数によりキー値から直接格納位置を算出するため、データ件数が多くなっても平均 O(1) の定数時間でデータを取り出せます。衝突（シノニム）対策は別途必要です。",
+            "vi": "Bảng băm ánh xạ khóa thành chỉ mục bằng hàm băm, mang lại độ phức tạp tìm kiếm trung bình O(1). Tuy vậy vẫn có thể xảy ra xung đột khóa."
+          }
+        },
+        {
+          "id": "fe_s3_q9",
+          "question": {
+            "en": "Which sorting algorithm recursively divides the unsorted list into sublists until each sublist contains 1 element, and then merges them back in sorted order?",
+            "ja": "リストを要素数が1になるまで再帰的に2分割していき、その後、整列しながら再度結合（マージ）して並び替えるアルゴリズムはどれ？",
+            "vi": "Thuật toán sắp xếp nào chia đệ quy danh sách chưa sắp xếp thành các danh sách con cho đến khi mỗi danh sách con chỉ chứa 1 phần tử, rồi gộp chúng lại theo thứ tự đã sắp xếp?"
+          },
+          "options": [
+            { "en": "Merge sort", "ja": "マージソート", "vi": "Merge sort" },
+            { "en": "Quicksort", "ja": "クイックソート", "vi": "Quicksort" },
+            { "en": "Insertion sort", "ja": "挿入ソート", "vi": "Insertion sort" },
+            { "en": "Bubble sort", "ja": "バブルソート", "vi": "Bubble sort" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Merge sort is a stable divide-and-conquer sorting algorithm. It halves arrays recursively, then merges sorted subarrays back, operating in O(n log n) worst-case time.",
+            "ja": "要素数が1になるまで細かく分解したのち、ソートしながらマージ（結合）を繰り返すのはマージソートの手順です。最悪時間計算量は O(n log n) です。",
+            "vi": "Merge sort là thuật toán chia để trị có tính ổn định. Nó chia đôi mảng đệ quy, sau đó gộp các mảng con đã xếp, chạy với thời gian xấu nhất O(n log n)."
+          }
+        },
+        {
+          "id": "fe_s3_q10",
+          "question": {
+            "en": "What is the main limitation of the binary search algorithm?",
+            "ja": "2分探索法（バイナリサーチ）を使用する上での最大の制限（前提条件）はどれ？",
+            "vi": "Hạn chế hoặc điều kiện tiên quyết lớn nhất khi sử dụng thuật toán tìm kiếm nhị phân là gì?"
+          },
+          "options": [
+            { "en": "The array must be sorted beforehand", "ja": "探索対象の配列データがあらかじめソート（整列）されていなければならない", "vi": "Mảng dữ liệu cần tìm kiếm phải được sắp xếp trước đó" },
+            { "en": "It only works on arrays containing string values", "ja": "文字列データを含む配列に対してしか動作しない", "vi": "Chỉ hoạt động trên các mảng chứa dữ liệu chuỗi" },
+            { "en": "It has a worst-case time complexity of O(n^2)", "ja": "最悪時の時間計算量が O(n^2) と非常に遅い", "vi": "Độ phức tạp thời gian trường hợp xấu nhất là O(n^2)" },
+            { "en": "It requires twice as much memory space as a linear search", "ja": "線形探索の2倍のメモリ空間を必要とする", "vi": "Yêu cầu lượng bộ nhớ gấp đôi so với tìm kiếm tuyến tính" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Binary search requires comparing the middle element of a sorted list. If the list is unsorted, binary search fails because it cannot reliably determine which half to discard.",
+            "ja": "2分探索は中央の値との大小を比較して探索範囲を半分にしていくため、対象となるデータ列が昇順または降順に並んでいる必要があります。",
+            "vi": "Tìm kiếm nhị phân so sánh phần tử giữa mảng đã sắp xếp. Nếu mảng chưa xếp, thuật toán không thể xác định bỏ đi nửa nào để thu hẹp phạm vi."
+          }
+        }
+      ]
     },
     {
-      "id": "q4",
-      "question": {
-        "en": "What is the primary purpose of database normalization?",
-        "ja": "データベース正規化の主な目的は？",
-        "vi": "Mục đích chính của chuẩn hóa cơ sở dữ liệu là gì?"
+      "id": "fe-a-4",
+      "category": "part-a",
+      "title": { "en": "Set 4: Databases", "ja": "セット4：データベース", "vi": "Đề 4: Cơ sở dữ liệu" },
+      "description": {
+        "en": "Relational algebra, schema normalization (1NF-3NF), SQL queries, and transaction ACID properties.",
+        "ja": "関係モデル、データベースの正規化、SQL、トランザクションのACID特性について復習します。",
+        "vi": "Quan hệ đại số, chuẩn hóa lược đồ (1NF-3NF), truy vấn SQL và thuộc tính ACID của giao dịch."
       },
-      "options": [
-        { "en": "Increase data redundancy", "ja": "データの重複を増やす", "vi": "Tăng dư thừa dữ liệu" },
-        { "en": "Reduce redundancy and update anomalies", "ja": "重複や更新時の不整合を減らす", "vi": "Giảm dư thừa và bất thường khi cập nhật" },
-        { "en": "Make queries always faster", "ja": "クエリを常に高速化する", "vi": "Luôn làm truy vấn nhanh hơn" },
-        { "en": "Remove the need for primary keys", "ja": "主キーを不要にする", "vi": "Loại bỏ nhu cầu khóa chính" }
-      ],
-      "answer": 1,
-      "explanation": {
-        "en": "Normalization organizes data to minimize redundancy and avoid update/insert/delete anomalies.",
-        "ja": "正規化はデータを整理し、重複と更新・挿入・削除時の不整合を最小化します。",
-        "vi": "Chuẩn hóa tổ chức dữ liệu để giảm dư thừa và tránh bất thường khi thêm/sửa/xóa."
-      }
+      "questions": [
+        {
+          "id": "fe_s4_q1",
+          "question": {
+            "en": "Which of the following database concepts describes a column (or set of columns) that uniquely identifies a row within a table?",
+            "ja": "リレーショナルデータベースにおいて、テーブル内の1つのレコードを唯一無二に特定できる列（または列の組み合わせ）を何と呼ぶ？",
+            "vi": "Khái niệm nào trong cơ sở dữ liệu mô tả một cột (hoặc tập hợp cột) định danh duy nhất một hàng trong bảng?"
+          },
+          "options": [
+            { "en": "Primary Key", "ja": "主キー (Primary Key)", "vi": "Khóa chính (Primary Key)" },
+            { "en": "Foreign Key", "ja": "外部キー (Foreign Key)", "vi": "Khóa ngoại (Foreign Key)" },
+            { "en": "Candidate Key", "ja": "候補キー (Candidate Key)", "vi": "Khóa ứng viên (Candidate Key)" },
+            { "en": "Superkey", "ja": "スーパーキー (Superkey)", "vi": "Siêu khóa (Superkey)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "A Primary Key is the candidate key chosen by the database designer to uniquely identify records. Candidate keys are all keys capable of being primary keys.",
+            "ja": "レコードを一意に識別するために設定される列は「主キー」です。一意に特定できる候補となる列全体は「候補キー」と呼びます。",
+            "vi": "Khóa chính là khóa ứng viên được chọn bởi người thiết kế để định danh dòng. Khóa ứng viên là tập hợp tất cả các khóa có tiềm năng làm khóa chính."
+          }
+        },
+        {
+          "id": "fe_s4_q2",
+          "question": {
+            "en": "In relational database design, what is the primary goal of the Third Normal Form (3NF)?",
+            "ja": "リレーショナルデータベース設計における「第3正規形(3NF)」の主な目的はどれ？",
+            "vi": "Trong thiết kế cơ sở dữ liệu quan hệ, mục tiêu chính của Dạng chuẩn 3 (3NF) là gì?"
+          },
+          "options": [
+            { "en": "To eliminate transitive functional dependencies, ensuring all non-key columns depend only on primary key", "ja": "主キーに対する「推移的関数従属」を排除し、非キー列が主キーのみに従属するようにする", "vi": "Loại bỏ các phụ thuộc hàm bắc cầu, đảm bảo các cột không phải khóa chỉ phụ thuộc trực tiếp vào khóa chính" },
+            { "en": "To remove repeating groups of data and multi-valued attributes", "ja": "繰り返し項目や重複するグループ項目を別テーブルに分離する", "vi": "Loại bỏ các nhóm dữ liệu lặp lại và các thuộc tính đa trị" },
+            { "en": "To eliminate partial functional dependencies on candidate keys", "ja": "主キーの一部に対する関数従属（部分関数従属）を排除する", "vi": "Loại bỏ phụ thuộc hàm một phần vào các khóa chính" },
+            { "en": "To optimize the query performance of search operations", "ja": "検索クエリの処理パフォーマンスを極限まで最適化する", "vi": "Tối ưu hóa hiệu suất truy vấn cho các thao tác tìm kiếm" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "First Normal Form (1NF) removes repeating groups. Second Normal Form (2NF) removes partial dependencies. Third Normal Form (3NF) removes transitive dependencies.",
+            "ja": "繰り返し項目の排除は「第1正規形」、部分関数従属の排除は「第2正規形」、推移的関数従属（A→B、B→C の関係）の排除は「第3正規形」の目的です。",
+            "vi": "Dạng chuẩn 1 (1NF) loại bỏ nhóm lặp. Dạng chuẩn 2 (2NF) loại bỏ phụ thuộc một phần. Dạng chuẩn 3 (3NF) loại bỏ phụ thuộc bắc cầu."
+          }
+        },
+        {
+          "id": "fe_s4_q3",
+          "question": {
+            "en": "Which SQL clause is used to filter group results after applying the GROUP BY statement?",
+            "ja": "SQLクエリにおいて、GROUP BY によるグループ化を行った結果に対して、さらに抽出条件を適用する（フィルタリングする）ために用いる句はどれ？",
+            "vi": "Dòng lệnh SQL nào được dùng để lọc kết quả nhóm sau khi đã áp dụng lệnh GROUP BY?"
+          },
+          "options": [
+            { "en": "HAVING", "ja": "HAVING", "vi": "HAVING" },
+            { "en": "WHERE", "ja": "WHERE", "vi": "WHERE" },
+            { "en": "LIKE", "ja": "LIKE", "vi": "LIKE" },
+            { "en": "ORDER BY", "ja": "ORDER BY", "vi": "ORDER BY" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "`WHERE` filters individual rows before grouping. `HAVING` filters group results after the `GROUP BY` aggregation has been performed.",
+            "ja": "グループ化する「前」の行の絞り込みには `WHERE` を使い、グループ化した「後」の集計値に対する絞り込みには `HAVING` を使用します。",
+            "vi": "Lệnh `WHERE` lọc các hàng riêng lẻ trước khi nhóm. Lệnh `HAVING` lọc kết quả sau khi phép gom nhóm `GROUP BY` thực thi."
+          }
+        },
+        {
+          "id": "fe_s4_q4",
+          "question": {
+            "en": "Which of the following ACID properties guarantees that a transaction is either completed in its entirety or none of its operations are applied to the database at all?",
+            "ja": "データベースのトランザクション処理におけるACID特性のうち、「すべての処理が完全に実行されるか、あるいは全く実行されなかった（元に戻す）状態になるかのどちらかであること」を保証する特性はどれ？",
+            "vi": "Thuộc tính nào trong các thuộc tính ACID đảm bảo rằng một giao dịch (transaction) được thực hiện trọn vẹn hoàn toàn hoặc không có thao tác nào được lưu vào cơ sở dữ liệu?"
+          },
+          "options": [
+            { "en": "Atomicity", "ja": "原子性（起伏性 / Atomicity）", "vi": "Tính nguyên tử (Atomicity)" },
+            { "en": "Consistency", "ja": "一貫性（整合性 / Consistency）", "vi": "Tính nhất quán (Consistency)" },
+            { "en": "Isolation", "ja": "独立性（隔離性 / Isolation）", "vi": "Tính cô lập (Isolation)" },
+            { "en": "Durability", "ja": "耐久性（永続性 / Durability）", "vi": "Tính bền vững (Durability)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Atomicity (All-or-Nothing) ensures that a transaction containing multiple SQL statements is treated as a single indivisible unit.",
+            "ja": "すべて実行されるか、全く実行されない（All or Nothing）特性は「原子性(Atomicity)」です。ロールバック機能などによって担保されます。",
+            "vi": "Tính nguyên tử (All-or-Nothing) đảm bảo giao dịch chứa nhiều lệnh được xử lý như một đơn vị duy nhất không thể phân tách."
+          }
+        },
+        {
+          "id": "fe_s4_q5",
+          "question": {
+            "en": "What concurrency control issue occurs when two transactions are each waiting for the other to release a lock on a resource?",
+            "ja": "2つのトランザクションが、互いに相手がロックを解除するのを待って永久に処理が進まなくなる状態を何と呼ぶ？",
+            "vi": "Vấn đề kiểm soát đồng thời nào xảy ra khi hai giao dịch cùng chờ đợi đối phương giải phóng khóa trên một tài nguyên?"
+          },
+          "options": [
+            { "en": "Deadlock", "ja": "デッドロック", "vi": "Deadlock" },
+            { "en": "Dirty Read", "ja": "ダーティリード", "vi": "Dirty Read" },
+            { "en": "Phantom Read", "ja": "ファントムリード", "vi": "Phantom Read" },
+            { "en": "Cascade Rollback", "ja": "連鎖的ロールバック", "vi": "Cascade Rollback" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Deadlock happens when Transaction A holds Lock 1 and waits for Lock 2, while Transaction B holds Lock 2 and waits for Lock 1.",
+            "ja": "お互いに必要な資源を相手がロックしてしまっており、解放待ちのデッドヒートから永久に進まなくなる状態を「デッドロック」と呼びます。",
+            "vi": "Deadlock xảy ra khi Giao dịch A giữ Khóa 1 và đợi Khóa 2, còn Giao dịch B giữ Khóa 2 và đợi Khóa 1."
+          }
+        },
+        {
+          "id": "fe_s4_q6",
+          "question": {
+            "en": "What is the primary purpose of a Foreign Key constraint in databases?",
+            "ja": "データベースにおける「外部キー制約」の主な目的はどれ？",
+            "vi": "Mục đích chính của ràng buộc khóa ngoại (Foreign Key constraint) trong cơ sở dữ liệu là gì?"
+          },
+          "options": [
+            { "en": "To maintain referential integrity between tables", "ja": "テーブル間の関係において「参照整合性」を維持する", "vi": "Duy trì tính toàn vẹn tham chiếu giữa các bảng" },
+            { "en": "To encrypt sensitive columnar data", "ja": "特定の列データを暗号化して秘匿する", "vi": "Mã hóa dữ liệu nhạy cảm trong cột" },
+            { "en": "To index fields automatically for search optimization", "ja": "検索速度向上のために自動的インデックスを作成する", "vi": "Tự động lập chỉ mục trường để tối ưu tìm kiếm" },
+            { "en": "To prevent null values from being inserted into columns", "ja": "列に NULL 値が格納されるのを防止する", "vi": "Ngăn chặn giá trị null được nhập vào cột" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Foreign keys ensure that a value in one table matches a value in another referenced table, preserving referential integrity.",
+            "ja": "外部キー制約は、他テーブルの主キーを参照させることで、存在しない値の挿入を防ぎ、テーブル間の「参照整合性」を担保します。",
+            "vi": "Khóa ngoại đảm bảo một giá trị ở bảng này phải khớp với giá trị của bảng được tham chiếu ở bảng kia, duy trì tính toàn vẹn tham chiếu."
+          }
+        },
+        {
+          "id": "fe_s4_q7",
+          "question": {
+            "en": "In Relational Algebra, which operation yields a subset of tuples (rows) that satisfy a specific condition?",
+            "ja": "関係代数において、特定の条件を満たす行（タプル）を抽出する操作はどれ？",
+            "vi": "Trong Đại số quan hệ, phép toán nào trả về tập hợp con các bộ (hàng) thỏa mãn một điều kiện cụ thể?"
+          },
+          "options": [
+            { "en": "Selection", "ja": "選択 (Selection)", "vi": "Phép chọn (Selection)" },
+            { "en": "Projection", "ja": "射影 (Projection)", "vi": "Phép chiếu (Projection)" },
+            { "en": "Join", "ja": "結合 (Join)", "vi": "Phép kết (Join)" },
+            { "en": "Intersection", "ja": "交わり (Intersection)", "vi": "Phép giao (Intersection)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Selection extracts rows (tuples). Projection extracts columns (attributes). Join combines tables, and Intersection finds common tuples.",
+            "ja": "条件に合致する「行」を絞り込むのは「選択」です。特定の「列」のみを切り出す操作は「射影」と呼びます。",
+            "vi": "Phép chọn trích xuất các hàng. Phép chiếu trích xuất các cột. Phép kết gộp bảng, và phép giao tìm các bộ giống nhau."
+          }
+        },
+        {
+          "id": "fe_s4_q8",
+          "question": {
+            "en": "What does a 'Shared Lock' allow in a multi-user database transaction environment?",
+            "ja": "マルチユーザーのデータベース環境における「共有ロック」の説明として正しいものはどれ？",
+            "vi": "Khóa chia sẻ (Shared Lock) cho phép thực hiện hành động nào trong môi trường giao dịch đa người dùng?"
+          },
+          "options": [
+            { "en": "Other transactions can read the data but cannot modify it", "ja": "他のトランザクションはデータを読み込めるが、変更はできない", "vi": "Các giao dịch khác có thể đọc dữ liệu nhưng không thể sửa đổi" },
+            { "en": "Other transactions can modify the data but cannot read it", "ja": "他のトランザクションはデータを書き換えられるが、読み込みはできない", "vi": "Các giao dịch khác có thể sửa đổi nhưng không thể đọc" },
+            { "en": "Only one transaction can read and write to the locked data", "ja": "ロックを獲得した1つのトランザクションのみが読み書きできる", "vi": "Chỉ duy nhất giao dịch giữ khóa mới có quyền đọc và viết" },
+            { "en": "It automatically resolves any active deadlocks in the database queue", "ja": "キューに入っているデッドロックを自動的に解除する", "vi": "Tự động gỡ bỏ mọi deadlock trong hàng đợi" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Shared locks (S-locks) allow concurrent reads. Exclusive locks (X-locks) prevent all other reads and writes, reserving access for one writer.",
+            "ja": "共有ロックは読込専用ロックです。複数トランザクションが同時に共有ロックを取得して「読込」できますが、誰かがロック解除するまで「変更」はできません。変更時は排他ロックが必要です。",
+            "vi": "Khóa chia sẻ (S-lock) cho phép đọc đồng thời. Khóa độc quyền (X-lock) chặn mọi quyền đọc viết khác để dành riêng cho bên viết."
+          }
+        },
+        {
+          "id": "fe_s4_q9",
+          "question": {
+            "en": "In SQL, which keyword is used to eliminate duplicate rows from query results?",
+            "ja": "SQLにおいて、検索結果から重複する行を排除するために使用するキーワードはどれ？",
+            "vi": "Trong SQL, từ khóa nào được dùng để loại bỏ các hàng trùng lặp khỏi kết quả truy vấn?"
+          },
+          "options": [
+            { "en": "DISTINCT", "ja": "DISTINCT", "vi": "DISTINCT" },
+            { "en": "UNIQUE", "ja": "UNIQUE", "vi": "UNIQUE" },
+            { "en": "GROUP BY", "ja": "GROUP BY", "vi": "GROUP BY" },
+            { "en": "UNION", "ja": "UNION", "vi": "UNION" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "`DISTINCT` filters duplicate rows. `UNIQUE` is a constraint applied during table definition, and `GROUP BY` consolidates matching items.",
+            "ja": "重複を除外してユニークな行のみを取り出すには `SELECT DISTINCT` 句を使用します。",
+            "vi": "`DISTINCT` lọc bỏ các hàng trùng lặp. `UNIQUE` là ràng buộc khi khai báo bảng, còn `GROUP BY` dùng gom nhóm."
+          }
+        },
+        {
+          "id": "fe_s4_q10",
+          "question": {
+            "en": "What is the primary difference between a commit and a rollback operation in a transaction?",
+            "ja": "トランザクション処理における「コミット」と「ロールバック」の主な違いはどれ？",
+            "vi": "Khác biệt chính giữa thao tác commit và rollback trong giao dịch là gì?"
+          },
+          "options": [
+            { "en": "Commit permanently saves modifications; Rollback discards all updates made during the active transaction", "ja": "コミットは変更をデータベースに永久保存し、ロールバックはトランザクション内の全変更を破棄して開始前の状態に戻す", "vi": "Commit lưu vĩnh viễn các sửa đổi; Rollback hủy bỏ mọi cập nhật trong giao dịch hiện tại" },
+            { "en": "Commit encrypts database files; Rollback decrypts them", "ja": "コミットはデータベースを暗号化し、ロールバックは復号する", "vi": "Commit mã hóa tệp dữ liệu; Rollback thực hiện giải mã" },
+            { "en": "Rollback is only used when a system hard drive fails physically", "ja": "ロールバックはハードディスクが物理的にクラッシュした時のみ使用する", "vi": "Rollback chỉ được dùng khi ổ cứng hệ thống bị hỏng vật lý" },
+            { "en": "There is no difference; they are synonymous", "ja": "違いはありません。まったくの同義語です", "vi": "Không có sự khác biệt; chúng là hai từ đồng nghĩa" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "`COMMIT` applies transaction updates permanently. `ROLLBACK` undoes all operations if an error occurs, returning the DB to its pre-transaction state.",
+            "ja": "正常終了時は `COMMIT` で変更を決定（保存）します。エラー発生時は `ROLLBACK` を行い、トランザクション開始前のきれいな状態へ戻します。",
+            "vi": "`COMMIT` lưu lại cập nhật giao dịch vĩnh viễn. `ROLLBACK` khôi phục lại mọi thao tác nếu lỗi xảy ra, đưa DB về trạng thái trước giao dịch."
+          }
+        }
+      ]
     },
     {
-      "id": "q5",
-      "question": {
-        "en": "An arithmetic overflow occurs when…",
-        "ja": "算術オーバーフローが起きるのは…",
-        "vi": "Tràn số học (overflow) xảy ra khi…"
+      "id": "fe-a-5",
+      "category": "part-a",
+      "title": { "en": "Set 5: Networks", "ja": "セット5：ネットワーク", "vi": "Đề 5: Mạng máy tính" },
+      "description": {
+        "en": "OSI reference model layers, IP subnet calculations, routing protocols, and data transfer times.",
+        "ja": "OSI基本参照モデル、IPのサブネット計算、各種プロトコル、通信速度と伝送時間計算について解きます。",
+        "vi": "Các tầng mô hình OSI, tính toán IP subnet, giao thức định tuyến và thời gian truyền tải dữ liệu."
       },
-      "options": [
-        { "en": "A program runs out of disk space", "ja": "ディスク容量が不足したとき", "vi": "Chương trình hết dung lượng đĩa" },
-        { "en": "A result exceeds the range representable by the data type", "ja": "結果がデータ型で表せる範囲を超えたとき", "vi": "Kết quả vượt quá phạm vi biểu diễn của kiểu dữ liệu" },
-        { "en": "Two threads access the same variable", "ja": "2つのスレッドが同じ変数にアクセスしたとき", "vi": "Hai luồng truy cập cùng một biến" },
-        { "en": "A pointer is set to null", "ja": "ポインタが null になったとき", "vi": "Con trỏ được gán null" }
-      ],
-      "answer": 1,
-      "explanation": {
-        "en": "Overflow happens when a computed value is larger (or smaller) than the type can store.",
-        "ja": "オーバーフローは、計算結果がその型で保持できる範囲を超えたときに発生します。",
-        "vi": "Overflow xảy ra khi giá trị tính được lớn (hoặc nhỏ) hơn mức kiểu dữ liệu có thể lưu."
-      }
+      "questions": [
+        {
+          "id": "fe_s5_q1",
+          "question": {
+            "en": "Which layer of the OSI reference model is responsible for routing packets across multiple networks?",
+            "ja": "OSI基本参照モデルにおいて、複数のネットワーク間でのパケットのルーティング（経路決定と転送）を担当する層はどれ？",
+            "vi": "Tầng nào trong mô hình tham chiếu OSI chịu trách nhiệm định tuyến các gói tin qua nhiều mạng khác nhau?"
+          },
+          "options": [
+            { "en": "Network Layer (Layer 3)", "ja": "ネットワーク層 (第3層)", "vi": "Tầng mạng - Network Layer (Tầng 3)" },
+            { "en": "Data Link Layer (Layer 2)", "ja": "データリンク層 (第2層)", "vi": "Tầng liên kết dữ liệu - Data Link Layer (Tầng 2)" },
+            { "en": "Transport Layer (Layer 4)", "ja": "トランスポート層 (第4層)", "vi": "Tầng vận chuyển - Transport Layer (Tầng 4)" },
+            { "en": "Physical Layer (Layer 1)", "ja": "物理層 (第1層)", "vi": "Tầng vật lý - Physical Layer (Tầng 1)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The Network Layer (Layer 3) handles routing and IP addressing. Data Link Layer (Layer 2) handles MAC addressing, and Transport Layer (Layer 4) handles end-to-end connections (TCP/UDP).",
+            "ja": "ルータやIPアドレスを扱い、ネットワーク間の経路制御を行うのは「ネットワーク層」です。MACアドレスなどはデータリンク層、ポート番号等はトランスポート層です。",
+            "vi": "Tầng mạng (Tầng 3) chịu trách nhiệm định tuyến và gán địa chỉ IP. Tầng liên kết dữ liệu (Tầng 2) quản lý địa chỉ MAC, và Tầng vận chuyển (Tầng 4) chịu trách nhiệm kết nối đầu-đầu (TCP/UDP)."
+          }
+        },
+        {
+          "id": "fe_s5_q2",
+          "question": {
+            "en": "You have an IP address 192.168.10.45 with a subnet mask of 255.255.255.240. What is the network address of this subnet?",
+            "ja": "IPアドレス 192.168.10.45、サブネットマスク 255.255.255.240 のとき、ネットワークアドレスはどれ？",
+            "vi": "Cho địa chỉ IP 192.168.10.45 với subnet mask là 255.255.255.240. Địa chỉ mạng (network address) của subnet này là gì?"
+          },
+          "options": [
+            { "en": "192.168.10.32", "ja": "192.168.10.32", "vi": "192.168.10.32" },
+            { "en": "192.168.10.0", "ja": "192.168.10.0", "vi": "192.168.10.0" },
+            { "en": "192.168.10.40", "ja": "192.168.10.40", "vi": "192.168.10.40" },
+            { "en": "192.168.10.48", "ja": "192.168.10.48", "vi": "192.168.10.48" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Perform bitwise AND between IP and Mask. 45 in binary is 00101101. 240 is 11110000. 00101101 AND 11110000 = 00100000 (32). Net address = 192.168.10.32.",
+            "ja": "IPの末尾45(00101101)とマスクの末尾240(11110000)の論理積(AND)をとると、00100000(32)になります。したがって 192.168.10.32 です。",
+            "vi": "Thực hiện phép AND bit giữa IP và Mask. Số 45 là 00101101. Số 240 là 11110000. Phép AND cho kết quả 00100000 (32). Địa chỉ mạng là 192.168.10.32."
+          }
+        },
+        {
+          "id": "fe_s5_q3",
+          "question": {
+            "en": "Calculate the transmission time required to send a 15-megabyte file over a network connection with a bandwidth of 100 Mbps (megabits per second), assuming a network transmission efficiency of 80%.",
+            "ja": "容量 15Mバイトのファイルを、回線速度 100Mビット/秒、回線利用率 80% の通信経路で転送するのにかかる時間は何秒？",
+            "vi": "Tính thời gian truyền tải để gửi một tệp dung lượng 15 Megabyte qua kết nối mạng có băng thông 100 Mbps (Megabit/giây), giả định hiệu suất truyền dẫn của mạng là 80%."
+          },
+          "options": [
+            { "en": "1.5 seconds", "ja": "1.5 秒", "vi": "1.5 seconds" },
+            { "en": "1.2 seconds", "ja": "1.2 秒", "vi": "1.2 seconds" },
+            { "en": "1.875 seconds", "ja": "1.875 秒", "vi": "1.875 seconds" },
+            { "en": "15.0 seconds", "ja": "15.0 秒", "vi": "15.0 seconds" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "File size in bits = 15 MB * 8 = 120 Megabits. Effective bandwidth = 100 Mbps * 0.8 = 80 Mbps. Time = 120 Mb / 80 Mbps = 1.5 seconds.",
+            "ja": "ファイル容量をビットに換算します：15Mバイト × 8ビット ＝ 120Mビット。実効回線速度は 100Mビット/秒 × 0.8 ＝ 80Mビット/秒。転送時間 ＝ 120Mビット ÷ 80Mビット/秒 ＝ 1.5 秒となります。",
+            "vi": "Dung lượng tệp tính bằng bit = 15 MB * 8 = 120 Megabits. Băng thông hiệu dụng = 100 Mbps * 0.8 = 80 Mbps. Thời gian = 120 Mb / 80 Mbps = 1.5 giây."
+          }
+        },
+        {
+          "id": "fe_s5_q4",
+          "question": {
+            "en": "What is the primary function of the Domain Name System (DNS)?",
+            "ja": "インターネット技術における DNS (Domain Name System) の主な役割はどれ？",
+            "vi": "Chức năng chính của hệ thống phân giải tên miền DNS (Domain Name System) là gì?"
+          },
+          "options": [
+            { "en": "To translate human-readable domain names to machine-readable IP addresses", "ja": "ドメイン名（ホスト名）と IP アドレスの対応関係を解決する", "vi": "Chuyển đổi tên miền dễ đọc đối với con người thành địa chỉ IP máy tính có thể hiểu được" },
+            { "en": "To assign dynamic IP addresses to client devices in local networks", "ja": "LAN内のクライアントPCに動的な IP アドレスを割り振る", "vi": "Cấp địa chỉ IP động cho các thiết bị khách trong mạng cục bộ" },
+            { "en": "To route web packets between network switches", "ja": "ネットワークスイッチ間でパケットのルーティングを行う", "vi": "Định tuyến các gói tin web giữa các thiết bị switch" },
+            { "en": "To authenticate secure HTTPS socket connections", "ja": "暗号化された HTTPS 接続の認証と信頼性を担保する", "vi": "Xác thực độ tin cậy của các kết nối bảo mật HTTPS" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "DNS translates domain names (e.g., sensei.com) into IP addresses (e.g., 192.168.1.1). DHCP assigns dynamic IP addresses.",
+            "ja": "DNSは「名前」と「IPアドレス」を相互変換（名前解決）します。動的IPアドレス割り当ては DHCP の役割です。",
+            "vi": "DNS dịch tên miền (ví dụ sensei.com) thành địa chỉ IP (ví dụ 192.168.1.1). Việc cấp IP động là của DHCP."
+          }
+        },
+        {
+          "id": "fe_s5_q5",
+          "question": {
+            "en": "Which of the following ports is the default port used for securing web traffic via HTTPS?",
+            "ja": "Webサイトとの安全な暗号化通信(HTTPS)において、デフォルトで使用されるポート番号はどれ？",
+            "vi": "Cổng mặc định nào sau đây được sử dụng để bảo mật lưu lượng truy cập web qua giao thức HTTPS?"
+          },
+          "options": [
+            { "en": "443", "ja": "443", "vi": "443" },
+            { "en": "80", "ja": "80", "vi": "80" },
+            { "en": "22", "ja": "22", "vi": "22" },
+            { "en": "8080", "ja": "8080", "vi": "8080" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Port 443 is the standard default port for HTTPS. Port 80 is for HTTP, and Port 22 is for SSH.",
+            "ja": "HTTPS のデフォルトポート番号は 443 です。HTTP は 80、SSH は 22、HTTPの代替（プロキシなど）で 8080 がよく使われます。",
+            "vi": "Cổng 443 là cổng mặc định chuẩn cho HTTPS. Cổng 80 dùng cho HTTP, và cổng 22 cho SSH."
+          }
+        },
+        {
+          "id": "fe_s5_q6",
+          "question": {
+            "en": "What is the main role of DHCP in computer networks?",
+            "ja": "コンピュータネットワークにおける DHCP (Dynamic Host Configuration Protocol) の役割はどれ？",
+            "vi": "Vai trò chính của DHCP trong mạng máy tính là gì?"
+          },
+          "options": [
+            { "en": "To dynamically assign IP addresses and network configurations to host devices on start-up", "ja": "ネットワーク接続時に、クライアントへ IP アドレスなどの設定情報を自動的に割り当てる", "vi": "Tự động cấp phát địa chỉ IP và cấu hình mạng cho các thiết bị máy trạm khi kết nối" },
+            { "en": "To store DNS mapping tables locally on routers", "ja": "ルータ内にローカルな DNS マッピング対応表を保存する", "vi": "Lưu trữ bảng ánh xạ DNS cục bộ trên bộ định tuyến" },
+            { "en": "To convert private IP addresses to a public IP address", "ja": "プライベート IP アドレスをグローバル IP アドレスに変換する", "vi": "Chuyển đổi địa chỉ IP nội bộ sang địa chỉ IP công cộng" },
+            { "en": "To encrypt data packets at the presentation layer", "ja": "プレゼンテーション層でデータパケットを暗号化する", "vi": "Mã hóa các gói dữ liệu ở tầng trình diễn" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "DHCP dynamically assigns network parameters (IP, Subnet Mask, Gateway, DNS) to hosts. NAT/NAPT converts private IPs to public ones.",
+            "ja": "DHCPは、端末が接続された際にIPアドレス、サブネットマスク、デフォルトゲートウェイなどの設定情報を自動で割り振ります。IP変換は NAT の仕事です。",
+            "vi": "DHCP tự động cấp các tham số mạng (IP, Subnet Mask, Gateway, DNS) cho máy khách. NAT/NAPT chuyển đổi IP nội bộ thành IP công cộng."
+          }
+        },
+        {
+          "id": "fe_s5_q7",
+          "question": {
+            "en": "Which protocol works at the Transport Layer of the OSI model and guarantees reliable, error-checked, ordered delivery of data packets?",
+            "ja": "OSI基本参照モデルのトランスポート層で動作し、信頼性が高く、順番を保証したデータ転送を行うコネクション型のプロトコルはどれ？",
+            "vi": "Giao thức nào hoạt động ở tầng Vận chuyển (Transport) của mô hình OSI và đảm bảo truyền gói dữ liệu tin cậy, có kiểm lỗi và đúng thứ tự?"
+          },
+          "options": [
+            { "en": "TCP", "ja": "TCP", "vi": "TCP" },
+            { "en": "UDP", "ja": "UDP", "vi": "UDP" },
+            { "en": "IP", "ja": "IP", "vi": "IP" },
+            { "en": "ICMP", "ja": "ICMP", "vi": "ICMP" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "TCP (Transmission Control Protocol) is connection-oriented and reliable. UDP (User Datagram Protocol) is connectionless and does not guarantee delivery.",
+            "ja": "トランスポート層のプロトコルのうち、コネクション型でデータの信頼性を保証するのは TCP です。UDP はコネクションレス型で、速度優先（リアルタイム配信など）で使われます。",
+            "vi": "TCP (Transmission Control Protocol) hướng kết nối và đảm bảo tin cậy. UDP (User Datagram Protocol) không hướng kết nối và không đảm bảo truyền dữ liệu."
+          }
+        },
+        {
+          "id": "fe_s5_q8",
+          "question": {
+            "en": "What is the function of Network Address Port Translation (NAPT/IP Masquerading)?",
+            "ja": "IPマスカレード（NAPT）技術が解決する課題・提供する機能はどれ？",
+            "vi": "Chức năng của kỹ thuật biên dịch địa chỉ cổng mạng (NAPT / IP Masquerading) là gì?"
+          },
+          "options": [
+            { "en": "Allows multiple devices on a private network to share a single public IP address using different port numbers", "ja": "ポート番号を利用することで、1つのグローバル IP アドレスを複数のプライベート IP アドレスで共有・同時通信できるようにする", "vi": "Cho phép nhiều thiết bị trong mạng nội bộ dùng chung một địa chỉ IP công cộng bằng cách sử dụng các số hiệu cổng khác nhau" },
+            { "en": "Forces all web traffic to go through a secure proxy server cache", "ja": "すべてのWebトラフィックをキャッシュ機能付きプロキシサーバー経由にする", "vi": "Bắt buộc mọi lưu lượng web phải đi qua bộ nhớ đệm của máy chủ proxy bảo mật" },
+            { "en": "Blocks network ports automatically when an intrusion is detected", "ja": "不正侵入を検知した際にネットワークポートを自動的に遮断する", "vi": "Tự động khóa các cổng mạng khi phát hiện có xâm nhập trái phép" },
+            { "en": "Converts static IP configurations to dynamic DHCP leases", "ja": "静的 IP 設定を動的な DHCP リース設定に変換する", "vi": "Chuyển đổi các cấu hình IP tĩnh thành các hợp đồng thuê DHCP động" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "NAPT maps multiple private IP addresses and ports to a single public IP address and its ports, allowing conservation of global IPv4 addresses.",
+            "ja": "NAPT（IPマスカレード）は、社内などで使用するプライベートIPアドレスをグローバルIPアドレスに変換する際、ポート番号も合わせて紐づけることで、1つのグローバルIPで複数端末の同時インターネット接続を実現します。",
+            "vi": "NAPT ánh xạ nhiều địa chỉ IP và cổng nội bộ vào một địa chỉ IP công cộng cùng các cổng của nó, giúp tiết kiệm số lượng địa chỉ IPv4 công cộng."
+          }
+        },
+        {
+          "id": "fe_s5_q9",
+          "question": {
+            "en": "Which routing protocol uses a distance-vector algorithm based on hop counts, with a maximum limit of 15 hops?",
+            "ja": "ルーティングプロトコルのうち、ホップ数（通過するルータ数）を基準にし、最大ホップ数が15に制限されているディスタンスベクタ型のプロトコルはどれ？",
+            "vi": "Giao thức định tuyến nào sử dụng thuật toán khoảng cách vector (distance-vector) dựa trên số bước nhảy (hop count) và giới hạn tối đa là 15 bước nhảy?"
+          },
+          "options": [
+            { "en": "RIP", "ja": "RIP", "vi": "RIP" },
+            { "en": "OSPF", "ja": "OSPF", "vi": "OSPF" },
+            { "en": "BGP", "ja": "BGP", "vi": "BGP" },
+            { "en": "ICMP", "ja": "ICMP", "vi": "ICMP" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "RIP (Routing Information Protocol) is a distance-vector protocol. It uses hop count as metric, and 16 hops is considered unreachable. OSPF is a link-state protocol.",
+            "ja": "ホップ数（ルータ数）をメトリックとし、最大ホップ数が15（16は到達不能）であるプロトコルは RIP です。OSPF はリンクステート型です。",
+            "vi": "RIP (Routing Information Protocol) là giao thức dạng distance-vector. Nó dùng số bước nhảy làm metric và coi 16 bước nhảy là không thể kết nối tới."
+          }
+        },
+        {
+          "id": "fe_s5_q10",
+          "question": {
+            "en": "What is the purpose of the Subnet Mask in network configurations?",
+            "ja": "ネットワーク設定における「サブネットマスク」の目的はどれ？",
+            "vi": "Mục đích của Subnet Mask trong các thiết lập cấu hình mạng là gì?"
+          },
+          "options": [
+            { "en": "To separate the IP address into network address and host address parts", "ja": "IP アドレスを「ネットワークアドレス」と「ホストアドレス」の境界に分割する", "vi": "Dùng để phân chia địa chỉ IP thành phần địa chỉ mạng (network) và địa chỉ máy trạm (host)" },
+            { "en": "To mask private IP addresses from remote servers for security", "ja": "プライベート IP アドレスをセキュリティ目的で隠蔽する", "vi": "Che giấu địa chỉ IP nội bộ khỏi các máy chủ bên ngoài để bảo mật" },
+            { "en": "To set up a priority queue for streaming media packets", "ja": "ストリーミング用のパケットに優先順位を設定する", "vi": "Thiết lập hàng đợi ưu tiên cho các gói tin truyền phát đa phương tiện" },
+            { "en": "To limit the maximum speed of download sockets", "ja": "ソケット通信の最大ダウンロード速度を制限する", "vi": "Giới hạn tốc độ tải dữ liệu tối đa của các cổng kết nối" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "A Subnet Mask is a 32-bit value that defines which bits of the IP address belong to the network prefix and which belong to the host identifier.",
+            "ja": "サブネットマスクは、32ビットのIPアドレスのうち、どこまでが「ネットワークの識別番号」で、どこからが「端末の識別番号」かを示すフィルター（境界線）の役割を持ちます。",
+            "vi": "Subnet Mask là một chuỗi 32-bit chỉ ra các bit nào của địa chỉ IP thuộc về dải mạng và các bit nào thuộc về thiết bị máy trạm."
+          }
+        }
+      ]
+    },
+    {
+      "id": "fe-a-6",
+      "category": "part-a",
+      "title": { "en": "Set 6: Information Security", "ja": "セット6：情報セキュリティ", "vi": "Đề 6: An toàn thông tin" },
+      "description": {
+        "en": "Asymmetric vs symmetric encryption, digital signatures, PKI, cyber attacks, and defense tools (WAF/IDS).",
+        "ja": "暗号化技術、デジタル署名、PKI、不正アクセス攻撃手法と防御手段について学習します。",
+        "vi": "Mã hóa đối xứng và bất đối xứng, chữ ký số, hạ tầng PKI, các kiểu tấn công mạng và tường lửa WAF/IDS."
+      },
+      "questions": [
+        {
+          "id": "fe_s6_q1",
+          "question": {
+            "en": "In public-key (asymmetric) cryptography, which key is used by the sender to encrypt a message that can only be decrypted by the intended recipient?",
+            "ja": "公開鍵暗号方式において、送信者がメッセージを暗号化し、特定の受信者だけが復号できるようにするために、送信者はどの鍵を使って暗号化すべき？",
+            "vi": "Trong mật mã khóa công khai (bất đối xứng), người gửi sử dụng khóa nào để mã hóa tin nhắn sao cho chỉ người nhận chỉ định mới giải mã được?"
+          },
+          "options": [
+            { "en": "The recipient's public key", "ja": "受信者の公開鍵", "vi": "Khóa công khai của người nhận" },
+            { "en": "The sender's private key", "ja": "送信者の秘密鍵", "vi": "Khóa bí mật của người gửi" },
+            { "en": "The sender's public key", "ja": "送信者の公開鍵", "vi": "Khóa công khai của người gửi" },
+            { "en": "The recipient's private key", "ja": "受信者の秘密鍵", "vi": "Khóa bí mật của người nhận" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "To ensure confidentiality, the sender encrypts the message with the recipient's public key. Only the recipient possesses the corresponding private key required to decrypt it.",
+            "ja": "メッセージの機密性を保ちたい場合、送信者は「受信者の公開鍵」で暗号化します。このデータは、ペアとなる「受信者の秘密鍵（本人のみ保持）」でしか復号できません。",
+            "vi": "Để đảm bảo bí mật, người gửi mã hóa bằng khóa công khai của người nhận. Chỉ người nhận mới giữ khóa bí mật tương ứng để giải mã."
+          }
+        },
+        {
+          "id": "fe_s6_q2",
+          "question": {
+            "en": "What is the primary security goal accomplished by utilizing a digital signature?",
+            "ja": "電子署名（デジタル署名）を利用することで実現できる、セキュリティ上の主な目的はどれ？",
+            "vi": "Mục tiêu bảo mật chính đạt được khi sử dụng chữ ký số (digital signature) là gì?"
+          },
+          "options": [
+            { "en": "Preventing tampering (integrity) and ensuring non-repudiation of the sender", "ja": "送信データの改ざん検知（整合性）と、送信者本人であることの証明（否認防止）", "vi": "Ngăn chặn việc sửa đổi trái phép (toàn vẹn) và chống chối bỏ trách nhiệm của người gửi" },
+            { "en": "Encrypting the email text to guarantee privacy", "ja": "メール本文自体を暗号化して他人に見られないようにする（機密性）", "vi": "Mã hóa văn bản để đảm bảo tính riêng tư (bí mật)" },
+            { "en": "Blocking malicious attachments from downloading", "ja": "ウイルスメールの添付ファイルが自動保存されるのを防ぐ", "vi": "Chặn các tệp đính kèm độc hại tải xuống máy tính" },
+            { "en": "Synchronizing the clock timings of database updates", "ja": "データベース操作が行われた正確な時刻を同期する", "vi": "Đồng bộ hóa thời gian chính xác khi cập nhật cơ sở dữ liệu" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Digital signatures use the sender's private key to sign a hash of the message. This guarantees the identity of the sender (non-repudiation) and ensures the message has not been altered in transit (integrity). It does NOT encrypt the message.",
+            "ja": "デジタル署名は「改ざんの検知」と、送信者が本人であることの証明「否認防止」のために行われます。本文の暗号化（機密性）は行いません。",
+            "vi": "Chữ ký số dùng khóa bí mật của người gửi để ký mã hash tin nhắn. Điều này giúp kiểm tra tính toàn vẹn (không bị sửa đổi) và tính chống chối bỏ."
+          }
+        },
+        {
+          "id": "fe_s6_q3",
+          "question": {
+            "en": "Which cyberattack is performed by injecting malicious script inputs into a vulnerable web page, which then executes in the browser of other users viewing the page?",
+            "ja": "脆弱性のあるWebサイトに対して悪意あるスクリプトを入力し、そのサイトを閲覧した他の一般ユーザーのブラウザ上で不正コードを実行させる攻撃はどれ？",
+            "vi": "Kiểu tấn công mạng nào thực hiện bằng cách chèn các đoạn mã độc hại vào trang web, để sau đó mã này chạy trên trình duyệt của người dùng khác khi họ xem trang?"
+          },
+          "options": [
+            { "en": "Cross-Site Scripting (XSS)", "ja": "クロスサイトスクリプティング (XSS)", "vi": "Tấn công Cross-Site Scripting (XSS)" },
+            { "en": "SQL Injection", "ja": "SQL インジェクション", "vi": "Tấn công SQL Injection" },
+            { "en": "DDoS Attack", "ja": "DDoS 攻撃", "vi": "Tấn công từ chối dịch vụ phân tán DDoS" },
+            { "en": "Phishing", "ja": "フィッシング", "vi": "Tấn công giả mạo Phishing" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Cross-Site Scripting (XSS) targets web application users by executing malicious scripts in their client browsers. SQL Injection targets the database backend.",
+            "ja": "閲覧者のブラウザ上でスクリプトを実行させるのは XSS です。データベース(SQL)に不正クエリを流すのは SQL インジェクションです。",
+            "vi": "Chạy tập lệnh độc hại trên trình duyệt của người xem là Cross-Site Scripting (XSS). Gửi truy vấn độc hại vào database là SQL Injection."
+          }
+        },
+        {
+          "id": "fe_s6_q4",
+          "question": {
+            "en": "What is the primary role of a Web Application Firewall (WAF)?",
+            "ja": "情報セキュリティ対策における WAF (Web Application Firewall) の主な役割はどれ？",
+            "vi": "Vai trò chính của WAF (Web Application Firewall) trong việc phòng thủ an toàn thông tin là gì?"
+          },
+          "options": [
+            { "en": "To analyze and filter HTTP/HTTPS traffic to prevent application-layer attacks like SQL injection and XSS", "ja": "HTTP/HTTPS プロトコルレベルの通信を監視・制御し、SQL インジェクションや XSS などのWebアプリ層の攻撃を防ぐ", "vi": "Phân tích và lọc lưu lượng HTTP/HTTPS để ngăn chặn các cuộc tấn công tầng ứng dụng như SQL injection và XSS" },
+            { "en": "To block malicious packets at the network port level (IP and port)", "ja": "IPアドレスやポート番号のみを監視して、ネットワーク層でのアクセス制限を行う", "vi": "Chặn các gói tin độc hại ở cấp độ cổng mạng (IP và port)" },
+            { "en": "To encrypt files stored locally on physical databases", "ja": "データベースサーバー内の物理的なファイルを自動で暗号化する", "vi": "Mã hóa các tệp được lưu trữ trực tiếp trên database vật lý" },
+            { "en": "To detect viruses inside email attachments before they open", "ja": "メール添付ファイル内のウイルスを受信前にスキャン・検出する", "vi": "Quét và phát hiện virus trong tệp đính kèm của email trước khi mở" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "A WAF monitors and filters HTTP/HTTPS payload contents, protecting web applications from application-layer exploits. Traditional firewalls filter based on IP/Port.",
+            "ja": "WAFは、一般のファイアウォール（IPやポートを監視）と異なり、HTTP通信の「中身（ペイロード）」を検査し、SQLインジェクションやクロスサイトスクリプティングなどのWebアプリケーションの脆弱性を狙う攻撃を遮断します。",
+            "vi": "WAF giám sát và lọc nội dung HTTP/HTTPS, bảo vệ ứng dụng web khỏi các lỗi bảo mật ứng dụng. Firewall truyền thống chỉ lọc theo IP/Port."
+          }
+        },
+        {
+          "id": "fe_s6_q5",
+          "question": {
+            "en": "What is a 'Brute Force' attack in credential cracking?",
+            "ja": "アカウント情報の不正入手を狙う「ブルートフォース攻撃（総当たり攻撃）」の説明はどれ？",
+            "vi": "Tấn công brute force (tấn công dò mật khẩu kiểu tổng lực/thử sai) trong việc bẻ khóa tài khoản là gì?"
+          },
+          "options": [
+            { "en": "Systematically trying all possible character combinations until the correct password is found", "ja": "パスワードとして考えられるすべての文字の組み合わせを、順にすべて試していく手法", "vi": "Thử lần lượt tất cả các tổ hợp ký tự có thể xảy ra cho đến khi tìm thấy mật khẩu đúng" },
+            { "en": "Using a file containing common words from dictionaries to try passwords", "ja": "辞書にある単語などを集めたリストファイルを使い、順に試す手法", "vi": "Sử dụng danh sách các từ thông dụng trong từ điển để thử đăng nhập" },
+            { "en": "Sniffing network packets to read passwords in plain text", "ja": "通信回線上を流れるパケットを盗聴してパスワードを生データで読み取る手法", "vi": "Nghe lén các gói tin trên đường truyền mạng để đọc mật khẩu dạng thô" },
+            { "en": "Stealing password lists by SQL injection and decrypting them offline", "ja": "SQLインジェクションでデータベースのパスワード一覧を盗み出し、解析する手法", "vi": "Ăn cắp bảng mật khẩu qua SQL injection rồi thực hiện bẻ khóa ngoại tuyến" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Brute Force attacks try all combinations. Dictionary attacks use preset word lists. Packet sniffing intercepts active traffic.",
+            "ja": "文字の組み合わせを最初から最後まで「力ずくですべて試す」のがブルートフォース（総当たり）攻撃です。辞書単語を試すのは辞書攻撃(Dictionary Attack)です。",
+            "vi": "Tấn công brute force thử mọi tổ hợp ký tự có thể. Tấn công từ điển (Dictionary attack) dùng danh sách từ có sẵn. Nghe lén (Sniffing) đánh chặn dữ liệu thực tế."
+          }
+        },
+        {
+          "id": "fe_s6_q6",
+          "question": {
+            "en": "Which of the following describes the 'Salting' technique used in securing password storage?",
+            "ja": "パスワードを安全に保存するための「ソルト（Salting）」技術に関する説明はどれ？",
+            "vi": "Kỹ thuật thêm muối 'Salting' được dùng để bảo mật cơ sở dữ liệu mật khẩu như thế nào?"
+          },
+          "options": [
+            { "en": "Adding a random string of data to the password before hashing it to prevent rainbow table attacks", "ja": "ハッシュ化を行う前にパスワードにランダムな文字列（塩）を付加し、レインボーテーブル等による解析を困難にする", "vi": "Thêm một chuỗi ký tự ngẫu nhiên vào mật khẩu trước khi băm để chống lại các cuộc tấn công bằng bảng cầu vồng (rainbow table)" },
+            { "en": "Encrypting the hashed password database twice using different algorithms", "ja": "ハッシュ化したデータベース全体を、さらに別の鍵を用いて暗号化する", "vi": "Mã hóa cơ sở dữ liệu mật khẩu băm 2 lần bằng 2 thuật toán khác nhau" },
+            { "en": "Forcing users to change passwords every 30 days", "ja": "ユーザーに対して30日ごとのパスワード変更を強制するシステム仕様にする", "vi": "Bắt buộc người dùng phải đổi mật khẩu định kỳ mỗi 30 ngày" },
+            { "en": "Validating passwords locally in client javascript before sending", "ja": "送信前にブラウザのクライアントスクリプト側でパスワードチェックを行う", "vi": "Kiểm tra tính hợp lệ của mật khẩu ở phía client qua JavaScript trước khi gửi" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Salting adds random data to the password input prior to hashing. This ensures identical passwords yield unique hashes, rendering precomputed hash lists (rainbow tables) useless.",
+            "ja": "ハッシュ値作成前に「ソルト」というランダム値を加えることで、同じパスワードであってもハッシュ値が全く異なる値になります。これにより、事前計算ハッシュ対応表（レインボーテーブル）による解読を完全に無効化できます。",
+            "vi": "Salting thêm ký tự ngẫu nhiên trước khi chạy hàm băm. Việc này giúp các mật khẩu giống nhau cho ra các chuỗi băm khác nhau, vô hiệu hóa bảng tra cứu hash tính trước (rainbow table)."
+          }
+        },
+        {
+          "id": "fe_s6_q7",
+          "question": {
+            "en": "What is the primary role of a Certificate Authority (CA) in a Public Key Infrastructure (PKI)?",
+            "ja": "公開鍵基盤(PKI)において、認証局(CA)が果たす最も重要な役割はどれ？",
+            "vi": "Vai trò quan trọng nhất của cơ quan chứng thực CA (Certificate Authority) trong hạ tầng khóa công khai PKI là gì?"
+          },
+          "options": [
+            { "en": "To verify the identity of an entity and issue a digitally signed digital certificate binding the identity to a public key", "ja": "申請者の身元を保証し、その公開鍵に対して電子署名を施した「デジタル証明書」を発行する", "vi": "Xác minh danh tính thực thể và cấp phát chứng chỉ số có chữ ký số để liên kết danh tính đó với một khóa công khai" },
+            { "en": "To securely generate and store the private keys of all internet users", "ja": "インターネット利用者全員の秘密鍵を安全に作成し、一括して保管する", "vi": "Tạo và lưu trữ an toàn các khóa bí mật của mọi người dùng internet" },
+            { "en": "To monitor net traffic for active DDOS packet floods", "ja": "ネットワーク上の通信トラフィックを監視し、DDoS 攻撃パケットを破棄する", "vi": "Theo dõi lưu lượng mạng và phát hiện các gói tin tấn công DDoS" },
+            { "en": "To decrypt password database files during auth requests", "ja": "認証時にパスワードデータベースファイルの復号を担当する", "vi": "Giải mã các tệp tin cơ sở dữ liệu mật khẩu khi có yêu cầu chứng thực" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "A CA validates entities and issues digital certificates (X.509). This certificate states that a specific public key belongs to the verified entity.",
+            "ja": "認証局(CA)は、申請主の身元を審査し、正しい身元と公開鍵をペアにした「デジタル証明書（SSLサーバー証明書など）」を発行し、CA自身のデジタル署名を付与して信頼性を担保します。",
+            "vi": "CA xác minh thực thể và cấp chứng chỉ số (chuẩn X.509). Chứng chỉ số chứng thực rằng khóa công khai đó thuộc về chính thực thể đã được xác minh."
+          }
+        },
+        {
+          "id": "fe_s6_q8",
+          "question": {
+            "en": "Which authentication method uses physical human characteristics (e.g. fingerprint, iris, vein pattern) to verify identity?",
+            "ja": "人間の身体的特徴（指紋、虹彩、静脈パターンなど）を読み取って本人確認を行う認証技術を何と呼ぶ？",
+            "vi": "Phương pháp xác thực nào sử dụng các đặc điểm sinh học của con người (như vân tay, mống mắt, tĩnh mạch) để kiểm tra danh tính?"
+          },
+          "options": [
+            { "en": "Biometric Authentication", "ja": "バイオメトリクス認証（生体認証）", "vi": "Xác thực sinh trắc học (Biometric Authentication)" },
+            { "en": "Two-Factor Authentication", "ja": "2要素認証 (2FA)", "vi": "Xác thực 2 yếu tố (Two-Factor Authentication)" },
+            { "en": "Knowledge-based Authentication", "ja": "知識認証（パスワード認証）", "vi": "Xác thực dựa trên tri thức (Knowledge-based Authentication)" },
+            { "en": "Possession-based Authentication", "ja": "所持認証（ICカード・ワンタイムトークン）", "vi": "Xác thực dựa trên vật sở hữu (Possession-based Authentication)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Biometric authentication uses physical traits. Knowledge-based uses passwords. Possession-based uses tokens or keycards.",
+            "ja": "指紋や静脈といった身体的特徴で行う認証方式は「生体（バイオメトリクス）認証」です。パスワードは知識認証、ICカードや鍵は所持認証に分類されます。",
+            "vi": "Xác thực sinh trắc học sử dụng đặc điểm vật lý cơ thể. Xác thực tri thức dùng mật khẩu. Xác thực sở hữu dùng thẻ từ hoặc mã token."
+          }
+        },
+        {
+          "id": "fe_s6_q9",
+          "question": {
+            "en": "In a DDoS (Distributed Denial of Service) attack, what is the primary method used by attackers to overwhelm a target server?",
+            "ja": "DDoS（分散型サービス拒否）攻撃において、攻撃者が標的サーバーを麻痺させるために用いる主なアプローチはどれ？",
+            "vi": "Trong cuộc tấn công từ chối dịch vụ phân tán DDoS, phương pháp chính nào được kẻ tấn công sử dụng để làm tê liệt máy chủ mục tiêu?"
+          },
+          "options": [
+            { "en": "Using a network of compromised machines (zombies/botnet) to flood the target with massive volumes of traffic simultaneously", "ja": "ウイルス感染した多数のコンピュータ（ボットネット）から、一斉に大量のパケットを標的に送信してネットワークやリソースを使い果たさせる", "vi": "Sử dụng mạng lưới các máy tính bị kiểm soát (botnet/zombies) để đồng loạt gửi lượng khổng lồ gói tin đến máy chủ" },
+            { "en": "Modifying database permissions via SQL query injections", "ja": "データベースのアクセス権限を SQL インジェクション経由で書き換える", "vi": "Chỉnh sửa quyền truy cập cơ sở dữ liệu qua các mã SQL Injection" },
+            { "en": "Sending fake emails to steal administrative login passwords", "ja": "偽の電子メールを送信して、管理者アカウントのパスワードを詐取する", "vi": "Gửi các email giả mạo để ăn cắp tài khoản mật khẩu admin" },
+            { "en": "Encrypting the server hard drive and demanding a ransom payment", "ja": "サーバーのハードディスク全体を暗号化し、身代金の支払いを要求する", "vi": "Mã hóa toàn bộ ổ cứng máy chủ và đòi tiền chuộc" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "DDoS attacks use a botnet (infected computers) to send traffic simultaneously, depleting the target's bandwidth and computing power.",
+            "ja": "DDoS攻撃は、マルウェア感染させた大量の端末（ボット）で構成される「ボットネット」から標的に集中砲火を浴びせ、サービス不能状態に陥らせます。",
+            "vi": "Tấn công DDoS huy động mạng máy tính ma (botnet) gửi đồng loạt truy cập, vắt kiệt băng thông và năng lực xử lý của máy chủ."
+          }
+        },
+        {
+          "id": "fe_s6_q10",
+          "question": {
+            "en": "Which security tool monitors network traffic for suspicious patterns and alerts system administrators of potential intrusions without blocking the traffic by default?",
+            "ja": "ネットワーク上の不正通信をリアルタイムに検知し、管理者へ警告アラートを送信するが、デフォルトでは通信の遮断自体は行わないシステムはどれ？",
+            "vi": "Công cụ bảo mật nào giám sát lưu lượng mạng để tìm các dấu hiệu đáng ngờ và cảnh báo cho quản trị viên nhưng mặc định không thực hiện chặn lưu lượng đó?"
+          },
+          "options": [
+            { "en": "IDS (Intrusion Detection System)", "ja": "IDS (侵入検知システム)", "vi": "Hệ thống phát hiện xâm nhập - IDS (Intrusion Detection System)" },
+            { "en": "IPS (Intrusion Prevention System)", "ja": "IPS (侵入防止システム)", "vi": "Hệ thống ngăn chặn xâm nhập - IPS (Intrusion Prevention System)" },
+            { "en": "Firewall", "ja": "ファイアウォール", "vi": "Tường lửa (Firewall)" },
+            { "en": "WAF", "ja": "WAF", "vi": "Tường lửa ứng dụng web (WAF)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "An IDS (Intrusion Detection System) only detects and alerts. An IPS (Intrusion Prevention System) detects and actively blocks the offending traffic.",
+            "ja": "不正アクセスを「検知・警告」するだけのシステムは IDS です。検知した際に「通信を能動的に遮断・防止」するのは IPS です。",
+            "vi": "Hệ thống IDS chỉ phát hiện và cảnh báo. Hệ thống IPS phát hiện và chủ động thực hiện hành động chặn lưu lượng độc hại."
+          }
+        }
+      ]
+    },
+    {
+      "id": "fe-a-7",
+      "category": "part-a",
+      "title": { "en": "Set 7: Software Engineering & System Development", "ja": "セット7：ソフトウェア開発 & システム開発", "vi": "Đề 7: Kỹ nghệ phần mềm & Phát triển hệ thống" },
+      "description": {
+        "en": "Waterfall vs agile methodologies, testing types (white-box/black-box), and UML diagrams.",
+        "ja": "開発プロセスの特徴、テスト手法（ホワイト／ブラックボックス）、UMLの図法を学習します。",
+        "vi": "Mô hình thác nước và agile, các loại kiểm thử (hộp trắng/đen) và sơ đồ thiết kế UML."
+      },
+      "questions": [
+        {
+          "id": "fe_s7_q1",
+          "question": {
+            "en": "What is the primary characteristic of the Agile software development methodology compared to the traditional Waterfall model?",
+            "ja": "従来のウォーターフォールモデルと比較した、アジイル開発プロセスの最大の特徴・アプローチはどれ？",
+            "vi": "Đặc điểm cốt lõi của phương pháp phát triển phần mềm Agile so với mô hình Thác nước (Waterfall) truyền thống là gì?"
+          },
+          "options": [
+            { "en": "Iterative development cycles delivering incremental, working software releases in short sprints", "ja": "短いスプリント（イテレーション）を繰り返し、動作するソフトウェアを段階的にリリースしていく", "vi": "Phát triển lặp lại qua các chu kỳ ngắn (sprints) để bàn giao từng phần phần mềm chạy được" },
+            { "en": "Completing all documentation and specifications before starting any coding", "ja": "コーディングを開始する前に、すべての要件定義やドキュメントを完璧に作成する", "vi": "Hoàn thành toàn bộ tài liệu đặc tả trước khi bắt đầu viết bất kỳ dòng code nào" },
+            { "en": "Strict sequential phases where returning to previous phase is forbidden", "ja": "フェーズが厳密に一方向の順番で進み、前のフェーズへの逆戻りは認められない", "vi": "Quy trình tuần tự nghiêm ngặt, cấm quay lại các giai đoạn trước đó" },
+            { "en": "Complete elimination of unit testing to accelerate release cycles", "ja": "リリースを早めるために、単体テストを完全に省略する", "vi": "Bỏ qua hoàn toàn bước kiểm thử đơn vị để tăng tốc độ ra mắt" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Agile uses short iterative cycles (sprints) to welcome changes and release functional modules frequently. Waterfall is linear, sequential, and document-heavy.",
+            "ja": "短い周期（イテレーション／スプリント）で開発・リリースを繰り返し、仕様変更にも柔軟に対応するのがアジャイル開発の特徴です。ウォーターフォールは工程を順番に完遂していきます。",
+            "vi": "Agile sử dụng chu kỳ phát triển lặp ngắn để linh hoạt thích ứng thay đổi và ra mắt sản phẩm liên tục. Waterfall chạy tuyến tính và dựa nhiều vào tài liệu."
+          }
+        },
+        {
+          "id": "fe_s7_q2",
+          "question": {
+            "en": "Which testing methodology focuses on inspecting internal program structures, control flows, and statements, requiring knowledge of the code's implementation details?",
+            "ja": "プログラムの内部構造や制御の流れ、条件分岐などを網羅するようにテストケースを作成する、コードの実装詳細を理解して行うテスト手法はどれ？",
+            "vi": "Phương pháp kiểm thử nào tập trung vào kiểm tra cấu trúc bên trong chương trình, luồng điều khiển và câu lệnh, đòi hỏi kiến thức về code?"
+          },
+          "options": [
+            { "en": "White-box testing", "ja": "ホワイトボックステスト", "vi": "Kiểm thử hộp trắng (White-box testing)" },
+            { "en": "Black-box testing", "ja": "ブラックボックステスト", "vi": "Kiểm thử hộp đen (Black-box testing)" },
+            { "en": "Regression testing", "ja": "レグレッションテスト（回帰テスト）", "vi": "Kiểm thử hồi quy (Regression testing)" },
+            { "en": "User Acceptance testing (UAT)", "ja": "受入テスト (UAT)", "vi": "Kiểm thử chấp nhận người dùng (UAT)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "White-box testing checks code logic and paths. Black-box testing only verifies outputs based on specified inputs, ignoring code internals.",
+            "ja": "プログラムの内部ロジックや分岐構造を網羅するテストは「ホワイトボックステスト」です。内部を無視し、仕様書通りの入出力が得られるかチェックするのは「ブラックボックステスト」です。",
+            "vi": "Kiểm thử hộp trắng rà soát luồng lệnh và logic code. Kiểm thử hộp đen chỉ kiểm tra kết quả dựa trên đầu vào, bỏ qua cấu trúc bên trong code."
+          }
+        },
+        {
+          "id": "fe_s7_q3",
+          "question": {
+            "en": "What is the primary objective of running 'Regression Testing'?",
+            "ja": "「レグレッションテスト（回帰テスト／退行テスト）」を実行する主な目的はどれ？",
+            "vi": "Mục tiêu chính khi thực hiện kiểm thử hồi quy (Regression Testing) là gì?"
+          },
+          "options": [
+            { "en": "To ensure that new modifications or bug fixes have not introduced new defects into previously working code", "ja": "プログラムの変更やバグ修正によって、正常だった他の機能に不具合（エンバグ）が入り込んでいないか確認する", "vi": "Đảm bảo rằng các sửa đổi hoặc sửa lỗi mới không gây ra lỗi mới cho phần code cũ vốn đang hoạt động bình thường" },
+            { "en": "To verify system behaviors under extreme load pressures", "ja": "システムに限界に近い負荷をかけ、性能的な限界値を確認する", "vi": "Xác minh hoạt động của hệ thống khi chạy dưới các điều kiện tải cực hạn" },
+            { "en": "To validate requirements definitions directly with end-users", "ja": "エンドユーザーと共同で、要件定義の通りに動くか確認する", "vi": "Xác thực các định nghĩa yêu cầu trực tiếp cùng với người dùng cuối" },
+            { "en": "To check if database normalized schemas comply with SQL formats", "ja": "データベースのテーブル構造が SQL 標準に準拠しているか検証する", "vi": "Kiểm tra xem lược đồ cơ sở dữ liệu đã chuẩn hóa có tuân thủ định dạng SQL không" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Regression testing re-runs existing test cases to guarantee that codebase modifications have not broken pre-existing system functionalities.",
+            "ja": "プログラム改修時に、修正した部分とは別の「すでに動いていた部分」が壊れていないか（退行していないか）を検証するのがレグレッションテストです。",
+            "vi": "Kiểm thử hồi quy chạy lại các test case cũ để đảm bảo các thay đổi mới trong mã nguồn không làm hỏng các chức năng đang hoạt động tốt."
+          }
+        },
+        {
+          "id": "fe_s7_q4",
+          "question": {
+            "en": "In UML, which diagram is used to represent the relationship between actors and system functionalities (use cases)?",
+            "ja": "UMLにおいて、システム外部の利用者（アクター）とシステムが提供する機能（ユースケース）との関係をモデル化する図はどれ？",
+            "vi": "Trong UML, sơ đồ nào được dùng để biểu diễn mối quan hệ giữa tác nhân (actor) và các chức năng hệ thống (use case)?"
+          },
+          "options": [
+            { "en": "Use Case Diagram", "ja": "ユースケース図", "vi": "Sơ đồ ca sử dụng (Use Case Diagram)" },
+            { "en": "Class Diagram", "ja": "クラス図", "vi": "Sơ đồ lớp (Class Diagram)" },
+            { "en": "Sequence Diagram", "ja": "シーケンス図", "vi": "Sơ đồ tuần tự (Sequence Diagram)" },
+            { "en": "State Machine Diagram", "ja": "ステートマシン図", "vi": "Sơ đồ trạng thái (State Machine Diagram)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "A Use Case Diagram shows actors and use cases. A Class Diagram displays static structure. A Sequence Diagram illustrates message interactions chronologically.",
+            "ja": "アクター（外部のアクター）とシステムの機能要件を表現するのは「ユースケース図」です。クラスの関係は「クラス図」、時系列の処理は「シーケンス図」です。",
+            "vi": "Sơ đồ Use Case thể hiện tác nhân và các ca sử dụng. Sơ đồ Class thể hiện cấu trúc tĩnh. Sơ đồ Sequence mô tả luồng tin nhắn theo thời gian."
+          }
+        },
+        {
+          "id": "fe_s7_q5",
+          "question": {
+            "en": "What is the difference between 'Unit Testing' and 'Integration Testing' in the V-model testing hierarchy?",
+            "ja": "V字モデルにおける「単体テスト」と「結合テスト」の主な違いはどれ？",
+            "vi": "Sự khác biệt giữa kiểm thử đơn vị (Unit Testing) và kiểm thử tích hợp (Integration Testing) trong hệ thống mô hình chữ V là gì?"
+          },
+          "options": [
+            { "en": "Unit testing checks individual modules, while Integration testing checks the interfaces and interactions between combined modules", "ja": "単体テストは個々のプログラムモジュール単体をテストし、結合テストは複数のモジュールを連携させたときのインターフェースや挙動をテストする", "vi": "Kiểm thử đơn vị kiểm tra riêng lẻ từng module, còn kiểm thử tích hợp kiểm tra giao diện và sự tương tác giữa các module gộp lại" },
+            { "en": "Unit testing is done by users, whereas Integration testing is done by developers", "ja": "単体テストは利用ユーザーが行い、結合テストは開発チームが行う", "vi": "Kiểm thử đơn vị do người dùng làm, còn kiểm thử tích hợp do lập trình viên làm" },
+            { "en": "Integration testing only evaluates database SQL normalization levels", "ja": "結合テストはデータベースのテーブルの正規化レベルのみを評価する", "vi": "Kiểm thử tích hợp chỉ đánh giá mức độ chuẩn hóa SQL cơ sở dữ liệu" },
+            { "en": "Unit testing is dynamic, whereas Integration testing is purely static analysis", "ja": "単体テストは動的にプログラムを動かし、結合テストはコードを読む静的解析のみである", "vi": "Kiểm thử đơn vị là chạy thử động, còn kiểm thử tích hợp chỉ là đọc code tĩnh" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Unit testing evaluates a single program component. Integration testing focuses on verifying communication, parameter passing, and database connections between modules.",
+            "ja": "単体テストは部品単体、結合テストは部品を「くっつけた（結合した）」ときのデータ受け渡しやインターフェースの整合性をテストする点が異なります。",
+            "vi": "Kiểm thử đơn vị đánh giá từng linh kiện riêng biệt. Kiểm thử tích hợp tập trung vào giao tiếp, truyền tham số và kết nối giữa các module."
+          }
+        },
+        {
+          "id": "fe_s7_q6",
+          "question": {
+            "en": "In software testing, what is the term used to describe a temporary program built to simulate the behavior of a sub-module that is called by the module currently being tested?",
+            "ja": "トップダウン方式の結合テストにおいて、テスト対象モジュールから呼び出される「下位モジュール」の代役を務めるスタブや代入ツールを何と呼ぶ？",
+            "vi": "Trong kiểm thử, thuật ngữ nào dùng để mô tả một chương trình tạm thời đóng vai trò mô phỏng hành vi của module cấp dưới được gọi bởi module đang test?"
+          },
+          "options": [
+            { "en": "Stub", "ja": "スタブ (Stub)", "vi": "Stub (Phần cuống)" },
+            { "en": "Driver", "ja": "ドライバ (Driver)", "vi": "Driver (Bộ điều khiển)" },
+            { "en": "Mock", "ja": "モック (Mock)", "vi": "Mock (Đối tượng giả)" },
+            { "en": "Spy", "ja": "スパイ (Spy)", "vi": "Spy (Do thám)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "A Stub simulates a lower-level module (called module) in top-down testing. A Driver simulates a higher-level module (calling module) in bottom-up testing.",
+            "ja": "トップダウンテストにおいて、開発中である下位モジュールの身代わり（呼び出される側）を務めるのは「スタブ」です。ボトムアップテストで上位モジュール（呼び出す側）を務めるのは「ドライバ」です。",
+            "vi": "Stub mô phỏng module cấp dưới (bị gọi) trong test top-down. Driver mô phỏng module cấp trên (gọi lệnh) trong test bottom-up."
+          }
+        },
+        {
+          "id": "fe_s7_q7",
+          "question": {
+            "en": "Which UML diagram represents the structural system design showing classes, attributes, operations, and relationships between classes?",
+            "ja": "UMLにおいて、システムの静的な構造を表現するために、クラス、属性、操作、およびクラス間の関係を記述する図はどれ？",
+            "vi": "Sơ đồ UML nào đại diện cho thiết kế cấu trúc hệ thống bằng cách hiển thị các lớp, thuộc tính, phương thức và mối quan hệ giữa chúng?"
+          },
+          "options": [
+            { "en": "Class Diagram", "ja": "クラス図", "vi": "Sơ đồ lớp (Class Diagram)" },
+            { "en": "Use Case Diagram", "ja": "ユースケース図", "vi": "Sơ đồ ca sử dụng (Use Case Diagram)" },
+            { "en": "Activity Diagram", "ja": "アクティビティ図", "vi": "Sơ đồ hoạt động (Activity Diagram)" },
+            { "en": "Deployment Diagram", "ja": "配置図", "vi": "Sơ đồ triển khai (Deployment Diagram)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "A Class Diagram displays static database/code object models. An Activity Diagram maps execution workflows, and a Deployment Diagram describes hardware infrastructure.",
+            "ja": "システム内のクラスとその関連（静的構造）を表現するのは「クラス図」です。業務フロー等の動的な流れは「アクティビティ図」で表します。",
+            "vi": "Sơ đồ lớp (Class Diagram) thể hiện cấu trúc tĩnh của code/dữ liệu. Sơ đồ hoạt động (Activity) biểu diễn quy trình luồng công việc."
+          }
+        },
+        {
+          "id": "fe_s7_q8",
+          "question": {
+            "en": "In software code reviews, what does 'Refactoring' mean?",
+            "ja": "ソフトウェア開発における「リファクタリング」の意味として正しいものはどれ？",
+            "vi": "Trong phát triển phần mềm, thuật ngữ 'Tối ưu hóa mã nguồn' (Refactoring) nghĩa là gì?"
+          },
+          "options": [
+            { "en": "Improving the internal code structure without changing its external behaviors to make it cleaner and more maintainable", "ja": "プログラムの外部から見た挙動（仕様）は一切変更せず、内部コード構造を整理して保守性や視認性を向上させる", "vi": "Cải thiện cấu trúc mã nguồn bên trong mà không làm thay đổi hành vi bên ngoài của phần mềm để giúp code sạch và dễ bảo trì hơn" },
+            { "en": "Adding new database migration models to support more tables", "ja": "新しいテーブル構造をサポートするための機能拡張を行う", "vi": "Thêm các cấu trúc bảng cơ sở dữ liệu mới để hỗ trợ thêm tính năng" },
+            { "en": "Rewriting the user interface with updated Tailwind variables", "ja": "ユーザーインターフェースを新しいカラーパレットで書き換える", "vi": "Viết lại giao diện người dùng bằng các biến thiết kế mới" },
+            { "en": "Converting codebases from Java to Python to improve compilation speed", "ja": "ビルド速度を高めるために、Java から Python へ言語自体を移植する", "vi": "Dịch chuyển toàn bộ mã nguồn từ Java sang Python để tăng tốc độ biên dịch" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Refactoring improves code design, cleanliness, and readability. It does NOT fix bugs or add new features (no change to external specifications).",
+            "ja": "リファクタリングは、仕様変更やバグ修正を行わず、ソースコードの整理（重複排除や関数分割など）を行うことで、コード品質とメンテナンス性を高める活動です。",
+            "vi": "Refactoring cải thiện thiết kế, độ sạch và khả năng đọc của code. Nó KHÔNG sửa lỗi hay thêm tính năng mới (không đổi đặc tả bên ngoài)."
+          }
+        },
+        {
+          "id": "fe_s7_q9",
+          "question": {
+            "en": "What is a major advantage of utilizing an Object-Oriented Programming (OOP) design concept in large-scale system development?",
+            "ja": "大規模開発において、オブジェクト指向設計の概念を採用する主なメリットはどれ？",
+            "vi": "Lợi thế lớn nhất của việc sử dụng các khái niệm hướng đối tượng (OOP) trong phát triển hệ thống quy mô lớn là gì?"
+          },
+          "options": [
+            { "en": "Increased software reusability and modularity through inheritance and encapsulation", "ja": "継承やカプセル化といった機能により、コードの再利用性や部品化（モジュール性）が高まる", "vi": "Tăng khả năng tái sử dụng và tính module của phần mềm thông qua tính kế thừa và đóng gói" },
+            { "en": "Elimination of compilation phases during code builds", "ja": "コードのビルド時におけるコンパイル作業が完全に不要になる", "vi": "Loại bỏ hoàn toàn giai đoạn biên dịch khi build code" },
+            { "en": "Automatic optimization of network socket speeds", "ja": "ネットワーク接続用のソケット速度が内部で自動的に最適化される", "vi": "Tự động tối ưu hóa tốc độ cổng truyền thông mạng" },
+            { "en": "Zero requirement for database normalization steps", "ja": "リレーショナルデータベースにおける正規化フェーズが不要になる", "vi": "Không cần thiết phải thực hiện bước chuẩn hóa cơ sở dữ liệu" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "OOP principles such as encapsulation, inheritance, and polymorphism enable code reuse, hide complexity, and isolate changes within modules.",
+            "ja": "オブジェクト指向では、データと処理をパッケージ化する「カプセル化」や、既存のクラスを流用・拡張する「継承」によって、コードの再利用と堅牢なモジュール化を両立させます。",
+            "vi": "Các đặc tính OOP như đóng gói, kế thừa và đa hình giúp tái sử dụng mã, che giấu độ phức tạp và cô lập thay đổi trong các module."
+          }
+        },
+        {
+          "id": "fe_s7_q10",
+          "question": {
+            "en": "Which testing type evaluates if the entire completed software system meets the high-level business requirements defined in the spec?",
+            "ja": "ソフトウェア開発プロセスの最終段階において、完成したシステム全体が仕様書（要件定義）に合致し、ビジネス要件を満たしているかを検証するテストはどれ？",
+            "vi": "Kiểu kiểm thử nào đánh giá xem toàn bộ hệ thống phần mềm đã hoàn thành có đáp ứng các yêu cầu nghiệp vụ cấp cao trong đặc tả không?"
+          },
+          "options": [
+            { "en": "Acceptance Testing / System Testing", "ja": "システムテスト / 受入テスト", "vi": "Kiểm thử hệ thống / Kiểm thử chấp nhận (Acceptance / System)" },
+            { "en": "Unit Testing", "ja": "単体テスト (Unit Testing)", "vi": "Kiểm thử đơn vị (Unit Testing)" },
+            { "en": "Integration Testing", "ja": "結合テスト (Integration Testing)", "vi": "Kiểm thử tích hợp (Integration Testing)" },
+            { "en": "White-box Testing", "ja": "ホワイトボックステスト", "vi": "Kiểm thử hộp trắng (White-box Testing)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "System testing evaluates the whole system against specifications. Acceptance testing (often by clients) checks business usability and requirements compliance.",
+            "ja": "システム全体の機能性や性能要件を検証するテストが「システムテスト」で、発注元（ユーザー）が仕様に合致しているかを検収する最終テストが「受入テスト」です。",
+            "vi": "Kiểm thử hệ thống đánh giá toàn bộ hệ thống theo đặc tả. Kiểm thử chấp nhận (do khách hàng làm) xác nhận tính phù hợp nghiệp vụ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "fe-a-8",
+      "category": "part-a",
+      "title": { "en": "Set 8: Project & Service Management", "ja": "セット8：プロジェクト管理 & サービス管理", "vi": "Đề 8: Quản lý dự án & Quản lý dịch vụ IT" },
+      "description": {
+        "en": "Scheduling with arrow diagrams (critical path), ITIL frameworks, SLA, and system audits.",
+        "ja": "アローダイアグラムによるスケジュール計算、ITILのフレームワーク、SLA、システム監査を学びます。",
+        "vi": "Tính thời gian bằng sơ đồ mũi tên (đường găng), khung ITIL, cam kết dịch vụ SLA và kiểm toán hệ thống."
+      },
+      "questions": [
+        {
+          "id": "fe_s8_q1",
+          "question": {
+            "en": "In project scheduling, what is the definition of the 'Critical Path'?",
+            "ja": "プロジェクトのスケジュール管理（アローダイアグラム）における「クリティカルパス」の定義はどれ？",
+            "vi": "Trong hoạch định tiến độ dự án, định nghĩa của 'Đường găng' (Critical Path) là gì?"
+          },
+          "options": [
+            { "en": "The longest sequence of dependent activities that determines the shortest possible duration of the project", "ja": "プロジェクト開始から終了までに至る経路の中で、所要日数が最大となる最長の経路（遅延が許されない経路）", "vi": "Chuỗi hoạt động phụ thuộc dài nhất xác định thời gian thực hiện ngắn nhất có thể của dự án" },
+            { "en": "The path containing activities with the lowest costs", "ja": "発生コストが最も低くなる作業工程をつないだ経路", "vi": "Đường đi kết nối các công việc có chi phí thấp nhất" },
+            { "en": "The sequence of activities that can be executed in parallel easily", "ja": "並行して同時に実行しやすい作業工程をつないだ経路", "vi": "Chuỗi các công việc có thể dễ dàng chạy song song cùng lúc" },
+            { "en": "The path that contains the most number of software development tasks", "ja": "ソフトウェア開発タスクが最も多く含まれる作業経路", "vi": "Đường chứa nhiều tác vụ lập trình phần mềm nhất" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The Critical Path is the longest path of planned activities to the end of the project. Any delay in an activity on the critical path directly delays the project completion date.",
+            "ja": "アローダイアグラムにおいて、開始から終了までをつなぐ経路のうち「最も時間がかかるルート」がクリティカルパスです。このルート上の作業が遅れると、プロジェクト全体の完了も遅れます。",
+            "vi": "Đường găng là đường dài nhất nối các công việc từ đầu đến cuối dự án. Bất kỳ sự chậm trễ nào của công việc trên đường găng sẽ làm chậm trễ cả dự án."
+          }
+        },
+        {
+          "id": "fe_s8_q2",
+          "question": {
+            "en": "What is the primary purpose of a Service Level Agreement (SLA) in IT services?",
+            "ja": "ITサービス運営における SLA (Service Level Agreement) の目的はどれ？",
+            "vi": "Mục đích chính của Cam kết mức dịch vụ SLA (Service Level Agreement) trong dịch vụ IT là gì?"
+          },
+          "options": [
+            { "en": "To define the agreed levels of service quality, availability, and responsibilities between the service provider and the customer", "ja": "ITサービスの提供者と委託元の顧客との間で、提供するサービス品質、可用性、役割分担についてあらかじめ合意・明記する契約", "vi": "Định nghĩa chất lượng dịch vụ, hệ số sẵn sàng và trách nhiệm đã thống nhất giữa nhà cung cấp và khách hàng" },
+            { "en": "To automatically encrypt internal database communication links", "ja": "社内データベース通信経路を暗号化することを法的に保証する", "vi": "Hợp đồng pháp lý bắt buộc phải mã hóa kết nối database" },
+            { "en": "To set up automatic firewall alerts on network switches", "ja": "スイッチ上でファイヤーウォールの警告設定を規定する", "vi": "Thiết lập cảnh báo tường lửa tự động trên switch" },
+            { "en": "To outline labor dispatch contract fee structures", "ja": "労働者派遣契約における派遣料の支払い単価を定義する", "vi": "Định nghĩa đơn giá thanh toán trong hợp đồng phái cử lao động" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "An SLA document defines service metrics (uptime, response time) and penalties if the IT service provider fails to meet those benchmarks.",
+            "ja": "SLAは、サービス提供者と顧客が「サービスの品質（稼働率99.9%など）」を定義し、それを下回った場合の補償ルールなどを合意しておくための合意書です。",
+            "vi": "SLA là tài liệu cam kết chất lượng dịch vụ (như thời gian uptime 99.9%, thời gian phản hồi) và các điều khoản đền bù nếu nhà cung cấp vi phạm."
+          }
+        },
+        {
+          "id": "fe_s8_q3",
+          "question": {
+            "en": "Under the ITIL framework, what is the difference between 'Incident Management' and 'Problem Management'?",
+            "ja": "ITILフレームワークにおいて、「インシデント管理」と「問題管理」の主な違いはどれ？",
+            "vi": "Theo khung thư viện ITIL, sự khác biệt giữa 'Quản lý sự cố' (Incident) và 'Quản lý vấn đề' (Problem) là gì?"
+          },
+          "options": [
+            { "en": "Incident management aims to restore service to normal as quickly as possible, while Problem management aims to identify and resolve the root cause of failures", "ja": "インシデント管理は速やかなサービス復旧（応急処置）を目指し、問題管理は障害が発生した根本的な原因を追究・解消して再発を防止する", "vi": "Quản lý sự cố hướng tới phục hồi dịch vụ nhanh nhất có thể, còn Quản lý vấn đề hướng tới tìm nguyên nhân gốc rễ để phòng tránh tái diễn" },
+            { "en": "Incident management is done locally, while Problem management requires remote server restarts", "ja": "インシデント管理は社内で行われ、問題管理はリモートサーバーの再起動を伴う", "vi": "Quản lý sự cố được xử lý tại chỗ, còn Quản lý vấn đề yêu cầu khởi động lại máy chủ từ xa" },
+            { "en": "Problem management only handles security cyberattacks like SQL injections", "ja": "問題管理は、SQLインジェクションなどのセキュリティ攻撃への対処のみを行う", "vi": "Quản lý vấn đề chỉ giải quyết các cuộc tấn công an ninh mạng như SQL Injection" },
+            { "en": "There is no difference; they are interchangeable terms", "ja": "両者に違いはなく、同じ業務を表す対等な用語である", "vi": "Không có sự khác biệt; chúng là hai thuật ngữ có thể thay thế cho nhau" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Incident Management focuses on fast recovery (workarounds). Problem Management focuses on root cause analysis (preventing recurrence of incidents).",
+            "ja": "インシデント管理は「とにかく早く復旧する（ワークアラウンドなど）」ことを優先します。問題管理は「なぜ起きたのか（根本原因）を究明して再発を防ぐ」ことを優先します。",
+            "vi": "Quản lý sự cố ưu tiên khôi phục dịch vụ nhanh nhất (dùng workaround). Quản lý vấn đề ưu tiên truy tìm nguyên nhân gốc rễ để triệt tiêu lỗi lâu dài."
+          }
+        },
+        {
+          "id": "fe_s8_q4",
+          "question": {
+            "en": "What is the primary role of an independent system auditor during a 'System Audit'?",
+            "ja": "「システム監査」において、監査人が果たすべき最も重要な客観的な役割はどれ？",
+            "vi": "Vai trò quan trọng nhất của kiểm toán viên hệ thống độc lập trong một cuộc 'Kiểm toán hệ thống' là gì?"
+          },
+          "options": [
+            { "en": "To objectively evaluate system safety, reliability, and compliance, and report findings to management", "ja": "情報システムの安全性・信頼性・効率性を客観的に評価し、経営層へ改善提言を報告する", "vi": "Đánh giá khách quan tính an toàn, độ tin cậy và sự tuân thủ của hệ thống, báo cáo đề xuất cải thiện lên ban giám đốc" },
+            { "en": "To patch software bugs and fix database queries directly", "ja": "システムのプログラムバグを修正したり、SQLクエリを直接チューニングする", "vi": "Sửa lỗi phần mềm và tinh chỉnh trực tiếp các câu lệnh SQL" },
+            { "en": "To configure firewall rules and update user permissions", "ja": "ファイアウォールのフィルター設定を記述し、ユーザー権限を変更する", "vi": "Khai báo các quy tắc tường lửa và điều chỉnh phân quyền người dùng" },
+            { "en": "To operate the daily backups and restore data on failure", "ja": "毎日のバックアップジョブを監視し、システムをリカバリーする", "vi": "Vận hành sao lưu hàng ngày và thực hiện khôi phục dữ liệu khi lỗi" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "System auditors must be independent of the systems they audit. They evaluate controls, risks, and compliance, but do NOT perform configuration modifications or code changes.",
+            "ja": "システム監査人は独立した第三者でなければならず、システムの実務（バグ修正や設定変更）は行いません。評価と報告・改善提言（システム監査報告書の提出）のみを担当します。",
+            "vi": "Kiểm toán viên hệ thống phải độc lập với hệ thống được đánh giá. Họ kiểm tra kiểm soát, rủi ro nhưng KHÔNG trực tiếp tham gia chỉnh sửa code hay cấu hình."
+          }
+        },
+        {
+          "id": "fe_s8_q5",
+          "question": {
+            "en": "An activity in an arrow diagram has an optimistic time of 4 days, a most likely time of 6 days, and a pessimistic time of 14 days. What is the expected duration of this activity using three-point estimation?",
+            "ja": "アローダイアグラムのある作業において、楽観値が4日、最頻値が6日、悲観値が14日であるとき、3点見積もり法による期待値（所要日数）は何日？",
+            "vi": "Một công việc trong sơ đồ mũi tên có thời gian lạc quan là 4 ngày, khả năng cao nhất là 6 ngày, và bi quan là 14 ngày. Thời gian kỳ vọng của công việc này tính theo phương pháp ước lượng 3 điểm là bao nhiêu ngày?"
+          },
+          "options": [
+            { "en": "7 days", "ja": "7 日", "vi": "7 days" },
+            { "en": "6 days", "ja": "6 日", "vi": "6 days" },
+            { "en": "8 days", "ja": "8 日", "vi": "8 days" },
+            { "en": "9 days", "ja": "9 日", "vi": "9 days" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The formula for expected duration is (Optimistic + 4*Most Likely + Pessimistic) / 6 = (4 + 4*6 + 14) / 6 = (4 + 24 + 14) / 6 = 42 / 6 = 7 days.",
+            "ja": "3点見積もりの期待値（PERT公式）は、 (楽観値 ＋ 4 × 最頻値 ＋ 悲観値) ÷ 6 で計算します。(4 ＋ 24 ＋ 14) ÷ 6 ＝ 42 ÷ 6 ＝ 7 日となります。",
+            "vi": "Công thức thời gian kỳ vọng là (Lạc quan + 4*Khả năng cao nhất + Bi quan) / 6 = (4 + 4*6 + 14) / 6 = (4 + 24 + 14) / 6 = 42 / 6 = 7 ngày."
+          }
+        },
+        {
+          "id": "fe_s8_q6",
+          "question": {
+            "en": "What is the primary goal of IT Service Management (ITSM)?",
+            "ja": "ITサービスマネジメント(ITSM)を導入する第一の目的はどれ？",
+            "vi": "Mục tiêu hàng đầu của Quản lý dịch vụ CNTT (ITSM) là gì?"
+          },
+          "options": [
+            { "en": "To align IT services with business needs and ensure stable, high-quality service delivery to users", "ja": "ビジネスニーズにITサービスを適合させ、高品質で安定したITサービスをユーザーへ提供し続ける", "vi": "Điều chỉnh các dịch vụ IT phù hợp với nhu cầu doanh nghiệp và đảm bảo cung cấp dịch vụ ổn định, chất lượng cao cho người dùng" },
+            { "en": "To increase the physical memory (RAM) bandwidth across database servers", "ja": "データベースサーバーの物理メモリ帯域幅を増加させる", "vi": "Nâng cao băng thông bộ nhớ vật lý của hệ thống máy chủ database" },
+            { "en": "To compile application packages using automated docker scripts", "ja": "Dockerなどの自動スクリプトを使ってコンパイル作業を行う", "vi": "Tự động hóa các giai đoạn đóng gói ứng dụng qua Docker" },
+            { "en": "To minimize the tax expenses of software acquisition projects", "ja": "ソフトウェア開発プロジェクトの税務コストを抑制する", "vi": "Hạn chế tối đa các chi phí thuế cho dự án mua sắm phần mềm" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ITSM ensures that IT processes, technology, and staff work together to provide optimal, business-aligned value and service level agreements (SLAs).",
+            "ja": "ITSMは、情報システムを提供するだけでなく、「ビジネスの成功」のためにサービス水準の合意(SLA)に基づき、運用品質を継続的に改善していく活動です。",
+            "vi": "ITSM đảm bảo các quy trình IT, công nghệ và nhân sự phối hợp để mang lại giá trị tối ưu, đáp ứng các cam kết mức dịch vụ (SLA)."
+          }
+        },
+        {
+          "id": "fe_s8_q7",
+          "question": {
+            "en": "Under the ITIL service transition phase, what is the purpose of 'Configuration Management'?",
+            "ja": "ITILのサービス移行工程における「構成管理（サービス構成・資産管理）」の目的はどれ？",
+            "vi": "Trong giai đoạn chuyển giao dịch vụ ITIL, mục đích của 'Quản lý cấu hình' (Configuration Management) là gì?"
+          },
+          "options": [
+            { "en": "To maintain accurate information about Configuration Items (CIs) and their relationships within the IT infrastructure", "ja": "ITインフラ内のIT資産（ハードウェア、ライセンス等）の情報やそれらの関連性を「構成項目(CI)」として正しく把握・管理する", "vi": "Duy trì thông tin chính xác về các Thành phần cấu hình (CIs) và mối quan hệ giữa chúng trong hạ tầng IT" },
+            { "en": "To install and configure database servers on local hardware networks", "ja": "ローカルハードウェアにデータベースサーバーをセットアップする", "vi": "Cài đặt và thiết lập máy chủ cơ sở dữ liệu trên phần cứng mạng" },
+            { "en": "To verify that code packages match compiler version constraints", "ja": "コードパッケージのコンパイラバージョンが正しいか検査する", "vi": "Kiểm tra phiên bản bộ biên dịch mã nguồn có khớp yêu cầu không" },
+            { "en": "To change the IP configurations of routers dynamically during routing failure", "ja": "ルーティングエラー発生時に、動的にルータの IP 設定を書き換える", "vi": "Thay đổi động cấu hình IP của các router khi đường truyền gặp lỗi" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Configuration Management tracks and documents CIs (servers, software, licenses, cables) and how they relate, storing this in a Configuration Management Database (CMDB).",
+            "ja": "構成管理は、ITサービスを提供する機器やソフトウェアなどの「構成項目(CI)」の情報を正しく最新の状態に維持し、関係性を図示できるように管理（CMDBの利用など）します。",
+            "vi": "Quản lý cấu hình ghi nhận và theo dõi các CIs (máy chủ, phần mềm, bản quyền, cáp kết nối) và liên kết giữa chúng trong cơ sở dữ liệu CMDB."
+          }
+        },
+        {
+          "id": "fe_s8_q8",
+          "question": {
+            "en": "In software testing and project quality audits, what does a 'Gantt Chart' primarily illustrate?",
+            "ja": "プロジェクトのスケジュール管理でよく使われる「ガントチャート（Gantt Chart）」が視覚的に最もわかりやすく表現するものはどれ？",
+            "vi": "Trong quản lý dự án, 'Biểu đồ Gantt' (Gantt Chart) chủ yếu minh họa điều gì trực quan nhất?"
+          },
+          "options": [
+            { "en": "The start dates, end dates, and progress of individual project tasks over time", "ja": "各タスクの開始日、終了日、および進捗状況の時系列での推移", "vi": "Ngày bắt đầu, ngày kết thúc và tiến độ thực tế của từng công việc theo thời gian" },
+            { "en": "The logical dependencies and critical path calculations", "ja": "タスク間の論理的な依存関係とクリティカルパスの計算結果", "vi": "Mối quan hệ phụ thuộc logic giữa các công việc và đường găng" },
+            { "en": "The allocation of project budget across different resource departments", "ja": "プロジェクト予算の異なる部門間での配分状況", "vi": "Sự phân bổ ngân sách dự án giữa các phòng ban nhân sự" },
+            { "en": "The priority order of bugs found during black-box testing", "ja": "ブラックボックステストで見つかったバグの修正優先順位", "vi": "Thứ tự ưu tiên khắc phục lỗi tìm được trong kiểm thử hộp đen" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "A Gantt Chart is a bar chart displaying tasks on the vertical axis and time intervals on the horizontal axis. It shows the lifecycle and current progress of tasks.",
+            "ja": "ガントチャートは横棒グラフでスケジュールのタイムラインを表します。作業ごとの「予定と進捗」を一目で把握できるのが特長です。依存関係はアローダイアグラムの方が分かりやすいです。",
+            "vi": "Biểu đồ Gantt sử dụng các thanh ngang trên trục thời gian để thể hiện tiến độ. Nó giúp nắm bắt nhanh 'kế hoạch và thực tế' của từng tác vụ."
+          }
+        },
+        {
+          "id": "fe_s8_q9",
+          "question": {
+            "en": "What is the primary difference between a 'System Audit' and a 'System Evaluation' conducted by developers?",
+            "ja": "「システム監査」と、開発チーム自身が行う「システム評価」との最も大きな違いはどれ？",
+            "vi": "Khác biệt cốt lõi giữa 'Kiểm toán hệ thống' (System Audit) và 'Đánh giá hệ thống' (System Evaluation) do đội phát triển tự làm là gì?"
+          },
+          "options": [
+            { "en": "A system audit must be conducted by an independent third party who has no direct involvement in system operations, ensuring objectivity", "ja": "システム監査は、開発や運用に関わっていない「独立した第三者（客観的な監査人）」が評価し、監査報告書を作成する点", "vi": "Kiểm toán hệ thống bắt buộc phải được thực hiện bởi bên thứ ba độc lập không tham gia vận hành để đảm bảo tính khách quan" },
+            { "en": "A system evaluation is legally binding in financial courts, while a system audit is not", "ja": "システム評価は裁判所で法的効力を持つが、システム監査は持たない点", "vi": "Đánh giá hệ thống có hiệu lực pháp lý trước tòa, còn kiểm toán hệ thống thì không" },
+            { "en": "A system audit evaluates only the code quality of python scripts", "ja": "システム監査は Python スクリプトのコード品質のみを評価する点", "vi": "Kiểm toán hệ thống chỉ đánh giá chất lượng mã nguồn của các tập lệnh python" },
+            { "en": "There is no difference; they are identical", "ja": "両者に一切の違いはなく、同じ工程を表す言葉である点", "vi": "Không có sự khác biệt; hai thuật ngữ dùng để chỉ cùng một bước công việc" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "A system audit requires independence and objectivity to verify controls and security. Internal evaluations, though useful, lack the formal third-party objectivity required for auditing standards.",
+            "ja": "システム監査の最大の特徴は「被監査部門からの独立性」です。監査対象システムの関係者が監査をしてはならず、客観性が保証されている必要があります。",
+            "vi": "Đặc trưng lớn nhất của kiểm toán hệ thống là 'tính độc lập'. Người thực hiện kiểm toán không được phép liên quan đến việc thiết kế hay vận hành hệ thống đó."
+          }
+        },
+        {
+          "id": "fe_s8_q10",
+          "question": {
+            "en": "Which ITIL process is responsible for restoring a failed IT service back to normal operation as quickly as possible?",
+            "ja": "障害発生時に、あらかじめ合意されたサービス水準(SLA)に沿って、ITサービスを「できるだけ迅速に」回復（一時しのぎも含む）させる役割を持つプロセスはどれ？",
+            "vi": "Quy trình ITIL nào chịu trách nhiệm khôi phục dịch vụ IT bị lỗi về trạng thái chạy bình thường trong thời gian nhanh nhất?"
+          },
+          "options": [
+            { "en": "Incident Management", "ja": "インシデント管理 (Incident Management)", "vi": "Quản lý sự cố (Incident Management)" },
+            { "en": "Problem Management", "ja": "問題管理 (Problem Management)", "vi": "Quản lý vấn đề (Problem Management)" },
+            { "en": "Change Management", "ja": "変更管理 (Change Management)", "vi": "Quản lý thay đổi (Change Management)" },
+            { "en": "Release Management", "ja": "リリース管理 (Release Management)", "vi": "Quản lý phát hành (Release Management)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Incident Management focuses on minimizing business impact by resolving service interruptions quickly. Problem Management focuses on preventing future interruptions.",
+            "ja": "サービス中断（インシデント）を迅速に解消し、ビジネスへの悪影響を最小限に抑える活動は「インシデント管理」の役割です。",
+            "vi": "Khắc phục nhanh chóng việc gián đoạn dịch vụ (sự cố) để giảm thiểu tác động tiêu cực đến kinh doanh là vai trò của 'Quản lý sự cố'."
+          }
+        }
+      ]
+    },
+    {
+      "id": "fe-a-9",
+      "category": "part-a",
+      "title": { "en": "Set 9: System Strategy & Business Strategy", "ja": "セット9：システム戦略 & 経営戦略", "vi": "Đề 9: Chiến lược hệ thống & Chiến lược kinh doanh" },
+      "description": {
+        "en": "SWOT and 3C analysis, PPM matrices, break-even point calculations, and accounting charts.",
+        "ja": "ビジネス分析手法（SWOT、3C、PPM）、損益分岐点、貸借対照表（B/S）の計算問題をマスターします。",
+        "vi": "Các mô hình phân tích SWOT và 3C, ma trận PPM, tính toán điểm hòa vốn và báo cáo tài chính."
+      },
+      "questions": [
+        {
+          "id": "fe_s9_q1",
+          "question": {
+            "en": "Which business analysis tool evaluates an organization's Strengths, Weaknesses, Opportunities, and Threats?",
+            "ja": "企業の強み(Strengths)、弱み(Weaknesses)、機会(Opportunities)、脅威(Threats)の4つの観点から環境分析を行う経営分析手法はどれ？",
+            "vi": "Công cụ phân tích kinh doanh nào đánh giá một tổ chức qua các yếu tố: Điểm mạnh, Điểm yếu, Cơ hội và Thách thức?"
+          },
+          "options": [
+            { "en": "SWOT Analysis", "ja": "SWOT 分析", "vi": "Phân tích SWOT (SWOT Analysis)" },
+            { "en": "3C Analysis", "ja": "3C 分析", "vi": "Phân tích 3C (3C Analysis)" },
+            { "en": "PPM (Product Portfolio Management)", "ja": "PPM (プロダクト・ポートフォリオ・マネジメント)", "vi": "Quản lý danh mục sản phẩm (PPM)" },
+            { "en": "BCG Matrix", "ja": "BCG マトリクス", "vi": "Ma trận BCG (BCG Matrix)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "SWOT Analysis is a classic strategic tool. Strengths/Weaknesses are internal factors, while Opportunities/Threats are external environmental factors.",
+            "ja": "頭文字をとった「SWOT分析」です。強み・弱みは内部環境、機会・脅威は外部環境に分類されます。",
+            "vi": "Phân tích SWOT là công cụ chiến lược kinh điển. Điểm mạnh/Điểm yếu là nhân tố bên trong; Cơ hội/Thách thức là nhân tố môi trường bên ngoài."
+          }
+        },
+        {
+          "id": "fe_s9_q2",
+          "question": {
+            "en": "In Product Portfolio Management (PPM), what quadrant represents products with high market growth rate but low market share, requiring significant investment to succeed?",
+            "ja": "PPM（プロダクト・ポートフォリオ・マネジメント）において、「市場成長率は高いが、占有率（マーケットシェア）が低い」ため、市場勝ち残りのために多額の資金投下が必要となる製品ポジションはどれ？",
+            "vi": "Trong ma trận PPM, góc phần tư nào đại diện cho các sản phẩm có tốc độ tăng trưởng thị trường cao nhưng thị phần thấp, đòi hỏi lượng đầu tư lớn để thành công?"
+          },
+          "options": [
+            { "en": "Problem Child (Question Mark)", "ja": "問題児 (Problem Child / Question Mark)", "vi": "Dấu hỏi / Vấn đề (Question Mark / Problem Child)" },
+            { "en": "Star", "ja": "花形 (Star)", "vi": "Ngôi sao (Star)" },
+            { "en": "Cash Cow", "ja": "金のなる木 (Cash Cow)", "vi": "Bò sữa (Cash Cow)" },
+            { "en": "Dog", "ja": "負け犬 (Dog)", "vi": "Chó hoang (Dog)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "PPM defines four quadrants: 1) Star (High Growth, High Share), 2) Cash Cow (Low Growth, High Share), 3) Problem Child (High Growth, Low Share), and 4) Dog (Low Growth, Low Share).",
+            "ja": "PPMでは成長率とシェアで分類します。高成長・低シェアは「問題児」で、投資が必要です。高成長・高シェアは「花形」、低成長・高シェアは「金のなる木」、低成長・低シェアは「負け犬」です。",
+            "vi": "Ma trận PPM chia làm 4 góc: 1) Ngôi sao (Tăng trưởng cao, Thị phần cao), 2) Bò sữa (Tăng trưởng thấp, Thị phần cao), 3) Dấu hỏi (Tăng trưởng cao, Thị phần thấp), và 4) Chó hoang (Tăng trưởng thấp, Thị phần thấp)."
+          }
+        },
+        {
+          "id": "fe_s9_q3",
+          "question": {
+            "en": "A company has fixed costs of $400,000, and a variable cost ratio of 60%. What is the break-even point in sales volume?",
+            "ja": "固定費が400,000ドル、売上高に対する変動費の割合（変動費率）が 60% のとき、損益分岐点売上高はいくら？",
+            "vi": "Một công ty có định phí (fixed cost) là $400,000, tỉ lệ biến phí (variable cost ratio) là 60%. Doanh thu hòa vốn (break-even point) là bao nhiêu?"
+          },
+          "options": [
+            { "en": "$1,000,000", "ja": "$1,000,000", "vi": "$1,000,000" },
+            { "en": "$666,666", "ja": "$666,666", "vi": "$666,666" },
+            { "en": "$240,000", "ja": "$240,000", "vi": "$240,000" },
+            { "en": "$1,200,000", "ja": "$1,200,000", "vi": "$1,200,000" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Break-even sales = Fixed Costs / (1 - Variable Cost Ratio) = 400,000 / (1 - 0.60) = 400,000 / 0.40 = $1,000,000.",
+            "ja": "損益分岐点売上高 ＝ 固定費 ÷ (1 − 変動費率) の公式で求めます。400,000 ÷ (1 − 0.6) ＝ 400,000 ÷ 0.4 ＝ 1,000,000 ドルとなります。",
+            "vi": "Doanh thu hòa vốn = Định phí / (1 - Tỉ lệ biến phí) = 400,000 / (1 - 0.60) = 400,000 / 0.40 = $1,000,000."
+          }
+        },
+        {
+          "id": "fe_s9_q4",
+          "question": {
+            "en": "In accounting, which financial statement displays a company's assets, liabilities, and equity at a specific single point in time?",
+            "ja": "財務会計において、企業の特定の時点における「資産」「負債」「純資産（自己資本）」の状態を示し、資金の調達と還元のバランスを表現する決算書はどれ？",
+            "vi": "Trong kế toán, báo cáo tài chính nào thể hiện tài sản (assets), nợ phải trả (liabilities) và vốn chủ sở hữu (equity) của doanh nghiệp tại một thời điểm cụ thể?"
+          },
+          "options": [
+            { "en": "Balance Sheet (B/S)", "ja": "貸借対照表 (B/S)", "vi": "Bảng cân đối kế toán (Balance Sheet - B/S)" },
+            { "en": "Income Statement (P/L)", "ja": "損益計算書 (P/L)", "vi": "Báo cáo kết quả hoạt động kinh doanh (Income Statement - P/L)" },
+            { "en": "Cash Flow Statement", "ja": "キャッシュフロー計算書", "vi": "Báo cáo lưu chuyển tiền tệ (Cash Flow)" },
+            { "en": "Statement of Retained Earnings", "ja": "株主資本等変動計算書", "vi": "Báo cáo thay đổi vốn chủ sở hữu" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The Balance Sheet (B/S) reports static financial position. The Income Statement (P/L) reports dynamic profitability (revenues and expenses) over a period of time.",
+            "ja": "企業の財政状態を表現する「貸借対照表(Balance Sheet)」です。一定期間の「売上や経費、利益（経営成績）」を表すのは「損益計算書(Profit and Loss Statement)」です。",
+            "vi": "Bảng cân đối kế toán (B/S) phản ánh tình trạng tài chính tĩnh. Báo cáo kết quả kinh doanh (P/L) thể hiện kết quả doanh thu chi phí trong một kỳ."
+          }
+        },
+        {
+          "id": "fe_s9_q5",
+          "question": {
+            "en": "Which strategic management analysis concept focuses on three external components: Customer, Competitor, and Company?",
+            "ja": "マーケティング戦略立案において、外部環境と内部環境を、市場・顧客(Customer)、競合(Competitor)、自社(Company)の3つの軸で分析するフレームワークはどれ？",
+            "vi": "Mô hình quản trị chiến lược nào tập trung vào ba nhân tố: Khách hàng (Customer), Đối thủ cạnh tranh (Competitor), và Bản thân doanh nghiệp (Company)?"
+          },
+          "options": [
+            { "en": "3C Analysis", "ja": "3C 分析", "vi": "Phân tích 3C (3C Analysis)" },
+            { "en": "SWOT Analysis", "ja": "SWOT 分析", "vi": "Phân tích SWOT (SWOT Analysis)" },
+            { "en": "Five Forces Analysis", "ja": "ファイブフォース分析", "vi": "Phân tích 5 lực lượng cạnh tranh (Five Forces)" },
+            { "en": "Core Competence", "ja": "コアコンピタンス", "vi": "Năng lực cốt lõi (Core Competence)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The 3C model is proposed by Kenichi Ohmae. It emphasizes focusing on Customer (market needs), Competitors (market rivalry), and Company (own capabilities) to gain advantage.",
+            "ja": "Customer、Competitor、Companyの頭文字を取った「3C分析」です。事業環境の客観的な市場分析に多用されます。",
+            "vi": "Mô hình 3C (do Kenichi Ohmae đề xuất) định hướng phân tích Khách hàng (nhu cầu), Đối thủ (cạnh tranh) và Doanh nghiệp (năng lực nội tại) để tìm lợi thế."
+          }
+        },
+        {
+          "id": "fe_s9_q6",
+          "question": {
+            "en": "What is the primary objective of Enterprise Resource Planning (ERP) systems?",
+            "ja": "ERP (Enterprise Resource Planning：企業資源計画) システムを導入する主目的はどれ？",
+            "vi": "Mục tiêu hàng đầu của hệ thống hoạch định tài nguyên doanh nghiệp ERP (Enterprise Resource Planning) là gì?"
+          },
+          "options": [
+            { "en": "To integrate core business processes (finance, HR, manufacturing, sales) into a single unified system to optimize resource utilization", "ja": "会計、人事、生産、販売などの業務システムを一元管理（データ統合）し、社内経営資源を有効活用する", "vi": "Tích hợp các quy trình nghiệp vụ cốt lõi (tài chính, nhân sự, sản xuất, bán hàng) vào một hệ thống hợp nhất để tối ưu nguồn lực" },
+            { "en": "To implement automated firewall configurations on network routers", "ja": "ルータのファイアウォール設定を自動化する", "vi": "Tự động hóa các thiết lập tường lửa trên thiết bị định tuyến" },
+            { "en": "To manage source code repositories for developer groups", "ja": "開発チームのソースコードリポジトリを管理する", "vi": "Quản lý kho lưu trữ mã nguồn cho đội ngũ lập trình viên" },
+            { "en": "To encrypt physical server hard drives on cloud environments", "ja": "クラウド上の物理サーバーのディスクを暗号化する", "vi": "Mã hóa đĩa cứng máy chủ vật lý trên môi trường đám mây" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ERP systems break down departmental silos by centralizing data in a shared database, allowing optimized real-time resource allocation and decision-making.",
+            "ja": "ERPは「統合業務パッケージ」とも呼ばれ、バラバラだった基幹システム（財務、製造、販売、人事等）を単一データベースで一元化し、経営状況をリアルタイムで可視化します。",
+            "vi": "Hệ thống ERP đồng nhất dữ liệu các phòng ban (kế toán, nhân sự, sản xuất,...) vào một database chung để tối ưu hóa điều phối tài nguyên."
+          }
+        },
+        {
+          "id": "fe_s9_q7",
+          "question": {
+            "en": "Which business framework defines a method of optimizing the flow of goods, logistics, and inventory from raw materials to final customers?",
+            "ja": "原材料の調達から、製造、在庫管理、流通を経て、最終顧客へ届けるまでの全プロセス（サプライチェーン）を一括最適化する手法はどれ？",
+            "vi": "Mô hình kinh doanh nào định nghĩa phương pháp tối ưu hóa luồng hàng hóa, logistics và tồn kho từ nguyên liệu thô đến khách hàng cuối?"
+          },
+          "options": [
+            { "en": "SCM (Supply Chain Management)", "ja": "SCM (サプライチェーンマネジメント)", "vi": "Quản lý chuỗi cung ứng SCM (Supply Chain Management)" },
+            { "en": "CRM (Customer Relationship Management)", "ja": "CRM (顧客関係管理)", "vi": "Quản lý quan hệ khách hàng CRM (Customer Relationship Management)" },
+            { "en": "TQC (Total Quality Control)", "ja": "TQC (全社的品質管理)", "vi": "Quản lý chất lượng toàn diện TQC" },
+            { "en": "SFA (Sales Force Automation)", "ja": "SFA (営業支援システム)", "vi": "Tự động hóa lực lượng bán hàng SFA" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "SCM (Supply Chain Management) coordinates material supply, production, and distribution channels to minimize waste and reduce lead times.",
+            "ja": "原材料調達から最終製品の消費までの一連のチェーン（連鎖）の在庫や納期を最適化する手法は「SCM」です。顧客管理は「CRM」です。",
+            "vi": "SCM (Quản lý chuỗi cung ứng) điều phối nguồn cung nguyên liệu, sản xuất và kênh phân phối để giảm lãng phí và rút ngắn thời gian giao hàng."
+          }
+        },
+        {
+          "id": "fe_s9_q8",
+          "question": {
+            "en": "What is the purpose of the 'Critical Success Factors' (CSF) concept in business strategy planning?",
+            "ja": "経営戦略策定における CSF (Critical Success Factors：主要成功要因) の目的はどれ？",
+            "vi": "Mục đích của khái niệm 'Nhân tố thành công then chốt' CSF (Critical Success Factors) trong hoạch định chiến lược là gì?"
+          },
+          "options": [
+            { "en": "To identify the key areas and activities that must go right for the organization to achieve its strategic goals", "ja": "目標達成のために、企業が優先的に資源を配分して「必ずクリアすべき」重要な要因を定義する", "vi": "Xác định các lĩnh vực và công việc chính buộc phải thực hiện tốt để doanh nghiệp đạt mục tiêu chiến lược" },
+            { "en": "To calculate the break-even margin ratios dynamically", "ja": "損益分岐点の限界利益率を動的に計算する", "vi": "Tính toán động tỉ lệ lợi nhuận hòa vốn của doanh nghiệp" },
+            { "en": "To encrypt corporate intellectual assets using CA certificates", "ja": "電子証明書を用いて企業秘密などの知的所有権データを暗号化する", "vi": "Sử dụng chứng chỉ để mã hóa tài sản thông tin bí mật doanh nghiệp" },
+            { "en": "To list the software development frameworks available for devs", "ja": "開発チームが使用可能なソフトウェアのフレームワーク一覧を作成する", "vi": "Liệt kê các thư viện phát triển phần mềm cho đội ngũ phát triển" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "CSF identifies the most critical elements required for a strategy to succeed, helping managers prioritize resource allocation. KPI is then used to measure progress against CSFs.",
+            "ja": "CSF（主要成功要因）は、経営戦略の遂行にあたり「どこに注力すべきか」を示す最重要課題です。その達成度を測る指標が KPI（重要業績評価指標）となります。",
+            "vi": "CSF định vị các điểm trọng yếu nhất quyết định thành công chiến lược, giúp ban lãnh đạo ưu tiên phân bổ tài nguyên. KPI sau đó đo lường tiến độ theo CSF."
+          }
+        },
+        {
+          "id": "fe_s9_q9",
+          "question": {
+            "en": "Which of the following describes a 'Balanced Scorecard' (BSC) framework?",
+            "ja": "経営評価ツールである「バランススコアカード(BSC)」に関する説明はどれ？",
+            "vi": "Dòng nào sau đây mô tả đúng về mô hình Thẻ điểm cân bằng BSC (Balanced Scorecard)?"
+          },
+          "options": [
+            { "en": "It evaluates performance across four perspectives: Financial, Customer, Internal Business Processes, and Learning & Growth", "ja": "財務、顧客、社内ビジネスプロセス、学習と成長の4つの視点から業績評価や戦略立案を行う手法", "vi": "Đánh giá hiệu quả kinh doanh qua 4 khía cạnh: Tài chính, Khách hàng, Quy trình nội bộ, và Học hỏi & Phát triển" },
+            { "en": "It ensures that the server load is balanced across parallel nodes", "ja": "並行するサーバーノード間でトラフィック負荷を均等に配分する設計手法", "vi": "Đảm bảo phân tải máy chủ đồng đều giữa các node song song" },
+            { "en": "It validates data format normalization levels inside SQL queries", "ja": "SQLクエリ内のデータ項目の正規化整合性を検証するテストツール", "vi": "Công cụ kiểm tra tính chuẩn hóa cấu trúc dữ liệu trong câu truy vấn SQL" },
+            { "en": "It automatically audits the digital signatures of incoming web transactions", "ja": "受信したWebトランザクションの電子署名を自動検証する監査システム", "vi": "Hệ thống kiểm toán tự động chữ ký số của các giao dịch web nhận được" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The Balanced Scorecard (BSC) balances traditional financial metrics with operational metrics of customer satisfaction, process efficiency, and organizational growth.",
+            "ja": "バランススコアカード(BSC)は、財務的な指標だけに偏らず、「財務」「顧客」「社内ビジネスプロセス」「学習と成長」の4つの視点から多角的に経営戦略を評価・実行するツールです。",
+            "vi": "Thẻ điểm cân bằng (BSC) kết hợp chỉ số tài chính truyền thống với các chỉ số đo lường độ hài lòng khách hàng, quy trình nội bộ và phát triển nhân sự."
+          }
+        },
+        {
+          "id": "fe_s9_q10",
+          "question": {
+            "en": "In accounting, what does a positive 'Cash Flow' from operating activities indicate?",
+            "ja": "財務キャッシュフロー計算書において、営業活動によるキャッシュフローが「プラス（黒字）」であることは何を意味する？",
+            "vi": "Trong báo cáo tài chính, dòng tiền (Cash Flow) dương từ hoạt động kinh doanh chỉ ra điều gì?"
+          },
+          "options": [
+            { "en": "The company is generating more cash from its core business operations than it is spending to run them", "ja": "本業の営業取引サイクルにおいて、支出した現金よりも多くの現金収入を獲得できている状態", "vi": "Công nghiệp tạo ra nhiều tiền mặt từ hoạt động kinh doanh cốt lõi hơn là số chi phí bỏ ra để vận hành" },
+            { "en": "The company has taken out significant bank loans recently", "ja": "最近、多額の銀行借入（融資の獲得）を実行した状態", "vi": "Doanh nghiệp vừa thực hiện các khoản vay lớn từ ngân hàng gần đây" },
+            { "en": "The company has sold off its physical database server infrastructure", "ja": "サーバー機器などの固定資産をすべて売却して現金化した状態", "vi": "Doanh nghiệp đã bán hết hệ thống cơ sở hạ tầng máy chủ vật lý" },
+            { "en": "The company's stock value has increased on the stock exchange", "ja": "株式市場において、自社の株価が値上がりしている状態", "vi": "Giá trị cổ phiếu của doanh nghiệp vừa tăng trưởng trên sàn chứng khoán" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "A positive operating cash flow indicates the core business is self-sustaining and profitable in cash terms, which is critical for long-term survival.",
+            "ja": "営業キャッシュフローの黒字は、本業ビジネスでお金が正常に回っており、自立してキャッシュ（資金）を生み出せている健全な状態を指します。",
+            "vi": "Dòng tiền kinh doanh dương chứng tỏ hoạt động kinh doanh cốt lõi sinh lời và tự xoay sở được dòng tiền, rất quan trọng cho sự sống còn lâu dài."
+          }
+        }
+      ]
+    },
+    {
+      "id": "fe-a-10",
+      "category": "part-a",
+      "title": { "en": "Set 10: Corporate Activities & Legal/Standardization", "ja": "セット10：企業活動 & 法務・標準化", "vi": "Đề 10: Hoạt động doanh nghiệp, Pháp luật & Tiêu chuẩn" },
+      "description": {
+        "en": "Intellectual property laws, Personal Information Protection Act, labor laws, compliance, and international standards.",
+        "ja": "知的財産権（著作権・特許）、派遣契約、個人情報保護法、セキュリティポリシー、各種標準を整理します。",
+        "vi": "Luật sở hữu trí tuệ, Luật bảo vệ thông tin cá nhân, luật lao động và các tiêu chuẩn quốc tế."
+      },
+      "questions": [
+        {
+          "id": "fe_s10_q1",
+          "question": {
+            "en": "Under copyright law, which of the following is protected by copyright when a software developer creates a new computer program?",
+            "ja": "著作権法において、システム開発者が新しく作成した「プログラム」のうち、著作権保護の対象となるものはどれ？",
+            "vi": "Theo luật bản quyền, đối tượng nào được bảo hộ bản quyền khi một lập trình viên tạo ra một chương trình máy tính mới?"
+          },
+          "options": [
+            { "en": "The source code syntax expressing the program", "ja": "プログラムの具体的なアルゴリズムや記述方式を表すソースコード（表現）", "vi": "Cú pháp mã nguồn (source code) thể hiện chương trình" },
+            { "en": "The underlying mathematical algorithm used in the program", "ja": "プログラムで使用されている解法（アルゴリズム／手順）", "vi": "Thuật toán toán học cơ bản sử dụng trong chương trình" },
+            { "en": "The general system strategy conceptual design", "ja": "プログラムが解こうとする課題自体のアイデア・概念", "vi": "Ý tưởng thiết kế chiến lược chung của chương trình" },
+            { "en": "The compiler command keywords used to run the code", "ja": "プログラムを動かすために使用するコンパイル用のプログラム言語の規約", "vi": "Các quy ước cú pháp từ khóa ngôn ngữ lập trình dùng để chạy code" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Copyright law protects concrete 'expressions' (source code). It does NOT protect abstract ideas, algorithms, mathematical solutions, or programming languages (which may fall under patents or remain unprotected).",
+            "ja": "著作権法は「表現」を保護します。ソースコードは著作物ですが、プログラムの「アルゴリズム（解法）」「プログラミング言語の規約」「アイデア」は保護対象外（特許法等の領域、または適用外）です。",
+            "vi": "Luật bản quyền bảo hộ 'sự thể hiện' cụ thể (mã nguồn). Nó KHÔNG bảo hộ ý tưởng, thuật toán toán học hay cú pháp quy ước của ngôn ngữ lập trình."
+          }
+        },
+        {
+          "id": "fe_s10_q2",
+          "question": {
+            "en": "Which labor contract type involves a worker being employed by Company A, but receiving work commands and performing duties directly under the supervision of Company B?",
+            "ja": "労働者が会社A（派遣元）と雇用関係を結びながら、会社B（派遣先）の指揮命令の下で働く契約形態はどれ？",
+            "vi": "Hình thức hợp đồng lao động nào quy định người lao động được thuê bởi Công ty A, nhưng nhận mệnh lệnh và làm việc trực tiếp dưới sự giám sát của Công ty B?"
+          },
+          "options": [
+            { "en": "Labor Dispatch (Worker Dispatch)", "ja": "労働者派遣契約", "vi": "Hợp đồng phái cử lao động (Labor Dispatch)" },
+            { "en": "Subcontracting (Contracting)", "ja": "請負契約", "vi": "Hợp đồng thầu khoán / thuê ngoài (Subcontracting)" },
+            { "en": "Quasi-delegation (Mandate)", "ja": "準委任契約", "vi": "Hợp đồng ủy nhiệm / bán phái cử (Quasi-delegation)" },
+            { "en": "Direct Employment", "ja": "直接雇用契約", "vi": "Hợp đồng lao động trực tiếp (Direct Employment)" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "In Labor Dispatch, the command authority belongs to the client company (B). In Subcontracting/Quasi-delegation, the worker remains under the command authority of their employer (A).",
+            "ja": "顧客企業（派遣先）に「指揮命令権」があるのが「労働者派遣」です。請負や準委任では、作業者は自社（委託元）の指示で動き、顧客から直接指示を受けることは偽装請負となり禁止されています。",
+            "vi": "Trong Phái cử lao động, quyền chỉ đạo thuộc về công ty khách hàng (B). Trong Thầu khoán/Ủy nhiệm, người lao động vẫn chịu sự quản lý của công ty thuê họ (A)."
+          }
+        },
+        {
+          "id": "fe_s10_q3",
+          "question": {
+            "en": "What is the primary purpose of the 'Personal Information Protection Act'?",
+            "ja": "「個人情報保護法」の主な目的はどれ？",
+            "vi": "Mục đích chính của 'Luật bảo vệ thông tin cá nhân' là gì?"
+          },
+          "options": [
+            { "en": "To protect individual rights and interests while considering the utility of personal information in business", "ja": "個人情報の有用性に配慮しつつ、個人の権利利益を保護することを目的とする", "vi": "Bảo vệ quyền lợi cá nhân đồng thời cân đối với hiệu quả sử dụng thông tin trong kinh doanh" },
+            { "en": "To force all corporate documents to be encrypted by default", "ja": "企業文書をすべて暗号化し、外部への通信を制限すること", "vi": "Bắt buộc mọi tài liệu doanh nghiệp phải được mã hóa theo mặc định" },
+            { "en": "To eliminate the use of database primary keys in public databases", "ja": "公共のデータベースにおける主キーの使用を全面禁止すること", "vi": "Cấm sử dụng khóa chính trong các cơ sở dữ liệu công cộng" },
+            { "en": "To enforce labor dispatch wage regulations", "ja": "派遣労働者の給与に関する最低賃金を管理すること", "vi": "Quản lý lương tối thiểu đối với lao động phái cử" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The Act balances the privacy rights of individuals with the legitimate business utility of using personal data for economic activities.",
+            "ja": "個人情報保護法は、「個人の権利・プライバシーの保護」と「ビジネスにおける個人情報の有効活用」のバランスを取ることを目的としています。",
+            "vi": "Luật bảo vệ thông tin cá nhân nhằm bảo vệ sự riêng tư của cá nhân, song song với việc cho phép khai thác dữ liệu hợp lý trong kinh tế."
+          }
+        },
+        {
+          "id": "fe_s10_q4",
+          "question": {
+            "en": "Which of the following describes 'Compliance' in corporate activities?",
+            "ja": "企業活動における「コンプライアンス（法令遵守）」の説明として最も適切なものはどれ？",
+            "vi": "Dòng nào mô tả đúng nhất về tính tuân thủ 'Compliance' trong hoạt động doanh nghiệp?"
+          },
+          "options": [
+            { "en": "Adhering to laws, regulations, corporate ethics, and social norms during business operations", "ja": "法律や規則だけでなく、企業倫理や社会規範を含めて遵守し、公正な経営活動を行うこと", "vi": "Tuân thủ pháp luật, các quy định, đạo đức kinh doanh và các chuẩn mực xã hội khi vận hành doanh nghiệp" },
+            { "en": "Optimizing compiler runtime speeds across development tools", "ja": "コンパイラの実行速度を各種開発ツールで最適化すること", "vi": "Tối ưu hóa tốc độ chạy của bộ dịch trên các công cụ lập trình" },
+            { "en": "Ensuring database transactions meet ACID properties", "ja": "データベースのトランザクションが ACID 特性を満たすようにチェックすること", "vi": "Kiểm tra các giao dịch cơ sở dữ liệu đạt chuẩn ACID" },
+            { "en": "Evaluating system availability using MTBF metrics", "ja": "MTBFを用いてシステムの稼働品質や可用性を測定すること", "vi": "Đo lường tính sẵn sàng của hệ thống bằng các thông số MTBF" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Compliance goes beyond just obeying the law (legal regulations) to include following internal policies, industry rules, business ethics, and social expectations.",
+            "ja": "コンプライアンスは「法令遵守」と訳されますが、法律のみならず、社内規則、倫理観、CSR（企業の社会的責任）などの社会規範に則って活動することを指します。",
+            "vi": "Compliance không chỉ là làm theo luật pháp mà còn bao gồm tuân thủ quy chế nội bộ, đạo đức kinh doanh và trách nhiệm xã hội."
+          }
+        },
+        {
+          "id": "fe_s10_q5",
+          "question": {
+            "en": "What is the primary role of the 'ISO' (International Organization for Standardization)?",
+            "ja": "国際標準化機構(ISO)が果たす主要な役割はどれ？",
+            "vi": "Vai trò chính của Tổ chức tiêu chuẩn hóa quốc tế ISO là gì?"
+          },
+          "options": [
+            { "en": "To develop and publish voluntary international standards for products, services, and management systems", "ja": "工業製品、サービス、マネジメントシステム等の国際的な標準規格を策定・発行する", "vi": "Xây dựng và ban hành các tiêu chuẩn quốc tế tự nguyện cho sản phẩm, dịch vụ và hệ thống quản lý" },
+            { "en": "To prosecute hacker organizations globally", "ja": "世界規模でハッカー犯罪を取り締まり、起訴する", "vi": "Truy quét và truy tố tội phạm tin tặc trên quy mô toàn cầu" },
+            { "en": "To host open-source repository servers like GitHub", "ja": "GitHubのようなオープンソースのコードサーバーを運営する", "vi": "Vận hành các dịch vụ lưu trữ mã nguồn mở tương tự GitHub" },
+            { "en": "To regulate web server routing tables dynamically", "ja": "Webサーバーのルーティング設定を世界共通で管理する", "vi": "Quản lý chung các thiết lập định tuyến máy chủ web toàn cầu" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ISO establishes international standards (e.g. ISO 9001 for quality, ISO 27001 for security) to facilitate global trade and ensure safety and quality.",
+            "ja": "ISOは国際規格を定める非政府組織です。ISO 9001（品質）や ISO 27001（情報セキュリティ）など、グローバルで共通規格化することで国際取引の円滑化を図ります。",
+            "vi": "ISO xây dựng các bộ tiêu chuẩn quốc tế (như ISO 9001 cho chất lượng, ISO 27001 cho bảo mật) để chuẩn hóa giao thương và chất lượng toàn cầu."
+          }
+        },
+        {
+          "id": "fe_s10_q6",
+          "question": {
+            "en": "Which of the following is protected under 'Patent Law'?",
+            "ja": "知的財産権のうち、特許法（特許権）の保護対象となるものはどれ？",
+            "vi": "Trong số các quyền sở hữu trí tuệ, đối tượng nào được bảo hộ bởi Luật sáng chế (Patent Law)?"
+          },
+          "options": [
+            { "en": "A highly advanced technical idea utilizing a law of nature", "ja": "自然法則を利用した、技術的に高度なアイデア・創作（発明）", "vi": "Ý tưởng, sáng chế kỹ thuật có tính ứng dụng cao tận dụng các quy luật tự nhiên" },
+            { "en": "A creative literature work or computer source code syntax", "ja": "文章などの著作物や、プログラムコードの具体的記述（表現）", "vi": "Tác phẩm văn học nghệ thuật hoặc cú pháp cụ thể của code phần mềm" },
+            { "en": "A commercial brand name or logo symbol of a corporation", "ja": "企業ロゴや商品名などのブランド表示", "vi": "Tên thương hiệu hoặc biểu tượng logo của doanh nghiệp" },
+            { "en": "The physical database server hardware layout structure", "ja": "物理的なサーバーラックやパーツの配線レイアウト自体", "vi": "Sơ đồ thiết kế vật lý của các bảng mạch phần cứng máy chủ" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Patent law protects technical inventions (using laws of nature). Copyright protects expressions. Trademark law protects brand names/logos.",
+            "ja": "特許権は「自然法則を利用した新規・高度な発明（アイデア）」を保護します。具体的表現は著作権、ロゴや商標は商標権の保護対象です。",
+            "vi": "Luật sáng chế bảo hộ các phát minh kỹ thuật mới. Luật bản quyền bảo hộ sự thể hiện. Luật thương hiệu bảo hộ nhãn hiệu/logo."
+          }
+        },
+        {
+          "id": "fe_s10_q7",
+          "question": {
+            "en": "What is the difference between an 'Employer-Employee relationship' under subcontracting (请负) versus worker dispatch (派遣)?",
+            "ja": "「請負（Subcontracting）」と「派遣（Worker Dispatch）」の雇用主と労働者の関係における最大の違いはどれ？",
+            "vi": "Khác biệt lớn nhất về mặt quyền chỉ đạo lao động giữa hợp đồng thầu khoán (請負) và hợp đồng phái cử (派遣) là gì?"
+          },
+          "options": [
+            { "en": "In subcontracting, the worker is commanded only by their own employer, whereas in worker dispatch, the client company commands the worker directly", "ja": "請負契約では自社（雇用主）に指揮命令権があるが、派遣契約では出向先の顧客企業に指揮命令権がある点", "vi": "Trong thầu khoán, quyền chỉ đạo thuộc về đơn vị thầu (chủ sử dụng lao động), còn trong phái cử, công ty khách hàng được chỉ đạo trực tiếp" },
+            { "en": "Subcontracting does not pay any wages, while worker dispatch does", "ja": "請負では賃金支払いが一切発生せず、派遣のみで発生する点", "vi": "Hợp đồng thầu khoán không trả lương, chỉ có phái cử mới có lương" },
+            { "en": "There is no difference; they are legally synonyms in Japan", "ja": "日本法においては両者に法的な違いはない点", "vi": "Không có sự khác biệt; cả hai đều là đồng nghĩa trong luật pháp Nhật Bản" },
+            { "en": "Worker dispatch is forbidden for software development tasks", "ja": "ソフトウェア開発において、派遣契約の利用は全面的に禁止されている点", "vi": "Phái cử lao động bị cấm đối với các công việc lập trình phần mềm" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The key differentiator is the command authority. Under subcontracting, the client cannot directly instruct the worker. Doing so constitutes illegal disguised subcontracting (偽装請負).",
+            "ja": "最大の違いは「誰が現場で作業者に指示するか（指揮命令権の所在）」です。請負では発注元の社員が直接作業者に命令することは「偽装請負」として違法になります。",
+            "vi": "Điểm khác biệt then chốt là quyền chỉ đạo. Trong thầu khoán, bên thuê không được chỉ đạo trực tiếp nhân viên thầu, nếu làm thế sẽ phạm lỗi ngụy trang thầu khoán (偽装請負)."
+          }
+        },
+        {
+          "id": "fe_s10_q8",
+          "question": {
+            "en": "Which of the following standards represents the Japanese Industrial Standards?",
+            "ja": "日本の国内標準規格である「日本産業規格」を表す略称はどれ？",
+            "vi": "Tiêu chuẩn công nghiệp Nhật Bản (Japanese Industrial Standards) được viết tắt là gì?"
+          },
+          "options": [
+            { "en": "JIS", "ja": "JIS", "vi": "JIS" },
+            { "en": "ISO", "ja": "ISO", "vi": "ISO" },
+            { "en": "IEEE", "ja": "IEEE", "vi": "IEEE" },
+            { "en": "W3C", "ja": "W3C", "vi": "W3C" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "JIS stands for Japanese Industrial Standards. ISO is global, IEEE is for electrical/electronics, and W3C is for Web standards.",
+            "ja": "「日本産業規格」は JIS です。世界標準は ISO、電気電子分野は IEEE、Web技術は W3C が担当します。",
+            "vi": "JIS là viết tắt của Tiêu chuẩn công nghiệp Nhật Bản. ISO là quốc tế, IEEE cho điện-điện tử, và W3C cho các chuẩn Web."
+          }
+        },
+        {
+          "id": "fe_s10_q9",
+          "question": {
+            "en": "What is the purpose of the 'PL Act' (Product Liability Act) in Japan?",
+            "ja": "日本の「製造物責任法（PL法）」の目的はどれ？",
+            "vi": "Mục đích của Luật trách nhiệm sản phẩm (Product Liability Act - PL Act) tại Nhật Bản là gì?"
+          },
+          "options": [
+            { "en": "To protect consumers by making manufacturers liable for damages caused by defects in their products without requiring proof of negligence", "ja": "製造物の欠陥により被害が生じた場合、製造元の過失の有無を問わず、被害者（消費者）への賠償責任を製造業者等に負わせることで保護を図る", "vi": "Bảo vệ người tiêu dùng bằng cách quy trách nhiệm đền bù cho nhà sản xuất khi sản phẩm lỗi gây thiệt hại mà không cần chứng minh sự cẩu thả" },
+            { "en": "To restrict import limits of database hardware", "ja": "外国製のデータベース機器の輸入量を制限する", "vi": "Hạn chế nhập khẩu thiết bị phần cứng máy chủ nước ngoài" },
+            { "en": "To audit the compiler version limits of python tools", "ja": "開発で使用するプログラミング言語のバージョン規制を行う", "vi": "Kiểm soát các giới hạn phiên bản của công cụ dịch mã nguồn" },
+            { "en": "To enforce wage minimums for foreign interns", "ja": "外国人実習生の最低賃金を保証する", "vi": "Bảo đảm mức lương tối thiểu cho thực tập sinh nước ngoài" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The PL Act establishes strict liability for manufacturers if a product defect causes injury or damage. The consumer only needs to prove the defect and the damage, not negligence.",
+            "ja": "PL法は、製品の「欠陥」によって利用者がケガなどをした場合、被害者はメーカーの「過失（不注意）」を立証しなくても、欠陥と被害の因果関係さえ示せば損害賠償を請求できるとする法律です。",
+            "vi": "Luật PL quy định trách nhiệm nghiêm ngặt cho nhà sản xuất khi sản phẩm lỗi gây tổn hại. Người mua chỉ cần chứng minh có lỗi sản phẩm và thiệt hại xảy ra."
+          }
+        },
+        {
+          "id": "fe_s10_q10",
+          "question": {
+            "en": "In corporate governance, what does 'Internal Control' primarily aim to achieve?",
+            "ja": "コーポレートガバナンスにおける「内部統制」の主な目的はどれ？",
+            "vi": "Trong quản trị doanh nghiệp, mục tiêu hàng đầu của 'Kiểm soát nội bộ' (Internal Control) là gì?"
+          },
+          "options": [
+            { "en": "To ensure efficiency, compliance, financial reliability, and asset safeguarding across operations", "ja": "業務の有効性・効率性、財務報告の信頼性、法令遵守、資産の保全を組織的に確保する", "vi": "Đảm bảo tính hiệu quả, tuân thủ pháp luật, độ tin cậy báo cáo tài chính và bảo vệ tài sản doanh nghiệp" },
+            { "en": "To prevent remote servers from shutting down during power cuts", "ja": "停電時に外部サーバーが自動停止するのを防ぐ", "vi": "Ngăn chặn các máy chủ từ xa tự động tắt khi mất nguồn điện" },
+            { "en": "To evaluate the compiler processing speed of debug scripts", "ja": "デバッグ用のテストスクリプトのコンパイル速度を最大にする", "vi": "Đánh giá và cải thiện tốc độ dịch của các kịch bản kiểm thử" },
+            { "en": "To manage the source code commits of developers in git", "ja": "開発者が Git で行うコミットログを監査・管理する", "vi": "Theo dõi và quản lý lịch sử commit code của lập trình viên" }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Internal Control is a process implemented by an entity's board and management to provide reasonable assurance regarding business efficiency, reliable financial reporting, and compliance.",
+            "ja": "内部統制は、企業活動が適正かつ健全に行われるように、業務プロセスの中に「ルール」や「相互チェック体制」を組み込んで運用する仕組みのことです。",
+            "vi": "Kiểm soát nội bộ là quy trình do ban quản lý thiết lập để bảo đảm vận hành kinh doanh hiệu quả, tuân thủ và báo cáo tài chính minh bạch."
+          }
+        }
+      ]
     }
   ]
 }
