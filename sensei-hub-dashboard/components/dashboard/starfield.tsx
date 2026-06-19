@@ -125,7 +125,7 @@ export function Starfield() {
       window.removeEventListener("mousemove", handleMouseMove)
       window.removeEventListener("resize", handleResize)
     }
-  }, [])
+  }, [visibleRef])
 
   return (
     <canvas

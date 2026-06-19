@@ -179,7 +179,7 @@ export function ThreePlanet({ slug, size = 180 }: ThreePlanetProps) {
       moonMat.dispose()
       renderer.dispose()
     }
-  }, [slug, size])
+  }, [slug, size, visibleRef])
 
   return (
     <canvas

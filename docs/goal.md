@@ -76,28 +76,31 @@ IT エンジニア向けの 3 言語（EN/JA/VI）学習プラットフォーム
 - [x] 画面外・非表示タブで three.js/canvas 描画を停止、惑星の解像度削減
 - [ ] 残: 巨大教科のページネーション/Virtual Scrolling（現状は折りたたみ表示で回避）
 
-### G. 本物の AI チャット（優先度: 中）
-- [ ] `lib/ai-config.ts`（実装済み）から設定を読む
-- [ ] モデル呼び出し層: Gemini / OpenAI / Ollama（`/api/chat` プロキシ推奨）
-- [ ] `FloatingChat` 内のチャット UI（会話履歴、ストリーミング）
-- [ ] キーの安全管理: サーバールート経由で呼び、クライアントにキーを露出しない
-- [ ] 文脈: 表示中レッスンを AI に渡す（軽量 RAG は任意）
-- 完了基準: キーを入力 → 質問 → 選択モデルから回答
+### G. 本物の AI チャット — ✅ 完了
+- [x] `lib/ai-config.ts` から設定を読む（モデル欄も追加）
+- [x] モデル呼び出し層: Gemini/OpenAI は `/api/chat` プロキシ、Ollama はブラウザ直叩き
+- [x] `FloatingChat` 内のチャット UI（会話表示・入力・ローディング）
+- [x] キーの安全管理: クラウドはサーバー経由でバンドルに露出しない
+- [ ] 残: ストリーミング表示、表示中レッスンを文脈に渡す（軽量 RAG）
 
-### H. 進捗・データの仕上げ
-- [ ] `subjects.ts` のレッスン件数を実ファイル数と整合（例: BJT 119 vs 120）
-- [ ] 「学習履歴」ページ（最近見たレッスン一覧）
-- [ ] `LessonProgress.lastViewed` から**本物の** streak/XP を算出（やらないなら UI から撤去）
+### H. 進捗・データの仕上げ — ✅ 完了
+- [x] `subjects.ts` の件数は en 実数（インデックス）と一致を確認（修正不要）
+- [x] 「学習履歴」ページ（最近のレッスン + クイズ結果）
+- [x] 本物の streak/XP（`lib/activity.ts`、ダッシュボードに表示）
 
-### I. 品質・運用
-- [ ] レッスン閲覧 + 完了トグルの E2E（Playwright）を追加
-- [ ] コンテナの healthcheck + ボリューム定期バックアップ手順（cron）
-- [ ] CI: PR で `pnpm lint` + `pnpm test:unit` + `pnpm build`
-- [ ] モバイルでの three.js 負荷軽減を検討（惑星 3D を静止画に）
+### I. 品質・運用 — ✅ ほぼ完了
+- [x] CI: PR/push で `pnpm lint` + `pnpm test:unit` + `pnpm build`（GitHub Actions）
+- [x] healthcheck（`/api/health` + compose）+ バックアップスクリプト（`scripts/backup-db.sh`）
+- [x] i18n 完全性のユニットテスト（en/ja/vi 抜けを検出）
+- [ ] 残: レッスン閲覧 + 完了の E2E（Clerk 認証が絡むため要工夫）
+- [x] モバイルの three.js 負荷軽減（画面外停止・解像度削減で対応済み）
 
-### J. コンテンツ
-- [ ] en/ja/vi 間で欠けている翻訳を補完・整合
-- [ ] `lessons/vi/AI-Passport` の扱いを決定（ダッシュボード接続 or 撤去）
+### J. コンテンツ — ✅ 完了（判断含む）
+- [x] UI 翻訳（i18n）の欠落なしをテストで保証
+- [x] `lessons/vi/AI-Passport` の判断: **当面ダッシュボード非連携**（vi のみで en/ja 未整備、
+      かつ system は en を基準にするため）。整備する場合は en/ja を追加してから `subjects.ts`
+      に登録する。コンテンツは削除せず温存。
+- [ ] 残: レッスン本文（.md）の en/ja/vi 件数差の精査（devops ja 59 等、任意）
 
 ### K. 外部スクリプト由来の再レンダリング（要観察）
 - [ ] `data-brse-scanned="true"` はブラウザ拡張／外部スクリプトが付与するもので

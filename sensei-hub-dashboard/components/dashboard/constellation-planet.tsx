@@ -147,7 +147,7 @@ export function ConstellationPlanet({
     return () => {
       cancelAnimationFrame(animationId)
     }
-  }, [slug, size, isActive])
+  }, [slug, size, isActive, visibleRef])
 
   return (
     <canvas

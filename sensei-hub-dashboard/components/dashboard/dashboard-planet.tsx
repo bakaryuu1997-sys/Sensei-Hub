@@ -272,7 +272,7 @@ export function DashboardPlanet({
 
       renderer.dispose()
     }
-  }, [size, colorPrimary, colorSecondary, hasRings, hasMoon, rotationSpeed, cameraZ, planetRadius])
+  }, [size, colorPrimary, colorSecondary, hasRings, hasMoon, rotationSpeed, cameraZ, planetRadius, visibleRef])
 
   return (
     <canvas
