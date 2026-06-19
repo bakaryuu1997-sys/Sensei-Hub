@@ -25,6 +25,52 @@ import {
 
 type Phase = "set-selection" | "intro" | "playing" | "done"
 
+function renderFormattedText(text: string) {
+  if (!text) return null
+
+  // Split by code blocks first
+  const blocks = text.split(/(```[\s\S]*?```)/g)
+
+  return blocks.map((block, index) => {
+    if (block.startsWith("```") && block.endsWith("```")) {
+      // It's a code block
+      // Strip the backticks and optional language identifier
+      const codeLines = block
+        .slice(3, -3)
+        .replace(/^(typescript|javascript|python|java|c|cpp|json|bash|sh|pseudo|pseudocode)\r?\n/, "")
+        .trim()
+      return (
+        <pre
+          key={index}
+          className="my-3 overflow-x-auto rounded-xl border border-white/10 bg-slate-950/60 p-4 font-mono text-xs md:text-sm text-cyan-200/90 whitespace-pre text-left leading-normal"
+        >
+          <code>{codeLines}</code>
+        </pre>
+      )
+    }
+
+    // Otherwise, parse inline code `code`
+    const parts = block.split(/(`[^`\n]+`)/g)
+    return (
+      <span key={index} className="whitespace-pre-wrap">
+        {parts.map((part, pIdx) => {
+          if (part.startsWith("`") && part.endsWith("`")) {
+            return (
+              <code
+                key={pIdx}
+                className="mx-0.5 rounded bg-slate-900 border border-white/10 px-1.5 py-0.5 font-mono text-xs md:text-sm text-cyan-300 font-medium"
+              >
+                {part.slice(1, -1)}
+              </code>
+            )
+          }
+          return part
+        })}
+      </span>
+    )
+  })
+}
+
 export default function SubjectQuizPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params)
   const { t, lang } = useLanguage()
@@ -360,8 +406,8 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                     transition={{ duration: 0.2 }}
                     className="glass-card border border-white/10 rounded-2xl p-6 lg:p-8 space-y-5"
                   >
-                    <h2 className="text-lg lg:text-xl font-bold text-white leading-relaxed">
-                      {pickText(q.question, lang)}
+                    <h2 className="text-lg lg:text-xl font-bold text-white leading-relaxed flex flex-col gap-1 text-left">
+                      {renderFormattedText(pickText(q.question, lang))}
                     </h2>
 
                     <div className="space-y-3">
@@ -391,7 +437,7 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                             <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-md border border-white/15 text-xs font-mono">
                               {String.fromCharCode(65 + idx)}
                             </span>
-                            <span className="flex-1">{pickText(opt, lang)}</span>
+                            <span className="flex-1 text-left">{renderFormattedText(pickText(opt, lang))}</span>
                             {revealed && isCorrect && <CheckCircle2 className="h-5 w-5 text-emerald-400" />}
                             {revealed && state === "wrong" && <XCircle className="h-5 w-5 text-rose-400" />}
                           </button>
@@ -407,7 +453,9 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                         className="rounded-xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75"
                       >
                         <span className="font-bold text-cyan-300">{t("quiz.explanation")}: </span>
-                        {pickText(q.explanation, lang)}
+                        <div className="mt-2 flex flex-col gap-1 text-left">
+                          {renderFormattedText(pickText(q.explanation, lang))}
+                        </div>
                       </motion.div>
                     )}
 
