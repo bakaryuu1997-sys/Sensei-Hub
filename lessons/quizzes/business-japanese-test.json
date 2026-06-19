@@ -1,105 +1,3759 @@
 {
-  "title": { "en": "Business Japanese (BJT) Quiz", "ja": "ビジネス日本語（BJT） クイズ", "vi": "Quiz Tiếng Nhật thương mại (BJT)" },
-  "questions": [
+  "title": {
+    "en": "Business Japanese (BJT) Quiz",
+    "ja": "ビジネス日本語（BJT） クイズ",
+    "vi": "Quiz Tiếng Nhật thương mại (BJT)"
+  },
+  "sets": [
     {
-      "id": "q1",
-      "question": {
-        "en": "Which is the humble form (kenjougo) of 「見る」 when viewing a client's document?",
-        "ja": "取引先の資料を「見る」とき、謙譲語として正しいのは？",
-        "vi": "Đâu là dạng khiêm nhường (kenjougo) của 「見る」 khi xem tài liệu của khách hàng?"
+      "id": "bjt-1",
+      "title": {
+        "en": "Set 1: Keigo Basics",
+        "ja": "セット1：敬語の基本",
+        "vi": "Đề 1: Kính ngữ cơ bản"
       },
-      "options": [
-        { "en": "拝見する", "ja": "拝見する", "vi": "拝見する" },
-        { "en": "ご覧になる", "ja": "ご覧になる", "vi": "ご覧になる" },
-        { "en": "見てやる", "ja": "見てやる", "vi": "見てやる" },
-        { "en": "見られる", "ja": "見られる", "vi": "見られる" }
-      ],
-      "answer": 0,
-      "explanation": {
-        "en": "「拝見する」 is kenjougo (humble) for 見る. 「ご覧になる」 is sonkeigo (respectful) for the other person.",
-        "ja": "「拝見する」は見るの謙譲語。「ご覧になる」は相手の動作に使う尊敬語です。",
-        "vi": "「拝見する」 là kenjougo (khiêm nhường) của 見る. 「ご覧になる」 là tôn kính dùng cho đối phương."
-      }
+      "description": {
+        "en": "Sonkeigo (respectful), Kenjougo (humble), and Teineigo (polite) classifications and usage.",
+        "ja": "尊敬語、謙譲語、丁寧語の区分や使い分けについての問題を扱います。",
+        "vi": "Phân loại và cách sử dụng tôn kính ngữ (sonkeigo), khiêm nhường ngữ (kenjougo) và từ ngữ lịch sự (teineigo)."
+      },
+      "questions": [
+        {
+          "id": "bjt_s1_q1",
+          "question": {
+            "en": "A client sent you an email. You want to humbly say 'I read your email' on the phone. Which is correct?",
+            "ja": "取引先からメールを受け取りました。電話で「メールを読みました」とへりくだって伝える際、最も適切な表現はどれ？",
+            "vi": "Khách hàng đã gửi email cho bạn. Bạn muốn nói khiêm nhường 'Tôi đã đọc email của quý khách' qua điện thoại. Cách nào đúng?"
+          },
+          "options": [
+            {
+              "en": "メールをご尊顔しました",
+              "ja": "メールをご尊顔しました",
+              "vi": "メールをご尊顔しました"
+            },
+            {
+              "en": "メールを拝読いたしました",
+              "ja": "メールを拝読いたしました",
+              "vi": "メールを拝読いたしました"
+            },
+            {
+              "en": "メールを拝見いたしました",
+              "ja": "メールを拝見いたしました",
+              "vi": "メールを拝見いたしました"
+            },
+            {
+              "en": "メールをお読みになりました",
+              "ja": "メールをお読みになりました",
+              "vi": "メールをお読みになりました"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "「拝読する」 is the humble form (kenjougo) of reading. 「拝見する」 is the humble form of looking/seeing (e.g., looking at a document/prototype). 「お読みになる」 is respectful (sonkeigo) for the other person.",
+            "ja": "「拝読する」は「読む」の謙譲語です。「拝見する」は「見る」の謙譲語、「お読みになる」は相手を高める尊敬語です。",
+            "vi": "「拝読する」 là thể khiêm nhường (kenjougo) của 'đọc'. 「拝見する」 là thể khiêm nhường của 'nhìn/xem', còn 「お読みになる」 là tôn kính ngữ (sonkeigo) dành cho đối phương."
+          }
+        },
+        {
+          "id": "bjt_s1_q2",
+          "question": {
+            "en": "Introducing your boss, Manager Tanaka, to a client (Mr. Suzuki). Which phrasing is correct?",
+            "ja": "取引先の鈴木様に、自社の上司である田中部長を紹介する際、最も適切な表現はどれ？",
+            "vi": "Giới thiệu sếp của bạn, Trưởng phòng Tanaka, với khách hàng (Suzuki-sama). Cách diễn đạt nào đúng?"
+          },
+          "options": [
+            {
+              "en": "こちらは部長の田中様でございます",
+              "ja": "こちらは部長の田中様でございます",
+              "vi": "こちらは部長の田中様でございます"
+            },
+            {
+              "en": "こちらは弊社の田中部長でございます",
+              "ja": "こちらは弊社の田中部長でございます",
+              "vi": "こちらは弊社の田中部長でございます"
+            },
+            {
+              "en": "こちらは部長の田中でございます",
+              "ja": "こちらは部長の田中でございます",
+              "vi": "こちらは部長の田中でございます"
+            },
+            {
+              "en": "こちらは田中部長様でございます",
+              "ja": "こちらは田中部長様でございます",
+              "vi": "こちらは田中部長様でございます"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "When speaking to external clients, you must refer to your boss by their last name only (without suffix -sama or title) and use the humble expression 「でございます」.",
+            "ja": "社外の人に対して社内の人間を紹介する際は、役職名や「様」をつけずに苗字のみで呼び、謙譲表現の「でございます」を使います。",
+            "vi": "Khi giới thiệu người trong công ty với khách hàng ngoài, bạn phải gọi họ bằng họ mà không đi kèm chức vụ hay kính xưng '-sama', và dùng kính ngữ khiêm nhường 「でございます」."
+          }
+        },
+        {
+          "id": "bjt_s1_q3",
+          "question": {
+            "en": "You want to ask a client if they have already eaten lunch. Which respectful form of 'to eat' is correct?",
+            "ja": "取引先の相手が昼食をすでに食べたか確認したいとき、正しい尊敬語表現はどれ？",
+            "vi": "Bạn muốn hỏi khách hàng xem họ đã ăn trưa chưa. Dạng tôn kính (sonkeigo) của 'ăn' nào dưới đây là đúng?"
+          },
+          "options": [
+            {
+              "en": "昼食はすでに召し上がりましたか",
+              "ja": "昼食はすでに召し上がりましたか",
+              "vi": "昼食はすでに召し上がりましたか"
+            },
+            {
+              "en": "昼食はすでにいただきましたか",
+              "ja": "昼食はすでにいただきましたか",
+              "vi": "昼食はすでにいただきましたか"
+            },
+            {
+              "en": "昼食はすでに拝食されましたか",
+              "ja": "昼食はすでに拝食されましたか",
+              "vi": "昼食はすでに拝食されましたか"
+            },
+            {
+              "en": "昼食はすでにご飯しましたか",
+              "ja": "昼食はすでにご飯しましたか",
+              "vi": "昼食はすでにご飯しましたか"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "「召し上がる」 is the respectful form (sonkeigo) of eating. 「いただく」 is the humble form (kenjougo) used for one's own actions.",
+            "ja": "「召し上がる」は「食べる」の尊敬語です。「いただく」は自分側の動作に用いる謙譲語であるため、相手に対して使うのは誤りです。",
+            "vi": "「召し上がる」 là dạng tôn kính (sonkeigo) của 'ăn'. 「いただく」 là dạng khiêm nhường (kenjougo) dùng cho hành động của bản thân."
+          }
+        },
+        {
+          "id": "bjt_s1_q4",
+          "question": {
+            "en": "You are going to visit the client's office tomorrow. Which is the correct humble form of 'to go'?",
+            "ja": "明日、取引先のオフィスを訪問することを伝える際、最も適切な表現はどれ？",
+            "vi": "Bạn sẽ đến thăm văn phòng của khách hàng vào ngày mai. Đâu là dạng khiêm nhường (kenjougo) đúng của 'đi/đến'?"
+          },
+          "options": [
+            {
+              "en": "明日、そちらに伺います",
+              "ja": "明日、そちらに伺います",
+              "vi": "明日、そちらに伺います"
+            },
+            {
+              "en": "明日、そちらにいらっしゃいます",
+              "ja": "明日、そちらにいらっしゃいます",
+              "vi": "明日、そちらにいらっしゃいます"
+            },
+            {
+              "en": "明日、そちらに参られます",
+              "ja": "明日、そちらに参られます",
+              "vi": "明日、そちらに参られます"
+            },
+            {
+              "en": "明日、そちらに伺われます",
+              "ja": "明日、そちらに伺われます",
+              "vi": "明日、そちらに伺われます"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "「伺う」 is the humble form (kenjougo) of go/visit. 「いらっしゃる」 is respectful (sonkeigo). 「参られる」 and 「伺われる」 are incorrect double honorifics.",
+            "ja": "相手の場所へ行く・訪問する際の謙譲語は「伺う」です。「いらっしゃる」は尊敬語、「参られる」や「伺われる」は二重敬語（誤用）です。",
+            "vi": "「伺う」 là dạng khiêm nhường (kenjougo) khi đi/đến nơi của đối phương. 「いらっしゃる」 là tôn kính ngữ. 「参られる」 và 「伺われる」 là lỗi kính ngữ kép."
+          }
+        },
+        {
+          "id": "bjt_s1_q5",
+          "question": {
+            "en": "Asking a client if they know the new regulations. Which is correct?",
+            "ja": "取引先の相手が新しい規則について知っているか尋ねる際、最も適切な表現はどれ？",
+            "vi": "Hỏi khách hàng xem họ có biết các quy định mới hay không. Cách nào đúng?"
+          },
+          "options": [
+            {
+              "en": "新しい規則をご存じですか",
+              "ja": "新しい規則をご存じですか",
+              "vi": "新しい規則をご存じですか"
+            },
+            {
+              "en": "新しい規則を知っていらっしゃいますか",
+              "ja": "新しい規則を知っていらっしゃいますか",
+              "vi": "新しい規則を知っていらっしゃいますか"
+            },
+            {
+              "en": "新しい規則を存じておりますか",
+              "ja": "新しい規則を存じておりますか",
+              "vi": "新しい規則を存じておりますか"
+            },
+            {
+              "en": "新しい規則を知り合っていますか",
+              "ja": "新しい規則を知り合っていますか",
+              "vi": "新しい規則を知り合っていますか"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "「ご存じですか」 is the standard polite/respectful form of asking if someone knows. 「存じております」 is humble and only used for oneself.",
+            "ja": "相手が知っているかどうかを尋ねる尊敬語は「ご存じですか」です。「存じております」は謙譲語で、自分の知識について話す際に使います。",
+            "vi": "「ご存じですか」 là dạng tôn kính tiêu chuẩn để hỏi đối phương có biết hay không. 「存じております」 là khiêm nhường ngữ và chỉ dùng cho bản thân."
+          }
+        },
+        {
+          "id": "bjt_s1_q6",
+          "question": {
+            "en": "Which of the following is an incorrect 'double honorific' (二重敬語)?",
+            "ja": "敬語の使い方として、誤っている「二重敬語」はどれ？",
+            "vi": "Cách sử dụng kính ngữ nào dưới đây mắc lỗi kính ngữ kép (二重敬語)?"
+          },
+          "options": [
+            {
+              "en": "社長がおっしゃいました。",
+              "ja": "社長がおっしゃいました。",
+              "vi": "社長がおっしゃいました。"
+            },
+            {
+              "en": "社長がご覧になりました。",
+              "ja": "社長がご覧になりました。",
+              "vi": "社長がご覧になりました。"
+            },
+            {
+              "en": "社長がおっしゃられました。",
+              "ja": "社長がおっしゃられました。",
+              "vi": "社長がおっしゃられました。"
+            },
+            {
+              "en": "社長が召し上がりました。",
+              "ja": "社長が召し上がりました。",
+              "vi": "社長が召し上がりました。"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "「おっしゃられました」 combines 「おっしゃる」 (respectful) and 「-れる/られる」 (respectful), resulting in an incorrect double honorific. The correct form is 「おっしゃいました」.",
+            "ja": "「おっしゃられました」は、「おっしゃる」（尊敬語）と「られる」（尊敬助動詞）を重ねた二重敬語（誤用）です。正しくは「おっしゃいました」です。",
+            "vi": "「おっしゃられました」 kết hợp 「おっしゃる」 (tôn kính) và 「-れる/られる」 (tôn kính), tạo thành lỗi kính ngữ kép. Dạng đúng phải là 「おっしゃいました」."
+          }
+        },
+        {
+          "id": "bjt_s1_q7",
+          "question": {
+            "en": "When writing a formal proposal to a client, how should you refer to their company?",
+            "ja": "取引先へ送る提案書などの「書き言葉」で、相手の会社を指す正しい言葉はどれ？",
+            "vi": "Khi viết đề xuất hoặc thư từ trang trọng gửi cho khách hàng, cách viết nào chỉ công ty đối phương là đúng?"
+          },
+          "options": [
+            {
+              "en": "貴社",
+              "ja": "貴社",
+              "vi": "貴社"
+            },
+            {
+              "en": "御社",
+              "ja": "御社",
+              "vi": "御社"
+            },
+            {
+              "en": "当社",
+              "ja": "当社",
+              "vi": "当社"
+            },
+            {
+              "en": "弊社",
+              "ja": "弊社",
+              "vi": "弊社"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "「貴社」 (Kisha) is used in written business communication, whereas 「御社」 (Onsha) is used in spoken communication. 「当社」 and 「弊社」 refer to one's own company.",
+            "ja": "書き言葉（文書・メール）では「貴社」を用います。話し言葉（会話・面談）では「御社」を用います。「当社」と「弊社」は自社を指します。",
+            "vi": "Trong văn bản (email, tài liệu), chúng ta dùng 「貴社」 (Quý công ty). Trong văn nói (giao tiếp, phỏng vấn), chúng ta dùng 「御社」. 「当社」 và 「弊社」 dùng cho công ty mình."
+          }
+        },
+        {
+          "id": "bjt_s1_q8",
+          "question": {
+            "en": "You want to ask the client to wait for a moment. Which is the most polite and natural phrasing?",
+            "ja": "取引先の相手に少し待ってもらうよう頼む際、最も丁寧で適切な表現はどれ？",
+            "vi": "Bạn muốn nhờ khách hàng chờ một lát. Cách diễn đạt nào lịch sự và tự nhiên nhất?"
+          },
+          "options": [
+            {
+              "en": "少々待ってください",
+              "ja": "少々待ってください",
+              "vi": "少々待ってください"
+            },
+            {
+              "en": "少々お待ちください",
+              "ja": "少々お待ちください",
+              "vi": "少々お待ちください"
+            },
+            {
+              "en": "少々お待ちいただけますでしょうか",
+              "ja": "少々お待ちいただけますでしょうか",
+              "vi": "少々お待ちいただけますでしょうか"
+            },
+            {
+              "en": "少々待ってもらえますか",
+              "ja": "少々待ってもらえますか",
+              "vi": "少々待ってもらえますか"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "「少々お待ちいただけますでしょうか」 is a highly polite request asking for permission. 「少々お待ちください」 is a polite command, which can sound slightly demanding.",
+            "ja": "「少々お待ちいただけますでしょうか」は、相手にお願いする形式の最も丁寧な表現です。「お待ちください」は丁寧な命令形であり、目上の人には少し強く響くことがあります。",
+            "vi": "「少々お待ちいただけますでしょうか」 là câu yêu cầu cực kỳ lịch sự dưới dạng xin phép. 「少々お待ちください」 là dạng mệnh lệnh lịch sự, đôi khi hơi cứng nhắc đối với cấp trên."
+          }
+        },
+        {
+          "id": "bjt_s1_q9",
+          "question": {
+            "en": "A client calls for Suzuki (colleague), who is absent. You want to say 'I will tell Suzuki when he returns.' Which humble form of 'to tell/convey' is correct?",
+            "ja": "不在の同僚・鈴木宛てに取引先から伝言を預かりました。「戻ったら鈴木に伝えます」と伝える正しい表現はどれ？",
+            "vi": "Một khách hàng gọi điện cho đồng nghiệp Suzuki nhưng Suzuki vắng mặt. Bạn muốn nói 'Tôi sẽ truyền đạt lại cho Suzuki khi anh ấy về.' Cách nào đúng?"
+          },
+          "options": [
+            {
+              "en": "鈴木に申し伝えるようにします",
+              "ja": "鈴木に申し伝えるようにします",
+              "vi": "鈴木に申し伝えるようにします"
+            },
+            {
+              "en": "鈴木に申し伝えます",
+              "ja": "鈴木に申し伝えます",
+              "vi": "鈴木に申し伝えます"
+            },
+            {
+              "en": "鈴木にお伝えします",
+              "ja": "鈴木にお伝えします",
+              "vi": "鈴木にお伝えします"
+            },
+            {
+              "en": "鈴木におっしゃいます",
+              "ja": "鈴木におっしゃいます",
+              "vi": "鈴木におっしゃいます"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "「申し伝える」 is the humble form of conveying messages internally to colleagues. 「お伝えする」 is humble but directed towards a client/outside person.",
+            "ja": "身内（鈴木）に伝えることを社外の客に約束する際は、謙譲語の「申し伝える」を使います。「お伝えする」は社外の相手に直接伝える際に用います。",
+            "vi": "「申し伝える」 là khiêm nhường ngữ dùng khi truyền đạt thông tin cho người trong công ty (Suzuki). 「お伝えする」 là khiêm nhường ngữ hướng tới khách hàng."
+          }
+        },
+        {
+          "id": "bjt_s1_q10",
+          "question": {
+            "en": "A client gives you a gift. You want to express that you humbly received it. Which verb is correct?",
+            "ja": "取引先からお土産や贈り物を受け取った際、感謝の気持ちを込めて「いただきました」と伝える正しい表現はどれ？",
+            "vi": "Khách hàng tặng bạn một món quà. Bạn muốn bày tỏ rằng mình đã nhận món quà đó một cách khiêm nhường. Cách dùng từ nào đúng?"
+          },
+          "options": [
+            {
+              "en": "頂戴いたしました",
+              "ja": "頂戴いたしました",
+              "vi": "頂戴いたしました"
+            },
+            {
+              "en": "ご査収いたしました",
+              "ja": "ご査収いたしました",
+              "vi": "ご査収いたしました"
+            },
+            {
+              "en": "拝見いたしました",
+              "ja": "拝見いたしました",
+              "vi": "拝見いたしました"
+            },
+            {
+              "en": "拝受いたしました",
+              "ja": "拝受いたしました",
+              "vi": "拝受いたしました"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "「頂戴いたしました」 (choudai itashimashita) is the humble form of receiving a physical gift. 「拝受いたしました」 is used for receiving letters, emails, or electronic files.",
+            "ja": "物を受け取った場合の謙譲表現は「頂戴いたしました」です。メールや書類を受け取った場合は「拝受いたしました」を使います。",
+            "vi": "「頂戴いたしました」 là thể khiêm nhường khi nhận quà tặng vật lý. 「拝受いたしました」 được dùng khi nhận thư từ, email hoặc tài liệu."
+          }
+        }
+      ]
     },
     {
-      "id": "q2",
-      "question": {
-        "en": "What is the standard opening phrase in a business email to a client?",
-        "ja": "取引先へのビジネスメール冒頭の定番表現は？",
-        "vi": "Câu mở đầu chuẩn trong email công việc gửi khách hàng là gì?"
+      "id": "bjt-2",
+      "title": {
+        "en": "Set 2: Business Email Etiquette",
+        "ja": "セット2：メールのマナー",
+        "vi": "Đề 2: Quy tắc viết Email công việc"
       },
-      "options": [
-        { "en": "お疲れ様でした", "ja": "お疲れ様でした", "vi": "お疲れ様でした" },
-        { "en": "いつもお世話になっております", "ja": "いつもお世話になっております", "vi": "いつもお世話になっております" },
-        { "en": "ご苦労様です", "ja": "ご苦労様です", "vi": "ご苦労様です" },
-        { "en": "どうも", "ja": "どうも", "vi": "どうも" }
-      ],
-      "answer": 1,
-      "explanation": {
-        "en": "「いつもお世話になっております」 is the standard polite opening to clients/partners.",
-        "ja": "「いつもお世話になっております」は取引先への定番の丁寧な挨拶です。",
-        "vi": "「いつもお世話になっております」 là câu chào lịch sự chuẩn mực gửi khách hàng/đối tác."
-      }
+      "description": {
+        "en": "Subject lines, opening phrases, honorific headers, CC/BCC protocols, and polite sign-offs.",
+        "ja": "件名の付け方、冒頭の挨拶、敬称、CC/BCCの使い方、および結びの表現について学びます。",
+        "vi": "Cách đặt tiêu đề, câu chào đầu, kính xưng, cách dùng CC/BCC và lời chúc cuối thư."
+      },
+      "questions": [
+        {
+          "id": "bjt_s2_q1",
+          "question": {
+            "en": "Which subject line is the most appropriate when requesting a change in a scheduled meeting?",
+            "ja": "打合せ日程の変更をお願いするメールを送る際、最も適切な件名はどれ？",
+            "vi": "Tiêu đề email nào dưới đây phù hợp nhất khi yêu cầu thay đổi lịch hẹn họp?"
+          },
+          "options": [
+            {
+              "en": "日程の件について",
+              "ja": "日程の件について",
+              "vi": "日程の件について"
+            },
+            {
+              "en": "【日程変更のご相談】〇月〇日の打合せについて",
+              "ja": "【日程変更のご相談】〇月〇日の打合せについて",
+              "vi": "【日程変更のご相談】〇月〇日の打合せについて"
+            },
+            {
+              "en": "すみません、日程を変更してください",
+              "ja": "すみません、日程を変更してください",
+              "vi": "すみません、日程を変更してください"
+            },
+            {
+              "en": "打合せ日程変更の件",
+              "ja": "打合せ日程変更の件",
+              "vi": "打合せ日程変更の件"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Subject lines should be clear, bracketed with purpose (e.g. 「【日程変更のご相談】」), and specify the date and topic so the recipient knows the urgency immediately.",
+            "ja": "件名は一目で用件と重要度が伝わるように、「【日程変更のご相談】」などの角括弧を使い、日付や会議名を入れるのが最も適切です。",
+            "vi": "Tiêu đề email nên rõ ràng, sử dụng ngoặc vuông để nêu mục đích (ví dụ 「【日程変更のご相談】」) và ghi rõ ngày tháng họp."
+          }
+        },
+        {
+          "id": "bjt_s2_q2",
+          "question": {
+            "en": "You are writing to a potential customer for the first time. What is the correct opening greeting?",
+            "ja": "新規の取引先に初めてメールを送信する際、ふさわしい書き出しはどれ？",
+            "vi": "Bạn đang viết email lần đầu cho một đối tác tiềm năng. Lời chào mở đầu nào đúng?"
+          },
+          "options": [
+            {
+              "en": "いつもお世話になっております",
+              "ja": "いつもお世話になっております",
+              "vi": "いつもお世話になっております"
+            },
+            {
+              "en": "突然の連絡で申し訳ありませんが",
+              "ja": "突然の連絡で申し訳ありませんが",
+              "vi": "突然の連絡で申し訳ありませんが"
+            },
+            {
+              "en": "初めてご連絡申し上げます。〇〇会社の佐藤と申します",
+              "ja": "初めてご連絡申し上げます。〇〇会社の佐藤と申します",
+              "vi": "初めてご連絡申し上げます。〇〇会社の佐藤と申します"
+            },
+            {
+              "en": "お疲れ様です。〇〇佐藤です",
+              "ja": "お疲れ様です。〇〇佐藤です",
+              "vi": "お疲れ様です。〇〇佐藤です"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "For first-time contact, open with 「初めてご連絡申し上げます」 and introduce yourself. 「いつもお世話になっております」 is only for existing contacts.",
+            "ja": "初めて連絡する相手に対しては、「初めてご連絡申し上げます」と始めます。「いつもお世話になっております」はすでに関係のある相手に対して使います。",
+            "vi": "Khi liên lạc lần đầu, hãy mở đầu bằng 「初めてご連絡申し上げます」 và tự giới thiệu."
+          }
+        },
+        {
+          "id": "bjt_s2_q3",
+          "question": {
+            "en": "You are sending an email to Yamada-sama in the Planning Department of a client company. What is the correct header format?",
+            "ja": "取引先の企画部に所属する山田様宛てにメールを送る際、正しい宛名の書き方はどれ？",
+            "vi": "Bạn gửi email cho Yamada-sama thuộc Phòng Kế hoạch của công ty đối tác. Định dạng tiêu đề người nhận nào đúng?"
+          },
+          "options": [
+            {
+              "en": "株式会社〇〇 企画部 山田様",
+              "ja": "株式会社〇〇 企画部 山田様",
+              "vi": "株式会社〇〇 企画部 山田様"
+            },
+            {
+              "en": "株式会社〇〇 御中 山田様",
+              "ja": "株式会社〇〇 御中 山田様",
+              "vi": "株式会社〇〇 御中 山田様"
+            },
+            {
+              "en": "株式会社〇〇 企画部御中 山田様",
+              "ja": "株式会社〇〇 企画部御中 山田様",
+              "vi": "株式会社〇〇 企画部御中 山田様"
+            },
+            {
+              "en": "株式会社〇〇 企画部様 山田様",
+              "ja": "株式会社〇〇 企画部様 山田様",
+              "vi": "株式会社〇〇 企画部様 山田様"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Use 「御中」 (onchuu) when addressing a department or company, and 「様」 (sama) for an individual. Never use both for a single target address line.",
+            "ja": "宛名において、会社や部署などの組織には「御中」、個人には「様」を使います。これらを同一宛名で併用することは誤りです。",
+            "vi": "Dùng 「御中」 (onchuu) khi gửi cho tập thể phòng ban/công ty, và dùng 「様」 (sama) cho cá nhân. Không sử dụng cả hai cùng lúc."
+          }
+        },
+        {
+          "id": "bjt_s2_q4",
+          "question": {
+            "en": "You want to send an email to several external clients, but you do not want them to see each other's email addresses. How should you address it?",
+            "ja": "複数の社外顧客に一斉送信メールを送る際、お互いのメールアドレスが見えないようにするための送信方法はどれ？",
+            "vi": "Bạn muốn gửi email đồng loạt cho nhiều khách hàng ngoài, nhưng không muốn họ nhìn thấy địa chỉ email của nhau. Bạn nên làm thế nào?"
+          },
+          "options": [
+            {
+              "en": "Put all client addresses in CC.",
+              "ja": "全員のメールアドレスをCCに入れる",
+              "vi": "Để toàn bộ địa chỉ khách hàng ở ô CC."
+            },
+            {
+              "en": "Put all client addresses in TO.",
+              "ja": "全員のメールアドレスをTOに入れる",
+              "vi": "Để toàn bộ địa chỉ khách hàng ở ô TO."
+            },
+            {
+              "en": "Put your own address in TO, and all client addresses in BCC.",
+              "ja": "宛先（TO）に自社のメールアドレスを入れ、顧客のアドレスをBCCに入れる",
+              "vi": "Để địa chỉ của mình ở ô TO, và toàn bộ địa chỉ khách hàng ở ô BCC."
+            },
+            {
+              "en": "Put one client in TO, and the rest in BCC.",
+              "ja": "代表の顧客1名をTOに入れ、残りをBCCに入れる",
+              "vi": "Để một khách hàng ở ô TO, số còn lại để ở ô BCC."
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "To protect personal information when emailing multiple external clients, place your own address in 「TO」 and the client addresses in 「BCC」.",
+            "ja": "他の受信者のメールアドレスを見せないように一斉送信する場合、宛先（TO）に自社のメールアドレスを入れ、顧客のアドレスはすべて「BCC」に入れます。",
+            "vi": "Để bảo mật thông tin cá nhân, hãy để địa chỉ của chính bạn ở ô 「TO」 và địa chỉ khách hàng ở ô 「BCC」."
+          }
+        },
+        {
+          "id": "bjt_s2_q5",
+          "question": {
+            "en": "You are attaching a report to an email. What is the standard polite phrasing to tell the client to check the attachment?",
+            "ja": "メールに資料を添付して確認を依頼する際、最も丁寧で一般的な表現はどれ？",
+            "vi": "Bạn đính kèm một báo cáo vào email. Câu chào lịch sự tiêu chuẩn nào dưới đây để báo khách hàng kiểm tra tệp đính kèm?"
+          },
+          "options": [
+            {
+              "en": "添付ファイルを確認してください",
+              "ja": "添付ファイルを確認してください",
+              "vi": "添付ファイルを確認してください"
+            },
+            {
+              "en": "資料を添付いたしましたので、ご査収のほどよろしくお願い申し上げます",
+              "ja": "資料を添付いたしましたので、ご査収のほどよろしくお願い申し上げます",
+              "vi": "資料を添付いたしましたので、ご査収のほどよろしくお願い申し上げます"
+            },
+            {
+              "en": "添付したファイルを見てください",
+              "ja": "添付したファイルを見てください",
+              "vi": "添付したファイルを見てください"
+            },
+            {
+              "en": "資料を添付しましたので、ご一覧してください",
+              "ja": "資料を添付しましたので、ご一覧してください",
+              "vi": "資料を添付しましたので、ご一覧してください"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "「ご査収のほどよろしくお願い申し上げます」 is the standard polite phrase for asking someone to inspect/check attached documents.",
+            "ja": "書類やファイルを添付して確認を促す際は、「ご査収のほどよろしくお願い申し上げます」を用いるのが最も丁寧です。",
+            "vi": "「ご査収のほどよろしくお願い申し上げます」 là cụm từ lịch sự tiêu chuẩn để nhờ đối phương kiểm tra tài liệu đính kèm."
+          }
+        },
+        {
+          "id": "bjt_s2_q6",
+          "question": {
+            "en": "You want to finish an email to a client by asking for their continued relationship. Which is correct?",
+            "ja": "取引先へのメールの結びとして、今後のお付き合いを願う最も適切な表現はどれ？",
+            "vi": "Bạn muốn kết thúc email gửi khách hàng bằng câu mong muốn tiếp tục duy trì mối quan hệ hợp tác. Cách nào đúng?"
+          },
+          "options": [
+            {
+              "en": "今後ともよろしくお願いいたします",
+              "ja": "今後ともよろしくお願いいたします",
+              "vi": "今後ともよろしくお願いいたします"
+            },
+            {
+              "en": "以上、よろしくお伝えください",
+              "ja": "以上、よろしくお伝えください",
+              "vi": "以上、よろしくお伝えください"
+            },
+            {
+              "en": "ご苦労様でした",
+              "ja": "ご苦労様でした",
+              "vi": "ご苦労様でした"
+            },
+            {
+              "en": "引き続きよろしくお願いします",
+              "ja": "引き続きよろしくお願いします",
+              "vi": "引き続きよろしくお願いします"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "「今後ともよろしくお願いいたします」 is the standard formal closing phrase. 「ご苦労様でした」 is only from superior to subordinate.",
+            "ja": "メールや会話の結びとして「今後とも変わらぬお付き合いをお願いする」表現は、「今後ともよろしくお願いいたします」が最も適切です。",
+            "vi": "「今後ともよろしくお願いいたします」 là câu kết thúc trang trọng tiêu chuẩn. 「ご苦労様でした」 chỉ dùng cho cấp dưới."
+          }
+        },
+        {
+          "id": "bjt_s2_q7",
+          "question": {
+            "en": "When writing an email to a colleague in another department within your own company, what is the appropriate opening greeting?",
+            "ja": "社内の他部署の同僚や上司へメールを送る際、文頭に用いる挨拶として最も適切なのはどれ？",
+            "vi": "Khi viết email cho đồng nghiệp ở phòng ban khác trong cùng công ty, lời chào mở đầu nào phù hợp?"
+          },
+          "options": [
+            {
+              "en": "いつもお世話になっております",
+              "ja": "いつもお世話になっております",
+              "vi": "いつもお世話になっております"
+            },
+            {
+              "en": "お疲れ様です",
+              "ja": "お疲れ様です",
+              "vi": "お疲れ様です"
+            },
+            {
+              "en": "ご苦労様です",
+              "ja": "ご苦労様です",
+              "vi": "ご苦労様です"
+            },
+            {
+              "en": "お元気ですか",
+              "ja": "お元気ですか",
+              "vi": "お元気ですか"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "「お疲れ様です」 is the standard internal greeting for colleagues and superiors. 「いつもお世話になっております」 is for external clients.",
+            "ja": "社内の人間へのメール冒頭には「お疲れ様です」を使います。「お世話になっております」は社外向けです。",
+            "vi": "「お疲れ様です」 là lời chào nội bộ tiêu chuẩn dành cho đồng nghiệp và cấp trên. 「いつもお世話になっております」 dùng cho khách hàng ngoài."
+          }
+        },
+        {
+          "id": "bjt_s2_q8",
+          "question": {
+            "en": "Which of the following is the most appropriate way to politely decline a proposal in an email?",
+            "ja": "取引先からの提案をメールで断る際、最もふさわしい丁寧な表現はどれ？",
+            "vi": "Cách nào dưới đây là thích hợp nhất để từ chối một đề xuất qua email một cách lịch sự?"
+          },
+          "options": [
+            {
+              "en": "今回のご提案は受け入れられません",
+              "ja": "今回のご提案は受け入れられません",
+              "vi": "今回のご提案は受け入れられません"
+            },
+            {
+              "en": "せっかくのご提案ではございますが、今回は見送らせていただくこととなりました",
+              "ja": "せっかくのご提案ではございますが、今回は見送らせていただくこととなりました",
+              "vi": "せっかくのご提案ではございますが、今回は見送らせていただくこととなりました"
+            },
+            {
+              "en": "残念ですが、お断りいたします",
+              "ja": "残念ですが、お断りいたします",
+              "vi": "残念ですが、お断りいたします"
+            },
+            {
+              "en": "弊社には不要ですので、またの機会にお願いします",
+              "ja": "弊社には不要ですので、またの機会にお願いします",
+              "vi": "弊社には不要ですので、またの機会にお願いします"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Using a cushion word like 「せっかくのご提案ではございますが」 followed by a soft rejection 「見送らせていただく」 is the polite way to reject a client proposal.",
+            "ja": "提案を断る際は、クッション言葉を挟み、「お断りします」ではなく「見送らせていただく」と表現するのがマナーです。",
+            "vi": "Khi từ chối đề xuất, sử dụng từ đệm như 「せっかくのご提案ではございますが」 kết hợp với cách từ chối nhẹ nhàng 「見送らせていただく」."
+          }
+        },
+        {
+          "id": "bjt_s2_q9",
+          "question": {
+            "en": "You need to follow up on a contract proposal that you sent last week because you haven't received a response. Which phrasing is most polite?",
+            "ja": "先週送信した契約書案について返信がないため催促したいとき、最も適切な表現はどれ？",
+            "vi": "Bạn cần theo dõi tiến độ một bản thảo hợp đồng đã gửi tuần trước vì chưa thấy phản hồi. Cách hỏi nào lịch sự nhất?"
+          },
+          "options": [
+            {
+              "en": "先週の件はどうなっていますか",
+              "ja": "先週の件はどうなっていますか",
+              "vi": "先週の件はどうなっていますか"
+            },
+            {
+              "en": "恐れ入りますが、先週お送りいたしました契約書案のご検討状況はいかがでしょうか",
+              "ja": "恐れ入りますが、先週お送りいたしました契約書案のご検討状況はいかがでしょうか",
+              "vi": "恐れ入りますが、先週お送りいたしました契約書案のご検討状況はいかがでしょうか"
+            },
+            {
+              "en": "早く契約書案を確認して返信してください",
+              "ja": "早く契約書案を確認して返信してください",
+              "vi": "早く契約書案を確認して返信してください"
+            },
+            {
+              "en": "契約書の件で、お返事をお待ちしております",
+              "ja": "契約書の件で、お返事をお待ちしております",
+              "vi": "契約書の件で、お返事をお待ちしております"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "The polite follow-up uses a cushion word (「恐れ入りますが」) and inquires about the status (「ご検討状況はいかがでしょうか」).",
+            "ja": "返答を催促する際は、「恐れ入りますが」などのクッション言葉を添え、「ご検討状況はいかがでしょうか」と進捗を伺います。",
+            "vi": "Khi giục phản hồi, hãy dùng từ đệm (「恐れ入りますが」) và hỏi thăm về tình hình xem xét (「ご検討状況はいかがでしょうか」)."
+          }
+        },
+        {
+          "id": "bjt_s2_q10",
+          "question": {
+            "en": "In a business email, where should you place the signature (署名)?",
+            "ja": "ビジネスメールにおける「署名」の正しい配置場所はどれ？",
+            "vi": "Trong email công việc, bạn nên đặt chữ ký (署名) ở vị trí nào?"
+          },
+          "options": [
+            {
+              "en": "At the very top before the greeting.",
+              "ja": "本文の一番上、宛名の上",
+              "vi": "Ở trên cùng trước lời chào."
+            },
+            {
+              "en": "Right after the subject line.",
+              "ja": "件名のすぐ下",
+              "vi": "Ngay dưới tiêu đề thư."
+            },
+            {
+              "en": "At the very end of the email.",
+              "ja": "本文の最後（末尾）",
+              "vi": "Ở cuối cùng của email."
+            },
+            {
+              "en": "Signatures are not necessary in business emails.",
+              "ja": "ビジネスメールに署名は不要である",
+              "vi": "Chữ ký không cần thiết trong email công việc."
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "The signature (containing your name, company, department, and contact details) must be placed at the very end of the email.",
+            "ja": "ビジネスメールの署名は、本文がすべて終わったメールの最後（末尾）に配置するのが基本ルールです。",
+            "vi": "Chữ ký (chứa thông tin tên, công ty, phòng ban, liên hệ) phải được đặt ở dưới cùng của email."
+          }
+        }
+      ]
     },
     {
-      "id": "q3",
-      "question": {
-        "en": "Replying to a superior's instruction, which is more appropriate?",
-        "ja": "上司の指示への返答として、より適切なのは？",
-        "vi": "Khi đáp lại chỉ thị của cấp trên, cách nào phù hợp hơn?"
+      "id": "bjt-3",
+      "title": {
+        "en": "Set 3: Phone Conversation Protocols",
+        "ja": "セット3：電話応対",
+        "vi": "Đề 3: Kỹ năng nghe điện thoại"
       },
-      "options": [
-        { "en": "了解しました", "ja": "了解しました", "vi": "了解しました" },
-        { "en": "承知しました", "ja": "承知しました", "vi": "承知しました" },
-        { "en": "オッケーです", "ja": "オッケーです", "vi": "オッケーです" },
-        { "en": "わかった", "ja": "わかった", "vi": "わかった" }
-      ],
-      "answer": 1,
-      "explanation": {
-        "en": "「承知しました」 is the polite/humble acknowledgement for superiors and clients; 「了解しました」 is more casual.",
-        "ja": "「承知しました」は上司や取引先への丁寧な了承表現。「了解しました」はややくだけた印象です。",
-        "vi": "「承知しました」 lịch sự/khiêm nhường, dùng với cấp trên và khách; 「了解しました」 thân mật hơn."
-      }
+      "description": {
+        "en": "Answering incoming calls, transfer procedures, message taking, and making business calls.",
+        "ja": "電話の受け方、取り次ぎ、伝言の受け方、および発信時のルールを扱います。",
+        "vi": "Cách bắt máy, chuyển máy, ghi lại lời nhắn và cách thực hiện cuộc gọi công việc."
+      },
+      "questions": [
+        {
+          "id": "bjt_s3_q1",
+          "question": {
+            "en": "When answering an incoming business call, how many rings should you ideally wait before picking up?",
+            "ja": "オフィスの固定電話にかかってきた外線電話に出る際、何コール以内に出るのが基本マナー？",
+            "vi": "Khi trả lời một cuộc gọi công việc từ bên ngoài, bạn nên bắt máy trong vòng bao nhiêu tiếng chuông?"
+          },
+          "options": [
+            {
+              "en": "Wait for 5 or more rings to seem busy.",
+              "ja": "忙しく見せるために5コール以上待つ",
+              "vi": "Chờ từ 5 tiếng chuông trở lên để có vẻ bận rộn."
+            },
+            {
+              "en": "Pick up within 3 rings; if it takes longer, apologize.",
+              "ja": "3コール以内に出る。それ以上かかったら謝る",
+              "vi": "Bắt máy trong vòng 3 tiếng chuông; nếu lâu hơn, hãy xin lỗi."
+            },
+            {
+              "en": "Rings do not matter; pick up whenever.",
+              "ja": "コール数は関係なく、いつでも出たい時に出る",
+              "vi": "Tiếng chuông không quan trọng; bắt máy lúc nào cũng được."
+            },
+            {
+              "en": "Never pick up on the first ring as it looks unprofessional.",
+              "ja": "最初の1コールで出ると失礼なので2コール待つ",
+              "vi": "Không bao giờ bắt máy ở tiếng chuông đầu tiên vì có vẻ thiếu chuyên nghiệp."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Standard business practice is to answer within 3 rings. If it rings 3 or more times, start with '大変お待たせいたしました'.",
+            "ja": "電話は3コール以内に出るのが基本です。それ以上かかった場合は「大変お待たせいたしました」と一言添えて出ます。",
+            "vi": "Quy tắc cơ bản là bắt máy trong vòng 3 tiếng chuông. Nếu quá 3 tiếng chuông, phải bắt đầu bằng lời xin lỗi: '大変お待たせいたしました'."
+          }
+        },
+        {
+          "id": "bjt_s3_q2",
+          "question": {
+            "en": "The caller Suzuki-sama from ABC Corp. asks to speak to Tanaka (your boss). How do you respond?",
+            "ja": "取引先の鈴木様から電話があり、自社の上司である田中部長への取次ぎを求められました。正しい応対はどれ？",
+            "vi": "Khách hàng Suzuki-sama từ công ty ABC yêu cầu gặp sếp của bạn là Tanaka. Bạn trả lời thế nào?"
+          },
+          "options": [
+            {
+              "en": "ABC Corp's Suzuki-sama, thank you for calling. Tanaka is here, please hold.",
+              "ja": "ABCコーポレーションの鈴木様ですね。いつもお世話になっております。田中ですね、少々お待ちください。",
+              "vi": "Suzuki-sama của công ty ABC phải không ạ. Cảm ơn quý khách đã gọi. Tanaka đây ạ, xin vui lòng chờ một lát."
+            },
+            {
+              "en": "Tanaka is busy right now.",
+              "ja": "田中部長は今忙しいです",
+              "vi": "Trưởng phòng Tanaka đang bận."
+            },
+            {
+              "en": "Hello Suzuki, Tanaka is out.",
+              "ja": "もしもし鈴木さん、田中さんは席を外しています",
+              "vi": "Alo Suzuki, Tanaka đang vắng mặt."
+            },
+            {
+              "en": "Tanaka-buchou is coming.",
+              "ja": "田中部長をお呼びします",
+              "vi": "Tôi sẽ gọi Trưởng phòng Tanaka."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Repeat the caller's company and name with -sama, say 'いつもお世話になっております', and refer to your boss Tanaka humbly without title or -sama.",
+            "ja": "相手の社名と氏名を確認して復唱し、挨拶を述べます。社内の人間（上司含む）を呼ぶ際は、敬称や役職をつけずに苗字のみで呼びます。",
+            "vi": "Nhắc lại tên công ty và tên khách kèm đuôi '-sama', chào lịch sự, và gọi sếp (Tanaka) một cách khiêm nhường bằng họ (không dùng chức vụ hay '-sama') trước khách hàng ngoài."
+          }
+        },
+        {
+          "id": "bjt_s3_q3",
+          "question": {
+            "en": "Tanaka (your colleague) is out of the office. What is the correct way to inform the caller?",
+            "ja": "電話の相手が探している自社の田中が外出しているとき、正しい敬語表現はどれ？",
+            "vi": "Đồng nghiệp Tanaka của bạn đang ra ngoài. Cách báo cho khách hàng nào dưới đây là đúng?"
+          },
+          "options": [
+            {
+              "en": "Tanaka-sama is out of the office.",
+              "ja": "田中様はただいま外出されています",
+              "vi": "Tanaka-sama đang đi ra ngoài."
+            },
+            {
+              "en": "Tanaka is out of the office.",
+              "ja": "田中はただいま外出しております",
+              "vi": "Tanaka hiện tại đang đi ra ngoài."
+            },
+            {
+              "en": "Tanaka is out now.",
+              "ja": "田中はただいま外に出ています",
+              "vi": "Tanaka đang ở bên ngoài."
+            },
+            {
+              "en": "Tanaka-buchou is absent.",
+              "ja": "田中部長は今いません",
+              "vi": "Trưởng phòng Tanaka không có ở đây."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Use 「外出しております」 (humble form of being out of the office) for your colleague/boss when talking to external clients.",
+            "ja": "身内の状況を社外の人に伝える際は、謙譲語の「外出しております」を用います。「外出されています」は相手に対する尊敬語になるため誤りです。",
+            "vi": "Dùng khiêm nhường ngữ 「外出しております」 để mô tả việc đồng nghiệp/sếp vắng mặt khi nói chuyện với khách hàng."
+          }
+        },
+        {
+          "id": "bjt_s3_q4",
+          "question": {
+            "en": "Since Tanaka is out, you want to offer to take a message or ask if he should call back. How do you ask?",
+            "ja": "担当者の不在時、折り返し電話をするか伝言を承るか提案する際の正しい表現はどれ？",
+            "vi": "Vì Tanaka đi vắng, bạn muốn đề xuất gọi lại hoặc ghi lại lời nhắn. Cách hỏi nào đúng?"
+          },
+          "options": [
+            {
+              "en": "What do you want?",
+              "ja": "用件は何ですか",
+              "vi": "Nội dung cần nhắn là gì?"
+            },
+            {
+              "en": "Should Tanaka call you back or should I take a message?",
+              "ja": "田中から折り返しお電話差し上げましょうか。それともご伝言を承りましょうか",
+              "vi": "Tanaka có nên gọi lại cho quý khách không, hay tôi ghi lại lời nhắn ạ?"
+            },
+            {
+              "en": "Tell Tanaka to call you later.",
+              "ja": "田中が戻ったら電話させますので、番号を教えてください",
+              "vi": "Tôi sẽ bảo Tanaka gọi lại khi anh ấy về, xin cho số điện thoại."
+            },
+            {
+              "en": "Please send a message.",
+              "ja": "メッセージをください",
+              "vi": "Xin hãy để lại tin nhắn."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Politely offer a call back (「折り返しお電話差し上げましょうか」) or to take a message (「ご伝言を承りましょうか」).",
+            "ja": "担当不在の際は、こちらから折り返しお電話差し上げるか、伝言を承るかを尋ねるのが丁寧な対応です。",
+            "vi": "Đề xuất gọi lại (「折り返しお電話差し上げましょうか」) hoặc ghi lại lời nhắn (「ご伝言を承りましょうか」) một cách lịch sự."
+          }
+        },
+        {
+          "id": "bjt_s3_q5",
+          "question": {
+            "en": "You call a client. How do you start the conversation when someone answers?",
+            "ja": "取引先に自ら電話をかけた際、相手が出たときの正しい第一声はどれ？",
+            "vi": "Bạn gọi điện cho khách hàng. Bạn nên bắt đầu cuộc đối thoại thế nào khi họ bắt máy?"
+          },
+          "options": [
+            {
+              "en": "Hello, this is Sato, when is delivery?",
+              "ja": "もしもし、佐藤ですが、納品日はいつですか",
+              "vi": "Alo, tôi là Sato, ngày giao hàng là khi nào?"
+            },
+            {
+              "en": "Thank you for always working with us. This is Sato from XX. Do you have a moment now?",
+              "ja": "いつもお世話になっております。〇〇会社の佐藤と申します。今、少々お時間よろしいでしょうか",
+              "vi": "Cảm ơn quý khách luôn ủng hộ. Tôi là Sato từ công ty XX. Hiện tại quý khách bớt chút thời gian được không ạ?"
+            },
+            {
+              "en": "I called about delivery. Put the manager on.",
+              "ja": "納品の件でお電話しました。担当の方をお願いします",
+              "vi": "Tôi gọi về việc giao hàng. Cho gặp người phụ trách."
+            },
+            {
+              "en": "Hello, Sato here. I want to ask about delivery.",
+              "ja": "こんにちは、〇〇社の佐藤です。納品について聞きたいのですが",
+              "vi": "Chào bạn, Sato từ XX đây. Tôi muốn hỏi về giao hàng."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Start with 「いつもお世話になっております」, introduce your company/name, and ask if they have time to talk (「お時間よろしいでしょうか」).",
+            "ja": "発信時はまず名乗りと挨拶（「お世話になっております」）を述べ、相手の都合を確認する（「お時間よろしいでしょうか」）のがマナーです。",
+            "vi": "Bắt đầu bằng 「いつもお世話になっております」, tự giới thiệu tên/công ty, và hỏi đối phương có tiện nói chuyện không (「お時間よろしいでしょうか」)."
+          }
+        },
+        {
+          "id": "bjt_s3_q6",
+          "question": {
+            "en": "When writing down a message during a phone call, which of the following is NOT necessary to record?",
+            "ja": "電話対応で伝言のメモを残す際、記入する必要がない情報はどれ？",
+            "vi": "Khi ghi chép lại tin nhắn trong cuộc điện thoại, thông tin nào dưới đây KHÔNG cần thiết phải ghi?"
+          },
+          "options": [
+            {
+              "en": "The date and time of the call.",
+              "ja": "電話を受けた日付と時間",
+              "vi": "Ngày và giờ nhận cuộc gọi."
+            },
+            {
+              "en": "The caller's name and company.",
+              "ja": "相手の社名と氏名",
+              "vi": "Tên và công ty của người gọi."
+            },
+            {
+              "en": "Your personal impressions of the caller's tone.",
+              "ja": "相手の話し方のトーンに対する個人の印象",
+              "vi": "Ấn tượng cá nhân của bạn về giọng điệu của người gọi."
+            },
+            {
+              "en": "The content of the message and required actions.",
+              "ja": "伝言の用件と折り返しの要否",
+              "vi": "Nội dung lời nhắn và các hành động cần thiết."
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "Standard message taking requires facts (date/time, caller, message, actions). Personal impressions are unnecessary and unprofessional.",
+            "ja": "電話メモには客観的な事実（日時、社名・氏名、用件、折り返しの要否、受取人）を書きます。主観的な印象は不要です。",
+            "vi": "Ghi chép tin nhắn cần các thông tin khách quan (ngày giờ, người gọi, lời nhắn, hành động). Ấn tượng cá nhân là không cần thiết."
+          }
+        },
+        {
+          "id": "bjt_s3_q7",
+          "question": {
+            "en": "You cannot hear the caller clearly. How should you tell them politely?",
+            "ja": "電話の相手の声が小さくて聞き取りにくい際、最も適切な伝え方はどれ？",
+            "vi": "Bạn không nghe rõ người gọi. Bạn nên nói thế nào cho lịch sự?"
+          },
+          "options": [
+            {
+              "en": "Your voice is too small, speak louder.",
+              "ja": "声が小さくて聞こえません。もっと大きな声で話してください",
+              "vi": "Giọng bạn nhỏ quá tôi không nghe được. Hãy nói to lên."
+            },
+            {
+              "en": "I'm sorry, but the line seems a bit far. Could you please repeat that?",
+              "ja": "恐れ入りますが、お電話が少々遠いようでございます。もう一度お伺いできますでしょうか",
+              "vi": "Xin lỗi, hình như đường truyền hơi xa. Quý khách có thể nhắc lại được không ạ?"
+            },
+            {
+              "en": "The signal is bad, say it again.",
+              "ja": "電波が悪いです。もう一回言ってください",
+              "vi": "Sóng yếu quá, nói lại đi."
+            },
+            {
+              "en": "I can't hear, call me back.",
+              "ja": "聞こえにくいので、かけ直してください",
+              "vi": "Không nghe được, hãy gọi lại đi."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Avoid blaming the caller. Use the cushion expression 「お電話が少々遠いようでございます」 (the phone seems a bit far) to politely ask them to repeat.",
+            "ja": "聞こえづらい時は、相手のせいにせず「お電話が少々遠いようでございます」と表現し、復唱をお願いするのがマナーです。",
+            "vi": "Tránh đổ lỗi cho khách hàng. Hãy dùng cách nói tránh 「お電話が少々遠いようでございます」 (điện thoại dường như hơi xa) để nhờ họ lặp lại."
+          }
+        },
+        {
+          "id": "bjt_s3_q8",
+          "question": {
+            "en": "You are transferring the call to another department. What should you say before putting them on hold?",
+            "ja": "電話を社内の担当部署に転送する際、保留ボタンを押す直前の正しいセリフはどれ？",
+            "vi": "Bạn đang chuyển máy sang phòng ban khác. Bạn nên nói gì trước khi bấm giữ máy?"
+          },
+          "options": [
+            {
+              "en": "I will transfer you, wait.",
+              "ja": "担当の部署に回しますので、待ってください",
+              "vi": "Tôi chuyển sang bộ phận phụ trách đây, hãy chờ."
+            },
+            {
+              "en": "I will connect you to XX in charge. Could you please hold for a moment?",
+              "ja": "担当の〇〇にお繋ぎいたしますので、少々お待ちいただけますでしょうか",
+              "vi": "Tôi xin phép chuyển máy tới người phụ trách XX. Quý khách vui lòng chờ một lát được không ạ?"
+            },
+            {
+              "en": "Changing to another person.",
+              "ja": "他の人に代わります",
+              "vi": "Tôi thay đổi sang người khác đây."
+            },
+            {
+              "en": "Transferring the call.",
+              "ja": "電話を転送します",
+              "vi": "Chuyển cuộc gọi."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Politely state who you are transferring the call to and ask them to hold (「少々お待ちいただけますでしょうか」).",
+            "ja": "転送する際は、担当者の名前を伝え、保留にする旨（「少々お待ちいただけますでしょうか」）を断ってから保留にします。",
+            "vi": "Báo tên người phụ trách và xin phép để họ chờ máy (「少々お待ちいただけますでしょうか」)."
+          }
+        },
+        {
+          "id": "bjt_s3_q9",
+          "question": {
+            "en": "To verify that you have written down the message details correctly, what should you do?",
+            "ja": "電話で預かった伝言内容を正しく記録できたか確認するため、取るべき行動はどれ？",
+            "vi": "Để xác nhận bạn đã ghi lại nội dung lời nhắn chính xác, hành động nào là đúng?"
+          },
+          "options": [
+            {
+              "en": "Say you understood and hang up.",
+              "ja": "分かったと伝えてすぐに切る",
+              "vi": "Nói đã hiểu rồi cúp máy ngay."
+            },
+            {
+              "en": "Read back the key points, including the name, company, and phone number.",
+              "ja": "相手の社名、氏名、電話番号、用件を復唱して確認する",
+              "vi": "Nhắc lại các ý chính bao gồm tên khách, công ty và số điện thoại."
+            },
+            {
+              "en": "Ask them to send an email.",
+              "ja": "念のためメールを送るよう依頼する",
+              "vi": "Yêu cầu họ gửi email cho chắc."
+            },
+            {
+              "en": "Do nothing; repeating is rude.",
+              "ja": "失礼になるので復唱はしない",
+              "vi": "Không làm gì cả vì nhắc lại là bất lịch sự."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "To prevent mistakes, always read back the caller's name, company, callback number, and message details before ending the call.",
+            "ja": "聞き間違いを防ぐため、受話の最後には必ず相手の社名、名前、電話番号、用件を復唱して確認します。",
+            "vi": "Để tránh sai sót, hãy luôn đọc lại tên công ty, tên khách, số điện thoại và nội dung lời nhắn trước khi gác máy."
+          }
+        },
+        {
+          "id": "bjt_s3_q10",
+          "question": {
+            "en": "How should you end a phone conversation with a client?",
+            "ja": "取引先の相手との電話を切る際の、正しい挨拶表現はどれ？",
+            "vi": "Bạn nên kết thúc cuộc gọi với khách hàng bằng câu chào nào?"
+          },
+          "options": [
+            {
+              "en": "Bye bye.",
+              "ja": "バイバイ",
+              "vi": "Tạm biệt nhé."
+            },
+            {
+              "en": "Please excuse me now.",
+              "ja": "それでは失礼いたします",
+              "vi": "Tôi xin phép gác máy tại đây ạ."
+            },
+            {
+              "en": "It is finished.",
+              "ja": "おしまいになります",
+              "vi": "Kết thúc cuộc gọi."
+            },
+            {
+              "en": "Goodbye.",
+              "ja": "さようなら",
+              "vi": "Tạm biệt."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "The standard polite sign-off for ending a phone call with a client is 「それでは失礼いたします」, and you should wait for the client to hang up first.",
+            "ja": "ビジネス電話の最後は、「それでは失礼いたします」と挨拶し、相手が切るのを確認してから受話器を置くのがマナーです。",
+            "vi": "Lời chào cúp máy tiêu chuẩn là 「それでは失礼いたします」, và quy tắc là đợi khách hàng cúp máy trước rồi mới cúp."
+          }
+        }
+      ]
     },
     {
-      "id": "q4",
-      "question": {
-        "en": "Which is the respectful form (sonkeigo) of 「いる」?",
-        "ja": "「いる」の尊敬語はどれ？",
-        "vi": "Đâu là dạng tôn kính (sonkeigo) của 「いる」?"
+      "id": "bjt-4",
+      "title": {
+        "en": "Set 4: Customer Relations & Client Meetings",
+        "ja": "セット4：来客対応と商談",
+        "vi": "Đề 4: Tiếp đón khách và Đàm phán"
       },
-      "options": [
-        { "en": "おる", "ja": "おる", "vi": "おる" },
-        { "en": "いらっしゃる", "ja": "いらっしゃる", "vi": "いらっしゃる" },
-        { "en": "いたす", "ja": "いたす", "vi": "いたす" },
-        { "en": "もうす", "ja": "もうす", "vi": "もうす" }
-      ],
-      "answer": 1,
-      "explanation": {
-        "en": "「いらっしゃる」 is sonkeigo for いる/来る/行く. 「おる」 is humble (kenjougo) for いる.",
-        "ja": "「いらっしゃる」は いる/来る/行く の尊敬語。「おる」は いる の謙譲語です。",
-        "vi": "「いらっしゃる」 là tôn kính của いる/来る/行く. 「おる」 là khiêm nhường của いる."
-      }
+      "description": {
+        "en": "Receiving guests, guiding them to meeting rooms, offering tea, and starting client conversations.",
+        "ja": "受付での対応、応接室への案内、お茶の出し方、および商談開始時の会話ルールを扱います。",
+        "vi": "Tiếp khách tại sảnh, hướng dẫn phòng họp, quy tắc mời trà và bắt đầu cuộc trao đổi."
+      },
+      "questions": [
+        {
+          "id": "bjt_s4_q1",
+          "question": {
+            "en": "A guest arrives at reception. They have an appointment with Suzuki at 2 PM. How do you greet them?",
+            "ja": "受付に2時の約束（鈴木宛て）の来客が来られました。最初の挨拶として最も適切なのはどれ？",
+            "vi": "Một vị khách đến quầy lễ tân. Họ có hẹn với Suzuki lúc 2 giờ chiều. Bạn chào đón họ như thế nào?"
+          },
+          "options": [
+            {
+              "en": "What is your business?",
+              "ja": "どのようなご用件ですか",
+              "vi": "Quý khách có việc gì thế ạ?"
+            },
+            {
+              "en": "Welcome. We have been expecting you, Suzuki-sama.",
+              "ja": "いらっしゃいませ。お待ちしておりました。〇〇様でいらっしゃいますね",
+              "vi": "Chào mừng quý khách. Chúng tôi đã đợi quý khách, Suzuki-sama phải không ạ?"
+            },
+            {
+              "en": "Suzuki is busy now.",
+              "ja": "鈴木は今忙しいです",
+              "vi": "Suzuki hiện đang bận."
+            },
+            {
+              "en": "Fill out this form.",
+              "ja": "受付票を書いてください",
+              "vi": "Điền vào tờ khai lễ tân."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Welcome the guest warmly, state that you have been waiting for them (「お待ちしておりました」), and confirm their name.",
+            "ja": "アポイントのある来客には、歓迎の意を示す「お待ちしておりました」と声をかけ、名前を確認します。",
+            "vi": "Chào đón khách nồng nhiệt, nói rằng mình đã chờ đợi họ và xác nhận tên khách."
+          }
+        },
+        {
+          "id": "bjt_s4_q2",
+          "question": {
+            "en": "You are guiding a client to an elevator. How should you guide them when entering the elevator?",
+            "ja": "お客様をエレベーターに誘導する際、正しい乗り方のマナーはどれ？",
+            "vi": "Bạn đang dẫn khách hàng đến thang máy. Quy tắc đi thang máy nào là đúng?"
+          },
+          "options": [
+            {
+              "en": "Client enters first, then you enter.",
+              "ja": "お客様に先に入ってもらい、自分は後から乗る",
+              "vi": "Khách vào trước, sau đó bạn mới vào."
+            },
+            {
+              "en": "You enter first, hold the door button, and guide the client in.",
+              "ja": "自分が先に入ってドアの開閉ボタンを押し、お客様を誘導する",
+              "vi": "Bạn vào trước, giữ nút mở cửa và mời khách vào."
+            },
+            {
+              "en": "Both enter at the same time.",
+              "ja": "二人で同時に乗る",
+              "vi": "Cả hai cùng vào một lúc."
+            },
+            {
+              "en": "Wait for the elevator doors to close and take the stairs.",
+              "ja": "階段を使うように促す",
+              "vi": "Khuyên khách đi thang bộ."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "When guiding a client, you should enter the elevator first to hold the door open and press the destination button. When leaving, let the client exit first.",
+            "ja": "エレベーターでは案内者が先に入って開閉ボタンを操作し、お客様を誘導します。降りる際はお客様に先に出ていただきます。",
+            "vi": "Khi hướng dẫn khách đi thang máy, bạn đi vào trước giữ nút mở và mời khách vào. Khi ra, hãy nhường khách đi ra trước."
+          }
+        },
+        {
+          "id": "bjt_s4_q3",
+          "question": {
+            "en": "You guide a client (1 person) and your boss (1 person) into a meeting room. Where should the client sit?",
+            "ja": "応接室にお客様1名と自社の上司1名を案内する際、お客様に座っていただく正しい席はどれ？",
+            "vi": "Bạn dẫn một khách hàng và sếp của bạn vào phòng họp. Khách hàng nên ngồi ở đâu?"
+          },
+          "options": [
+            {
+              "en": "On the seat closest to the door.",
+              "ja": "出入り口に最も近い席",
+              "vi": "Ghế gần cửa ra vào nhất."
+            },
+            {
+              "en": "On the seat farthest from the door.",
+              "ja": "出入り口から最も遠い席（上座）",
+              "vi": "Ghế xa cửa ra vào nhất (Kamiza)."
+            },
+            {
+              "en": "Anywhere they want.",
+              "ja": "どこでも好きな席",
+              "vi": "Chỗ nào họ thích cũng được."
+            },
+            {
+              "en": "Next to the whiteboard.",
+              "ja": "ホワイトボードの横の席",
+              "vi": "Ngay cạnh bảng trắng."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "The seat farthest from the door is the 「上座」 (Kamiza/upper seat), reserved for the guest. The seat closest to the door is the 「下座」 (Shimoza/lower seat).",
+            "ja": "出入り口から最も遠い席が「上座（かみざ）」であり、お客様に座っていただきます。入り口に近い席は「下座」です。",
+            "vi": "Ghế cách xa cửa nhất là 'Kamiza' (ghế thượng tọa), dành cho khách. Ghế gần cửa nhất là 'Shimoza' (ghế hạ tọa)."
+          }
+        },
+        {
+          "id": "bjt_s4_q4",
+          "question": {
+            "en": "You are serving green tea to two clients in a meeting room. What is the correct protocol?",
+            "ja": "会議室でお客様にお茶を出す際、正しい出し方の作法はどれ？",
+            "vi": "Bạn phục vụ trà xanh cho hai khách hàng trong phòng họp. Quy tắc nào đúng?"
+          },
+          "options": [
+            {
+              "en": "Serve from the right side of the guest, placing the cup to their right.",
+              "ja": "お客様の右側から、お茶を右側（お菓子がある場合はお茶を右、お菓子を左）に置く",
+              "vi": "Phục vụ từ bên phải của khách, đặt tách trà ở bên phải của khách."
+            },
+            {
+              "en": "Hand the cups directly over their heads.",
+              "ja": "お客様の頭の上から直接手渡す",
+              "vi": "Đưa cốc trực tiếp qua đầu họ."
+            },
+            {
+              "en": "Serve the lowest-status person first.",
+              "ja": "立場の低い人から順番に出す",
+              "vi": "Phục vụ người chức vụ thấp trước."
+            },
+            {
+              "en": "Place the tea from the left side without saying anything.",
+              "ja": "無言で左側からお茶を置く",
+              "vi": "Đặt trà từ phía bên trái mà không nói gì."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Serve the highest-status guest first, from their right side. Place the teacup to their right, and sweets to their left.",
+            "ja": "お茶は役職の高い人から順に、相手の右側から出すのが基本です。お茶碗は右側、お菓子は左側に置きます。",
+            "vi": "Phục vụ khách hàng có chức vụ cao nhất trước, đưa từ phía bên phải. Đặt tách trà ở bên phải khách, bánh ngọt đặt ở bên trái."
+          }
+        },
+        {
+          "id": "bjt_s4_q5",
+          "question": {
+            "en": "Introducing yourself at the beginning of a meeting with a client. Which phrasing is correct?",
+            "ja": "商談の最初にお客様に対して自己紹介を行う際、最も適切な表現はどれ？",
+            "vi": "Tự giới thiệu bản thân trước khách hàng ở đầu buổi họp. Cách diễn đạt nào đúng?"
+          },
+          "options": [
+            {
+              "en": "I am Sato, working under Suzuki.",
+              "ja": "私は鈴木部長の下で働いている佐藤と申します",
+              "vi": "Tôi là Sato, làm việc dưới quyền Trưởng phòng Suzuki."
+            },
+            {
+              "en": "I am Sato from the Sales Department of XX Company. Nice to meet you today.",
+              "ja": "〇〇会社営業部の佐藤と申します。本日はよろしくお願いいたします",
+              "vi": "Tôi là Sato thuộc Phòng Kinh doanh của công ty XX. Rất mong được sự giúp đỡ của quý khách hôm nay."
+            },
+            {
+              "en": "This is Sato-sama from XX.",
+              "ja": "〇〇会社の佐藤様です",
+              "vi": "Đây là Sato-sama từ công ty XX."
+            },
+            {
+              "en": "I am Sato. Here is my card.",
+              "ja": "佐藤と申します。名刺をどうぞ",
+              "vi": "Tôi là Sato. Đây là danh thiếp của tôi."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Introduce yourself with your affiliation (company name and department) and name, ending with 「よろしくお願いいたします」.",
+            "ja": "自己紹介の基本は、会社名・部課名・氏名を名乗り、最後に「よろしくお願いいたします」と結びます。",
+            "vi": "Tự giới thiệu bản thân bằng tên công ty, tên phòng ban và tên mình, kết thúc bằng 「よろしくお願いいたします」."
+          }
+        },
+        {
+          "id": "bjt_s4_q6",
+          "question": {
+            "en": "During small talk (icebreaker) before a meeting, which topic should you avoid?",
+            "ja": "本題に入る前のアイスブレイク（雑談）において、避けるべき話題はどれ？",
+            "vi": "Trong cuộc trò chuyện ngắn (icebreaker) trước khi họp, chủ đề nào bạn nên tránh?"
+          },
+          "options": [
+            {
+              "en": "The weather today.",
+              "ja": "今日の天気についての話",
+              "vi": "Thời tiết hôm nay."
+            },
+            {
+              "en": "The client's business trip.",
+              "ja": "お客様の出張や旅についての話",
+              "vi": "Chuyến công tác của khách."
+            },
+            {
+              "en": "Politics and controversial news.",
+              "ja": "政治や宗教、支持政党に関する話",
+              "vi": "Chính trị và tin tức gây tranh cãi."
+            },
+            {
+              "en": "Recent sports events.",
+              "ja": "最近のスポーツの話題",
+              "vi": "Các sự kiện thể thao gần đây."
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "Avoid topics related to politics, religion, and personal issues, as they can cause disagreement. Stick to safe topics like weather or travel.",
+            "ja": "雑談では、政治、宗教、プライベートすぎる話題は避け、天気や季節、出張の話題など無難なものを選びます。",
+            "vi": "Tránh các chủ đề liên quan đến chính trị, tôn giáo và đời tư cá nhân. Hãy nói về thời tiết, công tác hoặc du lịch."
+          }
+        },
+        {
+          "id": "bjt_s4_q7",
+          "question": {
+            "en": "An unexpected visitor arrives without an appointment, asking to see manager Tanaka. Tanaka is busy. How do you handle this?",
+            "ja": "アポなしの来客が田中部長への面会を求めて来られました。田中は席にいますが多忙です。正しい対応はどれ？",
+            "vi": "Một khách đột xuất đến không hẹn trước yêu cầu gặp Trưởng phòng Tanaka. Tanaka đang bận. Bạn xử lý thế nào?"
+          },
+          "options": [
+            {
+              "en": "Tell them Tanaka is busy and ask them to leave.",
+              "ja": "田中は忙しいので帰るように言う",
+              "vi": "Báo Tanaka bận và mời họ về."
+            },
+            {
+              "en": "Explain Tanaka is in a meeting, and ask to schedule an appointment or leave a message.",
+              "ja": "あいにく田中は会議中でございます。ご伝言を承るか、次回のアポイントの調整をさせていただいてもよろしいでしょうか",
+              "vi": "Thật đáng tiếc, hiện Tanaka đang họp. Tôi có thể ghi lại lời nhắn hoặc đặt lịch hẹn cho lần sau được không ạ?"
+            },
+            {
+              "en": "Let them wait in the lobby.",
+              "ja": "ロビーでそのまま待たせておく",
+              "vi": "Để họ chờ ở sảnh vô thời hạn."
+            },
+            {
+              "en": "Interrupt Tanaka's meeting.",
+              "ja": "田中の会議を中断して客を連れて行く",
+              "vi": "Ngắt cuộc họp của Tanaka để dẫn khách vào."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Inform the guest politely that Tanaka is busy. Ask them to make an appointment next time, and offer to take a message.",
+            "ja": "アポイントのない来客には、丁重にお断りし、伝言を預かるか次回のアポイント調整を促します。",
+            "vi": "Báo khách một cách lịch sự là người phụ trách đang bận, đề nghị hẹn lịch lần sau hoặc ghi lại lời nhắn."
+          }
+        },
+        {
+          "id": "bjt_s4_q8",
+          "question": {
+            "en": "At the end of the meeting, you show the client to the elevator. When the doors close, what should you do?",
+            "ja": "お客様をエレベーターまで見送る際、エレベーターが閉まる瞬間の正しいマナーはどれ？",
+            "vi": "Cuối buổi họp, bạn tiễn khách ra thang máy. Khi cửa thang máy đóng lại, bạn nên làm gì?"
+          },
+          "options": [
+            {
+              "en": "Wave goodbye quickly.",
+              "ja": "手を振って見送る",
+              "vi": "Vẫy tay chào nhanh."
+            },
+            {
+              "en": "Bow and keep bowing until the doors fully close.",
+              "ja": "お辞儀をし、ドアが完全に閉まるまで頭を下げ続ける",
+              "vi": "Cúi chào và giữ tư thế cúi chào cho đến khi cửa đóng hoàn toàn."
+            },
+            {
+              "en": "Enter the elevator with them.",
+              "ja": "一緒に乗って帰る",
+              "vi": "Đi cùng thang máy với họ."
+            },
+            {
+              "en": "Press the close button for them.",
+              "ja": "外からドア閉ボタンを押してあげる",
+              "vi": "Bấm nút đóng từ bên ngoài cho họ."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "To show respect, bow and hold the bow until the elevator doors are completely closed.",
+            "ja": "お客様が乗り込んだらお辞儀をし、ドアが完全に閉まるまでお辞儀を続けます。",
+            "vi": "Cúi chào và giữ tư thế chào cho đến khi cửa thang máy đóng lại hoàn toàn để thể hiện sự tôn trọng."
+          }
+        },
+        {
+          "id": "bjt_s4_q9",
+          "question": {
+            "en": "You want to transition from small talk to the business discussion. Which phrasing is most natural?",
+            "ja": "雑談から商談の本題へスムーズに切り替えるための正しい表現はどれ？",
+            "vi": "Bạn muốn chuyển từ chuyện phiếm sang thảo luận công việc. Cách nói nào tự nhiên nhất?"
+          },
+          "options": [
+            {
+              "en": "Let's talk about work now.",
+              "ja": "では、仕事の話をしましょう",
+              "vi": "Bây giờ nói chuyện công việc nào."
+            },
+            {
+              "en": "To get straight to the point, may we enter today's main topic?",
+              "ja": "さっそくですが、本日の本題に入らせていただいてもよろしいでしょうか",
+              "vi": "Xin phép đi thẳng vào vấn đề, chúng ta có thể bắt đầu chủ đề chính hôm nay được không ạ?"
+            },
+            {
+              "en": "We don't have time, so let's start.",
+              "ja": "時間がないので始めます",
+              "vi": "Không có thời gian nên bắt đầu thôi."
+            },
+            {
+              "en": "Now, starting negotiation.",
+              "ja": "それでは、商談を開始します",
+              "vi": "Sau đây, bắt đầu đàm phán."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Use 「さっそくですが」 (To get straight to the point) combined with a polite request for permission to start.",
+            "ja": "本題へ移行する際の定番の切り出し表現は、「さっそくですが」を用いて相手の了解を得る表現です。",
+            "vi": "Sử dụng cụm từ chuyển ý 「さっそくですが」 kết hợp với câu xin phép bắt đầu cuộc trao đổi."
+          }
+        },
+        {
+          "id": "bjt_s4_q10",
+          "question": {
+            "en": "The meeting room is slightly cold. How should you ask the client if they are comfortable?",
+            "ja": "応接室が少し冷えていると感じたとき、お客様へエアコンの温度調整を提案する正しい表現はどれ？",
+            "vi": "Phòng họp hơi lạnh. Bạn nên hỏi khách hàng xem họ có thoải mái không như thế nào?"
+          },
+          "options": [
+            {
+              "en": "Is the room cold?",
+              "ja": "部屋が寒いですか",
+              "vi": "Phòng bị lạnh phải không?"
+            },
+            {
+              "en": "How is the temperature of the air conditioner? Are you not cold?",
+              "ja": "空調の温度はいかがでしょうか。寒くはございませんか",
+              "vi": "Nhiệt độ điều hòa như thế này có vừa không ạ? Quý khách có bị lạnh không?"
+            },
+            {
+              "en": "Should I turn off the AC?",
+              "ja": "エアコンを消しましょうか",
+              "vi": "Tôi tắt điều hòa nhé?"
+            },
+            {
+              "en": "I will change the temp.",
+              "ja": "温度を変えますね",
+              "vi": "Tôi đổi nhiệt độ nhé."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Ask about the temperature of the air conditioner politely (「空調の温度はいかがでしょうか」) and check if they are cold.",
+            "ja": "お客様の快適さに配慮し、「空調の温度はいかがでしょうか」「寒くありませんか」と丁寧に尋ねるのが気配りとして好ましいです。",
+            "vi": "Hỏi về nhiệt độ điều hòa một cách lịch sự và chu đáo xem khách có bị lạnh hay không."
+          }
+        }
+      ]
     },
     {
-      "id": "q5",
-      "question": {
-        "en": "How do you humbly say that you (will) 「する」 something for a client?",
-        "ja": "自分が「する」をへりくだって言うと？",
-        "vi": "Bạn nói khiêm nhường cho việc mình 「する」 (làm) như thế nào?"
+      "id": "bjt-5",
+      "title": {
+        "en": "Set 5: Internal Communication & Hou-Ren-So",
+        "ja": "セット5：社内コミュニケーション・報連相",
+        "vi": "Đề 5: Giao tiếp nội bộ và nguyên tắc Hou-Ren-So"
       },
-      "options": [
-        { "en": "なさる", "ja": "なさる", "vi": "なさる" },
-        { "en": "いたす", "ja": "いたす", "vi": "いたす" },
-        { "en": "される", "ja": "される", "vi": "される" },
-        { "en": "やらせる", "ja": "やらせる", "vi": "やらせる" }
-      ],
-      "answer": 1,
-      "explanation": {
-        "en": "「いたす」 is kenjougo (humble) for する (e.g. ご連絡いたします). 「なさる」 is sonkeigo for the other person.",
-        "ja": "「いたす」は する の謙譲語（例：ご連絡いたします）。「なさる」は相手に使う尊敬語です。",
-        "vi": "「いたす」 là khiêm nhường của する (vd ご連絡いたします). 「なさる」 là tôn kính dùng cho đối phương."
-      }
+      "description": {
+        "en": "Reporting to superiors, communicating with colleagues, consulting on issues, and workplace etiquette.",
+        "ja": "上司への報告、同僚との連絡、相談、および職場でのコミュニケーションマナーを学びます。",
+        "vi": "Báo cáo cấp trên, liên lạc đồng nghiệp, thảo luận giải quyết vấn đề và quy tắc ứng xử tại văn phòng."
+      },
+      "questions": [
+        {
+          "id": "bjt_s5_q1",
+          "question": {
+            "en": "You made a mistake in a client invoice. How should you report this to your supervisor?",
+            "ja": "請求書の金額を間違えて作成してしまいました。上司への報告の仕方として正しいのはどれ？",
+            "vi": "Bạn làm sai hóa đơn gửi khách hàng. Cách báo cáo với cấp trên nào dưới đây là đúng?"
+          },
+          "options": [
+            {
+              "en": "Hide it and fix it silently.",
+              "ja": "黙って自分で修正して何事もなかったようにする",
+              "vi": "Giấu đi và tự sửa âm thầm."
+            },
+            {
+              "en": "Report it immediately, explaining the impact and proposing a solution.",
+              "ja": "すぐにミスを報告し、影響範囲と今後の対応策を説明する",
+              "vi": "Báo cáo sai sót ngay lập tức, giải thích ảnh hưởng và đề xuất giải pháp."
+            },
+            {
+              "en": "Wait for a complaint, then report.",
+              "ja": "取引先から指摘されるまで待ち、それから報告する",
+              "vi": "Đợi khách hàng phàn nàn rồi mới báo cáo."
+            },
+            {
+              "en": "Blame the system.",
+              "ja": "システムのせいにしながら軽く報告する",
+              "vi": "Đổ lỗi cho hệ thống và báo cáo qua loa."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "In Hou-Ren-So, bad news must be reported immediately. State the facts, the impact, and your proposed plan to resolve it.",
+            "ja": "ミスが発生した際は、速やかに上司に報告し、現状、想定される影響、および対応策を明確に伝えます。",
+            "vi": "Khi xảy ra sai sót, phải báo cáo ngay lập tức cho cấp trên. Hãy nêu rõ sự thật, mức độ ảnh hưởng và phương án xử lý."
+          }
+        },
+        {
+          "id": "bjt_s5_q2",
+          "question": {
+            "en": "You want to talk to your supervisor who is working at their desk. How should you approach them?",
+            "ja": "デスクで仕事をしている上司に声をかけて相談する際、最も適切な表現はどれ？",
+            "vi": "Bạn muốn nói chuyện với cấp trên đang làm việc tại bàn. Bạn nên tiếp cận họ thế nào?"
+          },
+          "options": [
+            {
+              "en": "Hey, look at this.",
+              "ja": "ちょっとこれを見てください",
+              "vi": "Này, nhìn cái này đi."
+            },
+            {
+              "en": "Manager, sorry to bother you, but do you have a moment now?",
+              "ja": "課長、お忙しいところ恐れ入りますが、今少々お時間よろしいでしょうか",
+              "vi": "Thưa Trưởng phòng, xin lỗi đã làm phiền, bây giờ anh bớt chút thời gian được không ạ?"
+            },
+            {
+              "en": "Listen to me right now.",
+              "ja": "今すぐ私の話を聞いてください",
+              "vi": "Nghe tôi nói ngay đi."
+            },
+            {
+              "en": "Come here for a second.",
+              "ja": "相談がありますので、こちらに来てください",
+              "vi": "Tôi có việc cần thảo luận, xin hãy qua đây."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Use a cushion word (「お忙しいところ恐れ入りますが」) and ask if they have a moment (「今少々お時間よろしいでしょうか」).",
+            "ja": "上司に話しかける際は、「お忙しいところ恐れ入りますが」とクッション言葉を使い、「今少々お時間よろしいでしょうか」と都合を確認します。",
+            "vi": "Sử dụng từ đệm và hỏi xem họ có tiện bớt chút thời gian không để thể hiện sự tôn trọng."
+          }
+        },
+        {
+          "id": "bjt_s5_q3",
+          "question": {
+            "en": "What is the correct way to structure a status report to your supervisor?",
+            "ja": "上司に進捗報告をする際の、最も効率的で正しい構成はどれ？",
+            "vi": "Cách cấu trúc một báo cáo tiến độ cho cấp trên như thế nào là đúng?"
+          },
+          "options": [
+            {
+              "en": "Start with details, then the conclusion.",
+              "ja": "経緯を細かく話してから、最後に結論を言う",
+              "vi": "Bắt đầu với chi tiết, kết thúc bằng kết luận."
+            },
+            {
+              "en": "Start with the conclusion first, followed by details.",
+              "ja": "最初に結論を述べ、その後に詳細と今後の対策を説明する",
+              "vi": "Nêu kết luận trước, tiếp theo là chi tiết và hành động tiếp theo."
+            },
+            {
+              "en": "Write a long story chronologically.",
+              "ja": "時系列で最初から最後まで話す",
+              "vi": "Kể chuyện dài dòng theo trình tự thời gian."
+            },
+            {
+              "en": "Just say 'everything is fine' without details.",
+              "ja": "詳細を省いて「順調です」とだけ言う",
+              "vi": "Chỉ nói 'mọi thứ ổn' mà không có chi tiết."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Business reports should always use the 'Conclusion First' (PREP) structure to save time.",
+            "ja": "ビジネス報告の基本は結論ファーストです。まず結論を述べ、その後に理由や詳細を説明します。",
+            "vi": "Báo cáo công việc luôn phải tuân theo cấu trúc 'Kết luận trước' để giúp thông tin rõ ràng và tiết kiệm thời gian."
+          }
+        },
+        {
+          "id": "bjt_s5_q4",
+          "question": {
+            "en": "You are struggling with a task and need to consult (Soudan) your colleague. How do you start?",
+            "ja": "同僚に仕事の件で相談に乗ってもらいたいとき、正しい切り出し方はどれ？",
+            "vi": "Bạn đang gặp khó khăn trong công việc và muốn thảo luận (Soudan) với đồng nghiệp. Bạn bắt đầu thế nào?"
+          },
+          "options": [
+            {
+              "en": "Do this job for me.",
+              "ja": "この仕事をやっといて",
+              "vi": "Làm giúp tôi việc này đi."
+            },
+            {
+              "en": "Actually, I have something to consult you about regarding XX. Do you have a moment?",
+              "ja": "実は〇〇の件でご相談したいことがあるのですが、少しお時間をいただけますか",
+              "vi": "Thực ra tôi có việc cần thảo luận về dự án XX. Bạn bớt chút thời gian được không?"
+            },
+            {
+              "en": "Tell me what to do.",
+              "ja": "どうすればいいか教えて",
+              "vi": "Chỉ tôi phải làm gì đi."
+            },
+            {
+              "en": "I'm in trouble, help.",
+              "ja": "困っているので助けてください",
+              "vi": "Tôi đang gặp rắc rối, giúp với."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Use 「実はご相談したいことがございまして」 to signal that you need advice, and check their availability.",
+            "ja": "相談を持ちかける際は、「実は〇〇の件でご相談したいことがあるのですが」と切り出し、相手の承諾を得ます。",
+            "vi": "Sử dụng câu dẫn dắt và hỏi xem đồng nghiệp có thời gian để thảo luận hay không."
+          }
+        },
+        {
+          "id": "bjt_s5_q5",
+          "question": {
+            "en": "Your supervisor gives you a task. How do you confirm your understanding?",
+            "ja": "上司から業務指示を受けた際、正しい返答と確認の方法はどれ？",
+            "vi": "Cấp trên giao việc cho bạn. Bạn xác nhận lại sự hiểu biết của mình thế nào?"
+          },
+          "options": [
+            {
+              "en": "Yes, I understand.",
+              "ja": "はい、わかりました",
+              "vi": "Vâng, tôi hiểu rồi."
+            },
+            {
+              "en": "Understood. Regarding XX, I will draft it and report by 5 PM today.",
+              "ja": "承知いたしました。〇〇の件ですね。本日17時までに資料を作成し報告いたします",
+              "vi": "Tôi đã rõ. Về việc XX, tôi sẽ soạn thảo và báo cáo trước 5 giờ chiều hôm nay."
+            },
+            {
+              "en": "OK, I will do it.",
+              "ja": "オッケーです。やっておきます",
+              "vi": "OK, tôi sẽ làm."
+            },
+            {
+              "en": "Roger that.",
+              "ja": "了解しました",
+              "vi": "Đã rõ (了解)."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Confirm using polite language (「承知いたしました」), repeat the task details to ensure alignment, and state the deadline.",
+            "ja": "指示を受けた際は、「承知いたしました」と答え、指示内容の要点と期限を復唱して認識のズレを防ぎます。",
+            "vi": "Xác nhận bằng từ lịch sự (「承知いたしました」), nhắc lại điểm chính của công việc và đưa ra thời hạn cụ thể."
+          }
+        },
+        {
+          "id": "bjt_s5_q6",
+          "question": {
+            "en": "You are running 10 minutes late for a meeting due to train delay. What should you do?",
+            "ja": "電車の遅延で社内会議に10分遅れそうなとき、取るべき正しい行動はどれ？",
+            "vi": "Bạn đi muộn 10 phút vì tàu trễ. Bạn nên làm gì?"
+          },
+          "options": [
+            {
+              "en": "Hurry up and do not contact.",
+              "ja": "急いで行く。連絡する時間は無駄なので連絡しない",
+              "vi": "Chạy thật nhanh và không liên lạc."
+            },
+            {
+              "en": "Contact immediately, stating the reason and your expected arrival time.",
+              "ja": "直ちに遅れる理由と、到着予定時間を連絡する",
+              "vi": "Liên lạc ngay lập tức, báo lý do và thời gian dự kiến đến."
+            },
+            {
+              "en": "Send email after you arrive.",
+              "ja": "到着した後にメールで謝罪する",
+              "vi": "Gửi email xin lỗi sau khi đã đến."
+            },
+            {
+              "en": "Take the day off.",
+              "ja": "上司に電話して休むことにする",
+              "vi": "Gọi điện cho sếp xin nghỉ phép luôn."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "If you are going to be late, contact the team immediately before the meeting starts, explaining the reason and giving an estimated arrival time.",
+            "ja": "遅刻が判明した時点で直ちに連絡を入れます。理由と具体的な見込み時間を伝えるのが鉄則です。",
+            "vi": "Nếu đi muộn, hãy liên lạc ngay lập tức trước khi bắt đầu họp, giải thích lý do và đưa ra thời gian dự kiến đến cụ thể."
+          }
+        },
+        {
+          "id": "bjt_s5_q7",
+          "question": {
+            "en": "You want to ask a colleague in another department to review a document. How do you request this politely?",
+            "ja": "他部署のメンバーに資料に目を通してもらうよう依頼する際、最も適切な表現はどれ？",
+            "vi": "Bạn muốn nhờ đồng nghiệp phòng ban khác xem giúp tài liệu. Cách yêu cầu nào lịch sự nhất?"
+          },
+          "options": [
+            {
+              "en": "Read this document.",
+              "ja": "この資料を読んでください",
+              "vi": "Hãy đọc tài liệu này."
+            },
+            {
+              "en": "I know you are busy, but could you please read this document?",
+              "ja": "お忙しいところ恐縮ですが、こちらの資料をご一読いただけますでしょうか",
+              "vi": "Tôi biết bạn đang bận, nhưng bạn có thể vui lòng đọc qua tài liệu này được không?"
+            },
+            {
+              "en": "Check this, please.",
+              "ja": "チェックをお願いします",
+              "vi": "Nhờ kiểm tra giúp."
+            },
+            {
+              "en": "Look at this.",
+              "ja": "見ておいてください",
+              "vi": "Xem cái này đi."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Use a cushion phrase like 「お忙しいところ恐縮ですが」 (Sorry to bother you while you are busy) and ask for a review politely using 「ご一読いただけますでしょうか」.",
+            "ja": "他部署の人に依頼をする際は、「お忙しいところ恐縮ですが」と気遣いを示し、「ご一読いただけますでしょうか」と頼みます。",
+            "vi": "Dùng từ đệm 「お忙しいところ恐縮ですが」 và đưa ra lời yêu cầu lịch sự 「ご一読いただけますでしょうか」."
+          }
+        },
+        {
+          "id": "bjt_s5_q8",
+          "question": {
+            "en": "Your manager has misunderstood a report you wrote. How do you correct them politely?",
+            "ja": "自分の書いた報告書について、上司が誤解して指摘してきたとき、正しい弁明の仕方はどれ？",
+            "vi": "Sếp hiểu lầm báo cáo của bạn. Bạn đính chính thế nào cho lịch sự?"
+          },
+          "options": [
+            {
+              "en": "Manager, that is a mistake.",
+              "ja": "課長、それは間違いです",
+              "vi": "Thưa Trưởng phòng, điều đó là sai lầm."
+            },
+            {
+              "en": "I apologize, perhaps my explanation was insufficient. Regarding this document...",
+              "ja": "恐れ入りますが、私の説明不足で誤解を与えてしまったかもしれません。こちらの資料ですが...",
+              "vi": "Xin lỗi, có lẽ do tôi giải thích chưa đủ rõ nên gây ra hiểu lầm. Về tài liệu này..."
+            },
+            {
+              "en": "Read it as I wrote it.",
+              "ja": "私の書いた通りに読んでください",
+              "vi": "Hãy đọc đúng như tôi đã viết."
+            },
+            {
+              "en": "No, it's not like that.",
+              "ja": "違います、そうではありません",
+              "vi": "Không phải, không phải như thế."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Take responsibility for the misunderstanding by saying it was due to your lack of explanation (「説明不足で」), then clarify the facts.",
+            "ja": "上司の誤解を正す際は、相手を責めるのではなく「私の説明不足で」と自分に非があるように表現しつつ、説明をします。",
+            "vi": "Nhận trách nhiệm về phía mình (do giải thích chưa rõ) để giảm bớt sự căng thẳng, sau đó giải thích lại thực tế."
+          }
+        },
+        {
+          "id": "bjt_s5_q9",
+          "question": {
+            "en": "You finished a task assigned by your manager. What is the correct way to report completion?",
+            "ja": "上司から指示された業務が完了した際、報告する正しい方法はどれ？",
+            "vi": "Bạn hoàn thành công việc được giao. Cách báo cáo nào đúng?"
+          },
+          "options": [
+            {
+              "en": "Leave files on their desk silently.",
+              "ja": "無言で上司の机の上に書類を置いておく",
+              "vi": "Để tài liệu lên bàn sếp một cách im lặng."
+            },
+            {
+              "en": "Report: 'The task is complete. I saved it in the shared folder.'",
+              "ja": "「指示された業務が完了しました。共有フォルダに保存してあります」と報告する",
+              "vi": "Báo cáo: 'Công việc đã hoàn thành. Tôi đã lưu trong thư mục chia sẻ.'"
+            },
+            {
+              "en": "Wait for manager to ask.",
+              "ja": "上司から「終わったか」と聞かれるまで待つ",
+              "vi": "Đợi sếp hỏi xem đã xong chưa."
+            },
+            {
+              "en": "Ask colleague to tell manager.",
+              "ja": "同僚に「終わった」と上司に伝えてもらう",
+              "vi": "Nhờ đồng nghiệp báo sếp giúp."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Always report completion directly to the person who assigned the task, stating where the output is located.",
+            "ja": "指示された業務が完了したら、指示者に対して直接「完了報告」を行います。成果物の場所なども伝えます。",
+            "vi": "Luôn báo cáo hoàn thành trực tiếp cho người giao việc, nêu rõ nơi lưu trữ sản phẩm đầu ra."
+          }
+        },
+        {
+          "id": "bjt_s5_q10",
+          "question": {
+            "en": "You are leaving the office for the day while colleagues are still working. What should you say?",
+            "ja": "周りの同僚がまだ仕事をしている中、自分が先に退社する際の正しい挨拶はどれ？",
+            "vi": "Bạn về trước trong khi đồng nghiệp vẫn đang làm việc. Bạn nên chào thế nào?"
+          },
+          "options": [
+            {
+              "en": "Excuse me for leaving before you.",
+              "ja": "お先に失礼します",
+              "vi": "Tôi xin phép về trước ạ."
+            },
+            {
+              "en": "Goodbye, keep working hard.",
+              "ja": "さようなら、頑張ってください",
+              "vi": "Tạm biệt, cố gắng làm việc nhé."
+            },
+            {
+              "en": "Good job.",
+              "ja": "お疲れ様でした",
+              "vi": "Mọi người vất vả rồi (Otsukaresama deshita)."
+            },
+            {
+              "en": "Bye, I'm going home.",
+              "ja": "バイバイ、帰ります",
+              "vi": "Bye, tôi về đây."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "「お先に失礼します」 (Excuse me for leaving before you) is the standard polite greeting when leaving the workplace while others are still working.",
+            "ja": "先に退社する際の定番の挨拶は「お先に失礼します」です。「お疲れ様でした」は残る側が去る側に使うことが多い言葉です。",
+            "vi": "「お先に失礼します」 (Tôi xin phép về trước) là câu chào tiêu chuẩn khi bạn ra về trước đồng nghiệp."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bjt-6",
+      "title": {
+        "en": "Set 6: Business Expressions & Polite Phrasing",
+        "ja": "セット6：クッション言葉・定番表現",
+        "vi": "Đề 6: Ngôn từ đệm và Mẫu câu lịch sự"
+      },
+      "description": {
+        "en": "Using cushion words (cushion language) to soften requests/refusals and daily corporate expressions.",
+        "ja": "クッション言葉の使い分け、依頼や断りを入れる際のマナー、日常の定番ビジネス表現を扱います。",
+        "vi": "Cách sử dụng từ ngữ đệm để giảm bớt sự nặng nề khi yêu cầu hoặc từ chối và các mẫu câu kinh điển."
+      },
+      "questions": [
+        {
+          "id": "bjt_s6_q1",
+          "question": {
+            "en": "You want to reject a client's request politely. What is a suitable cushion word to start with?",
+            "ja": "取引先の要望を断るメールを送る際、文頭に添えるクッション言葉として最も適切なのはどれ？",
+            "vi": "Bạn muốn từ chối yêu cầu của khách hàng một cách lịch sự. Từ đệm nào phù hợp để bắt đầu?"
+          },
+          "options": [
+            {
+              "en": "Unfortunately...",
+              "ja": "あいにくですが",
+              "vi": "Thật tiếc là... (あいにくですが)"
+            },
+            {
+              "en": "I am sorry but...",
+              "ja": "申し訳ありませんが",
+              "vi": "Tôi xin lỗi nhưng..."
+            },
+            {
+              "en": "While you are busy...",
+              "ja": "お忙しいところ",
+              "vi": "Trong lúc bận rộn..."
+            },
+            {
+              "en": "If you don't mind...",
+              "ja": "差し支えなければ",
+              "vi": "Nếu không có gì trở ngại..."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "「あいにくですが」 (Unfortunately...) is the standard cushion word used when declining an invitation, request, or offer due to circumstances.",
+            "ja": "相手の要望に応えられない場合に用いる定番のクッション言葉は「あいにくですが」です。",
+            "vi": "「あいにくですが」 (Thật đáng tiếc/Không may là...) là từ đệm tiêu chuẩn khi từ chối vì hoàn cảnh không cho phép."
+          }
+        },
+        {
+          "id": "bjt_s6_q2",
+          "question": {
+            "en": "You want to ask the client for their phone number. Which cushion word is most appropriate?",
+            "ja": "取引先に電話番号を尋ねたいとき、前置きとして最も適切なクッション言葉はどれ？",
+            "vi": "Bạn muốn xin số điện thoại của khách hàng. Từ đệm nào phù hợp nhất?"
+          },
+          "options": [
+            {
+              "en": "While you are busy...",
+              "ja": "お忙しいところ",
+              "vi": "Trong lúc bận rộn..."
+            },
+            {
+              "en": "If it is convenient...",
+              "ja": "差し支えなければ",
+              "vi": "Nếu không phiền... (差し支えなければ)"
+            },
+            {
+              "en": "I am sorry...",
+              "ja": "申し訳ありませんが",
+              "vi": "Tôi rất xin lỗi..."
+            },
+            {
+              "en": "Unfortunately...",
+              "ja": "あいにくですが",
+              "vi": "Thật đáng tiếc..."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "「差し支えなければ」 (If it is convenient / If you don't mind) is the cushion word used when asking for personal or contact information.",
+            "ja": "相手にプライベートな情報や確認しづらい内容を聞く際は、「差し支えなければ」というクッション言葉を使います。",
+            "vi": "「差し支えなければ」 (Nếu không có gì bất tiện) là từ đệm dùng khi xin thông tin liên hệ hoặc đời tư."
+          }
+        },
+        {
+          "id": "bjt_s6_q3",
+          "question": {
+            "en": "You want to decline a client's discount request because it is against policy. How should you phrase the refusal politely?",
+            "ja": "社内規定により値引きができないことを取引先に伝える際、最も適切な表現はどれ？",
+            "vi": "Bạn muốn từ chối yêu cầu giảm giá của khách hàng vì trái quy định. Cách nói nào lịch sự nhất?"
+          },
+          "options": [
+            {
+              "en": "We cannot discount.",
+              "ja": "値引きはできません",
+              "vi": "Chúng tôi không thể giảm giá."
+            },
+            {
+              "en": "I am very sorry, but due to policy we cannot accept your request.",
+              "ja": "大変恐縮ですが、規定によりご要望には応じかねます",
+              "vi": "Thành thật xin lỗi, theo quy định chúng tôi khó lòng đáp ứng yêu cầu của quý khách."
+            },
+            {
+              "en": "Discount is difficult.",
+              "ja": "値引きはいたしかねます",
+              "vi": "Giảm giá thì tôi không làm được."
+            },
+            {
+              "en": "Discount is impossible.",
+              "ja": "値引きは無理です",
+              "vi": "Giảm giá là không thể."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Use 「応じかねます」 (cannot accept) instead of 「できません」 (cannot do), combined with a polite cushion word 「大変恐縮ですが」.",
+            "ja": "ビジネスで拒絶を表現する際は「できません」を避け、「応じかねます」と表現し、クッション言葉を添えるのがマナーです。",
+            "vi": "Tránh dùng từ cự tuyệt trực tiếp, hãy dùng 「応じかねます」 (khó lòng đáp ứng) kết hợp với từ đệm lịch sự."
+          }
+        },
+        {
+          "id": "bjt_s6_q4",
+          "question": {
+            "en": "A client thanks you for your assistance. How should you reply politely?",
+            "ja": "取引先からお礼や感謝を言われた際、返答として最もふさわしい丁寧な表現はどれ？",
+            "vi": "Khách hàng cảm ơn bạn vì đã giúp đỡ. Bạn trả lời thế nào cho lịch sự?"
+          },
+          "options": [
+            {
+              "en": "No, you're welcome.",
+              "ja": "いいえ、どういたしまして",
+              "vi": "Không có gì, không sao đâu."
+            },
+            {
+              "en": "I'm honored to be of assistance. Please let me know if you need anything.",
+              "ja": "お役に立てて光栄でございます。何かございましたら、いつでもお申し付けください",
+              "vi": "Tôi rất vinh hạnh vì đã giúp ích được cho quý khách. Nếu có vấn đề gì, xin cứ bảo tôi ạ."
+            },
+            {
+              "en": "It was my duty.",
+              "ja": "当然のことをしたまでです",
+              "vi": "Tôi chỉ làm việc đương nhiên thôi."
+            },
+            {
+              "en": "It is okay.",
+              "ja": "大丈夫です",
+              "vi": "Không sao đâu."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "「お役に立てて光栄でございます」 (I am honored to be of assistance) is a highly professional and polite reply to a client's gratitude.",
+            "ja": "感謝された時の返答として、「お役に立てて光栄でございます」と表現するのはビジネスにおいて非常に適切です。",
+            "vi": "「お役に立てて光栄でございます」 là câu trả lời lịch sự và chuyên nghiệp nhất trước lời cảm ơn của khách hàng."
+          }
+        },
+        {
+          "id": "bjt_s6_q5",
+          "question": {
+            "en": "Which of the following is correct when telling a client that you will check the information and contact them?",
+            "ja": "情報を確認してから相手に折り返し連絡することを伝える正しい敬語表現はどれ？",
+            "vi": "Cách nói nào dưới đây đúng khi muốn báo khách hàng rằng bạn sẽ kiểm tra lại thông tin rồi liên lạc lại?"
+          },
+          "options": [
+            {
+              "en": "I will check and contact.",
+              "ja": "確認して、また連絡します",
+              "vi": "Tôi kiểm tra xong sẽ liên lạc lại."
+            },
+            {
+              "en": "After checking, I will contact you back.",
+              "ja": "確認の上、折り返しご連絡差し上げます",
+              "vi": "Sau khi xác nhận, tôi xin phép liên lạc lại cho quý khách."
+            },
+            {
+              "en": "I will call after searching.",
+              "ja": "調べてから電話します",
+              "vi": "Tôi tra cứu rồi sẽ gọi điện."
+            },
+            {
+              "en": "After confirm, I call.",
+              "ja": "確認したら連絡を差し上げます",
+              "vi": "Xác nhận xong tôi sẽ liên lạc."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "「確認の上、折り返しご連絡差し上げます」 is the professional way to state that you will investigate and call back.",
+            "ja": "確認してから相手に連絡し直す際は、「確認の上、折り返しご連絡差し上げます」と伝えるのが基本です。",
+            "vi": "「確認の上、折り返しご連絡差し上げます」 là cách diễn đạt chuyên nghiệp tiêu chuẩn."
+          }
+        },
+        {
+          "id": "bjt_s6_q6",
+          "question": {
+            "en": "You want to ask the client to teach/explain something to you. Which phrasing is most polite?",
+            "ja": "取引先から何かを教えてもらいたいとき、最も適切な敬語表現はどれ？",
+            "vi": "Bạn muốn nhờ khách hàng hướng dẫn hoặc chỉ bảo điều gì đó. Cách nói nào lịch sự nhất?"
+          },
+          "options": [
+            {
+              "en": "Please teach me.",
+              "ja": "教えてください",
+              "vi": "Xin hãy dạy tôi."
+            },
+            {
+              "en": "Could you please teach/instruct me?",
+              "ja": "ご教示いただけますでしょうか",
+              "vi": "Quý khách có thể vui lòng chỉ bảo giúp tôi được không ạ?"
+            },
+            {
+              "en": "Please explain.",
+              "ja": "説明してください",
+              "vi": "Hãy giải thích cho tôi."
+            },
+            {
+              "en": "Please tell me.",
+              "ja": "お教え願います",
+              "vi": "Nhờ chỉ giáo cho."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "「ご教示（ごきょうじ）いただく」 is the polite form for asking someone to teach/inform/guide you on business matters.",
+            "ja": "仕事の進め方や情報について教えてほしいと頼むときは、「ご教示いただけますでしょうか」を使用します。",
+            "vi": "Sử dụng 「ご教示いただけますでしょうか」 để nhờ đối phương cung cấp thông tin hoặc chỉ dạy."
+          }
+        },
+        {
+          "id": "bjt_s6_q7",
+          "question": {
+            "en": "Which expression should you use to agree with a client's opinion?",
+            "ja": "取引先やお客様の意見に対して、同意を示す正しい敬語表現はどれ？",
+            "vi": "Cụm từ nào biểu thị sự đồng ý với ý kiến của khách hàng một cách lịch sự?"
+          },
+          "options": [
+            {
+              "en": "That is true.",
+              "ja": "その通りですね",
+              "vi": "Đúng như vậy nhỉ."
+            },
+            {
+              "en": "It is exactly as you say.",
+              "ja": "おっしゃる通りでございます",
+              "vi": "Dạ đúng như lời quý khách nói ạ."
+            },
+            {
+              "en": "I think so too.",
+              "ja": "私もそう思います",
+              "vi": "Tôi cũng nghĩ thế."
+            },
+            {
+              "en": "I agree.",
+              "ja": "賛成です",
+              "vi": "Tôi đồng ý."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "「おっしゃる通りでございます」 (It is exactly as you say) is the most respectful way to express agreement with a client or superior.",
+            "ja": "相手の意見や指摘に同意する際は、尊敬語の「おっしゃる」を使い、「おっしゃる通りでございます」と表現します。",
+            "vi": "Dùng tôn kính ngữ 「おっしゃる通りでございます」 khi đồng tình với ý kiến của khách."
+          }
+        },
+        {
+          "id": "bjt_s6_q8",
+          "question": {
+            "en": "Which of the following is a polite way to ask for a client's company name?",
+            "ja": "取引先や顧客の社名を尋ねる際、最も適切な敬語表現はどれ？",
+            "vi": "Hỏi tên công ty của khách hàng như thế nào là lịch sự nhất?"
+          },
+          "options": [
+            {
+              "en": "What is your name?",
+              "ja": "お名前は何ですか",
+              "vi": "Tên bạn là gì?"
+            },
+            {
+              "en": "Who are you?",
+              "ja": "どちら様ですか",
+              "vi": "Quý khách là ai thế ạ?"
+            },
+            {
+              "en": "Excuse me, but may I ask your name and company name?",
+              "ja": "失礼ですが、お名前と御社名をお伺いできますでしょうか",
+              "vi": "Xin lỗi, tôi có thể hỏi tên và quý công ty được không ạ?"
+            },
+            {
+              "en": "Please tell me your company name.",
+              "ja": "会社名を教えてください",
+              "vi": "Hãy cho tôi biết tên công ty."
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "Use 「失礼ですが」 (Excuse me, but...) and ask for name and company name using the polite humble verb 「お伺いする」.",
+            "ja": "相手の名前や会社名を確認する際は、「失礼ですが、お名前と御社名をお伺いできますでしょうか」と尋ねるのが適切です。",
+            "vi": "Dùng từ đệm 「失礼ですが」 kết hợp với cấu trúc khiêm nhường 「お伺いできますでしょうか」."
+          }
+        },
+        {
+          "id": "bjt_s6_q9",
+          "question": {
+            "en": "You want to say 'I cannot accept this proposal.' What is the most polite phrasing?",
+            "ja": "取引先からの提案に対して、お断りする際の最も丁寧な表現はどれ？",
+            "vi": "Bạn muốn nói 'Tôi không thể nhận đề xuất này.' Cách nói nào lịch sự nhất?"
+          },
+          "options": [
+            {
+              "en": "We cannot accept.",
+              "ja": "この提案を受け入れるのは無理です",
+              "vi": "Nhận đề xuất này là không thể."
+            },
+            {
+              "en": "I am very sorry, but we cannot accept this proposal.",
+              "ja": "誠に申し訳ございませんが、今回の提案はお受けいたしかねます",
+              "vi": "Chúng tôi vô cùng xin lỗi, đề xuất lần này chúng tôi khó lòng tiếp nhận được ạ."
+            },
+            {
+              "en": "We decline this.",
+              "ja": "この提案はお断りします",
+              "vi": "Đề xuất này chúng tôi xin từ chối."
+            },
+            {
+              "en": "We decline.",
+              "ja": "提案を辞退します",
+              "vi": "Xin từ chối đề xuất."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Use 「お受けいたしかねます」 (cannot accept) combined with an apology cushion word 「誠に申し訳ございませんが」.",
+            "ja": "提案を受け入れられないという拒否を示す際は、「お受けいたしかねます」とへりくだりつつ、謝罪を添えます。",
+            "vi": "Dùng cụm từ 「お受けいたしかねます」 (khó lòng tiếp nhận) kèm lời xin lỗi thành thật."
+          }
+        },
+        {
+          "id": "bjt_s6_q10",
+          "question": {
+            "en": "When is it appropriate to use 'Go-kuro-sama desu' (ご苦労様です)?",
+            "ja": "「ご苦労様です」というねぎらいの言葉を使うのに、最も適切な場面はどれ？",
+            "vi": "Cụm từ 'Go-kuro-sama desu' (ご苦労様です) nên dùng trong trường hợp nào?"
+          },
+          "options": [
+            {
+              "en": "When greeting a client.",
+              "ja": "取引先の相手に挨拶するとき",
+              "vi": "Khi chào hỏi khách hàng."
+            },
+            {
+              "en": "From a superior to a subordinate to acknowledge their hard work.",
+              "ja": "上司が部下に対して、仕事の労をねぎらうとき",
+              "vi": "Khi cấp trên ghi nhận sự vất vả của cấp dưới."
+            },
+            {
+              "en": "From a subordinate to a superior.",
+              "ja": "部下が上司の仕事に対して労うとき",
+              "vi": "Khi cấp dưới cảm ơn cấp trên."
+            },
+            {
+              "en": "At any time to anyone.",
+              "ja": "誰に対しても、いつでも使ってよい",
+              "vi": "Dùng với bất kỳ ai, bất kỳ lúc nào."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "「ご苦労様です」 is strictly used by superiors to subordinates. It should never be used toward clients or superiors. Use 「お疲れ様です」 instead.",
+            "ja": "「ご苦労様です」は目上の人から目下の人に対して使う言葉です。目上の人や取引先に対して使うのは失礼です。",
+            "vi": "「ご苦労様です」 chỉ dùng cho cấp dưới. Đối với cấp trên hoặc khách hàng, hãy dùng 「お疲れ様です」."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bjt-7",
+      "title": {
+        "en": "Set 7: Business Document Reading & Formats",
+        "ja": "セット7：ビジネス文書・各種フォーマット",
+        "vi": "Đề 7: Đọc hiểu tài liệu và Định dạng văn bản văn phòng"
+      },
+      "description": {
+        "en": "Understanding internal circulars, client proposals, standard headings, and official phrasing.",
+        "ja": "社内回覧板、提案書、時候の挨拶、および公的な表現様式の読解問題です。",
+        "vi": "Đọc hiểu thông báo nội bộ, đề xuất gửi khách hàng, lời chào theo mùa và cách dùng từ ngữ chính thống."
+      },
+      "questions": [
+        {
+          "id": "bjt_s7_q1",
+          "question": {
+            "en": "When writing an official business document to another company, what should you write at the top right of the page?",
+            "ja": "社外宛てのビジネス文書を作成する際、右上に配置すべき情報はどれ？",
+            "vi": "Khi viết một văn bản công việc chính thức gửi công ty khác, bạn nên ghi gì ở góc trên cùng bên phải?"
+          },
+          "options": [
+            {
+              "en": "The date of issuing.",
+              "ja": "文書の発信日付",
+              "vi": "Ngày phát hành văn bản."
+            },
+            {
+              "en": "The name of the recipient.",
+              "ja": "宛名（取引先名）",
+              "vi": "Tên người nhận."
+            },
+            {
+              "en": "The name of the sender.",
+              "ja": "差出人名（自社名など）",
+              "vi": "Tên người gửi."
+            },
+            {
+              "en": "The title of the document.",
+              "ja": "文書の件名（タイトル）",
+              "vi": "Tiêu đề văn bản."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "In standard Japanese business letters, the issue date is placed at the top right. Below it is the sender's name. The recipient's name goes at the top left.",
+            "ja": "社外文書のフォーマットでは、日付を右上に配置します。宛名は左上、差出人は日付の下の右側に記載します。",
+            "vi": "Ngày phát hành được đặt ở trên cùng bên phải. Tên người nhận ở bên trái, tên người gửi ở dưới ngày tháng bên phải."
+          }
+        },
+        {
+          "id": "bjt_s7_q2",
+          "question": {
+            "en": "You see a document addressed to '株式会社〇〇 開発部御中'. What does '御中' (onchuu) mean?",
+            "ja": "宛名にある「株式会社〇〇 開発部御中」の「御中」が意味するものはどれ？",
+            "vi": "Trong địa chỉ người nhận '株式会社〇〇 開発部御中', hậu tố '御中' (onchuu) nghĩa là gì?"
+          },
+          "options": [
+            {
+              "en": "It is a prefix for important documents.",
+              "ja": "重要文書であることを示すマーク",
+              "vi": "Nhãn biểu thị tài liệu quan trọng."
+            },
+            {
+              "en": "It is a respectful suffix placed after organization names when no individual is specified.",
+              "ja": "特定の個人ではなく、組織や部署宛てに送る際に添える敬称",
+              "vi": "Hậu tố kính xưng gửi cho tổ chức/phòng ban khi không ghi rõ tên cá nhân."
+            },
+            {
+              "en": "It means 'Confidential'.",
+              "ja": "社外秘であることを表す",
+              "vi": "Biểu thị tài liệu mật."
+            },
+            {
+              "en": "It indicates that the document is for internal use.",
+              "ja": "社内文書であることを表す",
+              "vi": "Biểu thị tài liệu dùng nội bộ."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "「御中」 (onchuu) is an honorific suffix added to a company or department name when sending mail/documents, instead of a specific person.",
+            "ja": "「御中」は、個人名ではなく会社や部署などの団体・組織宛に書類を送る際に使用する敬称です。",
+            "vi": "「御中」 là kính xưng dùng cho tổ chức/phòng ban. Nếu gửi đích danh cá nhân thì dùng 「様」."
+          }
+        },
+        {
+          "id": "bjt_s7_q3",
+          "question": {
+            "en": "What is the purpose of an internal document called '稟議書' (ringisho)?",
+            "ja": "社内文書である「稟議書（りんぎしょ）」の主な目的はどれ？",
+            "vi": "Mục đích chính của loại văn bản nội bộ gọi là '稟議書' (ringisho) là gì?"
+          },
+          "options": [
+            {
+              "en": "It is a daily activity report.",
+              "ja": "日日の業務報告を行うこと",
+              "vi": "Báo cáo công việc hàng ngày."
+            },
+            {
+              "en": "It is a document used to obtain formal approval from multiple decision-makers for a proposal.",
+              "ja": "企画や購入などの提案に対して、関係者の承認・決裁を得ること",
+              "vi": "Xin phê duyệt chính thức từ các cấp quản lý cho một đề xuất/chi phí."
+            },
+            {
+              "en": "It is a letter of apology to clients.",
+              "ja": "取引先へのお詫び状を送ること",
+              "vi": "Gửi thư xin lỗi cho khách hàng."
+            },
+            {
+              "en": "It is a training manual for new employees.",
+              "ja": "新入社員の研修マニュアル",
+              "vi": "Sách hướng dẫn đào tạo nhân viên mới."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "A 「稟議書」 (ringisho) is a draft proposal circulated within a company to obtain approval from managers and executives for projects, expenses, or decisions.",
+            "ja": "「稟議書」とは、会議を開かずに、関係者に書類を回覧して決裁や承認を仰ぐための社内文書です。",
+            "vi": "「稟議書」 là tờ trình phê duyệt nội bộ để xin phê chuẩn chi phí, dự án từ các cấp quản lý mà không cần họp."
+          }
+        },
+        {
+          "id": "bjt_s7_q4",
+          "question": {
+            "en": "At the end of a formal business letter, you see the word '記' centered, followed by numbered points and '以上' at the bottom right. What does this indicate?",
+            "ja": "ビジネス文書の最後に「記」と中央に書かれ、箇条書きの後に「以上」と右下に書かれている様式の目的はどれ？",
+            "vi": "Cuối thư, chữ '記' ở giữa, theo sau là các mục liệt kê và kết thúc bằng '以上' ở góc dưới bên phải. Định dạng này nghĩa là gì?"
+          },
+          "options": [
+            {
+              "en": "It is a list of attachments.",
+              "ja": "添付資料の一覧を示している",
+              "vi": "Danh sách tài liệu đính kèm."
+            },
+            {
+              "en": "It is the standard format for separate listing (Kigaki), showing key details under '記' and ending with '以上'.",
+              "ja": "詳細を箇条書きにする「記書き」の様式で、用件の終わりを示している",
+              "vi": "Định dạng liệt kê chi tiết (Kigaki), các điểm chính nằm dưới '記' và '以上' báo hiệu kết thúc văn bản."
+            },
+            {
+              "en": "It is a signature block.",
+              "ja": "差出人の署名欄である",
+              "vi": "Khối ký tên của người gửi."
+            },
+            {
+              "en": "It is a postscript (P.S.).",
+              "ja": "追伸（P.S.）の文章である",
+              "vi": "Đoạn tái bút."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "The 「記書き」 (kigaki) format is used to present details clearly in a list. The details start after 「記」 and end with 「以上」 to show there is no more content.",
+            "ja": "詳細を箇条書きにする「記書き」様式です。末尾には「以上」を右下に配し、文書の終わりを示します。",
+            "vi": "Định dạng liệt kê chi tiết bắt đầu từ chữ 「記」 ở giữa dòng và kết thúc bằng 「以上」 ở góc dưới bên phải."
+          }
+        },
+        {
+          "id": "bjt_s7_q5",
+          "question": {
+            "en": "You receive a document with '回覧' (kairan) stamped on it. What should you do?",
+            "ja": "社内で「回覧」と書かれた書類が回ってきた際、取るべき正しい行動はどれ？",
+            "vi": "Bạn nhận được một tài liệu có đóng dấu '回覧' (kairan). Bạn nên làm gì?"
+          },
+          "options": [
+            {
+              "en": "Throw it away.",
+              "ja": "読んだらすぐに捨てる",
+              "vi": "Vứt đi ngay sau khi đọc."
+            },
+            {
+              "en": "Read the document, stamp/sign your name in the circulation box, and pass it to the next person.",
+              "ja": "内容を確認後、自分のサインや受領印を押し、速やかに次の担当者に回す",
+              "vi": "Đọc tài liệu, ký tên/đóng dấu vào ô của mình rồi chuyển tiếp cho người tiếp theo."
+            },
+            {
+              "en": "Reply via email.",
+              "ja": "送信者にメールで返信する",
+              "vi": "Gửi email phản hồi cho người gửi."
+            },
+            {
+              "en": "Keep it in your desk.",
+              "ja": "自分の机の中に保管しておく",
+              "vi": "Cất trong ngăn kéo bàn làm việc."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "A 「回覧」 (circulation circular) is meant to be read by all listed members. Sign/stamp your box and forward it to the next colleague.",
+            "ja": "「回覧」とある文書は、内容を確認後、自分の印を押し、速やかに次の担当者へ回します。",
+            "vi": "Tài liệu lưu hành nội bộ (回覧) cần được đọc, ký xác nhận và chuyển tiếp nhanh chóng cho người tiếp theo."
+          }
+        },
+        {
+          "id": "bjt_s7_q6",
+          "question": {
+            "en": "When writing a business letter, which of the following is the correct seasonal greeting (時候の挨拶) for March?",
+            "ja": "3月に送る正式なビジネス文書の冒頭に用いる時候の挨拶として、最も適切なのはどれ？",
+            "vi": "Khi viết thư công việc chính thức vào tháng 3, lời chào theo mùa nào dưới đây là đúng?"
+          },
+          "options": [
+            {
+              "en": "盛夏の候",
+              "ja": "盛夏の候",
+              "vi": "盛夏の候 (Tiết thịnh hạ)"
+            },
+            {
+              "en": "新春の候",
+              "ja": "新春の候",
+              "vi": "新春の候 (Tiết tân xuân)"
+            },
+            {
+              "en": "早春の候",
+              "ja": "早春の候",
+              "vi": "早春の候 (Tiết đầu xuân)"
+            },
+            {
+              "en": "暮秋の候",
+              "ja": "暮秋の候",
+              "vi": "暮秋の候 (Tiết cuối thu)"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "「早春の候」 (soushun no kou) means 'season of early spring' and is used in March. Seasonal greetings are essential for formal Japanese letters.",
+            "ja": "3月の時候の挨拶には「早春の候」などを用います。「盛夏」は夏、「新春」は1月、「暮秋」は秋に使用します。",
+            "vi": "「早春の候」 (tiết đầu xuân) được dùng vào tháng 3. Các từ khác dùng cho mùa hè, đầu năm mới hoặc cuối thu."
+          }
+        },
+        {
+          "id": "bjt_s7_q7",
+          "question": {
+            "en": "In a business proposal (提案書), what does the section '背景' (haikei) typically describe?",
+            "ja": "提案書における「背景」の項目に記述すべき内容として、最も適切なのはどれ？",
+            "vi": "Trong bản đề xuất dự án, phần '背景' (bối cảnh) thường mô tả nội dung gì?"
+          },
+          "options": [
+            {
+              "en": "The total cost of the project.",
+              "ja": "プロジェクトの総費用",
+              "vi": "Tổng chi phí của dự án."
+            },
+            {
+              "en": "The background reasons, market situation, or problems that led to the proposal.",
+              "ja": "提案を行うに至った現状の課題や市場動向、顧客の問題点",
+              "vi": "Lý do, tình hình thị trường hoặc vấn đề của khách hàng dẫn đến đề xuất này."
+            },
+            {
+              "en": "The company history of the proposer.",
+              "ja": "自社の会社沿革や歴史",
+              "vi": "Lịch sử hình thành của công ty đề xuất."
+            },
+            {
+              "en": "The timeline of implementation.",
+              "ja": "実施スケジュールと納期",
+              "vi": "Lịch trình triển khai cụ thể."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "The 「背景」 (background) section explains the current challenges, market trends, or client issues that make this proposal necessary.",
+            "ja": "提案書の「背景」には、提案を行うに至った経緯や課題などを記述します。",
+            "vi": "Phần bối cảnh (背景) mô tả các thách thức thực tế và xu hướng thị trường khiến đề xuất này trở nên cần thiết."
+          }
+        },
+        {
+          "id": "bjt_s7_q8",
+          "question": {
+            "en": "You are preparing a meeting agenda. What is the standard term for 'matters to be discussed'?",
+            "ja": "会議の準備で作成するアジェンダ（進行表）において、審議するテーマを指す言葉はどれ？",
+            "vi": "Khi chuẩn bị chương trình họp, thuật ngữ tiêu chuẩn để chỉ 'các chủ đề cần thảo luận' là gì?"
+          },
+          "options": [
+            {
+              "en": "議題",
+              "ja": "議題",
+              "vi": "議題 (Nghị đề)"
+            },
+            {
+              "en": "意見",
+              "ja": "意見",
+              "vi": "意見 (Ý kiến)"
+            },
+            {
+              "en": "報告",
+              "ja": "報告",
+              "vi": "報告 (Báo cáo)"
+            },
+            {
+              "en": "感想",
+              "ja": "感想",
+              "vi": "感想 (Cảm tưởng)"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "「議題」 (gidi) is the standard term for agenda items or topics to be discussed in a meeting.",
+            "ja": "会議で議論・審議するテーマのことは「議題」と呼びます。",
+            "vi": "「議題」 (nghị đề) là thuật ngữ chỉ các nội dung/chủ đề thảo luận trong cuộc họp."
+          }
+        },
+        {
+          "id": "bjt_s7_q9",
+          "question": {
+            "en": "When printing a document for internal review only, what watermark is added to prevent external leakage?",
+            "ja": "社内でのみ共有し、外部への漏洩を防ぎたい文書に明記すべき表記はどれ？",
+            "vi": "Khi in tài liệu chỉ dùng lưu hành nội bộ, nhãn đóng dấu nào được dùng để tránh rò rỉ ra ngoài?"
+          },
+          "options": [
+            {
+              "en": "重要",
+              "ja": "重要",
+              "vi": "重要 (Quan trọng)"
+            },
+            {
+              "en": "社外秘",
+              "ja": "社外秘",
+              "vi": "社外秘 (Bí mật nội bộ)"
+            },
+            {
+              "en": "閲覧用",
+              "ja": "閲覧用",
+              "vi": "閲覧用 (Chỉ xem)"
+            },
+            {
+              "en": "コピー可",
+              "ja": "コピー可",
+              "vi": "コピー可 (Được phép sao chép)"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "「社外秘」 (shagaihi) means 'confidential/internal use only' and is stamped on documents to indicate they must not be shared outside.",
+            "ja": "社外への漏洩を防ぐべき重要文書には、「社外秘」のラベルを明記します。",
+            "vi": "Nhãn 「社外秘」 (bí mật nội bộ) biểu thị tài liệu không được phép mang ra ngoài công ty."
+          }
+        },
+        {
+          "id": "bjt_s7_q10",
+          "question": {
+            "en": "When replying to a client using a return envelope marked '株式会社〇〇 行' (iki), what must you do?",
+            "ja": "取引先から届いた返信用封筒の宛名に「〇〇株式会社 行」とある場合、返送時の正しいマナーはどれ？",
+            "vi": "Khi gửi lại thư bằng phong bì phản hồi ghi sẵn '株式会社〇〇 行' (iki), bạn phải làm gì?"
+          },
+          "options": [
+            {
+              "en": "Cross out '行' and write '御中' next to it.",
+              "ja": "「行」を二重線で消し、その横または下に「御中」と書く",
+              "vi": "Gạch bỏ chữ '行' bằng hai nét và viết '御中' (onchuu) bên cạnh."
+            },
+            {
+              "en": "Leave it as it is.",
+              "ja": "そのまま何も変更せずに送る",
+              "vi": "Để nguyên như vậy và gửi đi."
+            },
+            {
+              "en": "Cross out '行' and write '様' next to it.",
+              "ja": "「行」を消して「様」と書く",
+              "vi": "Gạch bỏ chữ '行' và viết '様' (sama) bên cạnh."
+            },
+            {
+              "en": "Erase the entire address.",
+              "ja": "宛名を全て消して書き直す",
+              "vi": "Xóa toàn bộ địa chỉ và viết lại từ đầu."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "When using a return envelope, cross out the humble suffix 「行」 (iki) or 「宛」 (ate) with double lines and write the respectful 「御中」 (onchuu) for organizations (or 「様」 for individuals).",
+            "ja": "返信用封筒に印刷された「行」は、二重線で消して、組織宛であれば「御中」に書き直すのがマナーです。",
+            "vi": "Gạch bỏ hậu tố khiêm nhường 「行」 và thay bằng kính xưng 「御中」 đối với tổ chức."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bjt-8",
+      "title": {
+        "en": "Set 8: Apologizing & Handling Complaints",
+        "ja": "セット8：謝罪とクレーム対応",
+        "vi": "Đề 8: Quy tắc xin lỗi và Xử lý khiếu nại"
+      },
+      "description": {
+        "en": "Phrasing for expressing sincere apologies, handling client complaints, and explaining delay reasons.",
+        "ja": "誠意ある謝罪の言葉選び、顧客からのクレームへの対応手順、および遅延時の連絡ルールを学びます。",
+        "vi": "Cách chọn từ ngữ xin lỗi chân thành, quy trình ứng biến khi khách phàn nàn và báo cáo sự cố chậm trễ."
+      },
+      "questions": [
+        {
+          "id": "bjt_s8_q1",
+          "question": {
+            "en": "A client points out a mistake in the monthly report. Which is the most formal and sincere way to apologize?",
+            "ja": "提出した月次レポートの数値ミスを取引先から指摘されました。最も丁寧で誠意のある謝罪の表現はどれ？",
+            "vi": "Khách hàng chỉ ra lỗi sai trong báo cáo hàng tháng. Cách xin lỗi nào trang trọng và chân thành nhất?"
+          },
+          "options": [
+            {
+              "en": "Sorry about that.",
+              "ja": "すみませんでした",
+              "vi": "Tôi xin lỗi nhé."
+            },
+            {
+              "en": "I am sorry. I will be careful next time.",
+              "ja": "申し訳ございません。以後、気をつけます",
+              "vi": "Tôi rất xin lỗi. Lần sau tôi sẽ chú ý."
+            },
+            {
+              "en": "I deeply apologize for the oversight. We will thoroughly review our verification process to prevent recurrence.",
+              "ja": "大変失礼いたしました。今後はこのようなことがないよう、確認を徹底いたします",
+              "vi": "Thành thật xin lỗi vì sơ suất của chúng tôi. Chúng tôi xin hứa sẽ kiểm tra triệt để để không lặp lại sự cố này."
+            },
+            {
+              "en": "It was not my fault.",
+              "ja": "私のせいではありません",
+              "vi": "Đó không phải lỗi của tôi."
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "A professional apology should express deep regret, take responsibility, and state preventive measures (「確認を徹底いたします」).",
+            "ja": "謝罪するだけでなく、深くお詫びし、再発防止策（確認の徹底）まで伝えるのが誠意ある対応です。",
+            "vi": "Xin lỗi chân thành kèm việc đưa ra biện pháp phòng ngừa để khôi phục lòng tin ở khách hàng."
+          }
+        },
+        {
+          "id": "bjt_s8_q2",
+          "question": {
+            "en": "You are replying to a client's email after a delay of three days. How should you apologize at the beginning?",
+            "ja": "取引先へのメール返信が3日遅れてしまった際、文頭でお詫びする正しい表現はどれ？",
+            "vi": "Bạn phản hồi email muộn 3 ngày. Bạn nên xin lỗi thế nào ở đầu thư?"
+          },
+          "options": [
+            {
+              "en": "Sorry for late reply.",
+              "ja": "返信が遅れてすみません",
+              "vi": "Xin lỗi vì trả lời muộn."
+            },
+            {
+              "en": "Please excuse my delay in contacting you.",
+              "ja": "ご連絡が遅くなり、大変失礼いたしました",
+              "vi": "Tôi xin chân thành xin lỗi vì sự chậm trễ trong việc liên lạc này."
+            },
+            {
+              "en": "I was busy and couldn't see email.",
+              "ja": "忙しくてメールを見られませんでした",
+              "vi": "Tôi bận quá không xem được thư."
+            },
+            {
+              "en": "I forgot to reply.",
+              "ja": "返事を忘れていました",
+              "vi": "Tôi quên mất không phản hồi."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Start with 「ご連絡が遅くなり、大変失礼いたしました」 (Please excuse me for the late reply) to apologize politely.",
+            "ja": "メール返信が遅れた際は、冒頭で「ご連絡が遅くなり、大変失礼いたしました」とお詫びします。",
+            "vi": "Lời mở đầu lịch sự khi trả lời muộn: 「ご連絡が遅くなり、大変失礼いたしました」."
+          }
+        },
+        {
+          "id": "bjt_s8_q3",
+          "question": {
+            "en": "An angry client calls to complain about a defective product. What should your initial reaction be?",
+            "ja": "電話口で激怒している顧客から、製品不良のクレームを受けました。最初の対応として最も適切なのはどれ？",
+            "vi": "Khách hàng giận dữ gọi điện khiếu nại về sản phẩm lỗi. Bạn nên phản ứng thế nào đầu tiên?"
+          },
+          "options": [
+            {
+              "en": "Explain manufacturing errors.",
+              "ja": "製造上のエラーであり、自社に悪気はないと弁明する",
+              "vi": "Bào chữa rằng đó là lỗi sản xuất và công ty không cố ý."
+            },
+            {
+              "en": "Listen carefully to the complaint without interrupting, show empathy, and apologize for the inconvenience first.",
+              "ja": "相手の話を遮らずに最後まで聞き、不便をかけたことに対してまずお詫びする",
+              "vi": "Lắng nghe chăm chú không ngắt lời, đồng cảm và xin lỗi vì sự bất tiện gây ra đầu tiên."
+            },
+            {
+              "en": "Put them on hold.",
+              "ja": "相手が落ち着くまで保留にする",
+              "vi": "Bấm giữ máy cho đến khi họ bình tĩnh lại."
+            },
+            {
+              "en": "Tell them to call support.",
+              "ja": "サポートセンターにかけ直すよう指示する",
+              "vi": "Yêu cầu họ gọi lại cho trung tâm hỗ trợ."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "When handling complaints, the first step is to listen actively, show empathy, and apologize for the inconvenience without making immediate excuses.",
+            "ja": "クレーム対応の第一歩は、相手の話を傾聴し、不快な思いをさせたことに対してまずお詫びすることです。",
+            "vi": "Lắng nghe tích cực, đồng cảm và xin lỗi vì sự bất tiện của khách hàng trước khi đưa ra hướng xử lý."
+          }
+        },
+        {
+          "id": "bjt_s8_q4",
+          "question": {
+            "en": "You cannot solve a complaint on your own and need to check with your supervisor. How do you tell the client?",
+            "ja": "クレーム内容について自分一人で判断できないため、上司に相談してかけ直したいときの正しい伝え方はどれ？",
+            "vi": "Bạn không thể tự giải quyết khiếu nại và cần hỏi sếp. Bạn báo khách hàng thế nào?"
+          },
+          "options": [
+            {
+              "en": "I don't know, I will ask boss.",
+              "ja": "私にはわからないので、上司に聞いてみます",
+              "vi": "Tôi không biết, tôi sẽ hỏi sếp."
+            },
+            {
+              "en": "Excuse me, but I will check this internally and call you back by 3 PM today.",
+              "ja": "恐れ入りますが、この件につきましては一度社内で確認をさせていただき、本日15時までに折り返しご連絡を差し上げてもよろしいでしょうか",
+              "vi": "Xin lỗi, về việc này tôi xin phép xác nhận lại nội bộ và liên lạc lại trước 3 giờ chiều hôm nay được không ạ?"
+            },
+            {
+              "en": "I call back after talking to manager.",
+              "ja": "上司に相談してからまた後で電話します",
+              "vi": "Tôi sẽ gọi lại sau khi thảo luận với sếp."
+            },
+            {
+              "en": "Wait for callback.",
+              "ja": "折り返しますので待ってください",
+              "vi": "Tôi sẽ gọi lại, hãy chờ."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Politely state that you need to check internally (「社内で確認をさせていただき」) and specify a deadline for the callback (「本日15時までに」).",
+            "ja": "自分の判断だけで回答できない場合は、確認させていただく旨を伝え、折り返しの期限を提示して承諾を得ます。",
+            "vi": "Xin phép xác nhận lại nội bộ và đưa ra thời hạn cụ thể để gọi lại nhằm tạo sự tin tưởng."
+          }
+        },
+        {
+          "id": "bjt_s8_q5",
+          "question": {
+            "en": "A shipping delay has occurred due to bad weather. How should you explain this politely?",
+            "ja": "悪天候の影響で配送が遅れている状況を、お客様に伝える正しい表現はどれ？",
+            "vi": "Giao hàng bị trễ do thời tiết xấu. Bạn giải thích thế nào cho lịch sự?"
+          },
+          "options": [
+            {
+              "en": "Weather is bad, so delay. No choice.",
+              "ja": "天気が悪いので遅れます。仕方ありません",
+              "vi": "Thời tiết xấu nên trễ. Không có cách nào khác."
+            },
+            {
+              "en": "Due to bad weather, there is a delay in delivery. We deeply apologize for the inconvenience.",
+              "ja": "あいにくの悪天候の影響により、配送に遅れが生じております。ご迷惑をおかけし、深くお詫び申し上げます",
+              "vi": "Do ảnh hưởng của thời tiết xấu, việc giao hàng đang bị chậm trễ. Thành thật xin lỗi vì đã gây bất tiện cho quý khách."
+            },
+            {
+              "en": "Typhoon stopped it.",
+              "ja": "台風のせいで届きません",
+              "vi": "Do bão nên hàng không tới."
+            },
+            {
+              "en": "Delivery company is late, please wait.",
+              "ja": "配送業者が遅れていますので、お待ちください",
+              "vi": "Công ty vận chuyển trễ, hãy chờ."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Frame the explanation using polite vocabulary (「あいにくの悪天候の影響により」) and apologize for the inconvenience caused.",
+            "ja": "不可抗力の遅延であっても、「あいにくの悪天候の影響により」と丁寧な理由を添え、深くお詫び申し上げますと謝罪します。",
+            "vi": "Giải thích lịch sự nguyên nhân khách quan và xin lỗi vì sự bất tiện của khách hàng."
+          }
+        },
+        {
+          "id": "bjt_s8_q6",
+          "question": {
+            "en": "Which of the following is the most sincere humble expression for apologizing?",
+            "ja": "ビジネスでの謝罪において、最も丁寧で誠意を表すことができる表現はどれ？",
+            "vi": "Trong giao tế công việc, cách xin lỗi nào thể hiện sự chân thành và lịch sự nhất?"
+          },
+          "options": [
+            {
+              "en": "I apologize.",
+              "ja": "お詫びいたします",
+              "vi": "Tôi xin lỗi."
+            },
+            {
+              "en": "I offer my deepest apologies from the bottom of my heart.",
+              "ja": "心からお詫び申し上げます",
+              "vi": "Tôi xin chân thành gửi lời xin lỗi sâu sắc nhất."
+            },
+            {
+              "en": "Sorry.",
+              "ja": "すみません",
+              "vi": "Xin lỗi nhé."
+            },
+            {
+              "en": "Excuse me.",
+              "ja": "失礼します",
+              "vi": "Tôi xin thất lễ."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "「心からお詫び申し上げます」 (I sincerely offer my deepest apologies) is the most formal and sincere humble expression used in business apologies.",
+            "ja": "ビジネスで最も丁寧かつ誠実な謝罪表現は、「心からお詫び申し上げます」です。",
+            "vi": "「心からお詫び申し上げます」 là cấu trúc khiêm nhường biểu thị sự tạ lỗi chân thành nhất."
+          }
+        },
+        {
+          "id": "bjt_s8_q7",
+          "question": {
+            "en": "After resolving a client's complaint, what is the best practice?",
+            "ja": "顧客からのクレームが解決した後の、対応として最も適切なのはどれ？",
+            "vi": "Sau khi giải quyết xong khiếu nại của khách hàng, hành động nào là tốt nhất?"
+          },
+          "options": [
+            {
+              "en": "Never contact them again.",
+              "ja": "悪い記憶を思い出させないよう、二度と連絡しない",
+              "vi": "Không bao giờ liên lạc lại để tránh nhắc lại chuyện buồn."
+            },
+            {
+              "en": "Send a follow-up email or call a few days later to check and thank them for feedback.",
+              "ja": "数日後にその後の状況を確認し、フィードバックに感謝するフォロー連絡を入れる",
+              "vi": "Gửi email hoặc gọi điện sau vài ngày để hỏi thăm tình hình và cảm ơn ý kiến đóng góp của họ."
+            },
+            {
+              "en": "Ask for satisfaction letter.",
+              "ja": "満足したという証明書を書くよう依頼する",
+              "vi": "Yêu cầu họ viết thư xác nhận đã hài lòng."
+            },
+            {
+              "en": "Send replacement bill.",
+              "ja": "代替品の請求書を送りつける",
+              "vi": "Gửi hóa đơn hàng thay thế."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Following up after a complaint shows high-quality customer service, builds trust, and confirms that the issue is resolved.",
+            "ja": "クレーム解決後は、少し期間をおいてその後の状況を確認するフォロー連絡を入れます。これが信頼回復に繋がります。",
+            "vi": "Liên lạc lại sau khi giải quyết xong sự cố giúp củng cố mối quan hệ và sự tin cậy từ khách hàng."
+          }
+        },
+        {
+          "id": "bjt_s8_q8",
+          "question": {
+            "en": "You made a mistake in the slides for a client meeting. How should you apologize during the meeting?",
+            "ja": "商談の会議中、スライドの数値に間違いを発見した際の正しい訂正と謝罪の方法はどれ？",
+            "vi": "Bạn phát hiện sai số trên slide trong khi đang họp với khách. Bạn nên xử lý thế nào?"
+          },
+          "options": [
+            {
+              "en": "I am sorry, there was a mistake in the slides. The correct number is XX. I apologize and correct this.",
+              "ja": "恐れ入りますが、こちらのスライドの数値に誤りがございました。正しくは〇〇でございます。訂正してお詫び申し上げます",
+              "vi": "Xin lỗi quý khách, số liệu trên slide này có chút sai sót. Con số chính xác là XX. Tôi xin phép đính chính và tạ lỗi ạ."
+            },
+            {
+              "en": "Oops, mistake. Ignore it.",
+              "ja": "あれ、間違えました。無視してください",
+              "vi": "Ơ, sai rồi. Bỏ qua đi nhé."
+            },
+            {
+              "en": "Slide is weird, but mostly correct.",
+              "ja": "スライドが変ですが、大体合っています",
+              "vi": "Slide hơi kỳ nhưng đại khái là đúng."
+            },
+            {
+              "en": "I forgot to recreate the slide.",
+              "ja": "すみません、スライドの作り直しを忘れていました",
+              "vi": "Xin lỗi, tôi quên chưa làm lại slide."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Point out the mistake politely (「誤りがございました」), state the correct information (「正しくは〇〇でございます」), and apologize.",
+            "ja": "資料の誤りに気づいた際は、誤りがあった旨を正直に伝え、正しい情報を提示した上で、訂正とお詫びを行います。",
+            "vi": "Thành thật thông báo lỗi sai, đưa ra số liệu đúng và gửi lời xin lỗi đính chính ngay trong cuộc họp."
+          }
+        },
+        {
+          "id": "bjt_s8_q9",
+          "question": {
+            "en": "A client complains that a service was not delivered. Which phrasing is best to explain that you are investigating the cause?",
+            "ja": "納品遅延について苦情を受けた際、原因を調査中であることを伝える最も適切な表現はどれ？",
+            "vi": "Khách hàng phàn nàn hàng chưa giao. Câu nào báo rằng bạn đang điều tra nguyên nhân là đúng?"
+          },
+          "options": [
+            {
+              "en": "We are investigating why it was late.",
+              "ja": "なぜ遅れたのか調べています",
+              "vi": "Chúng tôi đang điều tra tại sao trễ."
+            },
+            {
+              "en": "We are currently checking the details to identify the cause, and will report immediately once known.",
+              "ja": "現在、原因究明に向けて詳細を確認中でございます。判明次第、ただちにご報告いたします",
+              "vi": "Hiện tại chúng tôi đang xác minh chi tiết để làm rõ nguyên nhân. Ngay khi có kết quả, chúng tôi sẽ báo cáo ngay lập tức."
+            },
+            {
+              "en": "Looking for who made the mistake.",
+              "ja": "誰が間違えたか探しています",
+              "vi": "Đang tìm xem ai làm sai."
+            },
+            {
+              "en": "We don't know the reason.",
+              "ja": "遅れた理由がわかりません",
+              "vi": "Tôi không rõ lý do tại sao trễ."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Use professional phrasing like 「原因究明に向けて詳細を確認中」 and promise to report back immediately once known.",
+            "ja": "原因が不明な段階では、原因究明に向けて詳細を確認中であると述べ、判明次第ただちにご報告すると約束します。",
+            "vi": "Dùng từ ngữ chuyên nghiệp mô tả việc đang điều tra nguyên nhân và hứa hẹn báo cáo sớm nhất khi có kết quả."
+          }
+        },
+        {
+          "id": "bjt_s8_q10",
+          "question": {
+            "en": "A customer complains about a charge. It is correct according to the contract, but they misunderstood. How do you handle it?",
+            "ja": "請求金額について顧客からクレームがありましたが、契約通りで顧客の誤解でした。正しい対応はどれ？",
+            "vi": "Khách phàn nàn về phí dịch vụ. Phí tính đúng theo hợp đồng nhưng khách hiểu lầm. Bạn xử lý thế nào?"
+          },
+          "options": [
+            {
+              "en": "Tell them they didn't read the contract.",
+              "ja": "契約書をよく読んでいないあなたが悪いと指摘する",
+              "vi": "Bảo rằng tại họ không đọc kỹ hợp đồng."
+            },
+            {
+              "en": "Apologize for the confusion, explain the contract terms gently, and walk them through calculations.",
+              "ja": "分かりにくく申し訳ありません。契約内容と計算根拠をご説明いたします",
+              "vi": "Thành thật xin lỗi vì sự mập mờ gây hiểu lầm. Tôi xin phép giải thích cụ thể điều khoản hợp đồng và cách tính toán ạ."
+            },
+            {
+              "en": "Waive the fee.",
+              "ja": "顧客を怒らせないために料金を無料にする",
+              "vi": "Miễn phí luôn để làm hài lòng khách."
+            },
+            {
+              "en": "Refuse to discuss.",
+              "ja": "これ以上の議論を拒否して電話を切る",
+              "vi": "Từ chối thảo luận và cúp máy."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Even if the client is mistaken, apologize for the confusion (「分かりにくく申し訳ありません」), then explain the contract terms and calculations politely.",
+            "ja": "顧客側の誤解である場合でも、分かりづらかった点についてお詫びし、契約内容と計算根拠を丁寧に説明します。",
+            "vi": "Xin lỗi vì thông tin chưa rõ ràng gây hiểu lầm, sau đó nhẹ nhàng giải thích điều khoản hợp đồng."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bjt-9",
+      "title": {
+        "en": "Set 9: Presentation & Negotiations",
+        "ja": "セット9：プレゼンテーションと交渉",
+        "vi": "Đề 9: Thuyết trình và Thương thảo"
+      },
+      "description": {
+        "en": "Presenting data, structuring product proposals, using charts, and negotiation tactics.",
+        "ja": "データの示し方、製品提案の構成、グラフや表の説明、および交渉の進め方を扱います。",
+        "vi": "Cách trình bày số liệu, cấu trúc bài giới thiệu sản phẩm, giải thích biểu đồ và đàm phán."
+      },
+      "questions": [
+        {
+          "id": "bjt_s9_q1",
+          "question": {
+            "en": "You are starting a presentation to a client. How should you outline the agenda?",
+            "ja": "プレゼンテーションの開始時に、本日のアジェンダを示す正しい表現はどれ？",
+            "vi": "Bắt đầu thuyết trình cho khách hàng. Bạn giới thiệu chương trình họp thế nào?"
+          },
+          "options": [
+            {
+              "en": "Today I will talk about various things.",
+              "ja": "本日は色々な話をします",
+              "vi": "Hôm nay tôi sẽ nói về nhiều thứ."
+            },
+            {
+              "en": "Today, the contents I would like to talk about are mainly these three points.",
+              "ja": "本日お話ししたい内容は、主にこちらの3点でございます",
+              "vi": "Nội dung tôi muốn trình bày hôm nay chủ yếu gồm 3 điểm dưới đây ạ."
+            },
+            {
+              "en": "Please look at the slides.",
+              "ja": "スライドを見てください",
+              "vi": "Hãy nhìn vào slide."
+            },
+            {
+              "en": "Listen from start to finish.",
+              "ja": "最初から最後まで聞いてください",
+              "vi": "Xin nghe từ đầu đến cuối."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Clarifying the agenda at the start (「本日お話ししたい内容は、主にこちらの3点でございます」) helps the audience follow the structure.",
+            "ja": "プレゼンテーションの冒頭では、本日のアジェンダ（全体像）を提示して、聞き手の理解を促します。",
+            "vi": "Nêu rõ chương trình họp ở đầu buổi giúp người nghe nắm được cấu trúc bài thuyết trình."
+          }
+        },
+        {
+          "id": "bjt_s9_q2",
+          "question": {
+            "en": "Explain a chart showing that sales have steadily increased over the last year. Which is most professional?",
+            "ja": "過去1年間で売上が右肩上がりに上昇しているグラフを説明する、正しいビジネス表現はどれ？",
+            "vi": "Giải thích biểu đồ doanh số tăng trưởng ổn định trong năm qua. Cách nào chuyên nghiệp nhất?"
+          },
+          "options": [
+            {
+              "en": "Sales are going up.",
+              "ja": "売上が上がっています",
+              "vi": "Doanh số đang đi lên."
+            },
+            {
+              "en": "Over the past year, sales have been transitioning steadily upward.",
+              "ja": "過去1年間、売上は右肩上がりに推移しております",
+              "vi": "Trong vòng 1 năm qua, doanh số đang có xu hướng tăng trưởng ổn định lên phía trên bên phải."
+            },
+            {
+              "en": "Graph is going up.",
+              "ja": "グラフが上に行っています",
+              "vi": "Biểu đồ đang đi lên."
+            },
+            {
+              "en": "Sales are increasing rapidly.",
+              "ja": "売上がどんどん増えています",
+              "vi": "Doanh số đang tăng rất nhanh."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "「右肩上がり」 (increasing steadily) and 「推移しております」 (has been transitioning) are professional business terms.",
+            "ja": "グラフの上昇傾向を説明するビジネス定番表現は、「右肩上がりに推移しております」です。",
+            "vi": "Sử dụng 「右肩上がり」 và 「推移しております」 để mô tả khách quan xu hướng tăng trưởng của biểu đồ."
+          }
+        },
+        {
+          "id": "bjt_s9_q3",
+          "question": {
+            "en": "You want to transition to the next slide of your presentation. Which phrasing is most natural?",
+            "ja": "プレゼンのスライドを次のページへ切り替える際の声かけ表現として、正しいのはどれ？",
+            "vi": "Bạn muốn chuyển sang slide tiếp theo khi thuyết trình. Câu nào tự nhiên nhất?"
+          },
+          "options": [
+            {
+              "en": "Going to next page.",
+              "ja": "次のページに行きます",
+              "vi": "Đi qua trang tiếp theo."
+            },
+            {
+              "en": "Now, please look at the next slide.",
+              "ja": "それでは、次のスライドをご覧ください",
+              "vi": "Sau đây, xin mời quý vị nhìn vào slide tiếp theo."
+            },
+            {
+              "en": "Let's see next screen.",
+              "ja": "次の画面を見ましょう",
+              "vi": "Chúng ta hãy nhìn màn hình tiếp theo."
+            },
+            {
+              "en": "Turn the page, please.",
+              "ja": "ページをめくってください",
+              "vi": "Hãy lật trang giúp tôi."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "「それでは、次のスライドをご覧ください」 (Now, please look at the next slide) is the standard professional phrase.",
+            "ja": "スライドを切り替える際の丁寧な案内表現は、「それでは、次のスライドをご覧ください」です。",
+            "vi": "「それでは、次のスライドをご覧ください」 là câu chuyển tiếp slide trang trọng tiêu chuẩn."
+          }
+        },
+        {
+          "id": "bjt_s9_q4",
+          "question": {
+            "en": "During a presentation, a participant asks a question that you cannot answer immediately. How should you respond?",
+            "ja": "プレゼン中にその場では即答できない質問を受けた際、取るべき正しい応対はどれ？",
+            "vi": "Trong cuộc họp, khách hỏi một câu bạn không thể trả lời ngay. Bạn phản hồi thế nào?"
+          },
+          "options": [
+            {
+              "en": "I don't know.",
+              "ja": "わかりません",
+              "vi": "Tôi không biết."
+            },
+            {
+              "en": "Thank you for the question. After confirming the exact data, may I reply by email by the end of today?",
+              "ja": "ご質問ありがとうございます。その件につきましては、正確なデータを確認の上、本日中にメールにて回答させていただいてもよろしいでしょうか",
+              "vi": "Cảm ơn câu hỏi của quý khách. Về vấn đề này, sau khi xác nhận số liệu chính xác, tôi xin phép được trả lời qua email trước khi hết ngày hôm nay được không ạ?"
+            },
+            {
+              "en": "Please check it yourself.",
+              "ja": "後で自分で調べてください",
+              "vi": "Lát nữa hãy tự đi mà tra cứu."
+            },
+            {
+              "en": "Probably it is XX.",
+              "ja": "おそらく〇〇だと思います",
+              "vi": "Có lẽ nó là XX."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Thank them, explain that you need to verify the facts, and promise a specific follow-up time. Never answer with assumptions.",
+            "ja": "不明な質問に対しては曖昧な回答を避け、確認の上で後ほど回答する旨を約束し、期限を提示します。",
+            "vi": "Cảm ơn khách hàng, hứa xác nhận thông tin chính xác rồi phản hồi sau, tránh trả lời mơ hồ/dựa trên suy đoán."
+          }
+        },
+        {
+          "id": "bjt_s9_q5",
+          "question": {
+            "en": "The client asks for a 10% discount. Your limit is 5%. How do you propose this compromise politely?",
+            "ja": "値引き交渉で10%減を求められましたが、自社の限界は5%です。妥協案を示す正しい表現はどれ？",
+            "vi": "Khách hàng muốn giảm giá 10%. Giới hạn của bạn là 5%. Bạn đưa ra đề xuất thỏa hiệp thế nào?"
+          },
+          "options": [
+            {
+              "en": "10% is impossible, 5% is okay.",
+              "ja": "10%は無理ですが、5%ならいいです",
+              "vi": "10% thì chịu nhưng 5% thì được."
+            },
+            {
+              "en": "I am afraid a 10% discount is difficult. However, we can offer up to 5%. How does that sound?",
+              "ja": "恐れ入りますが、10%の値下げは困難でございます。しかし、5%までであればご対応可能でございますが、いかがでしょうか",
+              "vi": "Thành thật xin lỗi, mức giảm 10% là rất khó cho chúng tôi. Tuy nhiên, nếu là 5% thì chúng tôi có thể đáp ứng, quý khách thấy sao ạ?"
+            },
+            {
+              "en": "We never discount more than 5%.",
+              "ja": "5%以上の値引きは一切受け付けません",
+              "vi": "Chúng tôi tuyệt đối không giảm quá 5%."
+            },
+            {
+              "en": "Let's split the difference at 5%.",
+              "ja": "間をとって5%にしましょう",
+              "vi": "Lấy trung bình là 5% nhé."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "State politely that their request is difficult (「困難でございます」), and offer your alternative compromise (「5%までであればご対応可能でございます」) as a suggestion.",
+            "ja": "相手の案の拒絶をクッション言葉付きで述べ、代替案を提示して伺いを立てます。",
+            "vi": "Từ chối khéo yêu cầu giảm 10% và đưa ra phương án 5% dưới dạng đề xuất lịch sự."
+          }
+        },
+        {
+          "id": "bjt_s9_q6",
+          "question": {
+            "en": "You propose postponing the final decision to consult internally. How should you say this?",
+            "ja": "商談の意思決定を保留し、社内に持ち帰って検討したいことを伝える正しい表現はどれ？",
+            "vi": "Bạn đề xuất hoãn quyết định để thảo luận nội bộ. Bạn nên nói thế nào?"
+          },
+          "options": [
+            {
+              "en": "I will decide after asking board.",
+              "ja": "役員に聞いてから決めます",
+              "vi": "Tôi hỏi ban giám đốc rồi mới quyết định."
+            },
+            {
+              "en": "Regarding this matter, I will take it back internally, consult with our board, and contact you by next Monday.",
+              "ja": "本件につきましては、一度社内に持ち帰り、役員会にて検討の上、来週月曜日までにご連絡差し上げます",
+              "vi": "Về việc này, tôi xin phép được mang thông tin về thảo luận nội bộ trong ban giám đốc và sẽ liên lạc lại trước thứ Hai tuần sau ạ."
+            },
+            {
+              "en": "We cannot decide today.",
+              "ja": "今日はお取引を決められません",
+              "vi": "Hôm nay chưa thể quyết định được."
+            },
+            {
+              "en": "Wait until next week.",
+              "ja": "来週まで待ってください",
+              "vi": "Hãy chờ cho đến tuần sau."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "「社内に持ち帰る」 (take back internally to consult) is the standard business phrase for postponing a decision to consult with team members or executives.",
+            "ja": "意思決定を保留にする際の定番表現は「社内に持ち帰り、検討の上ご連絡する」です。",
+            "vi": "Dùng cụm từ 「社内に持ち帰る」 (mang về nội bộ bàn bạc) để xin hoãn đưa ra quyết định tại chỗ."
+          }
+        },
+        {
+          "id": "bjt_s9_q7",
+          "question": {
+            "en": "The client is hesitant to purchase due to initial cost. How do you negotiate by focusing on long-term benefits?",
+            "ja": "初期費用が高いと渋る顧客に対して、長期的な利益を提示して説得する正しい交渉表現はどれ？",
+            "vi": "Khách ngại mua vì chi phí ban đầu cao. Bạn thuyết phục họ bằng lợi ích lâu dài thế nào?"
+          },
+          "options": [
+            {
+              "en": "It's not expensive, buy it.",
+              "ja": "高くないので買ってください",
+              "vi": "Không đắt đâu mua đi."
+            },
+            {
+              "en": "Although there is an initial cost, considering running costs, it can be recovered in 3 years.",
+              "ja": "初期費用はかかりますが、ランニングコストを考慮いたしますと、3年で回収可能でございます",
+              "vi": "Mặc dù chi phí ban đầu hơi cao, nhưng nếu cân nhắc chi phí vận hành lâu dài thì có thể hoàn vốn trong vòng 3 năm ạ."
+            },
+            {
+              "en": "Cheap products have bad quality.",
+              "ja": "安い製品は品質が悪いです",
+              "vi": "Sản phẩm rẻ tiền chất lượng kém lắm."
+            },
+            {
+              "en": "Give up if you have no money.",
+              "ja": "お金がないなら諦めましょう",
+              "vi": "Không có tiền thì thôi bỏ qua đi."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Acknowledge their concern (initial cost) but explain the long-term ROI in a professional manner.",
+            "ja": "顧客の懸念点（初期コスト）を認めつつ、ランニングコストと回収期間を具体的に説明して説得します。",
+            "vi": "Thừa nhận chi phí ban đầu cao, nhưng phân tích hiệu quả kinh tế lâu dài bằng số liệu cụ thể."
+          }
+        },
+        {
+          "id": "bjt_s9_q8",
+          "question": {
+            "en": "You want to confirm the agreed points at the end of a negotiation meeting. How should you phrase this?",
+            "ja": "商談の最後に、認識のズレを防ぐため合意事項を確認する正しい表現はどれ？",
+            "vi": "Bạn muốn xác nhận lại các điểm đã thống nhất ở cuối buổi đàm phán. Bạn nói thế nào?"
+          },
+          "options": [
+            {
+              "en": "Decided things are these.",
+              "ja": "決まったことは以上です",
+              "vi": "Những điều đã quyết định là hết rồi."
+            },
+            {
+              "en": "Now, let me confirm the contents we agreed upon today. First...",
+              "ja": "それでは、本日合意いたしました内容を確認させていただきます。まず一点目は...",
+              "vi": "Sau đây, tôi xin phép được xác nhận lại các nội dung chúng ta đã thống nhất hôm nay. Trước hết, điều thứ nhất là..."
+            },
+            {
+              "en": "Tell me what we decided.",
+              "ja": "何が決まったか教えてください",
+              "vi": "Hãy nói xem chúng ta đã thống nhất cái gì đi."
+            },
+            {
+              "en": "This is the end.",
+              "ja": "これで終わります",
+              "vi": "Kết thúc tại đây."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Confirm the agreement details at the end of a meeting (「本日合意いたしました内容を確認させていただきます」) to prevent future misunderstandings.",
+            "ja": "商談の最後には、互いの認識一致のために合意事項の確認を行います。",
+            "vi": "Xác nhận các điều đã thống nhất (合意事項) vào cuối cuộc họp để tránh tranh cãi sau này."
+          }
+        },
+        {
+          "id": "bjt_s9_q9",
+          "question": {
+            "en": "You are presenting data, and you want to point out a specific column in a table. Which is most appropriate?",
+            "ja": "表データを用いて説明する際、特定の列に注目してもらうための正しい敬語表現はどれ？",
+            "vi": "Bạn đang trình bày số liệu và muốn chỉ vào một cột cụ thể trong bảng. Câu nào phù hợp nhất?"
+          },
+          "options": [
+            {
+              "en": "Here in this table.",
+              "ja": "この表のここです",
+              "vi": "Chỗ này của cái bảng."
+            },
+            {
+              "en": "Please focus your attention on the items in the second column from the right.",
+              "ja": "表の右から2番目の列、〇〇の項目にご注目ください",
+              "vi": "Xin mời quý vị chú ý vào cột thứ hai từ bên phải, mục XX ạ."
+            },
+            {
+              "en": "Look at the table.",
+              "ja": "表を見てください",
+              "vi": "Hãy nhìn cái bảng."
+            },
+            {
+              "en": "Right side data is important.",
+              "ja": "右側のデータが重要です",
+              "vi": "Số liệu bên phải là quan trọng."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Be specific and direct the audience's attention using polite phrases like 「ご注目ください」 (please pay attention to...).",
+            "ja": "資料を示す際は、具体的な場所を示し、注意を促す「ご注目ください」を使います。",
+            "vi": "Chỉ rõ vị trí của dữ liệu trên slide/tài liệu và dùng từ lịch sự 「ご注目ください」."
+          }
+        },
+        {
+          "id": "bjt_s9_q10",
+          "question": {
+            "en": "When negotiating, if the client makes an unreasonable demand, what is the best strategy?",
+            "ja": "商談中に取引先から無理な要求を突きつけられた際、最も適切な対応はどれ？",
+            "vi": "Khi đàm phán, nếu khách hàng đưa ra yêu cầu vô lý, chiến lược tốt nhất là gì?"
+          },
+          "options": [
+            {
+              "en": "Accept it immediately.",
+              "ja": "関係維持のためにすぐ受け入れる",
+              "vi": "Chấp nhận ngay để giữ quan hệ."
+            },
+            {
+              "en": "Thank them, state it is difficult under current conditions, and ask if there are alternative ways.",
+              "ja": "ご要望を理解した上で現状では難しい理由を説明し、代替案が提示できるか検討する",
+              "vi": "Lắng nghe và ghi nhận yêu cầu, giải thích lý do khó thực hiện ở hiện tại, và đề xuất tìm phương án thay thế."
+            },
+            {
+              "en": "Get angry and end the meeting.",
+              "ja": "腹を立ててその場で商談を打ち切る",
+              "vi": "Nổi giận và hủy cuộc họp ngay lập tức."
+            },
+            {
+              "en": "Tell them demand is ridiculous.",
+              "ja": "その要求はおかしいと相手を非難する",
+              "vi": "Chỉ trích yêu cầu đó là vô lý."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Politely explain the limitations, and seek mutually beneficial solutions or alternative proposals.",
+            "ja": "無理な要求に対しては、頭ごなしに否定せず、現状では困難である理由を説明し、代替の提案を検討します。",
+            "vi": "Không từ chối thô lỗ, hãy lắng nghe và trình bày giới hạn thực tế, sau đó đề xuất các giải pháp thay thế."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bjt-10",
+      "title": {
+        "en": "Set 10: Socializing, Networking & Business Manners",
+        "ja": "セット10：名刺交換・席次・社交マナー",
+        "vi": "Đề 10: Trao đổi danh thiếp, Quy tắc chỗ ngồi và Giao tế xã hội"
+      },
+      "description": {
+        "en": "Business card exchange order, seating order (kamiza/shimoza) in rooms/taxis, and dinner etiquette.",
+        "ja": "名刺交換の順番、応接室やタクシーでの席順（上座・下座）、および接待・会食のマナーを学びます。",
+        "vi": "Thứ tự trao đổi danh thiếp, quy tắc chỗ ngồi (kamiza/shimoza) trên xe/phòng họp và quy tắc tiệc giao tế."
+      },
+      "questions": [
+        {
+          "id": "bjt_s10_q1",
+          "question": {
+            "en": "When exchanging business cards (名刺交換), who should present their card first?",
+            "ja": "ビジネスでの名刺交換において、先に名刺を差し出すべき人はどれ？",
+            "vi": "Khi trao đổi danh thiếp (名刺交換), ai nên là người đưa danh thiếp ra trước?"
+          },
+          "options": [
+            {
+              "en": "The person with higher status.",
+              "ja": "立場の高い人（顧客や上司）",
+              "vi": "Người có địa vị cao hơn (khách hàng/sếp)."
+            },
+            {
+              "en": "The person with lower status.",
+              "ja": "立場の低い人（訪問者や受注側）",
+              "vi": "Người có địa vị thấp hơn (khách đến thăm/nhân viên bán hàng)."
+            },
+            {
+              "en": "Whoever reaches out first.",
+              "ja": "どちらでも早く手を差し出したほう",
+              "vi": "Ai đưa tay ra trước thì đưa trước."
+            },
+            {
+              "en": "Both should throw cards on the table.",
+              "ja": "お互いにテーブルの上に名刺を投げ置く",
+              "vi": "Cả hai đặt danh thiếp lên bàn cùng lúc."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "The person of lower status (the visitor or salesperson) must always present their business card first to the higher-status person.",
+            "ja": "名刺交換は、立場の低い側（訪問者や受注側）から先に差し出すのがマナーです。",
+            "vi": "Người có vị thế thấp hơn (người đi thăm, người bán hàng) phải đưa danh thiếp trước để thể hiện sự kính trọng."
+          }
+        },
+        {
+          "id": "bjt_s10_q2",
+          "question": {
+            "en": "You receive a business card with a kanji name you cannot read. What should you do?",
+            "ja": "名刺交換の際、相手の名前の漢字が読めない場合の正しい対応はどれ？",
+            "vi": "Khi nhận danh thiếp có chữ Hán khó đọc tên, bạn nên làm gì?"
+          },
+          "options": [
+            {
+              "en": "Guess the pronunciation.",
+              "ja": "自分で読み方を推測してその名前で呼ぶ",
+              "vi": "Tự đoán cách đọc và gọi theo tên đó."
+            },
+            {
+              "en": "Ask them politely: 'Excuse me, could you tell me how to read your name?'",
+              "ja": "「恐れ入りますが、お名前はどのようにお読みすればよろしいでしょうか」と丁寧に聞く",
+              "vi": "Hỏi khéo: 'Xin lỗi, tên của quý khách nên đọc như thế nào cho chính xác ạ?'"
+            },
+            {
+              "en": "Do not say anything.",
+              "ja": "何も言わずに名前を呼ぶのを避ける",
+              "vi": "Không nói gì và tránh gọi tên khách."
+            },
+            {
+              "en": "Ask your colleague.",
+              "ja": "お客様の目の前で同行の同僚にこっそり聞く",
+              "vi": "Hỏi thầm đồng nghiệp đi cùng ngay trước mặt khách."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "It is not rude to ask how to read a client's name during card exchange. Ask politely: 「恐れ入りますが、お名前はどのようにお読みすればよろしいでしょうか」.",
+            "ja": "名前の読み方がわからないときは、その場で「お名前はどのようにお読みすればよろしいでしょうか」と確認します。",
+            "vi": "Hỏi cách đọc tên của khách một cách lịch sự để thể hiện sự tôn trọng và tránh gọi sai tên."
+          }
+        },
+        {
+          "id": "bjt_s10_q3",
+          "question": {
+            "en": "After exchanging business cards, where should you place the card during the meeting?",
+            "ja": "名刺交換が終わった後、面談中その名刺をどこに置くのが正しいマナー？",
+            "vi": "Sau khi trao đổi danh thiếp xong, bạn nên đặt danh thiếp ở đâu trong buổi họp?"
+          },
+          "options": [
+            {
+              "en": "Put it in your card case immediately.",
+              "ja": "すぐに名刺入れにしまってポケットに入れる",
+              "vi": "Cất ngay vào hộp danh thiếp rồi đút vào túi."
+            },
+            {
+              "en": "Place it on top of your business card case, positioned on the left.",
+              "ja": "名刺入れの上に載せて、自分から見て左側のテーブルの上に置く",
+              "vi": "Đặt lên trên hộp danh thiếp của bạn, ở phía bên trái trên bàn."
+            },
+            {
+              "en": "Leave it on the floor.",
+              "ja": "床の上に置いておく",
+              "vi": "Để dưới sàn nhà."
+            },
+            {
+              "en": "Write notes on the card.",
+              "ja": "忘れないように名刺の余白にメモを書き込む",
+              "vi": "Viết ghi chú trực tiếp lên danh thiếp."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Place the received business card on top of your card case on the table. Writing on a business card in front of the owner is extremely rude.",
+            "ja": "いただいた名刺は、名刺入れの上に載せてテーブルの左側に置きます。直接書き込むのは厳禁です。",
+            "vi": "Đặt danh thiếp lên trên hộp đựng danh thiếp của mình để trên bàn. Tuyệt đối không viết vẽ bậy lên danh thiếp trước mặt khách."
+          }
+        },
+        {
+          "id": "bjt_s10_q4",
+          "question": {
+            "en": "You take a taxi with a client (highest status) and your manager. You are the lowest. Who sits next to the driver?",
+            "ja": "お客様、自社の上司、自分の3人でタクシーに乗る際、最下座（自分が座るべき席）はどれ？",
+            "vi": "Bạn đi taxi cùng khách hàng (VIP nhất) và sếp. Bạn có chức vụ thấp nhất. Ai sẽ ngồi cạnh tài xế?"
+          },
+          "options": [
+            {
+              "en": "The client.",
+              "ja": "お客様が座る",
+              "vi": "Khách hàng ngồi."
+            },
+            {
+              "en": "Your manager.",
+              "ja": "上司が座る",
+              "vi": "Sếp ngồi."
+            },
+            {
+              "en": "You (the lowest status).",
+              "ja": "自分（最若手）が助手席に座る",
+              "vi": "Bạn (chức vụ thấp nhất) ngồi ở ghế phụ cạnh tài xế."
+            },
+            {
+              "en": "No one; keep empty.",
+              "ja": "誰も座らず空席にしておく",
+              "vi": "Để trống ghế đó."
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "In a taxi, the seat next to the driver (front passenger seat) is the lowest seat (Shimoza). The seat behind the driver is the highest seat (Kamiza) for the client.",
+            "ja": "タクシーでは、助手席が最下座（しもざ）になります。最も若手の人間が座り、会計や案内を行います。",
+            "vi": "Ghế phụ cạnh tài xế là ghế thấp nhất (Shimoza), dành cho người có vai trò thấp nhất để tiện dẫn đường và thanh toán."
+          }
+        },
+        {
+          "id": "bjt_s10_q5",
+          "question": {
+            "en": "You host a dinner with a client at a restaurant with a tokonoma (alcove). Where should the guest of honor sit?",
+            "ja": "床の間（とこのま）がある和室の個室で会食を行う際、お客様にご案内する正しい席（上座）はどれ？",
+            "vi": "Bạn chiêu đãi khách hàng tại nhà hàng có tokonoma (hốc trang trí kiểu Nhật). Khách nên ngồi ở đâu?"
+          },
+          "options": [
+            {
+              "en": "In front of the tokonoma, farthest from the entrance.",
+              "ja": "床の間を背にする席（入り口から最も遠い席）",
+              "vi": "Vị trí quay lưng lại với tokonoma, cách xa cửa ra vào nhất (Kamiza)."
+            },
+            {
+              "en": "Closest to the entrance.",
+              "ja": "入り口に最も近い席",
+              "vi": "Ghế gần cửa ra vào nhất."
+            },
+            {
+              "en": "In the middle of the room.",
+              "ja": "部屋の真ん中の席",
+              "vi": "Ghế ở giữa phòng."
+            },
+            {
+              "en": "Next to the kitchen door.",
+              "ja": "配膳口のすぐ横の席",
+              "vi": "Ghế ngay cạnh lối phục vụ món ăn."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "In a traditional Japanese room with a tokonoma, the seat in front of the tokonoma (farthest from the entrance) is the highest-status seat (Kamiza).",
+            "ja": "床の間がある和室では、床の間を背にする席（入り口から最も遠い席）が最上座（かみざ）になります。",
+            "vi": "Trong phòng truyền thống kiểu Nhật, vị trí xa cửa nhất và quay lưng lại với tokonoma là ghế VIP nhất."
+          }
+        },
+        {
+          "id": "bjt_s10_q6",
+          "question": {
+            "en": "During a toast (乾杯) with a client, how should you hold your glass?",
+            "ja": "取引先や顧客との宴席で乾杯する際、自分のグラスの高さに関する正しいマナーはどれ？",
+            "vi": "Khi cụng ly chúc mừng (乾杯) với khách hàng, bạn nên giữ ly của mình thế nào?"
+          },
+          "options": [
+            {
+              "en": "Hold your glass higher than the client's glass.",
+              "ja": "相手のグラスよりも高い位置に合わせる",
+              "vi": "Giữ ly của bạn cao hơn ly của khách hàng."
+            },
+            {
+              "en": "Keep the rim of your glass slightly lower than the rim of the client's glass.",
+              "ja": "相手のグラスの縁よりも低い位置に自分のグラスの縁を合わせる",
+              "vi": "Giữ cho vành ly của bạn thấp hơn vành ly của khách hàng một chút."
+            },
+            {
+              "en": "Clink glasses hard.",
+              "ja": "勢いよくぶつけて音を鳴らす",
+              "vi": "Cụng mạnh ly tạo tiếng vang lớn."
+            },
+            {
+              "en": "Hold glass with one hand.",
+              "ja": "ポケットに手を突っ込み、片手でグラスを持つ",
+              "vi": "Đút tay túi quần và cầm ly bằng một tay."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "When clinking glasses for a toast, the person of lower status must keep the rim of their glass lower than the rim of the superior's or client's glass.",
+            "ja": "乾杯の際、目下のグラスの縁は、相手のグラスの縁よりも低い位置に合わせるのがマナーです。",
+            "vi": "Người có chức vụ thấp hơn phải giữ vành ly thấp hơn vành ly đối phương khi cụng ly."
+          }
+        },
+        {
+          "id": "bjt_s10_q7",
+          "question": {
+            "en": "You pour beer for a client from a bottle. How should you hold the bottle?",
+            "ja": "瓶ビールをお客様にお酌する際、正しい瓶の持ち方はどれ？",
+            "vi": "Bạn rót bia chai cho khách hàng. Bạn nên cầm chai thế nào?"
+          },
+          "options": [
+            {
+              "en": "Hold it with one hand by the neck.",
+              "ja": "片手で瓶の首を持って注ぐ",
+              "vi": "Cầm một tay ở cổ chai và rót."
+            },
+            {
+              "en": "Hold the bottle with both hands, with the label facing upwards.",
+              "ja": "ビール瓶のラベルを上に向けて、両手で持って注ぐ",
+              "vi": "Cầm chai bằng cả hai tay, nhãn chai hướng lên trên để khách nhìn thấy."
+            },
+            {
+              "en": "Pour it quickly to make a lot of foam.",
+              "ja": "勢いよく注いで泡だらけにする",
+              "vi": "Rót nhanh tạo thật nhiều bọt."
+            },
+            {
+              "en": "Let the client pour it themselves.",
+              "ja": "手酌をさせるために相手に瓶を渡す",
+              "vi": "Đưa chai để khách tự rót."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Pour beer by holding the bottle with both hands, ensuring the label faces upwards so the client can see it.",
+            "ja": "瓶ビールを注ぐ際は、ラベルを上に向けて両手で持って静かに注ぎます。",
+            "vi": "Cầm chai bằng cả hai tay và hướng nhãn chai lên phía trên khi rót bia cho khách."
+          }
+        },
+        {
+          "id": "bjt_s10_q8",
+          "question": {
+            "en": "The day after a dinner meeting where the client paid, what is the best practice?",
+            "ja": "取引先にご馳走になった会食の翌日、取るべき正しいマナーはどれ？",
+            "vi": "Sáng hôm sau sau buổi tiệc mà khách hàng chiêu đãi, bạn nên làm gì?"
+          },
+          "options": [
+            {
+              "en": "Do not mention the dinner.",
+              "ja": "相手に気を遣わせないよう、会食の話題には触れない",
+              "vi": "Không nhắc lại chuyện bữa tiệc nữa."
+            },
+            {
+              "en": "Send a thank you email in the morning, expressing gratitude for the dinner.",
+              "ja": "翌日の午前中に必ずお礼のメールを送り、ご馳走になったことへの感謝を述べる",
+              "vi": "Gửi email cảm ơn vào buổi sáng, bày tỏ sự trân trọng vì đã được chiêu đãi."
+            },
+            {
+              "en": "Send a gift of equal value.",
+              "ja": "同等の価値のお土産をすぐに送る",
+              "vi": "Gửi lại một món quà có giá trị tương đương."
+            },
+            {
+              "en": "Call them repeatedly.",
+              "ja": "相手が出るまで何度も電話する",
+              "vi": "Gọi điện liên tục cho đến khi họ bắt máy."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Send a thank-you email early the next morning (「お礼メール」), thanking them for the meal (「ご馳走になり、ありがとうございました」).",
+            "ja": "接待や会食の翌日には、午前中のうちにお礼のメールを送信するのが鉄則です。",
+            "vi": "Gửi email cảm ơn vào buổi sáng hôm sau sau khi được chiêu đãi ăn uống (お礼メール)."
+          }
+        },
+        {
+          "id": "bjt_s10_q9",
+          "question": {
+            "en": "You are visiting a client's office. When should you take off your winter coat?",
+            "ja": "冬場にコートを着て取引先を訪問する際、コートを脱ぐべき正しいタイミングはどれ？",
+            "vi": "Bạn đến thăm văn phòng khách hàng vào mùa đông. Bạn nên cởi áo khoác ngoài khi nào?"
+          },
+          "options": [
+            {
+              "en": "Inside the meeting room after sitting down.",
+              "ja": "応接室に入って席に座った後",
+              "vi": "Sau khi vào phòng họp và đã ngồi xuống ghế."
+            },
+            {
+              "en": "Before entering the building or at the entrance lobby.",
+              "ja": "ビルに入る前、または受付をする手前",
+              "vi": "Trước khi vào tòa nhà hoặc trước khi đến quầy lễ tân."
+            },
+            {
+              "en": "Keep it on during the entire meeting.",
+              "ja": "商談中も着たままにする",
+              "vi": "Mặc nguyên trong suốt buổi họp."
+            },
+            {
+              "en": "In the elevator.",
+              "ja": "エレベーターに乗ったとき",
+              "vi": "Khi đi vào thang máy."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "It is proper manners to remove your overcoat before entering the company's building, or at least before reaching the reception desk.",
+            "ja": "訪問先でのコートは、ビルに入る前、または受付の手前で脱ぐのがマナーです。",
+            "vi": "Cởi áo khoác ngoài trước khi vào tòa nhà công ty hoặc trước khi đến gặp lễ tân."
+          }
+        },
+        {
+          "id": "bjt_s10_q10",
+          "question": {
+            "en": "When visiting a client's office, where should you place your bag or briefcase in the meeting room?",
+            "ja": "訪問先の応接室で、持参したビジネスバッグ（鞄）を置くべき正しい場所はどれ？",
+            "vi": "Khi đến văn phòng khách hàng, bạn nên đặt túi xách/cặp của mình ở đâu?"
+          },
+          "options": [
+            {
+              "en": "On top of the meeting table.",
+              "ja": "テーブルの上",
+              "vi": "Đặt trên bàn họp."
+            },
+            {
+              "en": "On the floor next to your chair.",
+              "ja": "自分の椅子の横の床の上",
+              "vi": "Đặt dưới sàn nhà ngay bên cạnh ghế ngồi của mình."
+            },
+            {
+              "en": "On an empty chair next to you.",
+              "ja": "隣の空いている椅子の上",
+              "vi": "Đặt lên chiếc ghế trống bên cạnh."
+            },
+            {
+              "en": "Hang it on the doorknob.",
+              "ja": "ドアノブにかけておく",
+              "vi": "Treo lên tay nắm cửa."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Place your bag on the floor next to your seat. Placing it on the table or on an empty chair is considered impolite.",
+            "ja": "持参した鞄は、椅子の横の床の上に置きます。テーブルの上や椅子の上に置くのはマナー違反です。",
+            "vi": "Đặt túi xách dưới sàn nhà bên cạnh ghế ngồi của bạn, tránh để lên bàn hoặc ghế trống."
+          }
+        }
+      ]
     }
   ]
 }
