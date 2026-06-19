@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useState, useEffect, useMemo } from "react"
 import { subjects as staticSubjects, computeSubjectStats, type Subject, type OverallStats } from "@/lib/subjects"
 import { useCosmicAudio } from "@/hooks/use-cosmic-audio"
+import { recordActivity } from "@/lib/activity"
 
 type UserProgressContextType = {
   progressMap: Record<string, number>
@@ -124,6 +125,7 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
       
       if (nextProgress === 100) {
         playedChime = true
+        recordActivity()
       }
 
       // Sync all lessons in the module
@@ -176,6 +178,7 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
 
       if (isCompleted) {
         playedChime = true
+        recordActivity()
       }
 
       // Compute module progress

@@ -1,9 +1,11 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import { Layers, CheckCircle2, Clock, Activity } from "lucide-react"
+import { Flame, Zap, CheckCircle2, Activity } from "lucide-react"
 import { useLanguage } from "@/lib/i18n"
 import { useUserProgress } from "@/components/user-progress-provider"
+import { getStreak, getXp } from "@/lib/activity"
 
 function Sparkline({ data, color }: { data: number[]; color: string }) {
   if (data.length < 2) return null
@@ -29,14 +31,20 @@ function Sparkline({ data, color }: { data: number[]; color: string }) {
 export function StatsRow() {
   const { t } = useLanguage()
   const { overallStats: overall } = useUserProgress()
+  const [streak, setStreak] = useState(0)
+
+  // streak は localStorage 依存なのでマウント後に読む（ハイドレーション不一致回避）
+  useEffect(() => {
+    setStreak(getStreak())
+  }, [overall.completedLessons])
 
   const stats = [
     {
-      label: t("stats.subjects"),
-      value: `${overall.inProgressSubjects}/${overall.totalSubjects}`,
+      label: t("stats.streak"),
+      value: `${streak}`,
       gradient: "from-orange-400 via-pink-500 to-rose-500",
       shadowColor: "shadow-orange-500/40",
-      Icon: Layers,
+      Icon: Flame,
       sparkline: overall.perSubjectProgress,
       gradId: "grad-0",
       from: "#fb923c",
@@ -54,11 +62,11 @@ export function StatsRow() {
       to: "#06b6d4",
     },
     {
-      label: t("stats.hours"),
-      value: `${overall.totalHours}h`,
+      label: t("stats.xp"),
+      value: `${getXp(overall.completedLessons)}`,
       gradient: "from-cyan-400 via-blue-500 to-purple-500",
       shadowColor: "shadow-blue-500/40",
-      Icon: Clock,
+      Icon: Zap,
       sparkline: overall.perSubjectProgress,
       gradId: "grad-2",
       from: "#22d3ee",

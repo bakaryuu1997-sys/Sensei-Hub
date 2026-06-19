@@ -11,6 +11,7 @@ import { TopBar } from "@/components/dashboard/top-bar"
 import { Starfield } from "@/components/dashboard/starfield"
 import { useLanguage } from "@/lib/i18n"
 import { useUserProgress } from "@/components/user-progress-provider"
+import { recordActivity } from "@/lib/activity"
 import { cn } from "@/lib/utils"
 import {
   pickText,
@@ -107,6 +108,7 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
     } else {
       const finalScore = answers.filter((a, i) => a === questions[i]?.answer).length
       saveQuizResult({ slug, score: finalScore, total, ts: Date.now() }, selectedSet?.id)
+      recordActivity()
       setPhase("done")
       if (total > 0 && finalScore / total >= 0.8) {
         confetti({

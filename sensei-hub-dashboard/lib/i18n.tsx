@@ -191,6 +191,12 @@ export const translations: Translations = {
 
   // Navigation & auth
   "nav.menu": { en: "Menu", ja: "メニュー", vi: "Menu" },
+  "nav.history": { en: "History", ja: "学習履歴", vi: "Lịch sử" },
+  "history.title": { en: "Learning history", ja: "学習履歴", vi: "Lịch sử học tập" },
+  "history.subtitle": { en: "Your recent lessons and quiz results", ja: "最近のレッスンとクイズ結果", vi: "Bài học gần đây và kết quả quiz" },
+  "history.recent_lessons": { en: "Recent lessons", ja: "最近のレッスン", vi: "Bài học gần đây" },
+  "history.quiz_results": { en: "Quiz results", ja: "クイズ結果", vi: "Kết quả quiz" },
+  "history.empty": { en: "No activity yet — start a lesson!", ja: "まだ履歴がありません。レッスンを始めましょう！", vi: "Chưa có hoạt động — hãy bắt đầu một bài học!" },
   "auth.login": { en: "Sign in", ja: "ログイン", vi: "Đăng nhập" },
 
   // Lesson page (previously hardcoded)
