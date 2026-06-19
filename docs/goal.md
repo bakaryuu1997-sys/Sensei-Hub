@@ -96,6 +96,9 @@ IT エンジニア向けの 3 言語（EN/JA/VI）学習プラットフォーム
 - [x] モバイルの three.js 負荷軽減（画面外停止・解像度削減で対応済み）
 
 ### J. コンテンツ — ✅ 完了（判断含む）
+- [x] フッターの静的ページ（About/Contact/Privacy/Terms）を 3 言語の実コンテンツ化
+- [x] Blog を AI ニュースフィード化：Google ニュース RSS を hl 言語別に取得（各言語ネイティブ・
+      翻訳/AI 不要・30 分自動更新）。`/api/news` + `/blog`。
 - [x] UI 翻訳（i18n）の欠落なしをテストで保証
 - [x] `lessons/vi/AI-Passport` の判断: **当面ダッシュボード非連携**（vi のみで en/ja 未整備、
       かつ system は en を基準にするため）。整備する場合は en/ja を追加してから `subjects.ts`
