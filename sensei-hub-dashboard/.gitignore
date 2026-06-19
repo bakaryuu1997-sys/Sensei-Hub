@@ -21,6 +21,8 @@ node_modules
 # Playwright reports and test results
 playwright-report/
 test-results/
+# Clerk のテスト用ログイン状態（保存した storageState）
+playwright/.clerk/
 
 # TS build cache
 *.tsbuildinfo

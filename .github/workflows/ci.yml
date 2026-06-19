@@ -45,3 +45,61 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+  # ログイン込み E2E。Clerk のテスト用シークレットが設定されている時だけ実行する。
+  # 未設定なら各ステップを丸ごとスキップし、ジョブは緑のまま（ユニット/ビルドは常時実行）。
+  e2e:
+    runs-on: ubuntu-latest
+    needs: build
+    defaults:
+      run:
+        working-directory: sensei-hub-dashboard
+    env:
+      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.E2E_CLERK_PUBLISHABLE_KEY }}
+      CLERK_SECRET_KEY: ${{ secrets.E2E_CLERK_SECRET_KEY }}
+      E2E_CLERK_USER_USERNAME: ${{ secrets.E2E_CLERK_USER_USERNAME }}
+      E2E_CLERK_USER_PASSWORD: ${{ secrets.E2E_CLERK_USER_PASSWORD }}
+      NEXT_PUBLIC_CLERK_SIGN_IN_URL: /login
+      NEXT_PUBLIC_CLERK_SIGN_UP_URL: /register
+      DATABASE_URL: file:./e2e.db
+    steps:
+      - name: Detect E2E secrets
+        id: guard
+        run: |
+          if [ -n "${{ secrets.E2E_CLERK_USER_USERNAME }}" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "E2E secrets not set — skipping login E2E."
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.guard.outputs.enabled == 'true'
+
+      - uses: pnpm/action-setup@v4
+        if: steps.guard.outputs.enabled == 'true'
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        if: steps.guard.outputs.enabled == 'true'
+        with:
+          node-version: 20
+          cache: pnpm
+          cache-dependency-path: sensei-hub-dashboard/pnpm-lock.yaml
+
+      - name: Install dependencies
+        if: steps.guard.outputs.enabled == 'true'
+        run: pnpm install --frozen-lockfile
+
+      - name: Generate Prisma client
+        if: steps.guard.outputs.enabled == 'true'
+        run: pnpm prisma generate
+
+      - name: Install Playwright browser
+        if: steps.guard.outputs.enabled == 'true'
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: E2E tests
+        if: steps.guard.outputs.enabled == 'true'
+        run: pnpm test:e2e
