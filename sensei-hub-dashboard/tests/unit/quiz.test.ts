@@ -357,5 +357,68 @@ describe("Quiz Content Schema Validation", () => {
       })
     })
   })
+
+  it("business-japanese-test.json should conform to the multi-set Quiz schema", () => {
+    const filePath = path.resolve(__dirname, "../../../lessons/quizzes/business-japanese-test.json")
+    expect(fs.existsSync(filePath)).toBe(true)
+
+    const content = fs.readFileSync(filePath, "utf8")
+    const quiz = JSON.parse(content) as Quiz
+
+    // Verify root structure
+    expect(quiz.title).toBeDefined()
+    expect(quiz.title.en).toBeDefined()
+    expect(quiz.title.ja).toBeDefined()
+    expect(quiz.title.vi).toBeDefined()
+    expect(quiz.sets).toBeDefined()
+    expect(Array.isArray(quiz.sets)).toBe(true)
+    expect(quiz.sets?.length).toBe(10) // Exactly 10 sets
+
+    quiz.sets?.forEach((set, setIdx) => {
+      // Verify set structure
+      expect(set.id).toBe(`bjt-${setIdx + 1}`)
+      expect(set.title).toBeDefined()
+      expect(set.title.en).toBeDefined()
+      expect(set.title.ja).toBeDefined()
+      expect(set.title.vi).toBeDefined()
+      expect(set.description).toBeDefined()
+
+      // Verify questions
+      expect(set.questions).toBeDefined()
+      expect(Array.isArray(set.questions)).toBe(true)
+      expect(set.questions.length).toBe(10) // Exactly 10 questions each
+
+      set.questions.forEach((q, qIdx) => {
+        expect(q.id).toBe(`bjt_s${setIdx + 1}_q${qIdx + 1}`)
+        
+        // Question texts
+        expect(q.question).toBeDefined()
+        expect(q.question.en).toBeDefined()
+        expect(q.question.ja).toBeDefined()
+        expect(q.question.vi).toBeDefined()
+
+        // Options
+        expect(q.options).toBeDefined()
+        expect(Array.isArray(q.options)).toBe(true)
+        expect(q.options.length).toBe(4) // Exactly 4 choices
+
+        q.options.forEach((opt) => {
+          expect(opt.en).toBeDefined()
+          expect(opt.ja).toBeDefined()
+          expect(opt.vi).toBeDefined()
+        })
+
+        // Answer must be index 0-3
+        expect(q.answer).toBeGreaterThanOrEqual(0)
+        expect(q.answer).toBeLessThanOrEqual(3)
+
+        // Explanation
+        expect(q.explanation).toBeDefined()
+        expect(q.explanation.en).toBeDefined()
+        expect(q.explanation.ja).toBeDefined()
+        expect(q.explanation.vi).toBeDefined()
+      })
+    })
+  })
 })
 
