@@ -17,6 +17,7 @@ import {
   DEFAULT_SETTINGS,
   PROVIDERS,
   PROVIDER_LABELS,
+  usesBaseUrl,
   type AiProvider,
   type AiSettings,
   type ProviderConfig,
@@ -175,10 +176,11 @@ export default function SettingsPage() {
                 </div>
               )}
 
-              <div className="mb-4 space-y-1.5">
-                <div className="flex items-center justify-between">
-                  <label className="block text-xs font-semibold text-white/60">{t("settings.base_url")}</label>
-                  {editing === "ollama" && (
+              {/* Base URL は Ollama のみ（Gemini/OpenAI は不要） */}
+              {usesBaseUrl(editing) && (
+                <div className="mb-4 space-y-1.5">
+                  <div className="flex items-center justify-between">
+                    <label className="block text-xs font-semibold text-white/60">{t("settings.base_url")}</label>
                     <button
                       type="button"
                       onClick={() => updateCfg({ baseUrl: "http://localhost:11434" })}
@@ -186,21 +188,22 @@ export default function SettingsPage() {
                     >
                       {t("settings.use_default_ollama")}
                     </button>
-                  )}
+                  </div>
+                  <input
+                    type="text"
+                    value={cfg.baseUrl}
+                    onChange={(e) => updateCfg({ baseUrl: e.target.value })}
+                    placeholder="http://localhost:11434"
+                    className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/10 focus:border-cyan-400/50 outline-none text-sm text-white placeholder:text-white/30"
+                  />
                 </div>
-                <input
-                  type="text"
-                  value={cfg.baseUrl}
-                  onChange={(e) => updateCfg({ baseUrl: e.target.value })}
-                  placeholder={editing === "ollama" ? "http://localhost:11434" : ""}
-                  className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/10 focus:border-cyan-400/50 outline-none text-sm text-white placeholder:text-white/30"
-                />
-              </div>
+              )}
 
               <div className="mb-4">
                 <label className="block text-xs font-semibold text-white/60 mb-1.5">{t("settings.model")}</label>
                 <input
                   type="text"
+                  list={`models-${editing}`}
                   value={cfg.model}
                   onChange={(e) => updateCfg({ model: e.target.value })}
                   placeholder={DEFAULT_MODELS[editing]}

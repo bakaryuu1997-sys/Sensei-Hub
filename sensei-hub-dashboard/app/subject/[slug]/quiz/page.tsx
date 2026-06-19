@@ -71,11 +71,173 @@ function renderFormattedText(text: string) {
   })
 }
 
+const colorThemeMap: Record<string, {
+  text: string
+  textMuted: string
+  hoverText: string
+  groupHoverText: string
+  fromOpacity: string
+  toOpacity: string
+  chosenBorderBg: string
+  hoverBorder: string
+}> = {
+  "from-violet-400": {
+    text: "text-violet-400",
+    textMuted: "text-violet-200/70",
+    hoverText: "hover:text-violet-300",
+    groupHoverText: "group-hover:text-violet-300",
+    fromOpacity: "from-violet-500/20",
+    toOpacity: "to-indigo-500/20",
+    chosenBorderBg: "border-violet-400/50 bg-violet-500/10",
+    hoverBorder: "hover:border-violet-500/30",
+  },
+  "from-blue-500": {
+    text: "text-blue-400",
+    textMuted: "text-blue-200/70",
+    hoverText: "hover:text-blue-300",
+    groupHoverText: "group-hover:text-blue-300",
+    fromOpacity: "from-blue-500/20",
+    toOpacity: "to-indigo-600/20",
+    chosenBorderBg: "border-blue-400/50 bg-blue-500/10",
+    hoverBorder: "hover:border-blue-500/30",
+  },
+  "from-orange-400": {
+    text: "text-orange-400",
+    textMuted: "text-orange-200/70",
+    hoverText: "hover:text-orange-300",
+    groupHoverText: "group-hover:text-orange-300",
+    fromOpacity: "from-orange-400/20",
+    toOpacity: "to-amber-500/20",
+    chosenBorderBg: "border-orange-400/50 bg-orange-500/10",
+    hoverBorder: "hover:border-orange-500/30",
+  },
+  "from-emerald-400": {
+    text: "text-emerald-400",
+    textMuted: "text-emerald-200/70",
+    hoverText: "hover:text-emerald-300",
+    groupHoverText: "group-hover:text-emerald-300",
+    fromOpacity: "from-emerald-400/20",
+    toOpacity: "to-teal-500/20",
+    chosenBorderBg: "border-emerald-400/50 bg-emerald-500/10",
+    hoverBorder: "hover:border-emerald-500/30",
+  },
+  "from-pink-400": {
+    text: "text-pink-400",
+    textMuted: "text-pink-200/70",
+    hoverText: "hover:text-pink-300",
+    groupHoverText: "group-hover:text-pink-300",
+    fromOpacity: "from-pink-400/20",
+    toOpacity: "to-rose-500/20",
+    chosenBorderBg: "border-pink-400/50 bg-pink-500/10",
+    hoverBorder: "hover:border-pink-500/30",
+  },
+  "from-cyan-400": {
+    text: "text-cyan-400",
+    textMuted: "text-cyan-200/70",
+    hoverText: "hover:text-cyan-300",
+    groupHoverText: "group-hover:text-cyan-300",
+    fromOpacity: "from-cyan-400/20",
+    toOpacity: "to-blue-500/20",
+    chosenBorderBg: "border-cyan-400/50 bg-cyan-500/10",
+    hoverBorder: "hover:border-cyan-500/30",
+  },
+  "from-red-400": {
+    text: "text-red-400",
+    textMuted: "text-red-200/70",
+    hoverText: "hover:text-red-300",
+    groupHoverText: "group-hover:text-red-300",
+    fromOpacity: "from-red-400/20",
+    toOpacity: "to-rose-500/20",
+    chosenBorderBg: "border-red-400/50 bg-red-500/10",
+    hoverBorder: "hover:border-red-500/30",
+  },
+  "from-purple-400": {
+    text: "text-purple-400",
+    textMuted: "text-purple-200/70",
+    hoverText: "hover:text-purple-300",
+    groupHoverText: "group-hover:text-purple-300",
+    fromOpacity: "from-purple-400/20",
+    toOpacity: "to-violet-500/20",
+    chosenBorderBg: "border-purple-400/50 bg-purple-500/10",
+    hoverBorder: "hover:border-purple-500/30",
+  },
+  "from-yellow-400": {
+    text: "text-yellow-400",
+    textMuted: "text-yellow-200/70",
+    hoverText: "hover:text-yellow-300",
+    groupHoverText: "group-hover:text-yellow-300",
+    fromOpacity: "from-yellow-400/20",
+    toOpacity: "to-amber-500/20",
+    chosenBorderBg: "border-yellow-400/50 bg-yellow-500/10",
+    hoverBorder: "hover:border-yellow-500/30",
+  },
+  "from-red-500": {
+    text: "text-red-400",
+    textMuted: "text-red-200/70",
+    hoverText: "hover:text-red-300",
+    groupHoverText: "group-hover:text-red-300",
+    fromOpacity: "from-red-500/20",
+    toOpacity: "to-red-700/20",
+    chosenBorderBg: "border-red-400/50 bg-red-500/10",
+    hoverBorder: "hover:border-red-500/30",
+  },
+  "from-yellow-500": {
+    text: "text-yellow-400",
+    textMuted: "text-yellow-200/70",
+    hoverText: "hover:text-yellow-300",
+    groupHoverText: "group-hover:text-yellow-300",
+    fromOpacity: "from-yellow-500/20",
+    toOpacity: "to-orange-500/20",
+    chosenBorderBg: "border-yellow-400/50 bg-yellow-500/10",
+    hoverBorder: "hover:border-yellow-500/30",
+  },
+}
+
+const spinnerColorMap: Record<string, string> = {
+  "from-violet-400": "#a78bfa",
+  "from-blue-500": "#3b82f6",
+  "from-orange-400": "#fb923c",
+  "from-emerald-400": "#34d399",
+  "from-pink-400": "#f472b6",
+  "from-cyan-400": "#22d3ee",
+  "from-red-400": "#f87171",
+  "from-purple-400": "#c084fc",
+  "from-yellow-400": "#facc15",
+  "from-red-500": "#ef4444",
+  "from-yellow-500": "#eab308",
+}
+
+function renderSetTitle(title: string, themeTextClass: string) {
+  const match = title.match(/^(Set \d+[:：]|セット\d+[:：]|Đề \d+[:：])\s*(.*)$/i)
+  if (match) {
+    const [, prefix, rest] = match
+    return (
+      <>
+        <span className={themeTextClass}>{prefix} </span>
+        <span className="text-white group-hover:text-white/90 transition-colors">{rest}</span>
+      </>
+    )
+  }
+  return <span className="text-white">{title}</span>
+}
+
 export default function SubjectQuizPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params)
   const { t, lang } = useLanguage()
   const { subjects } = useUserProgress()
   const subject = subjects.find((s) => s.slug === slug)
+
+  const theme = colorThemeMap[subject?.colorFrom ?? ""] ?? {
+    text: "text-cyan-400",
+    textMuted: "text-cyan-200/70",
+    hoverText: "hover:text-cyan-300",
+    groupHoverText: "group-hover:text-cyan-300",
+    fromOpacity: "from-cyan-400/20",
+    toOpacity: "to-blue-500/20",
+    chosenBorderBg: "border-cyan-400/50 bg-cyan-500/10",
+    hoverBorder: "hover:border-cyan-500/30",
+  }
+  const spinnerColor = spinnerColorMap[subject?.colorFrom ?? ""] ?? "#22d3ee"
 
   const [quiz, setQuiz] = useState<Quiz | null>(null)
   const [status, setStatus] = useState<"loading" | "missing" | "ready">("loading")
@@ -197,7 +359,10 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                   setSelectedSet(null)
                   setPhase("set-selection")
                 }}
-                className="inline-flex items-center gap-2 text-sm font-semibold text-white/60 hover:text-cyan-400 transition-colors"
+                className={cn(
+                  "inline-flex items-center gap-2 text-sm font-semibold text-white/60 transition-colors",
+                  theme.hoverText
+                )}
               >
                 <ArrowLeft className="h-4 w-4" />
                 {t("quiz.back_to_sets")}
@@ -205,7 +370,10 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
             ) : (
               <Link
                 href={`/subject/${slug}`}
-                className="inline-flex items-center gap-2 text-sm font-semibold text-white/60 hover:text-cyan-400 transition-colors"
+                className={cn(
+                  "inline-flex items-center gap-2 text-sm font-semibold text-white/60 transition-colors",
+                  theme.hoverText
+                )}
               >
                 <ArrowLeft className="h-4 w-4" />
                 {t("lesson.back_to_subject")} {subject?.name ?? ""}
@@ -215,7 +383,10 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
             {/* Loading */}
             {status === "loading" && (
               <div className="flex flex-col items-center justify-center py-20 space-y-4">
-                <div className="h-10 w-10 animate-spin rounded-full border-4 border-cyan-500/20 border-t-cyan-400" />
+                <div 
+                  className="h-10 w-10 animate-spin rounded-full border-4 border-white/5" 
+                  style={{ borderTopColor: spinnerColor }}
+                />
                 <p className="text-sm text-white/50 font-mono">{t("common.loading")}</p>
               </div>
             )}
@@ -223,10 +394,18 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
             {/* No quiz available */}
             {status === "missing" && (
               <div className="glass-card border border-white/10 rounded-2xl p-10 text-center space-y-4">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10">
-                  <ListChecks className="h-8 w-8 text-cyan-300" />
+                <div className={cn(
+                  "mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br",
+                  theme.fromOpacity,
+                  theme.toOpacity
+                )}>
+                  <ListChecks className={cn("h-8 w-8", theme.text)} />
                 </div>
-                <h1 className="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-purple-400">
+                <h1 className={cn(
+                  "text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r",
+                  subject?.colorFrom ?? "from-cyan-300",
+                  subject?.colorTo ?? "to-purple-400"
+                )}>
                   {t("quiz.coming_soon_title")}
                 </h1>
                 <p className="text-sm text-white/60 max-w-md mx-auto">{t("quiz.coming_soon_desc")}</p>
@@ -241,10 +420,18 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                 className="space-y-6"
               >
                 <div className="glass-card border border-white/10 rounded-2xl p-6 lg:p-8 space-y-3 text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10">
-                    <ListChecks className="h-7 w-7 text-cyan-300" />
+                  <div className={cn(
+                    "mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br",
+                    theme.fromOpacity,
+                    theme.toOpacity
+                  )}>
+                    <ListChecks className={cn("h-7 w-7", theme.text)} />
                   </div>
-                  <h1 className="text-2xl lg:text-3xl font-extrabold tracking-tight text-white mt-2">
+                  <h1 className={cn(
+                    "text-2xl lg:text-3xl font-extrabold tracking-tight mt-2 bg-clip-text text-transparent bg-gradient-to-r",
+                    subject?.colorFrom ?? "from-cyan-400",
+                    subject?.colorTo ?? "to-purple-500"
+                  )}>
                     {pickText(quiz.title, lang)}
                   </h1>
                   <p className="text-sm text-white/60 max-w-md mx-auto">
@@ -261,7 +448,7 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                         className={cn(
                           "px-4 py-1.5 text-sm font-bold rounded-lg transition-all",
                           activeTab === "part-a"
-                            ? "bg-white/10 text-cyan-400 shadow-sm"
+                            ? cn("bg-white/10 shadow-sm", theme.text)
                             : "text-white/60 hover:text-white"
                         )}
                       >
@@ -272,7 +459,7 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                         className={cn(
                           "px-4 py-1.5 text-sm font-bold rounded-lg transition-all",
                           activeTab === "part-b"
-                            ? "bg-white/10 text-cyan-400 shadow-sm"
+                            ? cn("bg-white/10 shadow-sm", theme.text)
                             : "text-white/60 hover:text-white"
                         )}
                       >
@@ -294,12 +481,15 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                             setSelectedSet(set)
                             setPhase("intro")
                           }}
-                          className="glass-card border border-white/10 hover:border-cyan-500/30 rounded-2xl p-5 text-left flex flex-col justify-between space-y-4 hover:bg-white/[0.02] transition-colors group"
+                          className={cn(
+                            "glass-card border border-white/10 rounded-2xl p-5 text-left flex flex-col justify-between space-y-4 hover:bg-white/[0.02] transition-all group",
+                            theme.hoverBorder
+                          )}
                         >
                           <div className="space-y-2 w-full">
                             <div className="flex items-start justify-between gap-4">
-                              <h3 className="font-bold text-white group-hover:text-cyan-300 transition-colors text-base leading-tight">
-                                {pickText(set.title, lang)}
+                              <h3 className="font-bold text-base leading-tight transition-colors">
+                                {renderSetTitle(pickText(set.title, lang), theme.text)}
                               </h3>
                               {setBest ? (
                                 <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 px-2.5 py-0.5 text-xs font-semibold text-amber-300 border border-amber-500/20 font-mono flex-shrink-0">
@@ -317,10 +507,13 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                             </p>
                           </div>
                           <div className="flex items-center justify-between pt-2 border-t border-white/5 text-xs font-mono w-full">
-                            <span className="text-cyan-200/70">
+                            <span className={theme.textMuted}>
                               {set.questions.length} {t("quiz.questions")}
                             </span>
-                            <span className="inline-flex items-center gap-1 text-cyan-400 font-bold group-hover:translate-x-1 transition-transform">
+                            <span className={cn(
+                              "inline-flex items-center gap-1 font-bold group-hover:translate-x-1 transition-transform",
+                              theme.text
+                            )}>
                               {t("action.start")} <ArrowRight className="h-3 w-3" />
                             </span>
                           </div>
@@ -349,16 +542,20 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                 animate={{ opacity: 1, y: 0 }}
                 className="glass-card border border-white/10 rounded-2xl p-8 lg:p-10 text-center space-y-5"
               >
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10">
-                  <ListChecks className="h-8 w-8 text-cyan-300" />
+                <div className={cn(
+                  "mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br",
+                  theme.fromOpacity,
+                  theme.toOpacity
+                )}>
+                  <ListChecks className={cn("h-8 w-8", theme.text)} />
                 </div>
                 <h1 className="text-2xl lg:text-3xl font-extrabold tracking-tight text-white">
-                  {selectedSet ? pickText(selectedSet.title, lang) : pickText(quiz.title, lang)}
+                  {selectedSet ? renderSetTitle(pickText(selectedSet.title, lang), theme.text) : pickText(quiz.title, lang)}
                 </h1>
                 <p className="text-sm text-white/60">
                   {selectedSet ? pickText(selectedSet.description, lang) : t("quiz.intro")}
                 </p>
-                <div className="flex items-center justify-center gap-4 text-sm text-cyan-200/70 font-mono">
+                <div className={cn("flex items-center justify-center gap-4 text-sm font-mono", theme.textMuted)}>
                   <span>
                     {total} {t("quiz.questions")}
                   </span>
@@ -371,7 +568,11 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                 </div>
                 <button
                   onClick={start}
-                  className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:opacity-90 transition-opacity"
+                  className={cn(
+                    "inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white bg-gradient-to-r hover:opacity-90 transition-opacity",
+                    subject?.colorFrom ?? "from-cyan-500",
+                    subject?.colorTo ?? "to-purple-600"
+                  )}
                 >
                   {t("quiz.start")}
                 </button>
@@ -390,7 +591,7 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                 </div>
                 <div className="h-1.5 w-full rounded-full bg-white/10 overflow-hidden">
                   <motion.div
-                    className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-purple-500"
+                    className={cn("h-full rounded-full bg-gradient-to-r", subject?.colorFrom ?? "from-cyan-400", subject?.colorTo ?? "to-purple-500")}
                     initial={{ width: 0 }}
                     animate={{ width: `${(current / total) * 100}%` }}
                     transition={{ duration: 0.3 }}
@@ -429,7 +630,7 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                             className={cn(
                               "w-full flex items-center gap-3 rounded-xl border px-4 py-3 text-left text-sm transition-all",
                               state === "idle" && "border-white/10 bg-white/5 hover:bg-white/10 text-white/85",
-                              state === "chosen" && "border-cyan-400/50 bg-cyan-500/10 text-white",
+                              state === "chosen" && cn("text-white", theme.chosenBorderBg),
                               state === "correct" && "border-emerald-500/40 bg-emerald-500/10 text-emerald-200",
                               state === "wrong" && "border-rose-500/40 bg-rose-500/10 text-rose-200",
                             )}
@@ -452,7 +653,7 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                         animate={{ opacity: 1, height: "auto" }}
                         className="rounded-xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75"
                       >
-                        <span className="font-bold text-cyan-300">{t("quiz.explanation")}: </span>
+                        <span className={cn("font-bold", theme.text)}>{t("quiz.explanation")}: </span>
                         <div className="mt-2 flex flex-col gap-1 text-left">
                           {renderFormattedText(pickText(q.explanation, lang))}
                         </div>
@@ -469,7 +670,7 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                             "rounded-xl px-6 py-2.5 text-sm font-bold transition-all",
                             selected === null
                               ? "bg-white/5 text-white/30 cursor-not-allowed"
-                              : "text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:opacity-90",
+                              : cn("text-white bg-gradient-to-r hover:opacity-90", subject?.colorFrom ?? "from-cyan-500", subject?.colorTo ?? "to-purple-600"),
                           )}
                         >
                           {t("quiz.submit")}
@@ -477,7 +678,11 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                       ) : (
                         <button
                           onClick={next}
-                          className="rounded-xl px-6 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:opacity-90 transition-opacity"
+                          className={cn(
+                            "rounded-xl px-6 py-2.5 text-sm font-bold text-white bg-gradient-to-r hover:opacity-90 transition-opacity",
+                            subject?.colorFrom ?? "from-cyan-500",
+                            subject?.colorTo ?? "to-purple-600"
+                          )}
                         >
                           {current < total - 1 ? t("quiz.next") : t("quiz.finish")}
                         </button>
@@ -495,7 +700,11 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                 animate={{ opacity: 1, y: 0 }}
                 className="glass-card border border-white/10 rounded-2xl p-8 lg:p-10 text-center space-y-5"
               >
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10">
+                <div className={cn(
+                  "mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-white/10 bg-gradient-to-br",
+                  theme.fromOpacity,
+                  theme.toOpacity
+                )}>
                   <Trophy className="h-10 w-10 text-amber-300" />
                 </div>
                 <div>
@@ -517,7 +726,11 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
                 <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
                   <button
                     onClick={start}
-                    className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:opacity-90 transition-opacity"
+                    className={cn(
+                      "inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white bg-gradient-to-r hover:opacity-90 transition-opacity",
+                      subject?.colorFrom ?? "from-cyan-500",
+                      subject?.colorTo ?? "to-purple-600"
+                    )}
                   >
                     <RotateCcw className="h-4 w-4" />
                     {t("quiz.retry")}

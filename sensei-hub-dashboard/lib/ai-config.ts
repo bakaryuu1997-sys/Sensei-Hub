@@ -24,9 +24,29 @@ export const PROVIDER_LABELS: Record<AiProvider, string> = {
 
 /** プロバイダーごとの既定モデル（ユーザー未指定時）。 */
 export const DEFAULT_MODELS: Record<AiProvider, string> = {
-  gemini: "gemini-1.5-flash",
+  gemini: "gemini-2.5-flash",
   openai: "gpt-4o-mini",
-  ollama: "llama3.2",
+  ollama: "llama3.2:3b",
+}
+
+/** プルダウンに出す代表モデル（手入力も可能）。 */
+export const MODEL_PRESETS: Record<AiProvider, string[]> = {
+  gemini: [
+    "gemini-2.5-flash",
+    "gemini-2.5-pro",
+    "gemini-2.0-flash",
+    "gemini-2.0-flash-lite",
+    "gemini-1.5-flash",
+    "gemini-1.5-flash-8b",
+    "gemini-1.5-pro",
+  ],
+  openai: ["gpt-4o-mini", "gpt-4o", "gpt-4.1-mini", "gpt-4.1", "o4-mini", "gpt-3.5-turbo"],
+  ollama: ["llama3.2:3b", "llama3.2:1b", "qwen2.5:3b", "gemma2:2b", "phi3:mini", "mistral", "llama3.1:8b"],
+}
+
+/** クラウドプロバイダーは Base URL 不要（Ollama のみ使用）。 */
+export function usesBaseUrl(provider: AiProvider): boolean {
+  return provider === "ollama"
 }
 
 const emptyProvider = (): ProviderConfig => ({ apiKey: "", baseUrl: "", model: "" })
