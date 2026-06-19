@@ -33,6 +33,7 @@ if (typeof global !== "undefined" && !globalForApiCache.apiCacheCleanup) {
 }
 
 export function getCache<T>(key: string): T | null {
+  if (process.env.NODE_ENV !== "production") return null // Bypass in development
   const entry = cacheMap.get(key)
   if (!entry) return null
   if (Date.now() > entry.expiry) {
