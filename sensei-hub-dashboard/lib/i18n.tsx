@@ -259,6 +259,18 @@ export const translations: Translations = {
   "chat.new": { en: "New chat", ja: "新しいチャット", vi: "Trò chuyện mới" },
   "chat.history": { en: "History", ja: "履歴", vi: "Lịch sử" },
   "chat.no_history": { en: "No saved chats yet.", ja: "保存されたチャットはまだありません。", vi: "Chưa có cuộc trò chuyện nào." },
+  "chat.copy": { en: "Copy", ja: "コピー", vi: "Sao chép" },
+  "chat.copied": { en: "Copied", ja: "コピーしました", vi: "Đã sao chép" },
+  "chat.favorite": { en: "Favorite", ja: "お気に入り", vi: "Yêu thích" },
+  "chat.rename": { en: "Rename", ja: "名前を変更", vi: "Đổi tên" },
+  "chat.export": { en: "Export as Markdown", ja: "Markdown でエクスポート", vi: "Xuất Markdown" },
+  "chat.delete": { en: "Delete", ja: "削除", vi: "Xoá" },
+  "chat.voice": { en: "Voice input", ja: "音声入力", vi: "Nhập bằng giọng nói" },
+  "chat.explain_lesson": {
+    en: "Explain this lesson",
+    ja: "このレッスンを説明して",
+    vi: "Giải thích bài học này",
+  },
 
   // Settings page
   "settings.title": { en: "Settings", ja: "設定", vi: "Cài đặt" },

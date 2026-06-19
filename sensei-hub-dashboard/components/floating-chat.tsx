@@ -3,10 +3,33 @@
 import { useEffect, useRef, useState } from "react"
 import { usePathname } from "next/navigation"
 import { AnimatePresence, motion } from "framer-motion"
-import { MessageCircle, X, Sparkles, Send, Settings as SettingsIcon, Square, Plus, History as HistoryIcon, Trash2, ChevronLeft } from "lucide-react"
+import {
+  MessageCircle,
+  X,
+  Sparkles,
+  Send,
+  Settings as SettingsIcon,
+  Square,
+  Plus,
+  History as HistoryIcon,
+  Trash2,
+  ChevronLeft,
+  Mic,
+  BookOpen,
+  Star,
+  Pencil,
+  Download,
+} from "lucide-react"
 import Link from "next/link"
 import { useLanguage } from "@/lib/i18n"
 import { streamChat, type ChatMessage } from "@/lib/chat-client"
+import { ChatMessage as ChatMessageView } from "@/components/chat-message"
+import { useSpeechRecognition } from "@/lib/use-speech-recognition"
+import {
+  subscribeActiveLesson,
+  getActiveLesson,
+  type ActiveLesson,
+} from "@/lib/lesson-context"
 import {
   getAiSettings,
   setAiSettings,
@@ -20,6 +43,9 @@ import {
   getConversations,
   saveConversation,
   deleteConversation,
+  renameConversation,
+  toggleFavorite,
+  downloadConversationMarkdown,
   newConversationId,
   deriveTitle,
   type Conversation,
@@ -37,11 +63,19 @@ export function FloatingChat() {
   const [streaming, setStreaming] = useState(false)
   const [view, setView] = useState<"chat" | "history">("chat")
   const [conversations, setConversations] = useState<Conversation[]>([])
+  const [lesson, setLesson] = useState<ActiveLesson | null>(null)
+  const [editingId, setEditingId] = useState<string | null>(null)
+  const [editingTitle, setEditingTitle] = useState("")
   // 空で初期化し、初回オープン時に ID を採番（newConversationId は Date.now/Math.random を
   // 使うため、レンダー中に呼ぶと react-hooks/purity に反する）
   const convIdRef = useRef<string>("")
   const abortRef = useRef<AbortController | null>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
+
+  const { supported: voiceSupported, listening, start: startVoice, stop: stopVoice } =
+    useSpeechRecognition(lang, (text) =>
+      setInput((prev) => (prev ? `${prev} ${text}` : text)),
+    )
 
   useEffect(() => {
     if (!open) return
@@ -52,6 +86,12 @@ export function FloatingChat() {
     setActive(ready.includes(s.active) ? s.active : ready[0] || s.active)
     setConversations(getConversations())
   }, [open])
+
+  // 表示中レッスンの本文を購読（「この内容を説明」用）
+  useEffect(() => {
+    setLesson(getActiveLesson())
+    return subscribeActiveLesson(setLesson)
+  }, [])
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" })
@@ -102,21 +142,49 @@ export function FloatingChat() {
     setConversations(getConversations())
   }
 
+  const startRename = (c: Conversation) => {
+    setEditingId(c.id)
+    setEditingTitle(c.title)
+  }
+
+  const commitRename = () => {
+    if (editingId) {
+      renameConversation(editingId, editingTitle)
+      setConversations(getConversations())
+    }
+    setEditingId(null)
+    setEditingTitle("")
+  }
+
+  const onToggleFavorite = (id: string) => {
+    toggleFavorite(id)
+    setConversations(getConversations())
+  }
+
   const stop = () => {
     abortRef.current?.abort()
     setStreaming(false)
   }
 
-  const send = async () => {
-    const text = input.trim()
+  // レッスン文脈を含めた system プロンプトを組み立てる
+  const buildSystemPrompt = (): ChatMessage => {
+    let content =
+      "You are Sensei, a concise, encouraging tutor inside an IT learning app. " +
+      `Answer in the user's language (UI language code: ${lang}). Keep answers short and practical. ` +
+      "Use Markdown for formatting and fenced code blocks for code."
+    if (lesson) {
+      content +=
+        `\n\nThe user is currently viewing this lesson titled "${lesson.title}". ` +
+        "When relevant, ground your answer in it:\n\n" +
+        `"""\n${lesson.text}\n"""`
+    }
+    return { role: "system", content }
+  }
+
+  const send = async (override?: string) => {
+    const text = (override ?? input).trim()
     if (!text || streaming || !settings || !activeConfig) return
 
-    const systemPrompt: ChatMessage = {
-      role: "system",
-      content:
-        "You are Sensei, a concise, encouraging tutor inside an IT learning app. " +
-        `Answer in the user's language (UI language code: ${lang}). Keep answers short and practical.`,
-    }
     const userMsg: ChatMessage = { role: "user", content: text }
     const history = [...messages, userMsg]
     setMessages([...history, { role: "assistant", content: "" }])
@@ -130,7 +198,7 @@ export function FloatingChat() {
     const outcome = await streamChat({
       provider: active,
       config: activeConfig,
-      messages: [systemPrompt, ...history],
+      messages: [buildSystemPrompt(), ...history],
       signal: controller.signal,
       onDelta: (delta) => {
         acc += delta
@@ -163,6 +231,9 @@ export function FloatingChat() {
       messages: finalMessages,
     })
   }
+
+  const onLesson = pathname?.includes("/lesson/")
+  const showLessonChip = onLesson && lesson && messages.length === 0 && view === "chat"
 
   return (
     <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
@@ -226,12 +297,35 @@ export function FloatingChat() {
                   <p className="text-sm text-white/40 text-center mt-6">{t("chat.no_history")}</p>
                 ) : (
                   conversations.map((c) => (
-                    <div key={c.id} className="group flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 hover:bg-white/[0.06]">
-                      <button onClick={() => loadConversation(c)} className="flex-1 min-w-0 text-left">
-                        <span className="block truncate text-sm text-white/85">{c.title}</span>
-                        <span className="text-[10px] text-white/35 font-mono">{c.messages.length} msg</span>
+                    <div key={c.id} className="group flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.03] px-2.5 py-2 hover:bg-white/[0.06]">
+                      <button onClick={() => onToggleFavorite(c.id)} className={cn("p-1", c.favorite ? "text-amber-400" : "text-white/30 hover:text-amber-400")} aria-label={t("chat.favorite")}>
+                        <Star className={cn("h-3.5 w-3.5", c.favorite && "fill-current")} />
                       </button>
-                      <button onClick={() => removeConversation(c.id)} className="text-white/30 hover:text-rose-400 p-1" aria-label="delete">
+                      {editingId === c.id ? (
+                        <input
+                          value={editingTitle}
+                          autoFocus
+                          onChange={(e) => setEditingTitle(e.target.value)}
+                          onBlur={commitRename}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter") commitRename()
+                            if (e.key === "Escape") { setEditingId(null); setEditingTitle("") }
+                          }}
+                          className="flex-1 min-w-0 rounded-md bg-white/10 border border-cyan-400/40 px-2 py-1 text-sm text-white outline-none"
+                        />
+                      ) : (
+                        <button onClick={() => loadConversation(c)} className="flex-1 min-w-0 text-left">
+                          <span className="block truncate text-sm text-white/85">{c.title}</span>
+                          <span className="text-[10px] text-white/35 font-mono">{c.messages.length} msg</span>
+                        </button>
+                      )}
+                      <button onClick={() => startRename(c)} className="text-white/30 hover:text-cyan-400 p-1 opacity-0 group-hover:opacity-100" aria-label={t("chat.rename")}>
+                        <Pencil className="h-3.5 w-3.5" />
+                      </button>
+                      <button onClick={() => downloadConversationMarkdown(c)} className="text-white/30 hover:text-emerald-400 p-1 opacity-0 group-hover:opacity-100" aria-label={t("chat.export")}>
+                        <Download className="h-3.5 w-3.5" />
+                      </button>
+                      <button onClick={() => removeConversation(c.id)} className="text-white/30 hover:text-rose-400 p-1 opacity-0 group-hover:opacity-100" aria-label={t("chat.delete")}>
                         <Trash2 className="h-3.5 w-3.5" />
                       </button>
                     </div>
@@ -244,23 +338,58 @@ export function FloatingChat() {
                   {messages.length === 0 && (
                     <p className="text-sm text-white/45 text-center mt-6">{t("chat.greeting")}</p>
                   )}
-                  {messages.map((m, i) => (
-                    <div
-                      key={i}
-                      className={cn(
-                        "max-w-[85%] rounded-2xl px-3.5 py-2 text-sm leading-relaxed whitespace-pre-wrap",
-                        m.role === "user"
-                          ? "ml-auto bg-gradient-to-r from-cyan-500/30 to-purple-500/20 text-white"
-                          : "mr-auto bg-white/5 text-white/85 border border-white/10",
-                      )}
-                    >
-                      {m.content || (streaming && i === messages.length - 1 ? "…" : "")}
-                    </div>
-                  ))}
+                  {messages.map((m, i) =>
+                    m.role === "user" ? (
+                      <div
+                        key={i}
+                        className="ml-auto max-w-[85%] rounded-2xl px-3.5 py-2 text-sm leading-relaxed whitespace-pre-wrap bg-gradient-to-r from-cyan-500/30 to-purple-500/20 text-white"
+                      >
+                        {m.content}
+                      </div>
+                    ) : (
+                      <div
+                        key={i}
+                        className="mr-auto max-w-[90%] rounded-2xl px-3.5 py-2 bg-white/5 text-white/85 border border-white/10"
+                      >
+                        {m.content ? (
+                          <ChatMessageView content={m.content} />
+                        ) : (
+                          <span className="text-sm">{streaming && i === messages.length - 1 ? "…" : ""}</span>
+                        )}
+                      </div>
+                    ),
+                  )}
                 </div>
+
+                {/* レッスン文脈のクイックアクション */}
+                {showLessonChip && (
+                  <div className="px-3 pb-1">
+                    <button
+                      onClick={() => send(t("chat.explain_lesson"))}
+                      className="flex w-full items-center gap-2 rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-3 py-2 text-left text-xs text-cyan-100 hover:bg-cyan-500/20 transition-colors"
+                    >
+                      <BookOpen className="h-3.5 w-3.5 flex-shrink-0" />
+                      <span className="truncate">{t("chat.explain_lesson")}</span>
+                    </button>
+                  </div>
+                )}
 
                 {/* Input */}
                 <div className="flex items-center gap-2 border-t border-white/10 p-3">
+                  {voiceSupported && (
+                    <button
+                      onClick={listening ? stopVoice : startVoice}
+                      disabled={streaming}
+                      className={cn(
+                        "flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border border-white/10 transition-colors disabled:opacity-40",
+                        listening ? "bg-rose-500/80 text-white animate-pulse" : "bg-white/5 text-white/60 hover:text-white",
+                      )}
+                      aria-label={t("chat.voice")}
+                      title={t("chat.voice")}
+                    >
+                      <Mic className="h-4 w-4" />
+                    </button>
+                  )}
                   <input
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
@@ -275,7 +404,7 @@ export function FloatingChat() {
                     </button>
                   ) : (
                     <button
-                      onClick={send}
+                      onClick={() => send()}
                       disabled={!input.trim()}
                       className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white disabled:opacity-40"
                       aria-label={t("chat.send")}

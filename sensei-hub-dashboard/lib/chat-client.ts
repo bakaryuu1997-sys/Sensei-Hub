@@ -70,12 +70,25 @@ async function sendCloud(opts: StreamOptions): Promise<ChatOutcome> {
     }),
     signal: opts.signal,
   })
-  const data = await res.json().catch(() => ({}))
+  // エラー時は JSON（{ error }）を返す。成功時はプレーンテキストのストリーム。
   if (!res.ok) {
-    return { ok: false, error: data?.error || `Error ${res.status}` }
+    const data = await res.json().catch(() => ({}))
+    return { ok: false, error: (data as any)?.error || `Error ${res.status}` }
   }
-  // クラウドは現状非ストリーミング。全文を 1 回で渡す。
-  opts.onDelta(data.reply ?? "")
+  if (!res.body) {
+    // 念のためのフォールバック（ストリーム非対応環境）
+    opts.onDelta(await res.text())
+    return { ok: true }
+  }
+  // サーバーが流すテキスト差分をそのまま逐次表示する。
+  const reader = res.body.getReader()
+  const decoder = new TextDecoder()
+  while (true) {
+    const { done, value } = await reader.read()
+    if (done) break
+    const piece = decoder.decode(value, { stream: true })
+    if (piece) opts.onDelta(piece)
+  }
   return { ok: true }
 }
 

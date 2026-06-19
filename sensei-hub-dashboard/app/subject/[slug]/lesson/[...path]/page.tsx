@@ -14,6 +14,7 @@ import { Starfield } from "@/components/dashboard/starfield"
 import { useLanguage } from "@/lib/i18n"
 import { useUserProgress } from "@/components/user-progress-provider"
 import { setLastLesson } from "@/lib/last-lesson"
+import { setActiveLesson, clearActiveLesson } from "@/lib/lesson-context"
 import { recordActivity, recordLessonView } from "@/lib/activity"
 import { cn } from "@/lib/utils"
 
@@ -104,6 +105,8 @@ export default function LessonPage({
           setLastLesson({ slug, path: lessonPath, title: lessonTitle, ts: viewedAt })
           recordLessonView({ slug, path: lessonPath, title: lessonTitle, ts: viewedAt })
           recordActivity()
+          // チャットの「この内容を説明」用に本文を共有する
+          setActiveLesson(lessonTitle, contentData?.htmlContent || "")
         }
       } catch (err: any) {
         console.error("Error loading lesson:", err)
@@ -118,6 +121,7 @@ export default function LessonPage({
 
     return () => {
       active = false
+      clearActiveLesson()
     }
   }, [slug, lessonPath, lang])
 
