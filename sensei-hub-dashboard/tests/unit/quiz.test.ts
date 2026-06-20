@@ -112,7 +112,7 @@ describe("Quiz Content Schema Validation", () => {
     expect(quiz.title.vi).toBeDefined()
     expect(quiz.sets).toBeDefined()
     expect(Array.isArray(quiz.sets)).toBe(true)
-    expect(quiz.sets?.length).toBe(5) // Exactly 5 sets
+    expect(quiz.sets?.length).toBe(15) // Exactly 15 sets
 
     quiz.sets?.forEach((set, setIdx) => {
       // Verify set structure
@@ -175,7 +175,7 @@ describe("Quiz Content Schema Validation", () => {
     expect(quiz.title.vi).toBeDefined()
     expect(quiz.sets).toBeDefined()
     expect(Array.isArray(quiz.sets)).toBe(true)
-    expect(quiz.sets?.length).toBe(15) // 10 sets of Part A + 5 sets of Part B
+    expect(quiz.sets?.length).toBe(25) // 10 sets of Part A + 15 sets of Part B
 
     quiz.sets?.forEach((set, setIdx) => {
       // Verify set structure
@@ -246,7 +246,7 @@ describe("Quiz Content Schema Validation", () => {
     expect(quiz.title.vi).toBeDefined()
     expect(quiz.sets).toBeDefined()
     expect(Array.isArray(quiz.sets)).toBe(true)
-    expect(quiz.sets?.length).toBe(10) // Exactly 10 sets
+    expect(quiz.sets?.length).toBe(20) // Exactly 20 sets
 
     quiz.sets?.forEach((set, setIdx) => {
       // Verify set structure
@@ -309,7 +309,7 @@ describe("Quiz Content Schema Validation", () => {
     expect(quiz.title.vi).toBeDefined()
     expect(quiz.sets).toBeDefined()
     expect(Array.isArray(quiz.sets)).toBe(true)
-    expect(quiz.sets?.length).toBe(10) // Exactly 10 sets
+    expect(quiz.sets?.length).toBe(20) // Exactly 20 sets
 
     quiz.sets?.forEach((set, setIdx) => {
       // Verify set structure
@@ -372,7 +372,7 @@ describe("Quiz Content Schema Validation", () => {
     expect(quiz.title.vi).toBeDefined()
     expect(quiz.sets).toBeDefined()
     expect(Array.isArray(quiz.sets)).toBe(true)
-    expect(quiz.sets?.length).toBe(10) // Exactly 10 sets
+    expect(quiz.sets?.length).toBe(20) // Exactly 20 sets
 
     quiz.sets?.forEach((set, setIdx) => {
       // Verify set structure
@@ -435,7 +435,7 @@ describe("Quiz Content Schema Validation", () => {
     expect(quiz.title.vi).toBeDefined()
     expect(quiz.sets).toBeDefined()
     expect(Array.isArray(quiz.sets)).toBe(true)
-    expect(quiz.sets?.length).toBe(10) // Exactly 10 sets
+    expect(quiz.sets?.length).toBe(20) // Exactly 20 sets
 
     quiz.sets?.forEach((set, setIdx) => {
       // Verify set structure
@@ -498,7 +498,7 @@ describe("Quiz Content Schema Validation", () => {
     expect(quiz.title.vi).toBeDefined()
     expect(quiz.sets).toBeDefined()
     expect(Array.isArray(quiz.sets)).toBe(true)
-    expect(quiz.sets?.length).toBe(10) // Exactly 10 sets
+    expect(quiz.sets?.length).toBe(20) // Exactly 20 sets
 
     quiz.sets?.forEach((set, setIdx) => {
       // Verify set structure
@@ -561,7 +561,7 @@ describe("Quiz Content Schema Validation", () => {
     expect(quiz.title.vi).toBeDefined()
     expect(quiz.sets).toBeDefined()
     expect(Array.isArray(quiz.sets)).toBe(true)
-    expect(quiz.sets?.length).toBe(10) // Exactly 10 sets
+    expect(quiz.sets?.length).toBe(20) // Exactly 20 sets
 
     quiz.sets?.forEach((set, setIdx) => {
       // Verify set structure
@@ -624,7 +624,7 @@ describe("Quiz Content Schema Validation", () => {
     expect(quiz.title.vi).toBeDefined()
     expect(quiz.sets).toBeDefined()
     expect(Array.isArray(quiz.sets)).toBe(true)
-    expect(quiz.sets?.length).toBe(10) // Exactly 10 sets
+    expect(quiz.sets?.length).toBe(20) // Exactly 20 sets
 
     quiz.sets?.forEach((set, setIdx) => {
       // Verify set structure
@@ -687,7 +687,7 @@ describe("Quiz Content Schema Validation", () => {
     expect(quiz.title.vi).toBeDefined()
     expect(quiz.sets).toBeDefined()
     expect(Array.isArray(quiz.sets)).toBe(true)
-    expect(quiz.sets?.length).toBe(10) // Exactly 10 sets
+    expect(quiz.sets?.length).toBe(20) // Exactly 20 sets
 
     quiz.sets?.forEach((set, setIdx) => {
       // Verify set structure
@@ -750,7 +750,7 @@ describe("Quiz Content Schema Validation", () => {
     expect(quiz.title.vi).toBeDefined()
     expect(quiz.sets).toBeDefined()
     expect(Array.isArray(quiz.sets)).toBe(true)
-    expect(quiz.sets?.length).toBe(10) // Exactly 10 sets
+    expect(quiz.sets?.length).toBe(20) // Exactly 20 sets
 
     quiz.sets?.forEach((set, setIdx) => {
       // Verify set structure

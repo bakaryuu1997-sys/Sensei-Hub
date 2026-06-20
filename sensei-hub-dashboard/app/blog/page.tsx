@@ -9,8 +9,17 @@ import { TopBar } from "@/components/dashboard/top-bar"
 import { Starfield } from "@/components/dashboard/starfield"
 import { Footer } from "@/components/footer"
 import { useLanguage } from "@/lib/i18n"
+import { cn } from "@/lib/utils"
 
 type NewsItem = { title: string; link: string; source: string; pubDate: string }
+
+// ニュースのカテゴリタブ（id は API の category、ラベルは i18n キー）
+const CATEGORIES: { id: string; labelKey: string }[] = [
+  { id: "ai", labelKey: "blog.cat.ai" },
+  { id: "labs", labelKey: "blog.cat.labs" },
+  { id: "tech", labelKey: "blog.cat.tech" },
+  { id: "dev", labelKey: "blog.cat.dev" },
+]
 
 function formatDate(pubDate: string, lang: string): string {
   const d = new Date(pubDate)
@@ -21,13 +30,14 @@ function formatDate(pubDate: string, lang: string): string {
 
 export default function BlogPage() {
   const { t, lang } = useLanguage()
+  const [category, setCategory] = useState<string>("ai")
   const [items, setItems] = useState<NewsItem[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     let active = true
     setLoading(true)
-    fetch(`/api/news?lang=${lang}`)
+    fetch(`/api/news?lang=${lang}&category=${category}`)
       .then((res) => (res.ok ? res.json() : { items: [] }))
       .then((data) => {
         if (active) {
@@ -39,7 +49,7 @@ export default function BlogPage() {
     return () => {
       active = false
     }
-  }, [lang])
+  }, [lang, category])
 
   return (
     <div className="relative min-h-screen bg-slate-950 text-slate-100">
@@ -63,6 +73,26 @@ export default function BlogPage() {
                 <h1 className="text-2xl font-extrabold tracking-tight text-white">{t("blog.title")}</h1>
                 <p className="text-sm text-white/50">{t("blog.subtitle")}</p>
               </div>
+            </div>
+
+            {/* Category tabs */}
+            <div className="flex flex-wrap gap-2" role="tablist">
+              {CATEGORIES.map((c) => (
+                <button
+                  key={c.id}
+                  role="tab"
+                  aria-selected={category === c.id}
+                  onClick={() => setCategory(c.id)}
+                  className={cn(
+                    "rounded-xl border px-3.5 py-1.5 text-xs font-semibold transition-all",
+                    category === c.id
+                      ? "border-cyan-400/40 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-100"
+                      : "border-white/10 bg-white/[0.03] text-white/60 hover:bg-white/[0.06] hover:text-white",
+                  )}
+                >
+                  {t(c.labelKey)}
+                </button>
+              ))}
             </div>
 
             {/* News list */}

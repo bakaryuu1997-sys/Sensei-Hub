@@ -366,9 +366,9 @@ export const translations: Translations = {
   // Blog / AI news
   "blog.title": { en: "Blog & News", ja: "ブログ・ニュース", vi: "Blog & Tin tức" },
   "blog.subtitle": {
-    en: "Latest AI news, refreshed automatically in your language",
-    ja: "最新の AI ニュースをあなたの言語で自動更新",
-    vi: "Tin tức AI mới nhất, tự động cập nhật theo ngôn ngữ của bạn",
+    en: "Latest AI, tech and dev news — auto-updated in your language",
+    ja: "AI・テック・開発の最新ニュースをあなたの言語で自動更新",
+    vi: "Tin AI, công nghệ & lập trình mới nhất, tự động cập nhật theo ngôn ngữ của bạn",
   },
   "blog.empty": {
     en: "Couldn't load news right now. Please try again later.",
@@ -376,10 +376,15 @@ export const translations: Translations = {
     vi: "Hiện chưa tải được tin tức. Vui lòng thử lại sau.",
   },
   "blog.source_note": {
-    en: "Headlines via Google News · updated every 30 minutes",
-    ja: "見出しは Google ニュース提供・30 分ごとに更新",
-    vi: "Tiêu đề từ Google News · cập nhật mỗi 30 phút",
+    en: "Headlines via Google News · refreshed every few hours",
+    ja: "見出しは Google ニュース提供・数時間ごとに更新",
+    vi: "Tiêu đề từ Google News · cập nhật vài giờ một lần",
   },
+  // ニュースのカテゴリタブ
+  "blog.cat.ai": { en: "AI", ja: "AI", vi: "AI" },
+  "blog.cat.labs": { en: "AI Labs", ja: "AIラボ", vi: "Hãng AI" },
+  "blog.cat.tech": { en: "Tech & Trends", ja: "テック・トレンド", vi: "Công nghệ & Xu hướng" },
+  "blog.cat.dev": { en: "Dev", ja: "開発", vi: "Lập trình" },
 
   // Search command palette
   "search.placeholder": { en: "Search subjects and lessons...", ja: "科目やレッスンを検索...", vi: "Tìm môn học và bài học..." },
