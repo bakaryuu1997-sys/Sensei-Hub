@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { Newspaper, ExternalLink, RefreshCw } from "lucide-react"
 
@@ -21,35 +21,89 @@ const CATEGORIES: { id: string; labelKey: string }[] = [
   { id: "dev", labelKey: "blog.cat.dev" },
 ]
 
+// 最後に見たカテゴリの保存先（次回 /blog を開いたとき復元する）
+const STORAGE_KEY = "sensei-blog-category"
+
+function localeOf(lang: string): string {
+  return lang === "ja" ? "ja-JP" : lang === "vi" ? "vi-VN" : "en-US"
+}
+
 function formatDate(pubDate: string, lang: string): string {
   const d = new Date(pubDate)
   if (isNaN(d.getTime())) return ""
-  const locale = lang === "ja" ? "ja-JP" : lang === "vi" ? "vi-VN" : "en-US"
-  return d.toLocaleDateString(locale, { year: "numeric", month: "short", day: "numeric" })
+  return d.toLocaleDateString(localeOf(lang), { year: "numeric", month: "short", day: "numeric" })
+}
+
+// 相対時間（「2時間前」など）。30 日より前は絶対日付にフォールバック。
+function formatRelative(pubDate: string, lang: string, justNow: string): string {
+  const ms = new Date(pubDate).getTime()
+  if (Number.isNaN(ms)) return ""
+  const sec = Math.round((Date.now() - ms) / 1000)
+  if (sec < 60) return justNow
+  const rtf = new Intl.RelativeTimeFormat(localeOf(lang), { numeric: "auto" })
+  const min = Math.round(sec / 60)
+  if (min < 60) return rtf.format(-min, "minute")
+  const hr = Math.round(min / 60)
+  if (hr < 24) return rtf.format(-hr, "hour")
+  const day = Math.round(hr / 24)
+  if (day < 30) return rtf.format(-day, "day")
+  return formatDate(pubDate, lang)
 }
 
 export default function BlogPage() {
   const { t, lang } = useLanguage()
   const [category, setCategory] = useState<string>("ai")
+  const [hydrated, setHydrated] = useState(false)
   const [items, setItems] = useState<NewsItem[]>([])
   const [loading, setLoading] = useState(true)
+  // 最新リクエストだけを反映するためのガード（タブ連打や更新の競合を防ぐ）
+  const reqRef = useRef(0)
 
-  useEffect(() => {
-    let active = true
-    setLoading(true)
-    fetch(`/api/news?lang=${lang}&category=${category}`)
-      .then((res) => (res.ok ? res.json() : { items: [] }))
-      .then((data) => {
-        if (active) {
+  const load = useCallback(
+    (fresh = false) => {
+      const id = ++reqRef.current
+      setLoading(true)
+      fetch(`/api/news?lang=${lang}&category=${category}${fresh ? "&refresh=1" : ""}`)
+        .then((res) => (res.ok ? res.json() : { items: [] }))
+        .then((data) => {
+          if (reqRef.current !== id) return // 古いレスポンスは無視
           setItems(data.items || [])
           setLoading(false)
-        }
-      })
-      .catch(() => active && setLoading(false))
-    return () => {
-      active = false
+        })
+        .catch(() => {
+          if (reqRef.current === id) setLoading(false)
+        })
+    },
+    [lang, category],
+  )
+
+  // 初回マウント時に保存済みカテゴリを復元してから読み込みを開始する
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY)
+      if (saved && CATEGORIES.some((c) => c.id === saved)) setCategory(saved)
+    } catch {
+      // localStorage 不可時は既定（ai）のまま
     }
-  }, [lang, category])
+    setHydrated(true)
+  }, [])
+
+  // 復元後・言語/カテゴリ変更時に読み込む（復元前は走らせない）
+  useEffect(() => {
+    if (hydrated) load()
+  }, [hydrated, load])
+
+  const selectCategory = (id: string) => {
+    if (id === category) return
+    setCategory(id)
+    try {
+      localStorage.setItem(STORAGE_KEY, id)
+    } catch {
+      // 無視
+    }
+  }
+
+  const showSkeleton = loading && items.length === 0
 
   return (
     <div className="relative min-h-screen bg-slate-950 text-slate-100">
@@ -75,31 +129,46 @@ export default function BlogPage() {
               </div>
             </div>
 
-            {/* Category tabs */}
-            <div className="flex flex-wrap gap-2" role="tablist">
-              {CATEGORIES.map((c) => (
-                <button
-                  key={c.id}
-                  role="tab"
-                  aria-selected={category === c.id}
-                  onClick={() => setCategory(c.id)}
-                  className={cn(
-                    "rounded-xl border px-3.5 py-1.5 text-xs font-semibold transition-all",
-                    category === c.id
-                      ? "border-cyan-400/40 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-100"
-                      : "border-white/10 bg-white/[0.03] text-white/60 hover:bg-white/[0.06] hover:text-white",
-                  )}
-                >
-                  {t(c.labelKey)}
-                </button>
-              ))}
+            {/* Category tabs + refresh */}
+            <div className="flex items-center gap-2">
+              <div className="flex flex-1 flex-wrap gap-2" role="tablist">
+                {CATEGORIES.map((c) => (
+                  <button
+                    key={c.id}
+                    role="tab"
+                    aria-selected={category === c.id}
+                    onClick={() => selectCategory(c.id)}
+                    className={cn(
+                      "rounded-xl border px-3.5 py-1.5 text-xs font-semibold transition-all",
+                      category === c.id
+                        ? "border-cyan-400/40 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-100"
+                        : "border-white/10 bg-white/[0.03] text-white/60 hover:bg-white/[0.06] hover:text-white",
+                    )}
+                  >
+                    {t(c.labelKey)}
+                  </button>
+                ))}
+              </div>
+              <button
+                onClick={() => load(true)}
+                disabled={loading}
+                title={t("blog.refresh")}
+                aria-label={t("blog.refresh")}
+                className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-white/60 hover:bg-white/[0.06] hover:text-white disabled:opacity-50 transition-all"
+              >
+                <RefreshCw className={cn("h-4 w-4", loading && "animate-spin")} />
+              </button>
             </div>
 
             {/* News list */}
-            {loading ? (
-              <div className="flex flex-col items-center justify-center py-20 space-y-4">
-                <div className="h-10 w-10 animate-spin rounded-full border-4 border-cyan-500/20 border-t-cyan-400" />
-                <p className="text-sm text-white/50 font-mono">{t("common.loading")}</p>
+            {showSkeleton ? (
+              <div className="space-y-3">
+                {Array.from({ length: 6 }).map((_, i) => (
+                  <div key={i} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                    <div className="h-4 w-3/4 rounded bg-white/10 animate-pulse" />
+                    <div className="mt-2.5 h-3 w-1/3 rounded bg-white/5 animate-pulse" />
+                  </div>
+                ))}
               </div>
             ) : items.length === 0 ? (
               <div className="glass-card border border-white/10 rounded-2xl p-10 text-center space-y-3">
@@ -107,7 +176,7 @@ export default function BlogPage() {
                 <p className="text-sm text-white/60">{t("blog.empty")}</p>
               </div>
             ) : (
-              <div className="space-y-3">
+              <div className={cn("space-y-3 transition-opacity", loading && "opacity-50")}>
                 {items.map((item, i) => (
                   <motion.a
                     key={item.link || i}
@@ -125,7 +194,7 @@ export default function BlogPage() {
                       </h2>
                       <div className="mt-1.5 flex items-center gap-2 text-xs text-white/40 font-mono">
                         {item.source && <span className="truncate">{item.source}</span>}
-                        {item.pubDate && <span>· {formatDate(item.pubDate, lang)}</span>}
+                        {item.pubDate && <span>· {formatRelative(item.pubDate, lang, t("blog.just_now"))}</span>}
                       </div>
                     </div>
                     <ExternalLink className="h-4 w-4 flex-shrink-0 text-white/30 group-hover:text-cyan-300 transition-colors mt-0.5" />

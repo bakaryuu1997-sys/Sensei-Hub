@@ -385,6 +385,8 @@ export const translations: Translations = {
   "blog.cat.labs": { en: "AI Labs", ja: "AIラボ", vi: "Hãng AI" },
   "blog.cat.tech": { en: "Tech & Trends", ja: "テック・トレンド", vi: "Công nghệ & Xu hướng" },
   "blog.cat.dev": { en: "Dev", ja: "開発", vi: "Lập trình" },
+  "blog.refresh": { en: "Refresh", ja: "更新", vi: "Làm mới" },
+  "blog.just_now": { en: "just now", ja: "たった今", vi: "vừa xong" },
 
   // Search command palette
   "search.placeholder": { en: "Search subjects and lessons...", ja: "科目やレッスンを検索...", vi: "Tìm môn học và bài học..." },

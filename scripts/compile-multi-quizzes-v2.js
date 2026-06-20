@@ -18,9 +18,14 @@ const configs = [
 configs.forEach((cfg) => {
   const tempDir = path.resolve(__dirname, `../lessons/quizzes/temp-add-${cfg.name}`);
   const baseFile = path.resolve(__dirname, `../lessons/quizzes/${cfg.name}.json`);
-  if (!fs.existsSync(tempDir)) return;
+
+  if (!fs.existsSync(tempDir)) {
+    console.log(`[Info] Temporary directory for ${cfg.name} not found. Skipping.`);
+    return;
+  }
+
   if (!fs.existsSync(baseFile)) {
-    console.error(`Base file ${baseFile} does not exist.`);
+    console.error(`[Error] Base file ${baseFile} does not exist.`);
     return;
   }
 
@@ -28,12 +33,18 @@ configs.forEach((cfg) => {
   try {
     quiz = JSON.parse(fs.readFileSync(baseFile, 'utf8'));
   } catch (e) {
-    console.error(`Error parsing base file ${baseFile}:`, e);
+    console.error(`[Error] Parsing base file ${baseFile}:`, e);
     return;
   }
 
   if (!quiz.sets) {
     quiz.sets = [];
+  }
+
+  const expectedFinalCount = cfg.end;
+  if (quiz.sets.length >= expectedFinalCount) {
+    console.log(`[Info] ${cfg.name}.json is already fully compiled (${quiz.sets.length} sets). Skipping.`);
+    return;
   }
 
   const existingSetIds = new Set(quiz.sets.map(s => s.id));
@@ -47,19 +58,28 @@ configs.forEach((cfg) => {
         if (!existingSetIds.has(parsed.id)) {
           newSets.push(parsed);
         } else {
-          console.log(`Set ${parsed.id} already exists in ${cfg.name}.json. Skipping duplicate.`);
+          console.log(`[Info] Set ${parsed.id} already exists in ${cfg.name}.json. Skipping duplicate.`);
         }
       } catch (e) {
-        console.error(`Error parsing ${filePath}:`, e);
+        console.error(`[Error] Parsing ${filePath}:`, e);
       }
     }
   }
 
-  if (newSets.length === (cfg.end - cfg.start + 1)) {
-    quiz.sets.push(...newSets);
-    fs.writeFileSync(baseFile, JSON.stringify(quiz, null, 2), 'utf8');
-    console.log(`Successfully appended ${newSets.length} sets to ${cfg.name}.json.`);
+  const finalCount = quiz.sets.length + newSets.length;
+  if (finalCount === expectedFinalCount) {
+    if (newSets.length > 0) {
+      quiz.sets.push(...newSets);
+      try {
+        fs.writeFileSync(baseFile, JSON.stringify(quiz, null, 2), 'utf8');
+        console.log(`[Success] Appended ${newSets.length} sets to ${cfg.name}.json (Total: ${finalCount}).`);
+      } catch (e) {
+        console.error(`[Error] Writing to ${baseFile}:`, e);
+      }
+    } else {
+      console.log(`[Info] No new sets to append for ${cfg.name}.json.`);
+    }
   } else {
-    console.warn(`Warning: ${cfg.name} has only ${newSets.length} new sets out of ${cfg.end - cfg.start + 1}. Skipping compile.`);
+    console.warn(`[Warning] ${cfg.name}.json has ${quiz.sets.length} sets, and found ${newSets.length} new sets. Target is ${expectedFinalCount} (current sum: ${finalCount}). Skipping compile.`);
   }
 });

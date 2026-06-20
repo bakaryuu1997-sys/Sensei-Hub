@@ -28,15 +28,19 @@ export async function GET(request: NextRequest) {
     const params = new URL(request.url).searchParams
     const lang = params.get("lang") || "en"
     const category = normalizeCategory(params.get("category"))
+    // refresh=1 のときはキャッシュを無視して最新を取り直す（「更新」ボタン用）
+    const fresh = params.get("refresh") === "1"
     const cacheKey = `news/${category}/${lang}`
 
-    const cached = getCache<{ items: NewsItem[] }>(cacheKey)
-    if (cached) return NextResponse.json(cached)
+    if (!fresh) {
+      const cached = getCache<{ items: NewsItem[] }>(cacheKey)
+      if (cached) return NextResponse.json(cached)
+    }
 
     const res = await fetch(buildFeedUrl(category, lang), {
       headers: { "User-Agent": "Mozilla/5.0 (SenseiHub news reader)" },
-      // Next の fetch キャッシュも併用（約 6 時間）
-      next: { revalidate: NEWS_TTL_MS / 1000 },
+      // 通常は約 6 時間キャッシュ。refresh 時はキャッシュを使わず取り直す。
+      ...(fresh ? { cache: "no-store" as const } : { next: { revalidate: NEWS_TTL_MS / 1000 } }),
     })
     if (!res.ok) {
       return NextResponse.json({ items: [] })
