@@ -68,10 +68,12 @@ Sensei-Hub/
 │   ├── app/                  # App Router のページ + API ルート
 │   ├── components/           # UI コンポーネント（components/ui に shadcn/ui）
 │   ├── lib/                  # i18n、教科データ、markdown/検索ヘルパー、prisma
-│   ├── prisma/               # schema.prisma（SQLite）
-│   ├── Dockerfile            # 本番イメージ
-│   └── docker-entrypoint.sh  # prisma db push + next start
-├── docker-compose.yml        # 単一 EC2 向けデプロイ
+│   └── prisma/               # schema.prisma（SQLite）
+├── Dockerfile                # 本番イメージ（ビルドはリポジトリルートから: docker build -t sensei-hub .）
+├── docker-entrypoint.sh      # prisma db push + next start
+├── .dockerignore
+├── docker-compose.yml        # EC2 でビルドして起動
+├── docker-compose.prod.yml   # ECR のビルド済みイメージを pull して起動
 ├── docs/                     # プロジェクトドキュメント
 └── LICENSE                   # MIT
 ```

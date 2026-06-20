@@ -53,7 +53,7 @@ docker compose up -d --build
 
 処理の流れ:
 
-- イメージは `sensei-hub-dashboard/Dockerfile` からビルド（ビルドコンテキストはリポジトリ
+- イメージはリポジトリルートの `Dockerfile` からビルド（ビルドコンテキストはリポジトリ
   ルートなので `lessons/` も含まれる）。
 - 起動時に `docker-entrypoint.sh` が `prisma db push` で SQLite スキーマを作成し、
   ポート 3000 で `next start` を実行。
@@ -91,9 +91,8 @@ export ECR_URI="$ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO"
 ビルドコンテキストは**リポジトリルート**（`lessons/` を含めるため）。
 
 ```bash
-# リポジトリルートで実行
+# リポジトリルートで実行（Dockerfile はルートにある）
 docker build \
-  -f sensei-hub-dashboard/Dockerfile \
   --build-arg NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_live_xxxxxxxx \
   -t "$ECR_URI:latest" -t "$ECR_URI:$(git rev-parse --short HEAD)" \
   .

@@ -324,8 +324,8 @@ $ export ECR_URI="$ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/sensei-hub"
 # 初回のみ: リポジトリ作成
 $ aws ecr create-repository --repository-name sensei-hub --region "$AWS_REGION" || true
 
-# ビルド（NEXT_PUBLIC_* はビルド時に埋め込む）
-$ docker build -f sensei-hub-dashboard/Dockerfile \
+# ビルド（リポジトリルートで実行。Dockerfile はルートにある。NEXT_PUBLIC_* はビルド時に埋め込む）
+$ docker build \
     --build-arg NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_live_xxxxxxxx \
     -t "$ECR_URI:latest" -t "$ECR_URI:$(git rev-parse --short HEAD)" .
 

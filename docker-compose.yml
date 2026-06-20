@@ -12,7 +12,7 @@ services:
   web:
     build:
       context: .
-      dockerfile: ./sensei-hub-dashboard/Dockerfile
+      dockerfile: Dockerfile
       args:
         NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
         NEXT_PUBLIC_CLERK_SIGN_IN_URL: /login

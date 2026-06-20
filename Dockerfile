@@ -1,8 +1,10 @@
-# Sensei Hub ダッシュボードの本番用 Dockerfile（単一 EC2 向け）
+# Sensei Hub の本番用 Dockerfile（単一 EC2 向け）
 #
-# ビルドコンテキストはリポジトリルートでなければならない（docker-compose.yml 参照）。
-# アプリは ./sensei-hub-dashboard に、レッスンは ./lessons にあり、どちらもイメージに
-# 必要なため。
+# この Dockerfile・docker-compose・.dockerignore・docker-entrypoint.sh はリポジトリルートに置く。
+# ビルドはリポジトリルートから実行する:
+#     docker build -t sensei-hub .
+# アプリ（./sensei-hub-dashboard）とレッスン（./lessons）の両方をイメージに含めるため、
+# ビルドコンテキストは必ずリポジトリルートにする。
 #
 # standalone ではなく `next start` で起動する。コンテナ起動時に `prisma db push` を
 # 実行できるよう、Prisma CLI と libSQL の SQLite を利用可能にするため。
@@ -53,6 +55,13 @@ ENV NEXT_TELEMETRY_DISABLED=1
 # 接続しないためダミーで十分。実値は実行時に compose / docker run の env で渡す。
 ENV DATABASE_URL="file:/tmp/build.db"
 
+# NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY はビルド時に埋め込む必須値。未指定だとビルドは通るのに
+# 実行時に Clerk が 500（Missing publishableKey）になり分かりにくいため、ここで早期に失敗させる。
+RUN test -n "$NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY" || ( \
+      echo "ERROR: build-arg NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY is required." && \
+      echo "  例: docker build --build-arg NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_live_xxx -t sensei-hub ." && \
+      exit 1 )
+
 RUN pnpm prisma generate
 RUN pnpm build
 
@@ -76,7 +85,8 @@ COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
 COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
 COPY --from=builder --chown=nextjs:nodejs /app/next.config.mjs ./next.config.mjs
-COPY --from=builder --chown=nextjs:nodejs /app/docker-entrypoint.sh ./docker-entrypoint.sh
+# entrypoint はリポジトリルートに置いてあるため、ビルドコンテキストから直接コピーする。
+COPY --chown=nextjs:nodejs docker-entrypoint.sh ./docker-entrypoint.sh
 # レッスンインデックス生成スクリプト（entrypoint で実行）
 COPY --from=builder --chown=nextjs:nodejs /app/scripts ./scripts
 
