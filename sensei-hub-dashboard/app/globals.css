@@ -150,6 +150,13 @@
   padding-bottom: env(safe-area-inset-bottom);
 }
 
+/* モバイルではボトムナビの高さ分だけ本文下部に余白を確保し、内容が隠れないようにする */
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+  }
+}
+
 /* Cosmic Background with Galaxy Image and Colored Overlays */
 .mesh-gradient {
   background-image: 

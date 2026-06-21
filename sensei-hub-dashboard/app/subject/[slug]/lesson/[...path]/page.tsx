@@ -16,6 +16,7 @@ import { useUserProgress } from "@/components/user-progress-provider"
 import { setLastLesson } from "@/lib/last-lesson"
 import { setActiveLesson, clearActiveLesson } from "@/lib/lesson-context"
 import { recordActivity, recordLessonView } from "@/lib/activity"
+import { vibrate } from "@/lib/haptics"
 import { cn } from "@/lib/utils"
 
 // Setup DOMPurify to allow target="_blank" on links if needed, or other options
@@ -197,6 +198,7 @@ export default function LessonPage({
       
       // Fire confetti if completing
       if (!wasCompleted) {
+        vibrate(40)
         confetti({
           particleCount: 120,
           spread: 80,

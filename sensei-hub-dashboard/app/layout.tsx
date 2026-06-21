@@ -5,6 +5,7 @@ import { LanguageProvider } from '@/lib/i18n'
 import { UserProgressProvider } from '@/components/user-progress-provider'
 import { PwaRegistrar } from '@/components/pwa-registrar'
 import { FloatingChat } from '@/components/floating-chat'
+import { BottomNav } from '@/components/dashboard/bottom-nav'
 import { ClerkProvider } from "@clerk/nextjs"
 import './globals.css'
 
@@ -77,6 +78,7 @@ export default function RootLayout({
             <UserProgressProvider>
               {children}
               <FloatingChat />
+              <BottomNav />
             </UserProgressProvider>
           </LanguageProvider>
         </ClerkProvider>

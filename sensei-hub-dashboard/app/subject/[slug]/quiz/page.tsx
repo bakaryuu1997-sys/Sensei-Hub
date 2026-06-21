@@ -12,6 +12,7 @@ import { Starfield } from "@/components/dashboard/starfield"
 import { useLanguage } from "@/lib/i18n"
 import { useUserProgress } from "@/components/user-progress-provider"
 import { recordActivity } from "@/lib/activity"
+import { vibrate } from "@/lib/haptics"
 import { cn } from "@/lib/utils"
 import {
   pickText,
@@ -308,6 +309,8 @@ export default function SubjectQuizPage({ params }: { params: Promise<{ slug: st
   const submit = () => {
     if (selected === null) return
     setRevealed(true)
+    // 正解は短く、不正解は二段の振動でフィードバック（対応端末のみ）
+    vibrate(selected === questions[current]?.answer ? 30 : [12, 40, 12])
     setAnswers((prev) => {
       const next = [...prev]
       next[current] = selected

@@ -28,12 +28,19 @@ export function NewsWidget() {
 
   useEffect(() => {
     let active = true
-    fetch(`/api/news?lang=${lang}`)
-      .then((res) => (res.ok ? res.json() : { items: [] }))
-      .then((data) => active && setItems((data.items || []).slice(0, 3)))
-      .catch(() => {})
+    const fetchNews = (fresh = false) => {
+      fetch(`/api/news?lang=${lang}${fresh ? "&refresh=1" : ""}`)
+        .then((res) => (res.ok ? res.json() : { items: [] }))
+        .then((data) => active && setItems((data.items || []).slice(0, 3)))
+        .catch(() => {})
+    }
+    fetchNews()
+    // pull-to-refresh から最新を取り直す
+    const onRefresh = () => fetchNews(true)
+    window.addEventListener("sensei-refresh-news", onRefresh)
     return () => {
       active = false
+      window.removeEventListener("sensei-refresh-news", onRefresh)
     }
   }, [lang])
 

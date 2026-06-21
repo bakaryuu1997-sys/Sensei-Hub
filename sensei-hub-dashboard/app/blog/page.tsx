@@ -10,6 +10,7 @@ import { Starfield } from "@/components/dashboard/starfield"
 import { Footer } from "@/components/footer"
 import { useLanguage } from "@/lib/i18n"
 import { cn } from "@/lib/utils"
+import { PullToRefresh } from "@/components/pull-to-refresh"
 
 type NewsItem = {
   title: string
@@ -86,7 +87,8 @@ export default function BlogPage() {
     (fresh = false) => {
       const id = ++reqRef.current
       setLoading(true)
-      fetch(`/api/news?lang=${lang}&category=${category}${fresh ? "&refresh=1" : ""}`)
+      // promise を返し、pull-to-refresh が完了を待てるようにする
+      return fetch(`/api/news?lang=${lang}&category=${category}${fresh ? "&refresh=1" : ""}`)
         .then((res) => (res.ok ? res.json() : { items: [] }))
         .then((data) => {
           if (reqRef.current !== id) return // 古いレスポンスは無視
@@ -153,6 +155,7 @@ export default function BlogPage() {
   const showSkeleton = loading && items.length === 0
 
   return (
+    <PullToRefresh onRefresh={() => load(true)}>
     <div className="relative min-h-screen bg-slate-950 text-slate-100">
       <div className="pointer-events-none fixed inset-0 overflow-hidden z-0">
         <Starfield />
@@ -297,5 +300,6 @@ export default function BlogPage() {
         <Footer />
       </div>
     </div>
+    </PullToRefresh>
   )
 }

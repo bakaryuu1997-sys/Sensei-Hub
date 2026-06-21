@@ -16,6 +16,11 @@ export const translations: Translations = {
   // Navigation
   "nav.dashboard": { en: "Dashboard", ja: "ダッシュボード", vi: "Tổng quan" },
   "nav.subjects": { en: "Subjects", ja: "科目", vi: "Môn học" },
+  // モバイルのボトムナビ用の短いラベル
+  "nav.tab_home": { en: "Home", ja: "ホーム", vi: "Trang chủ" },
+  "nav.tab_learn": { en: "Learn", ja: "学習", vi: "Học" },
+  "nav.tab_news": { en: "News", ja: "ニュース", vi: "Tin tức" },
+  "nav.tab_chat": { en: "Chat", ja: "チャット", vi: "Chat" },
   "nav.community": { en: "Community", ja: "コミュニティ", vi: "Cộng đồng" },
   "nav.settings": { en: "Settings", ja: "設定", vi: "Cài đặt" },
   "nav.profile": { en: "Profile", ja: "プロフィール", vi: "Hồ sơ" },

@@ -93,6 +93,13 @@ export function FloatingChat() {
     return subscribeActiveLesson(setLesson)
   }, [])
 
+  // モバイルのボトムナビから開けるようにイベントを購読する
+  useEffect(() => {
+    const onOpen = () => setOpen(true)
+    window.addEventListener("sensei-open-chat", onOpen)
+    return () => window.removeEventListener("sensei-open-chat", onOpen)
+  }, [])
+
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" })
   }, [messages, streaming])
@@ -269,6 +276,10 @@ export function FloatingChat() {
                 <Link href="/settings" onClick={() => setOpen(false)} className="text-white/50 hover:text-white p-1" aria-label={t("nav.settings")}>
                   <SettingsIcon className="h-4 w-4" />
                 </Link>
+                {/* モバイルでは FAB を隠すため、ヘッダーに閉じるボタンを出す */}
+                <button onClick={() => setOpen(false)} className="lg:hidden text-white/50 hover:text-white p-1" aria-label={t("pwa.close")}>
+                  <X className="h-4 w-4" />
+                </button>
               </div>
 
               {/* Provider / model selector */}
@@ -431,7 +442,8 @@ export function FloatingChat() {
         whileTap={{ scale: 0.94 }}
         onClick={() => setOpen((v) => !v)}
         aria-label={t("chat.open")}
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-purple-600 text-white shadow-lg shadow-purple-500/30 transition-shadow hover:shadow-purple-500/50"
+        // モバイルではボトムナビの「チャット」から開くため FAB は非表示
+        className="hidden lg:flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-purple-600 text-white shadow-lg shadow-purple-500/30 transition-shadow hover:shadow-purple-500/50"
       >
         {open ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
       </motion.button>

@@ -8,6 +8,7 @@ import { HeroBanner } from "@/components/dashboard/hero-banner"
 import { StatsRow } from "@/components/dashboard/stats-row"
 import { SubjectsGrid } from "@/components/dashboard/subjects-grid"
 import { NewsWidget } from "@/components/dashboard/news-widget"
+import { PullToRefresh } from "@/components/pull-to-refresh"
 import { useLanguage } from "@/lib/i18n"
 import { Starfield } from "@/components/dashboard/starfield"
 import { ConstellationMap } from "@/components/dashboard/constellation-map"
@@ -29,6 +30,13 @@ export default function DashboardPage() {
     : t("common.dev")
 
   return (
+    <PullToRefresh
+      onRefresh={() => {
+        // ニュースウィジェットを更新し、スピナー表示のため少し待つ
+        window.dispatchEvent(new Event("sensei-refresh-news"))
+        return new Promise((r) => setTimeout(r, 700))
+      }}
+    >
     <div className="relative min-h-screen">
       {/* Decorative floating planets and stars */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden z-0">
@@ -139,5 +147,6 @@ export default function DashboardPage() {
         <Footer />
       </div>
     </div>
+    </PullToRefresh>
   )
 }
