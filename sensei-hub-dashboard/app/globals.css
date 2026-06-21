@@ -124,8 +124,13 @@
   * {
     @apply border-border outline-ring/50;
   }
+  /* モバイルで横スクロール（右側の余分なはみ出し）を防ぐ。装飾の惑星などが
+     ビューポート幅を超えても画面が横に広がらないようにする。 */
+  html,
   body {
     @apply bg-background text-foreground;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 }
 
