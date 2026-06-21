@@ -31,6 +31,19 @@ self.addEventListener('activate', (event) => {
   );
 });
 
+// 通知をタップしたらアプリを前面に出す（既存ウィンドウがあれば focus、無ければ開く）。
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  event.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
+      for (const client of clientList) {
+        if ('focus' in client) return client.focus();
+      }
+      if (self.clients.openWindow) return self.clients.openWindow('/');
+    })
+  );
+});
+
 function getNormalizedUrl(request) {
   const url = new URL(request.url);
   url.searchParams.delete('_rsc');

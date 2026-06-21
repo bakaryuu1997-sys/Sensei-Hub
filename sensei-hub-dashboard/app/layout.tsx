@@ -8,6 +8,7 @@ import { FloatingChat } from '@/components/floating-chat'
 import { BottomNav } from '@/components/dashboard/bottom-nav'
 import { InstallHint } from '@/components/install-hint'
 import { Onboarding } from '@/components/onboarding'
+import { StreakReminder } from '@/components/streak-reminder'
 import { ClerkProvider } from "@clerk/nextjs"
 import './globals.css'
 
@@ -83,6 +84,7 @@ export default function RootLayout({
               <BottomNav />
               <InstallHint />
               <Onboarding />
+              <StreakReminder />
             </UserProgressProvider>
           </LanguageProvider>
         </ClerkProvider>

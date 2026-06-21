@@ -134,6 +134,11 @@ export const translations: Translations = {
   "onboarding.skip": { en: "Skip", ja: "スキップ", vi: "Bỏ qua" },
   "onboarding.next": { en: "Next", ja: "次へ", vi: "Tiếp" },
   "onboarding.start": { en: "Start learning", ja: "学習を始める", vi: "Bắt đầu học" },
+  // 連続学習リマインダー
+  "streak.days": { en: "day streak", ja: "日連続", vi: "ngày liên tục" },
+  "streak.keep": { en: "Study today to keep it going!", ja: "今日も学習して継続しよう！", vi: "Học hôm nay để giữ chuỗi!" },
+  "streak.study_now": { en: "Study", ja: "学習", vi: "Học ngay" },
+  "streak.notify": { en: "Remind me", ja: "通知を許可", vi: "Nhắc tôi" },
   "pwa.guide_title": { en: "Install Sensei Hub", ja: "Sensei Hub をインストール", vi: "Cài đặt Sensei Hub" },
   "pwa.guide_ios_1": { en: "Open this site in Safari.", ja: "Safari でこのサイトを開きます。", vi: "Mở trang này bằng Safari." },
   "pwa.guide_ios_2": { en: "Tap the Share button (the square with an up arrow).", ja: "共有ボタン（上矢印の付いた四角）をタップします。", vi: "Chạm nút Chia sẻ (ô vuông có mũi tên hướng lên)." },

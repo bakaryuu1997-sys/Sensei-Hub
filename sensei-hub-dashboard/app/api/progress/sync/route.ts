@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
     }
 
     const { lessons } = (await request.json()) as {
-      lessons: { lessonId: string; completed: boolean }[];
+      lessons: { lessonId: string; completed: boolean; ts?: number }[];
     };
 
     if (!lessons || !Array.isArray(lessons)) {
@@ -48,13 +48,14 @@ export async function POST(request: NextRequest) {
           },
           update: {
             status: l.completed ? "COMPLETED" : "IN_PROGRESS",
-            lastViewed: new Date(),
+            // クライアントの編集時刻を保持（last-write-wins の比較に使う）
+            lastViewed: l.ts ? new Date(l.ts) : new Date(),
           },
           create: {
             userId,
             lessonId: l.lessonId,
             status: l.completed ? "COMPLETED" : "IN_PROGRESS",
-            lastViewed: new Date(),
+            lastViewed: l.ts ? new Date(l.ts) : new Date(),
           },
         })
       )

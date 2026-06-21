@@ -94,14 +94,17 @@ export async function GET(request: NextRequest) {
       }
     }
 
-    // 完了済みレッスンを DB から読み込む
+    // 全レッスンの進捗を DB から読み込む（last-write-wins 用に未完了も時刻付きで返す）
     const progressList = await prisma.lessonProgress.findMany({
-      where: { userId, status: "COMPLETED" },
+      where: { userId },
     });
 
     const completedLessons: Record<string, boolean> = {};
-    progressList.forEach((p) => {
-      completedLessons[p.lessonId] = true;
+    // クライアントの LWW マージ用: { lessonId, completed, ts }
+    const lessons = progressList.map((p) => {
+      const completed = p.status === "COMPLETED";
+      if (completed) completedLessons[p.lessonId] = true;
+      return { lessonId: p.lessonId, completed, ts: p.lastViewed.getTime() };
     });
 
     // completedLessons と subjects から progressMap を計算する
@@ -129,7 +132,7 @@ export async function GET(request: NextRequest) {
       });
     });
 
-    return NextResponse.json({ completedLessons, progressMap });
+    return NextResponse.json({ completedLessons, progressMap, lessons });
   } catch (error: any) {
     console.error("Error loading progress:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });

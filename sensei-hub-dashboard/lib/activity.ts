@@ -39,6 +39,11 @@ export function recordActivity(): void {
   }
 }
 
+/** 今日すでに学習したか。 */
+export function hasStudiedToday(): boolean {
+  return getActivityDays().includes(dayKey(new Date()))
+}
+
 /** 今日（または昨日）で終わる連続学習日数。途切れていれば 0。 */
 export function getStreak(): number {
   const set = new Set(getActivityDays())

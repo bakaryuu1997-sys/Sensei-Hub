@@ -18,10 +18,13 @@ type UserProgressContextType = {
 
 const UserProgressContext = createContext<UserProgressContextType | undefined>(undefined)
 
-// localStorage の基底キー。ログイン時はユーザー ID で名前空間を分け、別ユーザーの
-// 進捗が混ざらないようにする（匿名はサフィックス無しのレガシーキーを使う）。
-const LESSONS_BASE = "sensei-completed-lessons"
-const PROGRESS_BASE = "sensei-user-progress"
+// 各レッスンの「完了状態＋最終変更時刻」。時刻で last-write-wins する。
+type Entry = { c: boolean; ts: number }
+
+// localStorage の基底キー。ログイン時はユーザー ID で名前空間を分ける。
+const ENTRIES_BASE = "sensei-progress-entries" // 時刻付き進捗（v2）
+const PROGRESS_BASE = "sensei-user-progress" // モジュール進捗 %
+const LESSONS_BASE = "sensei-completed-lessons" // 旧: 真偽値のみ（移行元）
 
 function readJson<T>(key: string): T | null {
   if (typeof window === "undefined") return null
@@ -39,26 +42,45 @@ function defaultProgressMap(): Record<string, number> {
   return map
 }
 
+// 旧フォーマット（真偽値マップ）を時刻付き Entry へ変換（時刻は 0=最古、DB を優先させる）。
+function boolMapToEntries(b: Record<string, boolean> | null): Record<string, Entry> {
+  const out: Record<string, Entry> = {}
+  if (b) for (const [k, v] of Object.entries(b)) if (v) out[k] = { c: true, ts: 0 }
+  return out
+}
+
 export function UserProgressProvider({ children }: { children: React.ReactNode }) {
+  const [entries, setEntries] = useState<Record<string, Entry>>({})
   const [progressMap, setProgressMap] = useState<Record<string, number>>({})
-  const [completedLessons, setCompletedLessons] = useState<Record<string, boolean>>({})
   const { playSuccess } = useCosmicAudio()
   const { isSignedIn, user } = useUser()
   const userId = isSignedIn && user ? user.id : null
 
-  // ユーザーごとの保存キー（匿名はレガシーキー）
-  const lessonsKey = userId ? `${LESSONS_BASE}:${userId}` : LESSONS_BASE
+  const entriesKey = userId ? `${ENTRIES_BASE}:${userId}` : ENTRIES_BASE
   const progressKey = userId ? `${PROGRESS_BASE}:${userId}` : PROGRESS_BASE
 
-  // ユーザー（ログイン状態）が変わるたびに、そのユーザーのローカル＋DB を読み込む。
-  // これにより別端末でログインすると DB の進捗が反映され、別ユーザーの混入も防ぐ。
+  // 公開用の真偽値マップ（完了済みのみ true）。消費側 API は従来どおり。
+  const completedLessons = useMemo(() => {
+    const m: Record<string, boolean> = {}
+    for (const [k, v] of Object.entries(entries)) if (v.c) m[k] = true
+    return m
+  }, [entries])
+
+  const persistEntries = (next: Record<string, Entry>) => {
+    localStorage.setItem(entriesKey, JSON.stringify(next))
+  }
+
+  // ユーザー（ログイン状態）が変わるたびにローカル＋DB を読み、時刻で LWW マージする。
   useEffect(() => {
-    const localLessons = readJson<Record<string, boolean>>(lessonsKey) || {}
+    let localEntries = readJson<Record<string, Entry>>(entriesKey)
+    if (!localEntries) {
+      // 旧 真偽値キーから移行（ユーザー別→匿名の順で拾う）
+      localEntries = boolMapToEntries(readJson<Record<string, boolean>>(userId ? `${LESSONS_BASE}:${userId}` : LESSONS_BASE))
+    }
     const localProgress = readJson<Record<string, number>>(progressKey) || defaultProgressMap()
 
-    setCompletedLessons(localLessons)
+    setEntries(localEntries)
     setProgressMap(localProgress)
-    // 初期既定をローカルへ保存（未保存の匿名ユーザー向け）
     if (!readJson(progressKey)) localStorage.setItem(progressKey, JSON.stringify(localProgress))
 
     if (!userId) return // 匿名: ローカルのみ
@@ -70,31 +92,55 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
         if (!res.ok) return
         if (!(res.headers.get("content-type") || "").includes("application/json")) return
         const data = await res.json()
-        if (cancelled || !data.completedLessons || !data.progressMap) return
+        if (cancelled || !data.progressMap) return
 
-        // 初回ログイン時は匿名(レガシー)キーの進捗も取り込む
-        const anon = userId ? readJson<Record<string, boolean>>(LESSONS_BASE) || {} : {}
-        const mergedLocal = { ...anon, ...localLessons }
+        // 初回ログイン時は匿名(レガシー)キーの完了も取り込む
+        const merged: Record<string, Entry> = { ...localEntries }
+        const anonBool = readJson<Record<string, boolean>>(LESSONS_BASE)
+        if (anonBool) for (const [k, e] of Object.entries(boolMapToEntries(anonBool))) if (!merged[k]) merged[k] = e
 
-        // DB と統合（DB を基準に、ローカルで完了済みだが DB に無い分は後で同期）
-        const localOnly = Object.keys(mergedLocal).filter((k) => mergedLocal[k] && !data.completedLessons[k])
-        const finalLessons = { ...mergedLocal, ...data.completedLessons }
-        const finalProgress = { ...localProgress, ...data.progressMap }
+        // DB 側の Entry
+        const dbEntries: Record<string, Entry> = {}
+        for (const l of (data.lessons || []) as { lessonId: string; completed: boolean; ts: number }[]) {
+          dbEntries[l.lessonId] = { c: l.completed, ts: l.ts }
+        }
 
-        setCompletedLessons(finalLessons)
-        setProgressMap(finalProgress)
-        localStorage.setItem(lessonsKey, JSON.stringify(finalLessons))
-        localStorage.setItem(progressKey, JSON.stringify(finalProgress))
+        // last-write-wins マージ（時刻が新しい方を採用。ローカルが新しければ DB へ反映）
+        const final: Record<string, Entry> = {}
+        const toPush: { lessonId: string; completed: boolean; ts: number }[] = []
+        const allKeys = new Set([...Object.keys(merged), ...Object.keys(dbEntries)])
+        allKeys.forEach((k) => {
+          const a = merged[k]
+          const b = dbEntries[k]
+          if (a && b) {
+            if (a.ts > b.ts) {
+              final[k] = a
+              toPush.push({ lessonId: k, completed: a.c, ts: a.ts })
+            } else {
+              final[k] = b
+            }
+          } else if (a) {
+            final[k] = a
+            toPush.push({ lessonId: k, completed: a.c, ts: a.ts })
+          } else if (b) {
+            final[k] = b
+          }
+        })
 
-        if (localOnly.length > 0) {
+        if (cancelled) return
+        setEntries(final)
+        setProgressMap((prev) => ({ ...prev, ...data.progressMap }))
+        persistEntries(final)
+        localStorage.setItem(progressKey, JSON.stringify({ ...localProgress, ...data.progressMap }))
+
+        if (toPush.length > 0) {
           await fetch("/api/progress/sync", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ lessons: localOnly.map((k) => ({ lessonId: k, completed: true })) }),
+            body: JSON.stringify({ lessons: toPush }),
           }).catch(() => {})
         }
-        // 取り込み済みの匿名キーは消して二重取り込みを防ぐ
-        if (Object.keys(anon).length > 0) localStorage.removeItem(LESSONS_BASE)
+        if (anonBool && Object.keys(anonBool).length > 0) localStorage.removeItem(LESSONS_BASE)
       } catch (e) {
         console.error("Failed to load progress from DB:", e)
       }
@@ -106,6 +152,15 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId])
 
+  const syncToDb = (lessons: { lessonId: string; completed: boolean; ts: number }[]) => {
+    if (!userId) return
+    fetch("/api/progress/sync", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ lessons }),
+    }).catch((e) => console.error("Failed to sync progress:", e))
+  }
+
   const updateModuleProgress = (moduleId: string, progress: number) => {
     setProgressMap((prev) => {
       const next = { ...prev, [moduleId]: progress }
@@ -115,52 +170,30 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
   }
 
   const toggleModuleCompletion = (moduleId: string, lessonKeys?: string[]) => {
-    let playedChime = false
+    const ts = Date.now()
+    const current = progressMap[moduleId] ?? 0
+    const nextProgress = current === 100 ? 0 : 100
+    const completed = nextProgress === 100
 
     setProgressMap((prev) => {
-      const current = prev[moduleId] ?? 0
-      const nextProgress = current === 100 ? 0 : 100
       const next = { ...prev, [moduleId]: nextProgress }
       localStorage.setItem(progressKey, JSON.stringify(next))
-
-      if (nextProgress === 100) {
-        playedChime = true
-        recordActivity()
-      }
-
-      // Sync all lessons in the module
-      if (lessonKeys && lessonKeys.length > 0) {
-        setCompletedLessons((prevLessons) => {
-          const nextLessons = { ...prevLessons }
-          lessonKeys.forEach((key) => {
-            nextLessons[key] = nextProgress === 100
-          })
-          localStorage.setItem(lessonsKey, JSON.stringify(nextLessons))
-
-          // ログイン中のみ DB へ同期
-          if (userId) {
-            const syncLessons = lessonKeys.map((key) => ({
-              lessonId: key,
-              completed: nextProgress === 100,
-            }))
-            fetch("/api/progress/sync", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ lessons: syncLessons }),
-            }).catch((e) => console.error("Failed to sync module progress:", e))
-          }
-
-          return nextLessons
-        })
-      }
-
       return next
     })
 
-    if (playedChime) {
-      setTimeout(() => {
-        playSuccess()
-      }, 50)
+    if (lessonKeys && lessonKeys.length > 0) {
+      setEntries((prev) => {
+        const next = { ...prev }
+        lessonKeys.forEach((key) => (next[key] = { c: completed, ts }))
+        persistEntries(next)
+        return next
+      })
+      syncToDb(lessonKeys.map((key) => ({ lessonId: key, completed, ts })))
+    }
+
+    if (completed) {
+      recordActivity()
+      setTimeout(() => playSuccess(), 50)
     }
   }
 
@@ -171,49 +204,31 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
     allLessonPathsInModule: string[],
   ) => {
     const lessonKey = `${subjectSlug}/${lessonPath}`
-    let playedChime = false
+    const ts = Date.now()
+    const isCompleted = !entries[lessonKey]?.c
 
-    setCompletedLessons((prev) => {
-      const isCompleted = !prev[lessonKey]
-      const next = { ...prev, [lessonKey]: isCompleted }
-      localStorage.setItem(lessonsKey, JSON.stringify(next))
+    setEntries((prev) => {
+      const next = { ...prev, [lessonKey]: { c: isCompleted, ts } }
+      persistEntries(next)
 
-      if (isCompleted) {
-        playedChime = true
-        recordActivity()
-      }
-
-      // Compute module progress
-      const completedCount = allLessonPathsInModule.filter((path) => next[`${subjectSlug}/${path}`]).length
-
+      // モジュール進捗 % を再計算
+      const completedCount = allLessonPathsInModule.filter((p) => next[`${subjectSlug}/${p}`]?.c).length
       const newProgress =
         allLessonPathsInModule.length > 0 ? Math.round((completedCount / allLessonPathsInModule.length) * 100) : 0
-
-      // Update the progress map directly in the state
       setProgressMap((prevMap) => {
         const nextMap = { ...prevMap, [moduleId]: newProgress }
         localStorage.setItem(progressKey, JSON.stringify(nextMap))
         return nextMap
       })
 
-      // ログイン中のみ DB へ同期
-      if (userId) {
-        fetch("/api/progress/sync", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            lessons: [{ lessonId: lessonKey, completed: isCompleted }],
-          }),
-        }).catch((e) => console.error("Failed to sync lesson progress:", e))
-      }
-
       return next
     })
 
-    if (playedChime) {
-      setTimeout(() => {
-        playSuccess()
-      }, 50)
+    syncToDb([{ lessonId: lessonKey, completed: isCompleted, ts }])
+
+    if (isCompleted) {
+      recordActivity()
+      setTimeout(() => playSuccess(), 50)
     }
   }
 
@@ -222,17 +237,10 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
     return staticSubjects.map((subject) => {
       const updatedModules = subject.modules.map((mod) => {
         const userProgress = progressMap[mod.id] !== undefined ? progressMap[mod.id] : mod.progress
-        return {
-          ...mod,
-          progress: userProgress,
-        }
+        return { ...mod, progress: userProgress }
       })
 
-      const tempSubject = {
-        ...subject,
-        modules: updatedModules,
-      }
-
+      const tempSubject = { ...subject, modules: updatedModules }
       const stats = computeSubjectStats(tempSubject)
 
       return {
