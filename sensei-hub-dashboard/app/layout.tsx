@@ -47,6 +47,10 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: '#030014',
   colorScheme: 'dark',
+  width: 'device-width',
+  initialScale: 1,
+  // ノッチ端末でも全画面を使い、safe-area-inset-* を有効化する（PWA 全画面表示向け）
+  viewportFit: 'cover',
 }
 
 export default function RootLayout({

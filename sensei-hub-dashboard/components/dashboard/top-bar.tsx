@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import { Search, Bell, Command, Activity, Volume2, VolumeX, Download, Menu } from "lucide-react"
 import { useLanguage } from "@/lib/i18n"
@@ -20,6 +20,8 @@ export function TopBar() {
   const [muted, setMuted] = useState(true)
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
+  // ドロワーを左へスワイプして閉じるためのタッチ開始位置
+  const drawerTouchX = useRef<number | null>(null)
 
   // Open the search palette with Cmd/Ctrl+K.
   useEffect(() => {
@@ -56,6 +58,8 @@ export function TopBar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
+      // ノッチ端末（PWA 全画面）でステータスバーに重ならないよう上部にセーフエリアを足す
+      style={{ paddingTop: "calc(1rem + env(safe-area-inset-top))" }}
       className="sticky top-0 z-30 flex items-center gap-4 px-6 lg:px-8 py-4 backdrop-blur-xl bg-slate-950/40 border-b border-white/5"
     >
       {/* Mobile nav trigger */}
@@ -68,7 +72,22 @@ export function TopBar() {
             <Menu className="h-5 w-5" />
           </button>
         </SheetTrigger>
-        <SheetContent side="left" className="w-72 p-0 sidebar-glass border-white/10">
+        <SheetContent
+          side="left"
+          className="w-72 p-0 sidebar-glass border-white/10"
+          // ノッチ回避（上部セーフエリア）
+          style={{ paddingTop: "env(safe-area-inset-top)" }}
+          // 左へスワイプして閉じる
+          onTouchStart={(e) => {
+            drawerTouchX.current = e.touches[0]?.clientX ?? null
+          }}
+          onTouchEnd={(e) => {
+            if (drawerTouchX.current === null) return
+            const dx = (e.changedTouches[0]?.clientX ?? 0) - drawerTouchX.current
+            if (dx < -50) setMobileNavOpen(false)
+            drawerTouchX.current = null
+          }}
+        >
           <SheetTitle className="sr-only">{t("nav.menu")}</SheetTitle>
           <SidebarContent onNavigate={() => setMobileNavOpen(false)} />
         </SheetContent>

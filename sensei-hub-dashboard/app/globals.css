@@ -132,6 +132,22 @@
     max-width: 100%;
     overflow-x: hidden;
   }
+  /* タップ遅延（ダブルタップズーム）をなくし、モバイルの操作感を改善する */
+  button,
+  a,
+  [role="button"],
+  label,
+  summary {
+    touch-action: manipulation;
+  }
+}
+
+/* ノッチ／ホームインジケーター回避用のセーフエリア補助クラス */
+.pt-safe {
+  padding-top: env(safe-area-inset-top);
+}
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 /* Cosmic Background with Galaxy Image and Colored Overlays */

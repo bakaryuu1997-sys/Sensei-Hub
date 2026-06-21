@@ -236,7 +236,14 @@ export function FloatingChat() {
   const showLessonChip = onLesson && lesson && messages.length === 0 && view === "chat"
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
+    <div
+      className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3"
+      // ノッチ端末のホームインジケーターに重ならないようセーフエリア分ずらす
+      style={{
+        bottom: "calc(1.25rem + env(safe-area-inset-bottom))",
+        right: "calc(1.25rem + env(safe-area-inset-right))",
+      }}
+    >
       <AnimatePresence>
         {open && (
           <motion.div
