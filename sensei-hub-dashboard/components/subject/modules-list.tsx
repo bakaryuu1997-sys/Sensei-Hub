@@ -9,6 +9,9 @@ import type { Subject, Module } from "@/lib/subjects"
 import { useLanguage } from "@/lib/i18n"
 import { useUserProgress } from "@/components/user-progress-provider"
 
+// 巨大教科対策: モジュール展開時はまずこの件数だけ描画し、「もっと見る」で追加表示する。
+const LESSONS_PER_PAGE = 12
+
 export function ModulesList({ subject }: { subject: Subject }) {
   const { t, lang } = useLanguage()
   const [lessons, setLessons] = useState<any[]>([])
@@ -97,6 +100,12 @@ function ModuleRow({
   const { t } = useLanguage()
   const { toggleModuleCompletion, toggleLessonCompletion, completedLessons } = useUserProgress()
   const [isExpanded, setIsExpanded] = useState(false)
+  const [visibleCount, setVisibleCount] = useState(LESSONS_PER_PAGE)
+
+  // 折りたたんだら表示件数をリセット（次に開いたときは先頭ページから）
+  useEffect(() => {
+    if (!isExpanded) setVisibleCount(LESSONS_PER_PAGE)
+  }, [isExpanded])
 
   const isComplete = module.progress === 100
   const isLocked = module.locked
@@ -233,7 +242,8 @@ function ModuleRow({
               {moduleLessons.length === 0 ? (
                 <div className="text-xs text-white/40 py-2 font-mono">{t("subject.loading_lessons")}</div>
               ) : (
-                moduleLessons.map((lesson) => {
+                <>
+                {moduleLessons.slice(0, visibleCount).map((lesson) => {
                   const lessonKey = `${subjectSlug}/${lesson.path}`
                   const isLessonCompleted = completedLessons[lessonKey] || false
 
@@ -270,7 +280,16 @@ function ModuleRow({
                       </Link>
                     </div>
                   )
-                })
+                })}
+                {moduleLessons.length > visibleCount && (
+                  <button
+                    onClick={() => setVisibleCount((c) => c + LESSONS_PER_PAGE)}
+                    className="w-full rounded-xl border border-white/10 bg-white/[0.03] py-2.5 text-xs font-semibold text-cyan-200 hover:bg-white/[0.06] transition-colors"
+                  >
+                    {t("subject.show_more")} ({moduleLessons.length - visibleCount})
+                  </button>
+                )}
+                </>
               )}
             </div>
           </motion.div>

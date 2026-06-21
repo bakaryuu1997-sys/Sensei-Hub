@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sensei-hub-v1';
+const CACHE_NAME = 'sensei-hub-v2';
 const ASSETS_TO_CACHE = [
   '/offline.html',
   '/manifest.json',
@@ -42,6 +42,34 @@ function getNormalizedUrl(request) {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   const isSameOrigin = url.origin === self.location.origin;
+
+  // オフライン対応: 閲覧済みのレッスン本文・レッスン一覧・ニュースの GET は
+  // network-first（取得できたら更新キャッシュ、オフライン時はキャッシュを返す）。
+  // 進捗同期・チャット・モデル取得などの動的 API はキャッシュしない。
+  const isCacheableData =
+    isSameOrigin &&
+    event.request.method === 'GET' &&
+    (
+      /^\/api\/subject\/[^/]+\/lessons?$/.test(url.pathname) ||
+      url.pathname === '/api/news'
+    );
+
+  if (isCacheableData) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response && response.status === 200) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME)
+              .then((cache) => cache.put(event.request, clone))
+              .catch(() => {});
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
 
   // Skip non-GET requests, dynamic API endpoints, Next.js development paths, and external cross-origins
   if (

@@ -75,6 +75,7 @@ export const translations: Translations = {
   "subject.modules": { en: "Course Modules", ja: "コースモジュール", vi: "Các chương học" },
   "subject.modules_count": { en: "modules in this path", ja: "個のモジュール", vi: "chương trong lộ trình" },
   "subject.lessons": { en: "lessons", ja: "レッスン", vi: "bài học" },
+  "subject.show_more": { en: "Show more", ja: "もっと見る", vi: "Xem thêm" },
   "subject.overview": { en: "Overview", ja: "概要", vi: "Tổng quan" },
 
   // Actions
@@ -105,6 +106,12 @@ export const translations: Translations = {
   "pwa.install_sidebar": { en: "Download Sensei Hub", ja: "Sensei Hubをダウンロード", vi: "Tải App Sensei Hub" },
   "pwa.install_topbar": { en: "Download App", ja: "アプリをダウンロード", vi: "Tải App" },
   "pwa.close": { en: "Close", ja: "閉じる", vi: "Đóng" },
+  "pwa.install_action": { en: "Install", ja: "インストール", vi: "Cài đặt" },
+  "pwa.hint": {
+    en: "Add Sensei Hub to your home screen for a full-screen, app-like experience.",
+    ja: "ホーム画面に追加すると全画面でアプリのように使えます。",
+    vi: "Thêm Sensei Hub vào màn hình chính để dùng toàn màn hình như một app.",
+  },
   "pwa.guide_title": { en: "Install Sensei Hub", ja: "Sensei Hub をインストール", vi: "Cài đặt Sensei Hub" },
   "pwa.guide_ios_1": { en: "Open this site in Safari.", ja: "Safari でこのサイトを開きます。", vi: "Mở trang này bằng Safari." },
   "pwa.guide_ios_2": { en: "Tap the Share button (the square with an up arrow).", ja: "共有ボタン（上矢印の付いた四角）をタップします。", vi: "Chạm nút Chia sẻ (ô vuông có mũi tên hướng lên)." },
