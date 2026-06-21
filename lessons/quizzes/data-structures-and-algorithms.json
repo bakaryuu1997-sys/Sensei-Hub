@@ -3754,6 +3754,3756 @@
           }
         }
       ]
+    },
+    {
+      "id": "dsa-11",
+      "title": {
+        "en": "Sliding Window & Two Pointers scenarios",
+        "ja": "スライドウィンドウと二分探索ポインタのシナリオ",
+        "vi": "Các kịch bản Cửa sổ trượt và Hai con trỏ"
+      },
+      "description": {
+        "en": "Traversing dynamic window arrays, subsegments tracking, and two pointers array reduction.",
+        "ja": "動的ウィンドウ配列の走査、部分セグメントの追跡、および二分探索ポインタによる配列縮小。",
+        "vi": "Duyệt qua các mảng cửa sổ động, theo dõi các phân đoạn con và giảm thiểu mảng bằng hai con trỏ."
+      },
+      "questions": [
+        {
+          "id": "dsa_s11_q1",
+          "question": {
+            "en": "You are building a monitoring tool that processes a stream of network packet sizes. You need to find the maximum sum of packet sizes in any contiguous window of size K. Which approach is most efficient?",
+            "ja": "ネットワークパケットサイズのストリームを処理する監視ツールを構築しています。サイズKの任意の連続ウィンドウにおけるパケットサイズの最大合計を見つける必要があります。どの手法が最も効率的ですか？",
+            "vi": "Bạn đang xây dựng một công cụ giám sát xử lý luồng kích thước các gói tin mạng. Bạn cần tìm tổng kích thước gói tin lớn nhất trong bất kỳ cửa sổ liên tiếp nào có kích thước K. Cách tiếp cận nào là hiệu quả nhất?"
+          },
+          "options": [
+            {
+              "en": "Brute force check all subarrays",
+              "ja": "総当たりですべての部分配列をチェック",
+              "vi": "Kiểm tra vét cạn tất cả các mảng con"
+            },
+            {
+              "en": "Fixed-size sliding window",
+              "ja": "固定サイズのスライドウィンドウ",
+              "vi": "Cửa sổ trượt kích thước cố định"
+            },
+            {
+              "en": "Recursive divide and conquer",
+              "ja": "再帰的な分割統治法",
+              "vi": "Đệ quy chia để trị"
+            },
+            {
+              "en": "Binary search on the array",
+              "ja": "配列に対する二分探索",
+              "vi": "Tìm kiếm nhị phân trên mảng"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "A fixed-size sliding window allows updating the sum in O(1) time by adding the next element and removing the first, leading to O(N) total time. Brute force is O(N*K).",
+            "ja": "固定サイズのスライドウィンドウを使用すると、次の要素を追加し最初の要素を削除することでO(1)で合計を更新でき、全体でO(N)となります。総当たりはO(N*K)です。",
+            "vi": "Cửa sổ trượt kích thước cố định cho phép cập nhật tổng trong thời gian O(1) bằng cách thêm phần tử tiếp theo và loại bỏ phần tử đầu, dẫn đến tổng thời gian O(N). Vét cạn mất O(N*K)."
+          }
+        },
+        {
+          "id": "dsa_s11_q2",
+          "question": {
+            "en": "In an e-commerce application, you are given an array of prices. You need to find the length of the smallest subarray whose sum is at least S. What is the optimal algorithmic strategy?",
+            "ja": "Eコマースアプリケーションで、価格の配列が与えられます。合計がS以上となる最小の部分配列の長さを求める必要があります。最適なアルゴリズム戦略は何ですか？",
+            "vi": "Trong một ứng dụng thương mại điện tử, bạn được cung cấp một mảng giá. Bạn cần tìm độ dài của mảng con nhỏ nhất có tổng ít nhất là S. Chiến lược thuật toán tối ưu là gì?"
+          },
+          "options": [
+            {
+              "en": "Dynamic programming",
+              "ja": "動的計画法",
+              "vi": "Quy hoạch động"
+            },
+            {
+              "en": "Two pointers expansion/shrinkage",
+              "ja": "二分探索ポインタの拡張と縮小",
+              "vi": "Mở rộng/thu hẹp bằng hai con trỏ"
+            },
+            {
+              "en": "Breadth-first search",
+              "ja": "幅優先探索",
+              "vi": "Tìm kiếm theo chiều rộng"
+            },
+            {
+              "en": "Sorting the array first",
+              "ja": "最初に配列をソート",
+              "vi": "Sắp xếp mảng trước"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "This is a classic 'variable size sliding window' problem. Expand the right pointer to increase sum, shrink the left to find the minimum valid window size, maintaining O(N) time.",
+            "ja": "これは古典的な「可変サイズスライドウィンドウ」問題です。右ポインタを広げて合計を増やし、左を縮めて最小の有効ウィンドウサイズを見つけ、O(N)を維持します。",
+            "vi": "Đây là bài toán 'cửa sổ trượt kích thước biến đổi' điển hình. Mở rộng con trỏ phải để tăng tổng, thu hẹp con trỏ trái để tìm kích thước cửa sổ hợp lệ nhỏ nhất, duy trì thời gian O(N)."
+          }
+        },
+        {
+          "id": "dsa_s11_q3",
+          "question": {
+            "en": "You have a sorted array and need to find if there exist two numbers that add up to a target value. How should you approach this to achieve O(N) time complexity?",
+            "ja": "ソートされた配列があり、合計がターゲット値になる2つの数値が存在するかを見つける必要があります。O(N)の時間計算量を達成するにはどうアプローチすべきですか？",
+            "vi": "Bạn có một mảng đã sắp xếp và cần tìm xem có hai số nào cộng lại bằng giá trị mục tiêu hay không. Bạn nên tiếp cận điều này như thế nào để đạt được độ phức tạp thời gian O(N)?"
+          },
+          "options": [
+            {
+              "en": "Nested loop approach",
+              "ja": "ネストされたループアプローチ",
+              "vi": "Cách tiếp cận vòng lặp lồng nhau"
+            },
+            {
+              "en": "Hash map storage",
+              "ja": "ハッシュマップストレージ",
+              "vi": "Sử dụng Hash map"
+            },
+            {
+              "en": "Opposite ends two pointers",
+              "ja": "反対端からの二分探索ポインタ",
+              "vi": "Hai con trỏ ở hai đầu đối diện"
+            },
+            {
+              "en": "Binary search for each element",
+              "ja": "各要素に対する二分探索",
+              "vi": "Tìm kiếm nhị phân cho từng phần tử"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "Since the array is sorted, placing pointers at the start and end and moving them based on the current sum allows finding the target in one pass (O(N)).",
+            "ja": "配列はソートされているため、開始と終了にポインタを置き、現在の合計に基づいて移動させることで、1回のパスでターゲットを見つけることができます(O(N))。",
+            "vi": "Vì mảng đã được sắp xếp, việc đặt các con trỏ ở đầu và cuối rồi di chuyển chúng dựa trên tổng hiện tại cho phép tìm thấy mục tiêu trong một lần duyệt (O(N))."
+          }
+        },
+        {
+          "id": "dsa_s11_q4",
+          "question": {
+            "en": "You are processing a sequence of binary digits and need to find the longest subarray containing only 1s after flipping at most K zeros. What is the logic?",
+            "ja": "バイナリ数字のシーケンスを処理しており、最大K個の0を反転させた後に1のみを含む最長の部分配列を見つける必要があります。ロジックは何ですか？",
+            "vi": "Bạn đang xử lý một chuỗi các chữ số nhị phân và cần tìm mảng con dài nhất chỉ chứa các số 1 sau khi lật tối đa K số 0. Logic là gì?"
+          },
+          "options": [
+            {
+              "en": "Greedy interval selection",
+              "ja": "貪欲な間隔選択",
+              "vi": "Chọn khoảng tham lam"
+            },
+            {
+              "en": "Variable sliding window with counter",
+              "ja": "カウンタ付き可変スライドウィンドウ",
+              "vi": "Cửa sổ trượt biến đổi với bộ đếm"
+            },
+            {
+              "en": "Dijkstra's shortest path",
+              "ja": "ダイクストラ法",
+              "vi": "Thuật toán Dijkstra"
+            },
+            {
+              "en": "Bitwise XOR summation",
+              "ja": "ビット単位のXOR合計",
+              "vi": "Tổng XOR theo bit"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Maintain a window that contains at most K zeros. Expand the right pointer, and if zeros exceed K, shrink the left pointer until valid again.",
+            "ja": "最大K個の0を含むウィンドウを維持します。右ポインタを広げ、0がKを超えたら有効になるまで左ポインタを縮めます。",
+            "vi": "Duy trì một cửa sổ chứa tối đa K số 0. Mở rộng con trỏ phải, và nếu số 0 vượt quá K, thu hẹp con trỏ trái cho đến khi hợp lệ trở lại."
+          }
+        },
+        {
+          "id": "dsa_s11_q5",
+          "question": {
+            "en": "In a social media feed, you have an array of timestamps. Find the number of subsegments of length K that contain all unique timestamps. Which data structure helps optimize this?",
+            "ja": "ソーシャルメディアのフィードで、タイムスタンプの配列があります。すべてのユニークなタイムスタンプを含む長さKの部分セグメントの数を求めます。どのデータ構造がこれを最適化しますか？",
+            "vi": "Trong một luồng tin trên mạng xã hội, bạn có một mảng các dấu thời gian. Tìm số lượng các đoạn con có độ dài K chứa tất cả các dấu thời gian duy nhất. Cấu trúc dữ liệu nào giúp tối ưu hóa việc này?"
+          },
+          "options": [
+            {
+              "en": "Stack",
+              "ja": "スタック",
+              "vi": "Ngăn xếp"
+            },
+            {
+              "en": "Hash map (Frequency table)",
+              "ja": "ハッシュマップ（頻度表）",
+              "vi": "Hash map (bảng tần suất)"
+            },
+            {
+              "en": "Priority Queue",
+              "ja": "優先度付きキュー",
+              "vi": "Hàng đợi ưu tiên"
+            },
+            {
+              "en": "Linked List",
+              "ja": "連結リスト",
+              "vi": "Danh sách liên kết"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "A frequency table (Hash map) inside the sliding window allows tracking if a new incoming element is a duplicate or unique in O(1) time.",
+            "ja": "スライドウィンドウ内の頻度表（ハッシュマップ）により、新しく入ってきた要素が重複かユニークかをO(1)で追跡できます。",
+            "vi": "Bảng tần suất (Hash map) bên trong cửa sổ trượt cho phép theo dõi xem một phần tử mới đến có bị trùng lặp hay duy nhất trong thời gian O(1)."
+          }
+        },
+        {
+          "id": "dsa_s11_q6",
+          "question": {
+            "en": "Given an array, you need to count how many subarrays have a product strictly less than a value K. How does the sliding window approach work here?",
+            "ja": "配列が与えられたとき、積がKより厳密に小さい部分配列の数を数える必要があります。ここでスライドウィンドウアプローチはどのように機能しますか？",
+            "vi": "Cho một mảng, bạn cần đếm bao nhiêu mảng con có tích nhỏ hơn nghiêm ngặt một giá trị K. Cách tiếp cận cửa sổ trượt hoạt động như thế nào ở đây?"
+          },
+          "options": [
+            {
+              "en": "Multiply all, then divide",
+              "ja": "すべて掛け合わせ、次に割る",
+              "vi": "Nhân tất cả, sau đó chia"
+            },
+            {
+              "en": "Maintain product of window, shrink if >= K",
+              "ja": "ウィンドウの積を維持し、K以上の場合は縮小",
+              "vi": "Duy trì tích của cửa sổ, thu hẹp nếu >= K"
+            },
+            {
+              "en": "Calculate all prefix products",
+              "ja": "すべてのプレフィックス積を計算",
+              "vi": "Tính tất cả tích tiền tố"
+            },
+            {
+              "en": "Use recursion to branch",
+              "ja": "再帰を使用して分岐",
+              "vi": "Sử dụng đệ quy để phân nhánh"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "As we expand the right pointer, we update the window product. If the product exceeds K, we divide by the left element and move the left pointer to restore validity.",
+            "ja": "右ポインタを広げるにつれて、ウィンドウの積を更新します。積がKを超えたら、左の要素で割って左ポインタを動かし、有効性を回復させます。",
+            "vi": "Khi chúng ta mở rộng con trỏ phải, chúng ta cập nhật tích cửa sổ. Nếu tích vượt quá K, chúng ta chia cho phần tử bên trái và di chuyển con trỏ trái để khôi phục tính hợp lệ."
+          }
+        },
+        {
+          "id": "dsa_s11_q7",
+          "question": {
+            "en": "You are tasked to remove elements from a sorted array such that the difference between the maximum and minimum elements is less than K. Which technique is most appropriate?",
+            "ja": "ソートされた配列から、最大要素と最小要素の差がK未満になるように要素を削除するタスクがあります。どのテクニックが最も適切ですか？",
+            "vi": "Bạn được giao nhiệm vụ loại bỏ các phần tử khỏi một mảng đã sắp xếp sao cho sự khác biệt giữa phần tử lớn nhất và nhỏ nhất là nhỏ hơn K. Kỹ thuật nào là thích hợp nhất?"
+          },
+          "options": [
+            {
+              "en": "Two pointers (start and end)",
+              "ja": "二分探索ポインタ（開始と終了）",
+              "vi": "Hai con trỏ (đầu và cuối)"
+            },
+            {
+              "en": "Sliding window",
+              "ja": "スライドウィンドウ",
+              "vi": "Cửa sổ trượt"
+            },
+            {
+              "en": "Linear scan with extra space",
+              "ja": "追加スペースを用いた線形スキャン",
+              "vi": "Quét tuyến tính với không gian bộ nhớ phụ"
+            },
+            {
+              "en": "Binary search on answers",
+              "ja": "回答に対する二分探索",
+              "vi": "Tìm kiếm nhị phân trên câu trả lời"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Since the array is sorted, the min and max of a range are just the ends. A sliding window effectively finds the maximum length of a valid range.",
+            "ja": "配列はソートされているため、範囲の最小と最大は単なる端です。スライドウィンドウは有効な範囲の最大長を効果的に見つけます。",
+            "vi": "Vì mảng đã được sắp xếp, giá trị nhỏ nhất và lớn nhất của một khoảng chỉ là hai đầu mảng. Cửa sổ trượt tìm kiếm hiệu quả độ dài tối đa của một khoảng hợp lệ."
+          }
+        },
+        {
+          "id": "dsa_s11_q8",
+          "question": {
+            "en": "Given two sorted arrays, you want to merge them into one sorted array in O(N+M) time. Which pattern describes this?",
+            "ja": "2つのソートされた配列が与えられたとき、O(N+M)時間で1つのソートされた配列にマージしたいです。どのパターンがこれを説明していますか？",
+            "vi": "Cho hai mảng đã sắp xếp, bạn muốn hợp nhất chúng thành một mảng đã sắp xếp trong thời gian O(N+M). Mẫu nào mô tả điều này?"
+          },
+          "options": [
+            {
+              "en": "Single pointer",
+              "ja": "シングルポインタ",
+              "vi": "Một con trỏ"
+            },
+            {
+              "en": "Divide and conquer",
+              "ja": "分割統治法",
+              "vi": "Chia để trị"
+            },
+            {
+              "en": "Multi-pointer iteration",
+              "ja": "マルチポインタ反復",
+              "vi": "Lặp bằng nhiều con trỏ"
+            },
+            {
+              "en": "Hash joining",
+              "ja": "ハッシュ結合",
+              "vi": "Kết nối Hash"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "By maintaining one pointer for each array, you can compare the elements at both pointers and select the smaller one to append to the result, advancing that pointer.",
+            "ja": "各配列に1つのポインタを維持することで、両方のポインタの要素を比較し、小さい方を選択して結果に追加し、そのポインタを進めることができます。",
+            "vi": "Bằng cách duy trì một con trỏ cho mỗi mảng, bạn có thể so sánh các phần tử tại cả hai con trỏ và chọn phần tử nhỏ hơn để thêm vào kết quả, sau đó di chuyển con trỏ đó."
+          }
+        },
+        {
+          "id": "dsa_s11_q9",
+          "question": {
+            "en": "When using two pointers, why is the condition 'left < right' often critical?",
+            "ja": "二分探索ポインタを使用する際、なぜ「左 < 右」という条件が重要なのでしょうか？",
+            "vi": "Khi sử dụng hai con trỏ, tại sao điều kiện 'trái < phải' thường rất quan trọng?"
+          },
+          "options": [
+            {
+              "en": "To prevent stack overflow",
+              "ja": "スタックオーバーフローを防ぐため",
+              "vi": "Để tránh tràn ngăn xếp"
+            },
+            {
+              "en": "To avoid redundant comparisons and index out of bounds",
+              "ja": "冗長な比較と範囲外のインデックスを避けるため",
+              "vi": "Để tránh các so sánh dư thừa và lỗi vượt quá giới hạn chỉ số"
+            },
+            {
+              "en": "To keep the memory usage O(1)",
+              "ja": "メモリ使用量をO(1)に保つため",
+              "vi": "Để giữ mức sử dụng bộ nhớ ở O(1)"
+            },
+            {
+              "en": "To optimize for multi-threading",
+              "ja": "マルチスレッド用に最適化するため",
+              "vi": "Để tối ưu cho đa luồng"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Ensuring left < right prevents the pointers from crossing over, which would lead to double-counting or comparing indices that have already been processed.",
+            "ja": "左 < 右を保証することで、ポインタが交差するのを防ぎます。交差すると二重カウントになったり、すでに処理されたインデックスを比較することになります。",
+            "vi": "Việc đảm bảo trái < phải ngăn các con trỏ vượt qua nhau, điều này sẽ dẫn đến việc đếm hai lần hoặc so sánh các chỉ số đã được xử lý."
+          }
+        },
+        {
+          "id": "dsa_s11_q10",
+          "question": {
+            "en": "You need to determine if a given string is a palindrome. Which two-pointer approach is standard?",
+            "ja": "与えられた文字列が回文かどうかを判断する必要があります。どの二分探索ポインタアプローチが標準的ですか？",
+            "vi": "Bạn cần xác định xem một chuỗi đã cho có phải là palindrome hay không. Cách tiếp cận hai con trỏ nào là tiêu chuẩn?"
+          },
+          "options": [
+            {
+              "en": "Pointers at 0 and 1, moving forward",
+              "ja": "0と1にポインタを置き、前進させる",
+              "vi": "Con trỏ ở 0 và 1, di chuyển về phía trước"
+            },
+            {
+              "en": "Pointers at middle, expanding outward",
+              "ja": "中央にポインタを置き、外側に広げる",
+              "vi": "Con trỏ ở giữa, mở rộng ra ngoài"
+            },
+            {
+              "en": "Pointers at ends, moving toward center",
+              "ja": "端にポインタを置き、中心に向かって動かす",
+              "vi": "Con trỏ ở hai đầu, di chuyển về phía trung tâm"
+            },
+            {
+              "en": "Pointer at 0, moving to end",
+              "ja": "0にポインタを置き、端に動かす",
+              "vi": "Con trỏ ở 0, di chuyển đến cuối"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "Starting at both ends and moving toward the center, you compare characters. If any mismatch occurs, it's not a palindrome. This covers all pairs in O(N).",
+            "ja": "両端から始めて中心に向かって移動し、文字を比較します。不一致があれば回文ではありません。これでO(N)ですべてのペアをカバーします。",
+            "vi": "Bắt đầu từ hai đầu và di chuyển về phía trung tâm, bạn so sánh các ký tự. Nếu có bất kỳ sự không khớp nào xảy ra, đó không phải là palindrome. Điều này bao phủ tất cả các cặp trong O(N)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dsa-12",
+      "title": {
+        "en": "Monotonic Stack & Monotonic Queue applications",
+        "ja": "単調スタックおよび単調キューの応用",
+        "vi": "Ứng dụng của ngăn xếp đơn điệu và hàng đợi đơn điệu"
+      },
+      "description": {
+        "en": "Next greater element calculations, sliding window maximum elements tracking, and index ranges.",
+        "ja": "次大要素の計算、スライドウィンドウ内の最大要素の追跡、およびインデックス範囲の特定。",
+        "vi": "Tính toán phần tử lớn hơn tiếp theo, theo dõi phần tử lớn nhất trong cửa sổ trượt, và các khoảng chỉ mục."
+      },
+      "questions": [
+        {
+          "id": "dsa_s12_q1",
+          "question": {
+            "en": "You are building a stock analysis tool. Given an array representing daily stock prices, you need to find the first day after the current day where the price is higher than today's price. What is the most efficient way to solve this?",
+            "ja": "株価分析ツールを開発しています。日々の株価を表す配列が与えられたとき、今日より株価が高い最初の日を見つける必要があります。これを最も効率的に解決する方法は何ですか？",
+            "vi": "Bạn đang xây dựng một công cụ phân tích chứng khoán. Với một mảng đại diện cho giá cổ phiếu hàng ngày, bạn cần tìm ngày đầu tiên sau ngày hiện tại mà giá cao hơn giá của ngày hôm nay. Cách hiệu quả nhất để giải quyết vấn đề này là gì?"
+          },
+          "options": [
+            {
+              "en": "Nested loops with O(n^2) complexity",
+              "ja": "O(n^2)の計算量を持つ二重ループ",
+              "vi": "Vòng lặp lồng nhau với độ phức tạp O(n^2)"
+            },
+            {
+              "en": "Monotonic stack in O(n) time",
+              "ja": "O(n)で動作する単調スタック",
+              "vi": "Sử dụng ngăn xếp đơn điệu với thời gian O(n)"
+            },
+            {
+              "en": "Binary search in O(n log n) time",
+              "ja": "O(n log n)で動作する二分探索",
+              "vi": "Tìm kiếm nhị phân với thời gian O(n log n)"
+            },
+            {
+              "en": "Hash map with brute force in O(n^2)",
+              "ja": "O(n^2)のブルートフォースを伴うハッシュマップ",
+              "vi": "Sử dụng Hash map với vét cạn trong O(n^2)"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "A monotonic decreasing stack allows us to find the next greater element in linear time by keeping track of pending elements and popping them when a larger element is found.",
+            "ja": "単調減少スタックを使用することで、保留中の要素を追跡し、より大きい要素が見つかった際にポップすることで、線形時間で次大要素を見つけることができます。",
+            "vi": "Ngăn xếp đơn điệu giảm cho phép chúng ta tìm phần tử lớn hơn tiếp theo trong thời gian tuyến tính bằng cách theo dõi các phần tử chưa tìm được giá trị lớn hơn và đẩy chúng ra khi tìm thấy phần tử lớn hơn."
+          }
+        },
+        {
+          "id": "dsa_s12_q2",
+          "question": {
+            "en": "You are implementing a feature for a news feed that tracks the maximum number of likes in a sliding window of size k. Which data structure provides the best performance for retrieving the maximum of the current window?",
+            "ja": "サイズkのスライドウィンドウ内の「いいね」の最大数を追跡するニュースフィード機能を実装しています。現在のウィンドウの最大値を取得するために最適なデータ構造は何ですか？",
+            "vi": "Bạn đang triển khai tính năng cho nguồn cấp tin tức để theo dõi số lượt thích tối đa trong một cửa sổ trượt có kích thước k. Cấu trúc dữ liệu nào cung cấp hiệu suất tốt nhất để truy xuất giá trị tối đa của cửa sổ hiện tại?"
+          },
+          "options": [
+            {
+              "en": "Queue",
+              "ja": "キュー",
+              "vi": "Hàng đợi"
+            },
+            {
+              "en": "Max-Heap",
+              "ja": "最大ヒープ",
+              "vi": "Max-Heap (Đống cực đại)"
+            },
+            {
+              "en": "Monotonic Queue",
+              "ja": "単調キュー",
+              "vi": "Hàng đợi đơn điệu"
+            },
+            {
+              "en": "Stack",
+              "ja": "スタック",
+              "vi": "Ngăn xếp"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "A monotonic queue maintains the maximum element at the front of the deque in O(1) time while adding/removing elements from the window in amortized O(1) time.",
+            "ja": "単調キューは、デック（両端キュー）の先頭に最大要素をO(1)で保持し、ウィンドウへの要素の追加・削除を償却O(1)で行います。",
+            "vi": "Hàng đợi đơn điệu duy trì phần tử lớn nhất ở đầu deque trong thời gian O(1) trong khi thêm/xóa các phần tử từ cửa sổ trong thời gian trung bình O(1)."
+          }
+        },
+        {
+          "id": "dsa_s12_q3",
+          "question": {
+            "en": "In a histogram-based problem, you need to calculate the largest rectangular area. If you use a monotonic stack, what condition must be met for elements to be pushed into the stack?",
+            "ja": "ヒストグラムに基づく問題で、最大の長方形面積を計算する必要があります。単調スタックを使用する場合、要素がスタックにプッシュされるために満たされるべき条件は何ですか？",
+            "vi": "Trong một bài toán dựa trên biểu đồ cột, bạn cần tính diện tích hình chữ nhật lớn nhất. Nếu bạn sử dụng ngăn xếp đơn điệu, điều kiện nào phải được đáp ứng để các phần tử được đẩy vào ngăn xếp?"
+          },
+          "options": [
+            {
+              "en": "Current element is less than top of stack",
+              "ja": "現在の要素がスタックのトップより小さい",
+              "vi": "Phần tử hiện tại nhỏ hơn phần tử trên cùng của ngăn xếp"
+            },
+            {
+              "en": "Current element is greater than or equal to top of stack",
+              "ja": "現在の要素がスタックのトップ以上である",
+              "vi": "Phần tử hiện tại lớn hơn hoặc bằng phần tử trên cùng của ngăn xếp"
+            },
+            {
+              "en": "Stack is empty",
+              "ja": "スタックが空である",
+              "vi": "Ngăn xếp trống"
+            },
+            {
+              "en": "None of the above",
+              "ja": "上記に該当なし",
+              "vi": "Không có lựa chọn nào ở trên"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "To maintain a monotonically increasing stack (for finding the nearest smaller elements to the left/right), we only push elements that are greater than or equal to the top, otherwise we pop.",
+            "ja": "単調増加スタック（左/右の最も近い小さい要素を見つけるため）を維持するには、スタックのトップ以上の要素のみをプッシュし、それ以外の場合はポップする必要があります。",
+            "vi": "Để duy trì một ngăn xếp đơn điệu tăng (để tìm các phần tử nhỏ hơn gần nhất sang bên trái/phải), chúng ta chỉ đẩy các phần tử lớn hơn hoặc bằng phần tử trên cùng, nếu không thì phải pop."
+          }
+        },
+        {
+          "id": "dsa_s12_q4",
+          "question": {
+            "en": "When using a monotonic queue for the Sliding Window Maximum problem, why do we store the indices of the elements rather than the values themselves?",
+            "ja": "スライドウィンドウの最大値問題で単調キューを使用する際、値そのものではなく要素のインデックスを保持するのはなぜですか？",
+            "vi": "Khi sử dụng hàng đợi đơn điệu cho bài toán tìm giá trị lớn nhất trong cửa sổ trượt, tại sao chúng ta lưu trữ các chỉ số của phần tử thay vì chính các giá trị đó?"
+          },
+          "options": [
+            {
+              "en": "To save memory",
+              "ja": "メモリを節約するため",
+              "vi": "Để tiết kiệm bộ nhớ"
+            },
+            {
+              "en": "To easily calculate the window range and remove out-of-bounds elements",
+              "ja": "ウィンドウの範囲を計算し、範囲外の要素を簡単に削除するため",
+              "vi": "Để dễ dàng tính toán phạm vi cửa sổ và loại bỏ các phần tử nằm ngoài phạm vi"
+            },
+            {
+              "en": "Because values can be negative",
+              "ja": "値が負になる可能性があるため",
+              "vi": "Vì các giá trị có thể là số âm"
+            },
+            {
+              "en": "It is not possible to store values directly",
+              "ja": "値を直接保持することは不可能であるため",
+              "vi": "Không thể lưu trữ trực tiếp các giá trị"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Storing indices allows us to verify if the current maximum is still within the sliding window boundary [i-k+1, i] by comparing the index to the window bounds.",
+            "ja": "インデックスを保持することで、現在の最大値がスライドウィンドウの境界 [i-k+1, i] 内にまだ存在するかを、インデックスを境界と比較することで確認できます。",
+            "vi": "Việc lưu trữ các chỉ số cho phép chúng ta xác minh xem phần tử lớn nhất hiện tại có còn nằm trong phạm vi cửa sổ trượt [i-k+1, i] hay không bằng cách so sánh chỉ số với các giới hạn cửa sổ."
+          }
+        },
+        {
+          "id": "dsa_s12_q5",
+          "question": {
+            "en": "You have a task to find the sum of subarray minimums for a given array. Which approach is most suitable?",
+            "ja": "与えられた配列に対して、部分配列の最小値の合計を求めるタスクがあります。どの手法が最も適していますか？",
+            "vi": "Bạn có nhiệm vụ tìm tổng các giá trị nhỏ nhất của các mảng con cho một mảng nhất định. Phương pháp nào là phù hợp nhất?"
+          },
+          "options": [
+            {
+              "en": "Brute force search O(n^3)",
+              "ja": "ブルートフォース探索 O(n^3)",
+              "vi": "Vét cạn O(n^3)"
+            },
+            {
+              "en": "Divide and conquer O(n log n)",
+              "ja": "分割統治法 O(n log n)",
+              "vi": "Chia để trị O(n log n)"
+            },
+            {
+              "en": "Monotonic stack to find previous/next smaller elements in O(n)",
+              "ja": "単調スタックを使用して、前の/次の小さい要素をO(n)で見つける",
+              "vi": "Ngăn xếp đơn điệu để tìm phần tử nhỏ hơn phía trước/sau trong O(n)"
+            },
+            {
+              "en": "Dynamic Programming with O(n^2)",
+              "ja": "動的計画法 O(n^2)",
+              "vi": "Quy hoạch động với O(n^2)"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "By finding the distance to the nearest smaller element on the left and right, we can count how many subarrays have a specific element as their minimum, leading to an O(n) solution.",
+            "ja": "左と右の最も近い小さい要素への距離を求めることで、特定の要素を最小値とする部分配列がいくつあるかを数え上げることができ、O(n)の解法が得られます。",
+            "vi": "Bằng cách tìm khoảng cách đến phần tử nhỏ hơn gần nhất ở bên trái và bên phải, chúng ta có thể đếm xem có bao nhiêu mảng con có phần tử cụ thể là giá trị nhỏ nhất, dẫn đến lời giải O(n)."
+          }
+        },
+        {
+          "id": "dsa_s12_q6",
+          "question": {
+            "en": "In a monitoring system, you need to track if the current average value of the last 'k' entries exceeds a threshold. You must use a sliding window. Which of the following is correct regarding monotonic structures?",
+            "ja": "監視システムにおいて、直近k個のデータの現在の平均値が閾値を超えているか追跡する必要があります。スライドウィンドウを使用する必要がありますが、単調構造に関して正しいものはどれですか？",
+            "vi": "Trong một hệ thống giám sát, bạn cần theo dõi xem giá trị trung bình hiện tại của k mục nhập cuối cùng có vượt quá ngưỡng hay không. Bạn phải sử dụng cửa sổ trượt. Điều nào sau đây là đúng về cấu trúc đơn điệu?"
+          },
+          "options": [
+            {
+              "en": "Monotonic queues are specifically for finding max/min, not averages.",
+              "ja": "単調キューは平均値ではなく、最大値/最小値の検索に特化したものです。",
+              "vi": "Hàng đợi đơn điệu dành riêng cho việc tìm max/min, không phải trung bình."
+            },
+            {
+              "en": "A monotonic queue is required to compute the sum of the window.",
+              "ja": "ウィンドウの合計を計算するには単調キューが必要です。",
+              "vi": "Cần có hàng đợi đơn điệu để tính tổng của cửa sổ."
+            },
+            {
+              "en": "Monotonic stacks can replace queues for sliding windows.",
+              "ja": "単調スタックはスライドウィンドウのキューの代わりに使用できます。",
+              "vi": "Ngăn xếp đơn điệu có thể thay thế hàng đợi cho cửa sổ trượt."
+            },
+            {
+              "en": "All of the above.",
+              "ja": "すべて正しい。",
+              "vi": "Tất cả đều đúng."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Monotonic queues are optimized for extremum queries in sliding windows, whereas a simple running sum or sliding window sum (two pointers) is sufficient for averages.",
+            "ja": "単調キューはスライドウィンドウ内の極値クエリに最適化されていますが、平均値の場合は単純な累積和やスライドウィンドウの和（二ポインタ法）で十分です。",
+            "vi": "Hàng đợi đơn điệu được tối ưu hóa cho các truy vấn cực trị trong cửa sổ trượt, trong khi tổng tích lũy đơn giản hoặc tổng cửa sổ trượt (hai con trỏ) là đủ cho giá trị trung bình."
+          }
+        },
+        {
+          "id": "dsa_s12_q7",
+          "question": {
+            "en": "Given an array of integers, you want to find the span of the daily price (number of consecutive days before the current day where the price was less than or equal to today's). Which structure should you use?",
+            "ja": "整数の配列が与えられたとき、日々の価格の期間（今日より価格が低いか等しい、今日より前の連続した日数）を求めたいとします。どの構造を使用すべきですか？",
+            "vi": "Với một mảng số nguyên, bạn muốn tìm phạm vi giá hàng ngày (số ngày liên tiếp trước ngày hiện tại mà giá nhỏ hơn hoặc bằng giá của ngày hôm nay). Bạn nên sử dụng cấu trúc nào?"
+          },
+          "options": [
+            {
+              "en": "Monotonic Stack",
+              "ja": "単調スタック",
+              "vi": "Ngăn xếp đơn điệu"
+            },
+            {
+              "en": "Monotonic Queue",
+              "ja": "単調キュー",
+              "vi": "Hàng đợi đơn điệu"
+            },
+            {
+              "en": "Circular Queue",
+              "ja": "環状キュー",
+              "vi": "Hàng đợi vòng"
+            },
+            {
+              "en": "Priority Queue",
+              "ja": "優先度付きキュー",
+              "vi": "Hàng đợi ưu tiên"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "A monotonic stack is ideal for finding the nearest previous element that is greater than the current one to determine the span.",
+            "ja": "単調スタックは、現在の要素より大きい直前の要素を見つけて期間を特定するのに最適です。",
+            "vi": "Ngăn xếp đơn điệu là lý tưởng để tìm phần tử trước đó gần nhất lớn hơn phần tử hiện tại nhằm xác định phạm vi."
+          }
+        },
+        {
+          "id": "dsa_s12_q8",
+          "question": {
+            "en": "What is the amortized time complexity of performing all operations (push and pop) on a monotonic stack for an array of size n?",
+            "ja": "サイズnの配列に対して単調スタックですべての操作（プッシュとポップ）を実行する場合の償却計算量はいくらですか？",
+            "vi": "Độ phức tạp thời gian trung bình của việc thực hiện tất cả các thao tác (push và pop) trên một ngăn xếp đơn điệu cho một mảng có kích thước n là bao nhiêu?"
+          },
+          "options": [
+            {
+              "en": "O(log n)",
+              "ja": "O(log n)",
+              "vi": "O(log n)"
+            },
+            {
+              "en": "O(n)",
+              "ja": "O(n)",
+              "vi": "O(n)"
+            },
+            {
+              "en": "O(n log n)",
+              "ja": "O(n log n)",
+              "vi": "O(n log n)"
+            },
+            {
+              "en": "O(n^2)",
+              "ja": "O(n^2)",
+              "vi": "O(n^2)"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Each element is pushed once and popped at most once throughout the process, resulting in an amortized O(1) per operation and O(n) total.",
+            "ja": "プロセス全体を通じて各要素は1回プッシュされ、最大でも1回しかポップされないため、操作ごとに償却O(1)、合計でO(n)となります。",
+            "vi": "Mỗi phần tử được đẩy vào một lần và được lấy ra tối đa một lần trong suốt quá trình, dẫn đến thời gian trung bình là O(1) mỗi thao tác và tổng cộng là O(n)."
+          }
+        },
+        {
+          "id": "dsa_s12_q9",
+          "question": {
+            "en": "In a system where you are designing an online request processor, you need to find the next element greater than the current one for every element in a stream. Since the stream is continuous, what is the best strategy?",
+            "ja": "オンラインリクエストプロセッサを設計するシステムにおいて、ストリーム内のすべての要素に対して、現在の要素より大きい次の要素を見つける必要があります。ストリームは継続的であるため、最善の戦略は何ですか？",
+            "vi": "Trong một hệ thống nơi bạn đang thiết kế bộ xử lý yêu cầu trực tuyến, bạn cần tìm phần tử tiếp theo lớn hơn phần tử hiện tại cho mọi phần tử trong một luồng. Vì luồng là liên tục, chiến lược tốt nhất là gì?"
+          },
+          "options": [
+            {
+              "en": "Store all elements in a list and sort",
+              "ja": "すべての要素をリストに格納し、ソートする",
+              "vi": "Lưu trữ tất cả các phần tử trong một danh sách và sắp xếp"
+            },
+            {
+              "en": "Use a monotonic stack to maintain pending elements",
+              "ja": "単調スタックを使用して保留中の要素を維持する",
+              "vi": "Sử dụng ngăn xếp đơn điệu để duy trì các phần tử đang chờ xử lý"
+            },
+            {
+              "en": "Use a min-heap to keep track of elements",
+              "ja": "最小ヒープを使用して要素を追跡する",
+              "vi": "Sử dụng Min-Heap để theo dõi các phần tử"
+            },
+            {
+              "en": "Re-scan the entire stream for every new element",
+              "ja": "新しい要素ごとにストリーム全体を再スキャンする",
+              "vi": "Quét lại toàn bộ luồng cho mỗi phần tử mới"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "A monotonic stack is perfectly suited for online processing where elements arrive one by one, allowing us to resolve queries as soon as a greater element arrives.",
+            "ja": "単調スタックは要素が一つずつ到着するオンライン処理に最適であり、大きい要素が到着した瞬間にクエリを解決できます。",
+            "vi": "Ngăn xếp đơn điệu hoàn toàn phù hợp cho xử lý trực tuyến nơi các phần tử đến từng cái một, cho phép chúng ta giải quyết các truy vấn ngay khi một phần tử lớn hơn xuất hiện."
+          }
+        },
+        {
+          "id": "dsa_s12_q10",
+          "question": {
+            "en": "Given an array, you need to find the maximum value in every window of size k, but the window slides one element at a time. Which structure handles the sliding and maximum maintenance optimally?",
+            "ja": "配列が与えられたとき、サイズkのすべてのウィンドウ内の最大値を見つける必要がありますが、ウィンドウは一度に1要素ずつスライドします。どの構造がスライドと最大値の維持を最適に処理しますか？",
+            "vi": "Với một mảng, bạn cần tìm giá trị lớn nhất trong mỗi cửa sổ có kích thước k, nhưng cửa sổ trượt từng phần tử một. Cấu trúc nào xử lý việc trượt và duy trì giá trị lớn nhất một cách tối ưu?"
+          },
+          "options": [
+            {
+              "en": "A monotonic queue (deque)",
+              "ja": "単調キュー（両端キュー）",
+              "vi": "Hàng đợi đơn điệu (deque)"
+            },
+            {
+              "en": "A balanced binary search tree",
+              "ja": "平衡二分探索木",
+              "vi": "Cây tìm kiếm nhị phân cân bằng"
+            },
+            {
+              "en": "A simple array with a sliding pointer",
+              "ja": "スライドポインタを持つ単純な配列",
+              "vi": "Một mảng đơn giản với con trỏ trượt"
+            },
+            {
+              "en": "A linked list",
+              "ja": "連結リスト",
+              "vi": "Danh sách liên kết"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "A monotonic queue (deque) allows adding/removing from the back and removing from the front, maintaining the maximum at the front, resulting in O(n) overall time complexity.",
+            "ja": "単調キュー（両端キュー）は後ろからの追加・削除と前からの削除を可能にし、最大値を先頭に保持するため、全体でO(n)の計算量になります。",
+            "vi": "Hàng đợi đơn điệu (deque) cho phép thêm/xóa từ phía sau và xóa từ phía trước, duy trì giá trị lớn nhất ở phía trước, dẫn đến độ phức tạp thời gian tổng thể O(n)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dsa-13",
+      "title": {
+        "en": "Graph Cycle Detection & Topological Sort",
+        "ja": "グラフのサイクル検出とトポロジカルソート",
+        "vi": "Phát hiện chu trình trong đồ thị và sắp xếp topo"
+      },
+      "description": {
+        "en": "Kahn's algorithm, DFS recursion stack tracking, and cycles in dependency structures.",
+        "ja": "Kahnのアルゴリズム、DFS再帰スタックの追跡、依存関係構造におけるサイクルに関する問題。",
+        "vi": "Thuật toán Kahn, theo dõi ngăn xếp đệ quy DFS và các chu trình trong cấu trúc phụ thuộc."
+      },
+      "questions": [
+        {
+          "id": "dsa_s13_q1",
+          "question": {
+            "en": "You are designing a build system for a microservices architecture where services have dependencies on each other. Which graph property must hold true for the build process to be feasible?",
+            "ja": "マイクロサービスアーキテクチャのビルドシステムを設計しており、各サービスは互いに依存関係を持っています。ビルドプロセスが実行可能であるために、グラフが満たすべき性質はどれですか。",
+            "vi": "Bạn đang thiết kế một hệ thống xây dựng cho kiến trúc microservices, nơi các dịch vụ phụ thuộc lẫn nhau. Tính chất đồ thị nào phải đúng để quá trình xây dựng khả thi?"
+          },
+          "options": [
+            {
+              "en": "The graph must be a Directed Acyclic Graph (DAG).",
+              "ja": "グラフは有向非巡回グラフ（DAG）である必要がある。",
+              "vi": "Đồ thị phải là Đồ thị có hướng không chu trình (DAG)."
+            },
+            {
+              "en": "The graph must contain at least one Hamiltonian path.",
+              "ja": "グラフは少なくとも1つのハミルトン路を含む必要がある。",
+              "vi": "Đồ thị phải chứa ít nhất một đường đi Hamiltonian."
+            },
+            {
+              "en": "The graph must be strongly connected.",
+              "ja": "グラフは強連結である必要がある。",
+              "vi": "Đồ thị phải liên thông mạnh."
+            },
+            {
+              "en": "The graph must have an equal number of nodes and edges.",
+              "ja": "グラフのノード数とエッジ数は等しい必要がある。",
+              "vi": "Đồ thị phải có số lượng nút và cạnh bằng nhau."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "For tasks with dependencies, a cycle would mean a circular dependency where no service can be built first. A DAG ensures a valid order exists.",
+            "ja": "依存関係のあるタスクにおいてサイクルが存在すると、循環依存が発生し、どのサービスも最初にビルドできなくなります。DAGであれば順序が保証されます。",
+            "vi": "Đối với các tác vụ có phụ thuộc, chu trình sẽ tạo ra sự phụ thuộc vòng mà không dịch vụ nào có thể được xây dựng trước. DAG đảm bảo tồn tại một thứ tự hợp lệ."
+          }
+        },
+        {
+          "id": "dsa_s13_q2",
+          "question": {
+            "en": "In Kahn's algorithm for topological sorting, if the queue becomes empty before all nodes are added to the sorted list, what does this indicate?",
+            "ja": "トポロジカルソートのためのKahnのアルゴリズムにおいて、すべてのノードがソート済みリストに追加される前にキューが空になった場合、それは何を意味しますか。",
+            "vi": "Trong thuật toán Kahn để sắp xếp topo, nếu hàng đợi trống trước khi tất cả các nút được thêm vào danh sách đã sắp xếp, điều đó cho biết điều gì?"
+          },
+          "options": [
+            {
+              "en": "The graph has multiple connected components.",
+              "ja": "グラフには複数の連結成分が存在する。",
+              "vi": "Đồ thị có nhiều thành phần liên thông."
+            },
+            {
+              "en": "The graph contains at least one cycle.",
+              "ja": "グラフには少なくとも1つのサイクルが含まれている。",
+              "vi": "Đồ thị chứa ít nhất một chu trình."
+            },
+            {
+              "en": "The graph is a tree.",
+              "ja": "グラフは木構造である。",
+              "vi": "Đồ thị là một cây."
+            },
+            {
+              "en": "The graph has nodes with no incoming edges.",
+              "ja": "グラフには入力エッジのないノードが存在する。",
+              "vi": "Đồ thị có các nút không có cạnh vào."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Kahn's algorithm relies on zero-indegree nodes. If a cycle exists, nodes within the cycle will never have an indegree of zero, preventing their processing.",
+            "ja": "Kahnのアルゴリズムは入次数0のノードに依存します。サイクルが存在する場合、そのノードの入次数は決して0にならず、処理が完了しません。",
+            "vi": "Thuật toán Kahn dựa vào các nút có bậc vào bằng 0. Nếu có chu trình, các nút trong chu trình sẽ không bao giờ có bậc vào bằng 0, ngăn cản việc xử lý."
+          }
+        },
+        {
+          "id": "dsa_s13_q3",
+          "question": {
+            "en": "When using DFS to detect cycles in a directed graph, what is the significance of the recursion stack tracking state?",
+            "ja": "有向グラフのサイクル検出にDFSを使用する際、再帰スタック追跡の状態は何を意味しますか。",
+            "vi": "Khi sử dụng DFS để phát hiện chu trình trong đồ thị có hướng, ý nghĩa của trạng thái theo dõi ngăn xếp đệ quy là gì?"
+          },
+          "options": [
+            {
+              "en": "It tracks the nodes currently in the path from the root.",
+              "ja": "ルートからの現在のパス上にあるノードを追跡する。",
+              "vi": "Nó theo dõi các nút hiện có trên đường đi từ gốc."
+            },
+            {
+              "en": "It records the distance from the source node.",
+              "ja": "ソースノードからの距離を記録する。",
+              "vi": "Nó ghi lại khoảng cách từ nút nguồn."
+            },
+            {
+              "en": "It stores all visited nodes regardless of path.",
+              "ja": "パスに関係なく、訪問済みのすべてのノードを格納する。",
+              "vi": "Nó lưu trữ tất cả các nút đã truy cập bất kể đường đi."
+            },
+            {
+              "en": "It counts the total number of outgoing edges.",
+              "ja": "外向きエッジの合計数をカウントする。",
+              "vi": "Nó đếm tổng số cạnh ra."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "If we encounter a node that is currently in the recursion stack, it means there is a back-edge, which confirms the existence of a cycle.",
+            "ja": "現在再帰スタックにあるノードを訪問した場合、バックエッジが存在することを意味し、サイクルの存在が証明されます。",
+            "vi": "Nếu chúng ta gặp một nút hiện đang nằm trong ngăn xếp đệ quy, điều đó có nghĩa là có một cạnh ngược, xác nhận sự tồn tại của chu trình."
+          }
+        },
+        {
+          "id": "dsa_s13_q4",
+          "question": {
+            "en": "Which complexity best describes the performance of Kahn's Algorithm for topological sorting on a graph with V vertices and E edges?",
+            "ja": "V個の頂点とE個のエッジを持つグラフに対するKahnのアルゴリズムのトポロジカルソートの計算量として適切なものはどれですか。",
+            "vi": "Độ phức tạp nào mô tả đúng nhất hiệu suất của thuật toán Kahn cho việc sắp xếp topo trên một đồ thị có V đỉnh và E cạnh?"
+          },
+          "options": [
+            {
+              "en": "O(V + E)",
+              "ja": "O(V + E)",
+              "vi": "O(V + E)"
+            },
+            {
+              "en": "O(V * E)",
+              "ja": "O(V * E)",
+              "vi": "O(V * E)"
+            },
+            {
+              "en": "O(V log V)",
+              "ja": "O(V log V)",
+              "vi": "O(V log V)"
+            },
+            {
+              "en": "O(E log V)",
+              "ja": "O(E log V)",
+              "vi": "O(E log V)"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Kahn's algorithm visits every node once and examines every edge once to update the indegrees, resulting in O(V + E) time complexity.",
+            "ja": "Kahnのアルゴリズムは各ノードを一度ずつ訪問し、入次数を更新するために各エッジを一度ずつ検証するため、時間計算量はO(V + E)となります。",
+            "vi": "Thuật toán Kahn thăm mỗi nút một lần và kiểm tra mỗi cạnh một lần để cập nhật bậc vào, dẫn đến độ phức tạp thời gian O(V + E)."
+          }
+        },
+        {
+          "id": "dsa_s13_q5",
+          "question": {
+            "en": "Suppose you are processing a DAG of tasks. How does topological sorting help in finding the longest path in this graph?",
+            "ja": "タスクのDAGを処理しているとします。このグラフにおける最長パスを見つけるためにトポロジカルソートはどのように役立ちますか。",
+            "vi": "Giả sử bạn đang xử lý một DAG của các tác vụ. Sắp xếp topo giúp ích như thế nào trong việc tìm đường đi dài nhất trong đồ thị này?"
+          },
+          "options": [
+            {
+              "en": "It allows processing nodes in an order where dependencies are already resolved.",
+              "ja": "依存関係が解決済みの順序でノードを処理できる。",
+              "vi": "Nó cho phép xử lý các nút theo thứ tự mà các phụ thuộc đã được giải quyết."
+            },
+            {
+              "en": "It ensures the graph is connected.",
+              "ja": "グラフが連結であることを保証する。",
+              "vi": "Nó đảm bảo đồ thị là liên thông."
+            },
+            {
+              "en": "It removes the need to store weights on edges.",
+              "ja": "エッジの重みを格納する必要がなくなる。",
+              "vi": "Nó loại bỏ nhu cầu lưu trữ trọng số trên các cạnh."
+            },
+            {
+              "en": "It makes the graph undirected.",
+              "ja": "グラフを無向グラフにする。",
+              "vi": "Nó làm cho đồ thị trở thành đồ thị vô hướng."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "By processing nodes in topological order, we can guarantee that when we reach a node, all its predecessors have been computed, allowing for dynamic programming.",
+            "ja": "トポロジカル順序でノードを処理することで、ノードに到達した時点で先行するすべての計算が完了していることが保証され、動的計画法が適用できます。",
+            "vi": "Bằng cách xử lý các nút theo thứ tự topo, chúng ta có thể đảm bảo rằng khi đạt đến một nút, tất cả các nút tiền nhiệm của nó đã được tính toán, cho phép sử dụng quy hoạch động."
+          }
+        },
+        {
+          "id": "dsa_s13_q6",
+          "question": {
+            "en": "What is the primary difference between a Depth-First Search (DFS) topological sort and Kahn's algorithm?",
+            "ja": "DFSベースのトポロジカルソートとKahnのアルゴリズムの主な違いは何ですか。",
+            "vi": "Sự khác biệt chính giữa sắp xếp topo bằng DFS và thuật toán Kahn là gì?"
+          },
+          "options": [
+            {
+              "en": "DFS produces the reverse topological order, while Kahn's produces the order directly.",
+              "ja": "DFSは逆トポロジカル順序を生成し、Kahnは直接順序を生成する。",
+              "vi": "DFS tạo ra thứ tự topo ngược, trong khi Kahn tạo ra thứ tự trực tiếp."
+            },
+            {
+              "en": "Kahn's algorithm requires recursion, while DFS is iterative.",
+              "ja": "Kahnは再帰を必要とするが、DFSは反復的である。",
+              "vi": "Thuật toán Kahn yêu cầu đệ quy, trong khi DFS là lặp."
+            },
+            {
+              "en": "Only DFS can detect cycles.",
+              "ja": "DFSのみがサイクルを検出できる。",
+              "vi": "Chỉ có DFS mới có thể phát hiện chu trình."
+            },
+            {
+              "en": "There is no functional difference.",
+              "ja": "機能的な違いはない。",
+              "vi": "Không có sự khác biệt về chức năng."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "DFS topological sort adds a node to the result list only after all its descendants are visited, which naturally results in the reverse order of dependencies.",
+            "ja": "DFSのトポロジカルソートは、すべての子孫を訪問した後にノードを結果リストに追加するため、必然的に依存関係の逆順となります。",
+            "vi": "Sắp xếp topo bằng DFS thêm một nút vào danh sách kết quả chỉ sau khi tất cả các nút con của nó đã được thăm, điều này tự nhiên dẫn đến thứ tự ngược lại của các phụ thuộc."
+          }
+        },
+        {
+          "id": "dsa_s13_q7",
+          "question": {
+            "en": "When performing DFS cycle detection, what are the three states usually assigned to nodes?",
+            "ja": "DFSサイクル検出を実行する際、ノードに割り当てられる3つの状態とは何ですか。",
+            "vi": "Khi thực hiện phát hiện chu trình bằng DFS, ba trạng thái thường được gán cho các nút là gì?"
+          },
+          "options": [
+            {
+              "en": "Unvisited, Visiting, Visited",
+              "ja": "未訪問、訪問中、訪問済み",
+              "vi": "Chưa thăm, Đang thăm, Đã thăm"
+            },
+            {
+              "en": "Active, Inactive, Blocked",
+              "ja": "アクティブ、非アクティブ、ブロック済み",
+              "vi": "Hoạt động, Không hoạt động, Bị chặn"
+            },
+            {
+              "en": "New, Processing, Completed",
+              "ja": "新規、処理中、完了",
+              "vi": "Mới, Đang xử lý, Hoàn thành"
+            },
+            {
+              "en": "Pending, Running, Failed",
+              "ja": "保留、実行中、失敗",
+              "vi": "Chờ, Đang chạy, Thất bại"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Unvisited (0), Visiting (1, currently in the recursion stack), and Visited (2, fully explored) are the standard states used to manage DFS traversal and cycle detection.",
+            "ja": "未訪問(0)、訪問中(1、現在再帰スタックにある)、訪問済み(2、完全に探索済み)は、DFSトラバーサルとサイクル検出に使用される標準的な状態管理です。",
+            "vi": "Chưa thăm (0), Đang thăm (1, hiện đang trong ngăn xếp đệ quy) và Đã thăm (2, đã khám phá xong) là các trạng thái tiêu chuẩn được sử dụng để quản lý duyệt DFS và phát hiện chu trình."
+          }
+        },
+        {
+          "id": "dsa_s13_q8",
+          "question": {
+            "en": "In a dependency graph, what does a topological sort represent?",
+            "ja": "依存関係グラフにおいて、トポロジカルソートは何を表しますか。",
+            "vi": "Trong đồ thị phụ thuộc, sắp xếp topo đại diện cho điều gì?"
+          },
+          "options": [
+            {
+              "en": "A valid linear execution sequence of tasks.",
+              "ja": "タスクの有効な線形実行シーケンス。",
+              "vi": "Một trình tự thực hiện tuyến tính hợp lệ của các tác vụ."
+            },
+            {
+              "en": "The shortest path from a start node to all others.",
+              "ja": "開始ノードから他のすべてのノードへの最短パス。",
+              "vi": "Đường đi ngắn nhất từ nút bắt đầu đến tất cả các nút khác."
+            },
+            {
+              "en": "The grouping of highly interconnected nodes.",
+              "ja": "高度に相互接続されたノードのグループ化。",
+              "vi": "Việc nhóm các nút có kết nối chặt chẽ."
+            },
+            {
+              "en": "A list of nodes sorted by their degree.",
+              "ja": "次数順にソートされたノードのリスト。",
+              "vi": "Danh sách các nút được sắp xếp theo bậc."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Topological sort orders nodes such that for every directed edge uv, u comes before v, ensuring dependencies are respected in linear order.",
+            "ja": "トポロジカルソートは、すべての有向エッジuvに対してuがvの前に来るようにノードを並べ、線形順序で依存関係が守られることを保証します。",
+            "vi": "Sắp xếp topo sắp xếp các nút sao cho với mọi cạnh có hướng uv, u đứng trước v, đảm bảo các phụ thuộc được tôn trọng theo thứ tự tuyến tính."
+          }
+        },
+        {
+          "id": "dsa_s13_q9",
+          "question": {
+            "en": "If a graph has a cycle, how many valid topological orderings can it have?",
+            "ja": "グラフがサイクルを持つ場合、有効なトポロジカル順序はいくつ存在しますか。",
+            "vi": "Nếu một đồ thị có chu trình, nó có thể có bao nhiêu thứ tự topo hợp lệ?"
+          },
+          "options": [
+            {
+              "en": "Zero",
+              "ja": "0つ",
+              "vi": "Không có"
+            },
+            {
+              "en": "Exactly one",
+              "ja": "正確に1つ",
+              "vi": "Chính xác là một"
+            },
+            {
+              "en": "Infinite",
+              "ja": "無限",
+              "vi": "Vô hạn"
+            },
+            {
+              "en": "It depends on the number of nodes.",
+              "ja": "ノード数に依存する",
+              "vi": "Phụ thuộc vào số lượng nút"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "By definition, a topological sort exists only for Directed Acyclic Graphs (DAGs). A cycle makes it impossible to order tasks without violating a dependency.",
+            "ja": "定義上、トポロジカルソートは有向非巡回グラフ(DAG)に対してのみ存在します。サイクルがあると、依存関係を壊さずにタスクを順序付けることは不可能です。",
+            "vi": "Theo định nghĩa, sắp xếp topo chỉ tồn tại đối với các Đồ thị có hướng không chu trình (DAG). Một chu trình làm cho việc sắp xếp các tác vụ mà không vi phạm phụ thuộc là điều không thể."
+          }
+        },
+        {
+          "id": "dsa_s13_q10",
+          "question": {
+            "en": "You are debugging a circular reference in a library dependency manager. Which algorithm would be most efficient to identify the specific nodes involved in the cycle?",
+            "ja": "ライブラリの依存関係マネージャーの循環参照をデバッグしています。サイクルに関与している特定のノードを特定するのに最も効率的なアルゴリズムはどれですか。",
+            "vi": "Bạn đang gỡ lỗi tham chiếu vòng trong một trình quản lý phụ thuộc thư viện. Thuật toán nào sẽ hiệu quả nhất để xác định các nút cụ thể tham gia vào chu trình?"
+          },
+          "options": [
+            {
+              "en": "DFS with backtracking and recursion stack tracking.",
+              "ja": "バックトラッキングと再帰スタック追跡を行うDFS。",
+              "vi": "DFS với quay lui và theo dõi ngăn xếp đệ quy."
+            },
+            {
+              "en": "Kahn's Algorithm.",
+              "ja": "Kahnのアルゴリズム。",
+              "vi": "Thuật toán Kahn."
+            },
+            {
+              "en": "Dijkstra's Algorithm.",
+              "ja": "ダイクストラ法。",
+              "vi": "Thuật toán Dijkstra."
+            },
+            {
+              "en": "Prim's Algorithm.",
+              "ja": "プリム法。",
+              "vi": "Thuật toán Prim."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "While Kahn's detects that a cycle exists, DFS naturally traverses the graph and can easily report the exact stack path (nodes) that led to the cycle when a back-edge is detected.",
+            "ja": "Kahnのアルゴリズムはサイクルが存在することの検出には適していますが、DFSはグラフを探索し、バックエッジが検出された際にサイクルに至った正確なパス（ノード）を簡単に報告できます。",
+            "vi": "Trong khi thuật toán Kahn phát hiện rằng chu trình tồn tại, DFS tự nhiên duyệt đồ thị và có thể dễ dàng báo cáo chính xác đường đi (các nút) dẫn đến chu trình khi một cạnh ngược được phát hiện."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dsa-14",
+      "title": {
+        "en": "Trie & Segment Tree scenarios",
+        "ja": "トライ木およびセグメント木に関するシナリオ問題",
+        "vi": "Các tình huống về Trie và Cây phân đoạn (Segment Tree)"
+      },
+      "description": {
+        "en": "Prefix tree searches, range queries updates, and node structures arrays.",
+        "ja": "プレフィックスツリー検索、範囲クエリの更新、およびノード構造配列に関する問題。",
+        "vi": "Tìm kiếm trên cây tiền tố, cập nhật truy vấn phạm vi và cấu trúc mảng của nút."
+      },
+      "questions": [
+        {
+          "id": "dsa_s14_q1",
+          "question": {
+            "en": "You are building an autocomplete system for a high-traffic dictionary app. Given a list of 100,000 words, which data structure provides the most efficient prefix-based lookup, and what is the space complexity?",
+            "ja": "高トラフィックの辞書アプリ用のオートコンプリートシステムを構築しています。10万語のリストがある場合、接頭辞ベースのルックアップに最も効率的なデータ構造は何ですか？また、その空間計算量はどれくらいですか？",
+            "vi": "Bạn đang xây dựng một hệ thống tự động hoàn thành cho một ứng dụng từ điển có lưu lượng truy cập cao. Với danh sách 100.000 từ, cấu trúc dữ liệu nào cung cấp khả năng tra cứu dựa trên tiền tố hiệu quả nhất và độ phức tạp không gian là bao nhiêu?"
+          },
+          "options": [
+            {
+              "en": "Binary Search Tree; O(N)",
+              "ja": "二分探索木; O(N)",
+              "vi": "Cây tìm kiếm nhị phân; O(N)"
+            },
+            {
+              "en": "Trie; O(Total number of characters in all words)",
+              "ja": "トライ木; O(全単語の文字数の合計)",
+              "vi": "Trie; O(Tổng số ký tự trong tất cả các từ)"
+            },
+            {
+              "en": "Hash Table; O(N^2)",
+              "ja": "ハッシュテーブル; O(N^2)",
+              "vi": "Bảng băm; O(N^2)"
+            },
+            {
+              "en": "Segment Tree; O(N log N)",
+              "ja": "セグメント木; O(N log N)",
+              "vi": "Cây phân đoạn; O(N log N)"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "A Trie is designed for prefix lookups. Its space complexity is proportional to the total number of characters across all words, ensuring O(L) search time where L is the length of the query string.",
+            "ja": "トライ木は接頭辞検索用に設計されています。空間計算量は全単語の文字数の合計に比例し、検索時間はクエリ文字列の長さLに対してO(L)となります。",
+            "vi": "Trie được thiết kế cho việc tra cứu tiền tố. Độ phức tạp không gian của nó tỉ lệ thuận với tổng số ký tự của tất cả các từ, đảm bảo thời gian tìm kiếm là O(L), với L là độ dài của chuỗi truy vấn."
+          }
+        },
+        {
+          "id": "dsa_s14_q2",
+          "question": {
+            "en": "You need to maintain an array of 1,000,000 integers and perform frequent updates to individual elements, followed by calculating the sum of elements in arbitrary ranges [L, R]. Which structure is optimal?",
+            "ja": "100万個の整数の配列を維持し、個々の要素への頻繁な更新と、任意の範囲[L, R]の要素の合計計算を行う必要があります。最適な構造はどれですか？",
+            "vi": "Bạn cần duy trì một mảng gồm 1.000.000 số nguyên và thực hiện các cập nhật thường xuyên cho từng phần tử, sau đó tính tổng các phần tử trong phạm vi [L, R] bất kỳ. Cấu trúc nào là tối ưu?"
+          },
+          "options": [
+            {
+              "en": "Sorted Array; O(1) query",
+              "ja": "ソート済み配列; O(1)クエリ",
+              "vi": "Mảng đã sắp xếp; Truy vấn O(1)"
+            },
+            {
+              "en": "Segment Tree; O(log N) update and query",
+              "ja": "セグメント木; O(log N)の更新とクエリ",
+              "vi": "Cây phân đoạn; Cập nhật và truy vấn O(log N)"
+            },
+            {
+              "en": "Trie; O(log N) query",
+              "ja": "トライ木; O(log N)クエリ",
+              "vi": "Trie; Truy vấn O(log N)"
+            },
+            {
+              "en": "Linked List; O(1) update",
+              "ja": "連結リスト; O(1)更新",
+              "vi": "Danh sách liên kết; Cập nhật O(1)"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "A Segment Tree allows both point updates and range sum queries in O(log N) time, making it ideal for dynamic arrays requiring range aggregation.",
+            "ja": "セグメント木は、点更新と範囲合計クエリの両方をO(log N)で実行できるため、範囲集計が必要な動的配列に最適です。",
+            "vi": "Cây phân đoạn cho phép cả cập nhật điểm và truy vấn tổng phạm vi trong thời gian O(log N), khiến nó trở nên lý tưởng cho các mảng động yêu cầu tổng hợp phạm vi."
+          }
+        },
+        {
+          "id": "dsa_s14_q3",
+          "question": {
+            "en": "When implementing a Segment Tree using an array, if the input array size is N, what is the maximum required size for the tree array to avoid index out-of-bounds errors?",
+            "ja": "配列を使用してセグメント木を実装する場合、入力配列のサイズがNのとき、インデックス範囲外エラーを回避するために必要な木用配列の最大サイズはどれくらいですか？",
+            "vi": "Khi triển khai một Cây phân đoạn bằng mảng, nếu kích thước mảng đầu vào là N, kích thước tối đa cần thiết cho mảng của cây để tránh lỗi vượt quá phạm vi chỉ mục là bao nhiêu?"
+          },
+          "options": [
+            {
+              "en": "2N",
+              "ja": "2N",
+              "vi": "2N"
+            },
+            {
+              "en": "3N",
+              "ja": "3N",
+              "vi": "3N"
+            },
+            {
+              "en": "4N",
+              "ja": "4N",
+              "vi": "4N"
+            },
+            {
+              "en": "N log N",
+              "ja": "N log N",
+              "vi": "N log N"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "In a binary heap-like representation of a Segment Tree, allocating 4N is the standard conservative approach to ensure all nodes fit in the array for an array of size N.",
+            "ja": "セグメント木の二分ヒープのような表現において、サイズNの配列に対してすべてのノードを格納するために4Nを確保するのが標準的で安全なアプローチです。",
+            "vi": "Trong biểu diễn giống heap nhị phân của Cây phân đoạn, việc phân bổ 4N là phương pháp thận trọng tiêu chuẩn để đảm bảo tất cả các nút nằm vừa trong mảng đối với mảng có kích thước N."
+          }
+        },
+        {
+          "id": "dsa_s14_q4",
+          "question": {
+            "en": "You are tasked with finding the longest common prefix for a list of strings. Which data structure approach would be most effective?",
+            "ja": "文字列リストの最長共通接頭辞を見つけるタスクが与えられています。どのデータ構造のアプローチが最も効果的ですか？",
+            "vi": "Bạn được giao nhiệm vụ tìm tiền tố chung dài nhất cho một danh sách các chuỗi. Cách tiếp cận cấu trúc dữ liệu nào sẽ hiệu quả nhất?"
+          },
+          "options": [
+            {
+              "en": "Sorting the array and comparing first and last strings",
+              "ja": "配列をソートし、最初と最後の文字列を比較する",
+              "vi": "Sắp xếp mảng và so sánh chuỗi đầu tiên và cuối cùng"
+            },
+            {
+              "en": "Building a Trie and traversing until a node has multiple children",
+              "ja": "トライ木を構築し、ノードが複数の子を持つまで走査する",
+              "vi": "Xây dựng Trie và duyệt cho đến khi một nút có nhiều con"
+            },
+            {
+              "en": "Segment Tree traversal",
+              "ja": "セグメント木の走査",
+              "vi": "Duyệt cây phân đoạn"
+            },
+            {
+              "en": "Using a Hash Map to store all prefixes",
+              "ja": "ハッシュマップを使用してすべての接頭辞を格納する",
+              "vi": "Sử dụng Hash Map để lưu trữ tất cả các tiền tố"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Inserting strings into a Trie allows you to find the LCP by traversing nodes that have exactly one child and no end-of-word marker, stopping at branches.",
+            "ja": "トライ木に文字列を挿入することで、ちょうど1つの子を持ち、単語終了マーカーがないノードを走査することで、分岐点を見つけることができます。",
+            "vi": "Việc chèn các chuỗi vào Trie cho phép bạn tìm LCP bằng cách duyệt qua các nút chỉ có đúng một nút con và không có đánh dấu kết thúc từ, dừng lại tại các nhánh."
+          }
+        },
+        {
+          "id": "dsa_s14_q5",
+          "question": {
+            "en": "What is the primary advantage of a Segment Tree over a Fenwick Tree (Binary Indexed Tree) when dealing with range queries?",
+            "ja": "範囲クエリを扱う際、セグメント木がフェニック木（バイナリインデックス木）よりも優れている主な利点は何ですか？",
+            "vi": "Ưu điểm chính của Cây phân đoạn so với Cây Fenwick (Cây chỉ mục nhị phân) khi xử lý các truy vấn phạm vi là gì?"
+          },
+          "options": [
+            {
+              "en": "Segment Trees use less memory",
+              "ja": "セグメント木の方がメモリ使用量が少ない",
+              "vi": "Cây phân đoạn sử dụng ít bộ nhớ hơn"
+            },
+            {
+              "en": "Segment Trees are easier to implement",
+              "ja": "セグメント木の方が実装が容易である",
+              "vi": "Cây phân đoạn dễ triển khai hơn"
+            },
+            {
+              "en": "Segment Trees can handle any associative range operation (max, min, gcd)",
+              "ja": "セグメント木は任意の結合的な範囲操作（最大、最小、GCD）を扱える",
+              "vi": "Cây phân đoạn có thể xử lý mọi thao tác phạm vi kết hợp (max, min, gcd)"
+            },
+            {
+              "en": "Segment Trees have faster updates",
+              "ja": "セグメント木の方が更新が速い",
+              "vi": "Cây phân đoạn có cập nhật nhanh hơn"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "While Fenwick Trees are great for prefix sums, Segment Trees are more flexible and can handle range maximums, minimums, and other operations where the inverse operation might not exist.",
+            "ja": "フェニック木は接頭辞和には適していますが、セグメント木の方が柔軟性が高く、逆演算が存在しない可能性のある最大値や最小値、その他の操作にも対応できます。",
+            "vi": "Trong khi Cây Fenwick rất tốt cho tổng tiền tố, Cây phân đoạn linh hoạt hơn và có thể xử lý các giá trị lớn nhất, nhỏ nhất trong phạm vi và các thao tác khác mà phép toán nghịch đảo có thể không tồn tại."
+          }
+        },
+        {
+          "id": "dsa_s14_q6",
+          "question": {
+            "en": "In a Trie node structure, why is an array of size 26 commonly used for child pointers instead of a Map or List?",
+            "ja": "トライ木のノード構造において、子ポインタにMapやListではなくサイズ26の配列が一般的に使用されるのはなぜですか？",
+            "vi": "Trong cấu trúc nút của Trie, tại sao một mảng có kích thước 26 thường được sử dụng cho các con trỏ con thay vì Map hoặc List?"
+          },
+          "options": [
+            {
+              "en": "It reduces the total number of nodes",
+              "ja": "ノードの総数を減らすため",
+              "vi": "Nó làm giảm tổng số nút"
+            },
+            {
+              "en": "It provides O(1) access time for child nodes based on character index",
+              "ja": "文字インデックスに基づいて子ノードへのO(1)アクセスを提供するため",
+              "vi": "Nó cung cấp thời gian truy cập O(1) cho các nút con dựa trên chỉ mục ký tự"
+            },
+            {
+              "en": "It avoids null pointer exceptions",
+              "ja": "ヌルポインタ例外を回避するため",
+              "vi": "Nó tránh được các ngoại lệ con trỏ rỗng"
+            },
+            {
+              "en": "It is the only way to store 26 letters",
+              "ja": "26文字を格納する唯一の方法であるため",
+              "vi": "Đây là cách duy nhất để lưu trữ 26 chữ cái"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Using a fixed-size array of 26 allows for direct indexing (e.g., arr[char - 'a']), which ensures O(1) child node lookup, significantly faster than searching in a list or hashing in a map.",
+            "ja": "26の固定サイズ配列を使用すると、直接インデックス指定が可能（例：arr[char - 'a']）になり、O(1)で子ノードを参照できるため、リスト内検索やマップでのハッシュ計算よりも大幅に高速です。",
+            "vi": "Việc sử dụng mảng kích thước cố định 26 cho phép đánh chỉ mục trực tiếp (ví dụ: arr[char - 'a']), đảm bảo tra cứu nút con O(1), nhanh hơn đáng kể so với việc tìm kiếm trong danh sách hoặc băm trong bản đồ."
+          }
+        },
+        {
+          "id": "dsa_s14_q7",
+          "question": {
+            "en": "Which scenario best justifies the use of 'Lazy Propagation' in a Segment Tree?",
+            "ja": "セグメント木における「遅延伝播（Lazy Propagation）」の使用が最も正当化されるシナリオはどれですか？",
+            "vi": "Tình huống nào biện minh tốt nhất cho việc sử dụng 'Lazy Propagation' trong Cây phân đoạn?"
+          },
+          "options": [
+            {
+              "en": "When performing single element updates",
+              "ja": "単一要素の更新を行う場合",
+              "vi": "Khi thực hiện cập nhật từng phần tử một"
+            },
+            {
+              "en": "When range updates and range queries are both required",
+              "ja": "範囲更新と範囲クエリの両方が必要な場合",
+              "vi": "Khi cần cả cập nhật phạm vi và truy vấn phạm vi"
+            },
+            {
+              "en": "When the tree is static and never updated",
+              "ja": "木が静的で一度も更新されない場合",
+              "vi": "Khi cây là tĩnh và không bao giờ được cập nhật"
+            },
+            {
+              "en": "When memory is strictly limited",
+              "ja": "メモリが厳しく制限されている場合",
+              "vi": "Khi bộ nhớ bị hạn chế nghiêm ngặt"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Lazy Propagation optimizes range updates from O(N) to O(log N) by deferring updates until the data is actually needed, preventing unnecessary overhead for every node in the range.",
+            "ja": "遅延伝播は、データが実際に必要になるまで更新を延期することで、範囲更新をO(N)からO(log N)に最適化し、範囲内のすべてのノードに対する不必要なオーバーヘッドを防ぎます。",
+            "vi": "Lazy Propagation tối ưu hóa các cập nhật phạm vi từ O(N) thành O(log N) bằng cách hoãn việc cập nhật cho đến khi dữ liệu thực sự cần thiết, ngăn chặn chi phí không cần thiết cho mọi nút trong phạm vi."
+          }
+        },
+        {
+          "id": "dsa_s14_q8",
+          "question": {
+            "en": "What is the primary motivation for using a Trie over a hash table for IP address routing tables?",
+            "ja": "IPアドレスルーティングテーブルにハッシュテーブルではなくトライ木を使用する主な動機は何ですか？",
+            "vi": "Động lực chính để sử dụng Trie thay vì bảng băm cho các bảng định tuyến địa chỉ IP là gì?"
+          },
+          "options": [
+            {
+              "en": "Trie provides faster exact matches",
+              "ja": "トライ木の方が完全一致が速い",
+              "vi": "Trie cung cấp kết quả khớp chính xác nhanh hơn"
+            },
+            {
+              "en": "Trie supports longest prefix matching",
+              "ja": "トライ木は最長一致（最長プレフィックスマッチング）をサポートする",
+              "vi": "Trie hỗ trợ khớp tiền tố dài nhất"
+            },
+            {
+              "en": "Trie consumes significantly less memory",
+              "ja": "トライ木の方がメモリ消費量が大幅に少ない",
+              "vi": "Trie tiêu tốn ít bộ nhớ hơn đáng kể"
+            },
+            {
+              "en": "Trie handles arbitrary data types",
+              "ja": "トライ木は任意のデータ型を扱える",
+              "vi": "Trie xử lý được các kiểu dữ liệu tùy ý"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "IP routing uses longest prefix matching to decide the next hop. A hash table only supports exact matching, making it unsuitable for routing decisions where multiple prefixes might match.",
+            "ja": "IPルーティングでは、ネクストホップを決定するために最長一致が使用されます。ハッシュテーブルは完全一致しかサポートしておらず、複数のプレフィックスが一致する可能性のあるルーティング決定には不向きです。",
+            "vi": "Định tuyến IP sử dụng khớp tiền tố dài nhất để quyết định chặng tiếp theo. Bảng băm chỉ hỗ trợ khớp chính xác, làm cho nó không phù hợp cho các quyết định định tuyến nơi nhiều tiền tố có thể khớp."
+          }
+        },
+        {
+          "id": "dsa_s14_q9",
+          "question": {
+            "en": "In a Segment Tree, why do we store the range [start, end] in each node or pass them recursively?",
+            "ja": "セグメント木において、各ノードに範囲[start, end]を格納したり、再帰的に渡したりするのはなぜですか？",
+            "vi": "Trong Cây phân đoạn, tại sao chúng ta lưu trữ phạm vi [start, end] trong mỗi nút hoặc truyền chúng một cách đệ quy?"
+          },
+          "options": [
+            {
+              "en": "To save space in the tree structure",
+              "ja": "木の構造のスペースを節約するため",
+              "vi": "Để tiết kiệm không gian trong cấu trúc cây"
+            },
+            {
+              "en": "To allow the tree to query ranges not aligned with powers of two",
+              "ja": "2の累乗に整列していない範囲のクエリを可能にするため",
+              "vi": "Để cho phép cây truy vấn các phạm vi không căn chỉnh với lũy thừa của hai"
+            },
+            {
+              "en": "To speed up node creation",
+              "ja": "ノード作成を高速化するため",
+              "vi": "Để tăng tốc độ tạo nút"
+            },
+            {
+              "en": "Because children nodes do not know their own boundaries",
+              "ja": "子ノードは自身の境界を知らないため",
+              "vi": "Vì các nút con không biết ranh giới của chính chúng"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Storing or tracking the [start, end] range allows the query logic to determine if a node's coverage is partially or fully within the search range, handling arbitrary array indices.",
+            "ja": "[start, end]の範囲を格納または追跡することで、検索ロジックがノードのカバー範囲が検索範囲内にあるか、部分的に重なっているかを判断でき、任意の配列インデックスを扱えます。",
+            "vi": "Việc lưu trữ hoặc theo dõi phạm vi [start, end] cho phép logic truy vấn xác định xem phạm vi bao phủ của một nút có nằm một phần hay toàn bộ trong phạm vi tìm kiếm hay không, giúp xử lý các chỉ mục mảng tùy ý."
+          }
+        },
+        {
+          "id": "dsa_s14_q10",
+          "question": {
+            "en": "What is the time complexity of building a Segment Tree from an existing array of size N?",
+            "ja": "サイズNの既存の配列からセグメント木を構築する時間計算量はどれくらいですか？",
+            "vi": "Độ phức tạp thời gian để xây dựng một Cây phân đoạn từ một mảng có kích thước N là bao nhiêu?"
+          },
+          "options": [
+            {
+              "en": "O(N)",
+              "ja": "O(N)",
+              "vi": "O(N)"
+            },
+            {
+              "en": "O(log N)",
+              "ja": "O(log N)",
+              "vi": "O(log N)"
+            },
+            {
+              "en": "O(N log N)",
+              "ja": "O(N log N)",
+              "vi": "O(N log N)"
+            },
+            {
+              "en": "O(N^2)",
+              "ja": "O(N^2)",
+              "vi": "O(N^2)"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Building a Segment Tree involves visiting each of the approximately 2N-4N nodes once during the recursive build process, resulting in linear O(N) time complexity.",
+            "ja": "セグメント木の構築は、再帰的な構築プロセス中に約2Nから4Nの各ノードを1回ずつ訪問するため、線形のO(N)時間計算量になります。",
+            "vi": "Việc xây dựng một Cây phân đoạn liên quan đến việc ghé thăm từng nút trong số khoảng 2N-4N nút một lần trong quá trình xây dựng đệ quy, dẫn đến độ phức tạp thời gian tuyến tính O(N)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dsa-15",
+      "title": {
+        "en": "Binary Heap & Priority Queue usage",
+        "ja": "バイナリヒープと優先度付きキューの活用",
+        "vi": "Ứng dụng của Binary Heap và Priority Queue"
+      },
+      "description": {
+        "en": "K-way merge sorting, stream elements sorting, and heap heapify operations time complexity.",
+        "ja": "K-wayマージソート、ストリーム要素のソート、およびヒープ化操作の時間計算量に関する演習。",
+        "vi": "Sắp xếp trộn K-way, sắp xếp phần tử luồng, và độ phức tạp thời gian của các thao tác heapify."
+      },
+      "questions": [
+        {
+          "id": "dsa_s15_q1",
+          "question": {
+            "en": "You are building a system to merge 10 sorted files, each containing 1 million integers, into a single sorted file. Given the memory constraints, which approach is most efficient for minimizing disk I/O and CPU time?",
+            "ja": "100万個の整数を含む10個のソート済みファイルを1つのソート済みファイルに統合するシステムを設計しています。メモリ制約を考慮し、ディスクI/OとCPU時間を最小化するために最も効率的なアプローチは何ですか？",
+            "vi": "Bạn đang xây dựng một hệ thống để hợp nhất 10 tệp đã sắp xếp, mỗi tệp chứa 1 triệu số nguyên, thành một tệp duy nhất đã được sắp xếp. Với các ràng buộc về bộ nhớ, cách tiếp cận nào là hiệu quả nhất để giảm thiểu I/O đĩa và thời gian CPU?"
+          },
+          "options": [
+            {
+              "en": "Merge files pair-wise repeatedly using a standard merge sort approach.",
+              "ja": "標準的なマージソート手法を用いてファイルをペアで繰り返し統合する。",
+              "vi": "Hợp nhất các tệp theo cặp lặp đi lặp lại bằng phương pháp sắp xếp trộn tiêu chuẩn."
+            },
+            {
+              "en": "Use a Min-Heap of size 10 to perform a K-way merge.",
+              "ja": "サイズ10の最小ヒープを使用してK-wayマージを行う。",
+              "vi": "Sử dụng một Min-Heap có kích thước 10 để thực hiện hợp nhất K-way."
+            },
+            {
+              "en": "Load all 10 million integers into an array and perform QuickSort.",
+              "ja": "1000万個の整数すべてを配列にロードし、クイックソートを行う。",
+              "vi": "Tải tất cả 10 triệu số nguyên vào một mảng và thực hiện QuickSort."
+            },
+            {
+              "en": "Append all files together and perform a standard heap sort.",
+              "ja": "すべてのファイルを連結し、標準的なヒープソートを行う。",
+              "vi": "Nối tất cả các tệp lại với nhau và thực hiện sắp xếp heap tiêu chuẩn."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "A K-way merge using a Min-Heap of size K (10) allows you to extract the smallest element from the heads of all K files in O(log K) time. This is the optimal approach for merging large streams or files as it keeps only one element from each file in memory.",
+            "ja": "サイズK（10）の最小ヒープを使用したK-wayマージでは、K個のファイルの先頭から最小の要素をO(log K)で抽出できます。これは、各ファイルから1つの要素のみをメモリに保持するため、大きなストリームやファイルの統合に最適です。",
+            "vi": "Hợp nhất K-way sử dụng Min-Heap kích thước K (10) cho phép bạn trích xuất phần tử nhỏ nhất từ đầu của tất cả K tệp trong thời gian O(log K). Đây là cách tiếp cận tối ưu để hợp nhất các luồng hoặc tệp lớn vì nó chỉ giữ một phần tử từ mỗi tệp trong bộ nhớ."
+          }
+        },
+        {
+          "id": "dsa_s15_q2",
+          "question": {
+            "en": "You need to maintain the top K largest elements from a continuous stream of billions of numbers. What data structure provides the best performance for this specific requirement?",
+            "ja": "数十億個の数値が連続して流れるストリームから、常に上位K個の最大の要素を保持する必要があります。この要件に対して最高のパフォーマンスを提供するデータ構造は何ですか？",
+            "vi": "Bạn cần duy trì K phần tử lớn nhất từ một luồng liên tục hàng tỷ số. Cấu trúc dữ liệu nào cung cấp hiệu suất tốt nhất cho yêu cầu cụ thể này?"
+          },
+          "options": [
+            {
+              "en": "A Max-Heap of size N.",
+              "ja": "サイズNの最大ヒープ。",
+              "vi": "Một Max-Heap kích thước N."
+            },
+            {
+              "en": "A Min-Heap of size K.",
+              "ja": "サイズKの最小ヒープ。",
+              "vi": "Một Min-Heap kích thước K."
+            },
+            {
+              "en": "A balanced Binary Search Tree of size N.",
+              "ja": "サイズNの平衡二分探索木。",
+              "vi": "Một cây tìm kiếm nhị phân cân bằng kích thước N."
+            },
+            {
+              "en": "A hash map for frequency counting.",
+              "ja": "頻度カウント用のハッシュマップ。",
+              "vi": "Một bảng băm để đếm tần suất."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "A Min-Heap of size K allows you to keep track of the K largest elements seen so far. If a new element is larger than the root (the smallest of the current top K), you remove the root and insert the new element, maintaining the heap property in O(log K) time.",
+            "ja": "サイズKの最小ヒープを使用すると、これまでに確認された最大K個の要素を追跡できます。新しい要素がルート（現在のトップKの最小値）よりも大きい場合、ルートを削除して新しい要素を挿入し、O(log K)でヒープ特性を維持できます。",
+            "vi": "Min-Heap kích thước K cho phép bạn theo dõi K phần tử lớn nhất đã thấy cho đến nay. Nếu một phần tử mới lớn hơn gốc (phần tử nhỏ nhất trong K phần tử lớn nhất hiện tại), bạn loại bỏ gốc và chèn phần tử mới, duy trì thuộc tính heap trong O(log K)."
+          }
+        },
+        {
+          "id": "dsa_s15_q3",
+          "question": {
+            "en": "What is the worst-case time complexity to build a binary heap from an unsorted array of size N using the bottom-up approach (Floyd's algorithm)?",
+            "ja": "ボトムアップアプローチ（フロイドのアルゴリズム）を使用して、サイズNの未ソート配列からバイナリヒープを構築する場合の最悪の時間計算量はどれくらいですか？",
+            "vi": "Độ phức tạp thời gian xấu nhất để xây dựng một binary heap từ một mảng chưa sắp xếp kích thước N bằng phương pháp bottom-up (thuật toán Floyd) là gì?"
+          },
+          "options": [
+            {
+              "en": "O(N log N)",
+              "ja": "O(N log N)",
+              "vi": "O(N log N)"
+            },
+            {
+              "en": "O(N)",
+              "ja": "O(N)",
+              "vi": "O(N)"
+            },
+            {
+              "en": "O(log N)",
+              "ja": "O(log N)",
+              "vi": "O(log N)"
+            },
+            {
+              "en": "O(N^2)",
+              "ja": "O(N^2)",
+              "vi": "O(N^2)"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "While inserting elements one by one into a heap takes O(N log N), building the heap bottom-up by heapifying internal nodes takes O(N) time because the number of operations is mathematically bounded by a series that sums to 2N.",
+            "ja": "要素を1つずつヒープに挿入するとO(N log N)かかりますが、内部ノードをヒープ化してボトムアップでヒープを構築すると、演算回数が2Nに収束する級数で数学的に制限されるため、O(N)になります。",
+            "vi": "Trong khi việc chèn từng phần tử vào heap mất O(N log N), việc xây dựng heap theo hướng bottom-up bằng cách heapify các nút bên trong mất thời gian O(N) vì số lượng thao tác được giới hạn toán học bởi một chuỗi có tổng bằng 2N."
+          }
+        },
+        {
+          "id": "dsa_s15_q4",
+          "question": {
+            "en": "You are managing a task scheduler where tasks have priorities. If you need to support O(1) retrieval of the highest priority task and O(log N) deletion, what structure should you use?",
+            "ja": "タスクに優先度が割り当てられたタスクスケジューラを管理しています。最高優先度のタスクをO(1)で取得し、O(log N)で削除する必要がある場合、どの構造を使用すべきですか？",
+            "vi": "Bạn đang quản lý một bộ lập lịch tác vụ nơi các tác vụ có mức độ ưu tiên. Nếu bạn cần hỗ trợ truy xuất tác vụ có độ ưu tiên cao nhất trong O(1) và xóa trong O(log N), bạn nên sử dụng cấu trúc nào?"
+          },
+          "options": [
+            {
+              "en": "Linked List",
+              "ja": "連結リスト",
+              "vi": "Danh sách liên kết"
+            },
+            {
+              "en": "Binary Max-Heap",
+              "ja": "バイナリ最大ヒープ",
+              "vi": "Binary Max-Heap"
+            },
+            {
+              "en": "Sorted Array",
+              "ja": "ソート済み配列",
+              "vi": "Mảng đã sắp xếp"
+            },
+            {
+              "en": "Unsorted Array",
+              "ja": "未ソート配列",
+              "vi": "Mảng chưa sắp xếp"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "A Binary Max-Heap is ideal for priority queues. It allows accessing the root (maximum element) in O(1) and performing extract-max (delete) operations in O(log N) by heapifying down.",
+            "ja": "バイナリ最大ヒープは優先度付きキューに最適です。ルート（最大要素）へのアクセスはO(1)で可能であり、ヒープ化（down）による抽出（削除）操作はO(log N)で実行できます。",
+            "vi": "Binary Max-Heap là lựa chọn lý tưởng cho hàng đợi ưu tiên. Nó cho phép truy cập phần tử gốc (phần tử lớn nhất) trong O(1) và thực hiện các thao tác trích xuất/xóa trong O(log N) bằng cách heapify xuống."
+          }
+        },
+        {
+          "id": "dsa_s15_q5",
+          "question": {
+            "en": "Consider an array `A = [1, 5, 2, 8, 3]`. If you perform the 'heapify' operation (specifically a Max-Heap build) on this array, what is the first swap that occurs if you use the standard bottom-up build process starting from the last non-leaf node?",
+            "ja": "配列 `A = [1, 5, 2, 8, 3]` を考えます。この配列に対してヒープ化（特に最大ヒープ構築）を実行する場合、最後の非リーフノードからボトムアップ構築プロセスを開始すると、最初に発生するスワップは何ですか？",
+            "vi": "Xét mảng `A = [1, 5, 2, 8, 3]`. Nếu bạn thực hiện thao tác 'heapify' (cụ thể là xây dựng Max-Heap) trên mảng này, lần hoán đổi đầu tiên xảy ra là gì nếu bạn sử dụng quy trình xây dựng bottom-up tiêu chuẩn bắt đầu từ nút không phải lá cuối cùng?"
+          },
+          "options": [
+            {
+              "en": "Swap 1 and 8",
+              "ja": "1と8をスワップ",
+              "vi": "Hoán đổi 1 và 8"
+            },
+            {
+              "en": "Swap 5 and 8",
+              "ja": "5と8をスワップ",
+              "vi": "Hoán đổi 5 và 8"
+            },
+            {
+              "en": "Swap 1 and 3",
+              "ja": "1と3をスワップ",
+              "vi": "Hoán đổi 1 và 3"
+            },
+            {
+              "en": "No swap occurs",
+              "ja": "スワップは発生しない",
+              "vi": "Không có hoán đổi xảy ra"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "The last non-leaf node in an array of size 5 is at index 1 (value 5). Its children are at index 3 (value 8) and index 4 (value 3). Since 8 > 5, a swap occurs between 5 and 8 to satisfy the max-heap property.",
+            "ja": "サイズ5の配列における最後の非リーフノードはインデックス1（値5）にあります。その子ノードはインデックス3（値8）とインデックス4（値3）です。8 > 5であるため、最大ヒープ特性を満たすために5と8の間でスワップが発生します。",
+            "vi": "Nút không phải lá cuối cùng trong mảng kích thước 5 nằm ở chỉ mục 1 (giá trị 5). Các nút con của nó nằm ở chỉ mục 3 (giá trị 8) và chỉ mục 4 (giá trị 3). Vì 8 > 5, một lần hoán đổi giữa 5 và 8 xảy ra để thỏa mãn thuộc tính max-heap."
+          }
+        },
+        {
+          "id": "dsa_s15_q6",
+          "question": {
+            "en": "What happens to the time complexity if you use a Binary Heap to sort an array instead of QuickSort?",
+            "ja": "クイックソートの代わりにバイナリヒープを使用して配列をソートする場合、時間計算量はどうなりますか？",
+            "vi": "Điều gì xảy ra với độ phức tạp thời gian nếu bạn sử dụng Binary Heap để sắp xếp một mảng thay vì QuickSort?"
+          },
+          "options": [
+            {
+              "en": "It becomes better in the average case.",
+              "ja": "平均ケースで向上する。",
+              "vi": "Nó trở nên tốt hơn trong trường hợp trung bình."
+            },
+            {
+              "en": "It becomes worse in the average case.",
+              "ja": "平均ケースで悪化する。",
+              "vi": "Nó trở nên tệ hơn trong trường hợp trung bình."
+            },
+            {
+              "en": "It remains the same O(N log N).",
+              "ja": "O(N log N)で変わらない。",
+              "vi": "Nó vẫn giữ nguyên là O(N log N)."
+            },
+            {
+              "en": "It becomes O(N).",
+              "ja": "O(N)になる。",
+              "vi": "Nó trở thành O(N)."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "While both have a worst-case of O(N log N), QuickSort is generally faster in practice due to better cache locality, whereas HeapSort involves many non-contiguous memory accesses, making it slower on average.",
+            "ja": "両方とも最悪ケースはO(N log N)ですが、クイックソートはキャッシュの局所性が良いため実際には高速です。一方、ヒープソートはメモリへの非連続的なアクセスが多く、平均的には遅くなります。",
+            "vi": "Trong khi cả hai đều có trường hợp xấu nhất là O(N log N), QuickSort thường nhanh hơn trong thực tế nhờ vào tính cục bộ bộ nhớ tốt hơn, trong khi HeapSort liên quan đến nhiều truy cập bộ nhớ không liên tục, khiến nó chậm hơn trung bình."
+          }
+        },
+        {
+          "id": "dsa_s15_q7",
+          "question": {
+            "en": "In a Max-Heap implemented with an array, if a node is at index 'i', where are its children located?",
+            "ja": "配列で実装された最大ヒープにおいて、インデックス 'i' にあるノードの子はどこにありますか？",
+            "vi": "Trong một Max-Heap được triển khai bằng mảng, nếu một nút nằm ở chỉ mục 'i', các nút con của nó nằm ở đâu?"
+          },
+          "options": [
+            {
+              "en": "2i and 2i+1",
+              "ja": "2i と 2i+1",
+              "vi": "2i và 2i+1"
+            },
+            {
+              "en": "2i+1 and 2i+2",
+              "ja": "2i+1 と 2i+2",
+              "vi": "2i+1 và 2i+2"
+            },
+            {
+              "en": "i+1 and i+2",
+              "ja": "i+1 と i+2",
+              "vi": "i+1 và i+2"
+            },
+            {
+              "en": "i/2 and i/2+1",
+              "ja": "i/2 と i/2+1",
+              "vi": "i/2 và i/2+1"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "For a 0-indexed array, the left child of a node at index 'i' is at 2i+1 and the right child is at 2i+2. The parent is at (i-1)/2.",
+            "ja": "0から始まるインデックスの配列の場合、インデックス 'i' のノードの左の子は 2i+1 に、右の子は 2i+2 にあります。親は (i-1)/2 にあります。",
+            "vi": "Đối với mảng bắt đầu từ chỉ mục 0, nút con bên trái của nút tại chỉ mục 'i' nằm ở 2i+1 và nút con bên phải nằm ở 2i+2. Nút cha nằm ở (i-1)/2."
+          }
+        },
+        {
+          "id": "dsa_s15_q8",
+          "question": {
+            "en": "You have a stream of numbers where numbers arrive one by one. You need to return the median of the stream at any given point. What combination of heaps should be used?",
+            "ja": "数値が1つずつ到着するストリームがあります。任意の時点でストリームの中央値を返す必要があります。どのヒープの組み合わせを使用すべきですか？",
+            "vi": "Bạn có một luồng số nơi các số đến lần lượt. Bạn cần trả về số trung vị của luồng tại bất kỳ thời điểm nào. Sự kết hợp nào của các heap nên được sử dụng?"
+          },
+          "options": [
+            {
+              "en": "Two Max-Heaps",
+              "ja": "2つの最大ヒープ",
+              "vi": "Hai Max-Heap"
+            },
+            {
+              "en": "Two Min-Heaps",
+              "ja": "2つの最小ヒープ",
+              "vi": "Hai Min-Heap"
+            },
+            {
+              "en": "One Max-Heap and one Min-Heap",
+              "ja": "1つの最大ヒープと1つの最小ヒープ",
+              "vi": "Một Max-Heap và một Min-Heap"
+            },
+            {
+              "en": "A single Max-Heap",
+              "ja": "単一の最大ヒープ",
+              "vi": "Một Max-Heap duy nhất"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "By maintaining a Max-Heap for the smaller half of the numbers and a Min-Heap for the larger half, you can balance them such that the median is always accessible at the roots in O(1) time.",
+            "ja": "数値の小さい半分を保持する最大ヒープと、大きい半分を保持する最小ヒープを維持することで、中央値が常にルートにO(1)でアクセスできるようにバランスを取ることができます。",
+            "vi": "Bằng cách duy trì một Max-Heap cho nửa nhỏ hơn của các số và một Min-Heap cho nửa lớn hơn, bạn có thể cân bằng chúng sao cho số trung vị luôn có thể truy cập được tại các gốc trong thời gian O(1)."
+          }
+        },
+        {
+          "id": "dsa_s15_q9",
+          "question": {
+            "en": "When using a priority queue to implement Dijkstra's algorithm, what is the primary impact on time complexity?",
+            "ja": "ダイクストラ法の実装に優先度付きキューを使用する場合、時間計算量への主な影響は何ですか？",
+            "vi": "Khi sử dụng hàng đợi ưu tiên để triển khai thuật toán Dijkstra, tác động chính đến độ phức tạp thời gian là gì?"
+          },
+          "options": [
+            {
+              "en": "It increases the complexity to O(V^3).",
+              "ja": "計算量が O(V^3) に増加する。",
+              "vi": "Nó làm tăng độ phức tạp lên O(V^3)."
+            },
+            {
+              "en": "It reduces the complexity from O(V^2) to O(E log V).",
+              "ja": "計算量を O(V^2) から O(E log V) に削減する。",
+              "vi": "Nó giảm độ phức tạp từ O(V^2) xuống O(E log V)."
+            },
+            {
+              "en": "It does not change the complexity.",
+              "ja": "計算量は変わらない。",
+              "vi": "Nó không làm thay đổi độ phức tạp."
+            },
+            {
+              "en": "It makes it exponential.",
+              "ja": "計算量を指数関数的にする。",
+              "vi": "Nó làm cho nó trở thành hàm mũ."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Using an adjacency matrix and searching for the min-distance node takes O(V^2). Using a binary heap-based priority queue allows extracting the min in O(log V), leading to O(E log V) for sparse graphs.",
+            "ja": "隣接行列を使用して最小距離ノードを検索すると O(V^2) かかります。バイナリヒープベースの優先度付きキューを使用すると、最小値を O(log V) で抽出でき、疎なグラフでは O(E log V) になります。",
+            "vi": "Sử dụng ma trận kề và tìm kiếm nút có khoảng cách nhỏ nhất mất O(V^2). Sử dụng hàng đợi ưu tiên dựa trên binary heap cho phép trích xuất giá trị nhỏ nhất trong O(log V), dẫn đến O(E log V) cho các đồ thị thưa."
+          }
+        },
+        {
+          "id": "dsa_s15_q10",
+          "question": {
+            "en": "What is the primary reason to use a 'decrease-key' operation in a binary heap?",
+            "ja": "バイナリヒープで 'decrease-key' 操作を使用する主な理由は何ですか？",
+            "vi": "Lý do chính để sử dụng thao tác 'decrease-key' trong một binary heap là gì?"
+          },
+          "options": [
+            {
+              "en": "To maintain heap order after modifying an element's value.",
+              "ja": "要素の値を変更した後にヒープ順序を維持するため。",
+              "vi": "Để duy trì thứ tự heap sau khi sửa đổi giá trị của một phần tử."
+            },
+            {
+              "en": "To clear the heap completely.",
+              "ja": "ヒープを完全にクリアするため。",
+              "vi": "Để xóa hoàn toàn heap."
+            },
+            {
+              "en": "To double the size of the underlying array.",
+              "ja": "基盤となる配列のサイズを2倍にするため。",
+              "vi": "Để tăng gấp đôi kích thước của mảng cơ sở."
+            },
+            {
+              "en": "To find the maximum element faster.",
+              "ja": "最大要素をより高速に見つけるため。",
+              "vi": "Để tìm phần tử lớn nhất nhanh hơn."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The 'decrease-key' operation is used when a priority associated with an item changes. It updates the value and then bubbles up the element to restore the heap property.",
+            "ja": "'decrease-key' 操作は、アイテムに関連付けられた優先度が変更された場合に使用されます。値を更新した後、要素を浮上させてヒープ特性を復元します。",
+            "vi": "Thao tác 'decrease-key' được sử dụng khi độ ưu tiên liên quan đến một mục thay đổi. Nó cập nhật giá trị và sau đó di chuyển phần tử lên trên để khôi phục thuộc tính heap."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dsa-16",
+      "title": {
+        "en": "Backtracking algorithms",
+        "ja": "バックトラッキングアルゴリズム",
+        "vi": "Các thuật toán quay lui"
+      },
+      "description": {
+        "en": "N-Queens constraint checks, subsets inclusions, and permutation duplicates pruning.",
+        "ja": "Nクイーン制約チェック、部分集合の包含、および順列の重複枝刈り。",
+        "vi": "Kiểm tra ràng buộc N-Queens, bao gồm tập con và cắt tỉa trùng lặp hoán vị."
+      },
+      "questions": [
+        {
+          "id": "dsa_s16_q1",
+          "question": {
+            "en": "You are implementing the N-Queens solver. What is the most efficient way to check if a new queen placement at (row, col) is valid compared to existing queens?",
+            "ja": "Nクイーンソルバーを実装しています。(row, col)に新しいクイーンを配置するのが有効かどうかを確認する最も効率的な方法は何ですか？",
+            "vi": "Bạn đang triển khai bộ giải N-Queens. Cách hiệu quả nhất để kiểm tra xem việc đặt một quân hậu mới tại (row, col) có hợp lệ so với các quân hậu hiện có hay không là gì?"
+          },
+          "options": [
+            {
+              "en": "Iterate through every cell of the board.",
+              "ja": "ボードのすべてのセルを反復処理する。",
+              "vi": "Lặp qua mọi ô của bàn cờ."
+            },
+            {
+              "en": "Maintain three boolean arrays to track occupied columns and both diagonals.",
+              "ja": "3つのブール配列を維持し、使用中の列と両方の対角線を追跡する。",
+              "vi": "Duy trì ba mảng boolean để theo dõi các cột và hai đường chéo đã bị chiếm."
+            },
+            {
+              "en": "Use a nested loop to check all previous rows.",
+              "ja": "ネストされたループを使用して、以前のすべての行をチェックする。",
+              "vi": "Sử dụng vòng lặp lồng nhau để kiểm tra tất cả các hàng trước đó."
+            },
+            {
+              "en": "Recalculate the safety of the entire board state recursively.",
+              "ja": "再帰的にボード状態全体の安全性を再計算する。",
+              "vi": "Tính toán lại độ an toàn của toàn bộ trạng thái bàn cờ một cách đệ quy."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Using boolean arrays for columns and diagonals (sum and difference of row/col indices) allows O(1) time complexity for validity checks.",
+            "ja": "列と対角線（行/列インデックスの和と差）にブール配列を使用することで、妥当性チェックの計算量をO(1)にできます。",
+            "vi": "Sử dụng các mảng boolean cho cột và đường chéo (tổng và hiệu của chỉ số hàng/cột) cho phép kiểm tra tính hợp lệ với độ phức tạp thời gian O(1)."
+          }
+        },
+        {
+          "id": "dsa_s16_q2",
+          "question": {
+            "en": "When generating all subsets of a set that contains duplicate elements, how do you prevent duplicate subsets from appearing in your result?",
+            "ja": "重複する要素を含むセットのすべての部分集合を生成するとき、結果に重複する部分集合が現れないようにするにはどうすればよいですか？",
+            "vi": "Khi tạo tất cả các tập con của một tập hợp chứa các phần tử trùng lặp, làm thế nào để bạn ngăn các tập con trùng lặp xuất hiện trong kết quả của mình?"
+          },
+          "options": [
+            {
+              "en": "Sort the input array and skip adjacent identical elements during recursion.",
+              "ja": "入力配列をソートし、再帰中に隣接する同一要素をスキップする。",
+              "vi": "Sắp xếp mảng đầu vào và bỏ qua các phần tử giống hệt nhau liền kề trong quá trình đệ quy."
+            },
+            {
+              "en": "Use a Hash Set to store results and filter duplicates at the end.",
+              "ja": "ハッシュセットを使用して結果を格納し、最後に重複をフィルタリングする。",
+              "vi": "Sử dụng Hash Set để lưu trữ kết quả và lọc các trùng lặp ở cuối."
+            },
+            {
+              "en": "Increase the depth of the recursion tree.",
+              "ja": "再帰ツリーの深さを増やす。",
+              "vi": "Tăng độ sâu của cây đệ quy."
+            },
+            {
+              "en": "Ignore duplicate elements entirely from the start.",
+              "ja": "最初から重複要素を完全に無視する。",
+              "vi": "Bỏ qua hoàn toàn các phần tử trùng lặp ngay từ đầu."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Sorting allows you to group identical elements; by skipping them in the same recursion level, you ensure uniqueness.",
+            "ja": "ソートすることで同一要素をグループ化でき、同じ再帰レベルでそれらをスキップすることで一意性を保証できます。",
+            "vi": "Sắp xếp cho phép bạn nhóm các phần tử giống hệt nhau; bằng cách bỏ qua chúng ở cùng một cấp độ đệ quy, bạn đảm bảo tính duy nhất."
+          }
+        },
+        {
+          "id": "dsa_s16_q3",
+          "question": {
+            "en": "In a permutation generation algorithm with duplicates, why is it necessary to track a 'used' boolean array alongside sorting the input?",
+            "ja": "重複を含む順列生成アルゴリズムにおいて、入力をソートすることに加えて、'used'ブール配列を追跡する必要があるのはなぜですか？",
+            "vi": "Trong thuật toán tạo hoán vị với các phần tử trùng lặp, tại sao cần phải theo dõi mảng boolean 'used' bên cạnh việc sắp xếp đầu vào?"
+          },
+          "options": [
+            {
+              "en": "To improve memory usage.",
+              "ja": "メモリ使用量を改善するため。",
+              "vi": "Để cải thiện việc sử dụng bộ nhớ."
+            },
+            {
+              "en": "To handle permutations of different lengths.",
+              "ja": "異なる長さの順列を処理するため。",
+              "vi": "Để xử lý các hoán vị có độ dài khác nhau."
+            },
+            {
+              "en": "To skip identical elements that haven't been used in the current branch path.",
+              "ja": "現在のブランチパスで使用されていない同一要素をスキップするため。",
+              "vi": "Để bỏ qua các phần tử giống hệt nhau chưa được sử dụng trong đường dẫn nhánh hiện tại."
+            },
+            {
+              "en": "To track the index order for final sorting.",
+              "ja": "最終的なソートのためにインデックス順を追跡するため。",
+              "vi": "Để theo dõi thứ tự chỉ mục cho việc sắp xếp cuối cùng."
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "The 'used' array prevents picking the same element index twice, while the sorting + 'used' logic helps avoid duplicate permutations.",
+            "ja": "'used'配列は同じ要素インデックスを2度選択することを防ぎ、ソートと'used'ロジックの組み合わせは重複順列を回避するのに役立ちます。",
+            "vi": "Mảng 'used' ngăn chặn việc chọn cùng một chỉ mục phần tử hai lần, trong khi logic sắp xếp + 'used' giúp tránh các hoán vị trùng lặp."
+          }
+        },
+        {
+          "id": "dsa_s16_q4",
+          "question": {
+            "en": "What is the primary difference between Backtracking and standard Brute Force search?",
+            "ja": "バックトラッキングと標準的なブルートフォース探索の主な違いは何ですか？",
+            "vi": "Sự khác biệt chính giữa Quay lui (Backtracking) và tìm kiếm Vét cạn (Brute Force) tiêu chuẩn là gì?"
+          },
+          "options": [
+            {
+              "en": "Backtracking is inherently iterative, while Brute Force is recursive.",
+              "ja": "バックトラッキングは本質的に反復的であり、ブルートフォースは再帰的です。",
+              "vi": "Quay lui có tính chất lặp lại, trong khi Vét cạn có tính chất đệ quy."
+            },
+            {
+              "en": "Backtracking prunes the search space by abandoning paths that violate constraints.",
+              "ja": "バックトラッキングは、制約に違反するパスを放棄することで探索空間を剪定します。",
+              "vi": "Quay lui cắt tỉa không gian tìm kiếm bằng cách loại bỏ các đường dẫn vi phạm ràng buộc."
+            },
+            {
+              "en": "Brute Force is always faster than Backtracking.",
+              "ja": "ブルートフォースは常にバックトラッキングよりも高速です。",
+              "vi": "Vét cạn luôn nhanh hơn Quay lui."
+            },
+            {
+              "en": "Backtracking only works for numerical problems.",
+              "ja": "バックトラッキングは数値問題にのみ機能します。",
+              "vi": "Quay lui chỉ hoạt động cho các bài toán số học."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Backtracking intelligently cuts off branches of the recursion tree that cannot possibly lead to a valid solution.",
+            "ja": "バックトラッキングは、有効な解につながる可能性のない再帰ツリーのブランチをインテリジェントに切り捨てます。",
+            "vi": "Quay lui cắt bỏ các nhánh của cây đệ quy một cách thông minh khi các nhánh đó không thể dẫn đến một giải pháp hợp lệ."
+          }
+        },
+        {
+          "id": "dsa_s16_q5",
+          "question": {
+            "en": "When placing queens in N-Queens, if you place a queen at (r, c), which cells are considered under attack?",
+            "ja": "Nクイーンで(r, c)にクイーンを配置する場合、どのセルが攻撃下にあると見なされますか？",
+            "vi": "Khi đặt quân hậu trong N-Queens, nếu bạn đặt một quân hậu tại (r, c), những ô nào được coi là đang bị tấn công?"
+          },
+          "options": [
+            {
+              "en": "Only the current row and column.",
+              "ja": "現在の行と列のみ。",
+              "vi": "Chỉ hàng và cột hiện tại."
+            },
+            {
+              "en": "The entire row, column, and both diagonals passing through (r, c).",
+              "ja": "行全体、列全体、および(r, c)を通過する両方の対角線。",
+              "vi": "Toàn bộ hàng, cột và cả hai đường chéo đi qua (r, c)."
+            },
+            {
+              "en": "Only the cells in the same row.",
+              "ja": "同じ行内のセルのみ。",
+              "vi": "Chỉ các ô trong cùng một hàng."
+            },
+            {
+              "en": "The entire board.",
+              "ja": "ボード全体。",
+              "vi": "Toàn bộ bàn cờ."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Queens attack along the entire rank (row), file (column), and both diagonals.",
+            "ja": "クイーンはランク（行）、ファイル（列）、および両方の対角線に沿って攻撃します。",
+            "vi": "Quân hậu tấn công dọc theo toàn bộ hàng, cột và cả hai đường chéo."
+          }
+        },
+        {
+          "id": "dsa_s16_q6",
+          "question": {
+            "en": "What is the time complexity of a standard N-Queens solver using simple backtracking?",
+            "ja": "単純なバックトラッキングを使用した標準的なNクイーンソルバーの時間計算量はどれくらいですか？",
+            "vi": "Độ phức tạp thời gian của một bộ giải N-Queens tiêu chuẩn sử dụng quay lui đơn giản là bao nhiêu?"
+          },
+          "options": [
+            {
+              "en": "O(N)",
+              "ja": "O(N)",
+              "vi": "O(N)"
+            },
+            {
+              "en": "O(N^2)",
+              "ja": "O(N^2)",
+              "vi": "O(N^2)"
+            },
+            {
+              "en": "O(N!)",
+              "ja": "O(N!)",
+              "vi": "O(N!)"
+            },
+            {
+              "en": "O(2^N)",
+              "ja": "O(2^N)",
+              "vi": "O(2^N)"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "Because we place one queen per row, the search tree has a depth of N, and the branching factor decreases, leading to O(N!) complexity.",
+            "ja": "行ごとに1つのクイーンを配置するため、探索ツリーの深さはNであり、分岐係数が減少するため、O(N!)の複雑さになります。",
+            "vi": "Vì chúng ta đặt một quân hậu mỗi hàng, cây tìm kiếm có độ sâu N và hệ số phân nhánh giảm dần, dẫn đến độ phức tạp O(N!)."
+          }
+        },
+        {
+          "id": "dsa_s16_q7",
+          "question": {
+            "en": "In a problem requiring you to find all subsets of an array, why is 'start' index passed to the recursive function?",
+            "ja": "配列のすべての部分集合を見つける必要がある問題において、なぜ 'start' インデックスが再帰関数に渡されるのですか？",
+            "vi": "Trong một bài toán yêu cầu tìm tất cả các tập con của một mảng, tại sao chỉ mục 'start' lại được truyền vào hàm đệ quy?"
+          },
+          "options": [
+            {
+              "en": "To iterate through the array in reverse.",
+              "ja": "配列を逆方向に反復するため。",
+              "vi": "Để lặp qua mảng theo thứ tự ngược lại."
+            },
+            {
+              "en": "To ensure we only consider elements after the current index, preventing duplicates.",
+              "ja": "現在のインデックスより後の要素のみを考慮し、重複を防ぐため。",
+              "vi": "Để đảm bảo chúng ta chỉ xem xét các phần tử sau chỉ mục hiện tại, ngăn chặn trùng lặp."
+            },
+            {
+              "en": "To keep track of the number of subsets found.",
+              "ja": "見つかった部分集合の数を追跡するため。",
+              "vi": "Để theo dõi số lượng tập con đã tìm thấy."
+            },
+            {
+              "en": "To reset the recursion when it reaches the end.",
+              "ja": "終端に達したときに再帰をリセットするため。",
+              "vi": "Để đặt lại đệ quy khi nó đạt đến cuối."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Passing 'start' ensures that each subset contains unique combinations and avoids redundant permutations of the same subset.",
+            "ja": "'start'を渡すことで、各部分集合がユニークな組み合わせを含み、同じ部分集合の冗長な順列を回避できます。",
+            "vi": "Việc truyền 'start' đảm bảo rằng mỗi tập con chứa các tổ hợp duy nhất và tránh các hoán vị dư thừa của cùng một tập con."
+          }
+        },
+        {
+          "id": "dsa_s16_q8",
+          "question": {
+            "en": "When pruning a backtracking search for permutations, what is the effect of sorting the input array first?",
+            "ja": "順列のバックトラッキング探索を剪定する場合、入力配列を最初にソートすることの効果は何ですか？",
+            "vi": "Khi cắt tỉa tìm kiếm quay lui cho các hoán vị, hiệu quả của việc sắp xếp mảng đầu vào trước là gì?"
+          },
+          "options": [
+            {
+              "en": "It allows identical elements to be adjacent, making it easy to skip them during recursion.",
+              "ja": "同一の要素を隣接させることができ、再帰中にそれらを簡単にスキップできます。",
+              "vi": "Nó cho phép các phần tử giống hệt nhau nằm liền kề, giúp dễ dàng bỏ qua chúng trong quá trình đệ quy."
+            },
+            {
+              "en": "It speeds up the comparison of strings.",
+              "ja": "文字列の比較を高速化します。",
+              "vi": "Nó tăng tốc việc so sánh các chuỗi."
+            },
+            {
+              "en": "It makes the recursion depth shallower.",
+              "ja": "再帰の深さを浅くします。",
+              "vi": "Nó làm cho độ sâu đệ quy nông hơn."
+            },
+            {
+              "en": "It reduces the space complexity of the recursion stack.",
+              "ja": "再帰スタックの空間計算量を削減します。",
+              "vi": "Nó giảm độ phức tạp không gian của ngăn xếp đệ quy."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Sorting groups identical items together, allowing a single check (if current == previous and previous is not used) to prune the search effectively.",
+            "ja": "ソートにより同一項目がグループ化され、単一のチェック（現在==前回かつ前回が使用されていない場合）で検索を効果的に剪定できます。",
+            "vi": "Việc sắp xếp nhóm các mục giống nhau lại với nhau, cho phép một kiểm tra duy nhất (nếu hiện tại == trước đó và trước đó không được sử dụng) để cắt tỉa việc tìm kiếm một cách hiệu quả."
+          }
+        },
+        {
+          "id": "dsa_s16_q9",
+          "question": {
+            "en": "If a backtracking algorithm needs to find all paths in a maze, what should you do after exploring a path to ensure other paths can be found?",
+            "ja": "バックトラッキングアルゴリズムが迷路内のすべてのパスを見つける必要がある場合、他のパスが見つかるようにパスを探索した後、何をすべきですか？",
+            "vi": "Nếu thuật toán quay lui cần tìm tất cả các đường đi trong mê cung, bạn nên làm gì sau khi khám phá một đường đi để đảm bảo các đường đi khác có thể được tìm thấy?"
+          },
+          "options": [
+            {
+              "en": "Do nothing; continue to the next cell.",
+              "ja": "何もしない。次のセルに進む。",
+              "vi": "Không làm gì cả; tiếp tục đến ô tiếp theo."
+            },
+            {
+              "en": "Mark the cell as visited permanently.",
+              "ja": "そのセルを永久に訪問済みとしてマークする。",
+              "vi": "Đánh dấu ô là đã truy cập vĩnh viễn."
+            },
+            {
+              "en": "Backtrack: reset the 'visited' state of the current cell.",
+              "ja": "バックトラッキング：現在のセルの 'visited' 状態をリセットする。",
+              "vi": "Quay lui: đặt lại trạng thái 'đã truy cập' của ô hiện tại."
+            },
+            {
+              "en": "Terminate the program.",
+              "ja": "プログラムを終了する。",
+              "vi": "Kết thúc chương trình."
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "Backtracking involves 'undoing' the choice (unmarking the cell as visited) to allow other paths to traverse through that cell.",
+            "ja": "バックトラッキングには、他のパスがそのセルを通れるように、選択を「取り消す」（セルを未訪問としてマークする）ことが含まれます。",
+            "vi": "Quay lui liên quan đến việc 'hoàn tác' lựa chọn (bỏ đánh dấu ô là đã truy cập) để cho phép các đường dẫn khác đi qua ô đó."
+          }
+        },
+        {
+          "id": "dsa_s16_q10",
+          "question": {
+            "en": "When checking N-Queens constraints using sum and difference, how do sum and difference values relate to the diagonals?",
+            "ja": "和と差を使用してNクイーンの制約をチェックする場合、和と差の値はどのように対角線に関連していますか？",
+            "vi": "Khi kiểm tra các ràng buộc N-Queens bằng tổng và hiệu, các giá trị tổng và hiệu liên quan đến các đường chéo như thế nào?"
+          },
+          "options": [
+            {
+              "en": "Sum (r + c) is constant for anti-diagonals, and Difference (r - c) is constant for main diagonals.",
+              "ja": "和 (r + c) は逆対角線で一定、差 (r - c) は主対角線で一定です。",
+              "vi": "Tổng (r + c) là hằng số đối với đường chéo ngược và hiệu (r - c) là hằng số đối với đường chéo chính."
+            },
+            {
+              "en": "Difference (r - c) is constant for anti-diagonals, and Sum (r + c) is constant for main diagonals.",
+              "ja": "差 (r - c) は逆対角線で一定、和 (r + c) は主対角線で一定です。",
+              "vi": "Hiệu (r - c) là hằng số đối với đường chéo ngược và Tổng (r + c) là hằng số đối với đường chéo chính."
+            },
+            {
+              "en": "Both are constant for both types of diagonals.",
+              "ja": "両方とも両方の対角線タイプで一定です。",
+              "vi": "Cả hai đều là hằng số cho cả hai loại đường chéo."
+            },
+            {
+              "en": "Neither sum nor difference relate to diagonals.",
+              "ja": "和も差も対角線とは関係ありません。",
+              "vi": "Cả tổng và hiệu đều không liên quan đến đường chéo."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "For any cell (r, c) on an anti-diagonal, r + c is constant. On a main diagonal, the difference r - c is constant.",
+            "ja": "逆対角線上の任意のセル (r, c) について、r + c は一定です。主対角線上では、差 r - c が一定です。",
+            "vi": "Đối với bất kỳ ô (r, c) nào trên đường chéo ngược, r + c là hằng số. Trên một đường chéo chính, hiệu r - c là hằng số."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dsa-17",
+      "title": {
+        "en": "Dynamic Programming",
+        "ja": "動的計画法",
+        "vi": "Quy hoạch động"
+      },
+      "description": {
+        "en": "Knapsack selections, coin combinations iterations, and longest common subsequence transitions.",
+        "ja": "ナップサック問題、コインの組み合わせの反復、および最長共通部分列の遷移。",
+        "vi": "Các lựa chọn túi xách (knapsack), lặp lại tổ hợp tiền xu, và các bước chuyển đổi chuỗi con chung dài nhất."
+      },
+      "questions": [
+        {
+          "id": "dsa_s17_q1",
+          "question": {
+            "en": "A logistics company wants to maximize the total value of cargo loaded into a transport vehicle with a weight limit of W. Given items with specific weights and values, which algorithm design strategy ensures the optimal solution for this 0/1 Knapsack problem?",
+            "ja": "物流会社が重量制限Wの輸送車両に積み込む貨物の総価値を最大化したいと考えています。特定の重量と価値を持つアイテムが与えられた場合、この0/1ナップサック問題の最適解を保証するアルゴリズム設計戦略はどれですか？",
+            "vi": "Một công ty logistics muốn tối đa hóa tổng giá trị hàng hóa được xếp lên phương tiện vận chuyển với giới hạn trọng lượng là W. Với các mặt hàng có trọng lượng và giá trị cụ thể, chiến lược thiết kế thuật toán nào đảm bảo giải pháp tối ưu cho bài toán Knapsack 0/1 này?"
+          },
+          "options": [
+            {
+              "en": "Greedy approach picking by value/weight ratio",
+              "ja": "価値/重量比による欲張り法",
+              "vi": "Cách tiếp cận tham lam chọn theo tỷ lệ giá trị/trọng lượng"
+            },
+            {
+              "en": "Dynamic programming using a 2D table or optimized 1D array",
+              "ja": "2次元テーブルまたは最適化された1次元配列を使用した動的計画法",
+              "vi": "Quy hoạch động sử dụng bảng 2D hoặc mảng 1D được tối ưu hóa"
+            },
+            {
+              "en": "Breadth-First Search on a state tree",
+              "ja": "状態ツリー上での幅優先探索",
+              "vi": "Tìm kiếm theo chiều rộng trên cây trạng thái"
+            },
+            {
+              "en": "Divide and Conquer with sorting",
+              "ja": "ソートを用いた分割統治法",
+              "vi": "Chia để trị kết hợp sắp xếp"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "The 0/1 Knapsack problem exhibits optimal substructure and overlapping subproblems, making DP the correct approach. A greedy strategy may fail to find the global optimum.",
+            "ja": "0/1ナップサック問題は最適部分構造と重複部分問題を示すため、DPが正しいアプローチです。欲張り法では大域的最適解を見つけられない場合があります。",
+            "vi": "Bài toán Knapsack 0/1 thể hiện cấu trúc con tối ưu và các bài toán con chồng lấp, khiến quy hoạch động là cách tiếp cận chính xác. Chiến lược tham lam có thể thất bại trong việc tìm ra giá trị tối ưu toàn cục."
+          }
+        },
+        {
+          "id": "dsa_s17_q2",
+          "question": {
+            "en": "You are developing an automated payment kiosk that must return change using the fewest coins possible. Given a set of coin denominations, which dynamic programming recurrence relation correctly represents the minimum coins needed for a target amount 'A'?",
+            "ja": "最小のコイン数でお釣りを出力する自動決済キオスクを開発しています。コインの金種セットが与えられた場合、ターゲット金額'A'に必要な最小コイン数を正しく表す動的計画法の漸化式はどれですか？",
+            "vi": "Bạn đang phát triển một ki-ốt thanh toán tự động cần trả lại tiền thừa bằng cách sử dụng ít xu nhất có thể. Với một tập hợp các mệnh giá tiền xu, công thức truy hồi quy hoạch động nào đại diện chính xác cho số xu tối thiểu cần thiết cho một số tiền mục tiêu 'A'?"
+          },
+          "options": [
+            {
+              "en": "dp[i] = max(dp[i - coin] + 1)",
+              "ja": "dp[i] = max(dp[i - coin] + 1)",
+              "vi": "dp[i] = max(dp[i - coin] + 1)"
+            },
+            {
+              "en": "dp[i] = min(dp[i - coin] + 1) for all coins <= i",
+              "ja": "dp[i] = min(dp[i - coin] + 1) （すべてのコイン <= i）",
+              "vi": "dp[i] = min(dp[i - coin] + 1) cho tất cả các xu <= i"
+            },
+            {
+              "en": "dp[i] = dp[i-1] + dp[i-2]",
+              "ja": "dp[i] = dp[i-1] + dp[i-2]",
+              "vi": "dp[i] = dp[i-1] + dp[i-2]"
+            },
+            {
+              "en": "dp[i] = sum(dp[i - coin])",
+              "ja": "dp[i] = sum(dp[i - coin])",
+              "vi": "dp[i] = sum(dp[i - coin])"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "To minimize coins, we explore every coin denomination that is less than or equal to the current amount 'i', take the minimum result of the subproblems, and add 1.",
+            "ja": "コインを最小化するために、現在の金額'i'以下のすべてのコインの金種を調査し、部分問題の結果の最小値を取り、1を加えます。",
+            "vi": "Để tối thiểu hóa số xu, chúng ta xét tất cả các mệnh giá xu nhỏ hơn hoặc bằng số tiền hiện tại 'i', lấy kết quả tối thiểu từ các bài toán con và cộng thêm 1."
+          }
+        },
+        {
+          "id": "dsa_s17_q3",
+          "question": {
+            "en": "In a biological sequence analysis tool, you need to find the Longest Common Subsequence (LCS) of two DNA strands of length M and N. What is the time complexity of the standard dynamic programming approach?",
+            "ja": "生物学的配列分析ツールにおいて、長さMとNの2つのDNA鎖の最長共通部分列（LCS）を見つける必要があります。標準的な動的計画法アプローチの時間計算量はどれですか？",
+            "vi": "Trong một công cụ phân tích trình tự sinh học, bạn cần tìm Chuỗi con chung dài nhất (LCS) của hai chuỗi DNA có độ dài M và N. Độ phức tạp thời gian của cách tiếp cận quy hoạch động tiêu chuẩn là bao nhiêu?"
+          },
+          "options": [
+            {
+              "en": "O(M + N)",
+              "ja": "O(M + N)",
+              "vi": "O(M + N)"
+            },
+            {
+              "en": "O(M * N)",
+              "ja": "O(M * N)",
+              "vi": "O(M * N)"
+            },
+            {
+              "en": "O(2^(M+N))",
+              "ja": "O(2^(M+N))",
+              "vi": "O(2^(M+N))"
+            },
+            {
+              "en": "O(M log N)",
+              "ja": "O(M log N)",
+              "vi": "O(M log N)"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "The standard LCS DP algorithm constructs an (M+1) x (N+1) table, and each cell is calculated in constant time, leading to O(M * N) complexity.",
+            "ja": "標準的なLCSのDPアルゴリズムは(M+1) x (N+1)のテーブルを構築し、各セルは定数時間で計算されるため、O(M * N)の計算量になります。",
+            "vi": "Thuật toán DP LCS tiêu chuẩn xây dựng một bảng (M+1) x (N+1), và mỗi ô được tính toán trong thời gian không đổi, dẫn đến độ phức tạp O(M * N)."
+          }
+        },
+        {
+          "id": "dsa_s17_q4",
+          "question": {
+            "en": "When calculating the number of ways to make change for a specific amount, how does the DP transition differ from the 'minimum coins' problem?",
+            "ja": "特定の金額に対してお釣りを作る方法の数を計算する場合、DPの遷移は「最小コイン数」問題とどのように異なりますか？",
+            "vi": "Khi tính số cách để đổi tiền cho một số tiền cụ thể, bước chuyển tiếp DP khác với bài toán 'số xu tối thiểu' như thế nào?"
+          },
+          "options": [
+            {
+              "en": "We use max instead of sum",
+              "ja": "合計ではなく最大値を使用します",
+              "vi": "Chúng ta sử dụng max thay vì tổng"
+            },
+            {
+              "en": "We sum the number of ways from previous states instead of taking the minimum",
+              "ja": "最小値を取る代わりに、以前の状態からの方法の数を合計します",
+              "vi": "Chúng ta cộng tổng số cách từ các trạng thái trước đó thay vì lấy giá trị tối thiểu"
+            },
+            {
+              "en": "It requires exponential time complexity",
+              "ja": "指数関数的な時間計算量が必要です",
+              "vi": "Nó đòi hỏi độ phức tạp thời gian hàm mũ"
+            },
+            {
+              "en": "There is no difference in the transition logic",
+              "ja": "遷移ロジックに違いはありません",
+              "vi": "Không có sự khác biệt trong logic chuyển tiếp"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "For counting combinations, dp[i] = sum(dp[i - coin]) for all applicable coins, whereas for minimization, we use the min function.",
+            "ja": "組み合わせを数える場合、dp[i] = sum(dp[i - coin])（すべての適用可能なコインについて）ですが、最小化の場合はmin関数を使用します。",
+            "vi": "Để đếm các tổ hợp, dp[i] = tổng(dp[i - coin]) cho tất cả các đồng xu áp dụng được, trong khi đối với bài toán tối thiểu hóa, chúng ta sử dụng hàm min."
+          }
+        },
+        {
+          "id": "dsa_s17_q5",
+          "question": {
+            "en": "In a space-optimized 0/1 Knapsack implementation using a 1D array, why must the inner loop iterate backwards from W down to the weight of the current item?",
+            "ja": "1次元配列を使用したスペース最適化された0/1ナップサック実装において、内部ループがWから現在のアイテムの重量まで逆方向に繰り返す必要があるのはなぜですか？",
+            "vi": "Trong một triển khai Knapsack 0/1 tối ưu hóa không gian sử dụng mảng 1D, tại sao vòng lặp bên trong phải lặp ngược từ W xuống trọng lượng của vật phẩm hiện tại?"
+          },
+          "options": [
+            {
+              "en": "To prevent using the same item multiple times for the same weight capacity",
+              "ja": "同じ重量容量に対して同じアイテムを複数回使用することを防ぐため",
+              "vi": "Để ngăn chặn việc sử dụng cùng một mặt hàng nhiều lần cho cùng một dung lượng trọng lượng"
+            },
+            {
+              "en": "To improve cache locality",
+              "ja": "キャッシュの局所性を向上させるため",
+              "vi": "Để cải thiện tính cục bộ của bộ nhớ đệm"
+            },
+            {
+              "en": "Because arrays in most languages are indexed backwards",
+              "ja": "ほとんどの言語の配列は逆方向にインデックス付けされているため",
+              "vi": "Vì mảng trong hầu hết các ngôn ngữ được đánh chỉ mục ngược"
+            },
+            {
+              "en": "To allow for Unbounded Knapsack functionality",
+              "ja": "無制限ナップサック機能を可能にするため",
+              "vi": "Để cho phép chức năng của Knapsack không giới hạn"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Iterating backwards ensures that when calculating dp[w], the value dp[w - weight] still represents the state from the previous item iteration, preventing multiple uses of the same item.",
+            "ja": "逆方向に繰り返すことで、dp[w]を計算する際、dp[w - weight]が前のアイテム反復の状態を表すようになり、同じアイテムの複数使用を防ぎます。",
+            "vi": "Việc lặp ngược đảm bảo rằng khi tính toán dp[w], giá trị dp[w - weight] vẫn đại diện cho trạng thái từ lần lặp trước đó, ngăn chặn việc sử dụng nhiều lần cùng một mặt hàng."
+          }
+        },
+        {
+          "id": "dsa_s17_q6",
+          "question": {
+            "en": "Which dynamic programming technique is used to solve the problem of partitioning a set into two subsets with minimum difference in sum?",
+            "ja": "集合を和の差が最小となる2つの部分集合に分割する問題を解決するために使用される動的計画法の手法は何ですか？",
+            "vi": "Kỹ thuật quy hoạch động nào được sử dụng để giải quyết bài toán chia một tập hợp thành hai tập con với hiệu số tổng tối thiểu?"
+          },
+          "options": [
+            {
+              "en": "Subset Sum Problem variation",
+              "ja": "部分和問題のバリエーション",
+              "vi": "Biến thể của bài toán tổng tập con"
+            },
+            {
+              "en": "LCS recurrence",
+              "ja": "LCS漸化式",
+              "vi": "Truy hồi LCS"
+            },
+            {
+              "en": "Greedy sorting",
+              "ja": "欲張りソート",
+              "vi": "Sắp xếp tham lam"
+            },
+            {
+              "en": "Binary Search",
+              "ja": "二分探索",
+              "vi": "Tìm kiếm nhị phân"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The Partition Problem is a variation of the Subset Sum problem where we aim to find if a subset sum equal to total_sum/2 is possible.",
+            "ja": "分割問題は、合計の半分に等しい部分集合和が可能かどうかを見つけることを目的とする部分和問題のバリエーションです。",
+            "vi": "Bài toán Phân hoạch là một biến thể của bài toán Tổng tập con, nơi chúng ta nhắm đến việc tìm xem liệu một tổng tập con bằng tổng_tổng/2 có khả thi hay không."
+          }
+        },
+        {
+          "id": "dsa_s17_q7",
+          "question": {
+            "en": "In LCS, what does the condition 'if (text1[i] == text2[j])' signify in the DP table transition?",
+            "ja": "LCSにおいて、DPテーブルの遷移における'if (text1[i] == text2[j])'という条件は何を意味しますか？",
+            "vi": "Trong LCS, điều kiện 'if (text1[i] == text2[j])' biểu thị điều gì trong bước chuyển tiếp bảng DP?"
+          },
+          "options": [
+            {
+              "en": "The characters match, so we increment the diagonal value by 1",
+              "ja": "文字が一致するため、対角線の値を1増やします",
+              "vi": "Các ký tự khớp nhau, vì vậy chúng ta tăng giá trị đường chéo lên 1"
+            },
+            {
+              "en": "The characters do not match, we take the max of top or left cell",
+              "ja": "文字が一致しないため、上または左のセルの最大値を取ります",
+              "vi": "Các ký tự không khớp, chúng ta lấy giá trị tối đa của ô trên hoặc ô bên trái"
+            },
+            {
+              "en": "The strings are identical",
+              "ja": "文字列が同一であること",
+              "vi": "Các chuỗi là giống hệt nhau"
+            },
+            {
+              "en": "We reset the DP table",
+              "ja": "DPテーブルをリセットすること",
+              "vi": "Chúng ta đặt lại bảng DP"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "When characters match, the current LCS is 1 plus the LCS of the prefixes before these characters (the diagonal value).",
+            "ja": "文字が一致する場合、現在のLCSは、これらの文字の前の接頭辞のLCS（対角線の値）に1を加えたものです。",
+            "vi": "Khi các ký tự khớp nhau, LCS hiện tại là 1 cộng với LCS của các tiền tố trước các ký tự này (giá trị đường chéo)."
+          }
+        },
+        {
+          "id": "dsa_s17_q8",
+          "question": {
+            "en": "Why is Memoization considered a 'top-down' dynamic programming approach?",
+            "ja": "メモ化が「トップダウン」の動的計画法アプローチと見なされるのはなぜですか？",
+            "vi": "Tại sao Memoization được coi là phương pháp quy hoạch động 'từ trên xuống'?"
+          },
+          "options": [
+            {
+              "en": "Because it starts solving from the largest problem and recursively breaks it down",
+              "ja": "最大の問題から解決を開始し、再帰的に分解するため",
+              "vi": "Vì nó bắt đầu giải quyết từ vấn đề lớn nhất và chia nhỏ nó một cách đệ quy"
+            },
+            {
+              "en": "Because it fills the table iteratively",
+              "ja": "テーブルを反復的に埋めるため",
+              "vi": "Vì nó điền vào bảng một cách lặp đi lặp lại"
+            },
+            {
+              "en": "Because it ignores base cases",
+              "ja": "基本ケースを無視するため",
+              "vi": "Vì nó bỏ qua các trường hợp cơ bản"
+            },
+            {
+              "en": "Because it only uses constant space",
+              "ja": "定数スペースのみを使用するため",
+              "vi": "Vì nó chỉ sử dụng bộ nhớ hằng số"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Memoization involves starting with the original problem and recursively calling subproblems, storing results to avoid recomputation.",
+            "ja": "メモ化は、元の問題から開始して部分問題を再帰的に呼び出し、再計算を避けるために結果を保存することを含みます。",
+            "vi": "Memoization bao gồm việc bắt đầu với vấn đề gốc và gọi đệ quy các bài toán con, lưu trữ kết quả để tránh tính toán lại."
+          }
+        },
+        {
+          "id": "dsa_s17_q9",
+          "question": {
+            "en": "Given an unbounded knapsack problem (items can be reused), how should the recurrence be modified compared to 0/1 knapsack?",
+            "ja": "無制限ナップサック問題（アイテムが再利用可能）が与えられた場合、0/1ナップサックと比較して漸化式をどのように修正すべきですか？",
+            "vi": "Với bài toán Knapsack không giới hạn (các vật phẩm có thể được tái sử dụng), công thức truy hồi nên được sửa đổi như thế nào so với Knapsack 0/1?"
+          },
+          "options": [
+            {
+              "en": "Iterate weights forward and include the current item in the current state calculation",
+              "ja": "重量を前方に反復し、現在の状態計算に現在のアイテムを含めます",
+              "vi": "Lặp trọng lượng theo hướng tiến và bao gồm vật phẩm hiện tại trong tính toán trạng thái hiện tại"
+            },
+            {
+              "en": "Use two 2D arrays",
+              "ja": "2つの2次元配列を使用する",
+              "vi": "Sử dụng hai mảng 2D"
+            },
+            {
+              "en": "Only consider items with even weights",
+              "ja": "偶数の重みを持つアイテムのみを考慮する",
+              "vi": "Chỉ xem xét các vật phẩm có trọng lượng chẵn"
+            },
+            {
+              "en": "It is exactly the same",
+              "ja": "全く同じです",
+              "vi": "Nó hoàn toàn giống nhau"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "In unbounded knapsack, using the same item multiple times is allowed, so we calculate dp[w] using the already updated dp[w - weight] from the current item.",
+            "ja": "無制限ナップサックでは同じアイテムを複数回使用できるため、現在のアイテムから既に更新されたdp[w - weight]を使用してdp[w]を計算します。",
+            "vi": "Trong knapsack không giới hạn, việc sử dụng cùng một vật phẩm nhiều lần là được phép, vì vậy chúng ta tính dp[w] bằng cách sử dụng dp[w - weight] đã được cập nhật từ vật phẩm hiện tại."
+          }
+        },
+        {
+          "id": "dsa_s17_q10",
+          "question": {
+            "en": "When comparing Tabulation and Memoization, which of the following is true?",
+            "ja": "表形式（Tabulation）とメモ化（Memoization）を比較する場合、次のうちどれが正しいですか？",
+            "vi": "Khi so sánh Tabulation và Memoization, điều nào sau đây là đúng?"
+          },
+          "options": [
+            {
+              "en": "Tabulation avoids recursion overhead",
+              "ja": "表形式は再帰のオーバーヘッドを回避します",
+              "vi": "Tabulation tránh được chi phí đệ quy"
+            },
+            {
+              "en": "Memoization is always faster than Tabulation",
+              "ja": "メモ化は常に表形式よりも高速です",
+              "vi": "Memoization luôn nhanh hơn Tabulation"
+            },
+            {
+              "en": "Tabulation requires more memory for the stack",
+              "ja": "表形式はスタックのためにより多くのメモリを必要とします",
+              "vi": "Tabulation yêu cầu nhiều bộ nhớ hơn cho ngăn xếp"
+            },
+            {
+              "en": "Memoization is purely bottom-up",
+              "ja": "メモ化は純粋にボトムアップです",
+              "vi": "Memoization hoàn toàn là từ dưới lên"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Tabulation is an iterative approach that fills a DP table, avoiding the function call overhead associated with recursion found in memoization.",
+            "ja": "表形式はDPテーブルを埋める反復的なアプローチであり、メモ化に見られる再帰に関連する関数呼び出しのオーバーヘッドを回避します。",
+            "vi": "Tabulation là phương pháp lặp điền vào bảng DP, tránh được chi phí gọi hàm liên quan đến đệ quy trong memoization."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dsa-18",
+      "title": {
+        "en": "Greedy Choice & Interval Scheduling",
+        "ja": "貪欲法と区間スケジューリング",
+        "vi": "Lựa chọn tham lam và Lập lịch khoảng thời gian"
+      },
+      "description": {
+        "en": "Sort interval by end times, Huffman coding trees creation, and optimal scheduling options.",
+        "ja": "終了時間による区間ソート、ハフマン符号化木構築、および最適なスケジューリングの選択に関する演習です。",
+        "vi": "Sắp xếp khoảng thời gian theo thời điểm kết thúc, tạo cây mã hóa Huffman và các tùy chọn lập lịch tối ưu."
+      },
+      "questions": [
+        {
+          "id": "dsa_s18_q1",
+          "question": {
+            "en": "A cinema complex needs to schedule the maximum number of movies in a single theater. Given a set of intervals represented as (start, finish), which sorting strategy guarantees the optimal greedy solution?",
+            "ja": "映画館で1つのスクリーンを使って上映できる映画の数を最大化する必要があります。区間が(開始, 終了)で表される場合、どのソート戦略が最適な貪欲解を保証しますか？",
+            "vi": "Một rạp chiếu phim cần lập lịch số lượng phim tối đa trong một phòng chiếu. Với tập hợp các khoảng thời gian được biểu diễn dưới dạng (bắt đầu, kết thúc), chiến lược sắp xếp nào đảm bảo giải pháp tham lam tối ưu?"
+          },
+          "options": [
+            {
+              "en": "Sort by start time ascending",
+              "ja": "開始時間の昇順でソート",
+              "vi": "Sắp xếp theo thời gian bắt đầu tăng dần"
+            },
+            {
+              "en": "Sort by finish time ascending",
+              "ja": "終了時間の昇順でソート",
+              "vi": "Sắp xếp theo thời gian kết thúc tăng dần"
+            },
+            {
+              "en": "Sort by duration shortest to longest",
+              "ja": "期間の短い順にソート",
+              "vi": "Sắp xếp theo thời lượng từ ngắn nhất đến dài nhất"
+            },
+            {
+              "en": "Sort by number of overlaps descending",
+              "ja": "重複の数で降順にソート",
+              "vi": "Sắp xếp theo số lượng chồng lấp giảm dần"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Selecting the interval that finishes earliest leaves as much time as possible for subsequent intervals, which is the standard greedy choice property for the Interval Scheduling problem.",
+            "ja": "最も早く終了する区間を選択することで、後続の区間に最大限の時間を残すことができ、これが区間スケジューリング問題における標準的な貪欲選択プロパティです。",
+            "vi": "Việc chọn khoảng thời gian kết thúc sớm nhất để lại nhiều thời gian nhất cho các khoảng thời gian tiếp theo, đây là tính chất lựa chọn tham lam tiêu chuẩn cho bài toán Lập lịch khoảng thời gian."
+          }
+        },
+        {
+          "id": "dsa_s18_q2",
+          "question": {
+            "en": "You are building a Huffman tree for data compression. Given frequencies A:10, B:1, C:1, D:1, E:1, what is the weight of the root node?",
+            "ja": "データ圧縮のためにハフマン木を作成しています。頻度がA:10, B:1, C:1, D:1, E:1の場合、ルートノードの重みはいくつになりますか？",
+            "vi": "Bạn đang xây dựng cây Huffman để nén dữ liệu. Với các tần suất A:10, B:1, C:1, D:1, E:1, trọng số của nút gốc là bao nhiêu?"
+          },
+          "options": [
+            {
+              "en": "14",
+              "ja": "14",
+              "vi": "14"
+            },
+            {
+              "en": "10",
+              "ja": "10",
+              "vi": "10"
+            },
+            {
+              "en": "20",
+              "ja": "20",
+              "vi": "20"
+            },
+            {
+              "en": "15",
+              "ja": "15",
+              "vi": "15"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The root node of a Huffman tree always has a weight equal to the sum of all leaf frequencies: 10 + 1 + 1 + 1 + 1 = 14.",
+            "ja": "ハフマン木のルートノードの重みは、常にすべての葉ノードの頻度の合計と等しくなります：10 + 1 + 1 + 1 + 1 = 14。",
+            "vi": "Nút gốc của cây Huffman luôn có trọng số bằng tổng tất cả các tần suất của các nút lá: 10 + 1 + 1 + 1 + 1 = 14."
+          }
+        },
+        {
+          "id": "dsa_s18_q3",
+          "question": {
+            "en": "Consider a set of tasks with specific deadlines and processing times. If you want to minimize the maximum lateness, which greedy strategy is optimal?",
+            "ja": "特定の締め切りと処理時間を持つタスクのセットがあります。最大遅延を最小化したい場合、どの貪欲戦略が最適ですか？",
+            "vi": "Xem xét một tập hợp các tác vụ với thời hạn và thời gian xử lý cụ thể. Nếu bạn muốn giảm thiểu độ trễ tối đa, chiến lược tham lam nào là tối ưu?"
+          },
+          "options": [
+            {
+              "en": "Earliest Start Time First",
+              "ja": "開始時間が早い順",
+              "vi": "Thời gian bắt đầu sớm nhất trước"
+            },
+            {
+              "en": "Shortest Processing Time First",
+              "ja": "処理時間が短い順",
+              "vi": "Thời gian xử lý ngắn nhất trước"
+            },
+            {
+              "en": "Earliest Deadline First",
+              "ja": "締め切りが早い順",
+              "vi": "Thời hạn sớm nhất trước"
+            },
+            {
+              "en": "Longest Processing Time First",
+              "ja": "処理時間が長い順",
+              "vi": "Thời gian xử lý dài nhất trước"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "Earliest Deadline First (EDF) is the optimal strategy for the 'Scheduling to Minimize Lateness' problem, ensuring that no task is pushed further back than necessary.",
+            "ja": "「遅延を最小化するスケジューリング」問題において、締め切りが早い順（EDF）は最適な戦略であり、どのタスクも必要以上に後ろ倒しされないことを保証します。",
+            "vi": "Earliest Deadline First (EDF) là chiến lược tối ưu cho bài toán 'Lập lịch để giảm thiểu độ trễ', đảm bảo rằng không có tác vụ nào bị đẩy lùi xa hơn mức cần thiết."
+          }
+        },
+        {
+          "id": "dsa_s18_q4",
+          "question": {
+            "en": "In the context of the Activity Selection Problem, what is the time complexity of the optimal greedy approach using sorting?",
+            "ja": "アクティビティ選択問題のコンテキストにおいて、ソートを用いた最適な貪欲アプローチの時間計算量はいくつですか？",
+            "vi": "Trong bối cảnh bài toán Chọn hoạt động, độ phức tạp thời gian của cách tiếp cận tham lam tối ưu sử dụng sắp xếp là bao nhiêu?"
+          },
+          "options": [
+            {
+              "en": "O(n)",
+              "ja": "O(n)",
+              "vi": "O(n)"
+            },
+            {
+              "en": "O(n log n)",
+              "ja": "O(n log n)",
+              "vi": "O(n log n)"
+            },
+            {
+              "en": "O(n^2)",
+              "ja": "O(n^2)",
+              "vi": "O(n^2)"
+            },
+            {
+              "en": "O(log n)",
+              "ja": "O(log n)",
+              "vi": "O(log n)"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "The sorting step dominates the complexity, requiring O(n log n), while the selection process itself only takes O(n).",
+            "ja": "ソートステップが計算量を支配しO(n log n)を要しますが、選択プロセス自体はO(n)で完了します。",
+            "vi": "Bước sắp xếp chiếm ưu thế về độ phức tạp, đòi hỏi O(n log n), trong khi bản thân quá trình lựa chọn chỉ mất O(n)."
+          }
+        },
+        {
+          "id": "dsa_s18_q5",
+          "question": {
+            "en": "Which of the following problems cannot be solved using a greedy algorithm?",
+            "ja": "次のうち、貪欲アルゴリズムでは解けない問題はどれですか？",
+            "vi": "Bài toán nào sau đây không thể giải quyết bằng thuật toán tham lam?"
+          },
+          "options": [
+            {
+              "en": "Fractional Knapsack Problem",
+              "ja": "分割可能ナップサック問題",
+              "vi": "Bài toán cái túi phân đoạn"
+            },
+            {
+              "en": "0/1 Knapsack Problem",
+              "ja": "0/1 ナップサック問題",
+              "vi": "Bài toán cái túi 0/1"
+            },
+            {
+              "en": "Minimum Spanning Tree",
+              "ja": "最小全域木問題",
+              "vi": "Cây khung nhỏ nhất"
+            },
+            {
+              "en": "Dijkstra's Shortest Path",
+              "ja": "ダイクストラ法（最短経路）",
+              "vi": "Đường đi ngắn nhất Dijkstra"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "The 0/1 Knapsack problem exhibits optimal substructure but does not possess the greedy choice property, requiring Dynamic Programming instead.",
+            "ja": "0/1 ナップサック問題は最適部分構造を持ちますが、貪欲選択プロパティを持たないため、代わりに動的計画法が必要です。",
+            "vi": "Bài toán cái túi 0/1 có cấu trúc con tối ưu nhưng không sở hữu tính chất lựa chọn tham lam, do đó cần sử dụng Quy hoạch động thay thế."
+          }
+        },
+        {
+          "id": "dsa_s18_q6",
+          "question": {
+            "en": "When building a Huffman tree, why do we always combine the two nodes with the lowest frequencies?",
+            "ja": "ハフマン木を構築する際、なぜ常に最も頻度の低い2つのノードを結合するのですか？",
+            "vi": "Khi xây dựng cây Huffman, tại sao chúng ta luôn kết hợp hai nút có tần suất thấp nhất?"
+          },
+          "options": [
+            {
+              "en": "To minimize the depth of the tree",
+              "ja": "木の深さを最小化するため",
+              "vi": "Để giảm thiểu độ sâu của cây"
+            },
+            {
+              "en": "To ensure the tree is a complete binary tree",
+              "ja": "木が完全二分木になることを保証するため",
+              "vi": "Để đảm bảo cây là cây nhị phân hoàn chỉnh"
+            },
+            {
+              "en": "To ensure characters with low frequency have longer codes",
+              "ja": "頻度の低い文字に長い符号を割り当てるため",
+              "vi": "Để đảm bảo các ký tự có tần suất thấp có mã dài hơn"
+            },
+            {
+              "en": "To maximize the average code length",
+              "ja": "平均符号長を最大化するため",
+              "vi": "Để tối đa hóa độ dài mã trung bình"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "Huffman coding uses shorter codes for frequent characters and longer codes for rare characters; merging low-frequency nodes first forces them to be deeper in the tree.",
+            "ja": "ハフマン符号化は頻出文字に短い符号を、稀な文字に長い符号を割り当てます。低頻度ノードを先にマージすることで、それらが木の中でより深い位置に来るようにします。",
+            "vi": "Mã hóa Huffman sử dụng mã ngắn hơn cho các ký tự thường xuyên và mã dài hơn cho các ký tự hiếm; việc hợp nhất các nút có tần suất thấp trước buộc chúng phải nằm sâu hơn trong cây."
+          }
+        },
+        {
+          "id": "dsa_s18_q7",
+          "question": {
+            "en": "If multiple intervals have the same finish time in an interval scheduling problem, how should they be handled during sorting?",
+            "ja": "区間スケジューリング問題において、複数の区間が同じ終了時間を持つ場合、ソート時にどのように扱うべきですか？",
+            "vi": "Nếu nhiều khoảng thời gian có cùng thời điểm kết thúc trong bài toán lập lịch khoảng thời gian, chúng nên được xử lý như thế nào trong quá trình sắp xếp?"
+          },
+          "options": [
+            {
+              "en": "The order among them does not affect the correctness of the greedy choice",
+              "ja": "それらの順序は貪欲選択の正しさに影響しない",
+              "vi": "Thứ tự giữa chúng không ảnh hưởng đến tính đúng đắn của lựa chọn tham lam"
+            },
+            {
+              "en": "Must sort by start time descending",
+              "ja": "開始時間の降順でソートしなければならない",
+              "vi": "Phải sắp xếp theo thời gian bắt đầu giảm dần"
+            },
+            {
+              "en": "Must remove all except one",
+              "ja": "1つを除いてすべて削除しなければならない",
+              "vi": "Phải loại bỏ tất cả ngoại trừ một"
+            },
+            {
+              "en": "Must sort by duration ascending",
+              "ja": "期間の昇順でソートしなければならない",
+              "vi": "Phải sắp xếp theo thời lượng tăng dần"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Since the greedy condition depends solely on the finish time, the relative order of intervals with the same finish time does not change the optimality of the result.",
+            "ja": "貪欲条件は終了時間のみに依存するため、終了時間が同じ区間同士の相対的な順序は、結果の最適性に影響を与えません。",
+            "vi": "Vì điều kiện tham lam chỉ phụ thuộc vào thời gian kết thúc, thứ tự tương đối của các khoảng thời gian có cùng thời điểm kết thúc không làm thay đổi tính tối ưu của kết quả."
+          }
+        },
+        {
+          "id": "dsa_s18_q8",
+          "question": {
+            "en": "What is the primary advantage of Greedy algorithms over Dynamic Programming for problems where Greedy works?",
+            "ja": "貪欲アルゴリズムが機能する問題において、動的計画法と比較した貪欲アルゴリズムの主な利点は何ですか？",
+            "vi": "Ưu điểm chính của thuật toán Tham lam so với Quy hoạch động đối với các bài toán mà thuật toán Tham lam hiệu quả là gì?"
+          },
+          "options": [
+            {
+              "en": "Guaranteed global optimum",
+              "ja": "大域的最適解が保証される",
+              "vi": "Đảm bảo tối ưu toàn cục"
+            },
+            {
+              "en": "Simpler implementation and faster execution time",
+              "ja": "実装が単純で実行時間が速い",
+              "vi": "Triển khai đơn giản hơn và thời gian thực thi nhanh hơn"
+            },
+            {
+              "en": "Requires more memory usage",
+              "ja": "メモリ使用量が多い",
+              "vi": "Đòi hỏi sử dụng nhiều bộ nhớ hơn"
+            },
+            {
+              "en": "Always produces correct results for all problems",
+              "ja": "すべての問題に対して常に正しい結果を出す",
+              "vi": "Luôn tạo ra kết quả chính xác cho tất cả các bài toán"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Greedy algorithms are typically O(n log n) or O(n) and use O(1) extra space, making them much more efficient than the typical O(n^2) or O(n^3) DP approaches.",
+            "ja": "貪欲アルゴリズムは通常O(n log n)またはO(n)で、余分なメモリ使用量もO(1)であるため、一般的なO(n^2)やO(n^3)のDPアプローチよりもはるかに効率的です。",
+            "vi": "Các thuật toán tham lam thường có độ phức tạp O(n log n) hoặc O(n) và sử dụng thêm O(1) bộ nhớ, khiến chúng hiệu quả hơn nhiều so với các phương pháp quy hoạch động O(n^2) hoặc O(n^3) thông thường."
+          }
+        },
+        {
+          "id": "dsa_s18_q9",
+          "question": {
+            "en": "In a greedy scheduling problem with intervals [1,4], [2,5], [6,7], [5,9], what is the maximum number of non-overlapping intervals?",
+            "ja": "区間 [1,4], [2,5], [6,7], [5,9] を持つ貪欲スケジューリング問題において、重ならない区間の最大数はいくつですか？",
+            "vi": "Trong một bài toán lập lịch tham lam với các khoảng thời gian [1,4], [2,5], [6,7], [5,9], số lượng lớn nhất các khoảng thời gian không chồng lấp là bao nhiêu?"
+          },
+          "options": [
+            {
+              "en": "2",
+              "ja": "2",
+              "vi": "2"
+            },
+            {
+              "en": "3",
+              "ja": "3",
+              "vi": "3"
+            },
+            {
+              "en": "4",
+              "ja": "4",
+              "vi": "4"
+            },
+            {
+              "en": "1",
+              "ja": "1",
+              "vi": "1"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Sorting by finish time gives: [1,4], [2,5], [6,7], [5,9]. Selecting [1,4], then [6,7] leaves room for [5,9] if it fit, but here we can fit [1,4], [5,9] is not compatible, wait: [1,4], [5,9] and [6,7] overlap. Selecting [1,4] and [6,7] works, or [2,5] and [6,7]. The max set is 2.",
+            "ja": "終了時間でソートすると [1,4], [2,5], [6,7], [5,9] となります。[1,4] を選択し、次に [6,7] を選択します。合計で2つが最大です。",
+            "vi": "Sắp xếp theo thời gian kết thúc cho ta: [1,4], [2,5], [6,7], [5,9]. Chọn [1,4], sau đó [6,7]. Tổng số lượng tối đa là 2."
+          }
+        },
+        {
+          "id": "dsa_s18_q10",
+          "question": {
+            "en": "What property of a problem allows a greedy strategy to yield an optimal solution?",
+            "ja": "問題のどのような性質が、貪欲戦略で最適解を得ることを可能にしますか？",
+            "vi": "Tính chất nào của một bài toán cho phép chiến lược tham lam mang lại giải pháp tối ưu?"
+          },
+          "options": [
+            {
+              "en": "Greedy Choice Property and Optimal Substructure",
+              "ja": "貪欲選択プロパティと最適部分構造",
+              "vi": "Tính chất lựa chọn tham lam và cấu trúc con tối ưu"
+            },
+            {
+              "en": "Recursive dependency on all previous states",
+              "ja": "すべての以前の状態への再帰的な依存",
+              "vi": "Sự phụ thuộc đệ quy vào tất cả các trạng thái trước đó"
+            },
+            {
+              "en": "The problem must be NP-Hard",
+              "ja": "問題がNP困難であること",
+              "vi": "Bài toán phải là NP-Hard"
+            },
+            {
+              "en": "The problem must be unsolvable via brute force",
+              "ja": "全探索で解けないこと",
+              "vi": "Bài toán không thể giải bằng brute force"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "A greedy algorithm works if the problem has the greedy choice property (a local optimum leads to a global optimum) and optimal substructure.",
+            "ja": "貪欲アルゴリズムは、問題が貪欲選択プロパティ（局所的最適が全体的最適につながる）と最適部分構造を持つ場合に機能します。",
+            "vi": "Thuật toán tham lam hoạt động nếu bài toán có tính chất lựa chọn tham lam (tối ưu cục bộ dẫn đến tối ưu toàn cục) và cấu trúc con tối ưu."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dsa-19",
+      "title": {
+        "en": "Bitwise Masking & Manipulation algorithms",
+        "ja": "ビットマスクおよびビット操作アルゴリズム",
+        "vi": "Các thuật toán thao tác và mặt nạ bit"
+      },
+      "description": {
+        "en": "XOR calculations, single numbers searches, and setting specific bit indices.",
+        "ja": "XOR計算、単一数値の探索、および特定のビットインデックスの設定。",
+        "vi": "Các phép tính XOR, tìm kiếm số đơn lẻ và thiết lập các chỉ số bit cụ thể."
+      },
+      "questions": [
+        {
+          "id": "dsa_s19_q1",
+          "question": {
+            "en": "You are auditing a network protocol that uses a 32-bit integer as a status flag. To ensure the 'connection active' bit (the 5th bit, index 4) is always set regardless of its current state, which operation should you perform?",
+            "ja": "ネットワークプロトコルを監査しており、32ビット整数をステータスフラグとして使用しています。「接続アクティブ」ビット（5番目のビット、インデックス4）を現在の状態に関係なく常にセットするには、どの演算を行うべきですか？",
+            "vi": "Bạn đang kiểm tra một giao thức mạng sử dụng số nguyên 32-bit làm cờ trạng thái. Để đảm bảo bit 'kết nối đang hoạt động' (bit thứ 5, chỉ số 4) luôn được bật bất kể trạng thái hiện tại của nó là gì, bạn nên thực hiện thao tác nào?"
+          },
+          "options": [
+            {
+              "en": "status & ~(1 << 4)",
+              "ja": "status & ~(1 << 4)",
+              "vi": "status & ~(1 << 4)"
+            },
+            {
+              "en": "status | (1 << 4)",
+              "ja": "status | (1 << 4)",
+              "vi": "status | (1 << 4)"
+            },
+            {
+              "en": "status ^ (1 << 4)",
+              "ja": "status ^ (1 << 4)",
+              "vi": "status ^ (1 << 4)"
+            },
+            {
+              "en": "status << 4",
+              "ja": "status << 4",
+              "vi": "status << 4"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Using the bitwise OR operator (|) with a mask where only the 4th index bit is 1 ensures that specific bit becomes 1, leaving others unchanged.",
+            "ja": "4番目のインデックスビットのみが1であるマスクを使用してビット単位のOR演算子（|）を使用すると、その特定のビットが確実に1になり、他のビットは変更されません。",
+            "vi": "Sử dụng toán tử OR (|) với một mặt nạ mà chỉ bit ở chỉ số 4 là 1 đảm bảo bit đó trở thành 1, các bit khác không thay đổi."
+          }
+        },
+        {
+          "id": "dsa_s19_q2",
+          "question": {
+            "en": "In a sensor array, you have an array of integers where every element appears twice except for one. How can you find the unique element in O(n) time and O(1) space?",
+            "ja": "センサーアレイにおいて、すべての要素が2回出現し、1つだけ例外がある整数の配列があります。O(n)の時間計算量とO(1)の空間計算量で一意の要素を見つけるにはどうすればよいですか？",
+            "vi": "Trong một mảng cảm biến, bạn có một mảng số nguyên nơi mỗi phần tử xuất hiện hai lần ngoại trừ một phần tử. Làm thế nào để bạn tìm phần tử duy nhất trong thời gian O(n) và bộ nhớ O(1)?"
+          },
+          "options": [
+            {
+              "en": "Use a hash map to count occurrences",
+              "ja": "ハッシュマップを使用して出現回数をカウントする",
+              "vi": "Sử dụng bảng băm để đếm số lần xuất hiện"
+            },
+            {
+              "en": "Sort the array and check adjacent elements",
+              "ja": "配列をソートして隣接する要素をチェックする",
+              "vi": "Sắp xếp mảng và kiểm tra các phần tử liền kề"
+            },
+            {
+              "en": "XOR all elements together",
+              "ja": "すべての要素をXORする",
+              "vi": "XOR tất cả các phần tử với nhau"
+            },
+            {
+              "en": "Use binary search",
+              "ja": "二分探索を使用する",
+              "vi": "Sử dụng tìm kiếm nhị phân"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "XORing a number with itself results in 0, and XORing with 0 leaves the number unchanged. Thus, all pairs cancel out to 0, leaving only the unique element.",
+            "ja": "ある数自身をXORすると0になり、0とXORするとその数は変わりません。したがって、すべてのペアが打ち消し合って0になり、一意の要素だけが残ります。",
+            "vi": "XOR một số với chính nó sẽ bằng 0, và XOR với 0 không làm thay đổi số đó. Do đó, tất cả các cặp sẽ triệt tiêu về 0, chỉ để lại phần tử duy nhất."
+          }
+        },
+        {
+          "id": "dsa_s19_q3",
+          "question": {
+            "en": "You are writing a device driver that needs to clear (set to 0) the 3rd bit (index 2) of a hardware register. Which mask-based operation is correct?",
+            "ja": "ハードウェアレジスタの3番目のビット（インデックス2）をクリア（0に設定）する必要があるデバイスドライバを作成しています。どのマスクベースの操作が正しいですか？",
+            "vi": "Bạn đang viết một trình điều khiển thiết bị cần xóa (đặt về 0) bit thứ 3 (chỉ số 2) của thanh ghi phần cứng. Thao tác dựa trên mặt nạ nào là đúng?"
+          },
+          "options": [
+            {
+              "en": "reg &= ~(1 << 2)",
+              "ja": "reg &= ~(1 << 2)",
+              "vi": "reg &= ~(1 << 2)"
+            },
+            {
+              "en": "reg |= (1 << 2)",
+              "ja": "reg |= (1 << 2)",
+              "vi": "reg |= (1 << 2)"
+            },
+            {
+              "en": "reg &= (1 << 2)",
+              "ja": "reg &= (1 << 2)",
+              "vi": "reg &= (1 << 2)"
+            },
+            {
+              "en": "reg ^= ~(1 << 2)",
+              "ja": "reg ^= ~(1 << 2)",
+              "vi": "reg ^= ~(1 << 2)"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The mask `~(1 << 2)` creates a bit pattern where only the 2nd index is 0 and all others are 1. ANDing this with the register clears the bit.",
+            "ja": "マスク `~(1 << 2)` は、2番目のインデックスのみが0で、他がすべて1であるビットパターンを作成します。これをレジスタとAND演算することで、そのビットがクリアされます。",
+            "vi": "Mặt nạ `~(1 << 2)` tạo ra một mẫu bit nơi chỉ chỉ số 2 là 0 và tất cả các bit khác là 1. Toán tử AND mặt nạ này với thanh ghi sẽ xóa bit đó."
+          }
+        },
+        {
+          "id": "dsa_s19_q4",
+          "question": {
+            "en": "What is the most efficient way to check if an integer 'n' is a power of 2?",
+            "ja": "整数 'n' が2のべき乗であるかどうかを確認する最も効率的な方法は何ですか？",
+            "vi": "Cách hiệu quả nhất để kiểm tra xem một số nguyên 'n' có phải là lũy thừa của 2 hay không là gì?"
+          },
+          "options": [
+            {
+              "en": "n % 2 == 0",
+              "ja": "n % 2 == 0",
+              "vi": "n % 2 == 0"
+            },
+            {
+              "en": "(n & (n - 1)) == 0",
+              "ja": "(n & (n - 1)) == 0",
+              "vi": "(n & (n - 1)) == 0"
+            },
+            {
+              "en": "(n ^ 1) == 0",
+              "ja": "(n ^ 1) == 0",
+              "vi": "(n ^ 1) == 0"
+            },
+            {
+              "en": "(n | 1) == 0",
+              "ja": "(n | 1) == 0",
+              "vi": "(n | 1) == 0"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "A power of 2 has exactly one bit set. Subtracting 1 flips all bits after the set bit, making the AND operation with the original number result in 0.",
+            "ja": "2のべき乗はビットが1つだけセットされています。1を引くと、セットされたビットより後のすべてのビットが反転するため、元の数とのAND演算の結果が0になります。",
+            "vi": "Một số là lũy thừa của 2 sẽ chỉ có duy nhất một bit là 1. Trừ đi 1 sẽ đảo ngược tất cả các bit sau bit đó, khiến cho phép toán AND với số ban đầu cho kết quả là 0."
+          }
+        },
+        {
+          "id": "dsa_s19_q5",
+          "question": {
+            "en": "You need to determine if the 7th bit (index 6) of an integer is set. Which condition is correct?",
+            "ja": "整数の7番目のビット（インデックス6）がセットされているかどうかを判断する必要があります。どの条件が正しいですか？",
+            "vi": "Bạn cần xác định xem bit thứ 7 (chỉ số 6) của một số nguyên có được bật hay không. Điều kiện nào là đúng?"
+          },
+          "options": [
+            {
+              "en": "(n & (1 << 6)) != 0",
+              "ja": "(n & (1 << 6)) != 0",
+              "vi": "(n & (1 << 6)) != 0"
+            },
+            {
+              "en": "(n | (1 << 6)) == 0",
+              "ja": "(n | (1 << 6)) == 0",
+              "vi": "(n | (1 << 6)) == 0"
+            },
+            {
+              "en": "(n & (1 << 7)) != 0",
+              "ja": "(n & (1 << 7)) != 0",
+              "vi": "(n & (1 << 7)) != 0"
+            },
+            {
+              "en": "(n >> 6) == 1",
+              "ja": "(n >> 6) == 1",
+              "vi": "(n >> 6) == 1"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "By masking the number with 1 shifted left by 6, we isolate the 6th index bit. If the result is non-zero, the bit is set.",
+            "ja": "1を左に6ビットシフトしたもので数値をマスクすることにより、6番目のインデックスビットを分離します。結果がゼロ以外であれば、そのビットはセットされています。",
+            "vi": "Bằng cách mặt nạ số đó với 1 dịch trái 6 đơn vị, chúng ta tách biệt được bit ở chỉ số 6. Nếu kết quả khác 0, bit đó đang được bật."
+          }
+        },
+        {
+          "id": "dsa_s19_q6",
+          "question": {
+            "en": "How can you toggle the 4th bit (index 3) of an integer while leaving all other bits unaffected?",
+            "ja": "他のすべてのビットに影響を与えずに、整数の4番目のビット（インデックス3）をトグル（反転）するにはどうすればよいですか？",
+            "vi": "Làm thế nào để bạn đảo ngược bit thứ 4 (chỉ số 3) của một số nguyên mà không ảnh hưởng đến các bit khác?"
+          },
+          "options": [
+            {
+              "en": "n = n & ~(1 << 3)",
+              "ja": "n = n & ~(1 << 3)",
+              "vi": "n = n & ~(1 << 3)"
+            },
+            {
+              "en": "n = n | (1 << 3)",
+              "ja": "n = n | (1 << 3)",
+              "vi": "n = n | (1 << 3)"
+            },
+            {
+              "en": "n = n ^ (1 << 3)",
+              "ja": "n = n ^ (1 << 3)",
+              "vi": "n = n ^ (1 << 3)"
+            },
+            {
+              "en": "n = n >> 3",
+              "ja": "n = n >> 3",
+              "vi": "n = n >> 3"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "The XOR operator (^) flips a bit if the mask bit is 1. XORing with 1 toggles the bit, while XORing with 0 keeps it the same.",
+            "ja": "XOR演算子（^）は、マスクビットが1の場合にビットを反転させます。1とXORするとビットがトグルされ、0とXORするとそのままになります。",
+            "vi": "Toán tử XOR (^) sẽ đảo ngược bit nếu bit mặt nạ là 1. XOR với 1 sẽ lật bit, trong khi XOR với 0 sẽ giữ nguyên giá trị."
+          }
+        },
+        {
+          "id": "dsa_s19_q7",
+          "question": {
+            "en": "Which bitwise expression correctly calculates the number of set bits (population count) in a 32-bit integer?",
+            "ja": "32ビット整数内のセットされているビット数（ポピュレーションカウント）を正しく計算するビット演算式はどれですか？",
+            "vi": "Biểu thức bitwise nào tính toán chính xác số lượng bit được bật (population count) trong một số nguyên 32-bit?"
+          },
+          "options": [
+            {
+              "en": "while (n) { n &= (n - 1); count++; }",
+              "ja": "while (n) { n &= (n - 1); count++; }",
+              "vi": "while (n) { n &= (n - 1); count++; }"
+            },
+            {
+              "en": "while (n) { n >>= 1; count++; }",
+              "ja": "while (n) { n >>= 1; count++; }",
+              "vi": "while (n) { n >>= 1; count++; }"
+            },
+            {
+              "en": "while (n) { n &= 1; count++; }",
+              "ja": "while (n) { n &= 1; count++; }",
+              "vi": "while (n) { n &= 1; count++; }"
+            },
+            {
+              "en": "for (i=0; i<32; i++) { count += (n ^ i); }",
+              "ja": "for (i=0; i<32; i++) { count += (n ^ i); }",
+              "vi": "for (i=0; i<32; i++) { count += (n ^ i); }"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Brian Kernighan’s algorithm (`n &= (n - 1)`) effectively clears the least significant bit in each iteration, allowing us to count bits proportional to the number of set bits.",
+            "ja": "ブライアン・カーニハンのアルゴリズム（`n &= (n - 1)`）は、反復ごとに最下位のセットビットを効果的にクリアし、セットされているビット数に比例してビット数をカウントできます。",
+            "vi": "Thuật toán Brian Kernighan (`n &= (n - 1)`) xóa hiệu quả bit có trọng số nhỏ nhất trong mỗi vòng lặp, cho phép chúng ta đếm các bit tỉ lệ với số bit đang bật."
+          }
+        },
+        {
+          "id": "dsa_s19_q8",
+          "question": {
+            "en": "You have a bitmask used to filter user permissions. To check if *both* bit 0 and bit 2 are set, what is the best approach?",
+            "ja": "ユーザー権限をフィルタリングするために使用されるビットマスクがあります。ビット0とビット2の両方がセットされているかどうかを確認する最善のアプローチは何ですか？",
+            "vi": "Bạn có một mặt nạ bit được sử dụng để lọc quyền người dùng. Để kiểm tra xem cả bit 0 và bit 2 đều được bật, cách tiếp cận tốt nhất là gì?"
+          },
+          "options": [
+            {
+              "en": "(mask & 5) == 5",
+              "ja": "(mask & 5) == 5",
+              "vi": "(mask & 5) == 5"
+            },
+            {
+              "en": "(mask & 5) == 1",
+              "ja": "(mask & 5) == 1",
+              "vi": "(mask & 5) == 1"
+            },
+            {
+              "en": "(mask | 5) == 5",
+              "ja": "(mask | 5) == 5",
+              "vi": "(mask | 5) == 5"
+            },
+            {
+              "en": "(mask ^ 5) == 0",
+              "ja": "(mask ^ 5) == 0",
+              "vi": "(mask ^ 5) == 0"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The value 5 represents binary 101. ANDing the mask with 5 results in 5 only if both bits 0 and 2 are present.",
+            "ja": "値5はバイナリの101を表します。マスクと5をAND演算すると、ビット0と2の両方が存在する場合にのみ結果が5になります。",
+            "vi": "Giá trị 5 biểu diễn nhị phân là 101. Phép AND mặt nạ với 5 chỉ cho kết quả là 5 nếu cả hai bit 0 và 2 đều có mặt."
+          }
+        },
+        {
+          "id": "dsa_s19_q9",
+          "question": {
+            "en": "What is the result of applying `(x << 1)` on a signed integer 'x'?",
+            "ja": "符号付き整数 'x' に `(x << 1)` を適用した結果はどうなりますか？",
+            "vi": "Kết quả của việc áp dụng `(x << 1)` trên một số nguyên có dấu 'x' là gì?"
+          },
+          "options": [
+            {
+              "en": "x divided by 2",
+              "ja": "x を 2 で割った値",
+              "vi": "x chia cho 2"
+            },
+            {
+              "en": "x multiplied by 2",
+              "ja": "x を 2 倍した値",
+              "vi": "x nhân với 2"
+            },
+            {
+              "en": "x plus 2",
+              "ja": "x に 2 を足した値",
+              "vi": "x cộng 2"
+            },
+            {
+              "en": "x bitwise inverted",
+              "ja": "x をビット反転した値",
+              "vi": "x đảo ngược bit"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Shifting left by 1 position effectively shifts every bit to the next higher power of 2, which is equivalent to multiplication by 2.",
+            "ja": "1つ左にシフトすることは、すべてのビットを次の高い2のべき乗にシフトすることになり、2倍することと同等です。",
+            "vi": "Dịch trái 1 vị trí dịch chuyển hiệu quả mỗi bit sang lũy thừa của 2 cao hơn tiếp theo, tương đương với việc nhân với 2."
+          }
+        },
+        {
+          "id": "dsa_s19_q10",
+          "question": {
+            "en": "In an embedded system, you need to swap two integer variables 'a' and 'b' without using an extra temporary variable. Which code snippet works?",
+            "ja": "組み込みシステムにおいて、余分な一時変数を使用せずに2つの整数変数 'a' と 'b' をスワップ（交換）する必要があります。どのコードスニペットが機能しますか？",
+            "vi": "Trong một hệ thống nhúng, bạn cần hoán đổi hai biến số nguyên 'a' và 'b' mà không sử dụng thêm biến tạm thời. Đoạn mã nào hoạt động?"
+          },
+          "options": [
+            {
+              "en": "a = a + b; b = a - b; a = a - b;",
+              "ja": "a = a + b; b = a - b; a = a - b;",
+              "vi": "a = a + b; b = a - b; a = a - b;"
+            },
+            {
+              "en": "a ^= b; b ^= a; a ^= b;",
+              "ja": "a ^= b; b ^= a; a ^= b;",
+              "vi": "a ^= b; b ^= a; a ^= b;"
+            },
+            {
+              "en": "a = a ^ b; b = a ^ b; a = a ^ b;",
+              "ja": "a = a ^ b; b = a ^ b; a = a ^ b;",
+              "vi": "a = a ^ b; b = a ^ b; a = a ^ b;"
+            },
+            {
+              "en": "All of the above",
+              "ja": "上記すべて",
+              "vi": "Tất cả các lựa chọn trên"
+            }
+          ],
+          "answer": 3,
+          "explanation": {
+            "en": "Both the addition-subtraction method and the XOR swap algorithm work correctly to exchange two values without extra storage, assuming no overflow for the addition method.",
+            "ja": "加算・減算メソッドとXORスワップアルゴリズムはどちらも、追加のストレージなしで2つの値を正しく交換します。加算メソッドの場合はオーバーフローがないと仮定します。",
+            "vi": "Cả phương pháp cộng-trừ và thuật toán XOR swap đều hoạt động chính xác để trao đổi hai giá trị mà không cần bộ nhớ bổ sung, với giả định phương pháp cộng không bị tràn số."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dsa-20",
+      "title": {
+        "en": "Amortized Complexity Analysis",
+        "ja": "償却計算量解析",
+        "vi": "Phân tích độ phức tạp khấu hao"
+      },
+      "description": {
+        "en": "ArrayList growth capacity analysis, dynamic array bounds, and amortized average operations.",
+        "ja": "ArrayListの容量拡張解析、動的配列の境界、および償却平均操作。",
+        "vi": "Phân tích dung lượng tăng trưởng của ArrayList, giới hạn mảng động và các thao tác trung bình khấu hao."
+      },
+      "questions": [
+        {
+          "id": "dsa_s20_q1",
+          "question": {
+            "en": "A junior developer is implementing a dynamic array that doubles its capacity whenever it reaches its limit. If an insertion triggers a resize, what is the amortized cost of a single insertion in terms of big-O notation?",
+            "ja": "ジュニア開発者が、容量制限に達するたびに容量を2倍にする動的配列を実装しています。挿入によってリサイズが発生する場合、単一挿入の償却計算量はビッグオー記法でどうなりますか？",
+            "vi": "Một lập trình viên trẻ đang triển khai một mảng động tự gấp đôi dung lượng khi đạt giới hạn. Nếu một thao tác chèn gây ra việc thay đổi kích thước, chi phí khấu hao của một thao tác chèn đơn lẻ theo ký hiệu Big-O là gì?"
+          },
+          "options": [
+            {
+              "en": "O(1)",
+              "ja": "O(1)",
+              "vi": "O(1)"
+            },
+            {
+              "en": "O(log n)",
+              "ja": "O(log n)",
+              "vi": "O(log n)"
+            },
+            {
+              "en": "O(n)",
+              "ja": "O(n)",
+              "vi": "O(n)"
+            },
+            {
+              "en": "O(n log n)",
+              "ja": "O(n log n)",
+              "vi": "O(n log n)"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Although resizing takes O(n), it happens infrequently enough that the total cost over n insertions is O(n), resulting in an average of O(1) per insertion.",
+            "ja": "リサイズにはO(n)かかりますが、その発生頻度は低いため、n回の挿入全体のコストはO(n)となり、挿入1回あたりの平均はO(1)となります。",
+            "vi": "Mặc dù việc thay đổi kích thước mất O(n), nhưng nó xảy ra đủ ít để tổng chi phí cho n lần chèn là O(n), dẫn đến trung bình O(1) cho mỗi lần chèn."
+          }
+        },
+        {
+          "id": "dsa_s20_q2",
+          "question": {
+            "en": "Consider a dynamic array that increases its size by a constant amount (e.g., +100 elements) rather than doubling. How does this impact the amortized complexity of n insertions?",
+            "ja": "容量を2倍にするのではなく、定数（例：+100要素）ずつ増加させる動的配列を考えます。これがn回の挿入の償却計算量にどのような影響を与えますか？",
+            "vi": "Xét một mảng động tăng kích thước theo một lượng hằng số (ví dụ: +100 phần tử) thay vì gấp đôi. Điều này ảnh hưởng thế nào đến độ phức tạp khấu hao của n thao tác chèn?"
+          },
+          "options": [
+            {
+              "en": "It remains O(1).",
+              "ja": "O(1)のままである。",
+              "vi": "Nó vẫn là O(1)."
+            },
+            {
+              "en": "It becomes O(log n).",
+              "ja": "O(log n)になる。",
+              "vi": "Nó trở thành O(log n)."
+            },
+            {
+              "en": "It becomes O(n).",
+              "ja": "O(n)になる。",
+              "vi": "Nó trở thành O(n)."
+            },
+            {
+              "en": "It becomes O(n^2).",
+              "ja": "O(n^2)になる。",
+              "vi": "Nó trở thành O(n^2)."
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "Increasing by a constant amount requires resizing O(n) times, where each resize is O(n), leading to a total cost of O(n^2), so amortized time is O(n).",
+            "ja": "定数ずつ増加させると、O(n)回の頻度でリサイズが発生し、各リサイズがO(n)かかるため、総コストはO(n^2)となり、償却時間はO(n)となります。",
+            "vi": "Việc tăng theo hằng số đòi hỏi phải thay đổi kích thước O(n) lần, mỗi lần thay đổi kích thước là O(n), dẫn đến tổng chi phí O(n^2), vì vậy thời gian khấu hao là O(n)."
+          }
+        },
+        {
+          "id": "dsa_s20_q3",
+          "question": {
+            "en": "In the 'Aggregate Method' of amortized analysis, what represents the primary metric being calculated?",
+            "ja": "償却解析の『総計法（Aggregate Method）』において、計算される主要な指標は何ですか？",
+            "vi": "Trong 'Phương pháp tổng hợp' (Aggregate Method) của phân tích khấu hao, điều gì đại diện cho chỉ số chính được tính toán?"
+          },
+          "options": [
+            {
+              "en": "The worst-case time of a single operation.",
+              "ja": "単一操作の最悪時間。",
+              "vi": "Thời gian tệ nhất của một thao tác đơn lẻ."
+            },
+            {
+              "en": "The average cost over a sequence of n operations.",
+              "ja": "一連のn個の操作に対する平均コスト。",
+              "vi": "Chi phí trung bình trên một chuỗi n thao tác."
+            },
+            {
+              "en": "The total space used by the structure.",
+              "ja": "構造によって使用される合計スペース。",
+              "vi": "Tổng không gian được sử dụng bởi cấu trúc."
+            },
+            {
+              "en": "The probability of hitting a resize event.",
+              "ja": "リサイズイベントが発生する確率。",
+              "vi": "Xác suất xảy ra sự kiện thay đổi kích thước."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "The Aggregate Method computes the total cost T(n) for a sequence of n operations and divides by n to find the amortized cost per operation.",
+            "ja": "総計法では、n個の操作シーケンスの総コストT(n)を計算し、それをnで割ることで操作あたりの償却コストを求めます。",
+            "vi": "Phương pháp tổng hợp tính toán tổng chi phí T(n) cho một chuỗi n thao tác và chia cho n để tìm chi phí khấu hao cho mỗi thao tác."
+          }
+        },
+        {
+          "id": "dsa_s20_q4",
+          "question": {
+            "en": "Why is the capacity doubling strategy (2x) considered optimal for dynamic arrays compared to other growth factors like 1.5x?",
+            "ja": "動的配列において、容量を1.5倍にするなどの他の増加係数と比較して、2倍にする戦略が最適とされるのはなぜですか？",
+            "vi": "Tại sao chiến lược gấp đôi dung lượng (2x) được coi là tối ưu cho mảng động so với các hệ số tăng trưởng khác như 1.5x?"
+          },
+          "options": [
+            {
+              "en": "It is mathematically faster for all CPU architectures.",
+              "ja": "すべてのCPUアーキテクチャで数学的に高速だから。",
+              "vi": "Nó nhanh hơn về mặt toán học cho tất cả các kiến trúc CPU."
+            },
+            {
+              "en": "It minimizes the total number of resizes while keeping memory overhead manageable.",
+              "ja": "メモリのオーバーヘッドを管理可能な範囲に保ちつつ、リサイズの回数を最小化するから。",
+              "vi": "Nó giảm thiểu tổng số lần thay đổi kích thước trong khi vẫn giữ cho chi phí bộ nhớ ở mức quản lý được."
+            },
+            {
+              "en": "It ensures the array is always perfectly filled.",
+              "ja": "配列が常に完全に埋まることを保証するから。",
+              "vi": "Nó đảm bảo mảng luôn được lấp đầy hoàn hảo."
+            },
+            {
+              "en": "It avoids using floating-point arithmetic entirely.",
+              "ja": "浮動小数点演算を完全に回避できるから。",
+              "vi": "Nó tránh sử dụng phép tính số thực hoàn toàn."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "While any geometric expansion (r > 1) yields O(1) amortized, 2x provides a balance between memory usage and frequency of copies. Using powers of 2 also allows for efficient bitwise operations for indexing.",
+            "ja": "幾何学的な拡張（r > 1）はすべてO(1)の償却コストになりますが、2倍はメモリ使用量とコピー頻度のバランスが取れています。2の累乗を使うと、インデックス計算のためのビット演算も効率的になります。",
+            "vi": "Mặc dù bất kỳ sự mở rộng hình học nào (r > 1) cũng mang lại O(1) khấu hao, 2x cung cấp sự cân bằng giữa việc sử dụng bộ nhớ và tần suất sao chép. Việc sử dụng lũy thừa của 2 cũng cho phép các thao tác bitwise hiệu quả cho việc lập chỉ mục."
+          }
+        },
+        {
+          "id": "dsa_s20_q5",
+          "question": {
+            "en": "In the Potential Method of amortized analysis, what does the 'potential function' Φ represent?",
+            "ja": "償却解析の『ポテンシャル法（Potential Method）』において、『ポテンシャル関数Φ』は何を表しますか？",
+            "vi": "Trong 'Phương pháp tiềm năng' (Potential Method) của phân tích khấu hao, 'hàm tiềm năng' Φ đại diện cho điều gì?"
+          },
+          "options": [
+            {
+              "en": "The maximum capacity of the array.",
+              "ja": "配列の最大容量。",
+              "vi": "Dung lượng tối đa của mảng."
+            },
+            {
+              "en": "The 'stored energy' used to pay for future expensive operations.",
+              "ja": "将来の高コストな操作を支払うために使用される『蓄積エネルギー』。",
+              "vi": "Năng lượng tích lũy được sử dụng để chi trả cho các thao tác đắt đỏ trong tương lai."
+            },
+            {
+              "en": "The number of elements currently in the array.",
+              "ja": "現在配列にある要素数。",
+              "vi": "Số lượng phần tử hiện có trong mảng."
+            },
+            {
+              "en": "The time complexity of the last operation.",
+              "ja": "最後の操作の計算量。",
+              "vi": "Độ phức tạp thời gian của thao tác cuối cùng."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "The potential function acts as 'prepaid credit' that stores the work done during inexpensive operations to cover the cost of heavy operations like array copying.",
+            "ja": "ポテンシャル関数は『前払いクレジット』として機能し、安価な操作中に行われた作業を蓄積して、配列のコピーのような重い操作のコストを賄います。",
+            "vi": "Hàm tiềm năng đóng vai trò như 'tín dụng trả trước' lưu trữ công việc được thực hiện trong các thao tác rẻ tiền để chi trả cho chi phí của các thao tác nặng như sao chép mảng."
+          }
+        },
+        {
+          "id": "dsa_s20_q6",
+          "question": {
+            "en": "Consider a dynamic array that halves its size when the number of elements drops to 1/4 of the capacity. Why is it 1/4 and not 1/2?",
+            "ja": "要素数が容量の1/4まで減少したときにサイズを半分にする動的配列を考えます。なぜ1/2ではなく1/4なのですか？",
+            "vi": "Xét một mảng động giảm một nửa kích thước khi số lượng phần tử giảm xuống còn 1/4 dung lượng. Tại sao lại là 1/4 chứ không phải 1/2?"
+          },
+          "options": [
+            {
+              "en": "To prevent 'thrashing', where repeated insertions and deletions cause excessive resizing.",
+              "ja": "挿入と削除を繰り返すことでリサイズが過剰に発生する『スラッシング』を防ぐため。",
+              "vi": "Để ngăn chặn 'thrashing', nơi các thao tác chèn và xóa lặp đi lặp lại gây ra việc thay đổi kích thước quá mức."
+            },
+            {
+              "en": "To ensure the array is always a power of 2.",
+              "ja": "配列を常に2の累乗にするため。",
+              "vi": "Để đảm bảo mảng luôn là lũy thừa của 2."
+            },
+            {
+              "en": "To make deletions O(log n).",
+              "ja": "削除をO(log n)にするため。",
+              "vi": "Để làm cho việc xóa thành O(log n)."
+            },
+            {
+              "en": "1/2 would be more efficient, but 1/4 is a historical accident.",
+              "ja": "1/2の方が効率的だが、1/4は歴史的な偶然である。",
+              "vi": "1/2 sẽ hiệu quả hơn, nhưng 1/4 là một tai nạn lịch sử."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "If we resized at 1/2, a sequence of insert-delete at the threshold would trigger a resize on every operation (O(n) per operation). 1/4 provides a 'buffer' zone.",
+            "ja": "もし1/2でリサイズすると、閾値付近での挿入・削除の繰り返しですべての操作でリサイズ（操作ごとにO(n)）が発生してしまいます。1/4は『バッファ』ゾーンを提供します。",
+            "vi": "Nếu chúng ta thay đổi kích thước ở mức 1/2, một chuỗi chèn-xóa tại ngưỡng sẽ kích hoạt việc thay đổi kích thước trong mọi thao tác (O(n) mỗi thao tác). 1/4 cung cấp một vùng 'đệm'."
+          }
+        },
+        {
+          "id": "dsa_s20_q7",
+          "question": {
+            "en": "If you perform a sequence of n operations on a dynamic array starting from size 0, what is the total number of element copies performed?",
+            "ja": "サイズ0から始まる動的配列に対してn回の操作を実行する場合、実行される要素のコピー回数の合計はどれくらいですか？",
+            "vi": "Nếu bạn thực hiện một chuỗi n thao tác trên một mảng động bắt đầu từ kích thước 0, tổng số lần sao chép phần tử được thực hiện là bao nhiêu?"
+          },
+          "options": [
+            {
+              "en": "O(log n)",
+              "ja": "O(log n)",
+              "vi": "O(log n)"
+            },
+            {
+              "en": "O(n)",
+              "ja": "O(n)",
+              "vi": "O(n)"
+            },
+            {
+              "en": "O(n^2)",
+              "ja": "O(n^2)",
+              "vi": "O(n^2)"
+            },
+            {
+              "en": "O(n!)",
+              "ja": "O(n!)",
+              "vi": "O(n!)"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "The total copies follow a geometric series: 1 + 2 + 4 + ... + n = 2n - 1. Thus, the total complexity is O(n).",
+            "ja": "合計コピー数は等比級数 1 + 2 + 4 + ... + n = 2n - 1 に従います。したがって、総計算量はO(n)です。",
+            "vi": "Tổng số lần sao chép tuân theo một cấp số nhân: 1 + 2 + 4 + ... + n = 2n - 1. Do đó, tổng độ phức tạp là O(n)."
+          }
+        },
+        {
+          "id": "dsa_s20_q8",
+          "question": {
+            "en": "In the context of dynamic array complexity, what distinguishes 'Worst-Case' from 'Amortized' complexity?",
+            "ja": "動的配列の計算量という文脈において、『最悪時』計算量と『償却』計算量を区別するものは何ですか？",
+            "vi": "Trong ngữ cảnh độ phức tạp của mảng động, điều gì phân biệt độ phức tạp 'Trường hợp xấu nhất' và 'Khấu hao'?"
+          },
+          "options": [
+            {
+              "en": "Worst-case measures a single operation; amortized measures the average over a sequence.",
+              "ja": "最悪時は単一の操作を測定し、償却は一連の操作の平均を測定する。",
+              "vi": "Trường hợp xấu nhất đo lường một thao tác đơn lẻ; khấu hao đo lường giá trị trung bình trên một chuỗi."
+            },
+            {
+              "en": "There is no difference; they are synonymous.",
+              "ja": "違いはありません。同義語です。",
+              "vi": "Không có sự khác biệt; chúng là từ đồng nghĩa."
+            },
+            {
+              "en": "Amortized is only for space, while worst-case is for time.",
+              "ja": "償却はスペース用で、最悪時は時間用である。",
+              "vi": "Khấu hao chỉ dành cho không gian, trong khi trường hợp xấu nhất dành cho thời gian."
+            },
+            {
+              "en": "Worst-case is always O(1) for dynamic arrays.",
+              "ja": "動的配列において最悪時は常にO(1)である。",
+              "vi": "Trường hợp xấu nhất luôn là O(1) đối với mảng động."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Worst-case considers the cost of the single most expensive operation, whereas amortized considers the guaranteed average performance over many operations.",
+            "ja": "最悪時は最もコストのかかる単一の操作を考慮しますが、償却は多くの操作にわたる保証された平均性能を考慮します。",
+            "vi": "Trường hợp xấu nhất xem xét chi phí của thao tác tốn kém nhất, trong khi khấu hao xem xét hiệu suất trung bình được đảm bảo qua nhiều thao tác."
+          }
+        },
+        {
+          "id": "dsa_s20_q9",
+          "question": {
+            "en": "If a dynamic array grows from size N to N+k, which analysis method is typically used to show that the amortized complexity remains linear?",
+            "ja": "動的配列がサイズNからN+kに増える場合、償却計算量が線形であることを示すために通常使用される分析手法は何ですか？",
+            "vi": "Nếu một mảng động tăng trưởng từ kích thước N đến N+k, phương pháp phân tích nào thường được sử dụng để chỉ ra rằng độ phức tạp khấu hao vẫn là tuyến tính?"
+          },
+          "options": [
+            {
+              "en": "Accounting Method",
+              "ja": "会計法",
+              "vi": "Phương pháp kế toán"
+            },
+            {
+              "en": "Binary Search Method",
+              "ja": "二分探索法",
+              "vi": "Phương pháp tìm kiếm nhị phân"
+            },
+            {
+              "en": "Recursion Tree Method",
+              "ja": "再帰木法",
+              "vi": "Phương pháp cây đệ quy"
+            },
+            {
+              "en": "Master Theorem",
+              "ja": "マスター定理",
+              "vi": "Định lý Master"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The Accounting Method (a simplified version of the Potential Method) is used to assign an 'amortized cost' to each operation, ensuring that the bank balance never goes negative.",
+            "ja": "会計法（ポテンシャル法の簡略版）は、各操作に『償却コスト』を割り当て、銀行残高がマイナスにならないようにするために使用されます。",
+            "vi": "Phương pháp kế toán (một phiên bản đơn giản của Phương pháp tiềm năng) được sử dụng để gán 'chi phí khấu hao' cho mỗi thao tác, đảm bảo rằng số dư không bao giờ bị âm."
+          }
+        },
+        {
+          "id": "dsa_s20_q10",
+          "question": {
+            "en": "When analyzing dynamic array resizing, why do we ignore the cost of the initial insertions that did not cause a resize?",
+            "ja": "動的配列のリサイズを分析するとき、リサイズを発生させなかった初期の挿入コストを無視するのはなぜですか？",
+            "vi": "Khi phân tích việc thay đổi kích thước mảng động, tại sao chúng ta bỏ qua chi phí của các lần chèn ban đầu không gây ra thay đổi kích thước?"
+          },
+          "options": [
+            {
+              "en": "Because they are zero.",
+              "ja": "ゼロだから。",
+              "vi": "Vì chúng bằng không."
+            },
+            {
+              "en": "Because they are already accounted for in the amortized cost.",
+              "ja": "償却コストですでに考慮されているから。",
+              "vi": "Vì chúng đã được tính trong chi phí khấu hao."
+            },
+            {
+              "en": "Because they cannot be measured.",
+              "ja": "測定できないから。",
+              "vi": "Vì chúng không thể đo lường được."
+            },
+            {
+              "en": "Because they are too small to impact big-O.",
+              "ja": "ビッグオーに影響を与えるには小さすぎるから。",
+              "vi": "Vì chúng quá nhỏ để ảnh hưởng đến Big-O."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Amortized analysis averages the cheap operations (O(1)) with the expensive ones (O(n) resize) to show that the overall sequence cost is manageable.",
+            "ja": "償却解析は、安価な操作（O(1)）と高価な操作（O(n)のリサイズ）を平均化し、シーケンス全体のコストが管理可能であることを示します。",
+            "vi": "Phân tích khấu hao lấy trung bình các thao tác rẻ tiền (O(1)) với các thao tác đắt đỏ (thay đổi kích thước O(n)) để cho thấy chi phí tổng thể của chuỗi là có thể kiểm soát được."
+          }
+        }
+      ]
     }
   ]
 }

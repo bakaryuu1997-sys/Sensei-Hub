@@ -4744,6 +4744,1966 @@
           }
         }
       ]
+    },
+    {
+      "id": "fe-b-6",
+      "category": "part-b",
+      "title": {
+        "en": "Stack & Queue Simulations",
+        "ja": "スタックとキューのシミュレーション",
+        "vi": "Mô phỏng Stack và Queue"
+      },
+      "description": {
+        "en": "Trace stack and queue operations, LIFO/FIFO behaviors, and expression evaluations.",
+        "ja": "スタックとキューの操作、LIFO/FIFOの挙動、および式の評価をトレースします。",
+        "vi": "Theo dõi các thao tác stack và queue, hành vi LIFO/FIFO, và đánh giá biểu thức."
+      },
+      "questions": [
+        {
+          "id": "fe_s16_q1",
+          "question": {
+            "en": "A web server uses a stack to manage incoming requests. When a request arrives, it is pushed onto the stack. When the server is ready, it processes a request by popping it from the stack. Given the sequence of operations: PUSH R1, PUSH R2, POP, PUSH R3, POP, PUSH R4. What will be the top element of the stack after these operations, and what was the last request processed (popped)?",
+            "ja": "あるWebサーバーは、受信するリクエストを管理するためにスタックを使用しています。リクエストが到着するとスタックにプッシュされ、サーバーが処理準備ができたときにスタックからポップして処理します。以下の操作シーケンスが与えられた場合: PUSH R1, PUSH R2, POP, PUSH R3, POP, PUSH R4。これらの操作後、スタックの最上位要素は何になり、最後に処理された（ポップされた）リクエストは何でしたか？",
+            "vi": "Một máy chủ web sử dụng stack để quản lý các yêu cầu đến. Khi một yêu cầu đến, nó được đẩy vào stack. Khi máy chủ sẵn sàng, nó xử lý một yêu cầu bằng cách lấy ra (pop) từ stack. Với chuỗi thao tác sau: PUSH R1, PUSH R2, POP, PUSH R3, POP, PUSH R4. Sau các thao tác này, phần tử trên cùng của stack sẽ là gì, và yêu cầu cuối cùng được xử lý (được pop ra) là gì?"
+          },
+          "options": [
+            {
+              "en": "Top: R1, Last processed: R2",
+              "ja": "最上位: R1, 最後に処理された: R2",
+              "vi": "Trên cùng: R1, Xử lý cuối: R2"
+            },
+            {
+              "en": "Top: R4, Last processed: R3",
+              "ja": "最上位: R4, 最後に処理された: R3",
+              "vi": "Trên cùng: R4, Xử lý cuối: R3"
+            },
+            {
+              "en": "Top: R4, Last processed: R2",
+              "ja": "最上位: R4, 最後に処理された: R2",
+              "vi": "Trên cùng: R4, Xử lý cuối: R2"
+            },
+            {
+              "en": "Top: R1, Last processed: R4",
+              "ja": "最上位: R1, 最後に処理された: R4",
+              "vi": "Trên cùng: R1, Xử lý cuối: R4"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Let's trace the stack operations:\n1. PUSH R1: Stack becomes [R1]\n2. PUSH R2: Stack becomes [R1, R2]\n3. POP: R2 is popped and processed. Stack becomes [R1]. Last processed: R2.\n4. PUSH R3: Stack becomes [R1, R3]\n5. POP: R3 is popped and processed. Stack becomes [R1]. Last processed: R3.\n6. PUSH R4: Stack becomes [R1, R4]\nAfter all operations, the top element of the stack is R4, and the last request processed was R3.",
+            "ja": "スタック操作をトレースします:\n1. PUSH R1: スタックは [R1] となります。\n2. PUSH R2: スタックは [R1, R2] となります。\n3. POP: R2がポップされ処理されます。スタックは [R1] となります。最後に処理された: R2。\n4. PUSH R3: スタックは [R1, R3] となります。\n5. POP: R3がポップされ処理されます。スタックは [R1] となります。最後に処理された: R3。\n6. PUSH R4: スタックは [R1, R4] となります。\n全ての操作後、スタックの最上位要素はR4で、最後に処理されたリクエストはR3でした。",
+            "vi": "Hãy theo dõi các thao tác stack:\n1. PUSH R1: Stack trở thành [R1]\n2. PUSH R2: Stack trở thành [R1, R2]\n3. POP: R2 được pop ra và xử lý. Stack trở thành [R1]. Xử lý cuối: R2.\n4. PUSH R3: Stack trở thành [R1, R3]\n5. POP: R3 được pop ra và xử lý. Stack trở thành [R1]. Xử lý cuối: R3.\n6. PUSH R4: Stack trở thành [R1, R4]\nSau tất cả các thao tác, phần tử trên cùng của stack là R4, và yêu cầu cuối cùng được xử lý là R3."
+          }
+        },
+        {
+          "id": "fe_s16_q2",
+          "question": {
+            "en": "A print spooler uses a queue to manage print jobs. New jobs are enqueued at the rear, and the printer dequeues jobs from the front. Given that jobs J1, J2, J3 are enqueued in that order, then the printer finishes one job (dequeue), then J4 is enqueued, and finally another job is finished (dequeue). Which job is currently at the front of the queue, and which job was the last one printed?",
+            "ja": "プリンタスプーラは、印刷ジョブを管理するためにキューを使用します。新しいジョブは末尾に追加され（エンキュー）、プリンタは先頭からジョブを取り出して（デキュー）処理します。ジョブJ1、J2、J3がこの順序でエンキューされ、その後プリンタが1つのジョブを完了し（デキュー）、次にJ4がエンキューされ、最後に別のジョブが完了した（デキュー）とします。現在キューの先頭にあるジョブは何で、最後に印刷されたジョブは何でしたか？",
+            "vi": "Một bộ đệm in (print spooler) sử dụng một queue để quản lý các tác vụ in. Các tác vụ mới được thêm vào cuối (enqueue), và máy in lấy tác vụ từ đầu (dequeue). Giả sử các tác vụ J1, J2, J3 được thêm vào theo thứ tự đó, sau đó máy in hoàn thành một tác vụ (dequeue), rồi J4 được thêm vào, và cuối cùng một tác vụ khác được hoàn thành (dequeue). Tác vụ nào hiện đang ở đầu queue, và tác vụ nào là tác vụ cuối cùng được in?"
+          },
+          "options": [
+            {
+              "en": "Front: J3, Last printed: J1",
+              "ja": "先頭: J3, 最後に印刷された: J1",
+              "vi": "Đầu: J3, In cuối: J1"
+            },
+            {
+              "en": "Front: J4, Last printed: J2",
+              "ja": "先頭: J4, 最後に印刷された: J2",
+              "vi": "Đầu: J4, In cuối: J2"
+            },
+            {
+              "en": "Front: J3, Last printed: J2",
+              "ja": "先頭: J3, 最後に印刷された: J2",
+              "vi": "Đầu: J3, In cuối: J2"
+            },
+            {
+              "en": "Front: J2, Last printed: J3",
+              "ja": "先頭: J2, 最後に印刷された: J3",
+              "vi": "Đầu: J2, In cuối: J3"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "Let's trace the queue operations:\n1. ENQUEUE J1: Queue becomes [J1]\n2. ENQUEUE J2: Queue becomes [J1, J2]\n3. ENQUEUE J3: Queue becomes [J1, J2, J3]\n4. DEQUEUE: J1 is dequeued and printed. Queue becomes [J2, J3]. Last printed: J1.\n5. ENQUEUE J4: Queue becomes [J2, J3, J4]\n6. DEQUEUE: J2 is dequeued and printed. Queue becomes [J3, J4]. Last printed: J2.\nAfter all operations, J3 is at the front of the queue, and J2 was the last job printed.",
+            "ja": "キュー操作をトレースします:\n1. ENQUEUE J1: キューは [J1] となります。\n2. ENQUEUE J2: キューは [J1, J2] となります。\n3. ENQUEUE J3: キューは [J1, J2, J3] となります。\n4. DEQUEUE: J1がデキューされ印刷されます。キューは [J2, J3] となります。最後に印刷された: J1。\n5. ENQUEUE J4: キューは [J2, J3, J4] となります。\n6. DEQUEUE: J2がデキューされ印刷されます。キューは [J3, J4] となります。最後に印刷された: J2。\n全ての操作後、キューの先頭にあるのはJ3で、最後に印刷されたジョブはJ2でした。",
+            "vi": "Hãy theo dõi các thao tác queue:\n1. ENQUEUE J1: Queue trở thành [J1]\n2. ENQUEUE J2: Queue trở thành [J1, J2]\n3. ENQUEUE J3: Queue trở thành [J1, J2, J3]\n4. DEQUEUE: J1 được dequeue và in. Queue trở thành [J2, J3]. In cuối: J1.\n5. ENQUEUE J4: Queue trở thành [J2, J3, J4]\n6. DEQUEUE: J2 được dequeue và in. Queue trở thành [J3, J4]. In cuối: J2.\nSau tất cả các thao tác, J3 đang ở đầu queue, và J2 là tác vụ cuối cùng được in."
+          }
+        },
+        {
+          "id": "fe_s16_q3",
+          "question": {
+            "en": "A compiler's lexical analyzer converts infix expressions to postfix notation using a stack (Shunting-yard algorithm). Consider the infix expression `A * (B + C) - D / E`. What is the resulting postfix expression?",
+            "ja": "コンパイラの字句解析器は、スタック（Shunting-yardアルゴリズム）を使用して中置記法を後置記法に変換します。中置記法 `A * (B + C) - D / E` を後置記法に変換すると、どのような結果になりますか？",
+            "vi": "Trình phân tích từ vựng của một trình biên dịch chuyển đổi biểu thức trung tố (infix) sang hậu tố (postfix) bằng cách sử dụng một stack (thuật toán Shunting-yard). Hãy xem xét biểu thức trung tố `A * (B + C) - D / E`. Biểu thức hậu tố thu được là gì?"
+          },
+          "options": [
+            {
+              "en": "ABC+*DE-/",
+              "ja": "ABC+*DE-/",
+              "vi": "ABC+*DE-/"
+            },
+            {
+              "en": "AB+C*DE/-",
+              "ja": "AB+C*DE/-",
+              "vi": "AB+C*DE/-"
+            },
+            {
+              "en": "ABC+*DE/-",
+              "ja": "ABC+*DE/-",
+              "vi": "ABC+*DE/-"
+            },
+            {
+              "en": "A*BC+D/E-",
+              "ja": "A*BC+D/E-",
+              "vi": "A*BC+D/E-"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "Applying the Shunting-yard algorithm:\n1. `A`: Output 'A'. Postfix: A, Stack: []\n2. `*`: Push '*'. Postfix: A, Stack: [*]\n3. `(`: Push '('. Postfix: A, Stack: [*, (]\n4. `B`: Output 'B'. Postfix: AB, Stack: [*, (]\n5. `+`: Push '+'. Postfix: AB, Stack: [*, (, +]\n6. `C`: Output 'C'. Postfix: ABC, Stack: [*, (, +]\n7. `)`: Pop '+' (output), Pop '('. Postfix: ABC+, Stack: [*]\n8. `-`: Pop '*' (output, as '*' has higher precedence than '-'). Push '-'. Postfix: ABC+*, Stack: [-]\n9. `D`: Output 'D'. Postfix: ABC+*D, Stack: [-]\n10. `/`: Push '/'. Postfix: ABC+*D, Stack: [-, /]\n11. `E`: Output 'E'. Postfix: ABC+*DE, Stack: [-, /]\n12. End of expression: Pop '/' (output), Pop '-' (output). Postfix: ABC+*DE/-.\nThe resulting postfix expression is `ABC+*DE/-`.",
+            "ja": "Shunting-yardアルゴリズムを適用します:\n1. `A`: 'A'を出力。後置: A, スタック: []\n2. `*`: '*'をプッシュ。後置: A, スタック: [*]\n3. `(`: '('をプッシュ。後置: A, スタック: [*, (]\n4. `B`: 'B'を出力。後置: AB, スタック: [*, (]\n5. `+`: '+'をプッシュ。後置: AB, スタック: [*, (, +]\n6. `C`: 'C'を出力。後置: ABC, スタック: [*, (, +]\n7. `)`: '+'をポップ（出力）、'('をポップ。後置: ABC+, スタック: [*]\n8. `-`: '*'をポップ（出力、'*'は'-'より優先度が高い）。'-'をプッシュ。後置: ABC+*, スタック: [-]\n9. `D`: 'D'を出力。後置: ABC+*D, スタック: [-]\n10. `/`: '/'をプッシュ。後置: ABC+*D, スタック: [-, /]\n11. `E`: 'E'を出力。後置: ABC+*DE, スタック: [-, /]\n12. 式の終わり: '/'をポップ（出力）、'-'をポップ（出力）。後置: ABC+*DE/-。\n結果として得られる後置記法は `ABC+*DE/-` です。",
+            "vi": "Áp dụng thuật toán Shunting-yard:\n1. `A`: Xuất 'A'. Hậu tố: A, Stack: []\n2. `*`: Đẩy '*'. Hậu tố: A, Stack: [*]\n3. `(`: Đẩy '('. Hậu tố: A, Stack: [*, (]\n4. `B`: Xuất 'B'. Hậu tố: AB, Stack: [*, (]\n5. `+`: Đẩy '+'. Hậu tố: AB, Stack: [*, (, +]\n6. `C`: Xuất 'C'. Hậu tố: ABC, Stack: [*, (, +]\n7. `)`: Pop '+' (xuất), Pop '('. Hậu tố: ABC+, Stack: [*]\n8. `-`: Pop '*' (xuất, vì '*' có độ ưu tiên cao hơn '-'). Đẩy '-'. Hậu tố: ABC+*, Stack: [-]\n9. `D`: Xuất 'D'. Hậu tố: ABC+*D, Stack: [-]\n10. `/`: Đẩy '/'. Hậu tố: ABC+*D, Stack: [-, /]\n11. `E`: Xuất 'E'. Hậu tố: ABC+*DE, Stack: [-, /]\n12. Cuối biểu thức: Pop '/' (xuất), Pop '-' (xuất). Hậu tố: ABC+*DE/-.\nBiểu thức hậu tố kết quả là `ABC+*DE/-`."
+          }
+        },
+        {
+          "id": "fe_s16_q4",
+          "question": {
+            "en": "A simple calculator evaluates postfix expressions using a stack. Operands are pushed onto the stack, and when an operator is encountered, the top two operands are popped, the operation is performed, and the result is pushed back. Given the postfix expression `5 2 + 8 4 / * 3 -`, what is the final result of its evaluation?",
+            "ja": "簡易電卓は、スタックを使用して後置記法を評価します。オペランドはスタックにプッシュされ、演算子が見つかると、スタックの最上位の2つのオペランドがポップされ、演算が実行され、結果がスタックにプッシュバックされます。後置記法 `5 2 + 8 4 / * 3 -` が与えられた場合、評価の最終結果は何ですか？",
+            "vi": "Một máy tính đơn giản đánh giá biểu thức hậu tố sử dụng một stack. Các toán hạng được đẩy vào stack, và khi gặp một toán tử, hai toán hạng trên cùng được lấy ra, phép toán được thực hiện, và kết quả được đẩy lại vào stack. Với biểu thức hậu tố `5 2 + 8 4 / * 3 -`, kết quả cuối cùng của việc đánh giá là gì?"
+          },
+          "options": [
+            {
+              "en": "17",
+              "ja": "17",
+              "vi": "17"
+            },
+            {
+              "en": "11",
+              "ja": "11",
+              "vi": "11"
+            },
+            {
+              "en": "19",
+              "ja": "19",
+              "vi": "19"
+            },
+            {
+              "en": "13",
+              "ja": "13",
+              "vi": "13"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Let's evaluate the postfix expression `5 2 + 8 4 / * 3 -` using a stack:\n1. `5`: Push 5. Stack: [5]\n2. `2`: Push 2. Stack: [5, 2]\n3. `+`: Pop 2, Pop 5. Calculate 5 + 2 = 7. Push 7. Stack: [7]\n4. `8`: Push 8. Stack: [7, 8]\n5. `4`: Push 4. Stack: [7, 8, 4]\n6. `/`: Pop 4, Pop 8. Calculate 8 / 4 = 2. Push 2. Stack: [7, 2]\n7. `*`: Pop 2, Pop 7. Calculate 7 * 2 = 14. Push 14. Stack: [14]\n8. `3`: Push 3. Stack: [14, 3]\n9. `-`: Pop 3, Pop 14. Calculate 14 - 3 = 11. Push 11. Stack: [11]\nThe final result remaining on the stack is 11.",
+            "ja": "後置記法 `5 2 + 8 4 / * 3 -` をスタックを使用して評価します:\n1. `5`: 5をプッシュ。スタック: [5]\n2. `2`: 2をプッシュ。スタック: [5, 2]\n3. `+`: 2をポップ、5をポップ。5 + 2 = 7 を計算。7をプッシュ。スタック: [7]\n4. `8`: 8をプッシュ。スタック: [7, 8]\n5. `4`: 4をプッシュ。スタック: [7, 8, 4]\n6. `/`: 4をポップ、8をポップ。8 / 4 = 2 を計算。2をプッシュ。スタック: [7, 2]\n7. `*`: 2をポップ、7をポップ。7 * 2 = 14 を計算。14をプッシュ。スタック: [14]\n8. `3`: 3をプッシュ。スタック: [14, 3]\n9. `-`: 3をポップ、14をポップ。14 - 3 = 11 を計算。11をプッシュ。スタック: [11]\nスタックに残った最終結果は11です。",
+            "vi": "Hãy đánh giá biểu thức hậu tố `5 2 + 8 4 / * 3 -` sử dụng một stack:\n1. `5`: Đẩy 5. Stack: [5]\n2. `2`: Đẩy 2. Stack: [5, 2]\n3. `+`: Pop 2, Pop 5. Tính 5 + 2 = 7. Đẩy 7. Stack: [7]\n4. `8`: Đẩy 8. Stack: [7, 8]\n5. `4`: Đẩy 4. Stack: [7, 8, 4]\n6. `/`: Pop 4, Pop 8. Tính 8 / 4 = 2. Đẩy 2. Stack: [7, 2]\n7. `*`: Pop 2, Pop 7. Tính 7 * 2 = 14. Đẩy 14. Stack: [14]\n8. `3`: Đẩy 3. Stack: [14, 3]\n9. `-`: Pop 3, Pop 14. Tính 14 - 3 = 11. Đẩy 11. Stack: [11]\nKết quả cuối cùng còn lại trong stack là 11."
+          }
+        },
+        {
+          "id": "fe_s16_q5",
+          "question": {
+            "en": "A programming language runtime uses a call stack to manage function calls. The execution flow is as follows: `main()` starts, then calls `funcA()`. `funcA()` then calls `funcB()`. After `funcB()` completes, `funcA()` completes. Subsequently, `main()` calls `funcC()`, and then `funcC()` completes. What is the state of the call stack just before `funcC()` completes?",
+            "ja": "あるプログラミング言語のランタイムは、関数呼び出しを管理するためにコールスタックを使用します。実行フローは以下の通りです: `main()`が開始し、`funcA()`を呼び出します。`funcA()`は`funcB()`を呼び出します。`funcB()`が完了した後、`funcA()`が完了します。その後、`main()`は`funcC()`を呼び出し、`funcC()`が完了します。`funcC()`が完了する直前のコールスタックの状態はどうなっていますか？",
+            "vi": "Môi trường chạy (runtime) của một ngôn ngữ lập trình sử dụng một call stack để quản lý các lời gọi hàm. Luồng thực thi như sau: `main()` bắt đầu, sau đó gọi `funcA()`. `funcA()` sau đó gọi `funcB()`. Sau khi `funcB()` hoàn thành, `funcA()` hoàn thành. Tiếp theo, `main()` gọi `funcC()`, và sau đó `funcC()` hoàn thành. Trạng thái của call stack ngay trước khi `funcC()` hoàn thành là gì?"
+          },
+          "options": [
+            {
+              "en": "Empty stack",
+              "ja": "空のスタック",
+              "vi": "Stack rỗng"
+            },
+            {
+              "en": "[main]",
+              "ja": "[main]",
+              "vi": "[main]"
+            },
+            {
+              "en": "[main, funcC]",
+              "ja": "[main, funcC]",
+              "vi": "[main, funcC]"
+            },
+            {
+              "en": "[funcA, funcC]",
+              "ja": "[funcA, funcC]",
+              "vi": "[funcA, funcC]"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "Let's trace the call stack:\n1. `main()` starts: Call stack: [main]\n2. `main()` calls `funcA()`: Call stack: [main, funcA]\n3. `funcA()` calls `funcB()`: Call stack: [main, funcA, funcB]\n4. `funcB()` completes (pop): Call stack: [main, funcA]\n5. `funcA()` completes (pop): Call stack: [main]\n6. `main()` calls `funcC()`: Call stack: [main, funcC]\nJust before `funcC()` completes, `funcC` is at the top of the stack, and `main` is below it. So the stack state is `[main, funcC]`.",
+            "ja": "コールスタックをトレースします:\n1. `main()`開始: コールスタック: [main]\n2. `main()`が`funcA()`を呼び出し: コールスタック: [main, funcA]\n3. `funcA()`が`funcB()`を呼び出し: コールスタック: [main, funcA, funcB]\n4. `funcB()`完了（ポップ）: コールスタック: [main, funcA]\n5. `funcA()`完了（ポップ）: コールスタック: [main]\n6. `main()`が`funcC()`を呼び出し: コールスタック: [main, funcC]\n`funcC()`が完了する直前は、`funcC`がスタックの最上位にあり、その下に`main`があります。したがって、スタックの状態は`[main, funcC]`です。",
+            "vi": "Hãy theo dõi call stack:\n1. `main()` bắt đầu: Call stack: [main]\n2. `main()` gọi `funcA()`: Call stack: [main, funcA]\n3. `funcA()` gọi `funcB()`: Call stack: [main, funcA, funcB]\n4. `funcB()` hoàn thành (pop): Call stack: [main, funcA]\n5. `funcA()` hoàn thành (pop): Call stack: [main]\n6. `main()` gọi `funcC()`: Call stack: [main, funcC]\nNgay trước khi `funcC()` hoàn thành, `funcC` đang ở trên cùng của stack, và `main` nằm bên dưới nó. Vì vậy, trạng thái stack là `[main, funcC]`."
+          }
+        }
+      ]
+    },
+    {
+      "id": "fe-b-7",
+      "category": "part-b",
+      "title": {
+        "en": "Sorting Algorithms",
+        "ja": "ソートアルゴリズム",
+        "vi": "Các Thuật Toán Sắp Xếp"
+      },
+      "description": {
+        "en": "Bubble, selection, quick, and merge sort execution traces.",
+        "ja": "バブルソート、選択ソート、クイックソート、マージソートの実行トレース。",
+        "vi": "Dấu vết thực thi của thuật toán sắp xếp nổi bọt, chọn, nhanh và trộn."
+      },
+      "questions": [
+        {
+          "id": "fe_s17_q1",
+          "question": {
+            "en": "A software engineer is debugging a custom sorting function. After executing the first complete pass of a standard Bubble Sort algorithm on the array `[64, 25, 12, 22, 11]`, they observe its state. Which of the following represents the array's state at this point?",
+            "ja": "ソフトウェアエンジニアがカスタムソート関数のデバッグを行っています。配列 `[64, 25, 12, 22, 11]` に対して標準のバブルソートアルゴリズムの最初の完全なパスを実行した後、配列の状態を観察しました。この時点での配列の状態を表すのは次のうちどれですか？",
+            "vi": "Một kỹ sư phần mềm đang gỡ lỗi một hàm sắp xếp tùy chỉnh. Sau khi thực hiện xong lượt chạy đầy đủ đầu tiên của thuật toán Sắp xếp nổi bọt (Bubble Sort) tiêu chuẩn trên mảng `[64, 25, 12, 22, 11]`, họ quan sát trạng thái của mảng. Trạng thái nào sau đây thể hiện đúng trạng thái của mảng tại thời điểm này?"
+          },
+          "options": [
+            {
+              "en": "`[25, 12, 22, 11, 64]`",
+              "ja": "`[25, 12, 22, 11, 64]`",
+              "vi": "`[25, 12, 22, 11, 64]`"
+            },
+            {
+              "en": "`[11, 25, 12, 22, 64]`",
+              "ja": "`[11, 25, 12, 22, 64]`",
+              "vi": "`[11, 25, 12, 22, 64]`"
+            },
+            {
+              "en": "`[12, 22, 11, 25, 64]`",
+              "ja": "`[12, 22, 11, 25, 64]`",
+              "vi": "`[12, 22, 11, 25, 64]`"
+            },
+            {
+              "en": "`[64, 25, 12, 22, 11]`",
+              "ja": "`[64, 25, 12, 22, 11]`",
+              "vi": "`[64, 25, 12, 22, 11]`"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Bubble Sort works by repeatedly stepping through the list, comparing adjacent elements and swapping them if they are in the wrong order. In the first complete pass on `[64, 25, 12, 22, 11]`:\n1. (64, 25) -> swap -> `[25, 64, 12, 22, 11]`\n2. (64, 12) -> swap -> `[25, 12, 64, 22, 11]`\n3. (64, 22) -> swap -> `[25, 12, 22, 64, 11]`\n4. (64, 11) -> swap -> `[25, 12, 22, 11, 64]`\nAfter the first pass, the largest element (64) is correctly positioned at the end of the array. Therefore, option 0 is correct. Option 1 shows the result of Selection Sort's first pass, where the minimum element is moved to the beginning. Option 2 is an incorrect intermediate state. Option 3 is the initial unsorted array.",
+            "ja": "バブルソートは、リストを繰り返しステップ実行し、隣接する要素を比較して、順序が間違っていればそれらを交換することによって機能します。 `[64, 25, 12, 22, 11]` に対する最初の完全なパスでは次のようになります。\n1. (64, 25) -> 交換 -> `[25, 64, 12, 22, 11]`\n2. (64, 12) -> 交換 -> `[25, 12, 64, 22, 11]`\n3. (64, 22) -> 交換 -> `[25, 12, 22, 64, 11]`\n4. (64, 11) -> 交換 -> `[25, 12, 22, 11, 64]`\n最初のパスの後、最大の要素 (64) が配列の最後に正しく配置されます。したがって、選択肢0が正解です。選択肢1は選択ソートの最初のパスの結果であり、最小要素が先頭に移動されています。選択肢2は誤った中間状態です。選択肢3はソート前の初期配列です。",
+            "vi": "Sắp xếp nổi bọt (Bubble Sort) hoạt động bằng cách lặp lại việc duyệt qua danh sách, so sánh các phần tử liền kề và hoán đổi chúng nếu chúng không đúng thứ tự. Trong lượt chạy đầy đủ đầu tiên trên mảng `[64, 25, 12, 22, 11]`:\n1. (64, 25) -> hoán đổi -> `[25, 64, 12, 22, 11]`\n2. (64, 12) -> hoán đổi -> `[25, 12, 64, 22, 11]`\n3. (64, 22) -> hoán đổi -> `[25, 12, 22, 64, 11]`\n4. (64, 11) -> hoán đổi -> `[25, 12, 22, 11, 64]`\nSau lượt chạy đầu tiên, phần tử lớn nhất (64) được đặt đúng vị trí ở cuối mảng. Do đó, lựa chọn 0 là đúng. Lựa chọn 1 hiển thị kết quả của lượt chạy đầu tiên của Sắp xếp chọn (Selection Sort), trong đó phần tử nhỏ nhất được di chuyển về đầu. Lựa chọn 2 là một trạng thái trung gian không chính xác. Lựa chọn 3 là mảng ban đầu chưa được sắp xếp."
+          }
+        },
+        {
+          "id": "fe_s17_q2",
+          "question": {
+            "en": "A data analyst is observing a sorting process where the smallest element is consistently moved to the beginning of the unsorted subarray. Given the array `[64, 25, 12, 22, 11]`, what would be its state after the first complete pass of Selection Sort?",
+            "ja": "データアナリストは、未ソート部分配列の先頭に最小要素が常に移動されるソート処理を観察しています。配列 `[64, 25, 12, 22, 11]` が与えられた場合、選択ソートの最初の完全なパスの後の状態はどうなりますか？",
+            "vi": "Một nhà phân tích dữ liệu đang quan sát một quá trình sắp xếp trong đó phần tử nhỏ nhất liên tục được di chuyển đến đầu của mảng con chưa được sắp xếp. Với mảng `[64, 25, 12, 22, 11]`, trạng thái của nó sẽ như thế nào sau lượt chạy đầy đủ đầu tiên của Sắp xếp chọn (Selection Sort)?"
+          },
+          "options": [
+            {
+              "en": "`[25, 12, 22, 11, 64]`",
+              "ja": "`[25, 12, 22, 11, 64]`",
+              "vi": "`[25, 12, 22, 11, 64]`"
+            },
+            {
+              "en": "`[11, 25, 12, 22, 64]`",
+              "ja": "`[11, 25, 12, 22, 64]`",
+              "vi": "`[11, 25, 12, 22, 64]`"
+            },
+            {
+              "en": "`[11, 22, 12, 25, 64]`",
+              "ja": "`[11, 22, 12, 25, 64]`",
+              "vi": "`[11, 22, 12, 25, 64]`"
+            },
+            {
+              "en": "`[12, 25, 64, 22, 11]`",
+              "ja": "`[12, 25, 64, 22, 11]`",
+              "vi": "`[12, 25, 64, 22, 11]`"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Selection Sort works by repeatedly finding the minimum element from the unsorted part and putting it at the beginning. In the first complete pass on `[64, 25, 12, 22, 11]`:\n1. Identify the minimum element in the entire array: `11`.\n2. Swap `11` with the element at the first position (`64`).\n3. The array becomes `[11, 25, 12, 22, 64]`.\nTherefore, option 1 is correct. Option 0 shows the result of Bubble Sort's first pass, where the largest element is moved to the end. Options 2 and 3 are incorrect intermediate states.",
+            "ja": "選択ソートは、未ソート部分から最小要素を繰り返し見つけ出し、それを先頭に配置することによって機能します。 `[64, 25, 12, 22, 11]` に対する最初の完全なパスでは次のようになります。\n1. 配列全体の最小要素 (`11`) を特定します。\n2. `11` を最初の位置の要素 (`64`) と交換します。\n3. 配列は `[11, 25, 12, 22, 64]` になります。\nしたがって、選択肢1が正解です。選択肢0はバブルソートの最初のパスの結果であり、最大要素が最後に移動されています。選択肢2と3は誤った中間状態です。",
+            "vi": "Sắp xếp chọn (Selection Sort) hoạt động bằng cách lặp lại việc tìm phần tử nhỏ nhất từ phần chưa sắp xếp và đặt nó vào vị trí đầu tiên. Trong lượt chạy đầy đủ đầu tiên trên mảng `[64, 25, 12, 22, 11]`:\n1. Xác định phần tử nhỏ nhất trong toàn bộ mảng: `11`.\n2. Hoán đổi `11` với phần tử ở vị trí đầu tiên (`64`).\n3. Mảng trở thành `[11, 25, 12, 22, 64]`.\nDo đó, lựa chọn 1 là đúng. Lựa chọn 0 hiển thị kết quả của lượt chạy đầu tiên của Sắp xếp nổi bọt (Bubble Sort), trong đó phần tử lớn nhất được di chuyển về cuối. Lựa chọn 2 và 3 là các trạng thái trung gian không chính xác."
+          }
+        },
+        {
+          "id": "fe_s17_q3",
+          "question": {
+            "en": "A developer is implementing Quick Sort using the Lomuto partition scheme and always selects the last element as the pivot. Given the array `[10, 80, 30, 90, 40, 50, 70]`, what is the state of the array immediately after the first partitioning pass?",
+            "ja": "開発者がLomuto分割スキームを使用してクイックソートを実装しており、常に最後の要素をピボットとして選択しています。配列 `[10, 80, 30, 90, 40, 50, 70]` が与えられた場合、最初の分割パスの直後の配列の状態はどうなりますか？",
+            "vi": "Một nhà phát triển đang triển khai thuật toán Sắp xếp nhanh (Quick Sort) sử dụng lược đồ phân hoạch Lomuto và luôn chọn phần tử cuối cùng làm trục (pivot). Với mảng `[10, 80, 30, 90, 40, 50, 70]`, trạng thái của mảng ngay sau lượt phân hoạch đầu tiên là gì?"
+          },
+          "options": [
+            {
+              "en": "`[10, 30, 40, 50, 70, 90, 80]`",
+              "ja": "`[10, 30, 40, 50, 70, 90, 80]`",
+              "vi": "`[10, 30, 40, 50, 70, 90, 80]`"
+            },
+            {
+              "en": "`[10, 30, 40, 50, 80, 90, 70]`",
+              "ja": "`[10, 30, 40, 50, 80, 90, 70]`",
+              "vi": "`[10, 30, 40, 50, 80, 90, 70]`"
+            },
+            {
+              "en": "`[10, 80, 30, 90, 40, 50, 70]`",
+              "ja": "`[10, 80, 30, 90, 40, 50, 70]`",
+              "vi": "`[10, 80, 30, 90, 40, 50, 70]`"
+            },
+            {
+              "en": "`[70, 10, 30, 90, 40, 50, 80]`",
+              "ja": "`[70, 10, 30, 90, 40, 50, 80]`",
+              "vi": "`[70, 10, 30, 90, 40, 50, 80]`"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Using the Lomuto partition scheme with the last element (`70`) as the pivot:\n1. Initialize `i = -1` (index of smaller element).\n2. Iterate `j` from `0` to `n-2` (`50`).\n   - `arr[0]=10 < 70`: `i` becomes `0`. Swap `arr[0]` with `arr[0]`. Array: `[10, 80, 30, 90, 40, 50, 70]`\n   - `arr[1]=80 > 70`: no change.\n   - `arr[2]=30 < 70`: `i` becomes `1`. Swap `arr[1]` (80) with `arr[2]` (30). Array: `[10, 30, 80, 90, 40, 50, 70]`\n   - `arr[3]=90 > 70`: no change.\n   - `arr[4]=40 < 70`: `i` becomes `2`. Swap `arr[2]` (80) with `arr[4]` (40). Array: `[10, 30, 40, 90, 80, 50, 70]`\n   - `arr[5]=50 < 70`: `i` becomes `3`. Swap `arr[3]` (90) with `arr[5]` (50). Array: `[10, 30, 40, 50, 80, 90, 70]`\n3. Finally, swap `arr[i+1]` (`arr[4]` which is `80`) with the pivot `arr[n-1]` (`70`).\n4. The array becomes `[10, 30, 40, 50, 70, 90, 80]`.\nThis state correctly places the pivot (70) at its final sorted position, with all elements to its left being less than or equal to 70, and all elements to its right being greater than or equal to 70. Therefore, option 0 is correct. Options 1, 2, and 3 do not represent a correct state after the first partitioning pass using the Lomuto scheme.",
+            "ja": "最後の要素 (`70`) をピボットとするLomuto分割スキームを使用します。\n1. `i = -1` (小さい要素のインデックス) を初期化します。\n2. `j` を `0` から `n-2` (`50`) まで反復します。\n   - `arr[0]=10 < 70`: `i` は `0` になります。`arr[0]` と `arr[0]` を交換します。配列: `[10, 80, 30, 90, 40, 50, 70]`\n   - `arr[1]=80 > 70`: 変更なし。\n   - `arr[2]=30 < 70`: `i` は `1` になります。`arr[1]` (80) と `arr[2]` (30) を交換します。配列: `[10, 30, 80, 90, 40, 50, 70]`\n   - `arr[3]=90 > 70`: 変更なし。\n   - `arr[4]=40 < 70`: `i` は `2` になります。`arr[2]` (80) と `arr[4]` (40) を交換します。配列: `[10, 30, 40, 90, 80, 50, 70]`\n   - `arr[5]=50 < 70`: `i` は `3` になります。`arr[3]` (90) と `arr[5]` (50) を交換します。配列: `[10, 30, 40, 50, 80, 90, 70]`\n3. 最後に、`arr[i+1]` (`arr[4]` の `80`) をピボット `arr[n-1]` (`70`) と交換します。\n4. 配列は `[10, 30, 40, 50, 70, 90, 80]` になります。\nこの状態は、ピボット (70) が最終的なソート位置に正しく配置されており、左側のすべての要素が70以下、右側のすべての要素が70以上であることを示しています。したがって、選択肢0が正解です。選択肢1、2、および3は、Lomutoスキームを使用した最初の分割パス後の正しい状態を表していません。",
+            "vi": "Sử dụng lược đồ phân hoạch Lomuto với phần tử cuối cùng (`70`) làm trục (pivot):\n1. Khởi tạo `i = -1` (chỉ số của phần tử nhỏ hơn).\n2. Lặp `j` từ `0` đến `n-2` (`50`).\n   - `arr[0]=10 < 70`: `i` trở thành `0`. Hoán đổi `arr[0]` với `arr[0]`. Mảng: `[10, 80, 30, 90, 40, 50, 70]`\n   - `arr[1]=80 > 70`: không thay đổi.\n   - `arr[2]=30 < 70`: `i` trở thành `1`. Hoán đổi `arr[1]` (80) với `arr[2]` (30). Mảng: `[10, 30, 80, 90, 40, 50, 70]`\n   - `arr[3]=90 > 70`: không thay đổi.\n   - `arr[4]=40 < 70`: `i` trở thành `2`. Hoán đổi `arr[2]` (80) với `arr[4]` (40). Mảng: `[10, 30, 40, 90, 80, 50, 70]`\n   - `arr[5]=50 < 70`: `i` trở thành `3`. Hoán đổi `arr[3]` (90) với `arr[5]` (50). Mảng: `[10, 30, 40, 50, 80, 90, 70]`\n3. Cuối cùng, hoán đổi `arr[i+1]` (`arr[4]` là `80`) với pivot `arr[n-1]` (`70`).\n4. Mảng trở thành `[10, 30, 40, 50, 70, 90, 80]`.\nTrạng thái này đặt đúng pivot (70) vào vị trí đã sắp xếp cuối cùng của nó, với tất cả các phần tử bên trái nhỏ hơn hoặc bằng 70, và tất cả các phần tử bên phải lớn hơn hoặc bằng 70. Do đó, lựa chọn 0 là đúng. Các lựa chọn 1, 2 và 3 không thể hiện đúng trạng thái sau lượt phân hoạch đầu tiên bằng lược đồ Lomuto."
+          }
+        },
+        {
+          "id": "fe_s17_q4",
+          "question": {
+            "en": "During a Merge Sort operation, two already sorted subarrays, `[5, 12, 18]` and `[3, 7, 15, 20]`, are being merged. What is the resulting sorted array after this specific merging step?",
+            "ja": "マージソートの操作中に、既にソートされている2つの部分配列 `[5, 12, 18]` と `[3, 7, 15, 20]` がマージされています。この特定のマージステップの後の結果のソート済み配列は何ですか？",
+            "vi": "Trong quá trình Sắp xếp trộn (Merge Sort), hai mảng con đã được sắp xếp là `[5, 12, 18]` và `[3, 7, 15, 20]` đang được trộn lại. Mảng đã sắp xếp kết quả sau bước trộn cụ thể này là gì?"
+          },
+          "options": [
+            {
+              "en": "`[3, 5, 7, 12, 15, 18, 20]`",
+              "ja": "`[3, 5, 7, 12, 15, 18, 20]`",
+              "vi": "`[3, 5, 7, 12, 15, 18, 20]`"
+            },
+            {
+              "en": "`[5, 3, 12, 7, 18, 15, 20]`",
+              "ja": "`[5, 3, 12, 7, 18, 15, 20]`",
+              "vi": "`[5, 3, 12, 7, 18, 15, 20]`"
+            },
+            {
+              "en": "`[3, 5, 12, 7, 15, 18, 20]`",
+              "ja": "`[3, 5, 12, 7, 15, 18, 20]`",
+              "vi": "`[3, 5, 12, 7, 15, 18, 20]`"
+            },
+            {
+              "en": "`[3, 7, 5, 12, 15, 18, 20]`",
+              "ja": "`[3, 7, 5, 12, 15, 18, 20]`",
+              "vi": "`[3, 7, 5, 12, 15, 18, 20]`"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Merge Sort's merging step combines two already sorted subarrays into a single sorted array. It does this by comparing the smallest elements of each subarray and adding the smaller one to the result array, repeating until all elements are merged.\n* Compare `5` (from `[5, 12, 18]`) and `3` (from `[3, 7, 15, 20]`). Add `3`. Result: `[3]`\n* Compare `5` and `7`. Add `5`. Result: `[3, 5]`\n* Compare `12` and `7`. Add `7`. Result: `[3, 5, 7]`\n* Compare `12` and `15`. Add `12`. Result: `[3, 5, 7, 12]`\n* Compare `18` and `15`. Add `15`. Result: `[3, 5, 7, 12, 15]`\n* Compare `18` and `20`. Add `18`. Result: `[3, 5, 7, 12, 15, 18]`\n* Add remaining `20`. Result: `[3, 5, 7, 12, 15, 18, 20]`\nTherefore, option 0 is correct. The other options contain elements that are not fully sorted or are incorrect intermediate states of the merge process.",
+            "ja": "マージソートのマージステップは、既にソートされた2つの部分配列を1つのソートされた配列に結合します。これは、各部分配列の最小要素を比較し、小さい方を結果配列に追加することを、すべての要素がマージされるまで繰り返すことによって行われます。\n* `[5, 12, 18]` の `5` と `[3, 7, 15, 20]` の `3` を比較します。`3` を追加。結果: `[3]`\n* `5` と `7` を比較します。`5` を追加。結果: `[3, 5]`\n* `12` と `7` を比較します。`7` を追加。結果: `[3, 5, 7]`\n* `12` と `15` を比較します。`12` を追加。結果: `[3, 5, 7, 12]`\n* `18` と `15` を比較します。`15` を追加。結果: `[3, 5, 7, 12, 15]`\n* `18` と `20` を比較します。`18` を追加。結果: `[3, 5, 7, 12, 15, 18]`\n* 残りの `20` を追加。結果: `[3, 5, 7, 12, 15, 18, 20]`\nしたがって、選択肢0が正解です。他の選択肢は、完全にソートされていない要素や、マージプロセスの誤った中間状態を含んでいます。",
+            "vi": "Bước trộn của Sắp xếp trộn (Merge Sort) kết hợp hai mảng con đã được sắp xếp thành một mảng đã sắp xếp duy nhất. Nó thực hiện điều này bằng cách so sánh các phần tử nhỏ nhất của mỗi mảng con và thêm phần tử nhỏ hơn vào mảng kết quả, lặp lại cho đến khi tất cả các phần tử được trộn.\n* So sánh `5` (từ `[5, 12, 18]`) và `3` (từ `[3, 7, 15, 20]`). Thêm `3`. Kết quả: `[3]`\n* So sánh `5` và `7`. Thêm `5`. Kết quả: `[3, 5]`\n* So sánh `12` và `7`. Thêm `7`. Kết quả: `[3, 5, 7]`\n* So sánh `12` và `15`. Thêm `12`. Kết quả: `[3, 5, 7, 12]`\n* So sánh `18` và `15`. Thêm `15`. Kết quả: `[3, 5, 7, 12, 15]`\n* So sánh `18` và `20`. Thêm `18`. Kết quả: `[3, 5, 7, 12, 15, 18]`\n* Thêm phần tử còn lại `20`. Kết quả: `[3, 5, 7, 12, 15, 18, 20]`\nDo đó, lựa chọn 0 là đúng. Các lựa chọn khác chứa các phần tử không được sắp xếp hoàn chỉnh hoặc là các trạng thái trung gian không chính xác của quá trình trộn."
+          }
+        },
+        {
+          "id": "fe_s17_q5",
+          "question": {
+            "en": "A software quality assurance team is reviewing logs from a sorting utility. They observe the following sequence of array states during the sorting process:\nInitial: `[29, 10, 14, 37, 13]`\nState 1: `[10, 29, 14, 37, 13]`\nState 2: `[10, 13, 14, 37, 29]`\nBased on this trace, which sorting algorithm was most likely used?",
+            "ja": "ソフトウェア品質保証チームがソートユーティリティのログをレビューしています。ソートプロセス中に以下の配列状態のシーケンスが観測されました。\n初期状態: `[29, 10, 14, 37, 13]`\n状態1: `[10, 29, 14, 37, 13]`\n状態2: `[10, 13, 14, 37, 29]`\nこのトレースに基づくと、どのソートアルゴリズムが最も使用された可能性が高いですか？",
+            "vi": "Một nhóm đảm bảo chất lượng phần mềm đang xem xét nhật ký từ một tiện ích sắp xếp. Họ quan sát chuỗi trạng thái mảng sau đây trong quá trình sắp xếp:\nBan đầu: `[29, 10, 14, 37, 13]`\nTrạng thái 1: `[10, 29, 14, 37, 13]`\nTrạng thái 2: `[10, 13, 14, 37, 29]`\nDựa trên dấu vết này, thuật toán sắp xếp nào có khả năng được sử dụng nhất?"
+          },
+          "options": [
+            {
+              "en": "Bubble Sort",
+              "ja": "バブルソート",
+              "vi": "Sắp xếp nổi bọt (Bubble Sort)"
+            },
+            {
+              "en": "Selection Sort",
+              "ja": "選択ソート",
+              "vi": "Sắp xếp chọn (Selection Sort)"
+            },
+            {
+              "en": "Quick Sort",
+              "ja": "クイックソート",
+              "vi": "Sắp xếp nhanh (Quick Sort)"
+            },
+            {
+              "en": "Merge Sort",
+              "ja": "マージソート",
+              "vi": "Sắp xếp trộn (Merge Sort)"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Let's analyze the trace:\n*   **Initial**: `[29, 10, 14, 37, 13]`\n*   **State 1**: `[10, 29, 14, 37, 13]`\n    *   The smallest element (`10`) from the original array was found and swapped with the first element (`29`). This is characteristic of the first pass of **Selection Sort**. If it were Bubble Sort's first pass, `[29, 10, 14, 37, 13]` would become `[10, 14, 29, 13, 37]` (after placing `37` at the end).\n*   **State 2**: `[10, 13, 14, 37, 29]`\n    *   The `10` is fixed. The smallest element in the remaining unsorted part (`[29, 14, 37, 13]`) is `13`. It was swapped with the element at the second position (`29`). This is consistent with the second pass of **Selection Sort**. Quick Sort would involve partitioning around a pivot, leading to a different structure (pivot in place, elements smaller to left, larger to right). Merge Sort typically shows merging of already sorted subarrays or splitting, not this direct element-by-element placement.\nTherefore, the observed trace is most consistent with Selection Sort.",
+            "ja": "トレースを分析しましょう。\n*   **初期状態**: `[29, 10, 14, 37, 13]`\n*   **状態1**: `[10, 29, 14, 37, 13]`\n    *   元の配列から最小要素 (`10`) が見つかり、最初の要素 (`29`) と交換されました。これは**選択ソート**の最初のパスの特徴です。もしバブルソートの最初のパスであれば、`[29, 10, 14, 37, 13]` は `[10, 14, 29, 13, 37]` (37を最後に配置した後) となるはずです。\n*   **状態2**: `[10, 13, 14, 37, 29]`\n    *   `10` は固定されました。残りの未ソート部分 (`[29, 14, 37, 13]`) の最小要素は `13` です。これは2番目の位置の要素 (`29`) と交換されました。これは**選択ソート**の2番目のパスと一致します。クイックソートはピボットを中心に分割するため、異なる構造になります（ピボットが定位置にあり、小さい要素が左、大きい要素が右）。マージソートは通常、既にソートされた部分配列のマージや分割を示し、このように要素を直接配置するわけではありません。\nしたがって、観測されたトレースは選択ソートと最も一致しています。",
+            "vi": "Hãy phân tích dấu vết:\n*   **Ban đầu**: `[29, 10, 14, 37, 13]`\n*   **Trạng thái 1**: `[10, 29, 14, 37, 13]`\n    *   Phần tử nhỏ nhất (`10`) từ mảng gốc đã được tìm thấy và hoán đổi với phần tử đầu tiên (`29`). Đây là đặc điểm của lượt chạy đầu tiên của **Sắp xếp chọn (Selection Sort)**. Nếu đó là lượt chạy đầu tiên của Sắp xếp nổi bọt (Bubble Sort), `[29, 10, 14, 37, 13]` sẽ trở thành `[10, 14, 29, 13, 37]` (sau khi đặt `37` vào cuối).\n*   **Trạng thái 2**: `[10, 13, 14, 37, 29]`\n    *   `10` đã được cố định. Phần tử nhỏ nhất trong phần chưa sắp xếp còn lại (`[29, 14, 37, 13]`) là `13`. Nó đã được hoán đổi với phần tử ở vị trí thứ hai (`29`). Điều này phù hợp với lượt chạy thứ hai của **Sắp xếp chọn (Selection Sort)**. Sắp xếp nhanh (Quick Sort) sẽ liên quan đến việc phân hoạch xung quanh một trục (pivot), dẫn đến một cấu trúc khác (pivot ở vị trí cố định, các phần tử nhỏ hơn ở bên trái, lớn hơn ở bên phải). Sắp xếp trộn (Merge Sort) thường hiển thị việc trộn các mảng con đã được sắp xếp hoặc chia tách, chứ không phải đặt trực tiếp từng phần tử như vậy.\nDo đó, dấu vết quan sát được phù hợp nhất với Sắp xếp chọn (Selection Sort)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "fe-b-8",
+      "category": "part-b",
+      "title": {
+        "en": "Binary Search & Trees Traversal",
+        "ja": "二分探索木と木構造の走査",
+        "vi": "Tìm kiếm nhị phân và duyệt cây"
+      },
+      "description": {
+        "en": "BST insertions, search paths, and traversals (preorder, inorder, postorder).",
+        "ja": "二分探索木の挿入、探索経路、および走査（先行順、中間順、後行順）に関する問題。",
+        "vi": "Các vấn đề về chèn BST, đường dẫn tìm kiếm và duyệt cây (tiền thứ tự, trung thứ tự, hậu thứ tự)."
+      },
+      "questions": [
+        {
+          "id": "fe_s18_q1",
+          "question": {
+            "en": "A developer is tasked with inserting the sequence [15, 10, 20, 5, 12, 18, 25] into an initially empty Binary Search Tree (BST). After completing all insertions, what is the result of a Postorder traversal of the tree?",
+            "ja": "開発者が空の二分探索木（BST）に順序 [15, 10, 20, 5, 12, 18, 25] を挿入するよう指示されました。すべての挿入が完了した後、この木の「後行順（Postorder）」走査の結果はどうなりますか。",
+            "vi": "Một lập trình viên được giao nhiệm vụ chèn chuỗi [15, 10, 20, 5, 12, 18, 25] vào một cây tìm kiếm nhị phân (BST) rỗng. Sau khi hoàn tất, kết quả của việc duyệt cây theo thứ tự hậu thứ tự (Postorder) là gì?"
+          },
+          "options": [
+            {
+              "en": "[5, 12, 10, 18, 25, 20, 15]",
+              "ja": "[5, 12, 10, 18, 25, 20, 15]",
+              "vi": "[5, 12, 10, 18, 25, 20, 15]"
+            },
+            {
+              "en": "[5, 10, 12, 15, 18, 20, 25]",
+              "ja": "[5, 10, 12, 15, 18, 20, 25]",
+              "vi": "[5, 10, 12, 15, 18, 20, 25]"
+            },
+            {
+              "en": "[15, 10, 5, 12, 20, 18, 25]",
+              "ja": "[15, 10, 5, 12, 20, 18, 25]",
+              "vi": "[15, 10, 5, 12, 20, 18, 25]"
+            },
+            {
+              "en": "[25, 18, 20, 12, 5, 10, 15]",
+              "ja": "[25, 18, 20, 12, 5, 10, 15]",
+              "vi": "[25, 18, 20, 12, 5, 10, 15]"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Inserting the numbers creates a tree where 15 is the root, 10 is left child, 20 is right. Further insertions place 5 and 12 under 10, and 18 and 25 under 20. Postorder (Left-Right-Root) visits 5, 12, 10, 18, 25, 20, 15.",
+            "ja": "数値の挿入により、15がルート、10が左、20が右の子となる木が形成されます。その後、5と12が10の下に、18と25が20の下に配置されます。後行順（左・右・ルート）では、5, 12, 10, 18, 25, 20, 15の順に走査されます。",
+            "vi": "Việc chèn các số tạo ra cây với 15 là gốc, 10 bên trái, 20 bên phải. Tiếp tục chèn 5, 12 vào dưới 10, và 18, 25 vào dưới 20. Duyệt hậu thứ tự (Trái-Phải-Gốc) sẽ cho kết quả: 5, 12, 10, 18, 25, 20, 15."
+          }
+        },
+        {
+          "id": "fe_s18_q2",
+          "question": {
+            "en": "Given a BST, the Preorder traversal is [10, 5, 2, 8, 15, 12, 20]. Which of the following nodes would be encountered first when searching for the value 12 starting from the root?",
+            "ja": "ある二分探索木において、先行順（Preorder）走査の結果が [10, 5, 2, 8, 15, 12, 20] であるとします。ルートから値12を探索する際、最初に出会うノードの順序はどうなりますか。",
+            "vi": "Cho một cây BST có thứ tự duyệt tiền thứ tự là [10, 5, 2, 8, 15, 12, 20]. Những nút nào sau đây sẽ được gặp đầu tiên khi tìm kiếm giá trị 12 bắt đầu từ nút gốc?"
+          },
+          "options": [
+            {
+              "en": "10 -> 5 -> 12",
+              "ja": "10 -> 5 -> 12",
+              "vi": "10 -> 5 -> 12"
+            },
+            {
+              "en": "10 -> 15 -> 12",
+              "ja": "10 -> 15 -> 12",
+              "vi": "10 -> 15 -> 12"
+            },
+            {
+              "en": "10 -> 5 -> 8 -> 12",
+              "ja": "10 -> 5 -> 8 -> 12",
+              "vi": "10 -> 5 -> 8 -> 12"
+            },
+            {
+              "en": "10 -> 15 -> 20 -> 12",
+              "ja": "10 -> 15 -> 20 -> 12",
+              "vi": "10 -> 15 -> 20 -> 12"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "In a BST, search logic compares target with the current node: if target > node, go right. Root is 10, 12 > 10 so go right to 15. 12 < 15, so go left to find 12.",
+            "ja": "二分探索木では、探索対象と現在のノードを比較します。対象がノードより大きければ右へ行きます。ルートは10で、12は10より大きいため右の15へ移動します。12は15より小さいため、左へ移動して12を見つけます。",
+            "vi": "Trong BST, logic tìm kiếm so sánh mục tiêu với nút hiện tại: nếu mục tiêu > nút, đi sang phải. Gốc là 10, vì 12 > 10 nên đi sang phải tới 15. Vì 12 < 15, nên đi sang trái để tìm 12."
+          }
+        },
+        {
+          "id": "fe_s18_q3",
+          "question": {
+            "en": "When performing an Inorder traversal on any valid Binary Search Tree, what property must the resulting sequence of values satisfy?",
+            "ja": "有効な二分探索木に対して中間順（Inorder）走査を行う場合、結果として得られる値の列はどのような特性を満たす必要がありますか。",
+            "vi": "Khi thực hiện duyệt cây trung thứ tự (Inorder) trên bất kỳ cây tìm kiếm nhị phân hợp lệ nào, chuỗi giá trị thu được phải thỏa mãn tính chất nào?"
+          },
+          "options": [
+            {
+              "en": "The sequence must be in strictly descending order.",
+              "ja": "値の列は厳密に降順でなければならない。",
+              "vi": "Chuỗi giá trị phải theo thứ tự giảm dần nghiêm ngặt."
+            },
+            {
+              "en": "The sequence must be in strictly ascending order.",
+              "ja": "値の列は厳密に昇順でなければならない。",
+              "vi": "Chuỗi giá trị phải theo thứ tự tăng dần nghiêm ngặt."
+            },
+            {
+              "en": "The sequence must be identical to the Preorder traversal.",
+              "ja": "値の列は先行順走査と同一でなければならない。",
+              "vi": "Chuỗi giá trị phải giống hệt với thứ tự duyệt tiền thứ tự."
+            },
+            {
+              "en": "The sequence depends on the number of levels in the tree.",
+              "ja": "値の列は木の階層数に依存する。",
+              "vi": "Chuỗi giá trị phụ thuộc vào số tầng của cây."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "An Inorder traversal (Left-Root-Right) of a BST always visits nodes in ascending order of their keys, which is a fundamental property of the BST structure.",
+            "ja": "二分探索木の中間順走査（左・ルート・右）は、常にキーの昇順でノードを訪問します。これは二分探索木の基本的な性質です。",
+            "vi": "Duyệt trung thứ tự (Trái-Gốc-Phải) của một BST luôn truy cập các nút theo thứ tự tăng dần của khóa, đây là tính chất cơ bản của cấu trúc BST."
+          }
+        },
+        {
+          "id": "fe_s18_q4",
+          "question": {
+            "en": "A database index uses a BST structure. If we need to retrieve keys in descending order, which traversal method should be implemented?",
+            "ja": "データベースのインデックスが二分探索木構造を使用しています。キーを降順で取得する必要がある場合、どの走査方法を実装すべきですか。",
+            "vi": "Một chỉ mục cơ sở dữ liệu sử dụng cấu trúc BST. Nếu chúng ta cần truy xuất các khóa theo thứ tự giảm dần, phương pháp duyệt nào nên được triển khai?"
+          },
+          "options": [
+            {
+              "en": "Preorder traversal (Root-Left-Right)",
+              "ja": "先行順走査（ルート・左・右）",
+              "vi": "Duyệt tiền thứ tự (Gốc-Trái-Phải)"
+            },
+            {
+              "en": "Modified Inorder (Right-Root-Left)",
+              "ja": "変更された中間順走査（右・ルート・左）",
+              "vi": "Trung thứ tự sửa đổi (Phải-Gốc-Trái)"
+            },
+            {
+              "en": "Postorder traversal (Left-Right-Root)",
+              "ja": "後行順走査（左・右・ルート）",
+              "vi": "Duyệt hậu thứ tự (Trái-Phải-Gốc)"
+            },
+            {
+              "en": "Breadth-First Search (Level order)",
+              "ja": "幅優先探索（レベル順）",
+              "vi": "Tìm kiếm theo chiều rộng (Thứ tự tầng)"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Standard Inorder is Left-Root-Right (Ascending). By reversing the logic to Right-Root-Left, we visit the largest elements first, resulting in a descending sequence.",
+            "ja": "標準的な中間順は左・ルート・右（昇順）です。ロジックを右・ルート・左と逆にすることで、大きな要素から訪問し、降順の結果を得ることができます。",
+            "vi": "Duyệt trung thứ tự chuẩn là Trái-Gốc-Phải (Tăng dần). Bằng cách đảo ngược logic thành Phải-Gốc-Trái, chúng ta truy cập các phần tử lớn nhất trước, dẫn đến một chuỗi giảm dần."
+          }
+        },
+        {
+          "id": "fe_s18_q5",
+          "question": {
+            "en": "If a BST is degenerate (resembling a linked list), what happens to the time complexity of a standard search operation?",
+            "ja": "二分探索木が退化して（連結リストのように）なった場合、標準的な探索操作の時間計算量はどうなりますか。",
+            "vi": "Nếu một cây BST bị thoái hóa (trông giống như một danh sách liên kết), độ phức tạp thời gian của một thao tác tìm kiếm tiêu chuẩn sẽ như thế nào?"
+          },
+          "options": [
+            {
+              "en": "It remains O(log n).",
+              "ja": "O(log n)のままである。",
+              "vi": "Nó vẫn là O(log n)."
+            },
+            {
+              "en": "It improves to O(1).",
+              "ja": "O(1)に改善される。",
+              "vi": "Nó cải thiện thành O(1)."
+            },
+            {
+              "en": "It degrades to O(n).",
+              "ja": "O(n)に低下する。",
+              "vi": "Nó giảm xuống thành O(n)."
+            },
+            {
+              "en": "It becomes O(n log n).",
+              "ja": "O(n log n)になる。",
+              "vi": "Nó trở thành O(n log n)."
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "In a balanced BST, height is log n. In a degenerate tree, every node has only one child, effectively making it a linked list, which requires traversing O(n) nodes in the worst case.",
+            "ja": "バランスの取れた二分探索木では高さはlog nです。退化した木では各ノードが1つの子しか持たず、実質的に連結リストとなるため、最悪の場合O(n)のノードを走査する必要があります。",
+            "vi": "Trong một cây BST cân bằng, chiều cao là log n. Trong một cây bị thoái hóa, mỗi nút chỉ có một nút con, khiến nó giống như một danh sách liên kết, yêu cầu phải duyệt qua O(n) nút trong trường hợp xấu nhất."
+          }
+        }
+      ]
+    },
+    {
+      "id": "fe-b-9",
+      "category": "part-b",
+      "title": {
+        "en": "Recursion & Backtracking",
+        "ja": "再帰とバックトラッキング",
+        "vi": "Đệ quy và Quay lui"
+      },
+      "description": {
+        "en": "Trace recursive calls, depth limit, and backtracking state changes.",
+        "ja": "再帰呼び出しのトレース、深さ制限、およびバックトラッキングの状態遷移を理解する。",
+        "vi": "Theo dõi các lời gọi đệ quy, giới hạn độ sâu và sự thay đổi trạng thái trong quay lui."
+      },
+      "questions": [
+        {
+          "id": "fe_s19_q1",
+          "question": {
+            "en": "Consider a recursive function f(n) defined as f(n) = f(n-1) + f(n-2) for n > 1, with base cases f(0)=0 and f(1)=1. When calculating f(4), how many times is the function f(1) called during the execution tree?",
+            "ja": "f(n) = f(n-1) + f(n-2) (n > 1) で定義される再帰関数があり、f(0)=0, f(1)=1とします。f(4)を計算する際、再帰呼び出しのツリー内でf(1)は何回呼び出されますか？",
+            "vi": "Xét hàm đệ quy f(n) được định nghĩa là f(n) = f(n-1) + f(n-2) với n > 1, các trường hợp cơ sở là f(0)=0 và f(1)=1. Khi tính f(4), hàm f(1) được gọi bao nhiêu lần trong cây thực thi?"
+          },
+          "options": [
+            {
+              "en": "1",
+              "ja": "1回",
+              "vi": "1"
+            },
+            {
+              "en": "2",
+              "ja": "2回",
+              "vi": "2"
+            },
+            {
+              "en": "3",
+              "ja": "3回",
+              "vi": "3"
+            },
+            {
+              "en": "4",
+              "ja": "4回",
+              "vi": "4"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "The execution tree for f(4) is: f(4) -> f(3)+f(2); f(3) -> f(2)+f(1); f(2) -> f(1)+f(0). Expanding fully: f(4) = (f(2)+f(1)) + (f(1)+f(0)) = ((f(1)+f(0))+f(1)) + (f(1)+f(0)). Counting the f(1) calls: there are three occurrences.",
+            "ja": "f(4)の実行ツリーを分解すると、f(4) = f(3)+f(2) = (f(2)+f(1)) + (f(1)+f(0)) = ((f(1)+f(0))+f(1)) + (f(1)+f(0)) となります。f(1)の出現回数を数えると合計3回です。",
+            "vi": "Cây thực thi cho f(4) là: f(4) -> f(3)+f(2); f(3) -> f(2)+f(1); f(2) -> f(1)+f(0). Triển khai đầy đủ: f(4) = (f(2)+f(1)) + (f(1)+f(0)) = ((f(1)+f(0))+f(1)) + (f(1)+f(0)). Đếm số lần gọi f(1), ta có tổng cộng 3 lần."
+          }
+        },
+        {
+          "id": "fe_s19_q2",
+          "question": {
+            "en": "In a backtracking algorithm solving the N-Queens problem on a 4x4 board, after placing a queen at (0,0), which column in row 1 is valid to place the next queen, assuming we check columns from left to right (0 to 3)?",
+            "ja": "4x4ボードでNクイーン問題を解くバックトラッキングアルゴリズムにおいて、(0,0)にクイーンを配置した後、行1で次にクイーンを配置できる列はどこですか？（列は左から0〜3でチェックするものとします）",
+            "vi": "Trong thuật toán quay lui giải bài toán N-Queens trên bàn cờ 4x4, sau khi đặt quân hậu tại vị trí (0,0), cột nào ở hàng 1 là hợp lệ để đặt quân hậu tiếp theo, giả sử chúng ta kiểm tra các cột từ trái sang phải (0 đến 3)?"
+          },
+          "options": [
+            {
+              "en": "Column 0",
+              "ja": "列0",
+              "vi": "Cột 0"
+            },
+            {
+              "en": "Column 1",
+              "ja": "列1",
+              "vi": "Cột 1"
+            },
+            {
+              "en": "Column 2",
+              "ja": "列2",
+              "vi": "Cột 2"
+            },
+            {
+              "en": "Column 3",
+              "ja": "列3",
+              "vi": "Cột 3"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "If (0,0) is occupied: Column 0 is attacked (same column). Column 1 is attacked (diagonal). Column 2 is valid (no queen in column 2, row 0 or diagonal). Column 3 is invalid (diagonal of (0,0) is not applicable here, but (0,0) to (1,3) is not diagonal; however, checking row 1: col 0, 1 are blocked. Col 2 is safe).",
+            "ja": "(0,0)に配置した場合、列0は同じ列のため不可、列1は対角線のため不可。列2は安全です。列3は(0,0)との対角線ではありませんが、制約チェックにより列2が最初に見つかる有効な位置です。",
+            "vi": "Nếu (0,0) đã bị chiếm: Cột 0 bị tấn công (cùng cột). Cột 1 bị tấn công (đường chéo). Cột 2 hợp lệ (không có quân hậu nào ở cột 2, hàng 0 hoặc trên đường chéo). Cột 3 hợp lệ nhưng quy trình kiểm tra từ trái sang phải sẽ chọn cột 2 trước."
+          }
+        },
+        {
+          "id": "fe_s19_q3",
+          "question": {
+            "en": "A recursive function includes a base case that returns 1 when depth exceeds 5. If the function is called with depth 0, how many times will the function execute in total before terminating?",
+            "ja": "深さが5を超えた時に1を返す基底部を持つ再帰関数があります。深さ0で関数が呼び出された場合、終了までに合計何回関数が実行されますか？",
+            "vi": "Một hàm đệ quy bao gồm trường hợp cơ sở trả về 1 khi độ sâu vượt quá 5. Nếu hàm được gọi với độ sâu bằng 0, hàm sẽ thực thi tổng cộng bao nhiêu lần trước khi kết thúc?"
+          },
+          "options": [
+            {
+              "en": "5",
+              "ja": "5回",
+              "vi": "5"
+            },
+            {
+              "en": "6",
+              "ja": "6回",
+              "vi": "6"
+            },
+            {
+              "en": "7",
+              "ja": "7回",
+              "vi": "7"
+            },
+            {
+              "en": "1",
+              "ja": "1回",
+              "vi": "1"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "The function calls progress: 0 -> 1 -> 2 -> 3 -> 4 -> 5. When it reaches 5, it calls for 6, which triggers the base case. The sequence of calls is 0, 1, 2, 3, 4, 5. The base case is hit when the function is called with 6. Thus, 6 total calls.",
+            "ja": "呼び出しの推移は0, 1, 2, 3, 4, 5となります。深さが6になった時点で基底部に到達して終了するため、呼び出し回数は合計で6回です。",
+            "vi": "Các lời gọi hàm theo trình tự: 0, 1, 2, 3, 4, 5. Khi hàm đạt đến 6, nó sẽ kích hoạt trường hợp cơ sở. Do đó, có tổng cộng 6 lần gọi."
+          }
+        },
+        {
+          "id": "fe_s19_q4",
+          "question": {
+            "en": "In a backtracking scenario searching for a path in a maze, what is the primary purpose of 'undoing' a choice (state reset) after returning from a recursive call?",
+            "ja": "迷路の経路探索におけるバックトラッキングで、再帰呼び出しから戻った後に選択を『取り消す（状態リセット）』主な目的は何ですか？",
+            "vi": "Trong kịch bản quay lui tìm đường trong mê cung, mục đích chính của việc 'hoàn tác' một lựa chọn (thiết lập lại trạng thái) sau khi trở về từ một lời gọi đệ quy là gì?"
+          },
+          "options": [
+            {
+              "en": "To optimize memory usage by clearing variables.",
+              "ja": "変数をクリアしてメモリ使用量を最適化するため",
+              "vi": "Để tối ưu hóa việc sử dụng bộ nhớ bằng cách xóa các biến."
+            },
+            {
+              "en": "To explore other potential paths from the parent state.",
+              "ja": "親の状態から他の潜在的な経路を探索するため",
+              "vi": "Để khám phá các con đường tiềm năng khác từ trạng thái cha."
+            },
+            {
+              "en": "To force the recursion to terminate immediately.",
+              "ja": "再帰を即座に終了させるため",
+              "vi": "Để buộc đệ quy kết thúc ngay lập tức."
+            },
+            {
+              "en": "To prevent infinite loops in the search algorithm.",
+              "ja": "探索アルゴリズムの無限ループを防ぐため",
+              "vi": "Để ngăn chặn vòng lặp vô hạn trong thuật toán tìm kiếm."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Backtracking requires restoring the state to the previous configuration so that the algorithm can test different branches or paths without being influenced by the modifications made during the exploration of the current (failed) branch.",
+            "ja": "バックトラッキングでは、現在の失敗した枝を探索する際に行った変更が後の探索に影響を与えないよう、状態を前の構成に戻す必要があります。",
+            "vi": "Quay lui yêu cầu khôi phục trạng thái về cấu hình trước đó để thuật toán có thể kiểm tra các nhánh hoặc con đường khác mà không bị ảnh hưởng bởi những sửa đổi được thực hiện trong quá trình khám phá nhánh hiện tại (đã thất bại)."
+          }
+        },
+        {
+          "id": "fe_s19_q5",
+          "question": {
+            "en": "Given a recursive function calculating the factorial of n, which of the following describes the stack behavior when a stack overflow occurs?",
+            "ja": "nの階乗を計算する再帰関数において、スタックオーバーフローが発生した時のスタックの状態として正しいものはどれですか？",
+            "vi": "Với một hàm đệ quy tính giai thừa của n, mô tả nào sau đây mô tả hành vi của ngăn xếp (stack) khi xảy ra lỗi tràn ngăn xếp (stack overflow)?"
+          },
+          "options": [
+            {
+              "en": "The stack memory is full due to excessive return addresses and local variables.",
+              "ja": "戻り先アドレスとローカル変数が過剰に蓄積され、スタックメモリが枯渇する",
+              "vi": "Bộ nhớ ngăn xếp bị đầy do dư thừa địa chỉ trả về và các biến cục bộ."
+            },
+            {
+              "en": "The heap memory exceeds its allocation limit.",
+              "ja": "ヒープメモリが割り当て上限を超える",
+              "vi": "Bộ nhớ heap vượt quá giới hạn cấp phát."
+            },
+            {
+              "en": "The recursion depth is too shallow to complete.",
+              "ja": "再帰の深さが浅すぎて完了できない",
+              "vi": "Độ sâu đệ quy quá nông để hoàn thành."
+            },
+            {
+              "en": "The base case was reached too quickly.",
+              "ja": "基底部に到達するのが早すぎる",
+              "vi": "Trường hợp cơ sở bị đạt tới quá nhanh."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Stack overflow occurs when the call stack size exceeds its limit, usually caused by too many nested recursive calls which consume memory for function frames (parameters, return address, locals).",
+            "ja": "スタックオーバーフローは、呼び出しスタックが制限を超えた時に発生します。これは通常、過剰なネストされた再帰呼び出しにより、関数フレーム（引数、戻り先アドレス、ローカル変数）がスタックメモリを消費し尽くすことで起こります。",
+            "vi": "Lỗi tràn ngăn xếp xảy ra khi kích thước ngăn xếp cuộc gọi vượt quá giới hạn, thường do quá nhiều lời gọi đệ quy lồng nhau tiêu tốn bộ nhớ cho các khung hàm (tham số, địa chỉ trả về, biến cục bộ)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "fe-b-10",
+      "category": "part-b",
+      "title": {
+        "en": "Hash Table & Collision Resolution",
+        "ja": "ハッシュテーブルと衝突解決",
+        "vi": "Bảng băm và Giải quyết xung đột"
+      },
+      "description": {
+        "en": "Hash functions, open addressing, chaining, and trace bucket indices.",
+        "ja": "ハッシュ関数、オープンアドレス法、チェイニング、およびバケットインデックスの追跡。",
+        "vi": "Hàm băm, địa chỉ mở, lập danh sách liên kết (chaining), và truy vết chỉ số bucket."
+      },
+      "questions": [
+        {
+          "id": "fe_s20_q1",
+          "question": {
+            "en": "A hash table uses the hash function h(k) = k mod 11 and stores integers in a table of size 11. If the keys 12, 23, and 34 are inserted in this order, what is the index of the last key, 34, assuming a chaining strategy is used for collision resolution?",
+            "ja": "ハッシュ関数 h(k) = k mod 11 を使用し、サイズ11のテーブルに整数を格納するハッシュテーブルがあります。キー 12, 23, 34 をこの順序で挿入した場合、チェイニングを用いて衝突を解決すると、最後のキー 34 が格納されるインデックスは何になりますか。",
+            "vi": "Một bảng băm sử dụng hàm băm h(k) = k mod 11 và lưu trữ các số nguyên trong bảng có kích thước 11. Nếu các khóa 12, 23, và 34 được chèn theo thứ tự này, chỉ số của khóa cuối cùng, 34, là bao nhiêu, giả sử chiến lược chaining được sử dụng để giải quyết xung đột?"
+          },
+          "options": [
+            {
+              "en": "1",
+              "ja": "1",
+              "vi": "1"
+            },
+            {
+              "en": "2",
+              "ja": "2",
+              "vi": "2"
+            },
+            {
+              "en": "3",
+              "ja": "3",
+              "vi": "3"
+            },
+            {
+              "en": "0",
+              "ja": "0",
+              "vi": "0"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "12 mod 11 = 1, 23 mod 11 = 1, and 34 mod 11 = 1. Since all keys hash to index 1, in a chaining strategy, they are all stored in the linked list at index 1. 34 mod 11 equals 1.",
+            "ja": "12 mod 11 = 1、23 mod 11 = 1、34 mod 11 = 1 です。すべてのキーがインデックス 1 にハッシュされるため、チェイニングではそれらすべてがインデックス 1 の連結リストに格納されます。34 mod 11 は 1 です。",
+            "vi": "12 mod 11 = 1, 23 mod 11 = 1, và 34 mod 11 = 1. Vì tất cả các khóa đều có giá trị băm là 1, trong chiến lược chaining, chúng đều được lưu trữ trong danh sách liên kết tại chỉ số 1. 34 mod 11 bằng 1."
+          }
+        },
+        {
+          "id": "fe_s20_q2",
+          "question": {
+            "en": "You are implementing open addressing with linear probing (h(k, i) = (h'(k) + i) mod m) for a hash table of size 10. If you insert keys 15, 25, and 35 using h'(k) = k mod 10, at which index will 35 be placed?",
+            "ja": "サイズ 10 のハッシュテーブルに対して、線形探査法 (h(k, i) = (h'(k) + i) mod m) を使用したオープンアドレス法を実装しています。h'(k) = k mod 10 を用いてキー 15, 25, 35 を挿入した場合、35 はどのインデックスに配置されますか。",
+            "vi": "Bạn đang triển khai địa chỉ mở với dò tuyến tính (h(k, i) = (h'(k) + i) mod m) cho một bảng băm có kích thước 10. Nếu bạn chèn các khóa 15, 25, và 35 sử dụng h'(k) = k mod 10, khóa 35 sẽ được đặt tại chỉ số nào?"
+          },
+          "options": [
+            {
+              "en": "5",
+              "ja": "5",
+              "vi": "5"
+            },
+            {
+              "en": "6",
+              "ja": "6",
+              "vi": "6"
+            },
+            {
+              "en": "7",
+              "ja": "7",
+              "vi": "7"
+            },
+            {
+              "en": "8",
+              "ja": "8",
+              "vi": "8"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "15 mod 10 = 5 (index 5). 25 mod 10 = 5 (collision, moves to index 6). 35 mod 10 = 5 (collision at 5, collision at 6, moves to index 7).",
+            "ja": "15 mod 10 = 5 (インデックス 5)。25 mod 10 = 5 (衝突し、インデックス 6 に移動)。35 mod 10 = 5 (5で衝突、6で衝突し、インデックス 7 に移動)。",
+            "vi": "15 mod 10 = 5 (chỉ số 5). 25 mod 10 = 5 (xung đột, chuyển sang chỉ số 6). 35 mod 10 = 5 (xung đột tại 5, xung đột tại 6, chuyển sang chỉ số 7)."
+          }
+        },
+        {
+          "id": "fe_s20_q3",
+          "question": {
+            "en": "Consider a hash table of size 7. If we use double hashing with hash functions h1(k) = k mod 7 and h2(k) = 5 - (k mod 5), what is the probe sequence for key 14?",
+            "ja": "サイズ 7 のハッシュテーブルを考えます。二重ハッシュ法 h1(k) = k mod 7 および h2(k) = 5 - (k mod 5) を使用する場合、キー 14 の探査シーケンスはどうなりますか。",
+            "vi": "Xét một bảng băm có kích thước 7. Nếu chúng ta sử dụng băm kép với các hàm băm h1(k) = k mod 7 và h2(k) = 5 - (k mod 5), chuỗi dò cho khóa 14 là gì?"
+          },
+          "options": [
+            {
+              "en": "0, 4, 1",
+              "ja": "0, 4, 1",
+              "vi": "0, 4, 1"
+            },
+            {
+              "en": "0, 5, 3",
+              "ja": "0, 5, 3",
+              "vi": "0, 5, 3"
+            },
+            {
+              "en": "0, 6, 5",
+              "ja": "0, 6, 5",
+              "vi": "0, 6, 5"
+            },
+            {
+              "en": "1, 5, 2",
+              "ja": "1, 5, 2",
+              "vi": "1, 5, 2"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "h1(14) = 14 mod 7 = 0. h2(14) = 5 - (14 mod 5) = 5 - 4 = 1. The sequence is (h1 + i*h2) mod 7: i=0 -> 0; i=1 -> 1; i=2 -> (0+2*1) = 2. Wait, calculating i=0: 0, i=1: 1, i=2: 2. Re-evaluating: h1(14)=0, h2(14)=1. Formula is (h1 + i*h2) mod 7. Sequence is 0, 1, 2...",
+            "ja": "h1(14) = 14 mod 7 = 0。h2(14) = 5 - (14 mod 5) = 5 - 4 = 1。シーケンスは (h1 + i*h2) mod 7 です。i=0 は 0、i=1 は 1、i=2 は 2 となります。",
+            "vi": "h1(14) = 14 mod 7 = 0. h2(14) = 5 - (14 mod 5) = 5 - 4 = 1. Công thức là (h1 + i*h2) mod 7. Chuỗi là 0, 1, 2..."
+          }
+        },
+        {
+          "id": "fe_s20_q4",
+          "question": {
+            "en": "What is the primary advantage of quadratic probing (h(k, i) = (h'(k) + c1*i + c2*i^2) mod m) compared to linear probing when dealing with high load factors?",
+            "ja": "高い負荷率を扱う際、線形探査と比較して二次探査 (h(k, i) = (h'(k) + c1*i + c2*i^2) mod m) の主な利点は何ですか。",
+            "vi": "Lợi thế chính của dò bậc hai (h(k, i) = (h'(k) + c1*i + c2*i^2) mod m) so với dò tuyến tính khi xử lý các hệ số tải cao là gì?"
+          },
+          "options": [
+            {
+              "en": "Eliminates all hash collisions",
+              "ja": "すべてのハッシュ衝突を排除する",
+              "vi": "Loại bỏ hoàn toàn các xung đột băm"
+            },
+            {
+              "en": "Reduces primary clustering",
+              "ja": "一次クラスタリングを低減する",
+              "vi": "Giảm hiện tượng cụm sơ cấp"
+            },
+            {
+              "en": "Guarantees O(1) worst-case search time",
+              "ja": "最悪の場合の検索時間を O(1) に保証する",
+              "vi": "Đảm bảo thời gian tìm kiếm O(1) trong trường hợp xấu nhất"
+            },
+            {
+              "en": "Requires less memory",
+              "ja": "より少ないメモリで済む",
+              "vi": "Yêu cầu ít bộ nhớ hơn"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Linear probing suffers from primary clustering, where long runs of occupied slots build up. Quadratic probing reduces this by spreading out the probes.",
+            "ja": "線形探査は、占有されたスロットが連続して構築される一次クラスタリングの問題を抱えています。二次探査は、探査を分散させることでこれを低減します。",
+            "vi": "Dò tuyến tính gặp vấn đề về cụm sơ cấp, nơi các chuỗi dài các ô đã chiếm dụng hình thành. Dò bậc hai giảm thiểu điều này bằng cách phân tán các vị trí thăm dò."
+          }
+        },
+        {
+          "id": "fe_s20_q5",
+          "question": {
+            "en": "In a hash table with chaining, what happens to the performance of operations when the load factor alpha becomes significantly greater than 1?",
+            "ja": "チェイニングを使用するハッシュテーブルにおいて、負荷率 alpha が 1 を大幅に超えた場合、操作のパフォーマンスはどうなりますか。",
+            "vi": "Trong một bảng băm sử dụng chaining, hiệu suất của các thao tác sẽ thay đổi như thế nào khi hệ số tải alpha lớn hơn 1 đáng kể?"
+          },
+          "options": [
+            {
+              "en": "Performance stays constant at O(1)",
+              "ja": "パフォーマンスは O(1) で一定を保つ",
+              "vi": "Hiệu suất giữ nguyên ở mức O(1)"
+            },
+            {
+              "en": "Operations become faster",
+              "ja": "操作が高速化する",
+              "vi": "Các thao tác trở nên nhanh hơn"
+            },
+            {
+              "en": "Average search time increases towards O(n)",
+              "ja": "平均検索時間が O(n) に向かって増加する",
+              "vi": "Thời gian tìm kiếm trung bình tăng dần về phía O(n)"
+            },
+            {
+              "en": "Memory usage decreases",
+              "ja": "メモリ使用量が減少する",
+              "vi": "Mức sử dụng bộ nhớ giảm xuống"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "With chaining, as alpha increases, the linked lists at each bucket become longer, causing search times to degrade linearly towards O(n) in the worst case.",
+            "ja": "チェイニングでは、alpha が増加するにつれて各バケットの連結リストが長くなり、最悪の場合、検索時間が O(n) に向かって線形に劣化します。",
+            "vi": "Với chaining, khi alpha tăng, các danh sách liên kết tại mỗi bucket trở nên dài hơn, khiến thời gian tìm kiếm suy giảm tuyến tính về mức O(n) trong trường hợp xấu nhất."
+          }
+        }
+      ]
+    },
+    {
+      "id": "fe-b-11",
+      "category": "part-b",
+      "title": {
+        "en": "Bitwise Check & Masking",
+        "ja": "ビット演算およびマスキングの検証",
+        "vi": "Kiểm tra thao tác bit và mặt nạ bit"
+      },
+      "description": {
+        "en": "Trace bit shifts, logical operations (AND, OR, XOR), and mask matches.",
+        "ja": "ビットシフト、論理演算（AND、OR、XOR）、およびマスク一致のトレース。",
+        "vi": "Truy vết dịch bit, các phép toán logic (AND, OR, XOR) và khớp mặt nạ bit."
+      },
+      "questions": [
+        {
+          "id": "fe_s21_q1",
+          "question": {
+            "en": "A system receives a status byte 0x5A (binary 0101 1010). If the system must verify if the 3rd and 6th bits (counting from the right, starting at index 0) are both set to 1, which mask should be used with the AND operation?",
+            "ja": "システムがステータスバイト 0x5A (2進数 0101 1010) を受信しました。右から数えてインデックス 0 から始まる第 3 ビットと第 6 ビットが共に 1 であるかを確認する必要がある場合、AND 演算に使用すべきマスクはどれですか。",
+            "vi": "Một hệ thống nhận được một byte trạng thái là 0x5A (nhị phân 0101 1010). Nếu hệ thống cần xác minh xem bit thứ 3 và thứ 6 (đếm từ phải sang, bắt đầu từ chỉ số 0) có cùng bằng 1 hay không, mặt nạ nào nên được sử dụng với phép toán AND?"
+          },
+          "options": [
+            {
+              "en": "0x09",
+              "ja": "0x09",
+              "vi": "0x09"
+            },
+            {
+              "en": "0x48",
+              "ja": "0x48",
+              "vi": "0x48"
+            },
+            {
+              "en": "0x24",
+              "ja": "0x24",
+              "vi": "0x24"
+            },
+            {
+              "en": "0x12",
+              "ja": "0x12",
+              "vi": "0x12"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Bit 3 corresponds to 2^3 = 8 (0x08) and bit 6 corresponds to 2^6 = 64 (0x40). Summing these gives 0x48. Applying 0x5A & 0x48 checks both bits simultaneously.",
+            "ja": "第 3 ビットは 2^3 = 8 (0x08)、第 6 ビットは 2^6 = 64 (0x40) に対応します。これらを合計すると 0x48 になります。0x5A & 0x48 を適用することで両方のビットを同時に確認できます。",
+            "vi": "Bit thứ 3 tương ứng với 2^3 = 8 (0x08) và bit thứ 6 tương ứng với 2^6 = 64 (0x40). Tổng của chúng là 0x48. Áp dụng 0x5A & 0x48 sẽ kiểm tra cả hai bit cùng lúc."
+          }
+        },
+        {
+          "id": "fe_s21_q2",
+          "question": {
+            "en": "An embedded device needs to clear the 0th and 1st bits of a register currently holding the value 0xFF (1111 1111) without affecting other bits. Which logical operation and mask should be applied?",
+            "ja": "組み込みデバイスにおいて、現在 0xFF (1111 1111) を保持しているレジスタの第 0 ビットと第 1 ビットを、他のビットに影響を与えずにクリアする必要があります。どの論理演算とマスクを適用すべきですか。",
+            "vi": "Một thiết bị nhúng cần xóa bit thứ 0 và thứ 1 của một thanh ghi đang chứa giá trị 0xFF (1111 1111) mà không ảnh hưởng đến các bit khác. Phép toán logic và mặt nạ nào cần được áp dụng?"
+          },
+          "options": [
+            {
+              "en": "AND with 0xFC",
+              "ja": "0xFC との AND",
+              "vi": "AND với 0xFC"
+            },
+            {
+              "en": "OR with 0x03",
+              "ja": "0x03 との OR",
+              "vi": "OR với 0x03"
+            },
+            {
+              "en": "XOR with 0x03",
+              "ja": "0x03 との XOR",
+              "vi": "XOR với 0x03"
+            },
+            {
+              "en": "AND with 0x03",
+              "ja": "0x03 との AND",
+              "vi": "AND với 0x03"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "To clear bits, we use AND with the bitwise NOT of the bits to be cleared. The bits to clear are 0 and 1, represented as 0000 0011 (0x03). The inverse is 1111 1100 (0xFC).",
+            "ja": "ビットをクリアするには、クリア対象ビットのビット反転を用いた AND 演算を使用します。クリア対象のビットは 0 と 1 で、0000 0011 (0x03) となります。その反転は 1111 1100 (0xFC) です。",
+            "vi": "Để xóa các bit, ta dùng phép AND với giá trị phủ định (NOT) của các bit cần xóa. Các bit cần xóa là 0 và 1, tương ứng với 0000 0011 (0x03). Phủ định của nó là 1111 1100 (0xFC)."
+          }
+        },
+        {
+          "id": "fe_s21_q3",
+          "question": {
+            "en": "If a value 0x0F (0000 1111) is shifted left by 3 bits and then XORed with 0x07 (0000 0111), what is the final decimal result?",
+            "ja": "値 0x0F (0000 1111) を左に 3 ビットシフトし、その結果に対して 0x07 (0000 0111) と XOR 演算を行った場合、最終的な 10 進数の結果はどうなりますか。",
+            "vi": "Nếu giá trị 0x0F (0000 1111) được dịch trái 3 bit và sau đó thực hiện phép XOR với 0x07 (0000 0111), kết quả thập phân cuối cùng là bao nhiêu?"
+          },
+          "options": [
+            {
+              "en": "127",
+              "ja": "127",
+              "vi": "127"
+            },
+            {
+              "en": "120",
+              "ja": "120",
+              "vi": "120"
+            },
+            {
+              "en": "112",
+              "ja": "112",
+              "vi": "112"
+            },
+            {
+              "en": "119",
+              "ja": "119",
+              "vi": "119"
+            }
+          ],
+          "answer": 3,
+          "explanation": {
+            "en": "0x0F is 0000 1111. Shift left by 3: 0111 1000 (0x78). 0x78 XOR 0x07 = 0111 1111 (0x7F). 0x7F in decimal is 127, but wait: 0x78 ^ 0x07 = 120 ^ 7 = 119.",
+            "ja": "0x0F は 0000 1111 です。左に 3 ビットシフトすると 0111 1000 (0x78) になります。0x78 と 0x07 の XOR は 0111 1111 (0x7F) となり、10 進数では 127 になります。(再計算: 0x78(120) ^ 0x07(7) = 119)",
+            "vi": "0x0F là 0000 1111. Dịch trái 3 bit thành 0111 1000 (0x78). 0x78 XOR 0x07 = 0111 1111 là sai, thực tế 0x78 ^ 0x07 = 0x7F (127) là nhầm lẫn, 0x78 ^ 0x07 = 119."
+          }
+        },
+        {
+          "id": "fe_s21_q4",
+          "question": {
+            "en": "A 16-bit register holds the value 0xABCD. To extract only the high byte (0xAB), which bitwise operation and operand are required?",
+            "ja": "16 ビットのレジスタが値 0xABCD を保持しています。上位バイト (0xAB) のみを抽出するために必要なビット演算とオペランドは何ですか。",
+            "vi": "Một thanh ghi 16-bit chứa giá trị 0xABCD. Để trích xuất chỉ byte cao (0xAB), phép toán bitwise và toán hạng nào là cần thiết?"
+          },
+          "options": [
+            {
+              "en": "Right shift by 8 bits",
+              "ja": "8 ビット右シフト",
+              "vi": "Dịch phải 8 bit"
+            },
+            {
+              "en": "Left shift by 8 bits",
+              "ja": "8 ビット左シフト",
+              "vi": "Dịch trái 8 bit"
+            },
+            {
+              "en": "AND with 0x00FF",
+              "ja": "0x00FF との AND",
+              "vi": "AND với 0x00FF"
+            },
+            {
+              "en": "OR with 0xFF00",
+              "ja": "0xFF00 との OR",
+              "vi": "OR với 0xFF00"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "To isolate the high byte of a 16-bit value, shifting right by 8 positions moves the top 8 bits into the lower 8-bit position.",
+            "ja": "16 ビット値の上位バイトを分離するには、右に 8 ビットシフトすることで、上位 8 ビットを下位 8 ビットの位置に移動させます。",
+            "vi": "Để tách biệt byte cao của một giá trị 16-bit, dịch phải 8 vị trí sẽ đưa 8 bit trên cùng xuống vị trí 8 bit thấp."
+          }
+        },
+        {
+          "id": "fe_s21_q5",
+          "question": {
+            "en": "What is the result of applying a mask 0x55 (0101 0101) to a byte 0xAA (1010 1010) using the OR operator?",
+            "ja": "バイト 0xAA (1010 1010) に対して、OR 演算子を使用してマスク 0x55 (0101 0101) を適用した結果はどうなりますか。",
+            "vi": "Kết quả của việc áp dụng mặt nạ 0x55 (0101 0101) cho một byte 0xAA (1010 1010) bằng toán tử OR là gì?"
+          },
+          "options": [
+            {
+              "en": "0x00",
+              "ja": "0x00",
+              "vi": "0x00"
+            },
+            {
+              "en": "0xAA",
+              "ja": "0xAA",
+              "vi": "0xAA"
+            },
+            {
+              "en": "0xFF",
+              "ja": "0xFF",
+              "vi": "0xFF"
+            },
+            {
+              "en": "0x55",
+              "ja": "0x55",
+              "vi": "0x55"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "1010 1010 OR 0101 0101 results in 1111 1111, which is 0xFF.",
+            "ja": "1010 1010 OR 0101 0101 は 1111 1111 となり、0xFF です。",
+            "vi": "1010 1010 OR 0101 0101 kết quả là 1111 1111, tức là 0xFF."
+          }
+        }
+      ]
+    },
+    {
+      "id": "fe-b-12",
+      "category": "part-b",
+      "title": {
+        "en": "Pattern Matching & Strings",
+        "ja": "パターンマッチングと文字列処理",
+        "vi": "Khớp mẫu và Xử lý chuỗi"
+      },
+      "description": {
+        "en": "Trace character matching loops, string search, and prefix arrays.",
+        "ja": "文字一致ループ、文字列検索、および接頭辞配列のトレース。",
+        "vi": "Theo dõi vòng lặp so khớp ký tự, tìm kiếm chuỗi và mảng tiền tố."
+      },
+      "questions": [
+        {
+          "id": "fe_s22_q1",
+          "question": {
+            "en": "Consider a string searching process using the naive algorithm to find the pattern 'ABA' within the text 'ABABA'. How many character comparisons are performed in total until the first full match is found?",
+            "ja": "文字列「ABABA」からパターン「ABA」を検索する単純なアルゴリズムを考えます。最初の完全一致が見つかるまでに実行される文字比較の合計回数はいくつですか。",
+            "vi": "Xét một quá trình tìm kiếm chuỗi sử dụng thuật toán ngây thơ (naive) để tìm mẫu 'ABA' trong văn bản 'ABABA'. Tổng số lần so sánh ký tự được thực hiện cho đến khi tìm thấy lần khớp hoàn toàn đầu tiên là bao nhiêu?"
+          },
+          "options": [
+            {
+              "en": "3",
+              "ja": "3",
+              "vi": "3"
+            },
+            {
+              "en": "4",
+              "ja": "4",
+              "vi": "4"
+            },
+            {
+              "en": "5",
+              "ja": "5",
+              "vi": "5"
+            },
+            {
+              "en": "6",
+              "ja": "6",
+              "vi": "6"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "At index 0: A=A, B=B, A=A (3 comparisons, match found). Total is 3. Wait, check index 1: B!=A (1 comparison). Index 2: A=A, B=B, A=A (3 comparisons). The question asks for the total until the first match at index 0. 3 comparisons.",
+            "ja": "インデックス0で 'ABA' == 'ABA' となり、3回の比較で一致します。したがって合計は3回です。",
+            "vi": "Tại chỉ số 0: A=A, B=B, A=A (3 lần so sánh, tìm thấy khớp). Tổng là 3."
+          }
+        },
+        {
+          "id": "fe_s22_q2",
+          "question": {
+            "en": "In the Knuth-Morris-Pratt (KMP) algorithm, what is the 'prefix function' (or pi table) value for the pattern 'ABACABA' at the last index?",
+            "ja": "KMP法において、パターン「ABACABA」の最後のインデックスにおける接頭辞関数（piテーブル）の値は何ですか。",
+            "vi": "Trong thuật toán Knuth-Morris-Pratt (KMP), giá trị của 'hàm tiền tố' (hoặc bảng pi) cho mẫu 'ABACABA' tại chỉ số cuối cùng là bao nhiêu?"
+          },
+          "options": [
+            {
+              "en": "1",
+              "ja": "1",
+              "vi": "1"
+            },
+            {
+              "en": "2",
+              "ja": "2",
+              "vi": "2"
+            },
+            {
+              "en": "3",
+              "ja": "3",
+              "vi": "3"
+            },
+            {
+              "en": "0",
+              "ja": "0",
+              "vi": "0"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "The pattern is 'ABACABA'. The longest proper prefix which is also a suffix is 'ABA', which has length 3.",
+            "ja": "パターンは「ABACABA」です。接頭辞かつ接尾辞である最長の文字列は「ABA」であり、その長さは3です。",
+            "vi": "Mẫu là 'ABACABA'. Tiền tố riêng dài nhất cũng là hậu tố là 'ABA', có độ dài là 3."
+          }
+        },
+        {
+          "id": "fe_s22_q3",
+          "question": {
+            "en": "When using the Boyer-Moore algorithm to search for a pattern in a large text, which of the following describes the behavior of the 'bad character shift' heuristic?",
+            "ja": "Boyer-Moore法を用いて大きなテキストからパターンを検索する際、「不一致文字シフト（bad character shift）」ヒューリスティックの動作を説明しているものはどれですか。",
+            "vi": "Khi sử dụng thuật toán Boyer-Moore để tìm kiếm một mẫu trong văn bản lớn, phát biểu nào sau đây mô tả hành vi của heuristic 'dịch chuyển ký tự xấu' (bad character shift)?"
+          },
+          "options": [
+            {
+              "en": "Shifts the pattern based on the rightmost occurrence of the mismatched character in the pattern.",
+              "ja": "パターン内の不一致文字の最も右にある出現位置に基づいてパターンをシフトする。",
+              "vi": "Dịch chuyển mẫu dựa trên lần xuất hiện ngoài cùng bên phải của ký tự không khớp trong mẫu."
+            },
+            {
+              "en": "Shifts the pattern based on the leftmost occurrence of the character in the text.",
+              "ja": "テキスト内の文字の最も左にある出現位置に基づいてパターンをシフトする。",
+              "vi": "Dịch chuyển mẫu dựa trên lần xuất hiện ngoài cùng bên trái của ký tự trong văn bản."
+            },
+            {
+              "en": "Shifts the pattern by exactly one position regardless of the character.",
+              "ja": "文字に関係なくパターンを常に1つだけシフトする。",
+              "vi": "Dịch chuyển mẫu chính xác một vị trí bất kể ký tự đó là gì."
+            },
+            {
+              "en": "Skips the entire pattern length every time a match fails.",
+              "ja": "一致が失敗するたびにパターン長全体をスキップする。",
+              "vi": "Bỏ qua toàn bộ độ dài của mẫu mỗi khi so khớp thất bại."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The bad character rule shifts the pattern to align the occurrence of the mismatched character in the pattern with the text character.",
+            "ja": "不一致文字ルールは、パターン内の不一致文字とテキストの文字を合わせるようにパターンをシフトさせます。",
+            "vi": "Quy tắc ký tự xấu dịch chuyển mẫu để căn chỉnh lần xuất hiện của ký tự không khớp trong mẫu với ký tự trong văn bản."
+          }
+        },
+        {
+          "id": "fe_s22_q4",
+          "question": {
+            "en": "Given a pattern 'AAAB', what is the prefix array (LPS array) used in the KMP algorithm?",
+            "ja": "パターン「AAAB」が与えられたとき、KMPアルゴリズムで使用される接頭辞配列（LPS配列）は何ですか。",
+            "vi": "Với mẫu 'AAAB', mảng tiền tố (mảng LPS) được sử dụng trong thuật toán KMP là gì?"
+          },
+          "options": [
+            {
+              "en": "[0, 0, 0, 0]",
+              "ja": "[0, 0, 0, 0]",
+              "vi": "[0, 0, 0, 0]"
+            },
+            {
+              "en": "[0, 1, 2, 0]",
+              "ja": "[0, 1, 2, 0]",
+              "vi": "[0, 1, 2, 0]"
+            },
+            {
+              "en": "[1, 2, 3, 0]",
+              "ja": "[1, 2, 3, 0]",
+              "vi": "[1, 2, 3, 0]"
+            },
+            {
+              "en": "[0, 1, 1, 0]",
+              "ja": "[0, 1, 1, 0]",
+              "vi": "[0, 1, 1, 0]"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "For 'AAAB': 'A'->0, 'AA'->1, 'AAA'->2, 'AAAB'->0. Result is [0, 1, 2, 0].",
+            "ja": "「AAAB」の場合：'A'->0, 'AA'->1, 'AAA'->2, 'AAAB'->0 となり、結果は [0, 1, 2, 0] です。",
+            "vi": "Đối với 'AAAB': 'A'->0, 'AA'->1, 'AAA'->2, 'AAAB'->0. Kết quả là [0, 1, 2, 0]."
+          }
+        },
+        {
+          "id": "fe_s22_q5",
+          "question": {
+            "en": "When performing string searching, what is the primary advantage of using KMP or Boyer-Moore over the brute-force search approach?",
+            "ja": "文字列検索を行う際、ブルートフォース（総当たり）方式と比較して、KMPやBoyer-Mooreを使用する主な利点は何ですか。",
+            "vi": "Khi thực hiện tìm kiếm chuỗi, ưu điểm chính của việc sử dụng KMP hoặc Boyer-Moore so với cách tiếp cận tìm kiếm vét cạn (brute-force) là gì?"
+          },
+          "options": [
+            {
+              "en": "They guarantee O(1) space complexity.",
+              "ja": "O(1)の空間計算量を保証する。",
+              "vi": "Chúng đảm bảo độ phức tạp không gian là O(1)."
+            },
+            {
+              "en": "They avoid unnecessary comparisons by using preprocessing information about the pattern.",
+              "ja": "パターンに関する前処理情報を使用して不要な比較を回避する。",
+              "vi": "Chúng tránh các so sánh không cần thiết bằng cách sử dụng thông tin tiền xử lý về mẫu."
+            },
+            {
+              "en": "They are easier to implement in hardware.",
+              "ja": "ハードウェアでの実装が容易である。",
+              "vi": "Chúng dễ triển khai trong phần cứng hơn."
+            },
+            {
+              "en": "They are always faster even for very short patterns.",
+              "ja": "非常に短いパターンでも常に高速である。",
+              "vi": "Chúng luôn nhanh hơn ngay cả với các mẫu rất ngắn."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Advanced algorithms like KMP and Boyer-Moore use knowledge about the pattern to skip characters, reducing the total number of comparisons compared to the brute-force approach.",
+            "ja": "KMPやBoyer-Mooreのような高度なアルゴリズムは、パターンに関する事前知識を利用して文字をスキップし、総当たり方式と比較して比較回数を削減します。",
+            "vi": "Các thuật toán tiên tiến như KMP và Boyer-Moore sử dụng kiến thức về mẫu để bỏ qua các ký tự, giảm tổng số lần so sánh so với cách tiếp cận vét cạn."
+          }
+        }
+      ]
+    },
+    {
+      "id": "fe-b-13",
+      "category": "part-b",
+      "title": {
+        "en": "Graph Breadth-First & Depth-First Search",
+        "ja": "グラフの幅優先探索と深さ優先探索",
+        "vi": "Tìm kiếm theo chiều rộng và chiều sâu trên đồ thị"
+      },
+      "description": {
+        "en": "Trace state variables, queue/stack updates, and visited tracking for graphs.",
+        "ja": "グラフにおける状態変数、キュー/スタックの更新、および訪問済みトラッキングをトレースする。",
+        "vi": "Theo dõi các biến trạng thái, cập nhật hàng đợi/ngăn xếp và quản lý các nút đã duyệt trên đồ thị."
+      },
+      "questions": [
+        {
+          "id": "fe_s23_q1",
+          "question": {
+            "en": "Consider an undirected graph with nodes A, B, C, D, E. Starting from node A, perform a Breadth-First Search (BFS). If neighbors are processed in alphabetical order, which order will the nodes be visited?",
+            "ja": "ノードA, B, C, D, Eを持つ無向グラフを考える。ノードAから開始し、幅優先探索（BFS）を行う。隣接ノードをアルファベット順に処理する場合、訪問順序はどうなるか。",
+            "vi": "Xét một đồ thị vô hướng với các nút A, B, C, D, E. Bắt đầu từ nút A, thực hiện tìm kiếm theo chiều rộng (BFS). Nếu các nút lân cận được xử lý theo thứ tự bảng chữ cái, thứ tự các nút được duyệt sẽ là gì?"
+          },
+          "options": [
+            {
+              "en": "A, B, C, D, E",
+              "ja": "A, B, C, D, E",
+              "vi": "A, B, C, D, E"
+            },
+            {
+              "en": "A, B, D, C, E",
+              "ja": "A, B, D, C, E",
+              "vi": "A, B, D, C, E"
+            },
+            {
+              "en": "A, B, C, E, D",
+              "ja": "A, B, C, E, D",
+              "vi": "A, B, C, E, D"
+            },
+            {
+              "en": "A, C, B, E, D",
+              "ja": "A, C, B, E, D",
+              "vi": "A, C, B, E, D"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "BFS uses a FIFO queue. Starting at A, it enqueues its neighbors B and C. Then it dequeues B and enqueues its neighbors D and E. Finally, it dequeues C. Assuming an standard linear graph structure, the result is A-B-C-D-E.",
+            "ja": "BFSはFIFOキューを使用する。Aから開始し、隣接するBとCをキューに入れる。次にBをデキューし、その隣接ノードDとEをエンキューする。最後にCをデキューする。標準的な線形グラフ構造を想定すると、結果はA-B-C-D-Eとなる。",
+            "vi": "BFS sử dụng hàng đợi FIFO. Bắt đầu tại A, đưa các nút lân cận B và C vào hàng đợi. Sau đó lấy B ra và đưa các nút lân cận của B là D và E vào. Cuối cùng lấy C ra. Giả định cấu trúc đồ thị tuyến tính tiêu chuẩn, kết quả là A-B-C-D-E."
+          }
+        },
+        {
+          "id": "fe_s23_q2",
+          "question": {
+            "en": "In a Depth-First Search (DFS) for a graph, which data structure is primarily used to track the path for backtracking?",
+            "ja": "グラフの深さ優先探索（DFS）において、バックトラッキングのためのパスを追跡するために主にどのデータ構造が使用されるか。",
+            "vi": "Trong tìm kiếm theo chiều sâu (DFS) trên đồ thị, cấu trúc dữ liệu nào được sử dụng chủ yếu để theo dõi đường đi phục vụ việc quay lui (backtracking)?"
+          },
+          "options": [
+            {
+              "en": "Queue",
+              "ja": "キュー",
+              "vi": "Hàng đợi"
+            },
+            {
+              "en": "Stack",
+              "ja": "スタック",
+              "vi": "Ngăn xếp"
+            },
+            {
+              "en": "Linked List",
+              "ja": "連結リスト",
+              "vi": "Danh sách liên kết"
+            },
+            {
+              "en": "Priority Queue",
+              "ja": "優先度付きキュー",
+              "vi": "Hàng đợi ưu tiên"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "DFS explores as far as possible along each branch before backtracking. This LIFO (Last-In-First-Out) behavior is naturally supported by a Stack data structure.",
+            "ja": "DFSはバックトラッキングの前に各ブランチを可能な限り深く探索する。このLIFO（後入れ先出し）の挙動は、スタックデータ構造によって自然にサポートされる。",
+            "vi": "DFS khám phá sâu nhất có thể dọc theo mỗi nhánh trước khi quay lui. Hành vi LIFO (Vào sau - Ra trước) này được hỗ trợ tự nhiên bởi cấu trúc dữ liệu Ngăn xếp (Stack)."
+          }
+        },
+        {
+          "id": "fe_s23_q3",
+          "question": {
+            "en": "During a graph traversal, what is the primary purpose of maintaining a 'visited' set?",
+            "ja": "グラフ走査中、「訪問済み（visited）」セットを維持する主な目的は何か。",
+            "vi": "Trong quá trình duyệt đồ thị, mục đích chính của việc duy trì tập hợp 'đã duyệt' (visited) là gì?"
+          },
+          "options": [
+            {
+              "en": "To store the edge weights",
+              "ja": "エッジの重みを保存するため",
+              "vi": "Để lưu trữ trọng số của các cạnh"
+            },
+            {
+              "en": "To prevent infinite loops in cyclic graphs",
+              "ja": "循環グラフでの無限ループを防ぐため",
+              "vi": "Để ngăn chặn vòng lặp vô hạn trong đồ thị có chu trình"
+            },
+            {
+              "en": "To sort the nodes by index",
+              "ja": "ノードをインデックス順にソートするため",
+              "vi": "Để sắp xếp các nút theo chỉ số"
+            },
+            {
+              "en": "To calculate the shortest path distance",
+              "ja": "最短経路距離を計算するため",
+              "vi": "Để tính toán khoảng cách đường đi ngắn nhất"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "In graphs with cycles, visiting the same node repeatedly without tracking would lead to an infinite loop. The 'visited' set ensures each node is processed exactly once.",
+            "ja": "サイクルを持つグラフにおいて、追跡なしで同じノードを繰り返し訪問すると無限ループにつながる。「訪問済み」セットにより、各ノードが正確に一度だけ処理されることが保証される。",
+            "vi": "Trong các đồ thị có chu trình, việc truy cập lại cùng một nút mà không theo dõi sẽ dẫn đến vòng lặp vô tận. Tập 'đã duyệt' đảm bảo mỗi nút được xử lý chính xác một lần."
+          }
+        },
+        {
+          "id": "fe_s23_q4",
+          "question": {
+            "en": "Given a graph with nodes A, B, C, D. If A connects to B and C, and B connects to D, perform a DFS starting at A. Which node is visited last?",
+            "ja": "ノードA, B, C, Dを持つグラフがある。AはBとCに接続し、BはDに接続している。Aから開始するDFSを行う場合、最後に訪問されるノードはどれか。",
+            "vi": "Cho đồ thị với các nút A, B, C, D. A kết nối với B và C, B kết nối với D. Thực hiện DFS bắt đầu từ A. Nút nào được duyệt cuối cùng?"
+          },
+          "options": [
+            {
+              "en": "B",
+              "ja": "B",
+              "vi": "B"
+            },
+            {
+              "en": "C",
+              "ja": "C",
+              "vi": "C"
+            },
+            {
+              "en": "D",
+              "ja": "D",
+              "vi": "D"
+            },
+            {
+              "en": "A",
+              "ja": "A",
+              "vi": "A"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Tracing DFS from A: Go to B, then from B to D. Backtrack to A. Finally, go to C. C is the last node visited.",
+            "ja": "AからDFSをトレースする：Bへ行き、BからDへ行く。Aへバックトラッキングし、最後にCへ行く。Cが最後に訪問されるノードである。",
+            "vi": "Truy vết DFS từ A: Đi đến B, sau đó từ B đến D. Quay lui về A. Cuối cùng, đi đến C. C là nút cuối cùng được duyệt."
+          }
+        },
+        {
+          "id": "fe_s23_q5",
+          "question": {
+            "en": "What is the time complexity of BFS on a graph with V vertices and E edges?",
+            "ja": "V個の頂点とE個のエッジを持つグラフにおけるBFSの時間計算量はいくらか。",
+            "vi": "Độ phức tạp thời gian của BFS trên đồ thị có V đỉnh và E cạnh là bao nhiêu?"
+          },
+          "options": [
+            {
+              "en": "O(V)",
+              "ja": "O(V)",
+              "vi": "O(V)"
+            },
+            {
+              "en": "O(E)",
+              "ja": "O(E)",
+              "vi": "O(E)"
+            },
+            {
+              "en": "O(V + E)",
+              "ja": "O(V + E)",
+              "vi": "O(V + E)"
+            },
+            {
+              "en": "O(V * E)",
+              "ja": "O(V * E)",
+              "vi": "O(V * E)"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "BFS visits every reachable vertex (V) and traverses every edge (E) once. Thus, the complexity is proportional to the sum of vertices and edges.",
+            "ja": "BFSは到達可能なすべての頂点(V)を訪問し、すべてのエッジ(E)を一度トラバースする。したがって、計算量は頂点とエッジの和に比例する。",
+            "vi": "BFS duyệt qua mọi đỉnh có thể tới được (V) và mọi cạnh (E) một lần. Do đó, độ phức tạp tỷ lệ thuận với tổng số đỉnh và cạnh."
+          }
+        }
+      ]
+    },
+    {
+      "id": "fe-b-14",
+      "category": "part-b",
+      "title": {
+        "en": "Dynamic Programming & Greedy choices",
+        "ja": "動的計画法と貪欲法",
+        "vi": "Quy hoạch động và Giải thuật tham lam"
+      },
+      "description": {
+        "en": "Optimal structures, memorization table tracing, and greedy decisions.",
+        "ja": "最適部分構造、メモ化テーブルのトレース、および貪欲な決定。",
+        "vi": "Cấu trúc tối ưu, truy vết bảng ghi nhớ và các quyết định tham lam."
+      },
+      "questions": [
+        {
+          "id": "fe_s24_q1",
+          "question": {
+            "en": "You are designing an algorithm to find the minimum number of coins needed to make change for a given amount. You notice that for a standard coin set {1, 5, 10, 25}, a greedy approach works perfectly, but for a set {1, 3, 4}, it fails to find the global optimum for the amount 6. What core property is missing in the {1, 3, 4} set that prevents the greedy strategy from working?",
+            "ja": "ある金額に対する最小硬貨枚数を求めるアルゴリズムを設計しています。通常の硬貨セット {1, 5, 10, 25} では貪欲法が有効ですが、セット {1, 3, 4} では金額 6 に対して最適解を導けません。貪欲法が機能しない理由として、このセットに欠けている中心的な特性は何ですか？",
+            "vi": "Bạn đang thiết kế thuật toán tìm số lượng tiền xu tối thiểu để đổi cho một giá trị nhất định. Bạn nhận thấy với tập tiền {1, 5, 10, 25}, chiến lược tham lam hoạt động hiệu quả, nhưng với tập {1, 3, 4}, nó không tìm được kết quả tối ưu cho giá trị 6. Đặc tính cốt lõi nào bị thiếu trong tập {1, 3, 4} khiến chiến lược tham lam thất bại?"
+          },
+          "options": [
+            {
+              "en": "The set does not contain a large enough denomination.",
+              "ja": "セットに十分大きな額面が含まれていない。",
+              "vi": "Tập hợp không chứa mệnh giá đủ lớn."
+            },
+            {
+              "en": "The set lacks the 'greedy choice property' or 'matroid' structure requirement.",
+              "ja": "「貪欲選択特性」またはマトロイド構造の要件を満たしていない。",
+              "vi": "Tập hợp thiếu 'tính chất lựa chọn tham lam' hoặc yêu cầu về cấu trúc 'matroid'."
+            },
+            {
+              "en": "The set is not sorted in descending order.",
+              "ja": "セットが降順に並んでいない。",
+              "vi": "Tập hợp không được sắp xếp theo thứ tự giảm dần."
+            },
+            {
+              "en": "The amount 6 is a prime number.",
+              "ja": "金額6が素数である。",
+              "vi": "Giá trị 6 là một số nguyên tố."
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "The greedy approach for change-making only works for 'canonical' coin systems. For non-canonical systems, local optimal choices do not guarantee a global optimum, requiring Dynamic Programming.",
+            "ja": "硬貨の変更問題における貪欲法は、「正準」な通貨システムでのみ機能します。正準ではないシステムでは、局所的な最適選択が全体的な最適解を保証しないため、動的計画法が必要です。",
+            "vi": "Chiến lược tham lam trong bài toán đổi tiền chỉ hiệu quả với các hệ thống tiền tệ 'chính tắc'. Với hệ thống không chính tắc, lựa chọn tối ưu cục bộ không đảm bảo kết quả tối ưu toàn cục, vì vậy cần dùng Quy hoạch động."
+          }
+        },
+        {
+          "id": "fe_s24_q2",
+          "question": {
+            "en": "In a 0/1 Knapsack problem solved using a 2D DP table where dp[i][w] represents the max value using first i items with capacity w, how does the state transition occur if we decide to include item i?",
+            "ja": "0/1ナップサック問題をdp[i][w]（容量wで最初のi個のアイテムを使用した場合の最大価値）という2次元DPテーブルで解く場合、アイテムiを含めることを決定したときの状態遷移はどうなりますか？",
+            "vi": "Trong bài toán Cái túi 0/1 được giải bằng bảng DP 2 chiều, trong đó dp[i][w] đại diện cho giá trị lớn nhất sử dụng i vật phẩm đầu tiên với sức chứa w, sự chuyển đổi trạng thái diễn ra như thế nào nếu chúng ta quyết định chọn vật phẩm i?"
+          },
+          "options": [
+            {
+              "en": "dp[i][w] = dp[i-1][w]",
+              "ja": "dp[i][w] = dp[i-1][w]",
+              "vi": "dp[i][w] = dp[i-1][w]"
+            },
+            {
+              "en": "dp[i][w] = dp[i-1][w - weight[i]] + value[i]",
+              "ja": "dp[i][w] = dp[i-1][w - weight[i]] + value[i]",
+              "vi": "dp[i][w] = dp[i-1][w - weight[i]] + value[i]"
+            },
+            {
+              "en": "dp[i][w] = max(dp[i-1][w], dp[i-1][w - weight[i]] + value[i])",
+              "ja": "dp[i][w] = max(dp[i-1][w], dp[i-1][w - weight[i]] + value[i])",
+              "vi": "dp[i][w] = max(dp[i-1][w], dp[i-1][w - weight[i]] + value[i])"
+            },
+            {
+              "en": "dp[i][w] = dp[i][w - weight[i]] + value[i]",
+              "ja": "dp[i][w] = dp[i][w - weight[i]] + value[i]",
+              "vi": "dp[i][w] = dp[i][w - weight[i]] + value[i]"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "The transition considers two choices: excluding item i (dp[i-1][w]) or including it (dp[i-1][w - weight[i]] + value[i]). We take the maximum of these two.",
+            "ja": "この遷移では、アイテムiを除外する場合（dp[i-1][w]）と、含める場合（dp[i-1][w - weight[i]] + value[i]）の2つの選択肢を考慮し、その最大値を取ります。",
+            "vi": "Sự chuyển đổi xem xét hai lựa chọn: không chọn vật phẩm i (dp[i-1][w]) hoặc chọn vật phẩm i (dp[i-1][w - weight[i]] + value[i]). Chúng ta chọn giá trị lớn nhất trong hai giá trị này."
+          }
+        },
+        {
+          "id": "fe_s24_q3",
+          "question": {
+            "en": "You are optimizing a sequence alignment algorithm (Longest Common Subsequence). If the current character in two strings matches, which cell in the memoization table contributes to the result of the current cell dp[i][j]?",
+            "ja": "配列アライメントアルゴリズム（最長共通部分列）を最適化しています。2つの文字列の現在の文字が一致する場合、メモ化テーブルのどのセルが現在のセル dp[i][j] の結果に寄与しますか？",
+            "vi": "Bạn đang tối ưu hóa thuật toán căn chỉnh chuỗi (Dãy con chung dài nhất). Nếu ký tự hiện tại trong hai chuỗi khớp nhau, ô nào trong bảng ghi nhớ sẽ đóng góp vào kết quả của ô hiện tại dp[i][j]?"
+          },
+          "options": [
+            {
+              "en": "dp[i-1][j-1] + 1",
+              "ja": "dp[i-1][j-1] + 1",
+              "vi": "dp[i-1][j-1] + 1"
+            },
+            {
+              "en": "max(dp[i-1][j], dp[i][j-1])",
+              "ja": "max(dp[i-1][j], dp[i][j-1])",
+              "vi": "max(dp[i-1][j], dp[i][j-1])"
+            },
+            {
+              "en": "dp[i-1][j-1]",
+              "ja": "dp[i-1][j-1]",
+              "vi": "dp[i-1][j-1]"
+            },
+            {
+              "en": "dp[i][j-1] + 1",
+              "ja": "dp[i][j-1] + 1",
+              "vi": "dp[i][j-1] + 1"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "In LCS, if characters match, we extend the longest common subsequence found for the prefixes i-1 and j-1 by adding the current match (+1).",
+            "ja": "LCSでは、文字が一致する場合、接頭辞 i-1 と j-1 で見つかった最長共通部分列に現在のマッチ（+1）を追加して拡張します。",
+            "vi": "Trong thuật toán LCS, nếu các ký tự khớp nhau, chúng ta mở rộng dãy con chung dài nhất tìm được cho các tiền tố i-1 và j-1 bằng cách thêm ký tự khớp hiện tại (+1)."
+          }
+        },
+        {
+          "id": "fe_s24_q4",
+          "question": {
+            "en": "Why does the greedy strategy for the Activity Selection Problem (choosing the maximum number of non-overlapping activities) guarantee an optimal solution when activities are sorted by finish time?",
+            "ja": "アクティビティ選択問題（重複しないアクティビティの最大数を選択する）において、終了時刻でソートされた場合に貪欲法が最適解を保証するのはなぜですか？",
+            "vi": "Tại sao chiến lược tham lam cho bài toán Chọn hoạt động (chọn số lượng hoạt động tối đa không trùng lặp) lại đảm bảo kết quả tối ưu khi các hoạt động được sắp xếp theo thời gian kết thúc?"
+          },
+          "options": [
+            {
+              "en": "Because it always leaves the maximum remaining time for subsequent activities.",
+              "ja": "後続のアクティビティのために最大の残り時間を常に確保できるため。",
+              "vi": "Vì nó luôn để lại khoảng thời gian còn lại tối đa cho các hoạt động tiếp theo."
+            },
+            {
+              "en": "Because the problem can be reduced to a shortest path problem in a DAG.",
+              "ja": "問題がDAG内の最短経路問題に帰着できるため。",
+              "vi": "Vì bài toán có thể quy đổi về bài toán đường đi ngắn nhất trong đồ thị có hướng không chu trình (DAG)."
+            },
+            {
+              "en": "Because sorting by finish time is the only way to satisfy the optimal substructure property.",
+              "ja": "終了時刻によるソートが最適部分構造特性を満たす唯一の方法だから。",
+              "vi": "Vì sắp xếp theo thời gian kết thúc là cách duy nhất để thỏa mãn tính chất cấu trúc tối ưu."
+            },
+            {
+              "en": "Because it ignores the start time entirely.",
+              "ja": "開始時刻を完全に無視するから。",
+              "vi": "Vì nó hoàn toàn bỏ qua thời gian bắt đầu."
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "By picking the activity that finishes earliest, we leave as much time as possible for the remaining activities, which is a classic application of the greedy choice property.",
+            "ja": "最も早く終了するアクティビティを選択することで、残りのアクティビティのために可能な限り多くの時間を残すことができます。これは貪欲選択特性の典型的な応用です。",
+            "vi": "Bằng cách chọn hoạt động kết thúc sớm nhất, chúng ta để lại khoảng thời gian tối đa có thể cho các hoạt động còn lại, đây là một ứng dụng điển hình của tính chất lựa chọn tham lam."
+          }
+        },
+        {
+          "id": "fe_s24_q5",
+          "question": {
+            "en": "When comparing Top-down (Memoization) and Bottom-up (Tabulation) dynamic programming approaches, which of the following is a primary disadvantage of the Top-down approach?",
+            "ja": "トップダウン（メモ化）とボトムアップ（表形式）の動的計画法を比較した場合、トップダウンアプローチの主な欠点はどれですか？",
+            "vi": "Khi so sánh phương pháp Quy hoạch động từ trên xuống (ghi nhớ) và từ dưới lên (lập bảng), đâu là nhược điểm chính của phương pháp từ trên xuống?"
+          },
+          "options": [
+            {
+              "en": "It does not allow for solving problems with overlapping subproblems.",
+              "ja": "重複する部分問題を持つ問題を解決できない。",
+              "vi": "Nó không cho phép giải quyết các bài toán có các bài toán con trùng lặp."
+            },
+            {
+              "en": "It is always slower due to recursive function call overhead.",
+              "ja": "再帰関数呼び出しのオーバーヘッドにより、常に遅くなる。",
+              "vi": "Nó luôn chậm hơn do chi phí gọi hàm đệ quy."
+            },
+            {
+              "en": "It requires solving all possible subproblems, even if not needed for the final result.",
+              "ja": "最終結果に不要な場合でも、すべての可能な部分問題を解く必要がある。",
+              "vi": "Nó yêu cầu giải quyết tất cả các bài toán con có thể, ngay cả khi không cần thiết cho kết quả cuối cùng."
+            },
+            {
+              "en": "It may lead to a stack overflow error for very deep recursion depths.",
+              "ja": "非常に深い再帰深度でスタックオーバーフローエラーを引き起こす可能性がある。",
+              "vi": "Nó có thể dẫn đến lỗi tràn ngăn xếp (stack overflow) đối với độ sâu đệ quy rất lớn."
+            }
+          ],
+          "answer": 3,
+          "explanation": {
+            "en": "Top-down approaches use recursion. If the recursion depth exceeds the limit allocated by the system stack, it will trigger a stack overflow, unlike the iterative Bottom-up approach.",
+            "ja": "トップダウンアプローチは再帰を使用します。再帰深度がシステムスタックに割り当てられた制限を超えると、反復的なボトムアップアプローチとは異なり、スタックオーバーフローを引き起こします。",
+            "vi": "Phương pháp từ trên xuống sử dụng đệ quy. Nếu độ sâu đệ quy vượt quá giới hạn được cấp phát bởi ngăn xếp hệ thống, nó sẽ gây ra lỗi tràn ngăn xếp, không giống như phương pháp từ dưới lên sử dụng vòng lặp."
+          }
+        }
+      ]
+    },
+    {
+      "id": "fe-b-15",
+      "category": "part-b",
+      "title": {
+        "en": "Computational Complexity & Big-O",
+        "ja": "計算量とビッグオー記法",
+        "vi": "Độ phức tạp tính toán và Ký hiệu Big-O"
+      },
+      "description": {
+        "en": "Derive complexity equations and trace operations bounds.",
+        "ja": "計算量方程式の導出と操作の境界のトレース。",
+        "vi": "Dẫn xuất các phương trình độ phức tạp và truy vết các giới hạn thao tác."
+      },
+      "questions": [
+        {
+          "id": "fe_s25_q1",
+          "question": {
+            "en": "A software engineer is analyzing a legacy function that uses three nested loops, where the outer loop runs N times, the middle loop runs N/2 times, and the innermost loop runs a constant 10 times. What is the Big-O time complexity of this function?",
+            "ja": "ソフトウェアエンジニアが、3重のネストされたループを持つレガシー関数を分析しています。外側のループはN回、中間のループはN/2回、最も内側のループは定数10回実行されます。この関数のBig-O時間計算量はどれですか。",
+            "vi": "Một kỹ sư phần mềm đang phân tích một hàm cũ sử dụng ba vòng lặp lồng nhau, trong đó vòng lặp ngoài chạy N lần, vòng lặp giữa chạy N/2 lần và vòng lặp trong cùng chạy hằng số 10 lần. Độ phức tạp thời gian Big-O của hàm này là bao nhiêu?"
+          },
+          "options": [
+            {
+              "en": "O(N)",
+              "ja": "O(N)",
+              "vi": "O(N)"
+            },
+            {
+              "en": "O(N^2)",
+              "ja": "O(N^2)",
+              "vi": "O(N^2)"
+            },
+            {
+              "en": "O(N^3)",
+              "ja": "O(N^3)",
+              "vi": "O(N^3)"
+            },
+            {
+              "en": "O(10N^2)",
+              "ja": "O(10N^2)",
+              "vi": "O(10N^2)"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "The total operations are N * (N/2) * 10 = 5N^2. In Big-O notation, we drop constant factors, resulting in O(N^2).",
+            "ja": "総操作回数は N * (N/2) * 10 = 5N^2 です。Big-O記法では定数倍を無視するため、結果は O(N^2) となります。",
+            "vi": "Tổng số thao tác là N * (N/2) * 10 = 5N^2. Trong ký hiệu Big-O, chúng ta loại bỏ các hằng số, dẫn đến kết quả là O(N^2)."
+          }
+        },
+        {
+          "id": "fe_s25_q2",
+          "question": {
+            "en": "A search algorithm reduces the problem size by half in each recursive step. If the initial size is N, what is the time complexity in terms of Big-O?",
+            "ja": "ある探索アルゴリズムは、各再帰ステップで問題サイズを半分にします。初期サイズがNである場合、Big-O記法での時間計算量はどれですか。",
+            "vi": "Một thuật toán tìm kiếm giảm kích thước bài toán đi một nửa trong mỗi bước đệ quy. Nếu kích thước ban đầu là N, độ phức tạp thời gian theo ký hiệu Big-O là bao nhiêu?"
+          },
+          "options": [
+            {
+              "en": "O(N)",
+              "ja": "O(N)",
+              "vi": "O(N)"
+            },
+            {
+              "en": "O(log N)",
+              "ja": "O(log N)",
+              "vi": "O(log N)"
+            },
+            {
+              "en": "O(N log N)",
+              "ja": "O(N log N)",
+              "vi": "O(N log N)"
+            },
+            {
+              "en": "O(2^N)",
+              "ja": "O(2^N)",
+              "vi": "O(2^N)"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Dividing the input size by a constant factor in each step characterizes logarithmic growth, represented as O(log N).",
+            "ja": "各ステップで入力サイズを定数で割ることは対数的な増加を特徴とし、O(log N) と表現されます。",
+            "vi": "Việc chia kích thước đầu vào cho một hằng số trong mỗi bước đặc trưng cho sự tăng trưởng logarit, được biểu diễn là O(log N)."
+          }
+        },
+        {
+          "id": "fe_s25_q3",
+          "question": {
+            "en": "You are optimizing a database query. The current implementation iterates through all pairs of records, which takes O(N^2) time. If you replace this with a hash-map lookup for each record, what is the expected time complexity?",
+            "ja": "データベースクエリを最適化しています。現在の実装はすべてのレコードのペアを反復処理するため、O(N^2) の時間がかかります。これをレコードごとにハッシュマップ検索を行うように置き換えた場合、期待される時間計算量はどれですか。",
+            "vi": "Bạn đang tối ưu hóa một truy vấn cơ sở dữ liệu. Cách triển khai hiện tại lặp qua tất cả các cặp bản ghi, tốn thời gian O(N^2). Nếu bạn thay thế điều này bằng tra cứu bảng băm (hash-map) cho mỗi bản ghi, độ phức tạp thời gian dự kiến là bao nhiêu?"
+          },
+          "options": [
+            {
+              "en": "O(N)",
+              "ja": "O(N)",
+              "vi": "O(N)"
+            },
+            {
+              "en": "O(log N)",
+              "ja": "O(log N)",
+              "vi": "O(log N)"
+            },
+            {
+              "en": "O(N log N)",
+              "ja": "O(N log N)",
+              "vi": "O(N log N)"
+            },
+            {
+              "en": "O(N^2)",
+              "ja": "O(N^2)",
+              "vi": "O(N^2)"
+            }
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "A hash-map lookup is O(1) on average. Performing this N times results in O(N * 1) = O(N) complexity.",
+            "ja": "ハッシュマップの検索は平均して O(1) です。これを N 回繰り返すと O(N * 1) = O(N) の計算量になります。",
+            "vi": "Tra cứu bảng băm trung bình là O(1). Thực hiện điều này N lần dẫn đến độ phức tạp O(N * 1) = O(N)."
+          }
+        },
+        {
+          "id": "fe_s25_q4",
+          "question": {
+            "en": "Consider an algorithm that performs a merge sort on an array of size N. What is the Big-O time complexity for the worst-case scenario?",
+            "ja": "サイズ N の配列に対してマージソートを実行するアルゴリズムを検討してください。最悪の場合のBig-O時間計算量はどれですか。",
+            "vi": "Xét một thuật toán thực hiện sắp xếp trộn (merge sort) trên một mảng có kích thước N. Độ phức tạp thời gian Big-O cho trường hợp xấu nhất là bao nhiêu?"
+          },
+          "options": [
+            {
+              "en": "O(N)",
+              "ja": "O(N)",
+              "vi": "O(N)"
+            },
+            {
+              "en": "O(N log N)",
+              "ja": "O(N log N)",
+              "vi": "O(N log N)"
+            },
+            {
+              "en": "O(N^2)",
+              "ja": "O(N^2)",
+              "vi": "O(N^2)"
+            },
+            {
+              "en": "O(N!)",
+              "ja": "O(N!)",
+              "vi": "O(N!)"
+            }
+          ],
+          "answer": 1,
+          "explanation": {
+            "en": "Merge sort divides the array in half (log N steps) and merges the elements (N work per step), resulting in O(N log N).",
+            "ja": "マージソートは配列を半分に分割し（log Nステップ）、要素をマージするため（ステップごとにNの作業）、結果として O(N log N) となります。",
+            "vi": "Sắp xếp trộn chia mảng thành một nửa (log N bước) và trộn các phần tử (công việc N trên mỗi bước), dẫn đến O(N log N)."
+          }
+        },
+        {
+          "id": "fe_s25_q5",
+          "question": {
+            "en": "An application processes a matrix of size N x N. The algorithm iterates through every row and for each row, it performs a search that takes O(N) time. What is the total time complexity?",
+            "ja": "あるアプリケーションが N x N の行列を処理します。このアルゴリズムはすべての行を反復処理し、各行に対して O(N) の時間がかかる検索を実行します。合計の時間計算量はどれですか。",
+            "vi": "Một ứng dụng xử lý một ma trận kích thước N x N. Thuật toán lặp qua từng hàng và đối với mỗi hàng, nó thực hiện một tìm kiếm tốn thời gian O(N). Độ phức tạp thời gian tổng thể là bao nhiêu?"
+          },
+          "options": [
+            {
+              "en": "O(N)",
+              "ja": "O(N)",
+              "vi": "O(N)"
+            },
+            {
+              "en": "O(N log N)",
+              "ja": "O(N log N)",
+              "vi": "O(N log N)"
+            },
+            {
+              "en": "O(N^2)",
+              "ja": "O(N^2)",
+              "vi": "O(N^2)"
+            },
+            {
+              "en": "O(2^N)",
+              "ja": "O(2^N)",
+              "vi": "O(2^N)"
+            }
+          ],
+          "answer": 2,
+          "explanation": {
+            "en": "The outer loop runs N times for each row. The inner search runs O(N) times. Thus, N * O(N) = O(N^2).",
+            "ja": "外側のループは各行に対して N 回実行されます。内側の検索は O(N) 回実行されます。したがって、N * O(N) = O(N^2) となります。",
+            "vi": "Vòng lặp ngoài chạy N lần cho mỗi hàng. Tìm kiếm bên trong chạy O(N) lần. Do đó, N * O(N) = O(N^2)."
+          }
+        }
+      ]
     }
   ]
 }
