@@ -387,6 +387,8 @@ export const translations: Translations = {
   "blog.cat.dev": { en: "Dev", ja: "開発", vi: "Lập trình" },
   "blog.refresh": { en: "Refresh", ja: "更新", vi: "Làm mới" },
   "blog.just_now": { en: "just now", ja: "たった今", vi: "vừa xong" },
+  "blog.filter": { en: "Filter by keyword or source…", ja: "キーワード・媒体で絞り込み…", vi: "Lọc theo từ khoá hoặc nguồn…" },
+  "blog.no_match": { en: "No items match your filter.", ja: "条件に一致する記事がありません。", vi: "Không có tin khớp bộ lọc." },
 
   // Search command palette
   "search.placeholder": { en: "Search subjects and lessons...", ja: "科目やレッスンを検索...", vi: "Tìm môn học và bài học..." },
