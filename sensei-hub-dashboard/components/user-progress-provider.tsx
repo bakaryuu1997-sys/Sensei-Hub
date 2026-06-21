@@ -1,6 +1,7 @@
 "use client"
 
 import React, { createContext, useContext, useState, useEffect, useMemo } from "react"
+import { useUser } from "@clerk/nextjs"
 import { subjects as staticSubjects, computeSubjectStats, type Subject, type OverallStats } from "@/lib/subjects"
 import { useCosmicAudio } from "@/hooks/use-cosmic-audio"
 import { recordActivity } from "@/lib/activity"
@@ -17,112 +18,111 @@ type UserProgressContextType = {
 
 const UserProgressContext = createContext<UserProgressContextType | undefined>(undefined)
 
+// localStorage の基底キー。ログイン時はユーザー ID で名前空間を分け、別ユーザーの
+// 進捗が混ざらないようにする（匿名はサフィックス無しのレガシーキーを使う）。
+const LESSONS_BASE = "sensei-completed-lessons"
+const PROGRESS_BASE = "sensei-user-progress"
+
+function readJson<T>(key: string): T | null {
+  if (typeof window === "undefined") return null
+  try {
+    const raw = localStorage.getItem(key)
+    return raw && raw !== "undefined" ? (JSON.parse(raw) as T) : null
+  } catch {
+    return null
+  }
+}
+
+function defaultProgressMap(): Record<string, number> {
+  const map: Record<string, number> = {}
+  staticSubjects.forEach((s) => s.modules.forEach((m) => (map[m.id] = m.progress)))
+  return map
+}
+
 export function UserProgressProvider({ children }: { children: React.ReactNode }) {
   const [progressMap, setProgressMap] = useState<Record<string, number>>({})
   const [completedLessons, setCompletedLessons] = useState<Record<string, boolean>>({})
   const { playSuccess } = useCosmicAudio()
+  const { isSignedIn, user } = useUser()
+  const userId = isSignedIn && user ? user.id : null
 
-  // Load from localStorage and DB on mount
+  // ユーザーごとの保存キー（匿名はレガシーキー）
+  const lessonsKey = userId ? `${LESSONS_BASE}:${userId}` : LESSONS_BASE
+  const progressKey = userId ? `${PROGRESS_BASE}:${userId}` : PROGRESS_BASE
+
+  // ユーザー（ログイン状態）が変わるたびに、そのユーザーのローカル＋DB を読み込む。
+  // これにより別端末でログインすると DB の進捗が反映され、別ユーザーの混入も防ぐ。
   useEffect(() => {
-    const storedProgress = localStorage.getItem("sensei-user-progress")
-    const storedLessons = localStorage.getItem("sensei-completed-lessons")
-    
-    let localProgress: Record<string, number> = {}
-    let localLessons: Record<string, boolean> = {}
+    const localLessons = readJson<Record<string, boolean>>(lessonsKey) || {}
+    const localProgress = readJson<Record<string, number>>(progressKey) || defaultProgressMap()
 
-    if (storedProgress && storedProgress !== "undefined") {
-      try {
-        localProgress = JSON.parse(storedProgress)
-        setProgressMap(localProgress)
-      } catch (e) {
-        console.error("Failed to parse storedProgress:", e)
-      }
-    } else {
-      const initialMap: Record<string, number> = {}
-      staticSubjects.forEach((s) => {
-        s.modules.forEach((m) => {
-          initialMap[m.id] = m.progress
-        })
-      })
-      localProgress = initialMap
-      setProgressMap(initialMap)
-      localStorage.setItem("sensei-user-progress", JSON.stringify(initialMap))
-    }
+    setCompletedLessons(localLessons)
+    setProgressMap(localProgress)
+    // 初期既定をローカルへ保存（未保存の匿名ユーザー向け）
+    if (!readJson(progressKey)) localStorage.setItem(progressKey, JSON.stringify(localProgress))
 
-    if (storedLessons && storedLessons !== "undefined") {
-      try {
-        localLessons = JSON.parse(storedLessons)
-        setCompletedLessons(localLessons)
-      } catch (e) {
-        console.error("Failed to parse storedLessons:", e)
-      }
-    }
+    if (!userId) return // 匿名: ローカルのみ
 
-    // Fetch from database to merge and sync
-    async function loadProgressFromDb() {
+    let cancelled = false
+    ;(async () => {
       try {
         const res = await fetch("/api/progress/load")
-        if (res.ok) {
-          const contentType = res.headers.get("content-type")
-          if (contentType && contentType.includes("application/json")) {
-            const data = await res.json()
-            if (data.completedLessons && data.progressMap) {
-              const mergedLessons = { ...localLessons, ...data.completedLessons }
-              const mergedProgress = { ...localProgress, ...data.progressMap }
+        if (!res.ok) return
+        if (!(res.headers.get("content-type") || "").includes("application/json")) return
+        const data = await res.json()
+        if (cancelled || !data.completedLessons || !data.progressMap) return
 
-              setCompletedLessons(mergedLessons)
-              setProgressMap(mergedProgress)
+        // 初回ログイン時は匿名(レガシー)キーの進捗も取り込む
+        const anon = userId ? readJson<Record<string, boolean>>(LESSONS_BASE) || {} : {}
+        const mergedLocal = { ...anon, ...localLessons }
 
-              localStorage.setItem("sensei-completed-lessons", JSON.stringify(mergedLessons))
-              localStorage.setItem("sensei-user-progress", JSON.stringify(mergedProgress))
+        // DB と統合（DB を基準に、ローカルで完了済みだが DB に無い分は後で同期）
+        const localOnly = Object.keys(mergedLocal).filter((k) => mergedLocal[k] && !data.completedLessons[k])
+        const finalLessons = { ...mergedLocal, ...data.completedLessons }
+        const finalProgress = { ...localProgress, ...data.progressMap }
 
-              // Sync any local progress made offline back to DB
-              const localKeys = Object.keys(localLessons)
-              const outOfSync = localKeys.some(key => localLessons[key] && !data.completedLessons[key])
-              
-              if (outOfSync) {
-                const toSync = localKeys
-                  .filter(key => localLessons[key])
-                  .map(key => ({ lessonId: key, completed: true }))
-                
-                if (toSync.length > 0) {
-                  await fetch("/api/progress/sync", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ lessons: toSync }),
-                  })
-                }
-              }
-            }
-          } else {
-            console.warn("Expected JSON progress from DB, got", contentType)
-          }
+        setCompletedLessons(finalLessons)
+        setProgressMap(finalProgress)
+        localStorage.setItem(lessonsKey, JSON.stringify(finalLessons))
+        localStorage.setItem(progressKey, JSON.stringify(finalProgress))
+
+        if (localOnly.length > 0) {
+          await fetch("/api/progress/sync", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ lessons: localOnly.map((k) => ({ lessonId: k, completed: true })) }),
+          }).catch(() => {})
         }
+        // 取り込み済みの匿名キーは消して二重取り込みを防ぐ
+        if (Object.keys(anon).length > 0) localStorage.removeItem(LESSONS_BASE)
       } catch (e) {
         console.error("Failed to load progress from DB:", e)
       }
-    }
+    })()
 
-    loadProgressFromDb()
-  }, [])
+    return () => {
+      cancelled = true
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userId])
 
   const updateModuleProgress = (moduleId: string, progress: number) => {
     setProgressMap((prev) => {
       const next = { ...prev, [moduleId]: progress }
-      localStorage.setItem("sensei-user-progress", JSON.stringify(next))
+      localStorage.setItem(progressKey, JSON.stringify(next))
       return next
     })
   }
 
   const toggleModuleCompletion = (moduleId: string, lessonKeys?: string[]) => {
     let playedChime = false
-    
+
     setProgressMap((prev) => {
       const current = prev[moduleId] ?? 0
       const nextProgress = current === 100 ? 0 : 100
       const next = { ...prev, [moduleId]: nextProgress }
-      localStorage.setItem("sensei-user-progress", JSON.stringify(next))
-      
+      localStorage.setItem(progressKey, JSON.stringify(next))
+
       if (nextProgress === 100) {
         playedChime = true
         recordActivity()
@@ -135,18 +135,20 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
           lessonKeys.forEach((key) => {
             nextLessons[key] = nextProgress === 100
           })
-          localStorage.setItem("sensei-completed-lessons", JSON.stringify(nextLessons))
+          localStorage.setItem(lessonsKey, JSON.stringify(nextLessons))
 
-          // Sync to DB
-          const syncLessons = lessonKeys.map((key) => ({
-            lessonId: key,
-            completed: nextProgress === 100,
-          }))
-          fetch("/api/progress/sync", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ lessons: syncLessons }),
-          }).catch((e) => console.error("Failed to sync module progress:", e))
+          // ログイン中のみ DB へ同期
+          if (userId) {
+            const syncLessons = lessonKeys.map((key) => ({
+              lessonId: key,
+              completed: nextProgress === 100,
+            }))
+            fetch("/api/progress/sync", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ lessons: syncLessons }),
+            }).catch((e) => console.error("Failed to sync module progress:", e))
+          }
 
           return nextLessons
         })
@@ -166,7 +168,7 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
     subjectSlug: string,
     moduleId: string,
     lessonPath: string,
-    allLessonPathsInModule: string[]
+    allLessonPathsInModule: string[],
   ) => {
     const lessonKey = `${subjectSlug}/${lessonPath}`
     let playedChime = false
@@ -174,7 +176,7 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
     setCompletedLessons((prev) => {
       const isCompleted = !prev[lessonKey]
       const next = { ...prev, [lessonKey]: isCompleted }
-      localStorage.setItem("sensei-completed-lessons", JSON.stringify(next))
+      localStorage.setItem(lessonsKey, JSON.stringify(next))
 
       if (isCompleted) {
         playedChime = true
@@ -182,29 +184,28 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
       }
 
       // Compute module progress
-      const completedCount = allLessonPathsInModule.filter(
-        (path) => next[`${subjectSlug}/${path}`]
-      ).length
-      
-      const newProgress = allLessonPathsInModule.length > 0 
-        ? Math.round((completedCount / allLessonPathsInModule.length) * 100)
-        : 0
+      const completedCount = allLessonPathsInModule.filter((path) => next[`${subjectSlug}/${path}`]).length
+
+      const newProgress =
+        allLessonPathsInModule.length > 0 ? Math.round((completedCount / allLessonPathsInModule.length) * 100) : 0
 
       // Update the progress map directly in the state
       setProgressMap((prevMap) => {
         const nextMap = { ...prevMap, [moduleId]: newProgress }
-        localStorage.setItem("sensei-user-progress", JSON.stringify(nextMap))
+        localStorage.setItem(progressKey, JSON.stringify(nextMap))
         return nextMap
       })
 
-      // Sync to DB
-      fetch("/api/progress/sync", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          lessons: [{ lessonId: lessonKey, completed: isCompleted }],
-        }),
-      }).catch((e) => console.error("Failed to sync lesson progress:", e))
+      // ログイン中のみ DB へ同期
+      if (userId) {
+        fetch("/api/progress/sync", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            lessons: [{ lessonId: lessonKey, completed: isCompleted }],
+          }),
+        }).catch((e) => console.error("Failed to sync lesson progress:", e))
+      }
 
       return next
     })
@@ -251,8 +252,7 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
     const completedLessonsCount = allStats.reduce((sum, s) => sum + s.completedLessons, 0)
     const totalMinutes = allStats.reduce((sum, s) => sum + s.totalMinutes, 0)
     const inProgressSubjects = allStats.filter((s) => s.progress > 0 && s.progress < 100).length
-    const averageProgress =
-      totalLessons > 0 ? Math.round((completedLessonsCount / totalLessons) * 100) : 0
+    const averageProgress = totalLessons > 0 ? Math.round((completedLessonsCount / totalLessons) * 100) : 0
 
     return {
       totalLessons,

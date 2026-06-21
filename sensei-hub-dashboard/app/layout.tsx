@@ -7,6 +7,7 @@ import { PwaRegistrar } from '@/components/pwa-registrar'
 import { FloatingChat } from '@/components/floating-chat'
 import { BottomNav } from '@/components/dashboard/bottom-nav'
 import { InstallHint } from '@/components/install-hint'
+import { Onboarding } from '@/components/onboarding'
 import { ClerkProvider } from "@clerk/nextjs"
 import './globals.css'
 
@@ -81,6 +82,7 @@ export default function RootLayout({
               <FloatingChat />
               <BottomNav />
               <InstallHint />
+              <Onboarding />
             </UserProgressProvider>
           </LanguageProvider>
         </ClerkProvider>
