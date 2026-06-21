@@ -99,6 +99,19 @@ export const translations: Translations = {
   "day.sun": { en: "Sun", ja: "日", vi: "CN" },
   "pwa.install_sidebar": { en: "Download Sensei Hub", ja: "Sensei Hubをダウンロード", vi: "Tải App Sensei Hub" },
   "pwa.install_topbar": { en: "Download App", ja: "アプリをダウンロード", vi: "Tải App" },
+  "pwa.close": { en: "Close", ja: "閉じる", vi: "Đóng" },
+  "pwa.guide_title": { en: "Install Sensei Hub", ja: "Sensei Hub をインストール", vi: "Cài đặt Sensei Hub" },
+  "pwa.guide_ios_1": { en: "Open this site in Safari.", ja: "Safari でこのサイトを開きます。", vi: "Mở trang này bằng Safari." },
+  "pwa.guide_ios_2": { en: "Tap the Share button (the square with an up arrow).", ja: "共有ボタン（上矢印の付いた四角）をタップします。", vi: "Chạm nút Chia sẻ (ô vuông có mũi tên hướng lên)." },
+  "pwa.guide_ios_3": { en: "Choose “Add to Home Screen”.", ja: "「ホーム画面に追加」を選びます。", vi: "Chọn “Thêm vào Màn hình chính”." },
+  "pwa.guide_other_1": { en: "Open this site in Chrome.", ja: "Chrome でこのサイトを開きます。", vi: "Mở trang này bằng Chrome." },
+  "pwa.guide_other_2": { en: "Open the browser menu (⋮ at the top-right).", ja: "ブラウザのメニュー（右上の ⋮）を開きます。", vi: "Mở menu trình duyệt (⋮ ở góc trên bên phải)." },
+  "pwa.guide_other_3": { en: "Tap “Install app” or “Add to Home screen”.", ja: "「アプリをインストール」または「ホーム画面に追加」をタップします。", vi: "Chạm “Cài đặt ứng dụng” hoặc “Thêm vào màn hình chính”." },
+  "pwa.guide_https": {
+    en: "Tip: install works best on an HTTPS site. If you don't see the option, open the site in Chrome (Android) or Safari (iPhone).",
+    ja: "ヒント: インストールは HTTPS のサイトで最も確実に動作します。表示されない場合は Chrome（Android）または Safari（iPhone）で開いてください。",
+    vi: "Mẹo: cài đặt hoạt động tốt nhất khi trang chạy HTTPS. Nếu không thấy tuỳ chọn, hãy mở bằng Chrome (Android) hoặc Safari (iPhone).",
+  },
 
   // System Status & Common
   "status.online": { en: "All systems online", ja: "システム正常", vi: "Hệ thống sẵn sàng" },

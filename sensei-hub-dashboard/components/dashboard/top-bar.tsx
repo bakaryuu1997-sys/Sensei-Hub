@@ -7,6 +7,7 @@ import { useLanguage } from "@/lib/i18n"
 import { LanguageSwitcher } from "./language-switcher"
 import { useUserProgress } from "@/components/user-progress-provider"
 import { usePwaInstall } from "@/hooks/use-pwa-install"
+import { PwaInstallGuide } from "@/components/pwa-install-guide"
 import { UserButton, useUser } from "@clerk/nextjs"
 import Link from "next/link"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
@@ -154,20 +155,26 @@ export function TopBar() {
 }
 
 function PwaInstallButton() {
-  const { isInstallable, install } = usePwaInstall()
+  const { isInstallable, isStandalone, isIOS, install } = usePwaInstall()
   const { t } = useLanguage()
+  const [guideOpen, setGuideOpen] = useState(false)
 
-  if (!isInstallable) return null
+  // すでにインストール済みなら出さない。未導入なら常に出し、ネイティブプロンプトが
+  // 使えない端末（iOS など）では手順モーダルを開く。
+  if (isStandalone) return null
 
   return (
-    <motion.button
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      onClick={install}
-      className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-gradient-to-r from-cyan-500/20 to-purple-500/20 hover:from-cyan-500/30 hover:to-purple-500/30 border border-cyan-500/30 text-xs font-bold text-white transition-all cursor-pointer"
-    >
-      <Download className="h-3.5 w-3.5 text-cyan-300" />
-      {t("pwa.install_topbar")}
-    </motion.button>
+    <>
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={() => (isInstallable ? install() : setGuideOpen(true))}
+        className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-gradient-to-r from-cyan-500/20 to-purple-500/20 hover:from-cyan-500/30 hover:to-purple-500/30 border border-cyan-500/30 text-xs font-bold text-white transition-all cursor-pointer"
+      >
+        <Download className="h-3.5 w-3.5 text-cyan-300" />
+        {t("pwa.install_topbar")}
+      </motion.button>
+      <PwaInstallGuide open={guideOpen} onClose={() => setGuideOpen(false)} isIOS={isIOS} />
+    </>
   )
 }

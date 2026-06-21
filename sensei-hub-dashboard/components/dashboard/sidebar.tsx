@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { Home, BookOpen, Sparkles, Download, Settings, History } from "lucide-react"
 import Link from "next/link"
@@ -9,6 +10,7 @@ import { useLanguage } from "@/lib/i18n"
 import { computeSubjectStats } from "@/lib/subjects"
 import { useUserProgress } from "@/components/user-progress-provider"
 import { usePwaInstall } from "@/hooks/use-pwa-install"
+import { PwaInstallGuide } from "@/components/pwa-install-guide"
 
 const sidebarVariants = {
   hidden: { opacity: 0 },
@@ -214,20 +216,22 @@ export function Sidebar() {
 }
 
 function PwaInstallButton() {
-  const { isInstallable, install } = usePwaInstall()
+  const { isInstallable, isStandalone, isIOS, install } = usePwaInstall()
   const { t } = useLanguage()
+  const [guideOpen, setGuideOpen] = useState(false)
 
-  if (!isInstallable) return null
+  if (isStandalone) return null
 
   return (
     <motion.div variants={itemVariants} className="px-4 py-3 border-t border-white/5">
       <button
-        onClick={install}
+        onClick={() => (isInstallable ? install() : setGuideOpen(true))}
         className="flex w-full items-center gap-3 rounded-xl bg-gradient-to-r from-cyan-500/20 to-purple-500/20 hover:from-cyan-500/30 hover:to-purple-500/30 border border-cyan-500/30 px-4 py-2.5 text-xs font-bold text-white transition-all cursor-pointer"
       >
         <Download className="h-4 w-4 text-cyan-300 animate-bounce" />
         {t("pwa.install_sidebar")}
       </button>
+      <PwaInstallGuide open={guideOpen} onClose={() => setGuideOpen(false)} isIOS={isIOS} />
     </motion.div>
   )
 }
