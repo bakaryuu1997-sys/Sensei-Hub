@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { Mail } from "lucide-react"
 import { Sidebar } from "@/components/dashboard/sidebar"
 import { TopBar } from "@/components/dashboard/top-bar"
 import { Starfield } from "@/components/dashboard/starfield"
@@ -59,6 +60,17 @@ export function StaticPage({ doc }: { doc: LegalDoc }) {
                   </section>
                 ))}
               </div>
+
+              {/* メールでの問い合わせボタン（doc.email がある場合のみ） */}
+              {doc.email && (
+                <a
+                  href={`mailto:${doc.email}`}
+                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 px-4 py-2.5 text-sm font-bold text-white hover:opacity-90 transition-opacity"
+                >
+                  <Mail className="h-4 w-4" />
+                  {doc.email}
+                </a>
+              )}
             </motion.article>
           </div>
         </main>

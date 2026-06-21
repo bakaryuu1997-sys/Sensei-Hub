@@ -385,6 +385,7 @@ export const translations: Translations = {
   "blog.cat.labs": { en: "AI Labs", ja: "AIラボ", vi: "Hãng AI" },
   "blog.cat.tech": { en: "Tech & Trends", ja: "テック・トレンド", vi: "Công nghệ & Xu hướng" },
   "blog.cat.dev": { en: "Dev", ja: "開発", vi: "Lập trình" },
+  "dashboard.news_all": { en: "See all", ja: "すべて見る", vi: "Xem tất cả" },
   "blog.refresh": { en: "Refresh", ja: "更新", vi: "Làm mới" },
   "blog.just_now": { en: "just now", ja: "たった今", vi: "vừa xong" },
   "blog.filter": { en: "Filter by keyword or source…", ja: "キーワード・媒体で絞り込み…", vi: "Lọc theo từ khoá hoặc nguồn…" },

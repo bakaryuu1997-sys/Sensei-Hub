@@ -7,6 +7,7 @@ import { TopBar } from "@/components/dashboard/top-bar"
 import { HeroBanner } from "@/components/dashboard/hero-banner"
 import { StatsRow } from "@/components/dashboard/stats-row"
 import { SubjectsGrid } from "@/components/dashboard/subjects-grid"
+import { NewsWidget } from "@/components/dashboard/news-widget"
 import { useLanguage } from "@/lib/i18n"
 import { Starfield } from "@/components/dashboard/starfield"
 import { ConstellationMap } from "@/components/dashboard/constellation-map"
@@ -113,6 +114,9 @@ export default function DashboardPage() {
 
             {/* Stats Row */}
             <StatsRow />
+
+            {/* Latest news widget → blog */}
+            <NewsWidget />
 
             {/* Constellation Map */}
             <ConstellationMap />
