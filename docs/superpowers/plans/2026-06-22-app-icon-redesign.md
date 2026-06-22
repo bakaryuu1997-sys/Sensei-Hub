@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Replace SENSEI HUB's default Sparkles icon with a custom 3D isometric cube network (Future Portal) icon, and regenerate the public favicon and apple touch assets.
+**Goal:** Upgrade SENSEI HUB's default icon to a premium 3D isometric cube network (Future Portal) icon with custom 3D glass spheres, dual-layer neon glow, and laser flow animation, and regenerate favicon PNG assets.
 
-**Architecture:** We will create an inline React SVG component in the sidebar with glowing gradient lines and micro-animations, update the public SVG icon, and write a Node.js script using `sharp` to convert the SVG to PNG favicons and touch icons.
+**Architecture:** We will implement an inline React SVG component in the sidebar with glowing radial gradients, a faint base line, and an overlaying animated laser line. We will update the public SVG icon and run the sharp generator script to compile new favicons and touch icons.
 
 **Tech Stack:** React, Next.js, SVG, Sharp, Node.js
 
@@ -14,16 +14,13 @@
 
 ### [Dashboard Components]
 #### [MODIFY] [sidebar.tsx](file:///wsl$/Ubuntu/home/bakaryuu/Sensei-Hub/sensei-hub-dashboard/components/dashboard/sidebar.tsx)
-- Define a custom `<FuturePortalIcon />` component.
-- Add animation keyframes for rotating/pulsating the elements.
+- Define the premium `<FuturePortalIcon />` component.
+- Add animation keyframes for traveling laser light and rotating grid.
 - Replace the Lucide `Sparkles` icon with the new component.
 
 ### [Static Public Assets]
 #### [MODIFY] [icon.svg](file:///wsl$/Ubuntu/home/bakaryuu/Sensei-Hub/sensei-hub-dashboard/public/icon.svg)
-- Update with the custom SVG geometry and gradients.
-
-#### [NEW] [generate-png-icons.js](file:///wsl$/Ubuntu/home/bakaryuu/Sensei-Hub/sensei-hub-dashboard/scripts/generate-png-icons.js)
-- Write a Node.js utility script to parse the SVG and output the required light, dark, and apple PNG sizes.
+- Update with the scaled-up geometry and high-contrast gradients/shadows.
 
 ---
 
@@ -34,17 +31,41 @@
 - Modify: `public/icon.svg`
 
 - [ ] **Step 1: Write the updated SVG code to `public/icon.svg`**
-  Modify [icon.svg](file:///wsl$/Ubuntu/home/bakaryuu/Sensei-Hub/sensei-hub-dashboard/public/icon.svg) to contain the new geometric cube design:
+  Modify [icon.svg](file:///wsl$/Ubuntu/home/bakaryuu/Sensei-Hub/sensei-hub-dashboard/public/icon.svg) to contain the new geometric cube design with 3D glass sphere radial gradients:
   ```xml
   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
     <defs>
+      <!-- Core Gradients -->
       <linearGradient id="portal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="0%" stop-color="#22d3ee" />
         <stop offset="50%" stop-color="#a855f7" />
         <stop offset="100%" stop-color="#f472b6" />
       </linearGradient>
-      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-        <feGaussianBlur stdDeviation="1.2" result="blur" />
+      
+      <!-- 3D Glass Sphere Gradients -->
+      <radialGradient id="cyan-sphere" cx="35%" cy="35%" r="65%">
+        <stop offset="0%" stop-color="#ffffff" />
+        <stop offset="40%" stop-color="#22d3ee" />
+        <stop offset="100%" stop-color="#0891b2" />
+      </radialGradient>
+      <radialGradient id="purple-sphere" cx="35%" cy="35%" r="65%">
+        <stop offset="0%" stop-color="#ffffff" />
+        <stop offset="40%" stop-color="#c084fc" />
+        <stop offset="100%" stop-color="#7e22ce" />
+      </radialGradient>
+      <radialGradient id="pink-sphere" cx="35%" cy="35%" r="65%">
+        <stop offset="0%" stop-color="#ffffff" />
+        <stop offset="40%" stop-color="#f472b6" />
+        <stop offset="100%" stop-color="#be185d" />
+      </radialGradient>
+      <radialGradient id="center-sphere" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#ffffff" />
+        <stop offset="30%" stop-color="#e0f2fe" />
+        <stop offset="100%" stop-color="#38bdf8" />
+      </radialGradient>
+      
+      <filter id="neon-glow" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur stdDeviation="1.5" result="blur" />
         <feComposite in="SourceGraphic" in2="blur" operator="over" />
       </filter>
     </defs>
@@ -52,30 +73,30 @@
     <rect width="32" height="32" rx="8" fill="#030014" />
     
     <!-- Outer Hexagon -->
-    <path d="M 16 6 L 24.66 11 L 24.66 21 L 16 26 L 7.34 21 L 7.34 11 Z" 
-          stroke="url(#portal-grad)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow)" />
+    <path d="M 16 3 L 27.26 9.5 L 27.26 22.5 L 16 29 L 4.74 22.5 L 4.74 9.5 Z" 
+          stroke="url(#portal-grad)" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" filter="url(#neon-glow)" />
     
     <!-- Y-Shape Inner Axes -->
-    <path d="M 16 6 L 16 16 M 7.34 21 L 16 16 M 24.66 21 L 16 16" 
-          stroke="url(#portal-grad)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow)" />
+    <path d="M 16 3 L 16 16 M 4.74 22.5 L 16 16 M 27.26 22.5 L 16 16" 
+          stroke="url(#portal-grad)" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" filter="url(#neon-glow)" />
           
-    <!-- Node Dots -->
-    <circle cx="16" cy="6" r="1.8" fill="#22d3ee" />
-    <circle cx="24.66" cy="11" r="1.8" fill="#a855f7" />
-    <circle cx="24.66" cy="21" r="1.8" fill="#f472b6" />
-    <circle cx="16" cy="26" r="1.8" fill="#f472b6" />
-    <circle cx="7.34" cy="21" r="1.8" fill="#22d3ee" />
-    <circle cx="7.34" cy="11" r="1.8" fill="#22d3ee" />
+    <!-- Node Dots (3D Glass Spheres) -->
+    <circle cx="16" cy="3" r="2.2" fill="url(#cyan-sphere)" />
+    <circle cx="27.26" cy="9.5" r="2.2" fill="url(#purple-sphere)" />
+    <circle cx="27.26" cy="22.5" r="2.2" fill="url(#pink-sphere)" />
+    <circle cx="16" cy="29" r="2.2" fill="url(#pink-sphere)" />
+    <circle cx="4.74" cy="22.5" r="2.2" fill="url(#cyan-sphere)" />
+    <circle cx="4.74" cy="9.5" r="2.2" fill="url(#cyan-sphere)" />
     
     <!-- Center glowing core -->
-    <circle cx="16" cy="16" r="3.2" fill="#ffffff" filter="url(#glow)" />
+    <circle cx="16" cy="16" r="4" fill="url(#center-sphere)" filter="url(#neon-glow)" />
   </svg>
   ```
 
 - [ ] **Step 2: Commit Task 1**
   ```bash
   git add public/icon.svg
-  git commit -m "style(icon): update public/icon.svg with 3D network portal design"
+  git commit -m "style(icon): upgrade public/icon.svg to premium 3D sphere & neon glow portal"
   ```
 
 ---
@@ -84,10 +105,8 @@
 **Files:**
 - Modify: `components/dashboard/sidebar.tsx`
 
-- [ ] **Step 1: Replace Sparkles with custom FuturePortalIcon component**
-  Open [sidebar.tsx](file:///wsl$/Ubuntu/home/bakaryuu/Sensei-Hub/sensei-hub-dashboard/components/dashboard/sidebar.tsx) and insert the `<FuturePortalIcon />` definition and replace `<Sparkles className="h-5 w-5 text-white" />` inside the link container.
-  
-  Add CSS Keyframes and styling to `components/dashboard/sidebar.tsx` or inline React style. We will define the icon component inside the same file:
+- [ ] **Step 1: Write the custom `<FuturePortalIcon />` in `sidebar.tsx`**
+  Modify [sidebar.tsx](file:///wsl$/Ubuntu/home/bakaryuu/Sensei-Hub/sensei-hub-dashboard/components/dashboard/sidebar.tsx) to define the new premium design. It includes the rotating background group, faint base lines, and the overlaying white laser lines that pulse and travel around the grid:
   ```tsx
   const FuturePortalIcon = () => (
     <svg
@@ -97,131 +116,133 @@
       className="h-6 w-6"
     >
       <defs>
+        <!-- Gradients -->
         <linearGradient id="sidebar-portal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#22d3ee" />
           <stop offset="50%" stopColor="#a855f7" />
           <stop offset="100%" stopColor="#f472b6" />
         </linearGradient>
-        <filter id="sidebar-glow" x="-25%" y="-25%" width="150%" height="150%">
-          <feGaussianBlur stdDeviation="1" result="blur" />
+        <radialGradient id="sb-cyan-sphere" cx="35%" cy="35%" r="65%">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="40%" stopColor="#22d3ee" />
+          <stop offset="100%" stopColor="#0891b2" />
+        </radialGradient>
+        <radialGradient id="sb-purple-sphere" cx="35%" cy="35%" r="65%">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="40%" stopColor="#c084fc" />
+          <stop offset="100%" stopColor="#7e22ce" />
+        </radialGradient>
+        <radialGradient id="sb-pink-sphere" cx="35%" cy="35%" r="65%">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="40%" stopColor="#f472b6" />
+          <stop offset="100%" stopColor="#be185d" />
+        </radialGradient>
+        <radialGradient id="sb-center-sphere" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="30%" stopColor="#e0f2fe" />
+          <stop offset="100%" stopColor="#38bdf8" />
+        </radialGradient>
+        
+        <filter id="sidebar-glow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="1.2" result="blur" />
           <feComposite in="SourceGraphic" in2="blur" operator="over" />
         </filter>
       </defs>
       <style>{`
+        @keyframes laser-flow {
+          0% { stroke-dashoffset: 100; }
+          100% { stroke-dashoffset: 0; }
+        }
         @keyframes portal-spin {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
         }
         .portal-rotate-group {
           transform-origin: 16px 16px;
-          animation: portal-spin 25s linear infinite;
+          animation: portal-spin 35s linear infinite;
+        }
+        .laser-line {
+          stroke-dasharray: 15 85;
+          animation: laser-flow 4s linear infinite;
+        }
+        .laser-line-reverse {
+          stroke-dasharray: 20 80;
+          animation: laser-flow 3.5s linear infinite reverse;
         }
       `}</style>
       <g className="portal-rotate-group">
+        <!-- Faint Base Layer for Visual Continuity -->
         <path
-          d="M 16 6 L 24.66 11 L 24.66 21 L 16 26 L 7.34 21 L 7.34 11 Z"
+          d="M 16 3 L 27.26 9.5 L 27.26 22.5 L 16 29 L 4.74 22.5 L 4.74 9.5 Z"
           stroke="url(#sidebar-portal-grad)"
-          strokeWidth="1.8"
+          strokeWidth="2.2"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          opacity="0.3"
+        />
+        <path
+          d="M 16 3 L 16 16 M 4.74 22.5 L 16 16 M 27.26 22.5 L 16 16"
+          stroke="url(#sidebar-portal-grad)"
+          strokeWidth="2.2"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          opacity="0.3"
+        />
+        
+        <!-- Glowing Traveling Laser Sparks -->
+        <path
+          d="M 16 3 L 27.26 9.5 L 27.26 22.5 L 16 29 L 4.74 22.5 L 4.74 9.5 Z"
+          stroke="url(#sidebar-portal-grad)"
+          strokeWidth="2.2"
           strokeLinejoin="round"
           strokeLinecap="round"
           filter="url(#sidebar-glow)"
+          className="laser-line"
         />
         <path
-          d="M 16 6 L 16 16 M 7.34 21 L 16 16 M 24.66 21 L 16 16"
+          d="M 16 3 L 16 16 M 4.74 22.5 L 16 16 M 27.26 22.5 L 16 16"
           stroke="url(#sidebar-portal-grad)"
-          strokeWidth="1.8"
+          strokeWidth="2.2"
           strokeLinejoin="round"
           strokeLinecap="round"
           filter="url(#sidebar-glow)"
+          className="laser-line-reverse"
         />
-        <circle cx="16" cy="6" r="1.8" fill="#22d3ee" />
-        <circle cx="24.66" cy="11" r="1.8" fill="#a855f7" />
-        <circle cx="24.66" cy="21" r="1.8" fill="#f472b6" />
-        <circle cx="16" cy="26" r="1.8" fill="#f472b6" />
-        <circle cx="7.34" cy="21" r="1.8" fill="#22d3ee" />
-        <circle cx="7.34" cy="11" r="1.8" fill="#22d3ee" />
+        
+        <!-- Vertex Nodes (3D glass spheres) -->
+        <circle cx="16" cy="3" r="2.2" fill="url(#sb-cyan-sphere)" />
+        <circle cx="27.26" cy="9.5" r="2.2" fill="url(#sb-purple-sphere)" />
+        <circle cx="27.26" cy="22.5" r="2.2" fill="url(#sb-pink-sphere)" />
+        <circle cx="16" cy="29" r="2.2" fill="url(#sb-pink-sphere)" />
+        <circle cx="4.74" cy="22.5" r="2.2" fill="url(#sb-cyan-sphere)" />
+        <circle cx="4.74" cy="9.5" r="2.2" fill="url(#sb-cyan-sphere)" />
       </g>
-      <circle cx="16" cy="16" r="3.2" fill="#ffffff" filter="url(#sidebar-glow)" className="animate-pulse" />
+      <!-- Center glowing core node -->
+      <circle cx="16" cy="16" r="4" fill="url(#sb-center-sphere)" filter="url(#sidebar-glow)" className="animate-pulse" />
     </svg>
   );
-  ```
-  
-  In the JSX rendering code of `sidebar.tsx`:
-  ```tsx
-  {/* Logo */}
-  <Link href="/" onClick={onNavigate} className="flex items-center gap-3 p-6">
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-purple-600 blur-xl opacity-60" />
-      <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 shadow-lg shadow-purple-500/40">
-        <FuturePortalIcon />
-      </div>
-      <div className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-slate-950 bg-emerald-400" />
-    </div>
-    <div>
-      <h1 className="text-lg font-bold tracking-tight text-white">SENSEI</h1>
-      <p className="text-xs text-cyan-300/80 font-mono tracking-widest">HUB.</p>
-    </div>
-  </Link>
   ```
 
 - [ ] **Step 2: Commit Task 2**
   ```bash
   git add components/dashboard/sidebar.tsx
-  git commit -m "feat(logo): replace Sparkles icon with custom FuturePortalIcon inside Sidebar"
+  git commit -m "feat(logo): upgrade sidebar logo with 3D sphere nodes and traveling laser animation"
   ```
 
 ---
 
-### Task 3: Generate PNG Favicon and Touch Icons
+### Task 3: Regenerate PNG Icons
 **Files:**
-- Create: `scripts/generate-png-icons.js`
 - Modify: `public/icon-light-32x32.png`, `public/icon-dark-32x32.png`, `public/apple-icon.png`
 
-- [ ] **Step 1: Install sharp dependency**
-  Run: `wsl --exec bash -c "cd /home/bakaryuu/Sensei-Hub/sensei-hub-dashboard && pnpm add -D sharp"`
-  Expected: Successful installation of `sharp` library in package devDependencies.
-
-- [ ] **Step 2: Create generate-png-icons.js script**
-  Create [generate-png-icons.js](file:///wsl$/Ubuntu/home/bakaryuu/Sensei-Hub/sensei-hub-dashboard/scripts/generate-png-icons.js) with the following content:
-  ```javascript
-  const fs = require('fs');
-  const path = require('path');
-  const sharp = require('sharp');
-
-  const svgPath = path.resolve(__dirname, '../public/icon.svg');
-  const svgBuffer = fs.readFileSync(svgPath);
-
-  const targets = [
-    { name: 'icon-light-32x32.png', size: 32 },
-    { name: 'icon-dark-32x32.png', size: 32 },
-    { name: 'apple-icon.png', size: 180 }
-  ];
-
-  async function generate() {
-    for (const target of targets) {
-      const outputPath = path.resolve(__dirname, '../public', target.name);
-      await sharp(svgBuffer)
-        .resize(target.size, target.size)
-        .png()
-        .toFile(outputPath);
-      console.log(`Generated ${target.name} (${target.size}x${target.size})`);
-    }
-  }
-
-  generate().catch(err => {
-    console.error('Error generating PNG icons:', err);
-    process.exit(1);
-  });
-  ```
-
-- [ ] **Step 3: Run generate-png-icons.js script**
+- [ ] **Step 1: Run png generation script**
   Run: `wsl --exec bash -c "cd /home/bakaryuu/Sensei-Hub/sensei-hub-dashboard && node scripts/generate-png-icons.js"`
-  Expected: Success, prints logs for the three generated PNG files.
+  Expected: Success logs showing the regenerated icons with updated scaled-up 3D spheres.
 
-- [ ] **Step 4: Commit Task 3**
+- [ ] **Step 2: Commit Task 3**
   ```bash
-  git add package.json pnpm-lock.yaml scripts/generate-png-icons.js public/icon-light-32x32.png public/icon-dark-32x32.png public/apple-icon.png
-  git commit -m "chore(icons): install sharp and regenerate public PNG favicon/touch icons"
+  git add public/icon-light-32x32.png public/icon-dark-32x32.png public/apple-icon.png
+  git commit -m "chore(icons): regenerate PNG icons from updated premium SVG"
   ```
 
 ---
