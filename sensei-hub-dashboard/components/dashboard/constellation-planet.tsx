@@ -24,19 +24,19 @@ export function ConstellationPlanet({
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
-    // Color definitions
+    // 教科ごとの色定義（キーは lib/subjects.ts の実際の slug に一致させる）。
     const colorMap: Record<string, { primary: string; secondary: string; ring: string }> = {
-      aws: { primary: "#fb923c", secondary: "#d97706", ring: "#f59e0b" },
-      bjt: { primary: "#ec4899", secondary: "#be185d", ring: "#f43f5e" },
-      database: { primary: "#34d399", secondary: "#047857", ring: "#10b981" },
-      devops: { primary: "#22d3ee", secondary: "#0369a1", ring: "#06b6d4" },
-      dsa: { primary: "#a855f7", secondary: "#6d28d9", ring: "#8b5cf6" },
-      fe: { primary: "#3b82f6", secondary: "#1d4ed8", ring: "#2563eb" },
-      mindset: { primary: "#facc15", secondary: "#b45309", ring: "#d97706" },
-      sysdesign: { primary: "#ef4444", secondary: "#b91c1c", ring: "#dc2626" },
-      "blockchain-and-web3-fundamentals": { primary: "#eab308", secondary: "#a16207", ring: "#f59e0b" },
-      "cybersecurity-awareness": { primary: "#ef4444", secondary: "#be123c", ring: "#f43f5e" },
-      "git-and-github": { primary: "#a78bfa", secondary: "#4f46e5", ring: "#6366f1" },
+      "git-and-github": { primary: "#a78bfa", secondary: "#4f46e5", ring: "#6366f1" }, // violet/indigo
+      fe: { primary: "#3b82f6", secondary: "#1d4ed8", ring: "#2563eb" }, // blue/indigo
+      aws: { primary: "#fb923c", secondary: "#d97706", ring: "#f59e0b" }, // orange/amber
+      "database-engineering": { primary: "#34d399", secondary: "#047857", ring: "#10b981" }, // emerald/teal
+      "business-japanese-test": { primary: "#ec4899", secondary: "#be185d", ring: "#f43f5e" }, // pink/rose
+      "devops-engineering": { primary: "#22d3ee", secondary: "#0369a1", ring: "#06b6d4" }, // cyan/blue
+      "system-design": { primary: "#ef4444", secondary: "#b91c1c", ring: "#dc2626" }, // red/rose
+      "data-structures-and-algorithms": { primary: "#a855f7", secondary: "#6d28d9", ring: "#8b5cf6" }, // purple/violet
+      "developer-mindset": { primary: "#facc15", secondary: "#b45309", ring: "#d97706" }, // yellow/amber
+      "cybersecurity-awareness": { primary: "#ef4444", secondary: "#be123c", ring: "#f43f5e" }, // red
+      "blockchain-and-web3-fundamentals": { primary: "#eab308", secondary: "#a16207", ring: "#f59e0b" }, // gold
     }
 
     const colors = colorMap[slug] || { primary: "#22d3ee", secondary: "#0369a1", ring: "#8b5cf6" }
