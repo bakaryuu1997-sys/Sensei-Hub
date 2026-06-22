@@ -70,6 +70,7 @@ export const translations: Translations = {
   "subject.fe": { en: "基本情報技術者試験 (FE Exam)", ja: "基本情報技術者試験", vi: "Chứng chỉ Kihon Jouhou (FE)" },
   "subject.mindset": { en: "Growth mindset & soft skills", ja: "成長マインドセット", vi: "Tư duy phát triển & kỹ năng mềm" },
   "subject.system": { en: "Scalable system architecture", ja: "スケーラブルなシステム設計", vi: "Thiết kế hệ thống mở rộng" },
+  "subject.python": { en: "Python, Machine Learning & Deep Learning", ja: "Python・機械学習・深層学習", vi: "Lập trình Python & Học sâu" },
 
   // Subject detail page
   "subject.modules": { en: "Course Modules", ja: "コースモジュール", vi: "Các chương học" },
@@ -200,6 +201,10 @@ export const translations: Translations = {
   "sub.git-and-github.name": { en: "Git & GitHub", ja: "Git & GitHub", vi: "Git & GitHub" },
   "sub.git-and-github.tagline": { en: "Version control and collaborative coding", ja: "バージョン管理と共同開発", vi: "Quản lý mã nguồn & làm việc nhóm" },
   "sub.git-and-github.description": { en: "Go from Git novice to pro. Master commits, branching strategies, pull requests, collaborative workflows, and conflict resolution.", ja: "Gitの初心者からプロへ。コミット、ブランチ戦略、プルリクエスト、共同ワークフロー、競合解決をマスターします。", vi: "Từ người mới bắt đầu đến chuyên gia Git. Làm chủ commit, chiến lược nhánh, pull request, quy trình cộng tác và xử lý xung đột." },
+  
+  "sub.python.name": { en: "Python", ja: "Python", vi: "Python" },
+  "sub.python.tagline": { en: "From syntax to neural networks, client-side Wasm runtime", ja: "基礎文法からニューラルネットワークまで、Wasmによる実行環境", vi: "Từ cú pháp cơ bản đến mạng nơ-ron, chạy trực tiếp trên Wasm" },
+  "sub.python.description": { en: "Master Python programming from scratch. Transition to advanced machine learning and deep learning using interactive browser-based exercises.", ja: "Pythonプログラミングを基礎から学びます。ブラウザ上で動く演習を通して、機械学習やディープラーニングをマスターします。", vi: "Làm chủ Python từ con số 0. Thực hành các bài tập tương tác trên trình duyệt để tiến tới học máy và học sâu chuyên sâu." },
   
   "sub.fe.name": { en: "FE Exam", ja: "基本情報", vi: "Kỳ thi FE" },
   "sub.fe.tagline": { en: "Master the Japanese IT Exam", ja: "日本のIT資格をマスターする", vi: "Chinh phục kỳ thi IT Nhật Bản" },

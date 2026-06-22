@@ -9,6 +9,7 @@ import { getIndexedLessons } from "@/lib/lessons-index"
 const slugToFolder: Record<string, string> = {
   "fe": "fundamental-it-engineer",
   "git-and-github": "git-and-github",
+  "python": "python",
 };
 
 export async function GET(

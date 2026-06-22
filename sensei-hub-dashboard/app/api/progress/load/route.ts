@@ -11,6 +11,7 @@ import { auth } from "@clerk/nextjs/server";
 const slugToFolder: Record<string, string> = {
   "fe": "fundamental-it-engineer",
   "git-and-github": "git-and-github",
+  "python": "python",
 };
 
 /**

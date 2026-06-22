@@ -37,6 +37,7 @@ export function ConstellationPlanet({
       "developer-mindset": { primary: "#facc15", secondary: "#b45309", ring: "#d97706" }, // yellow/amber
       "cybersecurity-awareness": { primary: "#ef4444", secondary: "#be123c", ring: "#f43f5e" }, // red
       "blockchain-and-web3-fundamentals": { primary: "#eab308", secondary: "#a16207", ring: "#f59e0b" }, // gold
+      "python": { primary: "#3b82f6", secondary: "#eab308", ring: "#06b6d4" },
     }
 
     const colors = colorMap[slug] || { primary: "#22d3ee", secondary: "#0369a1", ring: "#8b5cf6" }

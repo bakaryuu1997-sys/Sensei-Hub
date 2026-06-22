@@ -1,4 +1,4 @@
-import { Cloud, Languages, Database, GitBranch, Binary, Palette, Brain, Network, Cpu, ShieldAlert, GitMerge, type LucideIcon } from "lucide-react"
+import { Cloud, Languages, Database, GitBranch, Binary, Palette, Brain, Network, Cpu, ShieldAlert, GitMerge, Terminal, type LucideIcon } from "lucide-react"
 
 export type Subject = {
   id: string
@@ -41,7 +41,8 @@ const iconMap: Record<string, LucideIcon> = {
   Network,
   Cpu,
   ShieldAlert,
-  GitMerge
+  GitMerge,
+  Terminal
 };
 
 export const subjects: Subject[] = [
@@ -738,6 +739,52 @@ export const subjects: Subject[] = [
         difficulty: "Beginner",
         progress: 0
       },
+    ]
+  },
+  {
+    id: "python",
+    slug: "python",
+    name: "Python",
+    fullName: "Python, Machine Learning & Deep Learning",
+    tagline: "From syntax to neural networks, client-side Wasm runtime",
+    description: "Master Python programming from scratch. Transition to advanced machine learning and deep learning using interactive browser-based exercises.",
+    icon: iconMap["Terminal"],
+    gradient: "icon-gradient-python",
+    colorFrom: "from-blue-500",
+    colorTo: "to-yellow-500",
+    progress: 0,
+    totalLessons: 30,
+    completedLessons: 0,
+    hours: 30,
+    level: "Beginner",
+    modules: [
+      {
+        id: "python-basics",
+        title: "Python Basics",
+        description: "Master python basic syntax and fundamentals",
+        lessons: 10,
+        duration: "10h 00m",
+        difficulty: "Beginner",
+        progress: 0
+      },
+      {
+        id: "python-ml",
+        title: "Machine Learning",
+        description: "Introduction to regression, classification and scikit-learn",
+        lessons: 10,
+        duration: "10h 00m",
+        difficulty: "Intermediate",
+        progress: 0
+      },
+      {
+        id: "python-dl",
+        title: "Deep Learning",
+        description: "Neural networks, backpropagation and basic PyTorch models",
+        lessons: 10,
+        duration: "10h 00m",
+        difficulty: "Advanced",
+        progress: 0
+      }
     ]
   },
 ];
