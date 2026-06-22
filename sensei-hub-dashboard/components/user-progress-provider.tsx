@@ -5,6 +5,7 @@ import { useUser } from "@clerk/nextjs"
 import { subjects as staticSubjects, computeSubjectStats, type Subject, type OverallStats } from "@/lib/subjects"
 import { useCosmicAudio } from "@/hooks/use-cosmic-audio"
 import { recordActivity } from "@/lib/activity"
+import { type Entry, boolMapToEntries, mergeProgress } from "@/lib/progress-merge"
 
 type UserProgressContextType = {
   progressMap: Record<string, number>
@@ -18,8 +19,7 @@ type UserProgressContextType = {
 
 const UserProgressContext = createContext<UserProgressContextType | undefined>(undefined)
 
-// 各レッスンの「完了状態＋最終変更時刻」。時刻で last-write-wins する。
-type Entry = { c: boolean; ts: number }
+// 各レッスンの「完了状態＋最終変更時刻」型 Entry と LWW マージは @/lib/progress-merge に集約。
 
 // localStorage の基底キー。ログイン時はユーザー ID で名前空間を分ける。
 const ENTRIES_BASE = "sensei-progress-entries" // 時刻付き進捗（v2）
@@ -40,13 +40,6 @@ function defaultProgressMap(): Record<string, number> {
   const map: Record<string, number> = {}
   staticSubjects.forEach((s) => s.modules.forEach((m) => (map[m.id] = m.progress)))
   return map
-}
-
-// 旧フォーマット（真偽値マップ）を時刻付き Entry へ変換（時刻は 0=最古、DB を優先させる）。
-function boolMapToEntries(b: Record<string, boolean> | null): Record<string, Entry> {
-  const out: Record<string, Entry> = {}
-  if (b) for (const [k, v] of Object.entries(b)) if (v) out[k] = { c: true, ts: 0 }
-  return out
 }
 
 export function UserProgressProvider({ children }: { children: React.ReactNode }) {
@@ -94,38 +87,13 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
         const data = await res.json()
         if (cancelled || !data.progressMap) return
 
-        // 初回ログイン時は匿名(レガシー)キーの完了も取り込む
-        const merged: Record<string, Entry> = { ...localEntries }
+        // 初回ログイン時は匿名(レガシー)キーの完了も取り込み、時刻で LWW マージする。
         const anonBool = readJson<Record<string, boolean>>(LESSONS_BASE)
-        if (anonBool) for (const [k, e] of Object.entries(boolMapToEntries(anonBool))) if (!merged[k]) merged[k] = e
-
-        // DB 側の Entry
-        const dbEntries: Record<string, Entry> = {}
-        for (const l of (data.lessons || []) as { lessonId: string; completed: boolean; ts: number }[]) {
-          dbEntries[l.lessonId] = { c: l.completed, ts: l.ts }
-        }
-
-        // last-write-wins マージ（時刻が新しい方を採用。ローカルが新しければ DB へ反映）
-        const final: Record<string, Entry> = {}
-        const toPush: { lessonId: string; completed: boolean; ts: number }[] = []
-        const allKeys = new Set([...Object.keys(merged), ...Object.keys(dbEntries)])
-        allKeys.forEach((k) => {
-          const a = merged[k]
-          const b = dbEntries[k]
-          if (a && b) {
-            if (a.ts > b.ts) {
-              final[k] = a
-              toPush.push({ lessonId: k, completed: a.c, ts: a.ts })
-            } else {
-              final[k] = b
-            }
-          } else if (a) {
-            final[k] = a
-            toPush.push({ lessonId: k, completed: a.c, ts: a.ts })
-          } else if (b) {
-            final[k] = b
-          }
-        })
+        const { final, toPush } = mergeProgress(
+          localEntries,
+          anonBool,
+          (data.lessons || []) as { lessonId: string; completed: boolean; ts: number }[],
+        )
 
         if (cancelled) return
         setEntries(final)
