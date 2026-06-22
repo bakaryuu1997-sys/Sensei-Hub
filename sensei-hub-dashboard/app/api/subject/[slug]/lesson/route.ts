@@ -29,7 +29,7 @@ function parseFrontmatterAndContent(fileContent: string, lessonPath: string) {
     title,
     description: data.description || "",
     content: body,
-    codingExercise: data.codingExercise === "true" || data.codingExercise === true,
+    codingExercise: data.codingExercise === "true",
     initialCode: data.initialCode || "",
     testCode: data.testCode || "",
   }

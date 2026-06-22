@@ -1,7 +1,6 @@
 "use client"
 
 import { use, useState, useEffect } from "react"
-import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import DOMPurify from "isomorphic-dompurify"
@@ -9,6 +8,7 @@ import confetti from "canvas-confetti"
 import { ChevronLeft, ChevronRight, CheckCircle2, ArrowLeft, BookOpen } from "lucide-react"
 
 import { Sidebar } from "@/components/dashboard/sidebar"
+import { CodeSandbox } from "@/components/dashboard/code-sandbox"
 import { TopBar } from "@/components/dashboard/top-bar"
 import { Starfield } from "@/components/dashboard/starfield"
 import { useLanguage } from "@/lib/i18n"
@@ -18,6 +18,12 @@ import { setActiveLesson, clearActiveLesson } from "@/lib/lesson-context"
 import { recordActivity, recordLessonView } from "@/lib/activity"
 import { vibrate } from "@/lib/haptics"
 import { cn } from "@/lib/utils"
+
+interface LessonItem {
+  path: string
+  title: string
+  description?: string
+}
 
 // Setup DOMPurify to allow target="_blank" on links if needed, or other options
 // marked setup is removed since parsing is shifted to the server.
@@ -58,15 +64,17 @@ export default function LessonPage({
   const lessonPath = pathSegments.join("/")
 
   const { t, lang } = useLanguage()
-  const router = useRouter()
   const { subjects, completedLessons, toggleLessonCompletion } = useUserProgress()
 
   const [lessonData, setLessonData] = useState<{
     title: string
     description: string
     htmlContent: string
+    codingExercise?: boolean
+    initialCode?: string
+    testCode?: string
   } | null>(null)
-  const [lessonsList, setLessonsList] = useState<any[]>([])
+  const [lessonsList, setLessonsList] = useState<LessonItem[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -223,56 +231,22 @@ export default function LessonPage({
       <div className="relative z-10 lg:ml-72 min-h-screen flex flex-col">
         <TopBar />
 
-        <main className="flex-1 px-4 lg:px-8 py-6 lg:py-8">
-          <div className="mx-auto max-w-4xl space-y-6">
-            {/* Breadcrumb */}
-            <div className="flex items-center justify-between">
-              <Link
-                href={`/subject/${slug}`}
-                className="flex items-center gap-2 text-sm font-semibold text-white/60 hover:text-cyan-400 transition-colors"
-              >
-                <ArrowLeft className="h-4 w-4" />
-                {t("lesson.back_to_subject")} {subject.name}
-              </Link>
-              {lessonsList.length > 0 && currentIndex !== -1 && (
-                <span className="text-xs font-mono font-medium text-white/40">
-                  {t("lesson.count_label")} {currentIndex + 1} / {lessonsList.length}
-                </span>
-              )}
-            </div>
-
-            {/* Error or Loading */}
-            {isLoading ? (
-              <div className="flex flex-col items-center justify-center py-20 space-y-4">
-                <div className="h-10 w-10 animate-spin rounded-full border-4 border-cyan-500/20 border-t-cyan-400" />
-                <p className="text-sm text-white/50 font-mono">{t("lesson.loading_content")}</p>
-              </div>
-            ) : error ? (
-              <div className="glass-card border border-rose-500/20 rounded-2xl p-8 text-center space-y-4">
-                <h2 className="text-lg font-bold text-rose-400">{t("lesson.not_found_title")}</h2>
-                <p className="text-sm text-white/60">{error}</p>
-                <Link
-                  href={`/subject/${slug}`}
-                  className="px-4 py-2 bg-white/10 rounded-xl text-sm font-bold hover:bg-white/20 transition-all inline-block"
-                >
-                  {t("lesson.back_to_list")}
-                </Link>
-              </div>
-            ) : (
-              <motion.article
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-                className="space-y-6"
-              >
-                {/* Lesson Card */}
-                <div className="glass-card border border-white/10 rounded-2xl p-6 lg:p-10 space-y-6 shadow-2xl relative overflow-hidden">
-                  {/* Decorative glow overlay */}
-                  <div className={`absolute top-0 right-0 w-96 h-96 bg-gradient-to-br ${subject.colorFrom} ${subject.colorTo} opacity-[0.03] blur-3xl pointer-events-none`} />
-
-                  <header className="space-y-3 pb-6 border-b border-white/5">
+        <main className={cn("flex-1 py-6 lg:py-8", lessonData?.codingExercise ? "px-6 h-auto lg:h-[calc(100vh-120px)] lg:overflow-hidden min-h-[500px] lg:min-h-0" : "px-4 lg:px-8")}>
+          {lessonData?.codingExercise ? (
+            <div className="flex flex-col lg:flex-row h-auto lg:h-full w-full gap-6 overflow-y-auto lg:overflow-hidden">
+              {/* Left Panel: Instruction */}
+              <div className="w-full lg:w-[50%] lg:flex-1 h-[350px] sm:h-[450px] lg:h-full overflow-y-auto pr-2 scrollbar-thin glass-card border border-white/10 rounded-2xl p-6 relative flex flex-col justify-between">
+                <div>
+                  <header className="space-y-3 pb-6 border-b border-white/5 mb-6">
+                    <Link
+                      href={`/subject/${slug}`}
+                      className="flex items-center gap-2 text-sm font-semibold text-white/60 hover:text-cyan-400 transition-colors mb-2"
+                    >
+                      <ArrowLeft className="h-4 w-4" />
+                      {t("lesson.back_to_subject")} {subject.name}
+                    </Link>
                     <h1 
-                      className="text-2xl lg:text-3xl font-extrabold tracking-tight leading-tight text-transparent bg-clip-text"
+                      className="text-2xl font-extrabold tracking-tight leading-tight text-transparent bg-clip-text"
                       style={{
                         background: `linear-gradient(to right, ${colorMapFrom[subject.colorFrom] || "oklch(0.85 0.15 195)"}, ${colorMapTo[subject.colorTo] || "oklch(0.72 0.18 290)"})`,
                         WebkitBackgroundClip: "text",
@@ -281,16 +255,9 @@ export default function LessonPage({
                     >
                       {lessonData?.title}
                     </h1>
-                    {lessonData?.description && (
-                      <p className="text-sm lg:text-base text-slate-300/80 italic leading-relaxed">
-                        {lessonData.description}
-                      </p>
-                    )}
                   </header>
-
-                  {/* HTML Content Container */}
                   <div
-                    className="markdown-content text-slate-200/90 leading-relaxed font-sans"
+                    className="markdown-content text-slate-200/90 leading-relaxed font-sans pb-10"
                     style={{
                       "--subject-from": colorMapFrom[subject.colorFrom] || "oklch(0.75 0.18 195)",
                       "--subject-to": colorMapTo[subject.colorTo] || "oklch(0.7 0.25 290)",
@@ -298,41 +265,24 @@ export default function LessonPage({
                     dangerouslySetInnerHTML={{ __html: htmlContent }}
                   />
                 </div>
-
-                {/* Bottom Bar: Action & Navigations */}
-                <div className="flex flex-col sm:flex-row items-center gap-4 justify-between bg-white/[0.02] border border-white/5 p-4 rounded-2xl glass-card">
-                  {/* Prev Button */}
+                
+                {/* Navigation */}
+                <div className="flex items-center justify-between border-t border-white/5 pt-4 mt-6 bg-slate-950/20">
                   {prevLesson ? (
                     <Link
                       href={`/subject/${slug}/lesson/${prevLesson.path}`}
-                      className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-white/10 bg-white/5 text-sm font-semibold text-white/80 hover:bg-white/10 hover:text-white transition-all active:scale-95"
+                      className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 bg-white/5 text-xs font-semibold text-white/80 hover:bg-white/10 transition-all"
                     >
                       <ChevronLeft className="h-4 w-4" />
                       {t("lesson.prev")}
                     </Link>
                   ) : (
-                    <div className="hidden sm:block w-24" />
+                    <div />
                   )}
-
-                  {/* Completion Toggle */}
-                  <button
-                    onClick={handleToggleComplete}
-                    className={cn(
-                      "w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-bold font-mono transition-all duration-300 shadow-lg active:scale-95",
-                      isCompleted
-                        ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/20"
-                        : cn("text-white bg-gradient-to-r hover:opacity-90 shadow-cyan-500/10", subject.colorFrom, subject.colorTo)
-                    )}
-                  >
-                    <CheckCircle2 className={cn("h-4 w-4", isCompleted ? "text-emerald-400" : "text-white/60")} />
-                    {isCompleted ? t("lesson.completed") : t("lesson.complete")}
-                  </button>
-
-                  {/* Next Button */}
                   {nextLesson ? (
                     <Link
                       href={`/subject/${slug}/lesson/${nextLesson.path}`}
-                      className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-white/10 bg-white/5 text-sm font-semibold text-white/80 hover:bg-white/10 hover:text-white transition-all active:scale-95"
+                      className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 bg-white/5 text-xs font-semibold text-white/80 hover:bg-white/10 transition-all"
                     >
                       {t("lesson.next")}
                       <ChevronRight className="h-4 w-4" />
@@ -340,16 +290,152 @@ export default function LessonPage({
                   ) : (
                     <Link
                       href={`/subject/${slug}`}
-                      className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-white/10 bg-white/5 text-sm font-semibold text-white/80 hover:bg-white/10 hover:text-white transition-all active:scale-95"
+                      className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 bg-white/5 text-xs font-semibold text-white/80 hover:bg-white/10 transition-all"
                     >
                       {t("lesson.back")}
                       <BookOpen className="h-4 w-4" />
                     </Link>
                   )}
                 </div>
-              </motion.article>
-            )}
-          </div>
+              </div>
+
+              {/* Right Panel: Code Sandbox */}
+              <div className="w-full lg:w-[50%] h-[500px] sm:h-[600px] lg:h-full">
+                <CodeSandbox
+                  initialCode={lessonData.initialCode || ""}
+                  testCode={lessonData.testCode || ""}
+                  onComplete={handleToggleComplete}
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="mx-auto max-w-4xl space-y-6">
+              {/* Breadcrumb */}
+              <div className="flex items-center justify-between">
+                <Link
+                  href={`/subject/${slug}`}
+                  className="flex items-center gap-2 text-sm font-semibold text-white/60 hover:text-cyan-400 transition-colors"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  {t("lesson.back_to_subject")} {subject.name}
+                </Link>
+                {lessonsList.length > 0 && currentIndex !== -1 && (
+                  <span className="text-xs font-mono font-medium text-white/40">
+                    {t("lesson.count_label")} {currentIndex + 1} / {lessonsList.length}
+                  </span>
+                )}
+              </div>
+
+              {/* Error or Loading */}
+              {isLoading ? (
+                <div className="flex flex-col items-center justify-center py-20 space-y-4">
+                  <div className="h-10 w-10 animate-spin rounded-full border-4 border-cyan-500/20 border-t-cyan-400" />
+                  <p className="text-sm text-white/50 font-mono">{t("lesson.loading_content")}</p>
+                </div>
+              ) : error ? (
+                <div className="glass-card border border-rose-500/20 rounded-2xl p-8 text-center space-y-4">
+                  <h2 className="text-lg font-bold text-rose-400">{t("lesson.not_found_title")}</h2>
+                  <p className="text-sm text-white/60">{error}</p>
+                  <Link
+                    href={`/subject/${slug}`}
+                    className="px-4 py-2 bg-white/10 rounded-xl text-sm font-bold hover:bg-white/20 transition-all inline-block"
+                  >
+                    {t("lesson.back_to_list")}
+                  </Link>
+                </div>
+              ) : (
+                <motion.article
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="space-y-6"
+                >
+                  {/* Lesson Card */}
+                  <div className="glass-card border border-white/10 rounded-2xl p-6 lg:p-10 space-y-6 shadow-2xl relative overflow-hidden">
+                    {/* Decorative glow overlay */}
+                    <div className={`absolute top-0 right-0 w-96 h-96 bg-gradient-to-br ${subject.colorFrom} ${subject.colorTo} opacity-[0.03] blur-3xl pointer-events-none`} />
+
+                    <header className="space-y-3 pb-6 border-b border-white/5">
+                      <h1 
+                        className="text-2xl lg:text-3xl font-extrabold tracking-tight leading-tight text-transparent bg-clip-text"
+                        style={{
+                          background: `linear-gradient(to right, ${colorMapFrom[subject.colorFrom] || "oklch(0.85 0.15 195)"}, ${colorMapTo[subject.colorTo] || "oklch(0.72 0.18 290)"})`,
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent"
+                        }}
+                      >
+                        {lessonData?.title}
+                      </h1>
+                      {lessonData?.description && (
+                        <p className="text-sm lg:text-base text-slate-300/80 italic leading-relaxed">
+                          {lessonData.description}
+                        </p>
+                      )}
+                    </header>
+
+                    {/* HTML Content Container */}
+                    <div
+                      className="markdown-content text-slate-200/90 leading-relaxed font-sans"
+                      style={{
+                        "--subject-from": colorMapFrom[subject.colorFrom] || "oklch(0.75 0.18 195)",
+                        "--subject-to": colorMapTo[subject.colorTo] || "oklch(0.7 0.25 290)",
+                      } as React.CSSProperties}
+                      dangerouslySetInnerHTML={{ __html: htmlContent }}
+                    />
+                  </div>
+
+                  {/* Bottom Bar: Action & Navigations */}
+                  <div className="flex flex-col sm:flex-row items-center gap-4 justify-between bg-white/[0.02] border border-white/5 p-4 rounded-2xl glass-card">
+                    {/* Prev Button */}
+                    {prevLesson ? (
+                      <Link
+                        href={`/subject/${slug}/lesson/${prevLesson.path}`}
+                        className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-white/10 bg-white/5 text-sm font-semibold text-white/80 hover:bg-white/10 hover:text-white transition-all active:scale-95"
+                      >
+                        <ChevronLeft className="h-4 w-4" />
+                        {t("lesson.prev")}
+                      </Link>
+                    ) : (
+                      <div className="hidden sm:block w-24" />
+                    )}
+
+                    {/* Completion Toggle */}
+                    <button
+                      onClick={handleToggleComplete}
+                      className={cn(
+                        "w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-bold font-mono transition-all duration-300 shadow-lg active:scale-95",
+                        isCompleted
+                          ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/20"
+                          : cn("text-white bg-gradient-to-r hover:opacity-90 shadow-cyan-500/10", subject.colorFrom, subject.colorTo)
+                      )}
+                    >
+                      <CheckCircle2 className={cn("h-4 w-4", isCompleted ? "text-emerald-400" : "text-white/60")} />
+                      {isCompleted ? t("lesson.completed") : t("lesson.complete")}
+                    </button>
+
+                    {/* Next Button */}
+                    {nextLesson ? (
+                      <Link
+                        href={`/subject/${slug}/lesson/${nextLesson.path}`}
+                        className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-white/10 bg-white/5 text-sm font-semibold text-white/80 hover:bg-white/10 hover:text-white transition-all active:scale-95"
+                      >
+                        {t("lesson.next")}
+                        <ChevronRight className="h-4 w-4" />
+                      </Link>
+                    ) : (
+                      <Link
+                        href={`/subject/${slug}`}
+                        className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-white/10 bg-white/5 text-sm font-semibold text-white/80 hover:bg-white/10 hover:text-white transition-all active:scale-95"
+                      >
+                        {t("lesson.back")}
+                        <BookOpen className="h-4 w-4" />
+                      </Link>
+                    )}
+                  </div>
+                </motion.article>
+              )}
+            </div>
+          )}
         </main>
       </div>
     </div>
