@@ -19,11 +19,34 @@ self.onmessage = async function (e) {
   const pyodide = await pyodideReadyPromise;
   if (!pyodide) return;
 
-  // Load requested packages
-  if (packages && packages.length > 0) {
-    self.postMessage({ type: "status", status: "loading-packages", packages });
+  // Auto-detect packages in user code and test code
+  const detectedPackages = [];
+  const fullCode = code + "\n" + (testCode || "");
+  
+  if (/(^|\n)\s*(import\s+numpy|from\s+numpy\s+import)/.test(fullCode)) {
+    detectedPackages.push("numpy");
+  }
+  if (/(^|\n)\s*(import\s+pandas|from\s+pandas\s+import)/.test(fullCode)) {
+    detectedPackages.push("pandas");
+  }
+  if (/(^|\n)\s*(import\s+sklearn|from\s+sklearn\s+import)/.test(fullCode)) {
+    detectedPackages.push("scikit-learn");
+  }
+  if (/(^|\n)\s*(import\s+matplotlib|from\s+matplotlib\s+import)/.test(fullCode)) {
+    detectedPackages.push("matplotlib");
+  }
+
+  // Merge explicitly requested and auto-detected packages
+  const allPackages = Array.from(new Set([
+    ...(packages || []),
+    ...detectedPackages
+  ]));
+
+  // Load packages if any
+  if (allPackages.length > 0) {
+    self.postMessage({ type: "status", status: "loading-packages", packages: allPackages });
     try {
-      await pyodide.loadPackage(packages);
+      await pyodide.loadPackage(allPackages);
     } catch (err) {
       self.postMessage({ type: "error", error: "Failed to load packages: " + err.message });
       return;
