@@ -60,7 +60,7 @@ export function TopBar() {
       transition={{ duration: 0.5 }}
       // ノッチ端末（PWA 全画面）でステータスバーに重ならないよう上部にセーフエリアを足す
       style={{ paddingTop: "calc(1rem + env(safe-area-inset-top))" }}
-      className="sticky top-0 z-30 flex items-center gap-4 px-6 lg:px-8 py-4 backdrop-blur-xl bg-slate-950/40 border-b border-white/5"
+      className="sticky top-0 z-30 flex items-center gap-2 sm:gap-4 px-4 sm:px-6 lg:px-8 py-4 backdrop-blur-xl bg-slate-950/40 border-b border-white/5"
     >
       {/* Mobile nav trigger */}
       <Sheet open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
@@ -127,22 +127,22 @@ export function TopBar() {
       {/* Language Switcher */}
       <LanguageSwitcher />
 
-      {/* Notifications */}
+      {/* Notifications (モバイルでは省略してスペースを確保) */}
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="relative w-11 h-11 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center transition-colors"
+        className="relative w-11 h-11 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hidden md:flex items-center justify-center transition-colors"
         aria-label={t("aria.notifications")}
       >
         <Bell className="w-4 h-4 text-white/80" />
       </motion.button>
 
-      {/* Audio Toggle */}
+      {/* Audio Toggle (モバイルでは省略) */}
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={toggleMute}
-        className="relative w-11 h-11 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center transition-colors text-white/80"
+        className="relative w-11 h-11 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hidden md:flex items-center justify-center transition-colors text-white/80"
         aria-label={t("aria.toggle_audio")}
       >
         {muted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-cyan-400" />}
@@ -188,10 +188,11 @@ function PwaInstallButton() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => (isInstallable ? install() : setGuideOpen(true))}
-        className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-gradient-to-r from-cyan-500/20 to-purple-500/20 hover:from-cyan-500/30 hover:to-purple-500/30 border border-cyan-500/30 text-xs font-bold text-white transition-all cursor-pointer"
+        aria-label={t("pwa.install_topbar")}
+        className="flex items-center gap-1.5 h-11 px-2.5 sm:px-3 rounded-xl bg-gradient-to-r from-cyan-500/20 to-purple-500/20 hover:from-cyan-500/30 hover:to-purple-500/30 border border-cyan-500/30 text-xs font-bold text-white transition-all cursor-pointer"
       >
-        <Download className="h-3.5 w-3.5 text-cyan-300" />
-        {t("pwa.install_topbar")}
+        <Download className="h-4 w-4 text-cyan-300" />
+        <span className="hidden sm:inline">{t("pwa.install_topbar")}</span>
       </motion.button>
       <PwaInstallGuide open={guideOpen} onClose={() => setGuideOpen(false)} isIOS={isIOS} />
     </>
