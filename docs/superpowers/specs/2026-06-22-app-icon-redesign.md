@@ -4,10 +4,10 @@ This document specifies the design and implementation for replacing the standard
 
 ## 1. Goal & Concept
 - **Goal**: Elevate the brand identity of SENSEI HUB by replacing the generic Star icon with a premium, custom tech logo representing system architecture, databases, and connection networks.
-- **Concept**: **3D Isometric Cube Network**
-  - Uses an exact mathematical hexagon projection to form a 3D cube wireframe.
-  - Plural nodes (circles) represent system components (servers, DBs, clients) connecting to a glowing central core (the Hub).
-  - Employs a vibrant cyan-to-pink gradient with subtle glow effects and slow animations to represent the "Flow" learning state.
+- **Concept**: **3D Isometric Cube Network (Premium Cyber-Glow Edition)**
+  - Uses an exact mathematical hexagon projection to form a 3D cube wireframe, scaled up to fill the badge space.
+  - Plural nodes (circles) represent system components (servers, DBs, clients) stylized as 3D glass spheres connecting to a glowing central core.
+  - Employs a dual-layer neon glow and a traveling laser pulse animation along the lines to represent active "Flow".
 
 ---
 
@@ -16,27 +16,30 @@ This document specifies the design and implementation for replacing the standard
 ### A. SVG Geometry (32x32 ViewBox)
 - **Center Core Node**: `(16, 16)`
 - **Hexagon Outer Vertices**:
-  1. Top: `(16, 6)`
-  2. Top-Right: `(24.66, 11)`
-  3. Bottom-Right: `(24.66, 21)`
-  4. Bottom: `(16, 26)`
-  5. Bottom-Left: `(7.34, 21)`
-  6. Top-Left: `(7.34, 11)`
-- **Line segments**:
-  - Hexagon border: `M 16 6 L 24.66 11 L 24.66 21 L 16 26 L 7.34 21 L 7.34 11 Z`
-  - 3D Cube Inner Axes:
-    - Vertical: `M 16 6 L 16 16`
-    - Left Axis: `M 7.34 21 L 16 16`
-    - Right Axis: `M 24.66 21 L 16 16`
-- **Vertex Nodes**:
-  - Center: circle at `(16, 16)` with `r="3.5"`, filled with white/glow.
-  - Vertices: circles at all 6 outer positions with `r="1.8"`, filled with cyan/pink.
+  1. Top: `(16, 3)`
+  2. Top-Right: `(27.26, 9.5)`
+  3. Bottom-Right: `(27.26, 22.5)`
+  4. Bottom: `(16, 29)`
+  5. Bottom-Left: `(4.74, 22.5)`
+  6. Top-Left: `(4.74, 9.5)`
+- **Line paths**:
+  - Outer Hexagon: `M 16 3 L 27.26 9.5 L 27.26 22.5 L 16 29 L 4.74 22.5 L 4.74 9.5 Z`
+  - Y-Shape Inner Axes: `M 16 3 L 16 16 M 4.74 22.5 L 16 16 M 27.26 22.5 L 16 16`
 
 ### B. Color & Style Spec
-- **Stroke**: Linear gradient (`#portal-grad`) starting from Cyan (`#22d3ee`) through Purple (`#a855f7`) to Pink (`#f472b6`).
-- **Stroke Width**: `1.8px`, with `stroke-linecap="round"` and `stroke-linejoin="round"`.
-- **Glow Filter**: A CSS drop-shadow/glow or radial background gradient to make the icon pop.
-- **Micro-Animation**: Subtly spin the network background lines or pulsate the opacity of the nodes (using CSS keyframes).
+- **Gradients**:
+  - `#portal-grad`: Linear gradient from Cyan (`#22d3ee`) through Purple (`#a855f7`) to Pink (`#f472b6`).
+  - Radial gradients for 3D spheres:
+    - `#cyan-sphere`: High-contrast sphere with white specular highlight, Cyan middle, and dark Teal base.
+    - `#purple-sphere`: White highlight, Purple middle, dark Violet base.
+    - `#pink-sphere`: White highlight, Pink middle, dark Rose base.
+    - `#center-sphere`: Concentric white/blue core with soft edges.
+- **Line Styling (Dual-Layer Glow)**:
+  - Faint Base Line: `stroke-width="1.8"`, `opacity="0.3"` (keeps the network visible).
+  - Glowing Laser Line: `stroke-width="2.2"`, `stroke-dasharray="25 75"`, animated with `stroke-dashoffset` to move a bright pulse along the network lines.
+- **Vertex Nodes**:
+  - Center: circle at `(16, 16)` with `r="4"`, filled with white/glow.
+  - Vertices: circles at 6 outer positions with `r="2.2"`, styled with their respective radial sphere gradients.
 
 ---
 
@@ -44,14 +47,18 @@ This document specifies the design and implementation for replacing the standard
 
 ### A. Frontend Components
 #### [MODIFY] [sidebar.tsx](file:///wsl$/Ubuntu/home/bakaryuu/Sensei-Hub/sensei-hub-dashboard/components/dashboard/sidebar.tsx)
-- Replace `<Sparkles className="h-5 w-5 text-white" />` inside the logo wrapper with the inline custom `<FuturePortalIcon />` SVG.
-- Add CSS styles/animations for the pulse/glow effect inside the component.
+- Define the custom `<FuturePortalIcon />` component.
+- Add CSS Keyframes for:
+  - `laser-flow`: Translating the dashoffset to make the bright pulse flow.
+  - `portal-rotate`: Low-speed rotation of the wireframe.
+  - `core-pulse`: Breathing pulse for the central core.
+- Replace `<FuturePortalIcon />` in the sidebar logo container.
 
 ### B. Public Assets
 #### [MODIFY] [icon.svg](file:///wsl$/Ubuntu/home/bakaryuu/Sensei-Hub/sensei-hub-dashboard/public/icon.svg)
-- Update with the clean SVG code.
+- Update with the clean SVG code (static, high-contrast version).
 
-#### [NEW] PNG Asset Regeneration
+#### [MODIFY] PNG Asset Regeneration
 - Regenerate the PNG icons from the new SVG:
   - `public/apple-icon.png`
   - `public/icon-light-32x32.png`
