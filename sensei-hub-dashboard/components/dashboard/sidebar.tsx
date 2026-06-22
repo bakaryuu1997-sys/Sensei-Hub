@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { Home, BookOpen, Sparkles, Download, Settings, History } from "lucide-react"
+import { Home, BookOpen, Download, Settings, History } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
@@ -61,7 +61,7 @@ export function SidebarContent({ onNavigate }: { onNavigate?: () => void } = {})
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-purple-600 blur-xl opacity-60" />
           <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 shadow-lg shadow-purple-500/40">
-            <Sparkles className="h-5 w-5 text-white" />
+            <FuturePortalIcon />
           </div>
           <div className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-slate-950 bg-emerald-400" />
         </div>
@@ -235,3 +235,59 @@ function PwaInstallButton() {
     </motion.div>
   )
 }
+
+const FuturePortalIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
+    fill="none"
+    className="h-6 w-6"
+  >
+    <defs>
+      <linearGradient id="sidebar-portal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#22d3ee" />
+        <stop offset="50%" stopColor="#a855f7" />
+        <stop offset="100%" stopColor="#f472b6" />
+      </linearGradient>
+      <filter id="sidebar-glow" x="-25%" y="-25%" width="150%" height="150%">
+        <feGaussianBlur stdDeviation="1" result="blur" />
+        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      </filter>
+    </defs>
+    <style>{`
+      @keyframes portal-spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .portal-rotate-group {
+        transform-origin: 16px 16px;
+        animation: portal-spin 25s linear infinite;
+      }
+    `}</style>
+    <g className="portal-rotate-group">
+      <path
+        d="M 16 6 L 24.66 11 L 24.66 21 L 16 26 L 7.34 21 L 7.34 11 Z"
+        stroke="url(#sidebar-portal-grad)"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+        filter="url(#sidebar-glow)"
+      />
+      <path
+        d="M 16 6 L 16 16 M 7.34 21 L 16 16 M 24.66 21 L 16 16"
+        stroke="url(#sidebar-portal-grad)"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+        filter="url(#sidebar-glow)"
+      />
+      <circle cx="16" cy="6" r="1.8" fill="#22d3ee" />
+      <circle cx="24.66" cy="11" r="1.8" fill="#a855f7" />
+      <circle cx="24.66" cy="21" r="1.8" fill="#f472b6" />
+      <circle cx="16" cy="26" r="1.8" fill="#f472b6" />
+      <circle cx="7.34" cy="21" r="1.8" fill="#22d3ee" />
+      <circle cx="7.34" cy="11" r="1.8" fill="#22d3ee" />
+    </g>
+    <circle cx="16" cy="16" r="3.2" fill="#ffffff" filter="url(#sidebar-glow)" className="animate-pulse" />
+  </svg>
+);
