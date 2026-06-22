@@ -244,7 +244,6 @@ const FuturePortalIcon = () => (
     className="h-6 w-6"
   >
     <defs>
-      <!-- Gradients -->
       <linearGradient id="sidebar-portal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="0%" stopColor="#22d3ee" />
         <stop offset="50%" stopColor="#a855f7" />
@@ -299,7 +298,6 @@ const FuturePortalIcon = () => (
       }
     `}</style>
     <g className="portal-rotate-group">
-      <!-- Faint Base Layer for Visual Continuity -->
       <path
         d="M 16 3 L 27.26 9.5 L 27.26 22.5 L 16 29 L 4.74 22.5 L 4.74 9.5 Z"
         stroke="url(#sidebar-portal-grad)"
@@ -317,7 +315,6 @@ const FuturePortalIcon = () => (
         opacity="0.3"
       />
       
-      <!-- Glowing Traveling Laser Sparks -->
       <path
         d="M 16 3 L 27.26 9.5 L 27.26 22.5 L 16 29 L 4.74 22.5 L 4.74 9.5 Z"
         stroke="url(#sidebar-portal-grad)"
@@ -337,7 +334,6 @@ const FuturePortalIcon = () => (
         className="laser-line-reverse"
       />
       
-      <!-- Vertex Nodes (3D glass spheres) -->
       <circle cx="16" cy="3" r="2.2" fill="url(#sb-cyan-sphere)" />
       <circle cx="27.26" cy="9.5" r="2.2" fill="url(#sb-purple-sphere)" />
       <circle cx="27.26" cy="22.5" r="2.2" fill="url(#sb-pink-sphere)" />
@@ -345,7 +341,6 @@ const FuturePortalIcon = () => (
       <circle cx="4.74" cy="22.5" r="2.2" fill="url(#sb-cyan-sphere)" />
       <circle cx="4.74" cy="9.5" r="2.2" fill="url(#sb-cyan-sphere)" />
     </g>
-    <!-- Center glowing core node -->
     <circle cx="16" cy="16" r="4" fill="url(#sb-center-sphere)" filter="url(#sidebar-glow)" className="animate-pulse" />
   </svg>
 );
