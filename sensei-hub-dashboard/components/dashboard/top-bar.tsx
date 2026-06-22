@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
-import { Search, Bell, Command, Activity, Volume2, VolumeX, Download, Menu } from "lucide-react"
+import { Search, Command, Activity, Volume2, VolumeX, Download, Menu } from "lucide-react"
 import { useLanguage } from "@/lib/i18n"
 import { LanguageSwitcher } from "./language-switcher"
 import { useUserProgress } from "@/components/user-progress-provider"
@@ -127,15 +127,7 @@ export function TopBar() {
       {/* Language Switcher */}
       <LanguageSwitcher />
 
-      {/* Notifications (モバイルでは省略してスペースを確保) */}
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="relative w-11 h-11 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hidden md:flex items-center justify-center transition-colors"
-        aria-label={t("aria.notifications")}
-      >
-        <Bell className="w-4 h-4 text-white/80" />
-      </motion.button>
+      {/* 通知ベルは実機能が無いため一旦撤去（誤解防止）。将来 web-push 実装時に復活させる */}
 
       {/* Audio Toggle (モバイルでは省略) */}
       <motion.button
