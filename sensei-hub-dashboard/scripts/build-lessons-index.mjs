@@ -29,16 +29,64 @@ function parseFrontmatter(content) {
   const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n)?([\s\S]*)/)
   if (!match) return { data: {}, body: content }
   const data = {}
-  match[1].split("\n").forEach((line) => {
-    const parts = line.split(":")
-    if (parts.length >= 2) {
-      const key = parts[0].trim()
-      data[key] = decodeEscapedString(
-        parts.slice(1).join(":").trim().replace(/^"(.*)"$/, "$1").replace(/^'(.*)'$/, "$1"),
-      )
+  const yaml = match[1]
+  const body = match[2] ? match[2].trim() : ""
+
+  const lines = yaml.split(/\r?\n/)
+  let currentKey = null
+  let blockScalarMode = false
+  let blockScalarLines = []
+  let blockScalarIndent = 0
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i]
+    if (blockScalarMode && currentKey) {
+      const trimmed = line.trim()
+      if (line.startsWith(" ") || line.startsWith("\t") || trimmed === "") {
+        if (blockScalarIndent === 0 && trimmed !== "") {
+          const matchIndent = line.match(/^(\s*)/)
+          blockScalarIndent = matchIndent ? matchIndent[0].length : 0
+        }
+        const contentLine = line.substring(blockScalarIndent)
+        blockScalarLines.push(contentLine)
+      } else {
+        data[currentKey] = blockScalarLines.join("\n")
+        currentKey = null
+        blockScalarMode = false
+        blockScalarLines = []
+        blockScalarIndent = 0
+
+        const parts = line.split(":")
+        if (parts.length >= 2) {
+          const key = parts[0].trim()
+          const val = parts.slice(1).join(":").trim()
+          if (val === "|") {
+            currentKey = key
+            blockScalarMode = true
+          } else {
+            data[key] = decodeEscapedString(val.replace(/^"(.*)"$/, "$1").replace(/^'(.*)'$/, "$1"))
+          }
+        }
+      }
+    } else {
+      const parts = line.split(":")
+      if (parts.length >= 2) {
+        const key = parts[0].trim()
+        const val = parts.slice(1).join(":").trim()
+        if (val === "|") {
+          currentKey = key
+          blockScalarMode = true
+        } else {
+          data[key] = decodeEscapedString(val.replace(/^"(.*)"$/, "$1").replace(/^'(.*)'$/, "$1"))
+        }
+      }
     }
-  })
-  return { data, body: match[2] ? match[2].trim() : "" }
+  }
+  if (blockScalarMode && currentKey) {
+    data[currentKey] = blockScalarLines.join("\n")
+  }
+
+  return { data, body }
 }
 
 function extractTitle(data, body) {

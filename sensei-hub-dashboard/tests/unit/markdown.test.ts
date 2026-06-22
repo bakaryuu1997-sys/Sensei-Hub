@@ -33,6 +33,23 @@ describe("parseFrontmatter", () => {
     expect(data).toEqual({})
     expect(body).toBe("# Just content")
   })
+
+  it("parses block scalars (|) correctly", () => {
+    const content = `---
+title: "Day 1"
+initialCode: |
+  def solve(a, b):
+      return a + b
+testCode: |
+  assert solve(1, 2) == 3
+---
+# Day 1`
+    const { data, body } = parseFrontmatter(content)
+    expect(data.title).toBe("Day 1")
+    expect(data.initialCode).toBe("def solve(a, b):\n    return a + b")
+    expect(data.testCode).toBe("assert solve(1, 2) == 3")
+    expect(body).toBe("# Day 1")
+  })
 })
 
 describe("extractTitle", () => {
