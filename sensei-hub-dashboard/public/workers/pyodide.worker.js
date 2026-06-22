@@ -75,6 +75,38 @@ self.onmessage = async function (e) {
     // Evaluate user code
     await pyodide.runPythonAsync(code);
 
+    // Extract matplotlib figures if library was loaded
+    let matplotlibImages = [];
+    try {
+      const hasMatplotlib = await pyodide.runPythonAsync("import sys; 'matplotlib' in sys.modules");
+      if (hasMatplotlib) {
+        await pyodide.runPythonAsync(`
+import io
+import base64
+import matplotlib.pyplot as plt
+_matplotlib_images = []
+try:
+    for num in plt.get_fignums():
+        fig = plt.figure(num)
+        buf = io.BytesIO()
+        fig.savefig(buf, format='png', bbox_inches='tight')
+        buf.seek(0)
+        img_base64 = base64.b64encode(buf.read()).decode('utf-8')
+        _matplotlib_images.append(img_base64)
+        plt.close(fig)
+except Exception as e:
+    pass
+`);
+        const pyImages = pyodide.globals.get("_matplotlib_images");
+        if (pyImages) {
+          matplotlibImages = pyImages.toJs();
+          pyImages.destroy();
+        }
+      }
+    } catch (pltErr) {
+      console.error("Failed to extract matplotlib figures:", pltErr);
+    }
+
     // Evaluate tests if provided
     let testPassed = true;
     let testError = "";
@@ -91,7 +123,8 @@ self.onmessage = async function (e) {
       type: "success",
       output,
       testPassed,
-      testError
+      testError,
+      matplotlibImages
     });
   } catch (err) {
     self.postMessage({

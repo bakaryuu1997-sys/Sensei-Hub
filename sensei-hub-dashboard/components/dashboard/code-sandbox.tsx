@@ -17,6 +17,7 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, onComplete }:
   const [packagesLoading, setPackagesLoading] = useState<string[]>([])
   const [consoleLogs, setConsoleLogs] = useState<string[]>([])
   const [testError, setTestError] = useState<string>("")
+  const [plotImages, setPlotImages] = useState<string[]>([])
   
   const workerRef = useRef<Worker | null>(null)
 
@@ -38,6 +39,9 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, onComplete }:
         setConsoleLogs((prev) => [...prev, msg.text])
       } else if (msg.type === "success") {
         setStatus(msg.testPassed ? "completed" : "failed")
+        if (msg.matplotlibImages) {
+          setPlotImages(msg.matplotlibImages)
+        }
         if (msg.testPassed && onComplete) {
           onComplete()
         } else if (!msg.testPassed) {
@@ -58,6 +62,7 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, onComplete }:
     if (!workerRef.current || status === "loading") return
     setConsoleLogs([])
     setTestError("")
+    setPlotImages([])
     setStatus("running")
     workerRef.current.postMessage({ code, testCode })
   }
@@ -66,6 +71,7 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, onComplete }:
     setCode(initialCode)
     setConsoleLogs([])
     setTestError("")
+    setPlotImages([])
     setStatus("ready")
   }
 
@@ -78,6 +84,7 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, onComplete }:
       setCode(solutionCode)
       setConsoleLogs([])
       setTestError("")
+      setPlotImages([])
     }
   }
 
@@ -155,6 +162,11 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, onComplete }:
           {status === "ready" && <div className="text-white/40">Ready. Write code and click "Run".</div>}
           {consoleLogs.map((log, idx) => (
             <div key={idx} className="whitespace-pre-wrap">{log}</div>
+          ))}
+          {plotImages.map((img, idx) => (
+            <div key={idx} className="my-4 p-2 bg-white/5 rounded-xl border border-white/10 max-w-full flex justify-center">
+              <img src={`data:image/png;base64,${img}`} alt={`Plot ${idx + 1}`} className="max-h-[260px] object-contain rounded-lg shadow-md" />
+            </div>
           ))}
           {status === "completed" && (
               <div className="flex items-center gap-1.5 text-emerald-400 font-bold pt-2">
