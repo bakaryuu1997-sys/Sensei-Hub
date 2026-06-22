@@ -244,50 +244,108 @@ const FuturePortalIcon = () => (
     className="h-6 w-6"
   >
     <defs>
+      <!-- Gradients -->
       <linearGradient id="sidebar-portal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="0%" stopColor="#22d3ee" />
         <stop offset="50%" stopColor="#a855f7" />
         <stop offset="100%" stopColor="#f472b6" />
       </linearGradient>
-      <filter id="sidebar-glow" x="-25%" y="-25%" width="150%" height="150%">
-        <feGaussianBlur stdDeviation="1" result="blur" />
+      <radialGradient id="sb-cyan-sphere" cx="35%" cy="35%" r="65%">
+        <stop offset="0%" stopColor="#ffffff" />
+        <stop offset="40%" stopColor="#22d3ee" />
+        <stop offset="100%" stopColor="#0891b2" />
+      </radialGradient>
+      <radialGradient id="sb-purple-sphere" cx="35%" cy="35%" r="65%">
+        <stop offset="0%" stopColor="#ffffff" />
+        <stop offset="40%" stopColor="#c084fc" />
+        <stop offset="100%" stopColor="#7e22ce" />
+      </radialGradient>
+      <radialGradient id="sb-pink-sphere" cx="35%" cy="35%" r="65%">
+        <stop offset="0%" stopColor="#ffffff" />
+        <stop offset="40%" stopColor="#f472b6" />
+        <stop offset="100%" stopColor="#be185d" />
+      </radialGradient>
+      <radialGradient id="sb-center-sphere" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stopColor="#ffffff" />
+        <stop offset="30%" stopColor="#e0f2fe" />
+        <stop offset="100%" stopColor="#38bdf8" />
+      </radialGradient>
+      
+      <filter id="sidebar-glow" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur stdDeviation="1.2" result="blur" />
         <feComposite in="SourceGraphic" in2="blur" operator="over" />
       </filter>
     </defs>
     <style>{`
+      @keyframes laser-flow {
+        0% { stroke-dashoffset: 100; }
+        100% { stroke-dashoffset: 0; }
+      }
       @keyframes portal-spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
       }
       .portal-rotate-group {
         transform-origin: 16px 16px;
-        animation: portal-spin 25s linear infinite;
+        animation: portal-spin 35s linear infinite;
+      }
+      .laser-line {
+        stroke-dasharray: 15 85;
+        animation: laser-flow 4s linear infinite;
+      }
+      .laser-line-reverse {
+        stroke-dasharray: 20 80;
+        animation: laser-flow 3.5s linear infinite reverse;
       }
     `}</style>
     <g className="portal-rotate-group">
+      <!-- Faint Base Layer for Visual Continuity -->
       <path
-        d="M 16 6 L 24.66 11 L 24.66 21 L 16 26 L 7.34 21 L 7.34 11 Z"
+        d="M 16 3 L 27.26 9.5 L 27.26 22.5 L 16 29 L 4.74 22.5 L 4.74 9.5 Z"
         stroke="url(#sidebar-portal-grad)"
-        strokeWidth="1.8"
+        strokeWidth="2.2"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+        opacity="0.3"
+      />
+      <path
+        d="M 16 3 L 16 16 M 4.74 22.5 L 16 16 M 27.26 22.5 L 16 16"
+        stroke="url(#sidebar-portal-grad)"
+        strokeWidth="2.2"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+        opacity="0.3"
+      />
+      
+      <!-- Glowing Traveling Laser Sparks -->
+      <path
+        d="M 16 3 L 27.26 9.5 L 27.26 22.5 L 16 29 L 4.74 22.5 L 4.74 9.5 Z"
+        stroke="url(#sidebar-portal-grad)"
+        strokeWidth="2.2"
         strokeLinejoin="round"
         strokeLinecap="round"
         filter="url(#sidebar-glow)"
+        className="laser-line"
       />
       <path
-        d="M 16 6 L 16 16 M 7.34 21 L 16 16 M 24.66 21 L 16 16"
+        d="M 16 3 L 16 16 M 4.74 22.5 L 16 16 M 27.26 22.5 L 16 16"
         stroke="url(#sidebar-portal-grad)"
-        strokeWidth="1.8"
+        strokeWidth="2.2"
         strokeLinejoin="round"
         strokeLinecap="round"
         filter="url(#sidebar-glow)"
+        className="laser-line-reverse"
       />
-      <circle cx="16" cy="6" r="1.8" fill="#22d3ee" />
-      <circle cx="24.66" cy="11" r="1.8" fill="#a855f7" />
-      <circle cx="24.66" cy="21" r="1.8" fill="#f472b6" />
-      <circle cx="16" cy="26" r="1.8" fill="#f472b6" />
-      <circle cx="7.34" cy="21" r="1.8" fill="#22d3ee" />
-      <circle cx="7.34" cy="11" r="1.8" fill="#22d3ee" />
+      
+      <!-- Vertex Nodes (3D glass spheres) -->
+      <circle cx="16" cy="3" r="2.2" fill="url(#sb-cyan-sphere)" />
+      <circle cx="27.26" cy="9.5" r="2.2" fill="url(#sb-purple-sphere)" />
+      <circle cx="27.26" cy="22.5" r="2.2" fill="url(#sb-pink-sphere)" />
+      <circle cx="16" cy="29" r="2.2" fill="url(#sb-pink-sphere)" />
+      <circle cx="4.74" cy="22.5" r="2.2" fill="url(#sb-cyan-sphere)" />
+      <circle cx="4.74" cy="9.5" r="2.2" fill="url(#sb-cyan-sphere)" />
     </g>
-    <circle cx="16" cy="16" r="3.2" fill="#ffffff" filter="url(#sidebar-glow)" className="animate-pulse" />
+    <!-- Center glowing core node -->
+    <circle cx="16" cy="16" r="4" fill="url(#sb-center-sphere)" filter="url(#sidebar-glow)" className="animate-pulse" />
   </svg>
 );
