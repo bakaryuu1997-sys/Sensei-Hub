@@ -14,6 +14,7 @@ marked.setOptions({
 const slugToFolder: Record<string, string> = {
   "fe": "fundamental-it-engineer",
   "git-and-github": "git-and-github",
+  "python": "python",
 };
 
 function isPathSafe(baseDir: string, targetPath: string): boolean {
@@ -28,6 +29,9 @@ function parseFrontmatterAndContent(fileContent: string, lessonPath: string) {
     title,
     description: data.description || "",
     content: body,
+    codingExercise: data.codingExercise === "true" || data.codingExercise === true,
+    initialCode: data.initialCode || "",
+    testCode: data.testCode || "",
   }
 }
 
@@ -90,6 +94,9 @@ export async function GET(
       title: parsedResult.title,
       description: parsedResult.description,
       htmlContent,
+      codingExercise: parsedResult.codingExercise,
+      initialCode: parsedResult.initialCode,
+      testCode: parsedResult.testCode,
     }
 
     setCache(cacheKey, result)
