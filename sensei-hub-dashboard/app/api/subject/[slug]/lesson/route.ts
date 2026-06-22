@@ -32,6 +32,7 @@ function parseFrontmatterAndContent(fileContent: string, lessonPath: string) {
     codingExercise: data.codingExercise === "true",
     initialCode: data.initialCode || "",
     testCode: data.testCode || "",
+    solutionCode: data.solutionCode || "",
   }
 }
 
@@ -97,6 +98,7 @@ export async function GET(
       codingExercise: parsedResult.codingExercise,
       initialCode: parsedResult.initialCode,
       testCode: parsedResult.testCode,
+      solutionCode: parsedResult.solutionCode,
     }
 
     setCache(cacheKey, result)

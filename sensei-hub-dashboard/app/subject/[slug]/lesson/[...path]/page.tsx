@@ -73,6 +73,7 @@ export default function LessonPage({
     codingExercise?: boolean
     initialCode?: string
     testCode?: string
+    solutionCode?: string
   } | null>(null)
   const [lessonsList, setLessonsList] = useState<LessonItem[]>([])
   const [isLoading, setIsLoading] = useState(true)
@@ -304,6 +305,7 @@ export default function LessonPage({
                 <CodeSandbox
                   initialCode={lessonData.initialCode || ""}
                   testCode={lessonData.testCode || ""}
+                  solutionCode={lessonData.solutionCode || ""}
                   onComplete={handleToggleComplete}
                 />
               </div>

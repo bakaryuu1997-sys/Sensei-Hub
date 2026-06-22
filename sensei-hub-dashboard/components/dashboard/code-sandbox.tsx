@@ -7,12 +7,14 @@ import { Play, RotateCcw, AlertTriangle, CheckCircle, Terminal } from "lucide-re
 type CodeSandboxProps = {
   initialCode: string
   testCode?: string
+  solutionCode?: string
   onComplete?: () => void
 }
 
-export function CodeSandbox({ initialCode, testCode, onComplete }: CodeSandboxProps) {
+export function CodeSandbox({ initialCode, testCode, solutionCode, onComplete }: CodeSandboxProps) {
   const [code, setCode] = useState(initialCode)
-  const [status, setStatus] = useState<"idle" | "loading" | "ready" | "running" | "completed" | "failed">("idle")
+  const [status, setStatus] = useState<"idle" | "loading" | "loading-packages" | "ready" | "running" | "completed" | "failed">("idle")
+  const [packagesLoading, setPackagesLoading] = useState<string[]>([])
   const [consoleLogs, setConsoleLogs] = useState<string[]>([])
   const [testError, setTestError] = useState<string>("")
   
@@ -27,6 +29,10 @@ export function CodeSandbox({ initialCode, testCode, onComplete }: CodeSandboxPr
       const msg = e.data
       if (msg.type === "status") {
         if (msg.status === "loading") setStatus("loading")
+        if (msg.status === "loading-packages") {
+          setStatus("loading-packages")
+          setPackagesLoading(msg.packages || [])
+        }
         if (msg.status === "ready") setStatus("ready")
       } else if (msg.type === "stdout" || msg.type === "stderr") {
         setConsoleLogs((prev) => [...prev, msg.text])
@@ -63,6 +69,18 @@ export function CodeSandbox({ initialCode, testCode, onComplete }: CodeSandboxPr
     setStatus("ready")
   }
 
+  const showSolution = () => {
+    if (!solutionCode) return
+    const confirmShow = window.confirm(
+      "Are you sure you want to view the solution? This will overwrite your current code in the editor."
+    )
+    if (confirmShow) {
+      setCode(solutionCode)
+      setConsoleLogs([])
+      setTestError("")
+    }
+  }
+
   return (
     <div className="flex h-full flex-col border border-white/5 bg-slate-950/80 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl">
       {/* Header */}
@@ -72,6 +90,14 @@ export function CodeSandbox({ initialCode, testCode, onComplete }: CodeSandboxPr
           Interactive Editor
         </div>
         <div className="flex gap-2">
+          {solutionCode && (
+            <button
+              onClick={showSolution}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-yellow-500/20 hover:bg-yellow-500/10 text-xs text-yellow-400 font-semibold transition-colors cursor-pointer"
+            >
+              Show Solution
+            </button>
+          )}
           <button
             onClick={resetCode}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/10 hover:bg-white/5 text-xs text-white/80 transition-colors cursor-pointer"
@@ -121,6 +147,11 @@ export function CodeSandbox({ initialCode, testCode, onComplete }: CodeSandboxPr
         </div>
         <div className="flex-1 p-4 overflow-y-auto space-y-1 scrollbar-thin text-white/90">
           {status === "loading" && <div className="text-cyan-400">Loading Pyodide WebAssembly runtime...</div>}
+          {status === "loading-packages" && (
+            <div className="text-amber-400 animate-pulse">
+              Installing libraries: {packagesLoading.join(", ")} from CDN (Wasm)...
+            </div>
+          )}
           {status === "ready" && <div className="text-white/40">Ready. Write code and click "Run".</div>}
           {consoleLogs.map((log, idx) => (
             <div key={idx} className="whitespace-pre-wrap">{log}</div>
