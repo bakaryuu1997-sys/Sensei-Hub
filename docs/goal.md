@@ -18,13 +18,23 @@ IT エンジニア向けの 3 言語（EN/JA/VI）学習プラットフォーム
 - **同期**: last-write-wins の複数端末同期。
 - **デプロイ**: ECR + EC2 + HTTPS で本番稼働。
 - **Python 教科**: ブラウザ内コード実行（Pyodide / Monaco / CodeSandbox）。
-- **テスト**: ユニット 47/47 緑。
-- **PWA アイコン修正（2026-06-23 完了）**: `sensei-mascot.png` は実体 JPEG で
-  manifest が PNG 512/192 と誤申告 → Android で「アプリをインストール」が出ない恐れ。
-  sharp で実 PNG（`icon-192.png` / `icon-512.png` / `icon-maskable-512.png`）を生成し、
-  manifest を修正（any + maskable）。
-- **通知ベル撤去（2026-06-23 完了）**: top-bar の飾りだけのベルは実機能が無く誤解を
-  招くため撤去。将来 web-push 実装時に復活させる。
+- **テスト**: ユニット 72/72 緑（LWW マージを純粋関数化＋chat-store のテストを追加）。
+- **PWA アイコン（2026-06-23）**: **ブランドロゴ（`icon.svg` の六角形）**から実 PNG
+  `icon-192/512/maskable` を生成し manifest 修正。宇宙飛行士マスコットから差し替え済み。
+- **通知ベル撤去（2026-06-23）**: 実機能の無い飾りベルを撤去（将来 web-push で復活）。
+- **Python サンドボックス刷新（2026-06-23）**: エディタを Monaco(CDN 依存で空白化) →
+  **CodeMirror6** に置換（軽量・CDN 不要・モバイルで滑らか）。本文コードを
+  **highlight.js** でサーバー側ハイライト（VSCode 風）。Mermaid を堅牢化し失敗時は
+  フォールバック表示、**全 102 図を mermaid.parse で検証し 0 エラー**。出力のバイト
+  化け（"19.0"→"4957464810"）を **batched** で修正。**input()(stdin)** 対応。各 Run を
+  **名前空間で隔離**。**実行タイムアウト10秒 + Stop**。コードを **localStorage 保存**。
+  Copy/Clear/自動スクロール/stderr 赤/Ctrl+Enter/遅延ロード+スケルトン。採点テストが
+  無い課は採点しない（お試し実行）、未達時は穏やかな黄色＋ヒント表示。
+- **Python コンテンツ監査（2026-06-23）**: 全 30 日の initialCode/testCode を Pyodide で
+  実行監査 → ミスマッチ無し（全て正しい skeleton+テスト）と確認。
+- **CRLF 正規化（2026-06-23）**: `.gitattributes` に `* text=auto eol=lf` で churn 解消。
+- **設計ドキュメント（2026-06-23）**: `docs/python-course-plan.md`（カリキュラム+各
+  レッスンの構成テンプレート）、`docs/superpowers/specs/2026-06-23-web-push-design.md`。
 
 ---
 
@@ -34,20 +44,20 @@ IT エンジニア向けの 3 言語（EN/JA/VI）学習プラットフォーム
 - [ ] **21+ コミットを GitHub へ push → 再ビルド・ECR へ push → EC2 再デプロイ**。
       本番にはまだ Python 教科・モバイル top-bar 修正・本セッションの修正が反映されていない。
       （※ push/redeploy はユーザーが実施。本セッションはローカル commit まで）
-- [ ] **web-push による「学習リマインド（アプリ終了時）」**。VAPID 鍵 + 購読の保存 +
-      cron が必要。現状は in-app と同一セッション通知のみ。
+- [ ] **web-push 実装**（設計書 `docs/superpowers/specs/2026-06-23-web-push-design.md`
+      レビュー済み）。VAPID + PushSubscription + sw push + instrumentation の cron。**実装着手中**。
 
 ### 🟡 優先度 中
-- [ ] **新機能のテスト網羅を上げる**: チャット、プロバイダー LWW 同期、引っ張って更新、
-      ボトムナビ、オンボーディング（現状は news/i18n/markdown/quiz のみ）。
+- [ ] **新機能のテスト網羅を上げる（残り）**: 引っ張って更新、ボトムナビ、オンボーディング、
+      Python コードランナー。※ LWW 同期・chat-store は完了。
 - [ ] **E2E を実機で走らせる**: CI ジョブが Clerk シークレットでゲートされており、
       実インスタンスで未検証。
 - [ ] **Docker イメージ削減**: 1.52GB と大きい（standalone は entrypoint が prisma CLI を
       必要とするため保留中）。
-- [ ] **Python 教科の精査**: バンドルサイズ（Monaco/Pyodide が重い）、モバイルでの性能・UX、
-      ユーザーコード実行時の安全性（サンドボックス・実行制限）。
-- [ ] **core.autocrlf=true による CRLF/LF ノイズ**。entrypoint は `.gitattributes` で保護済みだが
-      他ファイルは churn が残る。
+- [x] ~~**Python 教科の精査**: バンドル（遅延ロード済）、サンドボックス安全性（タイムアウト
+      +Stop 済）~~。残: DL を numpy で実装、4 課(22/23/25/29)の test 文言、ハード
+      メモリ上限（クライアントのみでは不可・timeout で代替）。
+- [x] ~~**core.autocrlf=true による CRLF/LF ノイズ**~~ → `* text=auto eol=lf` で解消。
 
 ### ⚪ 優先度 低 / 要観察
 - [ ] **Clerk の旧キーが git 履歴に残る** → ダッシュボードでローテーション推奨（ユーザー作業）。
@@ -62,16 +72,17 @@ IT エンジニア向けの 3 言語（EN/JA/VI）学習プラットフォーム
 ---
 
 ## ⏳ 未完了（明示）
-- [ ] 21+ コミットの push と最新版の再デプロイ（上記 優先度 高）。
-- [ ] web-push（学習リマインド）。
+- [ ] コミットの push と最新版の再デプロイ（上記 優先度 高）。
+- [ ] web-push（学習リマインド）の**実装**（設計書はレビュー済み）。
 - [ ] 仮想スクロール（現状は「さらに見る」12 件ずつ）。
-- [ ] Python 教科（コード実行）のテスト + セキュリティ。
-- [ ] 重要ロジック（LWW 同期）のテスト網羅向上。
+- [ ] Python コードランナーのユニットテスト。
+- [x] ~~重要ロジック（LWW 同期）のテスト網羅向上~~ → 完了（progress-merge.test）。
 
 ---
 
 ## メモ
-- **Python 教科はユーザーから明示依頼があるまで触らない**。
+- Python 教科は現在ユーザー依頼により改善中（サンドボックス/コンテンツ）。コンテンツ本文
+  はユーザーが別 AI で生成する場合があり、本計画書とテンプレートを設計図として使う。
 - **Quiz の内容追加はこのリポジトリ側では行わない**（ユーザーが別 AI で生成・管理）。
   `lessons/quizzes/<slug>.json` を置けば表示。`tests/unit/quiz.test.ts` が `sets` を検証。
 - **ログイン込み E2E を CI で実行**するには GitHub シークレットに

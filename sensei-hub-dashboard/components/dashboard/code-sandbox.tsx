@@ -443,6 +443,11 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, storageKey, o
                     ヒント: 必要な関数が未定義です。コードを書き換えた場合は <span className="font-semibold">Reset</span> で初期コードに戻せます。
                   </div>
                 )}
+                {/(NoneType|ufunc .*not supported|unsupported operand|not supported for the input type|argument of type 'NoneType')/.test(testError) && (
+                  <div className="mt-1 text-[11px] text-amber-200/60">
+                    ヒント: 関数がまだ正しい値を返していません（None のまま）。<span className="font-semibold">return</span> の実装を完成させてください。
+                  </div>
+                )}
               </div>
             </div>
           )}
