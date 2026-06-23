@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react"
 import CodeMirror from "@uiw/react-codemirror"
 import { python } from "@codemirror/lang-python"
 import { oneDark } from "@codemirror/theme-one-dark"
-import { Play, Square, RotateCcw, Copy, Check, Trash2, AlertTriangle, CheckCircle, Terminal, Loader2, Keyboard } from "lucide-react"
+import { Play, Square, RotateCcw, Copy, Check, Trash2, CircleDashed, CheckCircle, Terminal, Loader2, Keyboard } from "lucide-react"
 
 type LogLine = { text: string; isError: boolean }
 
@@ -412,16 +412,20 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, storageKey, o
               />
             </div>
           ))}
+          {/* 演習チェック（プログラムのエラーとは別物。クリアは緑、未達は穏やかな黄色） */}
           {status === "completed" && (
-            <div className="flex items-center gap-1.5 text-emerald-400 font-bold pt-2">
-              <CheckCircle className="h-4 w-4" />
-              Task Passed! Lesson Completed.
+            <div className="mt-2 flex items-center gap-1.5 rounded-lg border border-emerald-500/25 bg-emerald-500/[0.08] px-3 py-2 text-emerald-300 font-semibold">
+              <CheckCircle className="h-4 w-4 shrink-0" />
+              演習クリア！レッスン完了です。
             </div>
           )}
-          {testError && (
-            <div className="flex items-start gap-1.5 text-rose-400 font-bold pt-2">
-              <AlertTriangle className="h-4 w-4 mt-0.5 shrink-0" />
-              <div>Task Failed: {testError}</div>
+          {testError && status !== "completed" && (
+            <div className="mt-2 flex items-start gap-2 rounded-lg border border-amber-500/20 bg-amber-500/[0.06] px-3 py-2 text-amber-300/90">
+              <CircleDashed className="h-4 w-4 mt-0.5 shrink-0" />
+              <div className="min-w-0">
+                <div className="font-semibold">演習はまだ達成していません</div>
+                <div className="font-mono text-[11px] text-amber-200/70 break-words">{testError}</div>
+              </div>
             </div>
           )}
           <div ref={consoleEndRef} />

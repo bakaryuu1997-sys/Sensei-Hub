@@ -128,7 +128,9 @@ except Exception as e:
         await pyodide.runPythonAsync(testCode, { globals: namespace });
       } catch (tErr) {
         testPassed = false;
-        testError = tErr.message;
+        // 巨大なトレースバックではなく、最後の意味ある 1 行（例: "NameError: ..."）だけ渡す。
+        const lines = String(tErr.message || "").trim().split("\n").map((s) => s.trim()).filter(Boolean);
+        testError = lines[lines.length - 1] || "テストに合格していません";
       }
     }
 
