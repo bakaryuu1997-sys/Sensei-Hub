@@ -66,7 +66,7 @@ flowchart TD
 
 ```mermaid
 graph TD
-    subgraph Đường đi Tối ưu hóa (lr = 0.1)
+    subgraph optPath["Đường đi Tối ưu hóa (lr = 0.1)"]
         direction TB
         S["Khởi đầu: x = 10.0 (f(x) = 64.0, độ dốc = 16.0)"] ==>|Bước 1: x - 0.1*16| S1["x = 8.4 (f(x) = 40.96, độ dốc = 12.8)"]
         S1 ==>|Bước 2: x - 0.1*12.8| S2["x = 7.12 (f(x) = 26.21, độ dốc = 10.24)"]

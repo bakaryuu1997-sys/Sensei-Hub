@@ -66,7 +66,7 @@ To see how this works step-by-step, let's trace the optimization path starting f
 
 ```mermaid
 graph TD
-    subgraph Optimization Path (lr = 0.1)
+    subgraph optPath["Optimization Path (lr = 0.1)"]
         direction TB
         S["Start: x = 10.0 (f(x) = 64.0, slope = 16.0)"] ==>|Step 1: x - 0.1*16| S1["x = 8.4 (f(x) = 40.96, slope = 12.8)"]
         S1 ==>|Step 2: x - 0.1*12.8| S2["x = 7.12 (f(x) = 26.21, slope = 10.24)"]

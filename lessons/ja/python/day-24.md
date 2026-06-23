@@ -66,7 +66,7 @@ flowchart TD
 
 ```mermaid
 graph TD
-    subgraph 最適化パス (lr = 0.1)
+    subgraph optPath["最適化パス (lr = 0.1)"]
         direction TB
         S["開始: x = 10.0 (f(x) = 64.0, 傾き = 16.0)"] ==>|ステップ 1: x - 0.1*16| S1["x = 8.4 (f(x) = 40.96, 傾き = 12.8)"]
         S1 ==>|ステップ 2: x - 0.1*12.8| S2["x = 7.12 (f(x) = 26.21, 傾き = 10.24)"]

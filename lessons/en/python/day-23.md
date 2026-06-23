@@ -75,7 +75,7 @@ Additionally, let's visualize how the loss value behaves relative to predictions
 
 ```mermaid
 graph TD
-    subgraph Loss Behavior (Target = 1.0)
+    subgraph lossBehavior["Loss Behavior (Target = 1.0)"]
         direction LR
         P1["Prediction: 0.05"] --> L1["High BCE Loss: ~3.00"]
         P2["Prediction: 0.50"] --> L2["Medium BCE Loss: ~0.69"]

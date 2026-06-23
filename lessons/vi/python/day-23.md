@@ -75,7 +75,7 @@ Ngoài ra, hãy trực quan hóa cách giá trị mất mát thay đổi theo c�
 
 ```mermaid
 graph TD
-    subgraph Hành vi của hàm Mất mát (Nhãn thực tế = 1.0)
+    subgraph lossBehavior["Hành vi của hàm Mất mát (Nhãn thực tế = 1.0)"]
         direction LR
         P1["Dự đoán: 0.05"] --> L1["Mất mát BCE Cao: ~3.00"]
         P2["Dự đoán: 0.50"] --> L2["Mất mát BCE Trung bình: ~0.69"]

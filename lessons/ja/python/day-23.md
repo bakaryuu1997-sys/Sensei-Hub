@@ -75,7 +75,7 @@ flowchart TD
 
 ```mermaid
 graph TD
-    subgraph 損失の挙動 (ターゲット = 1.0)
+    subgraph lossBehavior["損失の挙動 (ターゲット = 1.0)"]
         direction LR
         P1["予測値: 0.05"] --> L1["高いBCE損失: ~3.00"]
         P2["予測値: 0.50"] --> L2["中程度のBCE損失: ~0.69"]
