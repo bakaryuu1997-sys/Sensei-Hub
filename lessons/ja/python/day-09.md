@@ -48,13 +48,13 @@ Pythonにおけるファイル操作は、「開く（オープン）」「読�
 
 ```mermaid
 graph TD
-    Start([スタート]) --> Open[with 文の中で open(filename, mode) を実行]
+    Start([スタート]) --> Open["with 文の中で open(filename, mode) を実行"]
     Open --> CheckMode{書き込みモードか、<br/>読み込みモードか？}
-    CheckMode -- 読み込み ("r") --> ReadOp[ファイル内容の読み込み: read(), readline(), readlines()]
-    CheckMode -- 書き込み ("w" / "a") --> WriteOp[ファイル内容の書き込み: write()]
-    ReadOp --> ExitBlock[with ブロックを抜ける]
+    CheckMode -->|読み込み r| ReadOp["ファイル内容の読み込み: read(), readline(), readlines()"]
+    CheckMode -->|書き込み w/a| WriteOp["ファイル内容の書き込み: write()"]
+    ReadOp --> ExitBlock["with ブロックを抜ける"]
     WriteOp --> ExitBlock
-    ExitBlock --> AutoClose[ファイルが自動的にクローズされ、バッファがフラッシュされる]
+    ExitBlock --> AutoClose["ファイルが自動的にクローズされ、バッファがフラッシュされる"]
     AutoClose --> End([終了])
 ```
 

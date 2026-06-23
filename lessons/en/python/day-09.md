@@ -48,13 +48,13 @@ The diagram below illustrates the file access lifecycle. Opening a file requests
 
 ```mermaid
 graph TD
-    Start([Start]) --> Open[open(filename, mode) inside 'with']
+    Start([Start]) --> Open["open(filename, mode) inside 'with'"]
     Open --> CheckMode{Is Mode Write or Read?}
-    CheckMode -- Read ("r") --> ReadOp[Read file content: read(), readline(), or readlines()]
-    CheckMode -- Write ("w" / "a") --> WriteOp[Write file content: write()]
-    ReadOp --> ExitBlock[Exit 'with' block]
+    CheckMode -->|Read r| ReadOp["Read file content: read(), readline(), or readlines()"]
+    CheckMode -->|Write w/a| WriteOp["Write file content: write()"]
+    ReadOp --> ExitBlock["Exit 'with' block"]
     WriteOp --> ExitBlock
-    ExitBlock --> AutoClose[File automatically closed & buffers flushed]
+    ExitBlock --> AutoClose["File automatically closed and buffers flushed"]
     AutoClose --> End([End])
 ```
 

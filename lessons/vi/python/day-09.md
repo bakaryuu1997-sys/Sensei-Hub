@@ -48,13 +48,13 @@ Sơ đồ dưới đây minh họa vòng đời truy cập file. Việc mở fil
 
 ```mermaid
 graph TD
-    Start([Bắt đầu]) --> Open[Mở open(filename, mode) trong khối 'with']
+    Start([Bắt đầu]) --> Open["Mở open(filename, mode) trong khối 'with'"]
     Open --> CheckMode{Chế độ là Ghi hay Đọc?}
-    CheckMode -- Đọc ("r") --> ReadOp[Đọc nội dung file: read(), readline(), hoặc readlines()]
-    CheckMode -- Ghi ("w" / "a") --> WriteOp[Ghi nội dung file: write()]
-    ReadOp --> ExitBlock[Thoát khối 'with']
+    CheckMode -->|Đọc r| ReadOp["Đọc nội dung file: read(), readline(), hoặc readlines()"]
+    CheckMode -->|Ghi w/a| WriteOp["Ghi nội dung file: write()"]
+    ReadOp --> ExitBlock["Thoát khối 'with'"]
     WriteOp --> ExitBlock
-    ExitBlock --> AutoClose[Tự động đóng file & giải phóng bộ đệm]
+    ExitBlock --> AutoClose["Tự động đóng file và giải phóng bộ đệm"]
     AutoClose --> End([Kết thúc])
 ```
 
