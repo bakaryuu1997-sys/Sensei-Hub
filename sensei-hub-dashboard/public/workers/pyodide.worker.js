@@ -55,20 +55,20 @@ self.onmessage = async function (e) {
   }
 
   let output = "";
-  // Redirect sys.stdout and sys.stderr to capture print statements
+  // stdout/stderr を文字列として受け取る（batched は改行ごとにデコード済み文字列を渡す）。
+  // ※ write コールバックは Uint8Array(バイト列)を渡すため、文字列として連結すると
+  //   "19.0" が "4957464810"(バイトコード)になってしまう。batched を使うこと。
   pyodide.setStdout({
-    write: (text) => {
-      output += text;
-      self.postMessage({ type: "stdout", text });
-      return text.length;
-    }
+    batched: (text) => {
+      output += text + "\n";
+      self.postMessage({ type: "stdout", text: text + "\n" });
+    },
   });
   pyodide.setStderr({
-    write: (text) => {
-      output += text;
-      self.postMessage({ type: "stderr", text });
-      return text.length;
-    }
+    batched: (text) => {
+      output += text + "\n";
+      self.postMessage({ type: "stderr", text: text + "\n" });
+    },
   });
 
   // 標準入力（input()）。Input 欄の内容を 1 行ずつ供給し、尽きたら EOF。
@@ -82,9 +82,11 @@ self.onmessage = async function (e) {
   // 実行開始を通知（メイン側はここからタイムアウト計測を始める）。
   self.postMessage({ type: "status", status: "executing" });
 
+  // 各 Run を独立した名前空間で実行（前回の変数・関数の漏れを防ぐ）。
+  const namespace = pyodide.globals.get("dict")();
   try {
     // Evaluate user code
-    await pyodide.runPythonAsync(code);
+    await pyodide.runPythonAsync(code, { globals: namespace });
 
     // Extract matplotlib figures if library was loaded
     let matplotlibImages = [];
@@ -123,7 +125,7 @@ except Exception as e:
     let testError = "";
     if (testCode) {
       try {
-        await pyodide.runPythonAsync(testCode);
+        await pyodide.runPythonAsync(testCode, { globals: namespace });
       } catch (tErr) {
         testPassed = false;
         testError = tErr.message;
@@ -142,5 +144,7 @@ except Exception as e:
       type: "error",
       error: err.message
     });
+  } finally {
+    namespace.destroy();
   }
 };
