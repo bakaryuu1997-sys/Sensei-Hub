@@ -57,9 +57,17 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, storageKey, o
   const restartRef = useRef<(reason: "timeout" | "stopped") => void>(() => {})
   const consoleEndRef = useRef<HTMLDivElement | null>(null)
 
+  // 本物の採点テストがあるか（無ければ「お試し実行」として採点 UI を出さない）。
+  const hasTest = (testCode || "").trim().length > 0
+  const hasTestRef = useRef(hasTest)
+
   useEffect(() => {
     onCompleteRef.current = onComplete
   }, [onComplete])
+
+  useEffect(() => {
+    hasTestRef.current = hasTest
+  }, [hasTest])
 
   const clearRunTimeout = () => {
     if (timeoutRef.current) {
@@ -96,10 +104,15 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, storageKey, o
           break
         case "success":
           clearRunTimeout()
-          setStatus(msg.testPassed ? "completed" : "failed")
           if (msg.matplotlibImages) setPlotImages(msg.matplotlibImages)
-          if (msg.testPassed) onCompleteRef.current?.()
-          else setTestError(msg.testError || "")
+          if (hasTestRef.current) {
+            setStatus(msg.testPassed ? "completed" : "failed")
+            if (msg.testPassed) onCompleteRef.current?.()
+            else setTestError(msg.testError || "")
+          } else {
+            // 採点テストが無い「お試し実行」: 出力だけ表示し、採点 UI は出さない。
+            setStatus("ready")
+          }
           break
         case "error":
           clearRunTimeout()
@@ -425,6 +438,11 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, storageKey, o
               <div className="min-w-0">
                 <div className="font-semibold">演習はまだ達成していません</div>
                 <div className="font-mono text-[11px] text-amber-200/70 break-words">{testError}</div>
+                {/(not defined|NameError)/.test(testError) && (
+                  <div className="mt-1 text-[11px] text-amber-200/60">
+                    ヒント: 必要な関数が未定義です。コードを書き換えた場合は <span className="font-semibold">Reset</span> で初期コードに戻せます。
+                  </div>
+                )}
               </div>
             </div>
           )}
