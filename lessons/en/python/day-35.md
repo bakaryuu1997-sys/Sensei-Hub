@@ -199,7 +199,7 @@ class SafeGetAttribute:
 
 When Python executes a `class` definition block, it carries out the following steps:
 1. **Determines the Metaclass**: It checks the class definition for a `metaclass=` argument, then checks parent base classes, and defaults to `type`.
-2. **Prepares the Namespace**: It calls the metaclass's `__prepare__(name, bases, **kwargs)` method. This returns a dictionary-like object representing the namespace namespace where class variables and methods will be defined.
+2. **Prepares the Namespace**: It calls the metaclass's `__prepare__(name, bases, **kwargs)` method. This returns a dictionary-like object representing the namespace where class variables and methods will be defined.
 3. **Executes the Class Body**: Python runs the statements inside the class definition, executing them inside the namespace prepared in step 2.
 4. **Instantiates the Class Object**: It calls the metaclass's constructor:
    `metaclass(name, bases, namespace_dict)`.
