@@ -745,7 +745,7 @@ export const subjects: Subject[] = [
     id: "python",
     slug: "python",
     name: "Python",
-    fullName: "Python, Machine Learning & Deep Learning",
+    fullName: "Python, Machine Learning, Deep Learning & Web API",
     tagline: "From syntax to neural networks, client-side Wasm runtime",
     description: "Master Python programming from scratch. Transition to advanced machine learning and deep learning using interactive browser-based exercises.",
     icon: iconMap["Terminal"],
@@ -753,10 +753,10 @@ export const subjects: Subject[] = [
     colorFrom: "from-blue-500",
     colorTo: "to-yellow-500",
     progress: 0,
-    totalLessons: 30,
+    totalLessons: 50,
     completedLessons: 0,
-    hours: 30,
-    level: "Beginner",
+    hours: 50,
+    level: "Advanced",
     modules: [
       {
         id: "python-basics",
@@ -780,6 +780,24 @@ export const subjects: Subject[] = [
         id: "python-dl",
         title: "Deep Learning",
         description: "Neural networks, backpropagation and basic PyTorch models",
+        lessons: 10,
+        duration: "10h 00m",
+        difficulty: "Advanced",
+        progress: 0
+      },
+      {
+        id: "python-advanced",
+        title: "Advanced Python",
+        description: "Master advanced Python features like decorators, generators, asyncio, metaprogramming",
+        lessons: 10,
+        duration: "10h 00m",
+        difficulty: "Advanced",
+        progress: 0
+      },
+      {
+        id: "python-fastapi",
+        title: "FastAPI Web API",
+        description: "Build high-performance REST APIs with FastAPI, Pydantic, SQLAlchemy and JWT authentication",
         lessons: 10,
         duration: "10h 00m",
         difficulty: "Advanced",
