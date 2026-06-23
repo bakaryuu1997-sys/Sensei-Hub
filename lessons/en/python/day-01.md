@@ -45,10 +45,10 @@ When you define a function like `solve(a, b)` that adds two numbers, the control
 
 ```mermaid
 graph TD
-    A[Start: Call solve(a, b)] --> B[Bind arguments to parameters 'a' and 'b']
+    A["Start: Call solve(a, b)"] --> B["Bind arguments to parameters a and b"]
     B --> C["Perform arithmetic operation: a + b"]
-    C --> D[Return the calculated sum to the caller]
-    D --> E[End of Function Execution]
+    C --> D["Return the calculated sum to the caller"]
+    D --> E["End of Function Execution"]
 ```
 
 This sequence ensures that input values are received, processed mathematically, and the resulting value is handed back to whatever called the function.
@@ -162,14 +162,14 @@ If you later do `x = 10`, the name `x` is simply rebound to a new integer object
 ```mermaid
 graph LR
     subgraph Bindings
-        x[Variable: x]
+        x["Variable: x"]
     end
-    subgraph Heap Memory
-        obj5[Integer Object: 5]
-        obj10[Integer Object: 10]
+    subgraph Heap["Heap Memory"]
+        obj5["Integer Object: 5"]
+        obj10["Integer Object: 10"]
     end
     x -.-> obj5
-    x ====> obj10
+    x ==> obj10
 ```
 This reference-based architecture is why variables in Python are dynamic and don't need fixed type declarations.
 </details>

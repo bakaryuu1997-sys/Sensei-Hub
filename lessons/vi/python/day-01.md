@@ -45,10 +45,10 @@ Khi bạn định nghĩa một hàm như `solve(a, b)` để cộng hai số, lu
 
 ```mermaid
 graph TD
-    A[Bắt đầu: Gọi solve(a, b)] --> B[Gán giá trị đối số vào tham số 'a' và 'b']
+    A["Bắt đầu: Gọi solve(a, b)"] --> B["Gán giá trị đối số vào tham số a và b"]
     B --> C["Thực hiện phép toán số học: a + b"]
-    C --> D[Trả về tổng đã tính cho nơi gọi hàm]
-    D --> E[Kết thúc thực thi hàm]
+    C --> D["Trả về tổng đã tính cho nơi gọi hàm"]
+    D --> E["Kết thúc thực thi hàm"]
 ```
 
 Quy trình này đảm bảo rằng các giá trị đầu vào được nhận, được xử lý toán học và kết quả được đưa lại cho nơi đã gọi hàm.
@@ -162,14 +162,14 @@ Nếu sau đó bạn gán `x = 10`, tên biến `x` sẽ được liên kết l�
 ```mermaid
 graph LR
     subgraph Bindings [Liên kết biến]
-        x[Biến: x]
+        x["Biến: x"]
     end
     subgraph HeapMemory [Bộ nhớ Heap]
-        obj5[Đối tượng số nguyên: 5]
-        obj10[Đối tượng số nguyên: 10]
+        obj5["Đối tượng số nguyên: 5"]
+        obj10["Đối tượng số nguyên: 10"]
     end
     x -.-> obj5
-    x ====> obj10
+    x ==> obj10
 ```
 Cơ chế quản lý tham chiếu này giải thích tại sao biến trong Python mang tính động và không cần khai báo kiểu cố định trước.
 </details>
