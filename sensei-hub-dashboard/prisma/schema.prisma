@@ -25,6 +25,22 @@ model User {
   lessons       LessonProgress[]
   quizResults   QuizResult[]
   favorites     FavoriteVocab[]
+  subscriptions PushSubscription[]
+}
+
+// Web Push 購読（1 ユーザー複数デバイス）。endpoint が一意。
+model PushSubscription {
+  id             String    @id @default(uuid())
+  userId         String
+  user           User      @relation(fields: [userId], references: [id])
+  endpoint       String    @unique
+  p256dh         String
+  auth           String
+  lang           String    @default("vi") // 通知文面の言語（購読時の preferredLang）
+  lastNotifiedAt DateTime?                 // 本日重複送信を防ぐ
+  createdAt      DateTime  @default(now())
+
+  @@index([userId])
 }
 
 model LessonProgress {

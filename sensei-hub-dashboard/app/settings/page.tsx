@@ -24,6 +24,7 @@ import {
   type ProviderConfig,
 } from "@/lib/ai-config"
 import { fetchModels } from "@/lib/ai-models"
+import { PushReminderToggle } from "@/components/push-reminder-toggle"
 import { cn } from "@/lib/utils"
 
 const LANGUAGES: { code: Language; label: string }[] = [
@@ -142,6 +143,9 @@ export default function SettingsPage() {
                 ))}
               </div>
             </section>
+
+            {/* Background study reminders (web-push) */}
+            <PushReminderToggle />
 
             {/* AI provider */}
             <section className="glass-card border border-white/10 rounded-2xl p-6">

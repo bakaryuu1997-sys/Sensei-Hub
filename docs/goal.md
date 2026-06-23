@@ -35,6 +35,11 @@ IT エンジニア向けの 3 言語（EN/JA/VI）学習プラットフォーム
 - **CRLF 正規化（2026-06-23）**: `.gitattributes` に `* text=auto eol=lf` で churn 解消。
 - **設計ドキュメント（2026-06-23）**: `docs/python-course-plan.md`（カリキュラム+各
   レッスンの構成テンプレート）、`docs/superpowers/specs/2026-06-23-web-push-design.md`。
+- **web-push 学習リマインド（2026-06-23 実装）**: VAPID + Prisma `PushSubscription` +
+  sw.js の `push`/`notificationclick` + API（subscribe/unsubscribe）+ `instrumentation.ts`
+  の node-cron 日次送信 + 送信判定の純粋関数 `push-policy`（10 件テスト）+ 設定トグル
+  （3 言語）。VAPID 未設定なら自動で無効。**※ 本番は VAPID 鍵を env に設定し再ビルド/
+  再デプロイ + `db push`（PushSubscription 追加）が必要**。
 
 ---
 
@@ -44,8 +49,8 @@ IT エンジニア向けの 3 言語（EN/JA/VI）学習プラットフォーム
 - [ ] **21+ コミットを GitHub へ push → 再ビルド・ECR へ push → EC2 再デプロイ**。
       本番にはまだ Python 教科・モバイル top-bar 修正・本セッションの修正が反映されていない。
       （※ push/redeploy はユーザーが実施。本セッションはローカル commit まで）
-- [ ] **web-push 実装**（設計書 `docs/superpowers/specs/2026-06-23-web-push-design.md`
-      レビュー済み）。VAPID + PushSubscription + sw push + instrumentation の cron。**実装着手中**。
+- [x] ~~**web-push 実装**~~ → 完了（コード/テスト/設定 UI）。本番反映は env(VAPID) +
+      再ビルド + `db push` が必要（上の push/redeploy 内で実施）。
 
 ### 🟡 優先度 中
 - [ ] **新機能のテスト網羅を上げる（残り）**: 引っ張って更新、ボトムナビ、オンボーディング、
@@ -73,7 +78,7 @@ IT エンジニア向けの 3 言語（EN/JA/VI）学習プラットフォーム
 
 ## ⏳ 未完了（明示）
 - [ ] コミットの push と最新版の再デプロイ（上記 優先度 高）。
-- [ ] web-push（学習リマインド）の**実装**（設計書はレビュー済み）。
+- [x] ~~web-push（学習リマインド）の実装~~ → 完了（本番反映は env+再デプロイ待ち）。
 - [ ] 仮想スクロール（現状は「さらに見る」12 件ずつ）。
 - [ ] Python コードランナーのユニットテスト。
 - [x] ~~重要ロジック（LWW 同期）のテスト網羅向上~~ → 完了（progress-merge.test）。

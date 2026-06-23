@@ -31,15 +31,39 @@ self.addEventListener('activate', (event) => {
   );
 });
 
+// Web Push 受信。サーバーが送る JSON ペイロードを通知として表示する。
+self.addEventListener('push', (event) => {
+  let payload = { title: 'Sensei Hub', body: '', url: '/' };
+  try {
+    if (event.data) payload = Object.assign(payload, event.data.json());
+  } catch (e) {
+    if (event.data) payload.body = event.data.text();
+  }
+  event.waitUntil(
+    self.registration.showNotification(payload.title || 'Sensei Hub', {
+      body: payload.body || '',
+      icon: '/icon-192.png',
+      badge: '/icon-192.png',
+      data: { url: payload.url || '/' },
+      tag: 'sensei-reminder',
+      renotify: true,
+    })
+  );
+});
+
 // 通知をタップしたらアプリを前面に出す（既存ウィンドウがあれば focus、無ければ開く）。
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
+  const targetUrl = (event.notification.data && event.notification.data.url) || '/';
   event.waitUntil(
     self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
       for (const client of clientList) {
-        if ('focus' in client) return client.focus();
+        if ('focus' in client) {
+          client.navigate && client.navigate(targetUrl);
+          return client.focus();
+        }
       }
-      if (self.clients.openWindow) return self.clients.openWindow('/');
+      if (self.clients.openWindow) return self.clients.openWindow(targetUrl);
     })
   );
 });

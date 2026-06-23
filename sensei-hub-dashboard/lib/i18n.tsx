@@ -330,6 +330,29 @@ export const translations: Translations = {
   },
 
   // Settings page
+  "reminder.title": { en: "Study reminders", ja: "学習リマインド", vi: "Nhắc học" },
+  "reminder.desc": {
+    en: "Get a daily push notification when you haven't studied yet — even when the app is closed.",
+    ja: "その日まだ学習していないとき、アプリを閉じていても 1 日 1 回プッシュ通知でお知らせします。",
+    vi: "Nhận thông báo đẩy 1 lần/ngày khi bạn chưa học — kể cả khi đã đóng ứng dụng.",
+  },
+  "reminder.on": { en: "Reminders on", ja: "リマインド ON", vi: "Đang bật nhắc" },
+  "reminder.off": { en: "Enable reminders", ja: "リマインドを有効化", vi: "Bật nhắc học" },
+  "reminder.unsupported": {
+    en: "Push notifications are not available on this device/browser.",
+    ja: "この端末／ブラウザではプッシュ通知を利用できません。",
+    vi: "Thiết bị/trình duyệt này không hỗ trợ thông báo đẩy.",
+  },
+  "reminder.denied": {
+    en: "Notification permission was denied. Enable it in your browser settings.",
+    ja: "通知が拒否されました。ブラウザの設定で許可してください。",
+    vi: "Bạn đã từ chối quyền thông báo. Hãy bật lại trong cài đặt trình duyệt.",
+  },
+  "reminder.error": {
+    en: "Could not enable reminders. Please try again.",
+    ja: "リマインドを有効化できませんでした。もう一度お試しください。",
+    vi: "Không bật được nhắc học. Vui lòng thử lại.",
+  },
   "settings.title": { en: "Settings", ja: "設定", vi: "Cài đặt" },
   "settings.subtitle": { en: "Manage your learning preferences", ja: "学習設定を管理する", vi: "Quản lý tuỳ chọn học tập của bạn" },
   "settings.progress_title": { en: "Your progress", ja: "あなたの進捗", vi: "Tiến độ của bạn" },
