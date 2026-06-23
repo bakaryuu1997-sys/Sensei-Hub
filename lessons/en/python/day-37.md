@@ -247,7 +247,7 @@ asyncio.run(main())
 
 ### 💡 Tips & Idioms
 - **Check your libraries**: Do not mix synchronous libraries (like `requests`) with asynchronous ones. Look for async alternatives like `httpx` for HTTP, `motor` for MongoDB, or `aiopg`/`asyncpg` for PostgreSQL.
-- **Use `asyncio.run()` with care**: Only use `asyncio.run()` as the main entry point to launch your program. Do not call it inside an already running asynchronous function; it will raise a `RuntimeError: Timeout context manager should be used`.
+- **Use `asyncio.run()` with care**: Only use `asyncio.run()` as the main entry point to launch your program. Do not call it inside an already running asynchronous function; it will raise a `RuntimeError: asyncio.run() cannot be called from a running event loop`.
 - **Integrate CPU-bound tasks**: If you must perform CPU-intensive work (e.g., image rendering) in an async application, delegate it to a process pool executor using `await loop.run_in_executor(None, cpu_bound_function)`.
 
 ### 🧠 Deep Dive (Under the hood)

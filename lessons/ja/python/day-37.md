@@ -247,7 +247,7 @@ asyncio.run(main())
 
 ### 💡 コツ・イディオム
 - **ライブラリを確認する**: 同期ライブラリ（`requests` など）と非同期ライブラリを混ぜて使用しないでください。HTTP には `httpx`、MongoDB には `motor`、PostgreSQL には `aiopg`/`asyncpg` などの非同期代替案を探してください。
-- **`asyncio.run()` の使用場所**: `asyncio.run()` は、プログラムを起動するためのメインエントリポイントでのみ使用してください。すでに実行中の非同期関数内で呼び出すと、`RuntimeError: Timeout context manager should be used` などのエラーが発生します。
+- **`asyncio.run()` の使用場所**: `asyncio.run()` は、プログラムを起動するためのメインエントリポイントでのみ使用してください。すでに実行中の非同期関数内で呼び出すと、`RuntimeError: asyncio.run() cannot be called from a running event loop` などのエラーが発生します。
 - **CPU バウンドなタスクの統合**: 非同期アプリケーション内で CPU 負荷の高い処理（画像レンダリングなど）を実行する必要がある場合は、`await loop.run_in_executor(None, cpu_bound_function)` を使用してプロセスプールエグゼキュータに処理を委譲します。
 
 ### 🧠 深掘り（内部の仕組み）

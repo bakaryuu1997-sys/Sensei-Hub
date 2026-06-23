@@ -211,7 +211,7 @@ def sum_two(a: T, b: T) -> T:
 > A generic `TypeVar` with no constraints represents any object (`object`). Since arbitrary objects do not support the addition operator `+`, type checkers will throw an error. You must constrain the `TypeVar` by passing allowed types as arguments, or by using the `bound` parameter to restrict subclasses.
 
 ### 💡 Tips & Idioms
-- **Use `Runtimecheckable` for runtime support**: Normally, Protocols are ignored at runtime. If you want to use them with `isinstance()` or `issubclass()`, decorate the protocol class with `typing.runtime_checkable`.
+- **Use `runtime_checkable` for runtime support**: Normally, Protocols are ignored at runtime. If you want to use them with `isinstance()` or `issubclass()`, decorate the protocol class with `typing.runtime_checkable`.
 - **Prefer newer syntax in Python 3.10+**: Instead of importing `Union` and `Optional` from `typing`, write `int | str` or `str | None`. It is cleaner and more readable.
 - **Use `Any` sparingly**: Using `Any` disables type checking for that variable. Resorting to it defeats the purpose of static type checking. Use `TypeVar` or `Protocol` instead.
 

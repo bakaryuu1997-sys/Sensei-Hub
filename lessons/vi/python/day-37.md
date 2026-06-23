@@ -247,7 +247,7 @@ asyncio.run(main())
 
 ### 💡 Mẹo & Cách viết tối ưu
 - **Kiểm tra các thư viện bạn dùng**: Không trộn lẫn các thư viện đồng bộ (như `requests`) với các thư viện bất đồng bộ. Hãy tìm kiếm các giải pháp thay thế bất đồng bộ như `httpx` cho HTTP, `motor` cho MongoDB, hoặc `aiopg`/`asyncpg` cho PostgreSQL.
-- **Sử dụng `asyncio.run()` cẩn thận**: Chỉ sử dụng `asyncio.run()` làm điểm bắt đầu chính để chạy chương trình của bạn. Không gọi nó bên trong một hàm bất đồng bộ đang chạy khác; điều đó sẽ gây ra lỗi `RuntimeError: Timeout context manager should be used`.
+- **Sử dụng `asyncio.run()` cẩn thận**: Chỉ sử dụng `asyncio.run()` làm điểm bắt đầu chính để chạy chương trình của bạn. Không gọi nó bên trong một hàm bất đồng bộ đang chạy khác; điều đó sẽ gây ra lỗi `RuntimeError: asyncio.run() cannot be called from a running event loop`.
 - **Tích hợp các tác vụ CPU-bound**: Nếu bạn bắt buộc phải thực hiện các tác vụ tính toán nặng (như render ảnh) trong một ứng dụng bất đồng bộ, hãy ủy quyền xử lý đó cho một process pool executor bằng cách sử dụng `await loop.run_in_executor(None, cpu_bound_function)`.
 
 ### 🧠 Đi sâu phân tích (Cơ chế bên dưới)
