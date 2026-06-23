@@ -118,7 +118,7 @@ class InfiniteOne:
 print(list(InfiniteOne()))
 ```
 ```text
-(Vòng lặp chạy vô hạn gây treo chương trình hoặc vượt quá bộ nhớ)
+(Lỗi thực thi quá thời gian / Phát hiện vòng lặp vô hạn)
 ```
 ```python
 class InfiniteOne:

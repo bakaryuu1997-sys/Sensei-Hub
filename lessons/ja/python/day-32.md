@@ -118,7 +118,7 @@ class InfiniteOne:
 print(list(InfiniteOne()))
 ```
 ```text
-(無限ループにより処理が返ってこない、またはフリーズする)
+(実行タイムアウト / 無限ループ検出)
 ```
 ```python
 class InfiniteOne:

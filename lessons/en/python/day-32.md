@@ -118,7 +118,7 @@ class InfiniteOne:
 print(list(InfiniteOne()))
 ```
 ```text
-ValueError: generator expression or loop run forever
+(Execution Timeout / Infinite Loop Detected)
 ```
 ```python
 class InfiniteOne:
