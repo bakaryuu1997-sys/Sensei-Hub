@@ -15,7 +15,7 @@ async function initPyodide() {
 }
 
 self.onmessage = async function (e) {
-  const { code, testCode, packages } = e.data;
+  const { code, testCode, packages, stdin } = e.data;
   const pyodide = await pyodideReadyPromise;
   if (!pyodide) return;
 
@@ -69,6 +69,14 @@ self.onmessage = async function (e) {
       self.postMessage({ type: "stderr", text });
       return text.length;
     }
+  });
+
+  // 標準入力（input()）。Input 欄の内容を 1 行ずつ供給し、尽きたら EOF。
+  const stdinText = String(stdin || "");
+  const stdinLines = stdinText === "" ? [] : stdinText.replace(/\n$/, "").split("\n");
+  let stdinIdx = 0;
+  pyodide.setStdin({
+    stdin: () => (stdinIdx < stdinLines.length ? stdinLines[stdinIdx++] : null),
   });
 
   // 実行開始を通知（メイン側はここからタイムアウト計測を始める）。
