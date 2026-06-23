@@ -82,8 +82,12 @@ export function StreakReminder() {
   return (
     <div
       className={cn(
-        "fixed inset-x-3 z-40 lg:inset-x-auto lg:right-5 lg:w-80 rounded-2xl border border-amber-400/30 bg-slate-900/95 backdrop-blur-xl shadow-2xl p-3 flex items-center gap-3",
-        "bottom-[calc(4.75rem+env(safe-area-inset-bottom))] lg:bottom-5",
+        // z-50 に上げてチャットバブルと同レイヤーにし、right は十分離してボタンが被らないようにする。
+        "fixed z-50 rounded-2xl border border-amber-400/30 bg-slate-900/95 backdrop-blur-xl shadow-2xl p-3 flex items-center gap-3",
+        // モバイル: 左右に余白、ボトムナビ + safe-area を避ける。右端は chat bubble(80px幅)の外。
+        "inset-x-3 bottom-[calc(4.75rem+env(safe-area-inset-bottom)+0.5rem)]",
+        // デスクトップ: 右から十分離して幅固定（チャットバブルが right-5 なので right-20 に）。
+        "lg:inset-x-auto lg:right-20 lg:w-80 lg:bottom-5",
       )}
       role="status"
     >

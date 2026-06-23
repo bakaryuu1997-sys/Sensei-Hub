@@ -377,9 +377,14 @@ export const translations: Translations = {
   "settings.save": { en: "Save", ja: "保存", vi: "Lưu" },
   "settings.saved": { en: "Saved", ja: "保存しました", vi: "Đã lưu" },
   "settings.ollama_hint": {
-    en: "For Ollama: install from ollama.com and set Base URL to http://localhost:11434. On a low-spec machine, prefer a small model — `llama3.2:3b`, `qwen2.5:3b`, `gemma2:2b` or `phi3:mini` are far faster than 12B+ models. Responses stream in as they are generated.",
-    ja: "Ollama: ollama.com からインストールし、Base URL を http://localhost:11434 に設定。低スペック PC では小さいモデル（`llama3.2:3b`・`qwen2.5:3b`・`gemma2:2b`・`phi3:mini` など）が 12B 以上より大幅に高速です。応答は生成されるそばからストリーミング表示されます。",
-    vi: "Với Ollama: cài từ ollama.com và đặt Base URL là http://localhost:11434. Máy yếu nên dùng model nhỏ — `llama3.2:3b`, `qwen2.5:3b`, `gemma2:2b` hoặc `phi3:mini` nhanh hơn nhiều so với model 12B+. Câu trả lời hiển thị dần khi đang sinh.",
+    en: "Ollama runs as a local service on your own PC. Install from ollama.com and set Base URL to http://localhost:11434. ⚠️ Only works when accessing via http://localhost:3000 — browsers block http:// requests from HTTPS pages (Mixed Content). On a low-spec machine, prefer a small model: `llama3.2:3b`, `qwen2.5:3b`, `gemma2:2b` or `phi3:mini` are far faster than 12B+ models.",
+    ja: "Ollama はあなたの PC 上でのみ動作するローカルサービスです。ollama.com からインストールし、Base URL を http://localhost:11434 に設定してください。⚠️ http://localhost:3000 でアクセスした場合のみ動作します。HTTPS のページ（senseihub.baryuu.com 等）からは Mixed Content 制限によりブラウザがブロックします。Gemini や OpenAI を代わりにお使いください。",
+    vi: "Ollama chạy cục bộ trên máy tính của bạn. Cài từ ollama.com và đặt Base URL là http://localhost:11434. ⚠️ Chỉ hoạt động khi truy cập qua http://localhost:3000 — trình duyệt chặn kết nối http:// từ trang HTTPS (Mixed Content). Khi dùng senseihub.baryuu.com hãy dùng Gemini hoặc OpenAI.",
+  },
+  "settings.ollama_https_warning": {
+    en: "⚠️ Ollama is not available on HTTPS. Use Gemini or OpenAI, or run the app locally at http://localhost:3000.",
+    ja: "⚠️ HTTPS 環境では Ollama を使用できません。Gemini か OpenAI をお使いください（または http://localhost:3000 でローカル起動）。",
+    vi: "⚠️ Ollama không khả dụng trên HTTPS. Hãy dùng Gemini hoặc OpenAI, hoặc chạy app tại http://localhost:3000.",
   },
   "settings.get_gemini_key": {
     en: "Get a Gemini API Key from Google AI Studio",

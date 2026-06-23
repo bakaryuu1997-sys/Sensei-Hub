@@ -257,9 +257,17 @@ export default function SettingsPage() {
               </div>
 
               {editing === "ollama" && (
-                <p className="text-xs text-amber-200/70 bg-amber-500/5 border border-amber-500/15 rounded-xl p-3 mb-4 leading-relaxed">
-                  {t("settings.ollama_hint")}
-                </p>
+                <>
+                  {/* HTTPS 環境では Mixed Content でブロックされる → 赤バナーで明示 */}
+                  {typeof window !== "undefined" && window.location.protocol === "https:" && (
+                    <div className="text-xs text-rose-300 bg-rose-500/10 border border-rose-500/20 rounded-xl p-3 mb-3 leading-relaxed font-semibold">
+                      {t("settings.ollama_https_warning")}
+                    </div>
+                  )}
+                  <p className="text-xs text-amber-200/70 bg-amber-500/5 border border-amber-500/15 rounded-xl p-3 mb-4 leading-relaxed">
+                    {t("settings.ollama_hint")}
+                  </p>
+                </>
               )}
 
               <button
