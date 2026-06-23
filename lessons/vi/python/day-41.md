@@ -175,18 +175,21 @@ async def slow_route():
 ```
 > Khi bạn khai báo một route handler bằng `async def`, bạn đang yêu cầu FastAPI thực thi nó trực tiếp trên vòng lặp sự kiện đơn luồng. Nếu bạn thực hiện một cuộc gọi đồng bộ chặn (như `time.sleep()`, các truy vấn cơ sở dữ liệu đồng bộ hoặc các request HTTP chặn) bên trong nó, bạn sẽ làm dừng toàn bộ vòng lặp. Nếu bắt buộc phải sử dụng các thư viện đồng bộ chặn, hãy khai báo route handler bằng `def` thay vì `async def`; FastAPI sau đó sẽ tự động chạy nó trong một thread pool riêng biệt.
 
-**Lỗi 2: Thiếu phần `:app` hoặc ghi sai tên module file khi chạy Uvicorn**
+**Lỗi 2: Truyền trực tiếp instance app vào uvicorn.run() khi thiết lập reload=True**
 ```python
-uvicorn app --reload
+import uvicorn
+from fastapi import FastAPI
+app = FastAPI()
+uvicorn.run(app, reload=True)
 ```
 ```text
-Error loading ASGI app. Import string "app" must be in format "<module>:<attribute>".
+RuntimeError: You must pass the application as an import string to enable 'reload' or 'workers'.
 ```
 ```python
-# Nếu mã của bạn nằm trong file main.py và biến FastAPI được đặt tên là app:
-uvicorn main:app --reload
+import uvicorn
+uvicorn.run("main:app", reload=True)
 ```
-> Uvicorn tải ứng dụng của bạn một cách linh động. Nó yêu cầu một chuỗi import khớp với định dạng `tên_module:tên_biến`. Nếu bạn chỉ chỉ định module hoặc thư mục, Uvicorn sẽ thất bại trong quá trình khởi tạo.
+> Khi kích hoạt chế độ tự động tải lại `reload=True` hoặc thiết lập nhiều tiến trình con `workers` trong `uvicorn.run()`, bạn không thể truyền trực tiếp đối tượng instance app. Bạn bắt buộc phải truyền nó dưới dạng một chuỗi import (ví dụ: `"main:app"`) để Uvicorn có thể import và tải lại module một cách linh động khi phát hiện thay đổi trong mã nguồn.
 
 ### 💡 Mẹo & Cách viết tối ưu
 - **Tài liệu tương tác tự động**: Luôn truy cập `http://127.0.0.1:8000/docs` trong khi server Uvicorn của bạn đang chạy. FastAPI tự động biên dịch các route, query parameter, path parameter và các schema của bạn thành một trang OpenAPI/Swagger tương tác hoàn chỉnh.

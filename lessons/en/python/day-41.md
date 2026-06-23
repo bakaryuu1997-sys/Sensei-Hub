@@ -175,18 +175,21 @@ async def slow_route():
 ```
 > When you declare a path operation with `async def`, you tell FastAPI to execute it directly on the single-threaded event loop. If you perform a blocking synchronous call (like `time.sleep()`, synchronous database queries, or blocking HTTP requests) inside it, you halt the loop. If you must use synchronous blocking libraries, declare the path handler with `def` instead of `async def`; FastAPI will then automatically run it in a separate thread pool.
 
-**Mistake 2: Missing the `:app` portion or using the wrong file module name when running Uvicorn**
+**Mistake 2: Passing the app instance directly to uvicorn.run() while reload=True is set**
 ```python
-uvicorn app --reload
+import uvicorn
+from fastapi import FastAPI
+app = FastAPI()
+uvicorn.run(app, reload=True)
 ```
 ```text
-Error loading ASGI app. Import string "app" must be in format "<module>:<attribute>".
+RuntimeError: You must pass the application as an import string to enable 'reload' or 'workers'.
 ```
 ```python
-# If your code is in main.py, and the FastAPI variable is named app:
-uvicorn main:app --reload
+import uvicorn
+uvicorn.run("main:app", reload=True)
 ```
-> Uvicorn loads your application dynamically. It requires an import string matching the format `module_name:variable_name`. Specifying only the module or folder will cause Uvicorn to fail during initialization.
+> When enabling 'reload=True' or setting multiple 'workers' in uvicorn.run(), you cannot pass the app instance object directly. You must pass it as an import string (e.g., "main:app") so Uvicorn can import and reload the module dynamically.
 
 ### 💡 Tips & Idioms
 - **Interactive Documentation**: Always visit `http://127.0.0.1:8000/docs` while your Uvicorn server is running. FastAPI automatically compiles your routes, query parameters, path variables, and schemas into a fully interactive OpenAPI/Swagger page.

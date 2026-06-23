@@ -175,18 +175,21 @@ async def slow_route():
 ```
 > `async def` を使ってルートハンドラを定義すると、FastAPIはシングルスレッドのイベントループ上でこれを直接実行します。そのため、内部で `time.sleep()` などの同期的でブロッキングな処理を呼び出すと、イベントループ自体が停止してしまいます。同期的な外部ライブラリ（`requests` など）を使用する場合は、`async def` ではなく通常の `def` を使ってルートハンドラを定義してください。そうすれば、FastAPIが自動的に別スレッドのプール上で処理を安全に実行します。
 
-**間違い 2: Uvicorn起動時に `:app` の指定を忘れる、またはファイル名を間違える**
+**間違い 2: reload=True が設定されているときに uvicorn.run() に app インスタンスを直接渡してしまう**
 ```python
-uvicorn app --reload
+import uvicorn
+from fastapi import FastAPI
+app = FastAPI()
+uvicorn.run(app, reload=True)
 ```
 ```text
-Error loading ASGI app. Import string "app" must be in format "<module>:<attribute>".
+RuntimeError: You must pass the application as an import string to enable 'reload' or 'workers'.
 ```
 ```python
-# コードが main.py にあり、FastAPIの変数名が app である場合:
-uvicorn main:app --reload
+import uvicorn
+uvicorn.run("main:app", reload=True)
 ```
-> Uvicornは指定されたアプリケーションを動的にインポートします。引数は必ず `<モジュール名>:<変数名>` の形式にする必要があります。モジュール名だけを指定した場合、インポート形式の不整合によりサーバーの起動に失敗します。
+> `uvicorn.run()` で `reload=True` を有効にする、または複数の `workers` を設定する場合、アプリのインスタンスオブジェクト（`app`）を直接渡すことはできません。Uvicornがコードの変更を検知してモジュールを動的に再インポート（リロード）できるように、インポート形式の文字列（例: `"main:app"`）として指定する必要があります。
 
 ### 💡 コツ・イディオム
 - **インタラクティブドキュメントの活用**: Uvicornサーバーを起動した状態で `http://127.0.0.1:8000/docs` にアクセスしてください。FastAPIはルート定義、クエリパラメータ、パス変数、および後述のPydanticスキーマから、インタラクティブに操作できるOpenAPI/Swaggerドキュメントを完全自動生成します。
