@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react"
 import CodeMirror from "@uiw/react-codemirror"
 import { python } from "@codemirror/lang-python"
 import { oneDark } from "@codemirror/theme-one-dark"
-import { Play, Square, RotateCcw, Copy, Check, Trash2, AlertTriangle, CheckCircle, Terminal, Loader2 } from "lucide-react"
+import { Play, Square, RotateCcw, Copy, Check, Trash2, AlertTriangle, CheckCircle, Terminal, Loader2, Keyboard } from "lucide-react"
 
 type LogLine = { text: string; isError: boolean }
 
@@ -46,6 +46,9 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, storageKey, o
   const [testError, setTestError] = useState<string>("")
   const [plotImages, setPlotImages] = useState<string[]>([])
   const [copied, setCopied] = useState(false)
+  // 標準入力（input() 用）。
+  const [stdinValue, setStdinValue] = useState("")
+  const [showStdin, setShowStdin] = useState(false)
 
   const workerRef = useRef<Worker | null>(null)
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -175,8 +178,8 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, storageKey, o
     setTestError("")
     setPlotImages([])
     setStatus("running")
-    w.postMessage({ code, testCode })
-  }, [code, testCode, isBusy])
+    w.postMessage({ code, testCode, stdin: stdinValue })
+  }, [code, testCode, stdinValue, isBusy])
 
   // Ctrl/Cmd + Enter で Run（エディタにフォーカスがあるときにバブリングで受ける）。
   const onEditorKeyDown = (e: React.KeyboardEvent) => {
@@ -250,6 +253,18 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, storageKey, o
           Interactive Editor
         </div>
         <div className="flex flex-wrap items-center justify-end gap-2">
+          <button
+            onClick={() => setShowStdin((v) => !v)}
+            title="標準入力 (input() 用)"
+            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border text-xs transition-colors cursor-pointer ${
+              showStdin || stdinValue
+                ? "border-cyan-400/40 bg-cyan-400/10 text-cyan-300"
+                : "border-white/10 hover:bg-white/5 text-white/80"
+            }`}
+          >
+            <Keyboard className="h-3.5 w-3.5" />
+            Input
+          </button>
           <button
             onClick={copyCode}
             title="Copy code"
@@ -332,6 +347,24 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, storageKey, o
           </div>
         )}
       </div>
+
+      {/* 標準入力（input() 用）。Run 前に 1 行 1 値で入力する。 */}
+      {showStdin && (
+        <div className="border-t border-white/5 bg-slate-900/40 px-3 py-2">
+          <div className="mb-1 flex items-center gap-1.5 text-[10px] uppercase tracking-wider font-semibold text-white/40">
+            <Keyboard className="h-3 w-3" />
+            Standard Input（input() は 1 行ずつ読みます）
+          </div>
+          <textarea
+            value={stdinValue}
+            onChange={(e) => setStdinValue(e.target.value)}
+            spellCheck={false}
+            rows={2}
+            placeholder={"例: 1 行に 1 つの値\n5\n3"}
+            className="w-full resize-y rounded-lg border border-white/10 bg-slate-950/80 px-3 py-2 font-mono text-xs text-white/90 placeholder:text-white/25 focus:border-cyan-400/40 focus:outline-none"
+          />
+        </div>
+      )}
 
       {/* Console / Status Footer（高さは可変・最小確保で下の余白を作らない） */}
       <div className="h-[34%] min-h-[140px] max-h-[260px] border-t border-white/5 bg-slate-950 flex flex-col font-mono text-xs">
