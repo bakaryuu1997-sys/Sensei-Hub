@@ -1,7 +1,9 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import Editor from "@monaco-editor/react"
+import CodeMirror from "@uiw/react-codemirror"
+import { python } from "@codemirror/lang-python"
+import { oneDark } from "@codemirror/theme-one-dark"
 import { Play, RotateCcw, AlertTriangle, CheckCircle, Terminal } from "lucide-react"
 
 type CodeSandboxProps = {
@@ -123,32 +125,31 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, onComplete }:
         </div>
       </div>
 
-      {/* Editor Area */}
-      <div className="flex-1 min-h-[300px] h-0">
-        <Editor
-          height="100%"
-          defaultLanguage="python"
-          theme="vs-dark"
+      {/* Editor Area（CodeMirror: バンドル済み・CDN 不要・軽量で滑らか） */}
+      <div className="flex-1 min-h-0 overflow-hidden [&_.cm-theme]:h-full [&_.cm-editor]:h-full [&_.cm-scroller]:font-mono">
+        <CodeMirror
           value={code}
-          onChange={(val) => setCode(val || "")}
-          options={{
-            minimap: { enabled: false },
-            fontSize: 14,
-            fontFamily: "var(--font-jetbrains-mono)",
-            automaticLayout: true,
-            scrollBeyondLastLine: false,
-            lineNumbers: "on",
-            renderLineHighlight: "all",
-            scrollbar: {
-              verticalScrollbarSize: 8,
-              horizontalScrollbarSize: 8
-            }
+          onChange={(val) => setCode(val)}
+          theme={oneDark}
+          extensions={[python()]}
+          height="100%"
+          style={{ height: "100%", fontSize: "14px" }}
+          basicSetup={{
+            lineNumbers: true,
+            highlightActiveLine: true,
+            highlightActiveLineGutter: true,
+            foldGutter: false,
+            autocompletion: true,
+            bracketMatching: true,
+            closeBrackets: true,
+            indentOnInput: true,
+            tabSize: 4,
           }}
         />
       </div>
 
-      {/* Console / Status Footer */}
-      <div className="h-[180px] border-t border-white/5 bg-slate-950 flex flex-col font-mono text-xs">
+      {/* Console / Status Footer（高さは可変・最小確保で下の余白を作らない） */}
+      <div className="h-[34%] min-h-[140px] max-h-[260px] border-t border-white/5 bg-slate-950 flex flex-col font-mono text-xs">
         <div className="px-4 py-2 border-b border-white/5 bg-slate-900/30 text-white/40 text-[10px] uppercase tracking-wider font-semibold">
           Console Output
         </div>
@@ -159,7 +160,7 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, onComplete }:
               Installing libraries: {packagesLoading.join(", ")} from CDN (Wasm)...
             </div>
           )}
-          {status === "ready" && <div className="text-white/40">Ready. Write code and click "Run".</div>}
+          {status === "ready" && <div className="text-white/40">{'Ready. Write code and click "Run".'}</div>}
           {consoleLogs.map((log, idx) => (
             <div key={idx} className="whitespace-pre-wrap">{log}</div>
           ))}

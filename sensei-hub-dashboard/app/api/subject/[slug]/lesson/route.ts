@@ -1,11 +1,26 @@
 import { NextRequest, NextResponse } from "next/server"
 import fs from "fs"
 import path from "path"
-import { marked } from "marked"
+import { Marked } from "marked"
+import { markedHighlight } from "marked-highlight"
+import hljs from "highlight.js"
 import { checkRateLimit } from "@/lib/rate-limiter"
 import { getCache, setCache } from "@/lib/api-cache"
 import { parseFrontmatter, extractTitle, formatDayTitle } from "@/lib/markdown"
 
+// コードフェンスを highlight.js でサーバー側ハイライト（VSCode 風の配色）。
+// mermaid は不明言語として plaintext 扱い＝エスケープのみ。class に language-mermaid が
+// 残るので、レッスン画面側がそれを検出して図に描画する。
+const marked = new Marked(
+  markedHighlight({
+    emptyLangClass: "hljs",
+    langPrefix: "hljs language-",
+    highlight(code, lang) {
+      const language = hljs.getLanguage(lang) ? lang : "plaintext"
+      return hljs.highlight(code, { language }).value
+    },
+  }),
+)
 marked.setOptions({
   gfm: true,
   breaks: true,

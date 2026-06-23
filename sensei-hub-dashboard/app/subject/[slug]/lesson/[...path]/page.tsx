@@ -135,32 +135,68 @@ export default function LessonPage({
     }
   }, [slug, lessonPath, lang])
 
-  // Render Mermaid diagrams dynamically on the client side
+  // Mermaid 図をクライアントで描画する。図ごとに render し、失敗しても
+  // 生テキストを晒さず読みやすいフォールバックを出す（dev オーバーレイも汚さない）。
   useEffect(() => {
-    const codeElements = document.querySelectorAll("pre code.language-mermaid");
-    if (codeElements.length > 0) {
-      import("mermaid").then(({ default: mermaid }) => {
-        mermaid.initialize({
-          startOnLoad: false,
-          theme: "dark",
-          securityLevel: "loose",
-        });
+    const codeElements = Array.from(
+      document.querySelectorAll<HTMLElement>("pre code.language-mermaid"),
+    );
+    if (codeElements.length === 0) return;
 
-        codeElements.forEach((codeEl) => {
-          const preEl = codeEl.parentElement;
-          if (preEl && preEl.tagName === "PRE") {
-            const container = document.createElement("div");
-            container.className = "mermaid flex justify-center my-6 p-6 rounded-2xl bg-[#09051d]/40 border border-white/5 overflow-x-auto min-w-0 w-full";
-            container.textContent = codeEl.textContent || "";
-            preEl.replaceWith(container);
-
-            mermaid.run({ nodes: [container] }).catch((err) => {
-              console.error("Mermaid rendering error:", err);
-            });
-          }
-        });
+    let cancelled = false;
+    import("mermaid").then(({ default: mermaid }) => {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: "dark",
+        securityLevel: "loose",
+        flowchart: { useMaxWidth: true, htmlLabels: true, curve: "basis", padding: 16 },
+        themeVariables: {
+          // 高コントラストで読みやすい配色（暗背景＋明るい文字・線）。
+          fontSize: "15px",
+          fontFamily: "var(--font-jetbrains-mono), ui-monospace, monospace",
+          primaryColor: "#241b4d",
+          primaryTextColor: "#eef2ff",
+          primaryBorderColor: "#8b5cf6",
+          lineColor: "#a5b4fc",
+          secondaryColor: "#0f172a",
+          tertiaryColor: "#0b1220",
+          clusterBkg: "#0b0820",
+          clusterBorder: "#334155",
+        },
       });
-    }
+
+      codeElements.forEach(async (codeEl, i) => {
+        const preEl = codeEl.parentElement;
+        if (!preEl || preEl.tagName !== "PRE") return;
+        const source = codeEl.textContent || "";
+        const wrap = document.createElement("div");
+
+        try {
+          const { svg } = await mermaid.render(`mermaid-${Date.now()}-${i}`, source);
+          if (cancelled) return;
+          wrap.className =
+            "my-6 flex justify-center overflow-x-auto rounded-2xl border border-white/10 bg-[#0b0820]/70 p-4 [&_svg]:max-w-full [&_svg]:h-auto";
+          wrap.innerHTML = svg;
+        } catch {
+          if (cancelled) return;
+          // 構文エラー時は警告＋元コードを整形表示（生テキストの垂れ流しを防ぐ）。
+          wrap.className =
+            "my-6 overflow-x-auto rounded-2xl border border-amber-500/20 bg-amber-500/[0.06] p-4";
+          const note = document.createElement("div");
+          note.className = "mb-2 text-xs font-semibold text-amber-300/80";
+          note.textContent = "⚠ 図を描画できませんでした（Mermaid 構文を確認）";
+          const pre = document.createElement("pre");
+          pre.className = "whitespace-pre-wrap text-xs text-white/55";
+          pre.textContent = source;
+          wrap.append(note, pre);
+        }
+        preEl.replaceWith(wrap);
+      });
+    });
+
+    return () => {
+      cancelled = true;
+    };
   }, [lessonData?.htmlContent]);
 
   if (!subject) {
@@ -229,14 +265,18 @@ export default function LessonPage({
 
       <Sidebar />
 
-      <div className="relative z-10 lg:ml-72 min-h-screen flex flex-col">
+      <div className={cn(
+        "relative z-10 lg:ml-72 flex flex-col",
+        // 演習レッスンはビューポート高にぴったり収め、コードパネルを常に表示（下の余白を作らない）。
+        lessonData?.codingExercise ? "h-[100dvh] overflow-hidden" : "min-h-screen",
+      )}>
         <TopBar />
 
-        <main className={cn("flex-1 py-6 lg:py-8", lessonData?.codingExercise ? "px-6 h-auto lg:h-[calc(100vh_-_120px)] lg:overflow-hidden min-h-[500px] lg:min-h-0" : "px-4 lg:px-8")}>
+        <main className={cn("flex-1", lessonData?.codingExercise ? "min-h-0 px-4 md:px-6 py-4 md:py-6 overflow-hidden" : "py-6 lg:py-8 px-4 lg:px-8")}>
           {lessonData?.codingExercise ? (
-            <div className="flex flex-col lg:flex-row h-auto lg:h-full w-full gap-6 overflow-y-auto lg:overflow-hidden">
-              {/* Left Panel: Instruction */}
-              <div className="w-full lg:w-[50%] lg:flex-1 h-[350px] sm:h-[450px] lg:h-full overflow-y-auto pr-2 scrollbar-thin glass-card border border-white/10 rounded-2xl p-6 relative flex flex-col justify-between">
+            <div className="flex flex-col md:flex-row h-full w-full gap-4 md:gap-6 overflow-y-auto md:overflow-hidden">
+              {/* Left Panel: Instruction（md 以上は内部スクロール＝右のコードは固定表示） */}
+              <div className="w-full md:w-1/2 md:h-full min-h-[320px] overflow-y-auto pr-2 scrollbar-thin glass-card border border-white/10 rounded-2xl p-6 relative flex flex-col justify-between">
                 <div>
                   <header className="space-y-3 pb-6 border-b border-white/5 mb-6">
                     <Link
@@ -300,8 +340,8 @@ export default function LessonPage({
                 </div>
               </div>
 
-              {/* Right Panel: Code Sandbox */}
-              <div className="w-full lg:w-[50%] h-[500px] sm:h-[600px] lg:h-full">
+              {/* Right Panel: Code Sandbox（md 以上は full-height で常時表示、モバイルは十分な高さ） */}
+              <div className="w-full md:w-1/2 md:h-full min-h-[460px] flex-shrink-0">
                 <CodeSandbox
                   initialCode={lessonData.initialCode || ""}
                   testCode={lessonData.testCode || ""}
