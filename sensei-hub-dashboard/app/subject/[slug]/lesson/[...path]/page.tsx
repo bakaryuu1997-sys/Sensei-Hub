@@ -232,7 +232,7 @@ export default function LessonPage({
       <div className="relative z-10 lg:ml-72 min-h-screen flex flex-col">
         <TopBar />
 
-        <main className={cn("flex-1 py-6 lg:py-8", lessonData?.codingExercise ? "px-6 h-auto lg:h-[calc(100vh-120px)] lg:overflow-hidden min-h-[500px] lg:min-h-0" : "px-4 lg:px-8")}>
+        <main className={cn("flex-1 py-6 lg:py-8", lessonData?.codingExercise ? "px-6 h-auto lg:h-[calc(100vh_-_120px)] lg:overflow-hidden min-h-[500px] lg:min-h-0" : "px-4 lg:px-8")}>
           {lessonData?.codingExercise ? (
             <div className="flex flex-col lg:flex-row h-auto lg:h-full w-full gap-6 overflow-y-auto lg:overflow-hidden">
               {/* Left Panel: Instruction */}

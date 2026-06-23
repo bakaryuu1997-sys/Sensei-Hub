@@ -124,7 +124,7 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, onComplete }:
       </div>
 
       {/* Editor Area */}
-      <div className="flex-1 min-h-[300px]">
+      <div className="flex-1 min-h-[300px] h-0">
         <Editor
           height="100%"
           defaultLanguage="python"
