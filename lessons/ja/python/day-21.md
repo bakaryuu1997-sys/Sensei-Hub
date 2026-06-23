@@ -90,7 +90,7 @@ print("Perceptron Output:", output)  # 出力: 0 (1 AND 0 として正しい動�
 **間違い 1: バイアス項の加算を忘れる**
 ```python
 import numpy as np
-x = np.array([1.0, 1.0])
+x = np.array([0.0, 1.0])
 w = np.array([1.0, 1.0])
 b = -1.5
 # バイアスの加算が抜けている
@@ -102,7 +102,7 @@ AssertionError: Should output 0 for AND logic when input is 0, 1
 ```
 ```python
 import numpy as np
-x = np.array([1.0, 1.0])
+x = np.array([0.0, 1.0])
 w = np.array([1.0, 1.0])
 b = -1.5
 # 正しくバイアス項を加算する

@@ -90,7 +90,7 @@ print("Perceptron Output:", output)  # Output: 0 (which is correct for 1 AND 0)
 **Mistake 1: Forgetting to add the bias term**
 ```python
 import numpy as np
-x = np.array([1.0, 1.0])
+x = np.array([0.0, 1.0])
 w = np.array([1.0, 1.0])
 b = -1.5
 # Missing bias addition
@@ -102,7 +102,7 @@ AssertionError: Should output 0 for AND logic when input is 0, 1
 ```
 ```python
 import numpy as np
-x = np.array([1.0, 1.0])
+x = np.array([0.0, 1.0])
 w = np.array([1.0, 1.0])
 b = -1.5
 # Correctly add the bias term

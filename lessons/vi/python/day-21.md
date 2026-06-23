@@ -90,7 +90,7 @@ print("Perceptron Output:", output)  # Kết quả: 0 (chính xác với phép t
 **Lỗi 1: Quên cộng thêm thành phần bias**
 ```python
 import numpy as np
-x = np.array([1.0, 1.0])
+x = np.array([0.0, 1.0])
 w = np.array([1.0, 1.0])
 b = -1.5
 # Thiếu phép cộng bias
@@ -102,7 +102,7 @@ AssertionError: Should output 0 for AND logic when input is 0, 1
 ```
 ```python
 import numpy as np
-x = np.array([1.0, 1.0])
+x = np.array([0.0, 1.0])
 w = np.array([1.0, 1.0])
 b = -1.5
 # Cộng bias một cách chính xác
