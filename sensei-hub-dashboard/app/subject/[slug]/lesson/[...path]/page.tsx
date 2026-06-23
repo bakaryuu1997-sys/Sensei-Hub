@@ -7,8 +7,9 @@ import DOMPurify from "isomorphic-dompurify"
 import confetti from "canvas-confetti"
 import { ChevronLeft, ChevronRight, CheckCircle2, ArrowLeft, BookOpen } from "lucide-react"
 
+import dynamic from "next/dynamic"
+
 import { Sidebar } from "@/components/dashboard/sidebar"
-import { CodeSandbox } from "@/components/dashboard/code-sandbox"
 import { TopBar } from "@/components/dashboard/top-bar"
 import { Starfield } from "@/components/dashboard/starfield"
 import { useLanguage } from "@/lib/i18n"
@@ -18,6 +19,20 @@ import { setActiveLesson, clearActiveLesson } from "@/lib/lesson-context"
 import { recordActivity, recordLessonView } from "@/lib/activity"
 import { vibrate } from "@/lib/haptics"
 import { cn } from "@/lib/utils"
+
+// CodeMirror は重いので演習レッスンを開いたときだけ遅延ロードする（初回表示・他教科に影響させない）。
+const CodeSandbox = dynamic(
+  () => import("@/components/dashboard/code-sandbox").then((m) => m.CodeSandbox),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex h-full min-h-[460px] flex-col items-center justify-center gap-3 rounded-2xl border border-white/5 bg-slate-950/80 text-white/50">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-cyan-500/20 border-t-cyan-400" />
+        <p className="text-xs font-mono">エディタを読み込み中…</p>
+      </div>
+    ),
+  },
+)
 
 interface LessonItem {
   path: string
@@ -343,6 +358,8 @@ export default function LessonPage({
               {/* Right Panel: Code Sandbox（md 以上は full-height で常時表示、モバイルは十分な高さ） */}
               <div className="w-full md:w-1/2 md:h-full min-h-[460px] flex-shrink-0">
                 <CodeSandbox
+                  key={lessonKey}
+                  storageKey={lessonKey}
                   initialCode={lessonData.initialCode || ""}
                   testCode={lessonData.testCode || ""}
                   solutionCode={lessonData.solutionCode || ""}

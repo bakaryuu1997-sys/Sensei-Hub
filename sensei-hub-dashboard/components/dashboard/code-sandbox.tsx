@@ -1,86 +1,228 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, useCallback } from "react"
 import CodeMirror from "@uiw/react-codemirror"
 import { python } from "@codemirror/lang-python"
 import { oneDark } from "@codemirror/theme-one-dark"
-import { Play, RotateCcw, AlertTriangle, CheckCircle, Terminal } from "lucide-react"
+import { Play, Square, RotateCcw, Copy, Check, Trash2, AlertTriangle, CheckCircle, Terminal, Loader2 } from "lucide-react"
+
+type LogLine = { text: string; isError: boolean }
 
 type CodeSandboxProps = {
   initialCode: string
   testCode?: string
   solutionCode?: string
+  // レッスン単位でコードを localStorage に保存するキー（例: "python/day-01"）。
+  storageKey?: string
   onComplete?: () => void
 }
 
-export function CodeSandbox({ initialCode, testCode, solutionCode, onComplete }: CodeSandboxProps) {
-  const [code, setCode] = useState(initialCode)
-  const [status, setStatus] = useState<"idle" | "loading" | "loading-packages" | "ready" | "running" | "completed" | "failed">("idle")
+// ユーザーコードの実行が長すぎる（無限ループ等）場合に worker を強制終了する上限。
+const RUN_TIMEOUT_MS = 10000
+
+function savedKey(storageKey?: string) {
+  return storageKey ? `sensei-code:${storageKey}` : null
+}
+
+function loadSavedCode(storageKey: string | undefined, fallback: string): string {
+  if (typeof window === "undefined") return fallback
+  const k = savedKey(storageKey)
+  if (!k) return fallback
+  try {
+    const v = localStorage.getItem(k)
+    return v != null ? v : fallback
+  } catch {
+    return fallback
+  }
+}
+
+export function CodeSandbox({ initialCode, testCode, solutionCode, storageKey, onComplete }: CodeSandboxProps) {
+  const [code, setCode] = useState(() => loadSavedCode(storageKey, initialCode))
+  const [status, setStatus] = useState<
+    "loading" | "loading-packages" | "ready" | "running" | "completed" | "failed"
+  >("loading")
   const [packagesLoading, setPackagesLoading] = useState<string[]>([])
-  const [consoleLogs, setConsoleLogs] = useState<string[]>([])
+  const [consoleLogs, setConsoleLogs] = useState<LogLine[]>([])
   const [testError, setTestError] = useState<string>("")
   const [plotImages, setPlotImages] = useState<string[]>([])
-  
+  const [copied, setCopied] = useState(false)
+
   const workerRef = useRef<Worker | null>(null)
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const onCompleteRef = useRef(onComplete)
+  const restartRef = useRef<(reason: "timeout" | "stopped") => void>(() => {})
+  const consoleEndRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    // Start Pyodide worker
-    const worker = new Worker("/workers/pyodide.worker.js")
-    workerRef.current = worker
-
-    worker.onmessage = (e) => {
-      const msg = e.data
-      if (msg.type === "status") {
-        if (msg.status === "loading") setStatus("loading")
-        if (msg.status === "loading-packages") {
-          setStatus("loading-packages")
-          setPackagesLoading(msg.packages || [])
-        }
-        if (msg.status === "ready") setStatus("ready")
-      } else if (msg.type === "stdout" || msg.type === "stderr") {
-        setConsoleLogs((prev) => [...prev, msg.text])
-      } else if (msg.type === "success") {
-        setStatus(msg.testPassed ? "completed" : "failed")
-        if (msg.matplotlibImages) {
-          setPlotImages(msg.matplotlibImages)
-        }
-        if (msg.testPassed && onComplete) {
-          onComplete()
-        } else if (!msg.testPassed) {
-          setTestError(msg.testError)
-        }
-      } else if (msg.type === "error") {
-        setStatus("failed")
-        setConsoleLogs((prev) => [...prev, `Error: ${msg.error}\n`])
-      }
-    }
-
-    return () => {
-      worker.terminate()
-    }
+    onCompleteRef.current = onComplete
   }, [onComplete])
 
-  const runCode = () => {
-    if (!workerRef.current || status === "loading") return
+  const clearRunTimeout = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+      timeoutRef.current = null
+    }
+  }
+
+  // 同一設定の worker を生成（再起動時に使い回す）。
+  const makeWorker = useCallback(() => {
+    const w = new Worker("/workers/pyodide.worker.js")
+    w.onmessage = (e) => {
+      const msg = e.data
+      switch (msg.type) {
+        case "status":
+          if (msg.status === "loading") setStatus("loading")
+          else if (msg.status === "loading-packages") {
+            setStatus("loading-packages")
+            setPackagesLoading(msg.packages || [])
+          } else if (msg.status === "ready") {
+            setStatus((s) => (s === "running" ? s : "ready"))
+          } else if (msg.status === "executing") {
+            // 実行開始＝ここからタイムアウト計測（Pyodide/パッケージ読込時間は除外）。
+            setStatus("running")
+            clearRunTimeout()
+            timeoutRef.current = setTimeout(() => restartRef.current("timeout"), RUN_TIMEOUT_MS)
+          }
+          break
+        case "stdout":
+          setConsoleLogs((p) => [...p, { text: msg.text, isError: false }])
+          break
+        case "stderr":
+          setConsoleLogs((p) => [...p, { text: msg.text, isError: true }])
+          break
+        case "success":
+          clearRunTimeout()
+          setStatus(msg.testPassed ? "completed" : "failed")
+          if (msg.matplotlibImages) setPlotImages(msg.matplotlibImages)
+          if (msg.testPassed) onCompleteRef.current?.()
+          else setTestError(msg.testError || "")
+          break
+        case "error":
+          clearRunTimeout()
+          setStatus("failed")
+          setConsoleLogs((p) => [...p, { text: `Error: ${msg.error}\n`, isError: true }])
+          break
+      }
+    }
+    return w
+  }, [])
+
+  // worker を強制終了して作り直す（タイムアウト or ユーザーの Stop）。
+  const restartWorker = useCallback(
+    (reason: "timeout" | "stopped") => {
+      clearRunTimeout()
+      workerRef.current?.terminate()
+      const w = makeWorker()
+      workerRef.current = w
+      setStatus("loading")
+      setConsoleLogs((p) => [
+        ...p,
+        {
+          text:
+            reason === "timeout"
+              ? "⏱ 実行が長すぎます（>10秒・無限ループの可能性）。ランタイムを再起動しました。\n"
+              : "■ 実行を停止しました。ランタイムを再起動しました。\n",
+          isError: true,
+        },
+      ])
+    },
+    [makeWorker],
+  )
+
+  useEffect(() => {
+    restartRef.current = restartWorker
+  }, [restartWorker])
+
+  // 初回マウントで worker を 1 回だけ生成（再レンダーで作り直さない）。
+  useEffect(() => {
+    const w = makeWorker()
+    workerRef.current = w
+    return () => {
+      clearRunTimeout()
+      w.terminate()
+    }
+  }, [makeWorker])
+
+  // コードの自動保存（デバウンス）。
+  useEffect(() => {
+    const k = savedKey(storageKey)
+    if (!k) return
+    if (saveTimerRef.current) clearTimeout(saveTimerRef.current)
+    saveTimerRef.current = setTimeout(() => {
+      try {
+        localStorage.setItem(k, code)
+      } catch {
+        /* 保存失敗は無視 */
+      }
+    }, 400)
+    return () => {
+      if (saveTimerRef.current) clearTimeout(saveTimerRef.current)
+    }
+  }, [code, storageKey])
+
+  // 出力が増えたら自動で最下部へスクロール。
+  useEffect(() => {
+    consoleEndRef.current?.scrollIntoView({ behavior: "smooth", block: "end" })
+  }, [consoleLogs, plotImages, testError, status])
+
+  const isBusy = status === "loading" || status === "loading-packages" || status === "running"
+
+  const runCode = useCallback(() => {
+    const w = workerRef.current
+    if (!w || isBusy) return
     setConsoleLogs([])
     setTestError("")
     setPlotImages([])
     setStatus("running")
-    workerRef.current.postMessage({ code, testCode })
+    w.postMessage({ code, testCode })
+  }, [code, testCode, isBusy])
+
+  // Ctrl/Cmd + Enter で Run（エディタにフォーカスがあるときにバブリングで受ける）。
+  const onEditorKeyDown = (e: React.KeyboardEvent) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === "Enter") {
+      e.preventDefault()
+      runCode()
+    }
   }
 
   const resetCode = () => {
     setCode(initialCode)
+    const k = savedKey(storageKey)
+    if (k) {
+      try {
+        localStorage.removeItem(k)
+      } catch {
+        /* 無視 */
+      }
+    }
     setConsoleLogs([])
     setTestError("")
     setPlotImages([])
-    setStatus("ready")
+    setStatus((s) => (s === "loading" || s === "loading-packages" ? s : "ready"))
+  }
+
+  const clearConsole = () => {
+    setConsoleLogs([])
+    setTestError("")
+    setPlotImages([])
+    setStatus((s) => (s === "completed" || s === "failed" ? "ready" : s))
+  }
+
+  const copyCode = async () => {
+    try {
+      await navigator.clipboard.writeText(code)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    } catch {
+      /* クリップボード不可は無視 */
+    }
   }
 
   const showSolution = () => {
     if (!solutionCode) return
     const confirmShow = window.confirm(
-      "Are you sure you want to view the solution? This will overwrite your current code in the editor."
+      "解答を表示しますか？ 現在のエディタの内容は上書きされます。",
     )
     if (confirmShow) {
       setCode(solutionCode)
@@ -90,43 +232,79 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, onComplete }:
     }
   }
 
+  const runLabel =
+    status === "loading"
+      ? "Loading…"
+      : status === "loading-packages"
+        ? "Installing…"
+        : status === "running"
+          ? "Running…"
+          : "Run"
+
   return (
     <div className="flex h-full flex-col border border-white/5 bg-slate-950/80 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl">
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-white/5 bg-slate-900/50">
-        <div className="flex items-center gap-2 text-xs font-semibold text-white/85">
+      <div className="flex items-center justify-between gap-2 px-4 py-3 border-b border-white/5 bg-slate-900/50">
+        <div className="flex items-center gap-2 text-xs font-semibold text-white/85 shrink-0">
           <Terminal className="h-4 w-4 text-cyan-400" />
           Interactive Editor
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap items-center justify-end gap-2">
+          <button
+            onClick={copyCode}
+            title="Copy code"
+            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-white/10 hover:bg-white/5 text-xs text-white/80 transition-colors cursor-pointer"
+          >
+            {copied ? <Check className="h-3.5 w-3.5 text-emerald-400" /> : <Copy className="h-3.5 w-3.5" />}
+            {copied ? "Copied" : "Copy"}
+          </button>
           {solutionCode && (
             <button
               onClick={showSolution}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-yellow-500/20 hover:bg-yellow-500/10 text-xs text-yellow-400 font-semibold transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-yellow-500/20 hover:bg-yellow-500/10 text-xs text-yellow-400 font-semibold transition-colors cursor-pointer"
             >
-              Show Solution
+              Solution
             </button>
           )}
           <button
             onClick={resetCode}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/10 hover:bg-white/5 text-xs text-white/80 transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-white/10 hover:bg-white/5 text-xs text-white/80 transition-colors cursor-pointer"
           >
             <RotateCcw className="h-3.5 w-3.5" />
             Reset
           </button>
-          <button
-            onClick={runCode}
-            disabled={status === "loading" || status === "running"}
-            className="flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-600 hover:from-cyan-300 hover:to-purple-500 text-xs font-bold text-white shadow-lg disabled:opacity-50 transition-all cursor-pointer"
-          >
-            <Play className="h-3.5 w-3.5 fill-white" />
-            {status === "running" ? "Running..." : "Run"}
-          </button>
+          {status === "running" ? (
+            <button
+              onClick={() => restartRef.current("stopped")}
+              title="Stop execution"
+              className="flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-rose-500/90 hover:bg-rose-500 text-xs font-bold text-white shadow-lg transition-all cursor-pointer"
+            >
+              <Square className="h-3.5 w-3.5 fill-white" />
+              Stop
+            </button>
+          ) : (
+            <button
+              onClick={runCode}
+              disabled={isBusy}
+              title="Run (Ctrl/Cmd + Enter)"
+              className="flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-600 hover:from-cyan-300 hover:to-purple-500 text-xs font-bold text-white shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all cursor-pointer"
+            >
+              {status === "loading" || status === "loading-packages" ? (
+                <Loader2 className="h-3.5 w-3.5 animate-spin" />
+              ) : (
+                <Play className="h-3.5 w-3.5 fill-white" />
+              )}
+              {runLabel}
+            </button>
+          )}
         </div>
       </div>
 
       {/* Editor Area（CodeMirror: バンドル済み・CDN 不要・軽量で滑らか） */}
-      <div className="flex-1 min-h-0 overflow-hidden [&_.cm-theme]:h-full [&_.cm-editor]:h-full [&_.cm-scroller]:font-mono">
+      <div
+        onKeyDown={onEditorKeyDown}
+        className="relative flex-1 min-h-0 overflow-hidden [&_.cm-theme]:h-full [&_.cm-editor]:h-full [&_.cm-scroller]:font-mono"
+      >
         <CodeMirror
           value={code}
           onChange={(val) => setCode(val)}
@@ -146,41 +324,74 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, onComplete }:
             tabSize: 4,
           }}
         />
+        {/* 初回 Pyodide 読込中のスケルトン（エディタ自体は触れる） */}
+        {status === "loading" && (
+          <div className="pointer-events-none absolute bottom-3 right-3 flex items-center gap-2 rounded-lg border border-cyan-400/20 bg-slate-900/80 px-3 py-1.5 text-[11px] font-mono text-cyan-300 backdrop-blur">
+            <Loader2 className="h-3.5 w-3.5 animate-spin" />
+            Python ランタイムを準備中（初回は時間がかかります）…
+          </div>
+        )}
       </div>
 
       {/* Console / Status Footer（高さは可変・最小確保で下の余白を作らない） */}
       <div className="h-[34%] min-h-[140px] max-h-[260px] border-t border-white/5 bg-slate-950 flex flex-col font-mono text-xs">
-        <div className="px-4 py-2 border-b border-white/5 bg-slate-900/30 text-white/40 text-[10px] uppercase tracking-wider font-semibold">
-          Console Output
+        <div className="flex items-center justify-between px-4 py-2 border-b border-white/5 bg-slate-900/30">
+          <span className="text-white/40 text-[10px] uppercase tracking-wider font-semibold">Console Output</span>
+          <button
+            onClick={clearConsole}
+            title="Clear console"
+            className="flex items-center gap-1 text-[10px] text-white/40 hover:text-white/80 transition-colors cursor-pointer"
+          >
+            <Trash2 className="h-3 w-3" />
+            Clear
+          </button>
         </div>
         <div className="flex-1 p-4 overflow-y-auto space-y-1 scrollbar-thin text-white/90">
-          {status === "loading" && <div className="text-cyan-400">Loading Pyodide WebAssembly runtime...</div>}
-          {status === "loading-packages" && (
-            <div className="text-amber-400 animate-pulse">
-              Installing libraries: {packagesLoading.join(", ")} from CDN (Wasm)...
+          {status === "loading" && (
+            <div className="flex items-center gap-2 text-cyan-400">
+              <Loader2 className="h-3.5 w-3.5 animate-spin" />
+              Loading Pyodide WebAssembly runtime…
             </div>
           )}
-          {status === "ready" && <div className="text-white/40">{'Ready. Write code and click "Run".'}</div>}
+          {status === "loading-packages" && (
+            <div className="flex items-center gap-2 text-amber-400 animate-pulse">
+              <Loader2 className="h-3.5 w-3.5 animate-spin" />
+              Installing libraries: {packagesLoading.join(", ")} from CDN (Wasm)…
+            </div>
+          )}
+          {status === "ready" && consoleLogs.length === 0 && (
+            <div className="text-white/40">{'Ready. Write code and click "Run" (Ctrl/Cmd + Enter).'}</div>
+          )}
           {consoleLogs.map((log, idx) => (
-            <div key={idx} className="whitespace-pre-wrap">{log}</div>
+            <div key={idx} className={log.isError ? "whitespace-pre-wrap text-rose-300" : "whitespace-pre-wrap"}>
+              {log.text}
+            </div>
           ))}
           {plotImages.map((img, idx) => (
-            <div key={idx} className="my-4 p-2 bg-white/5 rounded-xl border border-white/10 max-w-full flex justify-center">
-              <img src={`data:image/png;base64,${img}`} alt={`Plot ${idx + 1}`} className="max-h-[260px] object-contain rounded-lg shadow-md" />
+            <div
+              key={idx}
+              className="my-4 p-2 bg-white/5 rounded-xl border border-white/10 max-w-full flex justify-center"
+            >
+              <img
+                src={`data:image/png;base64,${img}`}
+                alt={`Plot ${idx + 1}`}
+                className="max-h-[260px] object-contain rounded-lg shadow-md"
+              />
             </div>
           ))}
           {status === "completed" && (
-              <div className="flex items-center gap-1.5 text-emerald-400 font-bold pt-2">
-                <CheckCircle className="h-4 w-4" />
-                Task Passed! Lesson Completed.
-              </div>
-            )}
+            <div className="flex items-center gap-1.5 text-emerald-400 font-bold pt-2">
+              <CheckCircle className="h-4 w-4" />
+              Task Passed! Lesson Completed.
+            </div>
+          )}
           {testError && (
             <div className="flex items-start gap-1.5 text-rose-400 font-bold pt-2">
               <AlertTriangle className="h-4 w-4 mt-0.5 shrink-0" />
               <div>Task Failed: {testError}</div>
             </div>
           )}
+          <div ref={consoleEndRef} />
         </div>
       </div>
     </div>

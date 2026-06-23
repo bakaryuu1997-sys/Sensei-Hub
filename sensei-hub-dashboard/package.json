@@ -16,7 +16,9 @@
   "dependencies": {
     "@clerk/nextjs": "^7.5.3",
     "@codemirror/lang-python": "^6.2.1",
+    "@codemirror/state": "^6.6.0",
     "@codemirror/theme-one-dark": "^6.1.3",
+    "@codemirror/view": "^6.43.1",
     "@hookform/resolvers": "^3.9.1",
     "@libsql/client": "^0.17.4",
     "@prisma/adapter-libsql": "^7.8.0",

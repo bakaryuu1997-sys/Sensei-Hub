@@ -71,6 +71,9 @@ self.onmessage = async function (e) {
     }
   });
 
+  // 実行開始を通知（メイン側はここからタイムアウト計測を始める）。
+  self.postMessage({ type: "status", status: "executing" });
+
   try {
     // Evaluate user code
     await pyodide.runPythonAsync(code);
