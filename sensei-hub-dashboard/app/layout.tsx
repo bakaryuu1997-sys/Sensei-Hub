@@ -11,6 +11,7 @@ import { Onboarding } from '@/components/onboarding'
 import { StreakReminder } from '@/components/streak-reminder'
 import { ClerkProvider } from "@clerk/nextjs"
 import 'highlight.js/styles/atom-one-dark.css'
+import 'katex/dist/katex.min.css'
 import './globals.css'
 
 const inter = Inter({ 

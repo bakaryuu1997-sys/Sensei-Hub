@@ -18,6 +18,7 @@ import { setLastLesson } from "@/lib/last-lesson"
 import { setActiveLesson, clearActiveLesson } from "@/lib/lesson-context"
 import { recordActivity, recordLessonView } from "@/lib/activity"
 import { vibrate } from "@/lib/haptics"
+import { splitMathSegments, isLikelyMath } from "@/lib/katex-render"
 import { cn } from "@/lib/utils"
 
 // CodeMirror は重いので演習レッスンを開いたときだけ遅延ロードする（初回表示・他教科に影響させない）。
@@ -209,6 +210,60 @@ export default function LessonPage({
       });
     });
 
+    return () => {
+      cancelled = true;
+    };
+  }, [lessonData?.htmlContent]);
+
+  // 数式（LaTeX）を KaTeX で自然な数式に描画する。コンテンツの $ は不統一なので、
+  // 「いかにも数式」な区間だけを安全に描画し、文章や壊れた $ は元テキストのまま残す。
+  useEffect(() => {
+    if (!lessonData?.htmlContent) return;
+    let cancelled = false;
+    import("katex").then(({ default: katex }) => {
+      if (cancelled) return;
+      document.querySelectorAll<HTMLElement>(".markdown-content").forEach((root) => {
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+          acceptNode: (node) => {
+            const p = (node as Text).parentElement;
+            if (!p || p.closest("pre, code, .katex, script, style, textarea")) {
+              return NodeFilter.FILTER_REJECT;
+            }
+            if (!node.nodeValue || node.nodeValue.indexOf("$") === -1) {
+              return NodeFilter.FILTER_REJECT;
+            }
+            return NodeFilter.FILTER_ACCEPT;
+          },
+        });
+        const targets: Text[] = [];
+        let n: Node | null;
+        while ((n = walker.nextNode())) targets.push(n as Text);
+
+        for (const tn of targets) {
+          const segs = splitMathSegments(tn.nodeValue || "");
+          if (!segs.some((s) => s.type === "math" && isLikelyMath(s.value))) continue;
+          const frag = document.createDocumentFragment();
+          for (const seg of segs) {
+            if (seg.type === "text") {
+              frag.appendChild(document.createTextNode(seg.value));
+              continue;
+            }
+            if (!isLikelyMath(seg.value)) {
+              frag.appendChild(document.createTextNode(seg.raw));
+              continue;
+            }
+            try {
+              const span = document.createElement("span");
+              katex.render(seg.value, span, { throwOnError: true, displayMode: seg.display, strict: false });
+              frag.appendChild(span);
+            } catch {
+              frag.appendChild(document.createTextNode(seg.raw));
+            }
+          }
+          tn.replaceWith(frag);
+        }
+      });
+    });
     return () => {
       cancelled = true;
     };
