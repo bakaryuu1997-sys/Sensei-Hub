@@ -176,13 +176,13 @@ async def slow_route():
 > Khi bạn khai báo một route handler bằng `async def`, bạn đang yêu cầu FastAPI thực thi nó trực tiếp trên vòng lặp sự kiện đơn luồng. Nếu bạn thực hiện một cuộc gọi đồng bộ chặn (như `time.sleep()`, các truy vấn cơ sở dữ liệu đồng bộ hoặc các request HTTP chặn) bên trong nó, bạn sẽ làm dừng toàn bộ vòng lặp. Nếu bắt buộc phải sử dụng các thư viện đồng bộ chặn, hãy khai báo route handler bằng `def` thay vì `async def`; FastAPI sau đó sẽ tự động chạy nó trong một thread pool riêng biệt.
 
 **Lỗi 2: Thiếu phần `:app` hoặc ghi sai tên module file khi chạy Uvicorn**
-```bash
+```python
 uvicorn app --reload
 ```
 ```text
 Error loading ASGI app. Import string "app" must be in format "<module>:<attribute>".
 ```
-```bash
+```python
 # Nếu mã của bạn nằm trong file main.py và biến FastAPI được đặt tên là app:
 uvicorn main:app --reload
 ```

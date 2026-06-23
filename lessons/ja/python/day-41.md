@@ -176,13 +176,13 @@ async def slow_route():
 > `async def` を使ってルートハンドラを定義すると、FastAPIはシングルスレッドのイベントループ上でこれを直接実行します。そのため、内部で `time.sleep()` などの同期的でブロッキングな処理を呼び出すと、イベントループ自体が停止してしまいます。同期的な外部ライブラリ（`requests` など）を使用する場合は、`async def` ではなく通常の `def` を使ってルートハンドラを定義してください。そうすれば、FastAPIが自動的に別スレッドのプール上で処理を安全に実行します。
 
 **間違い 2: Uvicorn起動時に `:app` の指定を忘れる、またはファイル名を間違える**
-```bash
+```python
 uvicorn app --reload
 ```
 ```text
 Error loading ASGI app. Import string "app" must be in format "<module>:<attribute>".
 ```
-```bash
+```python
 # コードが main.py にあり、FastAPIの変数名が app である場合:
 uvicorn main:app --reload
 ```
