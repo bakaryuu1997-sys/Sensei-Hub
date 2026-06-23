@@ -68,7 +68,7 @@ graph TD
 ```
 
 ### 📝 Ví dụ minh họa có chú thích
-Dưới đây là một lớp `Vector` tùy chỉnh minh họa việc hiển thị chuỗi, và một lớp bao bọc cấu trúc dữ liệu hoạt động như một từ điển.
+Dưới đây là một lớp `Vector` tùy chỉnh minh họa việc hiển thị chuỗi.
 
 ```python
 class Vector:

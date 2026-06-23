@@ -68,7 +68,7 @@ graph TD
 ```
 
 ### 📝 Annotated Examples
-Here is an implementation of a custom `Vector` class demonstrating representation methods, and a custom container representing a standard database cache wrapper.
+Here is an implementation of a custom `Vector` class demonstrating representation methods.
 
 ```python
 class Vector:
@@ -147,7 +147,7 @@ For example, writing `len(obj)` does not look up `obj.__dict__['__len__']`. Inst
 </details>
 
 ### 🏋️ Exercise
-Complete the function `DictWrapper` class to wrap a dictionary and support bracket access, length determination, and key lookup via a direct function call interface.
+Complete the `DictWrapper` class to wrap a dictionary and support bracket access, length determination, and key lookup via a direct function call interface.
 
 ```python
 class DictWrapper:

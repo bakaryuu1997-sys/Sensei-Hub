@@ -47,7 +47,7 @@ flowchart TD
 ```
 
 ### 📝 Annotated Examples
-Here is an example of a custom range iterator, followed by a generator function that reads lines from a list matching a query.
+Here is an example of a custom countdown iterator, followed by a generator function that reads lines from a list matching a query.
 
 ```python
 # 1. Custom Iterator implementing the Iteration Protocol
