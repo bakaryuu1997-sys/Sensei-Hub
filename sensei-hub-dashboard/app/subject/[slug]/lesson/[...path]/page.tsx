@@ -41,6 +41,9 @@ interface LessonItem {
   description?: string
 }
 
+// Mermaid 描画 ID の単調増加カウンタ（衝突防止）。
+let mermaidSeq = 0
+
 // Setup DOMPurify to allow target="_blank" on links if needed, or other options
 // marked setup is removed since parsing is shifted to the server.
 
@@ -151,25 +154,25 @@ export default function LessonPage({
     }
   }, [slug, lessonPath, lang])
 
-  // Mermaid 図をクライアントで描画する。図ごとに render し、失敗しても
-  // 生テキストを晒さず読みやすいフォールバックを出す（dev オーバーレイも汚さない）。
+  // Mermaid 図をクライアントで描画する。htmlLabels:false（SVG テキスト）で
+  // foreignObject/フォント未適用による「図が出たり出なかったり」を防ぐ。pre は描画後に
+  // 置換されるため再実行は冪等。paint 遅延に備えて短い再試行も行う。
   useEffect(() => {
-    const codeElements = Array.from(
-      document.querySelectorAll<HTMLElement>("pre code.language-mermaid"),
-    );
-    if (codeElements.length === 0) return;
-
+    if (!lessonData?.htmlContent) return;
     let cancelled = false;
+    let timer: ReturnType<typeof setTimeout> | null = null;
+
     import("mermaid").then(({ default: mermaid }) => {
+      if (cancelled) return;
       mermaid.initialize({
         startOnLoad: false,
         theme: "dark",
         securityLevel: "loose",
-        flowchart: { useMaxWidth: true, htmlLabels: true, curve: "basis", padding: 16 },
+        // SVG テキストで描画（foreignObject を使わず、確実に表示）。
+        flowchart: { useMaxWidth: true, htmlLabels: false, curve: "basis", padding: 16 },
         themeVariables: {
-          // 高コントラストで読みやすい配色（暗背景＋明るい文字・線）。
           fontSize: "15px",
-          fontFamily: "var(--font-jetbrains-mono), ui-monospace, monospace",
+          fontFamily: "ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace",
           primaryColor: "#241b4d",
           primaryTextColor: "#eef2ff",
           primaryBorderColor: "#8b5cf6",
@@ -181,37 +184,51 @@ export default function LessonPage({
         },
       });
 
-      codeElements.forEach(async (codeEl, i) => {
-        const preEl = codeEl.parentElement;
-        if (!preEl || preEl.tagName !== "PRE") return;
-        const source = codeEl.textContent || "";
-        const wrap = document.createElement("div");
+      const renderAll = () => {
+        const codeElements = Array.from(
+          document.querySelectorAll<HTMLElement>("pre code.language-mermaid"),
+        );
+        codeElements.forEach(async (codeEl) => {
+          const preEl = codeEl.parentElement;
+          if (!preEl || preEl.tagName !== "PRE") return;
+          // 二重処理防止: 処理開始を印（async 中に再試行が来ても重複させない）。
+          if (preEl.dataset.mermaidProcessing === "1") return;
+          preEl.dataset.mermaidProcessing = "1";
+          const source = codeEl.textContent || "";
+          const wrap = document.createElement("div");
+          try {
+            mermaidSeq += 1;
+            const { svg } = await mermaid.render(`sh-mermaid-${mermaidSeq}`, source);
+            if (cancelled) return;
+            wrap.className =
+              "my-6 flex justify-center overflow-x-auto rounded-2xl border border-white/10 bg-[#0b0820]/70 p-4 [&_svg]:max-w-full [&_svg]:h-auto";
+            wrap.innerHTML = svg;
+          } catch {
+            if (cancelled) return;
+            wrap.className =
+              "my-6 overflow-x-auto rounded-2xl border border-amber-500/20 bg-amber-500/[0.06] p-4";
+            const note = document.createElement("div");
+            note.className = "mb-2 text-xs font-semibold text-amber-300/80";
+            note.textContent = "⚠ 図を描画できませんでした（Mermaid 構文を確認）";
+            const pre = document.createElement("pre");
+            pre.className = "whitespace-pre-wrap text-xs text-white/55";
+            pre.textContent = source;
+            wrap.append(note, pre);
+          }
+          if (!cancelled && preEl.isConnected) preEl.replaceWith(wrap);
+        });
+      };
 
-        try {
-          const { svg } = await mermaid.render(`mermaid-${Date.now()}-${i}`, source);
-          if (cancelled) return;
-          wrap.className =
-            "my-6 flex justify-center overflow-x-auto rounded-2xl border border-white/10 bg-[#0b0820]/70 p-4 [&_svg]:max-w-full [&_svg]:h-auto";
-          wrap.innerHTML = svg;
-        } catch {
-          if (cancelled) return;
-          // 構文エラー時は警告＋元コードを整形表示（生テキストの垂れ流しを防ぐ）。
-          wrap.className =
-            "my-6 overflow-x-auto rounded-2xl border border-amber-500/20 bg-amber-500/[0.06] p-4";
-          const note = document.createElement("div");
-          note.className = "mb-2 text-xs font-semibold text-amber-300/80";
-          note.textContent = "⚠ 図を描画できませんでした（Mermaid 構文を確認）";
-          const pre = document.createElement("pre");
-          pre.className = "whitespace-pre-wrap text-xs text-white/55";
-          pre.textContent = source;
-          wrap.append(note, pre);
-        }
-        preEl.replaceWith(wrap);
-      });
+      renderAll();
+      // paint 遅延・遅いマウントに備えて 1 回だけ再試行（処理済みは pre が消えるので無害）。
+      timer = setTimeout(() => {
+        if (!cancelled) renderAll();
+      }, 250);
     });
 
     return () => {
       cancelled = true;
+      if (timer) clearTimeout(timer);
     };
   }, [lessonData?.htmlContent]);
 
@@ -378,7 +395,7 @@ export default function LessonPage({
                 </div>
                 
                 {/* Navigation */}
-                <div className="flex items-center justify-between border-t border-white/5 pt-4 mt-6 bg-slate-950/20">
+                <div className="flex items-center justify-between gap-2 border-t border-white/5 pt-4 mt-6 bg-slate-950/20">
                   {prevLesson ? (
                     <Link
                       href={`/subject/${slug}/lesson/${prevLesson.path}`}
@@ -390,6 +407,19 @@ export default function LessonPage({
                   ) : (
                     <div />
                   )}
+                  {/* 読み終えたら手動で完了にできるトグル（コーディング演習レッスンにも用意） */}
+                  <button
+                    onClick={handleToggleComplete}
+                    className={cn(
+                      "flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold font-mono transition-all active:scale-95 whitespace-nowrap",
+                      isCompleted
+                        ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/20"
+                        : cn("text-white bg-gradient-to-r hover:opacity-90", subject.colorFrom, subject.colorTo),
+                    )}
+                  >
+                    <CheckCircle2 className={cn("h-3.5 w-3.5", isCompleted ? "text-emerald-400" : "text-white/70")} />
+                    {isCompleted ? t("lesson.completed") : t("lesson.complete")}
+                  </button>
                   {nextLesson ? (
                     <Link
                       href={`/subject/${slug}/lesson/${nextLesson.path}`}

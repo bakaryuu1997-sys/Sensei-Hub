@@ -46,6 +46,7 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, storageKey, o
   const [testError, setTestError] = useState<string>("")
   const [plotImages, setPlotImages] = useState<string[]>([])
   const [copied, setCopied] = useState(false)
+  const [hasRun, setHasRun] = useState(false) // 1 度でも実行したか（出力なしの案内用）
   // 標準入力（input() 用）。
   const [stdinValue, setStdinValue] = useState("")
   const [showStdin, setShowStdin] = useState(false)
@@ -190,6 +191,7 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, storageKey, o
     setConsoleLogs([])
     setTestError("")
     setPlotImages([])
+    setHasRun(true)
     setStatus("running")
     w.postMessage({ code, testCode, stdin: stdinValue })
   }, [code, testCode, stdinValue, isBusy])
@@ -215,6 +217,7 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, storageKey, o
     setConsoleLogs([])
     setTestError("")
     setPlotImages([])
+    setHasRun(false)
     setStatus((s) => (s === "loading" || s === "loading-packages" ? s : "ready"))
   }
 
@@ -222,6 +225,7 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, storageKey, o
     setConsoleLogs([])
     setTestError("")
     setPlotImages([])
+    setHasRun(false)
     setStatus((s) => (s === "completed" || s === "failed" ? "ready" : s))
   }
 
@@ -425,6 +429,15 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, storageKey, o
               />
             </div>
           ))}
+          {/* 実行したが print 等の出力が無いとき: 実行成功＋見方を案内（「完了だけ出て結果が見えない」対策） */}
+          {hasRun &&
+            consoleLogs.length === 0 &&
+            plotImages.length === 0 &&
+            (status === "completed" || status === "failed" || status === "ready") && (
+              <div className="text-white/45">
+                ✓ 実行しました（標準出力なし）。<span className="text-cyan-300/80">print(...)</span> で値を表示できます。
+              </div>
+            )}
           {/* 演習チェック（プログラムのエラーとは別物。クリアは緑、未達は穏やかな黄色） */}
           {status === "completed" && (
             <div className="mt-2 flex items-center gap-1.5 rounded-lg border border-emerald-500/25 bg-emerald-500/[0.08] px-3 py-2 text-emerald-300 font-semibold">
