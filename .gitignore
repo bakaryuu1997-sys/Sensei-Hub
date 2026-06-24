@@ -11,3 +11,8 @@ lessons/lessons-index.json
 # Python bytecode cache
 __pycache__/
 *.pyc
+
+# SSH 秘密鍵・証明書は絶対にコミットしない
+*.pem
+*.key
+*Zone.Identifier
