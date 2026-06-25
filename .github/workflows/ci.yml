@@ -103,3 +103,70 @@ jobs:
       - name: E2E tests
         if: steps.guard.outputs.enabled == 'true'
         run: pnpm test:e2e
+
+  # 本番デプロイ。main への push かつデプロイ用シークレットが揃っている時だけ実行。
+  # build（lint/test/build）が緑になってから動く。シークレット未設定なら丸ごとスキップ。
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    concurrency:
+      group: deploy-main
+      cancel-in-progress: false
+    env:
+      AWS_REGION: ap-southeast-2
+      ECR_REPO: sensei-hub
+    steps:
+      - name: Detect deploy secrets
+        id: guard
+        run: |
+          if [ -n "${{ secrets.AWS_ACCESS_KEY_ID }}" ] && [ -n "${{ secrets.EC2_SSH_KEY }}" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "Deploy secrets not set — skipping deploy (CI stays green)."
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.guard.outputs.enabled == 'true'
+
+      - name: Configure AWS credentials
+        if: steps.guard.outputs.enabled == 'true'
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        if: steps.guard.outputs.enabled == 'true'
+        id: ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build and push image
+        if: steps.guard.outputs.enabled == 'true'
+        env:
+          ECR_URI: ${{ steps.ecr.outputs.registry }}/${{ env.ECR_REPO }}
+          PUBK: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+          VAPK: ${{ secrets.NEXT_PUBLIC_VAPID_PUBLIC_KEY }}
+        run: |
+          # ビルドコンテキストはリポジトリルート（Dockerfile はルート・lessons/ を含む）。
+          docker build \
+            --build-arg NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="$PUBK" \
+            --build-arg NEXT_PUBLIC_VAPID_PUBLIC_KEY="$VAPK" \
+            -t "$ECR_URI:latest" -t "$ECR_URI:${{ github.sha }}" .
+          docker push "$ECR_URI:latest"
+          docker push "$ECR_URI:${{ github.sha }}"
+
+      - name: Deploy on EC2 over SSH
+        if: steps.guard.outputs.enabled == 'true'
+        env:
+          EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+          ECR_REGISTRY: ${{ steps.ecr.outputs.registry }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$EC2_SSH_KEY" > ~/.ssh/ec2.pem
+          chmod 600 ~/.ssh/ec2.pem
+          ssh -i ~/.ssh/ec2.pem -o StrictHostKeyChecking=no -o ServerAliveInterval=15 -o ConnectTimeout=30 "ubuntu@$EC2_HOST" "set -e; cd ~/sensei-hub && aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin $ECR_REGISTRY && docker compose -f docker-compose.prod.yml pull && docker compose -f docker-compose.prod.yml up -d && docker image prune -f"
+          echo "Deployed ${{ github.sha }} to EC2."
