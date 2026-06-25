@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { Home, BookOpen, Download, Settings, History } from "lucide-react"
+import { Home, BookOpen, Download, Settings, History, BarChart3 } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
@@ -48,6 +48,7 @@ export function SidebarContent({ onNavigate }: { onNavigate?: () => void } = {})
   const isSubjects = pathname.startsWith("/subject")
   const isSettings = pathname.startsWith("/settings")
   const isHistory = pathname.startsWith("/history")
+  const isProgress = pathname.startsWith("/progress")
 
   return (
     <motion.div
@@ -159,8 +160,23 @@ export function SidebarContent({ onNavigate }: { onNavigate?: () => void } = {})
           })}
         </div>
 
-        {/* History + Settings */}
+        {/* Progress + History + Settings */}
         <div className="mt-6 space-y-1 border-t border-white/5 pt-4">
+          <motion.div variants={itemVariants}>
+            <Link
+              href="/progress"
+              onClick={onNavigate}
+              className={cn(
+                "flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all",
+                isProgress
+                  ? "bg-gradient-to-r from-cyan-500/20 to-purple-500/10 text-white border border-white/10"
+                  : "text-white/60 hover:bg-white/5 hover:text-white",
+              )}
+            >
+              <BarChart3 className={cn("h-5 w-5", isProgress && "text-cyan-300")} />
+              {t("nav.progress")}
+            </Link>
+          </motion.div>
           <motion.div variants={itemVariants}>
             <Link
               href="/history"
