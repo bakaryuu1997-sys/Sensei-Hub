@@ -171,5 +171,6 @@ jobs:
           mkdir -p ~/.ssh
           printf '%s\n' "$EC2_SSH_KEY" > ~/.ssh/ec2.pem
           chmod 600 ~/.ssh/ec2.pem
-          ssh -i ~/.ssh/ec2.pem -o StrictHostKeyChecking=no -o ServerAliveInterval=15 -o ConnectTimeout=30 "ubuntu@$EC2_HOST" "set -e; cd ~/sensei-hub && aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin $ECR_REGISTRY && docker compose -f docker-compose.prod.yml pull && docker compose -f docker-compose.prod.yml up -d && docker image prune -f"
+          # --force-recreate で、同じ latest タグでもイメージ更新時に確実にコンテナを作り直す。
+          ssh -i ~/.ssh/ec2.pem -o StrictHostKeyChecking=no -o ServerAliveInterval=15 -o ConnectTimeout=30 "ubuntu@$EC2_HOST" "set -e; cd ~/sensei-hub && aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin $ECR_REGISTRY && docker compose -f docker-compose.prod.yml pull && docker compose -f docker-compose.prod.yml up -d --force-recreate && docker image prune -f"
           echo "Deployed ${{ github.sha }} to EC2."
