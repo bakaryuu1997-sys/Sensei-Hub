@@ -1,9 +1,19 @@
 "use client"
 
 import { useState, useEffect, useRef, useCallback } from "react"
-import CodeMirror from "@uiw/react-codemirror"
+import CodeMirror, { EditorView } from "@uiw/react-codemirror"
 import { python } from "@codemirror/lang-python"
 import { oneDark } from "@codemirror/theme-one-dark"
+
+// バックスラッシュ(\) が日本語フォントで ¥ に化けるのを防ぐため、欧文等幅フォントを明示する。
+// 0x5C を ¥ に描画する CJK フォント（MS Gothic 等）へフォールバックさせない。
+const CODE_FONT =
+  "'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', Consolas, Menlo, Monaco, 'DejaVu Sans Mono', monospace"
+const codeFontTheme = EditorView.theme({
+  "&": { fontFamily: CODE_FONT },
+  ".cm-content": { fontFamily: CODE_FONT },
+  ".cm-gutters": { fontFamily: CODE_FONT },
+})
 import { Play, Square, RotateCcw, Copy, Check, Trash2, CircleDashed, CheckCircle, Terminal, Loader2, Keyboard } from "lucide-react"
 
 type LogLine = { text: string; isError: boolean }
@@ -341,7 +351,7 @@ export function CodeSandbox({ initialCode, testCode, solutionCode, storageKey, o
           value={code}
           onChange={(val) => setCode(val)}
           theme={oneDark}
-          extensions={[python()]}
+          extensions={[python(), codeFontTheme]}
           height="100%"
           style={{ height: "100%", fontSize: "14px" }}
           basicSetup={{
