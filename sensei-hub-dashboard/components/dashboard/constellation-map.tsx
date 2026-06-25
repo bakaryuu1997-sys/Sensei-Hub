@@ -10,20 +10,9 @@ import Link from "next/link"
 import { useUserProgress } from "@/components/user-progress-provider"
 import { ConstellationPlanet } from "./constellation-planet"
 
-// Define positions for our 11 chòm sao (nodes) in the viewport (1150x200)
-const positions = [
-  { x: 60, y: 100 },   // FE
-  { x: 160, y: 50 },   // AWS
-  { x: 260, y: 130 },  // SysDesign
-  { x: 360, y: 60 },   // Database
-  { x: 460, y: 140 },  // DevOps
-  { x: 560, y: 60 },   // DSA
-  { x: 660, y: 130 },  // BJT
-  { x: 760, y: 50 },   // Mindset
-  { x: 860, y: 120 },  // Blockchain & Web3
-  { x: 960, y: 60 },   // Cybersecurity
-  { x: 1060, y: 95 },  // Git & GitHub
-]
+// ビューポート（1150x200）。ノードは教科数に応じて等間隔で配置し、ジグザグの y で星座風にする。
+// 教科が増減しても重ならない（固定配列だと数がずれて被るバグの再発を防ぐ）。
+const VIEW_W = 1150
 
 export function ConstellationMap() {
   const { t } = useLanguage()
@@ -32,10 +21,13 @@ export function ConstellationMap() {
 
   const nodeStats = subjects.map((subject, idx) => {
     const stats = computeSubjectStats(subject)
+    const n = subjects.length
+    const x = n > 1 ? 55 + (idx * (VIEW_W - 110)) / (n - 1) : VIEW_W / 2
+    const y = idx % 2 === 0 ? 115 : 55
     return {
       ...subject,
       ...stats,
-      pos: positions[idx] || { x: 100, y: 100 },
+      pos: { x, y },
     }
   })
 

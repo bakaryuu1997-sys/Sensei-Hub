@@ -91,6 +91,37 @@ export function SidebarContent({ onNavigate }: { onNavigate?: () => void } = {})
               {t("nav.dashboard")}
             </Link>
           </motion.div>
+          {/* 進捗・学習履歴はダッシュボードと一緒に上部へ */}
+          <motion.div variants={itemVariants}>
+            <Link
+              href="/progress"
+              onClick={onNavigate}
+              className={cn(
+                "flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all",
+                isProgress
+                  ? "bg-gradient-to-r from-cyan-500/20 to-purple-500/10 text-white border border-white/10"
+                  : "text-white/60 hover:bg-white/5 hover:text-white",
+              )}
+            >
+              <BarChart3 className={cn("h-5 w-5", isProgress && "text-cyan-300")} />
+              {t("nav.progress")}
+            </Link>
+          </motion.div>
+          <motion.div variants={itemVariants}>
+            <Link
+              href="/history"
+              onClick={onNavigate}
+              className={cn(
+                "flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all",
+                isHistory
+                  ? "bg-gradient-to-r from-cyan-500/20 to-purple-500/10 text-white border border-white/10"
+                  : "text-white/60 hover:bg-white/5 hover:text-white",
+              )}
+            >
+              <History className={cn("h-5 w-5", isHistory && "text-cyan-300")} />
+              {t("nav.history")}
+            </Link>
+          </motion.div>
           <motion.div variants={itemVariants}>
             <Link
               href="/subject/aws"
@@ -160,38 +191,8 @@ export function SidebarContent({ onNavigate }: { onNavigate?: () => void } = {})
           })}
         </div>
 
-        {/* Progress + History + Settings */}
+        {/* Settings */}
         <div className="mt-6 space-y-1 border-t border-white/5 pt-4">
-          <motion.div variants={itemVariants}>
-            <Link
-              href="/progress"
-              onClick={onNavigate}
-              className={cn(
-                "flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all",
-                isProgress
-                  ? "bg-gradient-to-r from-cyan-500/20 to-purple-500/10 text-white border border-white/10"
-                  : "text-white/60 hover:bg-white/5 hover:text-white",
-              )}
-            >
-              <BarChart3 className={cn("h-5 w-5", isProgress && "text-cyan-300")} />
-              {t("nav.progress")}
-            </Link>
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <Link
-              href="/history"
-              onClick={onNavigate}
-              className={cn(
-                "flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all",
-                isHistory
-                  ? "bg-gradient-to-r from-cyan-500/20 to-purple-500/10 text-white border border-white/10"
-                  : "text-white/60 hover:bg-white/5 hover:text-white",
-              )}
-            >
-              <History className={cn("h-5 w-5", isHistory && "text-cyan-300")} />
-              {t("nav.history")}
-            </Link>
-          </motion.div>
           <motion.div variants={itemVariants}>
             <Link
               href="/settings"
