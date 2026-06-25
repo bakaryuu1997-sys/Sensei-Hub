@@ -37,6 +37,21 @@ RUN pnpm prisma generate
 # 実コンテナで起動・db push ともに問題ないことを確認済み。
 RUN rm -rf node_modules/.pnpm/@next+swc-* node_modules/@next/swc-*
 
+# 実行時（next start のサーバー）に不要な依存を削除して大幅に軽量化する。
+# 対象は「クライアント専用（.next/static に既にバンドル済み・dynamic import）」「開発/テスト
+# 専用」「Prisma Studio（db push には不要）」。サーバーは読み込まないため安全。
+# ※ highlight.js（サーバーのレッスン整形）・lucide-react・date-fns・marked 等は実行時に
+#   使うため残す。
+RUN cd node_modules \
+ && rm -rf mermaid katex three @codemirror @uiw typescript sharp @img \
+           playwright-core @playwright \
+ && rm -rf .pnpm/mermaid@* .pnpm/katex@* .pnpm/three@* \
+           .pnpm/@codemirror+* .pnpm/@uiw+* .pnpm/typescript@* \
+           .pnpm/sharp@* .pnpm/@img+* \
+           .pnpm/playwright-core@* .pnpm/@playwright+*
+# ※ @prisma/studio-core と @electric-sql/pglite は prisma CLI が起動時に eager require する
+#   ため削除しない（db push が "Cannot find module @prisma/studio-core" で失敗する）。
+
 # 2. アプリのビルド
 FROM base AS builder
 WORKDIR /app
