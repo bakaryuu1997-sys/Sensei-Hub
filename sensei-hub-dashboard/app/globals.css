@@ -655,7 +655,11 @@
 }
 
 .markdown-content table {
-  width: 100%;
+  /* モバイルで列が多い表が画面外にはみ出さないよう、表自体を横スクロール可能にする。 */
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border-collapse: collapse;
   margin-bottom: 1.5rem;
   font-size: 0.875rem;

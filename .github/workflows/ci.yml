@@ -65,6 +65,9 @@ jobs:
     steps:
       - name: Detect E2E secrets
         id: guard
+        # checkout 前に走るため、ジョブ既定の working-directory(sensei-hub-dashboard) は
+        # まだ存在しない。ワークスペース直下で実行して "No such file or directory" を防ぐ。
+        working-directory: ${{ github.workspace }}
         run: |
           if [ -n "${{ secrets.E2E_CLERK_USER_USERNAME }}" ]; then
             echo "enabled=true" >> "$GITHUB_OUTPUT"

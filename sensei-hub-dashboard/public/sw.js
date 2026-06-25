@@ -1,4 +1,7 @@
-const CACHE_NAME = 'sensei-hub-v2';
+const CACHE_NAME = 'sensei-hub-v3';
+// レッスン本文・一覧・ニュースの永続データ用キャッシュ。アプリシェル更新（CACHE_NAME 変更）
+// では消さず、閲覧済みレッスンをオフラインで読めるよう長く保持する。
+const DATA_CACHE = 'sensei-data-v1';
 const ASSETS_TO_CACHE = [
   '/offline.html',
   '/manifest.json',
@@ -23,6 +26,7 @@ self.addEventListener('activate', (event) => {
       .then((keys) => {
         return Promise.all(
           keys
+            // 古いアプリシェルのみ削除。DATA_CACHE（レッスン等）は保持する。
             .filter((key) => key.startsWith('sensei-hub-') && key !== CACHE_NAME)
             .map((key) => caches.delete(key))
         );
@@ -97,13 +101,15 @@ self.addEventListener('fetch', (event) => {
         .then((response) => {
           if (response && response.status === 200) {
             const clone = response.clone();
-            caches.open(CACHE_NAME)
+            // 永続データキャッシュへ保存（オフラインでも閲覧済みレッスンを読める）。
+            caches.open(DATA_CACHE)
               .then((cache) => cache.put(event.request, clone))
               .catch(() => {});
           }
           return response;
         })
-        .catch(() => caches.match(event.request))
+        // オフライン時はまず永続データ、無ければ旧アプリシェルキャッシュも探す。
+        .catch(() => caches.match(event.request, { cacheName: DATA_CACHE }).then((r) => r || caches.match(event.request)))
     );
     return;
   }
