@@ -172,38 +172,40 @@ target_metadata = Base.metadata
 ```
 > Alembic phụ thuộc vào việc Python import các model của bạn để đăng ký các bảng vào registry `Base.metadata`. Nếu bạn chỉ import `Base` mà không import các file model trong `env.py`, `Base.metadata` sẽ trống rỗng. Alembic sẽ hiểu lầm rằng bạn đã xóa toàn bộ các model và tạo ra một bản revision drop sạch toàn bộ các bảng đang có trong database của bạn.
 
-**Lỗi 2: Quên kiểm tra lại các script di trú được tạo tự động bằng mắt**
-```bash
-# Sai: Giả định --autogenerate luôn hoàn hảo và chạy upgrade mù quáng
-alembic revision --autogenerate -m "rename description column"
-alembic upgrade head
+**Lỗi 2: Chỉ định sai tên bảng hoặc tên cột trong file di trú thủ công**
+```python
+# Trong script revision của alembic
+def upgrade() -> None:
+    # Sai: Chỉ định cột 'user_name' không tồn tại
+    op.drop_column('users', 'user_name')
 ```
 ```text
-# Dữ liệu đã bị mất! Cột cũ bị xóa và cột mới được tạo lại thay vì đổi tên.
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: users.user_name
 ```
 ```python
-# Đúng: Mở file di trú vừa sinh ra và kiểm tra nội dung của nó.
-# Thay đổi các lệnh drop/add column tự động thành lệnh đổi tên cột (alter_column):
 def upgrade() -> None:
-    op.alter_column('items', 'description', new_column_name='details')
+    # Đúng: Sử dụng đúng tên cột đã đăng ký 'username'
+    op.drop_column('users', 'username')
 ```
-> Tính năng `--autogenerate` của Alembic có giới hạn về thiết kế. Nó không thể tự phát hiện việc đổi tên cột hoặc đổi tên bảng. Thay vào đó, nó hiểu việc đổi tên là xóa cột cũ (mất dữ liệu) và thêm cột mới, gây mất dữ liệu nghiêm trọng trên production. Luôn luôn kiểm tra file script di trú trước khi chạy.
+> Các bản di trú tự động đôi khi có thể không chính xác, nhưng việc sửa đổi thủ công các lệnh trong script di trú phải được thực hiện cẩn thận. Việc chỉ định sai tên bảng hoặc cột bên trong các hàm như `op.drop_column()` hoặc `op.alter_column()` sẽ bỏ qua các kiểm tra lúc biên dịch và gây lỗi thực thi cơ sở dữ liệu khi chạy (runtime).
 
-**Lỗi 3: Tạo ra lịch sử di trú xung đột khi làm việc nhóm**
-```bash
-# Lập trình viên A commit một revision mới (Revision ID: A1)
-# Lập trình viên B commit một revision mới (Revision ID: B1) từ cùng một nhánh gốc
-alembic upgrade head
+**Lỗi 3: Thiết lập động URL cơ sở dữ liệu trong env.py mà không có giá trị mặc định dự phòng**
+```python
+# alembic/env.py
+import os
+# Sai: Thiết lập trực tiếp tùy chọn thành URL cơ sở dữ liệu vốn có thể là None
+config.set_main_option("sqlalchemy.url", os.getenv("DATABASE_URL"))
 ```
 ```text
-alembic.util.exc.CommandError: Multiple heads are present; please specify the head revision on which to operate
+sqlalchemy.exc.ArgumentError: String connection URL or an URL object is required, got None
 ```
-```bash
-# Đúng: Gộp nhánh hoặc tạo một revision gộp (merge revision)
-alembic merge A1 B1 -m "merge revisions"
-alembic upgrade head
+```python
+# alembic/env.py
+import os
+db_url = os.getenv("DATABASE_URL", "sqlite:///dev.db")  # Đúng: Cung cấp một giá trị mặc định dự phòng
+config.set_main_option("sqlalchemy.url", db_url)
 ```
-> Khi nhiều lập trình viên cùng tạo file di trú trên các nhánh git khác nhau một cách đồng thời, lịch sử database sẽ xuất hiện nhiều "heads" (nhánh đầu) song song. Alembic không biết nên chạy nhánh nào trước. Bạn phải giải quyết việc này bằng cách tạo một revision gộp qua lệnh `alembic merge`.
+> Khi ghi đè các cấu hình của Alembic trong `env.py` một cách động bằng `os.getenv`, bạn phải đảm bảo rằng một giá trị mặc định dự phòng hợp lệ đã được cung cấp (ví dụ: SQLite cục bộ cho môi trường phát triển). Nếu không, nếu biến môi trường không được định nghĩa, SQLAlchemy sẽ nhận về URL là `None`, dẫn đến lỗi `ArgumentError` trong quá trình khởi tạo engine.
 
 ### 💡 Mẹo & Cách viết tối ưu
 - **Tải URL Database một cách động**: Không lưu cứng (hardcode) thông tin tài khoản mật khẩu database của môi trường production vào file `alembic.ini`. Thay vào đó, hãy đọc chuỗi kết nối động từ các biến môi trường trong file `env.py`:

@@ -172,38 +172,40 @@ target_metadata = Base.metadata
 ```
 > Alembicは、Pythonがモデルをインポートして `Base.metadata` レジストリにテーブルを登録することに依存しています。`env.py` でモデルをインポートせず `Base` のみをインポートした場合、`Base.metadata` は空に見えます。その結果、Alembicはすべてのモデルが削除されたと判断し、データベース内の既存のすべてのテーブルを削除（drop）するリビジョンを生成してしまいます。
 
-**間違い 2: 自動生成されたマイグレーションスクリプトを手動で検証するのを忘れる**
-```bash
-# 間違い: --autogenerate は完璧であると想定し、確認せずにアップグレードを実行する
-alembic revision --autogenerate -m "rename description column"
-alembic upgrade head
+**間違い 2: 手動マイグレーションで誤ったテーブル名または列名を指定する**
+```python
+# alembicのリビジョンスクリプト内
+def upgrade() -> None:
+    # 間違い: 存在しない列名 'user_name' を指定している
+    op.drop_column('users', 'user_name')
 ```
 ```text
-# データが消失しました！列の名前変更ではなく、削除後に再作成されてしまいました。
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: users.user_name
 ```
 ```python
-# 正しい: 生成された移行ファイルを開いて内容を確認する。
-# 自動生成された列の削除/追加指示を、列の名前変更（alter_column）に変更します。
 def upgrade() -> None:
-    op.alter_column('items', 'description', new_column_name='details')
+    # 正しい: 正しく登録されている列名 'username' を指定する
+    op.drop_column('users', 'username')
 ```
-> Alembicの `--autogenerate` には設計上の制限があります。たとえば、列やテーブルの名前変更（リネーム）を検出できません。名前変更を「古い列の削除（データ削除）」と「新しい列の追加」として解釈するため、本番データが失われる致命的な原因になります。適用する前に必ず移行ファイルの内容を目視で確認してください。
+> 自動生成されたマイグレーションスクリプトに誤りがある場合もありますが、マイグレーションコマンドを手動で修正する場合は注意が必要です。`op.drop_column()` や `op.alter_column()` などの関数内で誤ったテーブル名や列名を指定すると、コンパイル時のチェックをすり抜け、実行時にデータベースの実行エラーを引き起こします。
 
-**間違い 3: チーム開発環境でマイグレーション履歴の競合を発生させる**
-```bash
-# 開発者Aが新しいリビジョン（リビジョンID: A1）をコミットした
-# 開発者Bが同じベースブランチから新しいリビジョン（リビジョンID: B1）をコミットした
-alembic upgrade head
+**間違い 3: デフォルトのフォールバックなしに env.py で動的なデータベースURLを設定する**
+```python
+# alembic/env.py
+import os
+# 間違い: None になる可能性のある環境変数をそのまま設定値に割り当てている
+config.set_main_option("sqlalchemy.url", os.getenv("DATABASE_URL"))
 ```
 ```text
-alembic.util.exc.CommandError: Multiple heads are present; please specify the head revision on which to operate
+sqlalchemy.exc.ArgumentError: String connection URL or an URL object is required, got None
 ```
-```bash
-# 正しい: ブランチをマージするか、マージリビジョンを作成する
-alembic merge A1 B1 -m "merge revisions"
-alembic upgrade head
+```python
+# alembic/env.py
+import os
+db_url = os.getenv("DATABASE_URL", "sqlite:///dev.db")  # 正しい: デフォルトのフォールバック値を指定する
+config.set_main_option("sqlalchemy.url", db_url)
 ```
-> 複数の開発者が同時に別々のGitブランチでマイグレーションを生成すると、データベース履歴に複数の並行する「ヘッド」が発生します。Alembicはどの変更を先に適用すべきか判断できません。この場合、`alembic merge` コマンドを使用してマージリビジョンを生成し、競合を解決する必要があります。
+> `os.getenv` を使用して `env.py` 内の Alembic 設定を動的に上書きする場合、必ず有効なデフォルトのフォールバック（開発用のローカル SQLite など）が指定されている必要があります。そうしないと、環境変数が定義されていない場合に SQLAlchemy が `None` の URL を受け取り、エンジンのインスタンス化中に `ArgumentError` が発生します。
 
 ### 💡 コツ・イディオム
 - **データベースURLを動的に読み込む**: `alembic.ini` に本番環境のデータベースの認証情報をハードコードしないでください。代わりに、`env.py` 内で環境変数から接続文字列を動的に読み込むように設定します。
