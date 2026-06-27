@@ -175,6 +175,8 @@ Using `contextvars` to store correlation IDs safely across asynchronous tasks, t
 
 ```python
 import logging
+import json
+import datetime
 import uuid
 import contextvars
 from fastapi import FastAPI, Request

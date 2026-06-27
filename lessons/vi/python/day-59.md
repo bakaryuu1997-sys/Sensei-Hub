@@ -175,6 +175,8 @@ Sử dụng `contextvars` để chia sẻ correlation ID an toàn giữa các t�
 
 ```python
 import logging
+import json
+import datetime
 import uuid
 import contextvars
 from fastapi import FastAPI, Request

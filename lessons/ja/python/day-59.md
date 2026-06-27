@@ -175,6 +175,8 @@ logger.info("JSON構造化ログの出力例です。")
 
 ```python
 import logging
+import json
+import datetime
 import uuid
 import contextvars
 from fastapi import FastAPI, Request
