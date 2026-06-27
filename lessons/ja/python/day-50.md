@@ -79,22 +79,18 @@ solutionCode: |
 
 ### 🔁 ロジックと動作
 
-以下のシーケンス図は、セキュアなAPIにおけるリクエスト・レスポンスのライフサイクルを示しています。
+以下のフローチャートは、セキュアなAPIにおけるリクエスト・レスポンスのライフサイクルを示しています。
 
 ```mermaid
-sequenceDiagram
-    autonumber
-    Client->>FastAPI: POST /login {username, password}
-    Note over FastAPI: ユーザー名とパスワードを検証
-    FastAPI-->>Client: JWTトークンを返却
-    Client->>FastAPI: GET /tasks (Authorization: Bearer <トークン> を付与)
-    Note over FastAPI: 依存関係 get_user がJWTをデコード＆検証
-    alt トークンが有効な場合
-        FastAPI->>Route Handler: get_tasks(user="alice") を実行
-        Route Handler-->>Client: HTTP 200 [tasks]
-    else トークンが無効または期限切れの場合
-        FastAPI-->>Client: HTTP 401 Unauthorized を返却 (HTTPException経由)
-    end
+flowchart TD
+    Client["クライアントが/tasksにリクエスト送信"] --> AuthHeader{"Authorizationヘッダーをチェック"}
+    AuthHeader -- "ヘッダーなし / 無効なフォーマット" --> Error401["401 Unauthorizedを返却"]
+    AuthHeader -- "Bearer <Token> が存在" --> Decode{"JWTトークンのデコードと検証"}
+    Decode -- "期限切れ / 署名が無効" --> ErrorToken["401 Invalid Tokenを返却"]
+    Decode -- "有効なトークン" --> ExtractUser["'sub'（ユーザー名）を抽出"]
+    ExtractUser --> Handler["エンドポイントの依存関係（get_user）にユーザー名を渡す"]
+    Handler --> DB["tasks_dbのクエリ/変更"]
+    DB --> Return200["JSONレスポンスを返却（タスク一覧 / CRUD結果）"]
 ```
 
 クライアントが `GET /tasks` のような保護されたエンドポイントにリクエストを送信すると、以下の処理が行われます。

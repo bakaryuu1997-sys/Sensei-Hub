@@ -79,22 +79,18 @@ This capstone pulls together these core components to construct a secure REST AP
 
 ### 🔁 Logic and Operation
 
-The following sequence diagram illustrates the secure API request-response lifecycle:
+The following flowchart illustrates the secure API request-response lifecycle:
 
 ```mermaid
-sequenceDiagram
-    autonumber
-    Client->>FastAPI: POST /login {username, password}
-    Note over FastAPI: Validates username/password
-    FastAPI-->>Client: Returns JWT Token
-    Client->>FastAPI: GET /tasks with Authorization: Bearer <Token>
-    Note over FastAPI: Dependency get_user decodes & verifies JWT
-    alt Token is valid
-        FastAPI->>Route Handler: get_tasks(user="alice")
-        Route Handler-->>Client: HTTP 200 [tasks]
-    else Token is invalid/expired
-        FastAPI-->>Client: HTTP 401 Unauthorized (via Exception Handler/HTTPException)
-    end
+flowchart TD
+    Client["Client Request to /tasks"] --> AuthHeader{"Check Authorization Header"}
+    AuthHeader -- "Missing / Invalid Format" --> Error401["Return 401 Unauthorized"]
+    AuthHeader -- "Bearer <Token> Present" --> Decode{"Decode & Verify JWT Token"}
+    Decode -- "Expired or Invalid Signature" --> ErrorToken["Return 401 Invalid Token"]
+    Decode -- "Valid Token" --> ExtractUser["Extract 'sub' (username)"]
+    ExtractUser --> Handler["Pass username to endpoint dependency (get_user)"]
+    Handler --> DB["Query/Modify tasks_db"]
+    DB --> Return200["Return JSON Response (Tasks list / CRUD result)"]
 ```
 
 When the client makes a request to a protected endpoint like `GET /tasks`:

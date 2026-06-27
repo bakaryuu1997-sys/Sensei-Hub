@@ -48,20 +48,16 @@ FastAPI addresses these challenges with two powerful features:
 
 ### 🔁 Logic and Operation
 
-The following sequence diagram illustrates the lifecycle of a file upload that initiates a background task:
+The following flowchart illustrates the lifecycle of a file upload that initiates a background task:
 
 ```mermaid
-sequenceDiagram
-    autonumber
-    Client->>FastAPI: POST /upload (multipart/form-data: file)
-    Note over FastAPI: Streams file data (UploadFile)
-    FastAPI->>Route Handler: Call route function with UploadFile & BackgroundTasks
-    Note over Route Handler: background_tasks.add_task(log_file, file.filename)
-    Route Handler->>Client: HTTP 200 {"status": "queued"}
-    Note over Client: Response received immediately!
-    Note over FastAPI: Post-response trigger
-    FastAPI->>Background Worker: Execute log_file(filename) in background
-    Note over Background Worker: Appends to PROCESSED_FILES
+flowchart TD
+    Start["Client sends Request (file upload)"] --> Parse["FastAPI parses UploadFile (spools to memory/temp file)"]
+    Parse --> Endpoint["Execute endpoint handler"]
+    Endpoint --> AddTask["Add 'log_file' to BackgroundTasks queue"]
+    AddTask --> Response["Return JSONResponse to Client immediately"]
+    Response --> RunBackground["Event Loop runs background task 'log_file' asynchronously"]
+    RunBackground --> End["Task finishes, writes log"]
 ```
 
 When a request containing a background task is completed, FastAPI retrieves the registered task, returns the response payload and headers to the client, and immediately runs the registered function. If the background function is defined as a standard synchronous function (`def`), FastAPI runs it in an external thread pool. If it is defined as `async def`, FastAPI schedules it directly on the main ASGI event loop.

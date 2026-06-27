@@ -79,22 +79,18 @@ Bài tập lớn này sẽ kéo các thành phần cốt lõi này lại với n
 
 ### 🔁 Logic và hoạt động
 
-Sơ đồ tuần tự sau đây minh họa vòng đời request-response của API bảo mật:
+Sơ đồ khối sau đây minh họa vòng đời request-response của API bảo mật:
 
 ```mermaid
-sequenceDiagram
-    autonumber
-    Client->>FastAPI: POST /login {username, password}
-    Note over FastAPI: Xác thực tên đăng nhập/mật khẩu
-    FastAPI-->>Client: Trả về mã JWT Token
-    Client->>FastAPI: GET /tasks kèm header Authorization: Bearer <Token>
-    Note over FastAPI: Dependency get_user giải mã & xác minh JWT
-    alt Token hợp lệ
-        FastAPI->>Route Handler: get_tasks(user="alice")
-        Route Handler-->>Client: HTTP 200 [tasks]
-    else Token không hợp lệ hoặc hết hạn
-        FastAPI-->>Client: HTTP 401 Unauthorized (thông qua HTTPException)
-    end
+flowchart TD
+    Client["Client gửi Request đến /tasks"] --> AuthHeader{"Kiểm tra Authorization Header"}
+    AuthHeader -- "Thiếu / Định dạng không hợp lệ" --> Error401["Trả về 401 Unauthorized"]
+    AuthHeader -- "Có Bearer <Token>" --> Decode{"Giải mã & Xác minh JWT Token"}
+    Decode -- "Hết hạn hoặc Chữ ký không hợp lệ" --> ErrorToken["Trả về 401 Invalid Token"]
+    Decode -- "Token hợp lệ" --> ExtractUser["Trích xuất 'sub' (tên người dùng)"]
+    ExtractUser --> Handler["Truyền tên người dùng vào dependency endpoint (get_user)"]
+    Handler --> DB["Truy vấn/Chỉnh sửa tasks_db"]
+    DB --> Return200["Trả về JSON Response (Danh sách Tasks / Kết quả CRUD)"]
 ```
 
 Khi client gửi yêu cầu đến một endpoint được bảo vệ như `GET /tasks`:

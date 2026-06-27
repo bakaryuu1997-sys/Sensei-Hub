@@ -48,20 +48,16 @@ FastAPI giải quyết những thách thức này bằng hai tính năng mạnh 
 
 ### 🔁 Logic và hoạt động
 
-Sơ đồ tuần tự sau đây minh họa vòng đời của một yêu cầu tải lên tệp kích hoạt một tác vụ nền:
+Sơ đồ khối sau đây minh họa vòng đời của một yêu cầu tải lên tệp kích hoạt một tác vụ nền:
 
 ```mermaid
-sequenceDiagram
-    autonumber
-    Client->>FastAPI: POST /upload (multipart/form-data: file)
-    Note over FastAPI: Stream dữ liệu tệp (UploadFile)
-    FastAPI->>Route Handler: Gọi hàm route với UploadFile & BackgroundTasks
-    Note over Route Handler: background_tasks.add_task(log_file, file.filename)
-    Route Handler->>Client: HTTP 200 {"status": "queued"}
-    Note over Client: Nhận phản hồi ngay lập tức!
-    Note over FastAPI: Kích hoạt sau phản hồi (Post-response)
-    FastAPI->>Background Worker: Thực thi log_file(filename) ở chế độ nền
-    Note over Background Worker: Thêm tên tệp vào danh sách PROCESSED_FILES
+flowchart TD
+    Start["Client gửi Request (tải lên tệp)"] --> Parse["FastAPI phân tích cú pháp UploadFile (tạm lưu vào bộ nhớ/tệp tạm)"]
+    Parse --> Endpoint["Thực thi handler endpoint"]
+    Endpoint --> AddTask["Thêm 'log_file' vào hàng đợi BackgroundTasks"]
+    AddTask --> Response["Trả về JSONResponse cho Client ngay lập tức"]
+    Response --> RunBackground["Event Loop chạy tác vụ nền 'log_file' bất đồng bộ"]
+    RunBackground --> End["Tác vụ hoàn thành, ghi nhật ký log"]
 ```
 
 Khi một yêu cầu chứa tác vụ nền hoàn thành, FastAPI sẽ lấy tác vụ đã đăng ký, trả về nội dung phản hồi cùng với header cho client, và ngay lập tức chạy hàm đã đăng ký. Nếu hàm nền được định nghĩa là một hàm đồng bộ tiêu chuẩn (`def`), FastAPI sẽ chạy nó trong một thread pool bên ngoài. Nếu nó được định nghĩa là `async def`, FastAPI sẽ lập lịch chạy trực tiếp trên ASGI event loop chính.

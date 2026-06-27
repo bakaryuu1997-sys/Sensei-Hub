@@ -48,20 +48,16 @@ FastAPIは、これら2つの課題を以下の強力な機能で解決します
 
 ### 🔁 ロジックと動作
 
-以下のシーケンス図は、ファイルのアップロードによってバックグラウンドタスクが開始されるライフサイクルを示しています。
+以下のフローチャートは、ファイルのアップロードによってバックグラウンドタスクが開始されるライフサイクルを示しています。
 
 ```mermaid
-sequenceDiagram
-    autonumber
-    Client->>FastAPI: POST /upload (multipart/form-data: file)
-    Note over FastAPI: ファイルデータをストリーム受信 (UploadFile)
-    FastAPI->>Route Handler: UploadFile と BackgroundTasks を引数にルート関数を呼び出し
-    Note over Route Handler: background_tasks.add_task(log_file, file.filename)
-    Route Handler->>Client: HTTP 200 {"status": "queued"}
-    Note over Client: 即座にレスポンスを受信！
-    Note over FastAPI: レスポンス送信後のトリガー
-    FastAPI->>Background Worker: バックグラウンドで log_file(filename) を実行
-    Note over Background Worker: PROCESSED_FILES にファイル名を追加
+flowchart TD
+    Start["クライアントがリクエスト（ファイルアップロード）を送信"] --> Parse["FastAPIがUploadFileを解析（メモリまたは一時ファイルにスプール）"]
+    Parse --> Endpoint["エンドポイントハンドラーを実行"]
+    Endpoint --> AddTask["BackgroundTasksキューに'log_file'を追加"]
+    AddTask --> Response["クライアントに即座にJSONResponseを返却"]
+    Response --> RunBackground["イベントループが非同期でバックグラウンドタスク'log_file'を実行"]
+    RunBackground --> End["タスクが完了し、ログを書き込み"]
 ```
 
 バックグラウンドタスクを含むリクエスト処理が完了すると、FastAPIは登録されたタスクを確保し、クライアントにレスポンスのペイロードとヘッダーを送信します。その後、登録された関数をただちに実行します。バックグラウンド関数が標準の同期関数（`def`）として定義されている場合、FastAPIはそれを外部のスレッドプールで実行します。非同期関数（`async def`）として定義されている場合、FastAPIはそれをメインのASGIイベントループ上で直接スケジュールします。
