@@ -3,6 +3,7 @@ import fs from "fs"
 import path from "path"
 import { Marked } from "marked"
 import { markedHighlight } from "marked-highlight"
+import markedKatex from "marked-katex-extension"
 import hljs from "highlight.js"
 import { checkRateLimit } from "@/lib/rate-limiter"
 import { getCache, setCache } from "@/lib/api-cache"
@@ -25,6 +26,9 @@ marked.setOptions({
   gfm: true,
   breaks: true,
 })
+// 数式（LaTeX）を KaTeX で描画する。$...$（インライン）と $$...$$（ブロック）に対応。
+// DOMPurify を通すため MathML を出さず HTML のみ出力する。失敗時は素の文字列のまま。
+marked.use(markedKatex({ throwOnError: false, nonStandard: true, output: "html" }))
 
 const slugToFolder: Record<string, string> = {
   "fe": "fundamental-it-engineer",

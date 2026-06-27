@@ -157,6 +157,16 @@
   }
 }
 
+/* KaTeX のブロック数式が長いとき、画面外にはみ出さず横スクロールできるようにする */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}
+.markdown-content .katex {
+  font-size: 1.05em;
+}
+
 /* Cosmic Background with Galaxy Image and Colored Overlays */
 .mesh-gradient {
   background-image: 
