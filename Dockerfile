@@ -15,6 +15,15 @@ RUN apk add --no-cache libc6-compat
 # `pnpm@latest` は非決定的でロックファイル非互換になり得るため避ける。
 RUN corepack enable && corepack prepare pnpm@10.32.1 --activate
 
+# 低速・不安定なネットワークでも pnpm install が完走できるよう耐性を上げる。
+# network-concurrency を下げて 1 接続あたりの帯域を確保し、timeout / retries を延ばす。
+# （deps と deps-prod が並列実行され回線を奪い合うため、同時接続数の抑制が効く）
+ENV npm_config_fetch_retries=5 \
+    npm_config_fetch_retry_mintimeout=20000 \
+    npm_config_fetch_retry_maxtimeout=120000 \
+    npm_config_fetch_timeout=600000 \
+    npm_config_network_concurrency=4
+
 # 1. 依存関係のインストール（ビルド用・全 deps）
 FROM base AS deps
 WORKDIR /app
