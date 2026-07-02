@@ -180,6 +180,21 @@
   background-color: oklch(0.08 0.02 270);
 }
 
+/* モバイル/タブレット（<lg）向けの最適化 */
+@media (max-width: 1023px) {
+  /* background-attachment: fixed はモバイルでスクロール毎に背景全体を再描画し
+     大きなジャンクの原因になるため、通常スクロールへ切り替える。 */
+  .mesh-gradient {
+    background-attachment: scroll;
+  }
+
+  /* 固定ボトムナビ（lg 未満で表示・約64px + セーフエリア）に内容が隠れないよう
+     余白を確保する。全ページ共通で効く。 */
+  body {
+    padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 /* Glassmorphism Card */
 .glass-card {
   background: linear-gradient(

@@ -15,11 +15,15 @@ import { ConstellationMap } from "@/components/dashboard/constellation-map"
 import { DashboardPlanet } from "@/components/dashboard/dashboard-planet"
 import { Footer } from "@/components/footer"
 import { useUser } from "@clerk/nextjs"
+import { useIsDesktop } from "@/hooks/use-is-desktop"
 
 export default function DashboardPage() {
   const { t } = useLanguage()
   const { isSignedIn, user } = useUser()
   const [mounted, setMounted] = useState(false)
+  // 重い装飾（WebGL 惑星・starfield）はデスクトップのみマウントし、
+  // モバイルでは GPU 負荷とスクロールジャンクを避ける。
+  const isDesktop = useIsDesktop()
 
   useEffect(() => {
     setMounted(true)
@@ -40,49 +44,54 @@ export default function DashboardPage() {
     <div className="relative min-h-screen">
       {/* Decorative floating planets and stars */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden z-0">
-        <Starfield />
-        {/* Planet 1 - Floating top left (placed to the right of the sidebar on desktop) */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.85, scale: 1 }}
-          transition={{ duration: 2 }}
-          className="absolute top-[12%] left-[-20px] lg:left-[320px] w-56 h-56 lg:w-[320px] lg:h-[320px] pointer-events-auto"
-          style={{
-            animation: "float-slow 25s ease-in-out infinite",
-          }}
-        >
-          <DashboardPlanet
-            size={320}
-            colorPrimary="#22d3ee" // Cyan
-            colorSecondary="#8b5cf6" // Purple
-            hasRings={false}
-            hasMoon={true}
-            rotationSpeed={0.0025}
-          />
-        </motion.div>
+        {/* WebGL 惑星と starfield はデスクトップのみ描画（モバイルは負荷回避） */}
+        {isDesktop && (
+          <>
+            <Starfield />
+            {/* Planet 1 - Floating top left (placed to the right of the sidebar on desktop) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 0.85, scale: 1 }}
+              transition={{ duration: 2 }}
+              className="absolute top-[12%] left-[320px] w-[320px] h-[320px] pointer-events-auto"
+              style={{
+                animation: "float-slow 25s ease-in-out infinite",
+              }}
+            >
+              <DashboardPlanet
+                size={320}
+                colorPrimary="#22d3ee" // Cyan
+                colorSecondary="#8b5cf6" // Purple
+                hasRings={false}
+                hasMoon={true}
+                rotationSpeed={0.0025}
+              />
+            </motion.div>
 
-        {/* Planet 2 - Floating bottom right */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.8, scale: 1 }}
-          transition={{ duration: 2, delay: 0.5 }}
-          className="absolute bottom-[-20px] right-[-20px] w-64 h-64 lg:w-[400px] lg:h-[400px] pointer-events-auto"
-          style={{
-            animation: "float-reverse 30s ease-in-out infinite",
-          }}
-        >
-          <DashboardPlanet
-            size={400}
-            colorPrimary="#f97316" // Orange
-            colorSecondary="#ef4444" // Red
-            hasRings={true}
-            hasMoon={false}
-            rotationSpeed={-0.0015} // Rotate reverse
-            planetRadius={1.5}
-          />
-        </motion.div>
+            {/* Planet 2 - Floating bottom right */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 0.8, scale: 1 }}
+              transition={{ duration: 2, delay: 0.5 }}
+              className="absolute bottom-[-20px] right-[-20px] w-[400px] h-[400px] pointer-events-auto"
+              style={{
+                animation: "float-reverse 30s ease-in-out infinite",
+              }}
+            >
+              <DashboardPlanet
+                size={400}
+                colorPrimary="#f97316" // Orange
+                colorSecondary="#ef4444" // Red
+                hasRings={true}
+                hasMoon={false}
+                rotationSpeed={-0.0015} // Rotate reverse
+                planetRadius={1.5}
+              />
+            </motion.div>
+          </>
+        )}
 
-        {/* Twinkling star decorations */}
+        {/* Twinkling star decorations（軽量な CSS アニメなのでモバイルでも表示） */}
         <div className="absolute top-[15%] left-[35%] w-1.5 h-1.5 bg-white rounded-full animate-twinkle opacity-70" />
         <div className="absolute top-[60%] left-[80%] w-1 h-1 bg-cyan-300 rounded-full animate-twinkle opacity-90" style={{ animationDelay: "1s" }} />
         <div className="absolute top-[80%] left-[25%] w-2 h-2 bg-purple-400 rounded-full animate-twinkle opacity-60" style={{ animationDelay: "2s", animationDuration: "5s" }} />
