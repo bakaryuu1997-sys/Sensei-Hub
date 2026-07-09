@@ -101,34 +101,31 @@ Dữ liệu là tài sản, nhưng bảo mật dữ liệu là sinh mạng:
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khi bạn muốn nói "Dữ liệu này chứng minh rằng dự án của chúng ta đang đi đúng hướng", cụm từ nào là J1+?
-- A. 数字がいい感じです。
-- B. 最新のKPIデータに照らすと, 本プロジェクトの「蓋然性」は極めて高いと判断されます。
-- C. たぶん成功します。
-- D. みんな喜んでいます。
+Khi bạn muốn nói "Dữ liệu này chứng minh rằng dự án của chúng ta đang đi đúng hướng", cụm từ nào là J1+?- A. 最新のKPIデータに照らすと, 本プロジェクトの「蓋然性」は極めて高いと判断されます。
+- B. 数字がいい感じです。
+- C. みんな喜んでいます。
+- D. たぶん成功します。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「蓋然性」 [Cái Nhiên Tính]** (Probability/Likelihood) là một từ vựng cực kỳ học thuật và chuyên nghiệp, chỉ sự chắc chắn dựa trên logic và chứng cứ.
+> - **正解：A**. **「蓋然性」 [Cái Nhiên Tính]** (Probability/Likelihood) là một từ vựng cực kỳ học thuật và chuyên nghiệp, chỉ sự chắc chắn dựa trên logic và chứng cứ.
 
 **第2問 (Câu 2):**
-"Fact-based Decision Making" được diễn đạt bằng tiếng Nhật kinh doanh J1+ là gì?
-- A. 嘘を言わない [Hư - Ngôn].
-- B. 事実に基づく意思決定 [Sự Thực - Cơ].
-- C. 多数決 [Đa Số Quyết].
-- D. 社長の命令 [Xã Trưởng - Mệnh Lệnh].
+"Fact-based Decision Making" được diễn đạt bằng tiếng Nhật kinh doanh J1+ là gì?- A. 嘘を言わない [Hư - Ngôn].
+- B. 多数決 [Đa Số Quyết].
+- C. 社長の命令 [Xã Trưởng - Mệnh Lệnh].
+- D. 事実に基づく意思決定 [Sự Thực - Cơ].
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Nền tảng của quản trị hiện đại.
+> - **正解：D**. Nền tảng của quản trị hiện đại.
 
 **第3問 (Câu 3):**
-Cụm từ "Bottleneck" (ボトルネック) trong phân tích dữ liệu kinh doanh có nghĩa là gì?
-- A. Việc mở nút chai rượu vang.
-- B. Khâu yếu nhất, điểm tắc nghẽn làm giới hạn hiệu suất của toàn bộ hệ thống hoặc quy trình.
-- C. Việc trang trí văn phòng.
+Cụm từ "Bottleneck" (ボトルネック) trong phân tích dữ liệu kinh doanh có nghĩa là gì?- A. Việc mở nút chai rượu vang.
+- B. Việc trang trí văn phòng.
+- C. Khâu yếu nhất, điểm tắc nghẽn làm giới hạn hiệu suất của toàn bộ hệ thống hoặc quy trình.
 - D. Một loại đồ uống mới.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Tìm và giải quyết Bottleneck là ưu tiên hàng đầu của người làm chiến lược.
+> - **正解：C**. Tìm và giải quyết Bottleneck là ưu tiên hàng đầu của người làm chiến lược.
 
 ---
 

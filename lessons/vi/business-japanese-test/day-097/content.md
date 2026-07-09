@@ -96,30 +96,27 @@ Khi nói về nhiều hạng mục, người nói thường dùng các từ như
 ## 📝 6. QUICK QUIZ: 第 2 セクション突破・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-「当初は A 商品が B 商品を圧倒 [Áp Đảo] していましたが、下半期 [Hạ Bán Kỳ] に入ると形勢が逆転 [Nghịch Chuyển] しました」という説明に合うグラフは？
-- A. Suốt cả năm A luôn cao hơn B.
-- B. Suốt cả năm B luôn cao hơn A.
+「当初は A 商品が B 商品を圧倒 [Áp Đảo] していましたが、下半期 [Hạ Bán Kỳ] に入ると形勢が逆転 [Nghịch Chuyển] しました」という説明に合うグラフは？- A. Cả hai sản phẩm đều giảm doanh số vào nửa sau năm.
+- B. Suốt cả năm A luôn cao hơn B.
 - C. Nửa đầu năm A cao hơn, nửa sau năm B vươn lên cao hơn A.
-- D. Cả hai sản phẩm đều giảm doanh số vào nửa sau năm.
+- D. Suốt cả năm B luôn cao hơn A.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Từ khóa **「逆転」** là quan trọng nhất, ám chỉ sự đổi ngôi giữa hai đối tượng.
+> - **正解：D**. Từ khóa **「逆転」** là quan trọng nhất, ám chỉ sự đổi ngôi giữa hai đối tượng.
 
 **第2問 (Câu 2):**
-「売上高は前年同期比で 10%減となりましたが、利益率は改善 [Cải Thiện] し、横ばいを維持しています」という発言から読み取れる事実は？
-- A. Cả doanh thu và lợi nhuận đều giảm.
-- B. Doanh thu giảm, nhưng tỷ lệ lợi nhuận không đổi (duy trì mức cũ).
-- C. Doanh thu tăng, lợi nhuận giảm.
-- D. Công ty đang thua lỗ nặng.
+「売上高は前年同期比で 10%減となりましたが、利益率は改善 [Cải Thiện] し、横ばいを維持しています」という発言から読み取れる事実は？- A. Công ty đang thua lỗ nặng.
+- B. Doanh thu tăng, lợi nhuận giảm.
+- C. Doanh thu giảm, nhưng tỷ lệ lợi nhuận không đổi (duy trì mức cũ).
+- D. Cả doanh thu và lợi nhuận đều giảm.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「横ばい」** nghĩa là đi ngang, duy trì trạng thái cũ. **「利益率は改善」** cho thấy dù doanh thu giảm nhưng hiệu quả kinh doanh vẫn được giữ vững.
+> - **正解：C**. **「横ばい」** nghĩa là đi ngang, duy trì trạng thái cũ. **「利益率は改善」** cho thấy dù doanh thu giảm nhưng hiệu quả kinh doanh vẫn được giữ vững.
 
 **第3問 (Câu 3):**
-Biểu đồ tròn về thị phần (Market Share) có 4 phần: A (45%), B (30%), C (15%), Others (10%). Câu nào sau đây mô tả đúng nhất theo phong cách BJT J1+?
-- A. A 社が単独で過半数を獲得しています。
-- B. B 社と C 社を合わせても、A 社のシェアには及びません。
-- C. A 社と B 社で市場の 4 分の 3 以上を占めています。
+Biểu đồ tròn về thị phần (Market Share) có 4 phần: A (45%), B (30%), C (15%), Others (10%). Câu nào sau đây mô tả đúng nhất theo phong cách BJT J1+?- A. A 社が単独で過半数を獲得しています。
+- B. A 社と B 社で市場の 4 分の 3 以上を占めています。
+- C. B 社と C 社を合わせても、A 社のシェアには及びません。
 - D. その他が最大のシェアを持っています。
 
 > **解釈 (Giải thích):**

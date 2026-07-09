@@ -108,16 +108,16 @@ Hãy nhìn vào trường hợp của A, một Senior Developer tài năng nhưn
 # 🎯 7. QUICK QUIZ: Hệ Thống Của Bạn Đang Cần Bảo Trì?
 
 1. **"Internal Power Plant" là gì?**
-    - A. Việc uống thật nhiều cà phê.
-    - B. Khả năng tự tạo ra động lực và năng lượng từ các giá trị nội tại thay vì phụ thuộc vào bên ngoài.
-    - C. Một loại máy móc lắp trong cơ thể.
-    - D. Sự may mắn.
+    - A. Khả năng tự tạo ra động lực và năng lượng từ các giá trị nội tại thay vì phụ thuộc vào bên ngoài.
+    - B. Sự may mắn.
+    - C. Việc uống thật nhiều cà phê.
+    - D. Một loại máy móc lắp trong cơ thể.
 
 2. **Tiến trình nào gây "Leakage" năng lượng lớn nhất?**
-    - A. Làm việc khó.
+    - A. Ngủ.
     - B. Tập thể thao.
-    - C. Sự lo lắng về ý kiến của người khác và việc tự chỉ trích bản thân.
-    - D. Ngủ.
+    - C. Làm việc khó.
+    - D. Sự lo lắng về ý kiến của người khác và việc tự chỉ trích bản thân.
 
 3. **Tại sao việc tập thể dục lại giúp tăng "Mindset Master"?**
     - A. Để cho đẹp.
@@ -125,7 +125,7 @@ Hãy nhìn vào trường hợp của A, một Senior Developer tài năng nhưn
     - C. Để giảm cân.
     - D. Không có liên quan.
 
-*(Đáp án đúng: 1-B, 2-C, 3-B)*
+*(Đáp án đúng: 1-A, 2-B, 3-B)*
 
 ---
 **Lời nhắn từ Architect**: Bạn có một nguồn sức mạnh khổng lồ bên trong, chỉ là nó đang bị che phủ bởi lớp bụi của sự trì trệ. Hãy lau sạch nó, thắp lên ngọn lửa đó. Ngày mai, chúng ta sẽ viết script **Gratitude.sh** để mỗi sáng thức dậy là một phiên bản "Full Stable" nhất! ⚔️💎

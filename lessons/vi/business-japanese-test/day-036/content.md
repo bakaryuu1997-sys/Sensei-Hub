@@ -90,34 +90,31 @@ Mục tiêu của **接待** không phải là để bạn khoe khoang sự thô
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Tại bữa tiệc, khi đối phương rót rượu cho bạn, bạn nên làm gì để thể hiện trình độ J1?
-- A. Cứ để ly trên bàn cho họ rót.
-- B. Nâng ly bằng hai tay, sau khi rót xong thì nói cảm ơn và uống ngay một ngụm.
-- C. Từ chối vì mình không uống được rượu.
+Tại bữa tiệc, khi đối phương rót rượu cho bạn, bạn nên làm gì để thể hiện trình độ J1?- A. Nâng ly bằng hai tay, sau khi rót xong thì nói cảm ơn và uống ngay một ngụm.
+- B. Từ chối vì mình không uống được rượu.
+- C. Cứ để ly trên bàn cho họ rót.
 - D. Cầm chai để rót lại cho họ cùng lúc.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Cầm ly bằng hai tay thể hiện sự tôn trọng. Việc uống ngay một ngụm là để đáp lại tấm lòng của người rót (**受ける [Thụ]**).
+> - **正解：A**. Cầm ly bằng hai tay thể hiện sự tôn trọng. Việc uống ngay một ngụm là để đáp lại tấm lòng của người rót (**受ける [Thụ]**).
 
 **第2問 (Câu 2):**
-Bạn đang tham gia một buổi tiệc đứng (Networking Party). Cách tiếp cận đối tác tiềm năng nào sau đây là chuyên nghiệp nhất?
-- A. Chạy thẳng tới trao danh thiếp.
+Bạn đang tham gia một buổi tiệc đứng (Networking Party). Cách tiếp cận đối tác tiềm năng nào sau đây là chuyên nghiệp nhất?- A. Chạy thẳng tới trao danh thiếp.
 - B. Đứng chờ họ một mình rồi mới tới chào.
-- C. Chờ khi họ đang trò chuyện về một chủ đề chung, xin phép được tham gia bằng cách nói **「恐れ入りますが、お話の輪に加わってもよろしいでしょうか」**.
-- D. Gọi to tên họ từ xa.
+- C. Gọi to tên họ từ xa.
+- D. Chờ khi họ đang trò chuyện về một chủ đề chung, xin phép được tham gia bằng cách nói **「恐れ入りますが、お話の輪に加わってもよろしいでしょうか」**.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Cụm từ **「お話の輪に加わる」 [Luân - Gia]** (Gia nhập vào vòng tròn trò chuyện) là cách bắt chuyện lịch thiệp nhất trong các buổi tiệc networking của giới thượng lưu kinh doanh Nhật.
+> - **正解：B**. Cụm từ **「お話の輪に加わる」 [Luân - Gia]** (Gia nhập vào vòng tròn trò chuyện) là cách bắt chuyện lịch thiệp nhất trong các buổi tiệc networking của giới thượng lưu kinh doanh Nhật.
 
 **第3問 (Câu 3):**
-Trong BJT, khi sếp của bạn (Trưởng đoàn) và sếp của đối tác đang nói chuyện, vị trí của bạn nên ở đâu?
-- A. Ngồi giữa hai người để dịch.
-- B. Ngồi hơi lùi lại phía sau sếp mình, giữ im lặng và chỉ lên tiếng khi được hỏi hoặc cần hỗ trợ tài liệu.
-- C. Đi ra chỗ khác chơi cho họ nói chuyện.
-- D. Xen vào câu chuyện để thể hiện mình cũng biết nhiều.
+Trong BJT, khi sếp của bạn (Trưởng đoàn) và sếp của đối tác đang nói chuyện, vị trí của bạn nên ở đâu?- A. Ngồi hơi lùi lại phía sau sếp mình, giữ im lặng và chỉ lên tiếng khi được hỏi hoặc cần hỗ trợ tài liệu.
+- B. Xen vào câu chuyện để thể hiện mình cũng biết nhiều.
+- C. Ngồi giữa hai người để dịch.
+- D. Đi ra chỗ khác chơi cho họ nói chuyện.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Đây là vị trí của một **「黒子」 [Hắc Tử]** (người trợ giúp thầm lặng), phong thái này giúp sếp bạn tỏa sáng và giữ vững tôn nghiêm của đoàn.
+> - **正解：A**. Đây là vị trí của một **「黒子」 [Hắc Tử]** (người trợ giúp thầm lặng), phong thái này giúp sếp bạn tỏa sáng và giữ vững tôn nghiêm của đoàn.
 
 ---
 

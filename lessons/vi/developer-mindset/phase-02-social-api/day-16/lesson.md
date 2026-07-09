@@ -114,21 +114,21 @@ Lead Dev (A) và Product Manager (B) đang tranh cãi kịch liệt về Feature
 # 🎯 7. QUICK QUIZ: Bạn Có Phải Là Một "Bug-Fixer" Tài Năng?
 
 1. **Bước đầu tiên quan trọng nhất khi gặp xung đột là gì?**
-    - A. Nói to hơn để át tiếng đối phương.
+    - A. Nhận lỗi ngay lập tức để xong chuyện.
     - B. Im lặng 5 giây để Amygdala hạ nhiệt và kích hoạt Prefrontal Cortex (Logic).
     - C. Bỏ đi chỗ khác.
-    - D. Nhận lỗi ngay lập tức để xong chuyện.
+    - D. Nói to hơn để át tiếng đối phương.
 
 2. **Tại sao nên dùng "I-Statement" (Tôi cảm thấy...) thay vì buộc tội đối phương?**
-    - A. Để tỏ ra yếu đuối.
+    - A. Vì bạn không chắc chắn về điều mình nói.
     - B. Để không kích hoạt tường lửa phòng vệ (Defensive Firewall) của họ, giúp họ dễ dàng tiếp nhận thông điệp của bạn hơn.
-    - C. Vì lời nói "Tôi" nghe hay hơn.
-    - D. Vì bạn không chắc chắn về điều mình nói.
+    - C. Để tỏ ra yếu đuối.
+    - D. Vì lời nói "Tôi" nghe hay hơn.
 
 3. **Mục tiêu cuối cùng của xử lý xung đột trong Mindset Master là gì?**
-    - A. Đánh bại đối thủ.
+    - A. Chứng minh mình luôn đúng.
     - B. Tìm ra một giải pháp "Win-Win" và bảo toàn sự ổn định của hệ thống quan hệ (Long-term Stability).
-    - C. Chứng minh mình luôn đúng.
+    - C. Đánh bại đối thủ.
     - D. Tránh né mọi mâu thuẫn trong tương lai.
 
 *(Đáp án đúng: 1-B, 2-B, 3-B)*

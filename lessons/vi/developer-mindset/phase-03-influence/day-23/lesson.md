@@ -116,22 +116,22 @@ M là một Leader mới tiếp quản một team đang rệu rã và chia rẽ.
 1. **Sự khác biệt lớn nhất giữa Thao túng và Ảnh hưởng là gì?**
     - A. Không có sự khác biệt.
     - B. Thao túng là vì lợi ích cá nhân và làm hại người khác; Ảnh hưởng là tạo ra giá trị chung và nhận được sự đồng thuận tự nguyện (Win-Win).
-    - C. Ảnh hưởng cần nhiều tiền hơn.
-    - D. Thao túng nhanh hơn.
+    - C. Thao túng nhanh hơn.
+    - D. Ảnh hưởng cần nhiều tiền hơn.
 
 2. **Kỹ thuật "Semantic Reframing" (Định nghĩa lại thực tại) giúp gì cho một Leader?**
-    - A. Lừa dối mọi người.
-    - B. Thay đổi góc nhìn (Context) của cộng đồng về một sự việc, biến khó khăn thành cơ hội và tạo ra năng lượng tích cực để hành động.
+    - A. Trốn tránh trách nhiệm.
+    - B. Lừa dối mọi người.
     - C. Làm mình trông thông minh hơn.
-    - D. Trốn tránh trách nhiệm.
+    - D. Thay đổi góc nhìn (Context) của cộng đồng về một sự việc, biến khó khăn thành cơ hội và tạo ra năng lượng tích cực để hành động.
 
 3. **Tại sao nên bắt đầu sức ảnh hưởng từ các "Key Nodes" (Người có tiếng nói)?**
-    - A. Vì họ giàu.
+    - A. Vì họ dễ thuyết phục hơn.
     - B. Vì họ có khả năng truyền tin (Broadcasting) rộng và nhanh nhất trong mạng lưới, giúp ý tưởng của bạn đạt tới điểm bùng phát (Tipping Point) nhanh hơn.
-    - C. Vì họ dễ thuyết phục hơn.
+    - C. Vì họ giàu.
     - D. Để bạn không phải làm gì cả.
 
-*(Đáp án đúng: 1-B, 2-B, 3-B)*
+*(Đáp án đúng: 1-B, 2-D, 3-B)*
 
 ---
 **Lời nhắn từ Architect**: Bạn đã sở hữu sức mạnh điều phối! Ngày mai, chúng ta sẽ học cách làm chủ "Giao thức bên trong": **Emotional Intelligence (EQ)** — Cách quản trị hệ điều hành cảm xúc để luôn bình tĩnh và thấu đáo trong mọi nghịch cảnh! ⚔️💎

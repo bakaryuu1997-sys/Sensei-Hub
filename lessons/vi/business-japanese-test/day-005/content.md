@@ -87,30 +87,27 @@ Sau khi được dẫn vào phòng họp:
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Bạn đến thăm đối tác nhưng người bạn hẹn (Tanaka) bận đột xuất và nhờ một nhân viên khác ra tiếp. Câu nào sau đây là cách ứng biến Elite nhất?
-- A. 田中さんはどこですか？
-- B. お忙しいところ恐縮ですが、代わりにお越しいただきありがとうございます。
-- C. 田中さんに会えなくて残念です。
-- D. 承知いたしました。では、お名前を伺ってもよろしいでしょうか。
+Bạn đến thăm đối tác nhưng người bạn hẹn (Tanaka) bận đột xuất và nhờ một nhân viên khác ra tiếp. Câu nào sau đây là cách ứng biến Elite nhất?- A. お忙しいところ恐縮ですが、代わりにお越しいただきありがとうございます。
+- B. 田中さんに会えなくて残念です。
+- C. 承知いたしました。では、お名前を伺ってもよろしいでしょうか。
+- D. 田中さんはどこですか？
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Kỹ năng J1+ yêu cầu sự thấu hiểu cho khó khăn của đối phương. Việc cảm ơn người thay thế (**代わりにお越しいただき**) thể hiện sự tôn trọng thời gian của cả tổ chức công ty họ.
+> - **正解：A**. Kỹ năng J1+ yêu cầu sự thấu hiểu cho khó khăn của đối phương. Việc cảm ơn người thay thế (**代わりにお越しいただき**) thể hiện sự tôn trọng thời gian của cả tổ chức công ty họ.
 
 **第2問 (Câu 2):**
-Khi quầy lễ tân không có người, chỉ có một chiếc điện thoại nội bộ và danh sách số máy lẻ. Bạn nên làm gì?
-- A. Đứng đợi cho đến khi có người đi qua.
-- B. Tự ý đi sâu vào văn phòng để tìm người.
+Khi quầy lễ tân không có người, chỉ có một chiếc điện thoại nội bộ và danh sách số máy lẻ. Bạn nên làm gì?- A. Tự ý đi sâu vào văn phòng để tìm người.
+- B. Bỏ về và gửi email phàn nàn.
 - C. Nhấc máy, gọi đúng số máy lẻ của người cần gặp và tự giới thiệu.
-- D. Bỏ về và gửi email phàn nàn.
+- D. Đứng đợi cho đến khi có người đi qua.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. BJT kiểm tra khả năng **tự chủ (Self-reliance)** trong các quy trình Business 4.0. Gọi máy lẻ với cấu trúc tương tự ở quầy lễ tân là cách xử lý chuẩn mực.
+> - **正解：A**. BJT kiểm tra khả năng **tự chủ (Self-reliance)** trong các quy trình Business 4.0. Gọi máy lẻ với cấu trúc tương tự ở quầy lễ tân là cách xử lý chuẩn mực.
 
 **第3問 (Câu 3):**
-Trong phòng chờ, bạn nên đặt túi xách (Business Bag) ở đâu để không phạm lỗi "vô ý thức"?
-- A. Đặt lên mặt bàn họp để dễ lấy tài liệu.
-- B. Đặt lên chiếc ghế trống bên cạnh.
-- C. Đặt xuống sàn nhà, ngay sát chân ghế của mình.
+Trong phòng chờ, bạn nên đặt túi xách (Business Bag) ở đâu để không phạm lỗi "vô ý thức"?- A. Đặt lên mặt bàn họp để dễ lấy tài liệu.
+- B. Đặt xuống sàn nhà, ngay sát chân ghế của mình.
+- C. Đặt lên chiếc ghế trống bên cạnh.
 - D. Luôn đeo trên vai kể cả khi ngồi.
 
 > **解釈 (Giải thích):**

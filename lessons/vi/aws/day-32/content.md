@@ -65,24 +65,24 @@ Tưởng tượng bạn đang setup một xưởng mộc:
 # 📝 QUICK QUIZ
 
 **Câu 1: Database nào tốt nhất cho mạng xã hội và quan hệ phức tạp?**
-A. RDS
-B. Neptune
-C. S3
-D. Redshift
+A. Neptune
+B. Redshift
+C. RDS
+D. S3
 
 **Câu 2: (Cập nhật 2026) Aurora Limitless giúp giải quyết vấn đề gì?**
-A. Lưu trữ hình ảnh
-B. Khả năng ghi hàng triệu giao dịch/giây thông qua Sharding tự động
-C. Giảm giá S3
-D. Tự động viết báo cáo
+A. Khả năng ghi hàng triệu giao dịch/giây thông qua Sharding tự động
+B. Lưu trữ hình ảnh
+C. Tự động viết báo cáo
+D. Giảm giá S3
 
 **Câu 3: Database nào tương thích MongoDB?**
-A. DynamoDB
-B. DocumentDB
-C. MemoryDB
+A. DocumentDB
+B. MemoryDB
+C. DynamoDB
 D. Timestream
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-A, 2-A, 3-A.
 
 ---
 

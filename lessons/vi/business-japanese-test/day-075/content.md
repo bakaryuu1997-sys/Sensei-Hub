@@ -102,34 +102,31 @@ Di sản cho thế hệ mai sau:
 ## 📝 6. QUICK QUIZ: 実踐・最終試練 (Final Test)
 
 **第1問 (Câu 1):**
-Sự khác biệt lớn nhất giữa một "Người dùng AI" và một "Grand Master của kỷ nguyên AI" là gì?
-- A. Grand Master thuộc nhiều câu lệnh (Prompts) hơn.
-- B. Grand Master sở hữu tư duy về đạo đức, tầm nhìn và khả năng đặt ra những mục tiêu mang ý nghĩa nhân văn mà AI không thể tự nghĩ ra.
-- C. Grand Master có máy tính xịn hơn.
-- D. Grand Master biết nhiều từ vựng N1 hơn.
+Sự khác biệt lớn nhất giữa một "Người dùng AI" và một "Grand Master của kỷ nguyên AI" là gì?- A. Grand Master có máy tính xịn hơn.
+- B. Grand Master biết nhiều từ vựng N1 hơn.
+- C. Grand Master sở hữu tư duy về đạo đức, tầm nhìn và khả năng đặt ra những mục tiêu mang ý nghĩa nhân văn mà AI không thể tự nghĩ ra.
+- D. Grand Master thuộc nhiều câu lệnh (Prompts) hơn.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Khả năng định hướng (Direction-setting) là đặc quyền của con người.
+> - **正解：C**. Khả năng định hướng (Direction-setting) là đặc quyền của con người.
 
 **第2問 (Câu 2):**
-Tại sao "Unlearning" (Từ bỏ kiến thức cũ) lại là kỹ năng quan trọng nhất trong Day 75?
-- A. Để não bộ có thêm chỗ trống.
-- B. Để xóa bỏ những định kiến và phương pháp lỗi thời, giúp chúng ta luôn sẵn sàng tiếp nhận những sự thật mới và cách làm mới trong một thế giới thay đổi chóng mặt.
-- C. Vì kiến thức cũ rất khó nhớ.
-- D. Vì sách cũ đã bị hỏng.
+Tại sao "Unlearning" (Từ bỏ kiến thức cũ) lại là kỹ năng quan trọng nhất trong Day 75?- A. Để não bộ có thêm chỗ trống.
+- B. Vì kiến thức cũ rất khó nhớ.
+- C. Vì sách cũ đã bị hỏng.
+- D. Để xóa bỏ những định kiến và phương pháp lỗi thời, giúp chúng ta luôn sẵn sàng tiếp nhận những sự thật mới và cách làm mới trong một thế giới thay đổi chóng mặt.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Sự linh hoạt về tư duy (Cognitive flexibility).
+> - **正解：D**. Sự linh hoạt về tư duy (Cognitive flexibility).
 
 **第3問 (Câu 75 - Tối thượng):**
-Bạn sẽ làm gì với "Bản đồ trí tuệ" mà bạn đã xây dựng suốt 75 ngày qua?
-- A. Cất nó vào ngăn kéo và đi ngủ.
-- B. Coi nó như một nền móng vững chắc để từ đó, bạn tự xây dựng nên những tòa tháp trí tuệ của riêng mình, tiếp tục lan tỏa cảm hứng và dẫn dắt những người xung quanh.
-- C. Đem đi bán lấy tiền.
-- D. Bảo người khác làm hộ mình.
+Bạn sẽ làm gì với "Bản đồ trí tuệ" mà bạn đã xây dựng suốt 75 ngày qua?- A. Bảo người khác làm hộ mình.
+- B. Đem đi bán lấy tiền.
+- C. Coi nó như một nền móng vững chắc để từ đó, bạn tự xây dựng nên những tòa tháp trí tuệ của riêng mình, tiếp tục lan tỏa cảm hứng và dẫn dắt những người xung quanh.
+- D. Cất nó vào ngăn kéo và đi ngủ.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Ý nghĩa thực sự của việc "Master" là trở thành người gieo hạt giống trí tuệ.
+> - **正解：C**. Ý nghĩa thực sự của việc "Master" là trở thành người gieo hạt giống trí tuệ.
 
 ---
 

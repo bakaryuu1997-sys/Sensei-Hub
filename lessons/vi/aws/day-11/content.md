@@ -83,24 +83,24 @@ Vào năm 2026, tôi sẽ kết hợp với **Route 53 ARC** để liên tục k
 # 📝 QUICK QUIZ
 
 **Câu 1: Bản ghi DNS nào cho phép nối một tên miền với một địa chỉ IPv4?**
-A. CNAME
-B. A Record
-C. MX Record
-D. TXT Record
+A. TXT Record
+B. CNAME
+C. A Record
+D. MX Record
 
 **Câu 2: Bạn muốn triển khai tính năng mới cho 10% người dùng để thử nghiệm. Bạn chọn chính sách nào?**
-A. Latency Routing
+A. Simple Routing
 B. Geolocation Routing
-C. Weighted Routing
-D. Simple Routing
+C. Latency Routing
+D. Weighted Routing
 
 **Câu 3: (Cập nhật 2026) Công cụ nào giúp tự động chuyển traffic ra khỏi một AZ bị lỗi mà không cần can thiệp thủ công?**
-A. Route 53 Resolver
-B. Zonal Autoshift
-C. S3 Replication
+A. S3 Replication
+B. Route 53 Resolver
+C. Zonal Autoshift
 D. CloudFront
 
-**Đáp án:** 1-B, 2-C, 3-B.
+**Đáp án:** 1-C, 2-B, 3-C.
 
 ---
 

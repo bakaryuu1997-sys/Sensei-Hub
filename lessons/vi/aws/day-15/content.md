@@ -68,24 +68,24 @@ Hãy tưởng tượng quy trình của một **Tiệm bánh Pizza nổi tiếng
 # 📝 QUICK QUIZ
 
 **Câu 1: Bạn cần xử lý giao dịch ngân hàng đúng thứ tự và không trùng lặp. Dùng gì?**
-A. SQS Standard
-B. SQS FIFO
-C. SNS Topic
+A. SNS Topic
+B. SQS Standard
+C. SQS FIFO
 D. S3 Bucket
 
 **Câu 2: (Cập nhật 2026) Amazon Q giúp gì cho SQS?**
 A. Giúp gửi tin nhắn nhanh hơn.
-B. Phân tích hàng đợi và chỉ ra dòng code gây nghẽn hệ thống.
-C. Xóa hết tin nhắn cũ.
+B. Xóa hết tin nhắn cũ.
+C. Phân tích hàng đợi và chỉ ra dòng code gây nghẽn hệ thống.
 D. Đổi màu giao diện.
 
 **Câu 3: 'Fan-out' pattern là sự kết hợp của?**
-A. EC2 + RDS
-B. SNS + SQS
-C. S3 + Lambda
-D. CloudWatch + CloudTrail
+A. CloudWatch + CloudTrail
+B. S3 + Lambda
+C. EC2 + RDS
+D. SNS + SQS
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-C, 2-C, 3-D.
 
 ---
 

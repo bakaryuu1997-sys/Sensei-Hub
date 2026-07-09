@@ -89,28 +89,25 @@ BJT thường cho tình huống bạn hết danh thiếp (**名刺を切らし�
 ## 📝 6. QUICK QUIZ: 実踐・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Giữa hai công ty A và B, ai nên là người đưa danh thiếp ra trước?
-- A. Người của công ty có quy mô lớn hơn.
-- B. Người đến thăm (Khách).
-- C. Người có chức vụ cao hơn.
-- D. Bất kỳ ai thấy tiện.
+Giữa hai công ty A và B, ai nên là người đưa danh thiếp ra trước?- A. Bất kỳ ai thấy tiện.
+- B. Người có chức vụ cao hơn.
+- C. Người đến thăm (Khách).
+- D. Người của công ty có quy mô lớn hơn.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Trong logic BJT, **「訪問者」 [Phóng Vấn Giả]** (Người đến thăm) được coi là người đang yêu cầu tài nguyên, nên phải chủ động tự giới thiệu trước.
+> - **正解：C**. Trong logic BJT, **「訪問者」 [Phóng Vấn Giả]** (Người đến thăm) được coi là người đang yêu cầu tài nguyên, nên phải chủ động tự giới thiệu trước.
 
 **第2問 (Câu 2):**
-Khi giới thiệu sếp của mình cho nhiều người ở công ty đối tác, bạn nên giới thiệu theo thứ tự nào?
-- A. Giới thiệu cho người đứng gần cửa trước.
-- B. Giới thiệu cho người trẻ tuổi nhất trước.
+Khi giới thiệu sếp của mình cho nhiều người ở công ty đối tác, bạn nên giới thiệu theo thứ tự nào?- A. Giới thiệu cho người trẻ tuổi nhất trước.
+- B. Giới thiệu cho người đứng gần cửa trước.
 - C. Giới thiệu cho người có chức vụ cao nhất bên phía đối tác trước.
 - D. Không quan trọng thứ tự.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Luôn ưu tiên người có vị thế cao nhất (**上位者 [Thượng Vị Giả]**) của đối phương để họ nhận được thông tin đầu tiên.
+> - **正解：A**. Luôn ưu tiên người có vị thế cao nhất (**上位者 [Thượng Vị Giả]**) của đối phương để họ nhận được thông tin đầu tiên.
 
 **第3問 (Câu 3):**
-Bạn đang trao đổi danh thiếp với Kacho của đối phương, nhưng cùng lúc đó Bucho của họ tiến lại gần bạn. Bạn nên làm gì?
-- A. Phớt lờ Bucho để hoàn thành với Kacho.
+Bạn đang trao đổi danh thiếp với Kacho của đối phương, nhưng cùng lúc đó Bucho của họ tiến lại gần bạn. Bạn nên làm gì?- A. Phớt lờ Bucho để hoàn thành với Kacho.
 - B. Ngắt ngang việc với Kacho, quay sang chào Bucho ngay lập tức.
 - C. Hoàn thành nhanh với Kacho, sau đó xin lỗi và chào Bucho.
 - D. Đưa danh thiếp cho cả hai người cùng một lúc bằng hai tay khác nhau.

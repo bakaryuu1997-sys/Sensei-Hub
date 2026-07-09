@@ -95,28 +95,25 @@ Ai là sếp? Ai là khách? Ai là người nhờ vả?
 ## 📝 6. QUICK QUIZ: 聴解・心理戦略・グランドフィナーレ
 
 **第1問 (Câu 1):**
-「その件は、**前向きに [Tiền Hướng] 検討 [Kiểm Thảo] させていただきます**」と言われた。J1+ としての解釈は？
-- A. Sẽ đồng ý sớm thôi.
+「その件は、**前向きに [Tiền Hướng] 検討 [Kiểm Thảo] させていただきます**」と言われた。J1+ としての解釈は？- A. Đang rất hào hứng.
 - B. Lời từ chối lịch sự, dự án coi như đã kết thúc.
-- C. Đang rất hào hứng.
+- C. Sẽ đồng ý sớm thôi.
 - D. Đang chờ đối tác khác.
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Trong 90% bối cảnh BJT, đây là câu trả lời để kết thúc buổi họp mà không muốn đưa ra cam kết nào khác.
 
 **第2問 (Câu 2):**
-「さすがですね。**あ、ただ**一点だけ確認ですが…」 sếp nói với giọng trầm. Ý đồ của sếp?
-- A. Khen ngợi bạn hết lời.
-- B. Chỉ là một câu nói vui.
-- C. Cái "một điểm" đó thực ra là một lỗi sai chí mạng hoặc một sự không hài lòng lớn mà sếp muốn bạn sửa ngay.
-- D. Sếp muốn tặng quà cho bạn.
+「さすがですね。**あ、ただ**一点だけ確認ですが…」 sếp nói với giọng trầm. Ý đồ của sếp?- A. Sếp muốn tặng quà cho bạn.
+- B. Cái "một điểm" đó thực ra là một lỗi sai chí mạng hoặc một sự không hài lòng lớn mà sếp muốn bạn sửa ngay.
+- C. Chỉ là một câu nói vui.
+- D. Khen ngợi bạn hết lời.
 
 > **解釈 (Giải thích):**
 > - **正解：C**. Kỹ thuật **「褒めてから落とす」** (Khen trước chê sau) là đặc trưng của quản lý Nhật.
 
 **第3問 (Câu 3):**
-Trong lúc thi nghe, nếu bạn lỡ không nghe rõ một từ quan trọng, hành động nào là Elite nhất?
-- A. Hoảng loạn và cố gắng nhớ lại từ đó.
+Trong lúc thi nghe, nếu bạn lỡ không nghe rõ một từ quan trọng, hành động nào là Elite nhất?- A. Hoảng loạn và cố gắng nhớ lại từ đó.
 - B. Bỏ qua ngay lập tức, tập trung vào mạch logic tiếp theo của câu chuyện.
 - C. Dừng làm bài để suy nghĩ.
 - D. Chọn đáp án đại.

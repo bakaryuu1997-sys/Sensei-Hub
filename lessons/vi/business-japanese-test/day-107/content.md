@@ -104,34 +104,31 @@ Nhiều người sẽ nghĩ: Vậy B = C.
 ## 📝 6. QUICK QUIZ: 数値比較・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-「前年比で 2 倍の成長を期待していましたが、実績 [Thực Tích] はその半分に留まりました [Lưu] 。」 Thực tế là gì?
-- A. Tăng gấp đôi.
+「前年比で 2 倍の成長を期待していましたが、実績 [Thực Tích] はその半分に留まりました [Lưu] 。」 Thực tế là gì?- A. Tăng gấp rưỡi.
 - B. Giữ nguyên không đổi (tăng 0%).
-- C. Tăng gấp rưỡi.
+- C. Tăng gấp đôi.
 - D. Không có thông tin.
 
 > **解釈 (Giải thích):**
 > - **正解：B**. **「2 倍の期待」** (kỳ vọng gấp đôi) nhưng thực tế chỉ đạt **「その半分」** (một nửa của cái kỳ vọng đó). Một nửa của "gấp đôi" chính là "bằng cũ" (100%). Bẫy này cực hiểm trong BJT.
 
 **第2問 (Câu 2):**
-「3 社の合計でシェアの 7 割を占めていますが、その内訳 [Nội Dịch] は A 社が最大、B 社と C 社は **ほぼ互角 [Hổ Giác]** です。」 Tỉ lệ nào phù hợp?
-- A. A(30%), B(20%), C(20%).
-- B. A(50%), B(10%), C(10%).
-- C. A(10%), B(30%), C(30%).
-- D. A(40%), B(15%), C(15%).
+「3 社の合計でシェアの 7 割を占めていますが、その内訳 [Nội Dịch] は A 社が最大、B 社と C 社は **ほぼ互角 [Hổ Giác]** です。」 Tỉ lệ nào phù hợp?- A. A(10%), B(30%), C(30%).
+- B. A(30%), B(20%), C(20%).
+- C. A(40%), B(15%), C(15%).
+- D. A(50%), B(10%), C(10%).
 
 > **解釈 (Giải thích):**
 > - **正解：D**. A+B+C = 40+15+15 = 70% (**7 割**). B and C are equal (**互角**). A is maximum (**最大**).
 
 **第3問 (Câu 3):**
-グラフの説明で「ここ数年、右肩下がり [Hữu Kiên Hạ] が続いていましたが、ようやく **歯止め [Xỉ Chỉ] が掛かりました**」と言われた。グラフはどうなる？
-- A. Đang đi xuống và tiếp tục xuống mạnh hơn.
-- B. Đang đi xuống và bắt đầu chuyển sang đi ngang hoặc đi lên nhẹ.
-- C. Đang đi lên và bị chặn lại.
-- D. Đang đi ngang.
+グラフの説明で「ここ数年、右肩下がり [Hữu Kiên Hạ] が続いていましたが、ようやく **歯止め [Xỉ Chỉ] が掛かりました**」と言われた。グラフはどうなる？- A. Đang đi lên và bị chặn lại.
+- B. Đang đi ngang.
+- C. Đang đi xuống và tiếp tục xuống mạnh hơn.
+- D. Đang đi xuống và bắt đầu chuyển sang đi ngang hoặc đi lên nhẹ.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「歯止めが掛かる」** (hãm phanh lại) nghĩa là chặn đứng đà sụt giảm (**右肩下がり**).
+> - **正解：D**. **「歯止めが掛かる」** (hãm phanh lại) nghĩa là chặn đứng đà sụt giảm (**右肩下がり**).
 
 ---
 

@@ -60,24 +60,24 @@ Hãy tưởng tượng bạn quản lý một **Nhà máy sản xuất bánh t�
 # 📝 QUICK QUIZ
 
 **Câu 1: Nguyên tắc nào thuộc về Operational Excellence?**
-A. Sửa lỗi trực tiếp trên Production
-B. Thực hiện thay đổi bằng mã nguồn (IaC)
-C. Luôn bật server 24/7
-D. Không cần ghi log
+A. Thực hiện thay đổi bằng mã nguồn (IaC)
+B. Sửa lỗi trực tiếp trên Production
+C. Không cần ghi log
+D. Luôn bật server 24/7
 
 **Câu 2: (Cập nhật 2026) AI nào giúp tự động soạn thảo báo cáo sau sự cố (Post-mortem)?**
-A. Alexa
-B. Amazon Q for Operations
-C. AWS Config
-D. Trusted Advisor
+A. AWS Config
+B. Alexa
+C. Trusted Advisor
+D. Amazon Q for Operations
 
 **Câu 3: Trong tính bền vững, việc dùng Serverless (Lambda) giúp ích gì?**
-A. Chạy chậm hơn
-B. Tiết kiệm năng lượng vì chỉ dùng tài nguyên khi có yêu cầu
+A. Tiết kiệm năng lượng vì chỉ dùng tài nguyên khi có yêu cầu
+B. Làm web đẹp hơn
 C. Hacker không thể tấn công
-D. Làm web đẹp hơn
+D. Chạy chậm hơn
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-A, 2-D, 3-A.
 
 ---
 

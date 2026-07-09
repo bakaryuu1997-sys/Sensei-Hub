@@ -89,31 +89,28 @@ BJT thường bẫy việc dùng **「二重敬語」 [Nhị Trọng Kính Ngữ
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khách hàng phàn nàn về thái độ của một nhân viên cấp dưới của bạn. Bạn (cấp trên) nên bắt đầu bằng câu nào là chuyên nghiệp nhất?
-- A. 「部下が失礼なことをしたようで、すみません。」
-- B. 「私どもの教育が行き届いておらず、不快な思いをさせてしまい、誠に申し訳ございません。」
-- C. 「その社員に厳重注意いたしますので、お許しください。」
+Khách hàng phàn nàn về thái độ của một nhân viên cấp dưới của bạn. Bạn (cấp trên) nên bắt đầu bằng câu nào là chuyên nghiệp nhất?- A. 「私どもの教育が行き届いておらず、不快な思いをさせてしまい、誠に申し訳ございません。」
+- B. 「その社員に厳重注意いたしますので、お許しください。」
+- C. 「部下が失礼なことをしたようで、すみません。」
 - D. 「どのような状況だったか、詳しく教えていただけますか？」
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Đáp án B thể hiện trách nhiệm của quản lý (**教育が行き届いておらず [Giáo Dục - Hành - Cập]**) và tập trung vào cảm xúc của khách. Đáp án A quá suồng sã. Đáp án D quá lạnh lùng khi chưa xin lỗi.
+> - **正解：A**. Đáp án B thể hiện trách nhiệm của quản lý (**教育が行き届いておらず [Giáo Dục - Hành - Cập]**) và tập trung vào cảm xúc của khách. Đáp án A quá suồng sã. Đáp án D quá lạnh lùng khi chưa xin lỗi.
 
 **第2問 (Câu 2):**
-Trong thư email xin lỗi vì gửi sai báo giá (見積書 [Kiến Tích Thư]), cụm từ nào thể hiện sự khẩn trương và chuyên nghiệp nhất?
-- A. 「間違ったものを送ってしまいました。すぐ送り直します。」
+Trong thư email xin lỗi vì gửi sai báo giá (見積書 [Kiến Tích Thư]), cụm từ nào thể hiện sự khẩn trương và chuyên nghiệp nhất?- A. 「先ほどお送りした見積書に不備がございました。至急、訂正版を再送させていただきます。」
 - B. 「先ほどのメールは破棄してください。新しいものを送ります。」
-- C. 「先ほどお送りした見積書に不備がございました。至急、訂正版を再送させていただきます。」
+- C. 「間違ったものを送ってしまいました。すぐ送り直します。」
 - D. 「計算ミスがありました。申し訳ありませんでした。」
 
 > **解釈 (Giải thích):**
-> - **正解：C**. **「不備」 [Bất Bị]** là từ vựng Business cao cấp. **「至急」 [Chí Cấp]** thể hiện sự ưu tiên hàng đầu.
+> - **正解：B**. **「不備」 [Bất Bị]** là từ vựng Business cao cấp. **「至急」 [Chí Cấp]** thể hiện sự ưu tiên hàng đầu.
 
 **第3問 (Câu 3):**
-Khi khách hàng yêu cầu một điều không thể thực hiện được (Vượt quá quy định), cách từ chối nào chuẩn BJT J1+?
-- A. 「それは規則で決まっていますので、できません。」
+Khi khách hàng yêu cầu một điều không thể thực hiện được (Vượt quá quy định), cách từ chối nào chuẩn BJT J1+?- A. 「無理なことは言わないでください。」
 - B. 「お客様のご要望は重々承知しておりますが、あいにく弊社の方針では対応致しかねます。」
-- C. 「無理なことは言わないでください。」
-- D. 「上司に相談しましたが、ダメだと言われました。」
+- C. 「上司に相談しましたが、ダメだと言われました。」
+- D. 「それは規則で決まっていますので、できません。」
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Cấu trúc **「重々承知しておりますが」 [Trọng Trọng Thừa Tri]** (rất hiểu rõ) + **「あいにく」** (đáng tiếc là) + **「致しかねます」** (xin phép không thể) là bộ combo từ chối lịch sự bậc nhất.

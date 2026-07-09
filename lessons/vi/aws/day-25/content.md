@@ -65,10 +65,10 @@ Hãy tưởng tượng sự khác biệt giữa **Thuê đầu bếp về nhà**
 # 📝 QUICK QUIZ
 
 **Câu 1: Hình thức nào của ECS chạy container mà không cần quản lý máy chủ?**
-A. EC2 Launch Type
-B. AWS Fargate
+A. AWS Fargate
+B. AWS Lambda
 C. Amazon S3
-D. AWS Lambda
+D. EC2 Launch Type
 
 **Câu 2: (Cập nhật 2026) Tính năng nào giúp chạy EKS mà không cần quản lý Nodes thủ công?**
 A. EKS Cluster
@@ -77,12 +77,12 @@ C. AWS Config
 D. Trusted Advisor
 
 **Câu 3: Dịch vụ nào dùng để lưu trữ Docker Images?**
-A. S3
-B. ECR
-C. EBS
-D. RDS
+A. ECR
+B. RDS
+C. S3
+D. EBS
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-A, 2-B, 3-A.
 
 ---
 

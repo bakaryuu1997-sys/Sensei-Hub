@@ -66,22 +66,22 @@ Năm 2026, tôi dùng **Amazon Q** để liên tục tối ưu các luật này 
 # 📝 QUICK QUIZ
 
 **Câu 1: AWS WAF bảo vệ ứng dụng ở lớp nào trong mô hình OSI?**
-A. Lớp 3 (Network)
-B. Lớp 4 (Transport)
-C. Lớp 7 (Application)
-D. Lớp 1 (Physical)
+A. Lớp 1 (Physical)
+B. Lớp 3 (Network)
+C. Lớp 4 (Transport)
+D. Lớp 7 (Application)
 
 **Câu 2: (Cập nhật 2026) Tính năng mới nào của WAF giúp chặn tấn công chưa từng thấy?**
 A. Passkey
 B. Zero-Day AI Protection
-C. Đổi màu Header
-D. Tăng RAM cho Server
+C. Tăng RAM cho Server
+D. Đổi màu Header
 
 **Câu 3: Dịch vụ nào cung cấp đội ngũ đặc nhiệm hỗ trợ 24/7 khi bị DDoS?**
-A. Security Group
+A. S3
 B. AWS Shield Advanced
 C. CloudWatch
-D. S3
+D. Security Group
 
 **Đáp án:** 1-C, 2-B, 3-B.
 

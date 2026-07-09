@@ -109,31 +109,28 @@ Nghệ thuật chuyển giao quyền lực:
 ## 📝 6. QUICK QUIZ: 実踐・最終試練 (Legacy Leadership Test)
 
 **第1問 (Câu 1):**
-Triết lý **「三方よし」 [Tam Phương]** (Tốt cho ba phía) thực chất là nói về ba đối tượng nào?
-- A. 社長、副社長、専務。
-- B. 売り手（企業）、買い手（顧客）、世間（社会）。
-- C. 銀行、役所、税務署。
-- D. 自分、家族、友達。
+Triết lý **「三方よし」 [Tam Phương]** (Tốt cho ba phía) thực chất là nói về ba đối tượng nào?- A. 銀行、役所、税務署。
+- B. 自分、家族、友達。
+- C. 社長、副社長、専務。
+- D. 売り手（企業）、買い手（顧客）、世間（社会）。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Đây là triết lý của các thương gia vùng Omi (Omi Shonin), nền tảng của CSR hiện đại.
+> - **正解：D**. Đây là triết lý của các thương gia vùng Omi (Omi Shonin), nền tảng của CSR hiện đại.
 
 **第2問 (Câu 2):**
-Cụm từ **「不易流行」 [Bất Dịch Lưu Hành]** nhắc nhở nhà lãnh đạo điều gì?
-- A. Không bao giờ được thay đổi bất cứ điều gì.
-- B. Chỉ nên chạy theo những xu hướng mới nhất.
+Cụm từ **「不易流行」 [Bất Dịch Lưu Hành]** nhắc nhở nhà lãnh đạo điều gì?- A. Không bao giờ được thay đổi bất cứ điều gì.
+- B. Việc học tập là việc của người trẻ, người già không cần học.
 - C. Phải biết giữ gìn những giá trị cốt lõi không thay đổi, đồng thời linh hoạt đổi mới những phương thức thực hiện để phù hợp với sự thay đổi của thế giới.
-- D. Việc học tập là việc của người trẻ, người già không cần học.
+- D. Chỉ nên chạy theo những xu hướng mới nhất.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Sự cân bằng giữa tĩnh và động.
+> - **正解：D**. Sự cân bằng giữa tĩnh và động.
 
 **第3問 (Câu 3):**
-Trong buổi lễ chuyển giao quyền lực, một Grand Master J1 sẽ nói gì với đội ngũ của mình?
-- A. 「私の時代は終わりました。あとは自分たちで勝手にやってください。」
-- B. 「私が築いたものを破壊することは許しません。」
-- C. 「組織の魂は皆さんの心の中にあります。新しいリーダーを支え、自律的な進化を続けてください。私は皆さんの可能性を信じています。」
-- D. 「これからも私が裏で指示を出しますので、安心してください。」
+Trong buổi lễ chuyển giao quyền lực, một Grand Master J1 sẽ nói gì với đội ngũ của mình?- A. 「組織の魂は皆さんの心の中にあります。新しいリーダーを支え、自律的な進化を続けてください。私は皆さんの可能性を信じています。」
+- B. 「これからも私が裏で指示を出しますので、安心してください。」
+- C. 「私が築いたものを破壊することは許しません。」
+- D. 「私の時代は終わりました。あとは自分たちで勝手にやってください。」
 
 > **解釈 (Giải thích):**
 > - **正解：C**. Sự tin tưởng (**Empowerment**) và lời chúc phúc cho thế hệ tương lai.

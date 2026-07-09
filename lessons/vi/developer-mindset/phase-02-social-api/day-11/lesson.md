@@ -104,24 +104,24 @@ T là một lập trình viên giỏi nhưng cực kỳ sợ các buổi giao l�
 # 🎯 7. QUICK QUIZ: Bạn Đã Sẵn Sàng Gửi Gói SYN Đầu Tiên?
 
 1. **"Three-way Handshake" trong giao tiếp gồm những bước nào?**
-    - A. Nói, Nghe, và Gật đầu.
-    - B. Tín hiệu vật lý (SYN), Chờ phản hồi (SYN-ACK), và Mở lời (ACK).
-    - C. Chào, Giới thiệu, và Tạm biệt.
-    - D. Nhìn, Cười, và Đi chỗ khác.
+    - A. Tín hiệu vật lý (SYN), Chờ phản hồi (SYN-ACK), và Mở lời (ACK).
+    - B. Nhìn, Cười, và Đi chỗ khác.
+    - C. Nói, Nghe, và Gật đầu.
+    - D. Chào, Giới thiệu, và Tạm biệt.
 
 2. **Tại sao việc dùng "Environment-Header" (nhận xét về môi trường) lại hiệu quả?**
-    - A. Vì không có gì khác để nói.
-    - B. Vì nó là một gói tin nhẹ, không gây áp lực và dễ được đối phương phản hồi mà không cảm thấy bị xâm phạm quyền riêng tư.
-    - C. Vì thời tiết luôn quan trọng.
+    - A. Vì nó là một gói tin nhẹ, không gây áp lực và dễ được đối phương phản hồi mà không cảm thấy bị xâm phạm quyền riêng tư.
+    - B. Vì thời tiết luôn quan trọng.
+    - C. Vì không có gì khác để nói.
     - D. Vì nó giúp bạn trông thông minh hơn.
 
 3. **Bạn nên làm gì nếu đối phương không phản hồi tín hiệu SYN (không cười lại)?**
-    - A. Cố gắng nói chuyện to hơn.
-    - B. Cảm thấy nhục nhã.
-    - C. Thực hiện lệnh `Abort_Connection` và tìm một Node khác để kết nối; server của họ đơn giản là không sẵn sàng lúc này.
-    - D. Đứng đó cho đến khi họ chú ý.
+    - A. Cảm thấy nhục nhã.
+    - B. Thực hiện lệnh `Abort_Connection` và tìm một Node khác để kết nối; server của họ đơn giản là không sẵn sàng lúc này.
+    - C. Đứng đó cho đến khi họ chú ý.
+    - D. Cố gắng nói chuyện to hơn.
 
-*(Đáp án đúng: 1-B, 2-B, 3-C)*
+*(Đáp án đúng: 1-A, 2-A, 3-A)*
 
 ---
 **Lời nhắn từ Architect**: Ngày đầu tiên của Phase 2 đã hoàn thành! Bạn đã có trong tay bộ thư viện kết nối. Ngày mai, chúng ta sẽ học cách **Encode** ngôn ngữ cơ thể để trông như một "Super Server" chuyên nghiệp! ⚔️💎

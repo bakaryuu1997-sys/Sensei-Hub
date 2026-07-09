@@ -88,34 +88,31 @@ Thư tín J1+ luôn kết thúc bằng việc nhìn về tương lai:
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Trong một văn bản báo cáo tình hình kinh doanh cho cổ đông, khi muốn nói "Chúng tôi sẽ cố gắng hết sức", cụm từ nào là J1+ Elite?
-- A. 一生懸命頑張ります。
-- B. 全社一丸となって、企業価値の向上に邁進する所存です。
-- C. たぶん大丈夫です。
-- D. 社員一同、気合が入っております。
+Trong một văn bản báo cáo tình hình kinh doanh cho cổ đông, khi muốn nói "Chúng tôi sẽ cố gắng hết sức", cụm từ nào là J1+ Elite?- A. 全社一丸となって、企業価値の向上に邁進する所存です。
+- B. たぶん大丈夫です。
+- C. 社員一同、気合が入っております。
+- D. 一生懸命頑張ります。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「全社一丸」 [Toàn Xã Nhất Hoàn]** (Toàn công ty như một khối thống nhất) và **「邁進する」 [Mại Tiến]** (Xông pha tiến tới) là những từ vựng mang sức mạnh cổ vũ và niềm tin sắt đá.
+> - **正解：A**. **「全社一丸」 [Toàn Xã Nhất Hoàn]** (Toàn công ty như một khối thống nhất) và **「邁進する」 [Mại Tiến]** (Xông pha tiến tới) là những từ vựng mang sức mạnh cổ vũ và niềm tin sắt đá.
 
 **第2問 (Câu 2):**
-Thuật ngữ "Disclosure" (ディスクロージャー) trong tiếng Nhật tương đương với từ Hán Việt nào?
-- A. 秘密保持 [Bí Mật Bảo Trì].
-- B. 情報開示 [Tình Báo Khai Thị].
-- C. 嘘つき [Hư Phụ].
-- D. 広告宣伝 [Quảng Cáo Tuyên Truyền].
+Thuật ngữ "Disclosure" (ディスクロージャー) trong tiếng Nhật tương đương với từ Hán Việt nào?- A. 嘘つき [Hư Phụ].
+- B. 広告宣伝 [Quảng Cáo Tuyên Truyền].
+- C. 情報開示 [Tình Báo Khai Thị].
+- D. 秘密保持 [Bí Mật Bảo Trì].
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Công khai thông tin một cách minh bạch chính là nền tảng của quản trị doanh nghiệp hiện đại.
+> - **正解：C**. Công khai thông tin một cách minh bạch chính là nền tảng của quản trị doanh nghiệp hiện đại.
 
 **第3問 (Câu 3):**
-Khi viết biên bản cuộc họp hội đồng quản trị (Board Minutes), điều quan trọng nhất là gì?
-- A. Ghi lại mọi câu nói đùa của sếp.
-- B. Ghi lại chính xác các quyết định, ý kiến phản biện và quá trình đi đến sự đồng thuận một cách khách quan.
-- C. Dùng nhiều hình ảnh minh họa cho đẹp.
-- D. Viết càng dài càng tốt.
+Khi viết biên bản cuộc họp hội đồng quản trị (Board Minutes), điều quan trọng nhất là gì?- A. Ghi lại chính xác các quyết định, ý kiến phản biện và quá trình đi đến sự đồng thuận một cách khách quan.
+- B. Viết càng dài càng tốt.
+- C. Ghi lại mọi câu nói đùa của sếp.
+- D. Dùng nhiều hình ảnh minh họa cho đẹp.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Biên bản cuộc họp là văn bản pháp lý có thể được dùng để ra tòa hoặc trình cổ đông, tính khách quan và chính xác là ưu tiên số 1.
+> - **正解：A**. Biên bản cuộc họp là văn bản pháp lý có thể được dùng để ra tòa hoặc trình cổ đông, tính khách quan và chính xác là ưu tiên số 1.
 
 ---
 

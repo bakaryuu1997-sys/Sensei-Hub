@@ -98,34 +98,31 @@ BJT thường kiểm tra khả năng hiểu các văn bản hòa giải:
 ## 📝 6. QUICK QUIZ: 実踐・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khi bạn muốn thể hiện rằng phía bạn đã rất nỗ lực để hiểu cho khó khăn của đối phương trước khi đưa ra yêu cầu đền bù, câu nào là "Elite Choice"?
-- A. 私たちも大変でしたが、あなたたちのことも考えました。
-- B. 貴社の事情を最大限「汲み取った」上での、ぎりぎりの判断でございます。
-- C. 仕方がないので妥協します。
-- D. 損はしたくないです。
+Khi bạn muốn thể hiện rằng phía bạn đã rất nỗ lực để hiểu cho khó khăn của đối phương trước khi đưa ra yêu cầu đền bù, câu nào là "Elite Choice"?- A. 仕方がないので妥協します。
+- B. 損はしたくないです。
+- C. 私たちも大変でしたが、あなたたちのことも考えました。
+- D. 貴社の事情を最大限「汲み取った」上での、ぎりぎりの判断でございます。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「汲み取る」 [Cấp Thủ]** (thấu hiểu tâm ý) và **「ぎりぎりの判断」** (quyết định sát nút/cố gắng hết sức để hạ thấp yêu cầu) thể hiện sự chân thành và nỗ lực bảo vệ quan hệ của người nói.
+> - **正解：D**. **「汲み取る」 [Cấp Thủ]** (thấu hiểu tâm ý) và **「ぎりぎりの判断」** (quyết định sát nút/cố gắng hết sức để hạ thấp yêu cầu) thể hiện sự chân thành và nỗ lực bảo vệ quan hệ của người nói.
 
 **第2問 (Câu 2):**
-Đối tác xin lỗi bằng câu: **「不徳の致すところです」 [Bất Đức]**. Ý họ là gì?
-- A. Do họ không có đạo đức.
-- B. Đó là cách nói cực kỳ trang trọng để nhận lỗi về mình, cho rằng sự việc xảy ra là do sự thiếu sót, thiếu bản lĩnh của bản thân họ.
-- C. Họ đang mắng bạn không có đức.
-- D. Họ nói sự việc này là đen đủi.
+Đối tác xin lỗi bằng câu: **「不徳の致すところです」 [Bất Đức]**. Ý họ là gì?- A. Họ đang mắng bạn không có đức.
+- B. Họ nói sự việc này là đen đủi.
+- C. Đó là cách nói cực kỳ trang trọng để nhận lỗi về mình, cho rằng sự việc xảy ra là do sự thiếu sót, thiếu bản lĩnh của bản thân họ.
+- D. Do họ không có đạo đức.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Đây là một cụm từ "Elite vựng" thường dùng trong các buổi họp báo xin lỗi của giới tinh hoa Nhật Bản.
+> - **正解：C**. Đây là một cụm từ "Elite vựng" thường dùng trong các buổi họp báo xin lỗi của giới tinh hoa Nhật Bản.
 
 **第3問 (Câu 3):**
-Cụm từ "Ochi-do" (落ち度) trong đàm phán tranh chấp mang nghĩa là gì?
-- A. Sự sụt giảm doanh số.
-- B. Một điểm rơi.
-- C. Sai sót, lỗi lầm hoặc trách nhiệm thuộc về một bên.
-- D. Một vị trí thấp.
+Cụm từ "Ochi-do" (落ち度) trong đàm phán tranh chấp mang nghĩa là gì?- A. Một điểm rơi.
+- B. Sai sót, lỗi lầm hoặc trách nhiệm thuộc về một bên.
+- C. Một vị trí thấp.
+- D. Sự sụt giảm doanh số.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Xác định "Ochido" là bước đầu tiên để phân định trách nhiệm.
+> - **正解：A**. Xác định "Ochido" là bước đầu tiên để phân định trách nhiệm.
 
 ---
 

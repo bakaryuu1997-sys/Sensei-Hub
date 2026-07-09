@@ -76,24 +76,24 @@ Không chỉ là ML thông thường, LLM-Ops tập trung vào:
 # 📝 QUICK QUIZ
 
 **Câu 1: SageMaker Pipelines giúp gì cho quy trình làm AI?**
-A. Giúp AI chạy nhanh hơn.
-B. Tự động hóa các bước từ chuẩn bị dữ liệu đến triển khai model (CI/CD cho AI).
+A. Tự động hóa các bước từ chuẩn bị dữ liệu đến triển khai model (CI/CD cho AI).
+B. Giúp AI chạy nhanh hơn.
 C. Giúp giảm chi phí tiền điện.
 D. Giúp AI viết văn hay hơn.
 
 **Câu 2: 'Model Drift' là hiện tượng gì?**
-A. Model bị virus tấn công.
+A. Model bị xóa nhầm.
 B. Hiệu năng của model bị giảm sút theo thời gian do dữ liệu thực tế thay đổi so với dữ liệu huấn luyện.
-C. Model tự ý đổi tên.
-D. Model bị xóa nhầm.
+C. Model bị virus tấn công.
+D. Model tự ý đổi tên.
 
 **Câu 3: (Cập nhật 2026) Kỹ thuật nào dùng một AI lớn để chấm điểm cho một AI nhỏ?**
-A. S3 Replication.
-B. AI-Assisted Evaluation.
+A. AI-Assisted Evaluation.
+B. IAM Policy.
 C. CloudWatch Metrics.
-D. IAM Policy.
+D. S3 Replication.
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-A, 2-B, 3-A.
 
 ---
 

@@ -65,23 +65,23 @@ Quản lý IaC ở quy mô lớn giống như vận hành chuỗi nhà hàng McD
 
 **Câu 1: Tính năng nào của CloudFormation giúp triển khai hạ tầng đến hàng trăm tài khoản con cùng lúc?**
 A. S3
-B. StackSets
-C. CloudWatch
-D. IAM
+B. CloudWatch
+C. IAM
+D. StackSets
 
 **Câu 2: (Cập nhật 2026) Amazon Q giúp ích gì cho kỹ sư IaC?**
-A. Tự động trả lời email
+A. Làm mát Server
 B. Tự động sinh code hạ tầng (CDK/CloudFormation) từ yêu cầu ngôn ngữ tự nhiên
-C. Thay thế CloudTrail
-D. Làm mát Server
+C. Tự động trả lời email
+D. Thay thế CloudTrail
 
 **Câu 3: AWS CDK cho phép bạn dùng gì để định nghĩa hạ tầng?**
-A. Chỉ dùng Excel
+A. Tiếng Việt không dấu
 B. Các ngôn ngữ lập trình phổ biến (TypeScript, Python...)
-C. Chỉ dùng Word
-D. Tiếng Việt không dấu
+C. Chỉ dùng Excel
+D. Chỉ dùng Word
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-D, 2-B, 3-B.
 
 ---
 

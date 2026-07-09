@@ -74,23 +74,23 @@ Dành cho nhóm kế toán dùng Windows (FSx for Windows) hoặc nhà khoa họ
 
 **Câu 1: Loại lưu trữ nào cho phép hàng trăm máy chủ Linux cùng truy cập đồng thời?**
 A. Amazon EBS
-B. Amazon EFS
-C. Instance Store
+B. Instance Store
+C. Amazon EFS
 D. S3 Glacier
 
 **Câu 2: (Cập nhật 2026) Lợi ích của EFS Archive là gì?**
-A. Tăng tốc độ CPU.
-B. Lưu trữ file cực rẻ nhưng vẫn truy cập được nhanh chóng (vài giây).
-C. Chỉ dùng được cho Windows.
-D. Miễn phí hoàn toàn.
+A. Chỉ dùng được cho Windows.
+B. Tăng tốc độ CPU.
+C. Miễn phí hoàn toàn.
+D. Lưu trữ file cực rẻ nhưng vẫn truy cập được nhanh chóng (vài giây).
 
 **Câu 3: Làm thế nào để 'di chuyển' một ổ EBS từ Tokyo sang Mỹ?**
-A. Kéo thả trên giao diện.
-B. Copy Snapshot sang Region Mỹ rồi tạo Volume mới.
-C. Không thể làm được.
-D. Dùng dây cáp nối.
+A. Không thể làm được.
+B. Dùng dây cáp nối.
+C. Copy Snapshot sang Region Mỹ rồi tạo Volume mới.
+D. Kéo thả trên giao diện.
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-C, 2-D, 3-C.
 
 ---
 

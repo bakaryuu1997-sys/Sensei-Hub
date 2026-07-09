@@ -101,34 +101,31 @@ Công nghệ thay đổi cách hàng đi:
 ## 📝 6. QUICK QUIZ: 実踐・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khi bạn muốn nói "Chúng ta cần rút ngắn thời gian từ lúc đặt hàng đến lúc giao hàng", thuật ngữ J1+ là gì?
-- A. もっと早く運んで。
-- B. 「リードタイム」の短縮により, 在庫の回転率を向上させる必要があります。
-- C. 明日届けてください。
+Khi bạn muốn nói "Chúng ta cần rút ngắn thời gian từ lúc đặt hàng đến lúc giao hàng", thuật ngữ J1+ là gì?- A. もっと早く運んで。
+- B. 明日届けてください。
+- C. 「リードタイム」の短縮により, 在庫の回転率を向上させる必要があります。
 - D. 頑張って走ってください。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「リードタイム」 (Lead Time)** và **「回転率」 [Hồi Chuyển Suất]** (Tỷ lệ vòng quay) là bộ đôi thuật ngữ quản trị kinh doanh chuẩn mực.
+> - **正解：C**. **「リードタイム」 (Lead Time)** và **「回転率」 [Hồi Chuyển Suất]** (Tỷ lệ vòng quay) là bộ đôi thuật ngữ quản trị kinh doanh chuẩn mực.
 
 **第2問 (Câu 2):**
-Ý nghĩa của "Cold Chain" (コールドチェーン) trong logistics quốc tế là gì?
-- A. Việc vận chuyển hàng hóa vào mùa đông.
-- B. Chuỗi cung ứng duy trì nhiệt độ thấp cho các sản phẩm nhạy cảm như thực phẩm, dược phẩm từ sản xuất đến tiêu dùng.
-- C. Việc giao hàng bằng tàu băng.
-- D. Một loại dây chuyền bằng thép lạnh.
+Ý nghĩa của "Cold Chain" (コールドチェーン) trong logistics quốc tế là gì?- A. Việc giao hàng bằng tàu băng.
+- B. Một loại dây chuyền bằng thép lạnh.
+- C. Chuỗi cung ứng duy trì nhiệt độ thấp cho các sản phẩm nhạy cảm như thực phẩm, dược phẩm từ sản xuất đến tiêu dùng.
+- D. Việc vận chuyển hàng hóa vào mùa đông.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Một mảng logistics cao cấp và lợi nhuận cao.
+> - **正解：C**. Một mảng logistics cao cấp và lợi nhuận cao.
 
 **第3問 (Câu 5):**
-Cụm từ "Bullwhip Effect" (hiệu ứng chiếc roi da) trong SCM ám chỉ điều gì?
-- A. Việc sếp mắng nhân viên logistics.
-- B. Hiện tượng sai lệch thông tin về nhu cầu ngày càng phóng đại khi đi ngược từ khách hàng lên nhà sản xuất đầu chuỗi.
-- C. Việc xe tải chạy quá nhanh.
-- D. Một loại hình kỷ luật lao động.
+Cụm từ "Bullwhip Effect" (hiệu ứng chiếc roi da) trong SCM ám chỉ điều gì?- A. Việc xe tải chạy quá nhanh.
+- B. Một loại hình kỷ luật lao động.
+- C. Việc sếp mắng nhân viên logistics.
+- D. Hiện tượng sai lệch thông tin về nhu cầu ngày càng phóng đại khi đi ngược từ khách hàng lên nhà sản xuất đầu chuỗi.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Lý do tại sao "Thông tin" quan trọng hơn cả "Hàng hóa".
+> - **正解：D**. Lý do tại sao "Thông tin" quan trọng hơn cả "Hàng hóa".
 
 ---
 

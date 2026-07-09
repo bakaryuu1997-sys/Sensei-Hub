@@ -66,23 +66,23 @@ Hãy tưởng tượng về hệ thống giao thông tại **Tokyo**.
 
 **Câu 1: Dịch vụ nào cung cấp đường truyền riêng biệt, không đi qua Internet?**
 A. VPN
-B. Direct Connect
-C. VPC Peering
+B. VPC Peering
+C. Direct Connect
 D. Route 53
 
 **Câu 2: (Cập nhật 2026) Băng thông tối đa mà Direct Connect hỗ trợ là bao nhiêu?**
-A. 1Gbps
-B. 10Gbps
-C. 100Gbps
-D. 400Gbps
+A. 400Gbps
+B. 1Gbps
+C. 10Gbps
+D. 100Gbps
 
 **Câu 3: Loại VPC Endpoint nào là Miễn Phí cho S3?**
-A. Interface Endpoint
-B. Gateway Endpoint
-C. PrivateLink
-D. DX Endpoint
+A. DX Endpoint
+B. PrivateLink
+C. Gateway Endpoint
+D. Interface Endpoint
 
-**Đáp án:** 1-B, 2-D, 3-B.
+**Đáp án:** 1-C, 2-C, 3-C.
 
 ---
 

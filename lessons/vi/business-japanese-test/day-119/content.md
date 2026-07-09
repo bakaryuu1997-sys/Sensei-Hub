@@ -93,34 +93,31 @@ Dành cho 10 câu hỏi cuối cùng của đề thi.
 ## 📝 6. QUICK QUIZ: 最終関門・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-「本事業の存続 [Tồn Tục] については、**俎上 [Trở Thượng] に載せる [Tái]** 段階にあります。」 Ý nghĩa là gì?
-- A. Dự án chắc chắn sẽ tiếp tục.
-- B. Dự án chắc chắn sẽ bị hủy.
-- C. Dự án đang được đưa lên bàn nghị sự để xem xét, thảo luận một cách nghiêm túc (có thể tiếp tục hoặc hủy).
+「本事業の存続 [Tồn Tục] については、**俎上 [Trở Thượng] に載せる [Tái]** 段階にあります。」 Ý nghĩa là gì?- A. Dự án đang được đưa lên bàn nghị sự để xem xét, thảo luận một cách nghiêm túc (có thể tiếp tục hoặc hủy).
+- B. Dự án chắc chắn sẽ tiếp tục.
+- C. Dự án chắc chắn sẽ bị hủy.
 - D. Đang chuẩn bị đi ăn.
 
 > **解釈 (Giải thích):**
 > - **正解：C**. **「俎上に載せる」** (đưa lên thớt/bàn nghị sự) là một quán dụng ngữ Elite chỉ việc bắt đầu xem xét một vấn đề quan trọng.
 
 **第2問 (Câu 2):**
-Trong tình huống đàm phán, đối phương nói: 「条件面 [Điều Kiện Diện] での譲歩 [Nhượng Bộ] は、**これ以上は致しかねます**。」 Bạn nên làm gì để thể hiện J1+?
-- A. Tiếp tục năn nỉ họ giảm giá.
-- B. Hiểu rằng đây là "Lằn ranh đỏ" của họ, chuyển hướng thảo luận sang các giá trị gia tăng khác (dịch vụ, hỗ trợ, hậu mãi).
-- C. Bỏ về ngay lập tức.
-- D. Mắng họ không có thiện chí.
+Trong tình huống đàm phán, đối phương nói: 「条件面 [Điều Kiện Diện] での譲歩 [Nhượng Bộ] は、**これ以上は致しかねます**。」 Bạn nên làm gì để thể hiện J1+?- A. Mắng họ không có thiện chí.
+- B. Bỏ về ngay lập tức.
+- C. Hiểu rằng đây là "Lằn ranh đỏ" của họ, chuyển hướng thảo luận sang các giá trị gia tăng khác (dịch vụ, hỗ trợ, hậu mãi).
+- D. Tiếp tục năn nỉ họ giảm giá.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Kỹ thuật **「論点のずらし」** (thay đổi trọng tâm thảo luận) là đỉnh cao của đàm phán J1+.
+> - **正解：C**. Kỹ thuật **「論点のずらし」** (thay đổi trọng tâm thảo luận) là đỉnh cao của đàm phán J1+.
 
 **第3問 (Câu 3):**
-Câu nào sau đây bộc lộ sự thiếu chuyên nghiệp (Non-J1+) nhất khi xử lý sai sót?
-- A. 「私の不徳 [Bất Đức] の致すところです。」
-- B. 「担当者が休みなので分かりません。」
-- C. 「至急 [Chí Cấp] 、再発 [Tái Phát] 防止 [Phòng Chỉ] 策を講じます [Giảng] 。」
-- D. 「多大なるご迷惑をおかけしたことを深くお詫び申し上げます。」
+Câu nào sau đây bộc lộ sự thiếu chuyên nghiệp (Non-J1+) nhất khi xử lý sai sót?- A. 「多大なるご迷惑をおかけしたことを深くお詫び申し上げます。」
+- B. 「至急 [Chí Cấp] 、再発 [Tái Phát] 防止 [Phòng Chỉ] 策を講じます [Giảng] 。」
+- C. 「担当者が休みなので分かりません。」
+- D. 「私の不徳 [Bất Đức] の致すところです。」
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Đổ lỗi cho sự vắng mặt của đồng nghiệp là hành vi bị cấm kỵ hàng đầu trong kinh doanh chuyên nghiệp Nhật Bản.
+> - **正解：C**. Đổ lỗi cho sự vắng mặt của đồng nghiệp là hành vi bị cấm kỵ hàng đầu trong kinh doanh chuyên nghiệp Nhật Bản.
 
 ---
 

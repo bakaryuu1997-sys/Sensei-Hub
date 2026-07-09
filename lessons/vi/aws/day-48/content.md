@@ -69,23 +69,23 @@ Năm 2026, tôi dùng **Amazon Q** để audit liên tục hàng ngày, đảm b
 
 **Câu 1: Dịch vụ nào chụp ảnh và lưu lại lịch sử thay đổi cấu hình của mọi tài nguyên?**
 A. S3
-B. AWS Config
-C. Lambda
+B. Lambda
+C. AWS Config
 D. Route 53
 
 **Câu 2: (Cập nhật 2026) Amazon Macie có tính năng mới gì giúp ích cho các dự án AI?**
 A. Tự động viết code AI
 B. Quét và bảo vệ dữ liệu huấn luyện (Training Data) khỏi thông tin nhạy cảm
-C. Làm GPU chạy nhanh hơn
-D. Dự báo giá Bitcoin
+C. Dự báo giá Bitcoin
+D. Làm GPU chạy nhanh hơn
 
 **Câu 3: Audit Manager giúp tiết kiệm thời gian làm việc gì nhất?**
-A. Code web
-B. Thu thập bằng chứng (Evidence) phục vụ các kỳ kiểm toán pháp lý
-C. Backup dữ liệu
-D. Gửi email marketing
+A. Thu thập bằng chứng (Evidence) phục vụ các kỳ kiểm toán pháp lý
+B. Code web
+C. Gửi email marketing
+D. Backup dữ liệu
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-C, 2-B, 3-A.
 
 ---
 

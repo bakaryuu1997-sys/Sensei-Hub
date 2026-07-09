@@ -71,24 +71,24 @@ Tại sao bạn cần nhiều thẻ từ các ngân hàng khác nhau?
 # 📝 QUICK QUIZ
 
 **Câu 1: Dịch vụ nào của AWS giúp xây dựng mạng lưới toàn cầu kết nối nhiều vùng và nhiều Cloud khác nhau?**
-A. Amazon S3.
-B. AWS Cloud WAN.
+A. AWS Cloud WAN.
+B. Amazon S3.
 C. Amazon Route 53.
 D. AWS Lambda.
 
 **Câu 2: Tại sao doanh nghiệp lại chọn chiến lược Multi-Cloud?**
-A. Để làm cho hệ thống phức tạp hơn.
-B. Để tránh bị lệ thuộc vào một nhà cung cấp (Vendor Lock-in) và tận dụng thế mạnh của từng Cloud.
-C. Vì AWS quá rẻ nên họ muốn tiêu thêm tiền.
-D. Vì họ thích dùng nhiều mật khẩu.
+A. Vì họ thích dùng nhiều mật khẩu.
+B. Để làm cho hệ thống phức tạp hơn.
+C. Để tránh bị lệ thuộc vào một nhà cung cấp (Vendor Lock-in) và tận dụng thế mạnh của từng Cloud.
+D. Vì AWS quá rẻ nên họ muốn tiêu thêm tiền.
 
 **Câu 3: (Cập nhật 2026) 'Universal Control Plane' giúp ích gì?**
-A. Giúp máy bay bay thẳng hơn.
-B. Giúp quản lý tài nguyên trên nhiều nền tảng Cloud khác nhau từ một giao diện duy nhất.
-C. Giúp AI viết code nhanh hơn.
-D. Giúp nén dữ liệu.
+A. Giúp nén dữ liệu.
+B. Giúp máy bay bay thẳng hơn.
+C. Giúp quản lý tài nguyên trên nhiều nền tảng Cloud khác nhau từ một giao diện duy nhất.
+D. Giúp AI viết code nhanh hơn.
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-A, 2-C, 3-C.
 
 ---
 

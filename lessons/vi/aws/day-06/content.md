@@ -100,30 +100,30 @@ C. Edge Instance
 D. Reserved Instance
 
 **Câu 2: "Stateful" trong Security Group nghĩa là gì?**
-A. Nó ghi lại mọi hành động của người dùng.
-B. Nếu bạn cho phép traffic vào, nó tự động cho phép traffic đó đi ra.
-C. Nó chỉ hoạt động tại một bang (state) nhất định của Mỹ.
-D. Nó không bao giờ thay đổi cấu hình.
+A. Nếu bạn cho phép traffic vào, nó tự động cho phép traffic đó đi ra.
+B. Nó không bao giờ thay đổi cấu hình.
+C. Nó ghi lại mọi hành động của người dùng.
+D. Nó chỉ hoạt động tại một bang (state) nhất định của Mỹ.
 
 **Câu 3: Dịch vụ nào của năm 2026 giúp kết nối các Microservices giữa nhiều VPC một cách đơn giản nhất?**
-A. VPC Peering
-B. Transit Gateway
+A. Direct Connect
+B. VPC Peering
 C. VPC Lattice
-D. Direct Connect
+D. Transit Gateway
 
 **Câu 4: Bạn cần cấp quyền cho máy chủ ở Private Subnet tải bản cập nhật từ Internet nhưng không muốn ai từ ngoài truy cập vào máy đó. Bạn dùng gì?**
-A. Internet Gateway
-B. NAT Gateway
-C. Virtual Private Gateway
-D. Customer Gateway
+A. NAT Gateway
+B. Internet Gateway
+C. Customer Gateway
+D. Virtual Private Gateway
 
 **Câu 5: Dải địa chỉ IP `10.0.0.0/16` cung cấp tối đa bao nhiêu địa chỉ?**
 A. 256
-B. 65,536
-C. 1,024
-D. Vô hạn
+B. 1,024
+C. Vô hạn
+D. 65,536
 
-**Đáp án:** 1-B, 2-B, 3-C, 4-B, 5-B.
+**Đáp án:** 1-B, 2-A, 3-D, 4-A, 5-D.
 
 ---
 

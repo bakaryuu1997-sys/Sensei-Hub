@@ -90,34 +90,31 @@ Sau khi đưa ra dữ liệu, bạn phải có phần **「示唆」** (Implicat
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Biểu đồ doanh số đang tăng trưởng rất mạnh nhưng tốc độ tăng đang dần chậm lại. Thuật ngữ kinh doanh nào mô tả đúng nhất trạng thái J1+ này?
-- A. 右肩上がり。
-- B. 成長が止まった。
-- C. 伸び悩んでいる。
+Biểu đồ doanh số đang tăng trưởng rất mạnh nhưng tốc độ tăng đang dần chậm lại. Thuật ngữ kinh doanh nào mô tả đúng nhất trạng thái J1+ này?- A. 伸び悩んでいる。
+- B. 右肩上がり。
+- C. 成長が止まった。
 - D. 成長の鈍化が見られる。
 
 > **解釈 (Giải thích):**
-> - **正解：D**. **「鈍化」 [Độn Hóa]** là thuật ngữ chuyên sâu mô tả việc tốc độ tăng trưởng bị chậm lại, trang trọng và chính xác hơn hẳn các đáp án còn lại.
+> - **正解：C**. **「鈍化」 [Độn Hóa]** là thuật ngữ chuyên sâu mô tả việc tốc độ tăng trưởng bị chậm lại, trang trọng và chính xác hơn hẳn các đáp án còn lại.
 
 **第2問 (Câu 2):**
-Khi trình bày dữ liệu so sánh mà bạn muốn nhấn mạnh sự khác biệt rõ rệt giữa hai năm, cụm từ nào là "Elite" nhất?
-- A. 2023年は2022年と全然違います。
+Khi trình bày dữ liệu so sánh mà bạn muốn nhấn mạnh sự khác biệt rõ rệt giữa hai năm, cụm từ nào là "Elite" nhất?- A. どちらも同じようです。
 - B. 2022年と比較して, 2023年は顕著な差異が認められます。
-- C. どちらも同じようです。
-- D. 2023年の方がずっと多いです。
+- C. 2023年の方がずっと多いです。
+- D. 2023年は2022年と全然違います。
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Sự kết hợp của **「顕著な差異」 [Hiển Trứ - Sai Di]** và **「認められる」 [Nhận]** tạo nên văn phong báo cáo khoa chuẩn mực.
 
 **第3問 (Câu 3):**
-Cấu trúc báo cáo "結論 (Point) -> 理由 (Reason) -> 具体例 (Example) -> 結論 (Point)" được gọi là gì?
-- A. SDS法。
-- B. PREP法.
-- C. PDCAサイクル。
-- D. 5W1H。
+Cấu trúc báo cáo "結論 (Point) -> 理由 (Reason) -> 具体例 (Example) -> 結論 (Point)" được gọi là gì?- A. PDCAサイクル。
+- B. 5W1H。
+- C. SDS法。
+- D. PREP法.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Đây là kỹ năng đã học ở Day 34 và được vận dụng triệt để trong mọi loại báo cáo đối ngoại.
+> - **正解：D**. Đây là kỹ năng đã học ở Day 34 và được vận dụng triệt để trong mọi loại báo cáo đối ngoại.
 
 ---
 

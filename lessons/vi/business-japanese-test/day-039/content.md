@@ -89,34 +89,31 @@ Trong hợp đồng Nhật Bản, hai bên không được gọi tên trực ti�
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Trong văn bản hợp đồng, cụm từ nào sau đây diễn tả nghĩa vụ bắt buộc mạnh mẽ nhất?
-- A. 〇〇に努める。
+Trong văn bản hợp đồng, cụm từ nào sau đây diễn tả nghĩa vụ bắt buộc mạnh mẽ nhất?- A. 〇〇に努める。
 - B. 〇〇するように配慮する。
 - C. 〇〇するものとする。
 - D. 〇〇が望ましい。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Trong ngôn ngữ hợp đồng (Kiyaku), **「するものとする」** mang tính pháp lý tương đương với **「しなければならない」**. Các đáp án còn lại đều chỉ là "Nỗ lực nghĩa vụ" hoặc "Khuyến khích".
+> - **正解：B**. Trong ngôn ngữ hợp đồng (Kiyaku), **「するものとする」** mang tính pháp lý tương đương với **「しなければならない」**. Các đáp án còn lại đều chỉ là "Nỗ lực nghĩa vụ" hoặc "Khuyến khích".
 
 **第2問 (Câu 2):**
-Khi bạn muốn nói "Hãy làm hợp đồng thành 2 bản và gửi cho tôi", cách nói nào thể hiện trình độ J1?
-- A. 契約書を2枚作って送ってください。
-- B. 契約書を2部作成し, 送付いただけますでしょうか。
-- C. Hợp đồng 2 bản ok ?
-- D. 2部の契約書を用意して、郵送してください。
+Khi bạn muốn nói "Hãy làm hợp đồng thành 2 bản và gửi cho tôi", cách nói nào thể hiện trình độ J1?- A. 2部の契約書を用意して、郵送してください。
+- B. Hợp đồng 2 bản ok ?
+- C. 契約書を2部作成し, 送付いただけますでしょうか。
+- D. 契約書を2枚作って送ってください。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「2部」 [Bộ]** là đơn vị đếm văn bản/ấn phẩm chuyên nghiệp. **「作成」 [Tác Thành]** và **「送付」 [Tống Phụ]** là bộ từ vựng song hành kinh điển.
+> - **正解：C**. **「2部」 [Bộ]** là đơn vị đếm văn bản/ấn phẩm chuyên nghiệp. **「作成」 [Tác Thành]** và **「送付」 [Tống Phụ]** là bộ từ vựng song hành kinh điển.
 
 **第3問 (Câu 3):**
-Chữ "Otsu" (乙) trong một bản hợp đồng mua bán linh kiện thường ám chỉ ai?
-- A. Người bán.
-- B. Người mua (thường là người thanh toán).
-- C. Người vận chuyển.
-- D. Tòa án.
+Chữ "Otsu" (乙) trong một bản hợp đồng mua bán linh kiện thường ám chỉ ai?- A. Người vận chuyển.
+- B. Tòa án.
+- C. Người bán.
+- D. Người mua (thường là người thanh toán).
 
 > **解釈 (Giải thích):**
-> - **正解：A**. Thông thường người mua là Giáp (甲), người bán là Ất (乙). Tuy nhiên cần kiểm tra định nghĩa ở phần đầu hợp đồng.
+> - **正解：D**. Thông thường người mua là Giáp (甲), người bán là Ất (乙). Tuy nhiên cần kiểm tra định nghĩa ở phần đầu hợp đồng.
 
 ---
 

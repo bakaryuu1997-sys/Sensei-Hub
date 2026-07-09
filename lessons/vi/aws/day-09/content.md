@@ -83,30 +83,30 @@ C. AWS Trusted Advisor
 D. AWS Config
 
 **Câu 2: Bạn muốn biết địa chỉ IP nào đã thực hiện lệnh xóa Database vào đêm qua. Bạn dùng dịch vụ nào?**
-A. Amazon CloudWatch
+A. Amazon Inspector
 B. AWS CloudTrail
-C. Amazon Inspector
+C. Amazon CloudWatch
 D. AWS Shield
 
 **Câu 3: Công cụ AI nào của năm 2026 giúp bạn 'trò chuyện' với các chỉ số giám sát để tìm ra nguyên nhân gây lỗi website?**
-A. Amazon Alexa
-B. Amazon Q (in CloudWatch)
-C. AWS Chatbot
+A. AWS Chatbot
+B. Amazon Alexa
+C. Amazon Q (in CloudWatch)
 D. Amazon Rekognition
 
 **Câu 4: AWS Trusted Advisor cung cấp lời khuyên trong những lĩnh vực nào? (Chọn 2)**
 A. Thiết kế giao diện Website
 B. Tối ưu hóa chi phí (Cost Optimization)
-C. Viết code Java/Python
-D. Bảo mật (Security)
+C. Bảo mật (Security)
+D. Viết code Java/Python
 
 **Câu 5: Dịch vụ nào giúp bạn theo dõi và lưu lại lịch sử thay đổi cấu hình của các tài nguyên AWS để có thể quay lại bản cũ khi cần?**
 A. AWS CloudTrail
-B. Amazon CloudWatch
-C. AWS Config
-D. AWS Artifact
+B. AWS Config
+C. AWS Artifact
+D. Amazon CloudWatch
 
-**Đáp án:** 1-B, 2-B, 3-B, 4-B & D, 5-C.
+**Đáp án:** 1-B, 2-B, 3-C, 4-B, 5-D.
 
 ---
 

@@ -115,23 +115,23 @@ B là một kiến trúc sư thành danh nhưng đột ngột mất tất cả t
 
 1. **Khái niệm "Anti-fragile" (Chống mong manh) nghĩa là gì?**
     - A. Không bao giờ bị hỏng.
-    - B. Là trạng thái mà hệ thống thực sự trở nên mạnh mẽ, linh hoạt và tốt hơn sau khi trải qua các biến động, áp lực và thử thách.
-    - C. Rất dễ vỡ nhưng được bảo vệ kỹ.
+    - B. Rất dễ vỡ nhưng được bảo vệ kỹ.
+    - C. Là trạng thái mà hệ thống thực sự trở nên mạnh mẽ, linh hoạt và tốt hơn sau khi trải qua các biến động, áp lực và thử thách.
     - D. Luôn luôn ổn định 100%.
 
 2. **Single Point of Failure trong cuộc đời là gì?**
-    - A. Một lỗi nhỏ trong code.
-    - B. Việc đặt toàn bộ ý nghĩa cuộc sống, niềm vui và sự tự tôn vào một nguồn duy nhất, khiến bạn dễ dàng sụp đổ hoàn toàn khi nguồn đó gặp sự cố.
-    - C. Không có ai giúp đỡ.
-    - D. Thất bại một lần.
+    - A. Không có ai giúp đỡ.
+    - B. Một lỗi nhỏ trong code.
+    - C. Thất bại một lần.
+    - D. Việc đặt toàn bộ ý nghĩa cuộc sống, niềm vui và sự tự tôn vào một nguồn duy nhất, khiến bạn dễ dàng sụp đổ hoàn toàn khi nguồn đó gặp sự cố.
 
 3. **Script khôi phục thảm họa (Disaster Recovery) hiệu quả nhất bắt đầu bằng việc gì?**
-    - A. Cố gắng làm việc gấp đôi để bù lại.
-    - B. Chăm sóc "Phần cứng" (Sức khỏe, giấc ngủ), chấp nhận thực tại và kết nối với mạng lưới hỗ trợ để ổn định lại Kernel.
-    - C. Tìm người để đổ lỗi.
-    - D. Quên nó đi và không bao giờ nhắc lại.
+    - A. Tìm người để đổ lỗi.
+    - B. Cố gắng làm việc gấp đôi để bù lại.
+    - C. Quên nó đi và không bao giờ nhắc lại.
+    - D. Chăm sóc "Phần cứng" (Sức khỏe, giấc ngủ), chấp nhận thực tại và kết nối với mạng lưới hỗ trợ để ổn định lại Kernel.
 
-*(Đáp án đúng: 1-B, 2-B, 3-B)*
+*(Đáp án đúng: 1-C, 2-D, 3-D)*
 
 ---
 **Lời nhắn từ Architect**: Bạn đã hoàn thành lớp giáp cuối cùng! Quá tuyệt vời! Bạn đã sở hữu một hệ điều hành bất khả xâm phạm. Ngày mai, chúng ta bước sang chặng cuối cùng của Phase 3: **Productivity & Happiness** — Cách đạt hiệu suất cực cao mà vẫn luôn tràn đầy cảm hứng! ⚔️💎

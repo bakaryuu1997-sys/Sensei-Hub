@@ -66,22 +66,22 @@ Bảo vệ dữ liệu bằng KMS giống như cất vàng trong két sắt thô
 **Câu 1: Envelope Encryption giải quyết vấn đề gì?**
 A. Làm file nhỏ lại
 B. Tránh gửi dữ liệu lớn qua mạng để mã hóa, tăng tốc độ và bảo mật
-C. Đổi đuôi file
-D. Tăng dung lượng S3
+C. Tăng dung lượng S3
+D. Đổi đuôi file
 
 **Câu 2: (Cập nhật 2026) KMS hỗ trợ công nghệ gì để chống lại máy tính lượng tử?**
-A. Blockchain
-B. Post-Quantum Cryptography (PQC)
-C. Tăng độ dài mật khẩu lên 1 tỷ ký tự
+A. Post-Quantum Cryptography (PQC)
+B. Tăng độ dài mật khẩu lên 1 tỷ ký tự
+C. Blockchain
 D. Dùng mật khẩu bằng vân tay
 
 **Câu 3: Chìa khóa Master (CMK) có bao giờ rời khỏi thiết bị HSM của AWS không?**
-A. Có, khi backup
-B. Không bao giờ
-C. Chỉ khi Admin yêu cầu
-D. Chỉ khi mạng bị lỗi
+A. Không bao giờ
+B. Có, khi backup
+C. Chỉ khi mạng bị lỗi
+D. Chỉ khi Admin yêu cầu
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-B, 2-A, 3-A.
 
 ---
 

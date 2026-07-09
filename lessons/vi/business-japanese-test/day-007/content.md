@@ -99,34 +99,31 @@ Trong các buổi họp lớn hoặc hội nghị, bàn thường được xếp
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Trong một phòng họp có 3 người cùng phía. Vị trí nào là Kamiza 2 (hạng nhì)?
-- A. Người ngồi giữa.
-- B. Người ngồi xa cửa nhất.
+Trong một phòng họp có 3 người cùng phía. Vị trí nào là Kamiza 2 (hạng nhì)?- A. Không có quy định cho người thứ hai.
+- B. Người ngồi giữa.
 - C. Người ngồi gần cửa nhất.
-- D. Không có quy định cho người thứ hai.
+- D. Người ngồi xa cửa nhất.
 
 > **解釈 (Giải thích):**
-> - **正解：A**. Người ngồi xa cửa nhất là số 1. Người ngồi giữa là số 2. Người gần cửa nhất là số 3. Logic là sự bảo vệ giảm dần từ trong ra ngoài.
+> - **正解：D**. Người ngồi xa cửa nhất là số 1. Người ngồi giữa là số 2. Người gần cửa nhất là số 3. Logic là sự bảo vệ giảm dần từ trong ra ngoài.
 
 **第2問 (Câu 2):**
-Khi đi taxi cùng sếp và một đồng nghiệp cùng cấp, bạn là người chủ động gọi xe. Bạn nên ngồi ở đâu?
-- A. Ghế phía sau tài xế.
+Khi đi taxi cùng sếp và một đồng nghiệp cùng cấp, bạn là người chủ động gọi xe. Bạn nên ngồi ở đâu?- A. Ghế phía sau tài xế.
 - B. Ghế sau bên cạnh sếp.
 - C. Ghế phụ bên cạnh tài xế (助手席).
 - D. Đợi sếp bảo ngồi đâu thì ngồi đó.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Vì bạn là người gọi xe và chịu trách nhiệm điều phối hành trình (**道案内 [Đạo Án Nội]**), bạn phải ngồi ghế phụ để dễ dàng giao tiếp với tài xế.
+> - **正解：B**. Vì bạn là người gọi xe và chịu trách nhiệm điều phối hành trình (**道案内 [Đạo Án Nội]**), bạn phải ngồi ghế phụ để dễ dàng giao tiếp với tài xế.
 
 **第3問 (Câu 3):**
-Bạn dẫn khách vào phòng họp nhưng phòng đó có một dãy sofa dài và hai chiếc ghế đơn đối diện. Đâu là vị trí bạn nên mời khách ngồi?
-- A. Ghế đơn vì ngồi một mình thoải mái hơn.
-- B. Sofa dài, ở vị trí xa cửa nhất.
-- C. Ghế nào cũng được, miễn là khách thích.
+Bạn dẫn khách vào phòng họp nhưng phòng đó có một dãy sofa dài và hai chiếc ghế đơn đối diện. Đâu là vị trí bạn nên mời khách ngồi?- A. Sofa dài, ở vị trí xa cửa nhất.
+- B. Ghế nào cũng được, miễn là khách thích.
+- C. Ghế đơn vì ngồi một mình thoải mái hơn.
 - D. Sofa đơn gần cửa nhất.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Trong nội thất phòng khách Nhật, **Sofa dài (長椅子)** luôn được coi là trang trọng hơn ghế đơn. Vị trí xa cửa nhất trên sofa đó là Kamiza số 1.
+> - **正解：A**. Trong nội thất phòng khách Nhật, **Sofa dài (長椅子)** luôn được coi là trang trọng hơn ghế đơn. Vị trí xa cửa nhất trên sofa đó là Kamiza số 1.
 
 ---
 

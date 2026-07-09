@@ -100,34 +100,31 @@ Làm thế nào để vừa rõ ràng vừa lịch sự trong môi trường đa
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Tại một buổi tiệc Networking quốc tế, khi bạn muốn giới thiệu công ty mình một cách ấn tượng nhưng vẫn mang bản sắc Nhật, câu nào là "Elite Choice"?
-- A. 日本の小さな会社です。よろしくお願いします。
-- B. 弊社は日本の伝統技術を基盤としつつ, 現在では世界30カ国で革新的なソリューションを提供しております。
-- C. 私たちは世界一です。
-- D. 日本から来ました。寿司が好きですか？
+Tại một buổi tiệc Networking quốc tế, khi bạn muốn giới thiệu công ty mình một cách ấn tượng nhưng vẫn mang bản sắc Nhật, câu nào là "Elite Choice"?- A. 弊社は日本の伝統技術を基盤としつつ, 現在では世界30カ国で革新的なソリューションを提供しております。
+- B. 日本から来ました。寿司が好きですか？
+- C. 日本の小さな会社です。よろしくお願いします。
+- D. 私たちは世界一です。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「伝統技術を基盤」 [Truyền Thống - Cơ Bàn]** thể hiện nguồn cội vững chắc, còn **「革新的なソリューション」 [Cách Tân]** thể hiện khả năng thích nghi và giá trị toàn cầu.
+> - **正解：A**. **「伝統技術を基盤」 [Truyền Thống - Cơ Bàn]** thể hiện nguồn cội vững chắc, còn **「革新的なソリューション」 [Cách Tân]** thể hiện khả năng thích nghi và giá trị toàn cầu.
 
 **第2問 (Câu 2):**
-Làm thế nào để nói "Tôi không đồng ý" trong một buổi thảo luận đa quốc gia một cách lịch sự nhưng rõ ràng (J1+ level)?
-- A. ダメです。
-- B. その案は少し難しいかもしれません。
+Làm thế nào để nói "Tôi không đồng ý" trong một buổi thảo luận đa quốc gia một cách lịch sự nhưng rõ ràng (J1+ level)?- A. その案は少し難しいかもしれません。
+- B. ダメです。
 - C. 非常に興味深いご提案ですが, 弊社のグローバル戦略との「整合性」という観点からは, 賛成しかねる部分がございます。
 - D. 嫌です。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Từ **「整合性」 [Chỉnh Hợp Tính]** (Tính nhất quán/khớp nối) là một "vũ khí lý luận" tuyệt vời để từ chối mà không tạo ra xung đột cá nhân.
+> - **正解：A**. Từ **「整合性」 [Chỉnh Hợp Tính]** (Tính nhất quán/khớp nối) là một "vũ khí lý luận" tuyệt vời để từ chối mà không tạo ra xung đột cá nhân.
 
 **第3問 (Câu 3):**
-Khái niệm "Diversity & Inclusion" (D&I) trong tiếng Nhật kinh doanh hiện đại thường được dịch là gì?
-- A. 多様性と包摂 [Đa Dạng Tính - Bao Nhiếp].
+Khái niệm "Diversity & Inclusion" (D&I) trong tiếng Nhật kinh doanh hiện đại thường được dịch là gì?- A. 外国人の採用。
 - B. いろいろな人。
-- C. 外国人の採用。
-- D. 会社の引っ越し。
+- C. 会社の引っ越し。
+- D. 多様性と包摂 [Đa Dạng Tính - Bao Nhiếp].
 
 > **解釈 (Giải thích):**
-> - **正解：A**. Đây là thuật ngữ quản trị cốt lõi mà một J1+ phải nắm vững để làm việc với các nhân sự đa quốc gia.
+> - **正解：B**. Đây là thuật ngữ quản trị cốt lõi mà một J1+ phải nắm vững để làm việc với các nhân sự đa quốc gia.
 
 ---
 

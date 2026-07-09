@@ -95,34 +95,31 @@ Câu như: **「一般的には、～と解釈されるのが通例 [Thông Lệ
 ## 📝 6. QUICK QUIZ: 社外文書・交渉・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-「本件について、前向きに [Tiền Hướng] 検討させていただきますが、現時点では確約 [Xác Ước] はいたし兼ねます。」 Ý nghĩa thực sự?
-- A. Sẽ đồng ý sớm thôi.
-- B. Đang xem xét nhưng hiện giờ chưa hứa hẹn được gì cả (có thể sẽ từ chối).
-- C. Đã ký hợp đồng xong.
-- D. Đang chờ bạn gửi thêm tiền.
+「本件について、前向きに [Tiền Hướng] 検討させていただきますが、現時点では確約 [Xác Ước] はいたし兼ねます。」 Ý nghĩa thực sự?- A. Đã ký hợp đồng xong.
+- B. Đang chờ bạn gửi thêm tiền.
+- C. Sẽ đồng ý sớm thôi.
+- D. Đang xem xét nhưng hiện giờ chưa hứa hẹn được gì cả (có thể sẽ từ chối).
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Cấu trúc **「いたし兼ねます」** là chốt chặn cuối cùng của sự phủ định lịch sự.
+> - **正解：D**. Cấu trúc **「いたし兼ねます」** là chốt chặn cuối cùng của sự phủ định lịch sự.
 
 **第2問 (Câu 2):**
-Đối tác viết: 「先般 [Tiên Bàn] の不手際 [Bất Thủ Tế] について、貴社には多大なるご不便 [Bất Tiện] をおかけしました。つきましては、お詫びの印 [Ấn] として、次回の保守料 [Bảo Thủ Liệu] を免除 [Miễn Trừ] させていただきます。」 Đây là loại văn bản gì?
-- A. Yêu cầu thanh toán.
-- B. Thông báo xin lỗi kèm theo bồi thường (chiết khấu dịch vụ).
+Đối tác viết: 「先般 [Tiên Bàn] の不手際 [Bất Thủ Tế] について、貴社には多大なるご不便 [Bất Tiện] をおかけしました。つきましては、お詫びの印 [Ấn] として、次回の保守料 [Bảo Thủ Liệu] を免除 [Miễn Trừ] させていただきます。」 Đây là loại văn bản gì?- A. Thông báo xin lỗi kèm theo bồi thường (chiết khấu dịch vụ).
+- B. Đơn xin nghỉ việc.
 - C. Thư quảng cáo sản phẩm mới.
-- D. Đơn xin nghỉ việc.
+- D. Yêu cầu thanh toán.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「お詫びの印」** + **「免除」** là công thức chuẩn cho việc xử lý sự cố khách hàng cấp độ J1.
+> - **正解：A**. **「お詫びの印」** + **「免除」** là công thức chuẩn cho việc xử lý sự cố khách hàng cấp độ J1.
 
 **第3問 (Câu 3):**
-Trong văn bản đàm phán, từ nào sau đây mang tính "Tối hậu thư" (Ultimatum) cao nhất?
-- A. 検討させていただきます。
+Trong văn bản đàm phán, từ nào sau đây mang tính "Tối hậu thư" (Ultimatum) cao nhất?- A. ～を最終回答 [Tối Chung Hồi Đáp] とさせていただきます。
 - B. ～をお願いしたく存じます。
-- C. ～を最終回答 [Tối Chung Hồi Đáp] とさせていただきます。
-- D. ～の余地 [Dư Địa] がございます。
+- C. ～の余地 [Dư Địa] がございます。
+- D. 検討させていただきます。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. **「最終回答」** nghĩa là đây là lời cuối cùng, không còn gì để nói thêm nữa.
+> - **正解：B**. **「最終回答」** nghĩa là đây là lời cuối cùng, không còn gì để nói thêm nữa.
 
 ---
 

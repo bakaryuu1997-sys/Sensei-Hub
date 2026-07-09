@@ -102,34 +102,31 @@ Dùng dữ liệu một cách thông minh và tử tế:
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Tại sao "Right to be forgotten" (Quyền được quên) lại là một thách thức kỹ thuật lớn trong J1+?
-- A. Vì nhân viên hay quên.
-- B. Vì nó yêu cầu công ty phải có khả năng xóa bỏ hoàn toàn dữ liệu của một cá nhân khỏi mọi hệ thống, bản sao lưu và cả các đối tác bên thứ ba đã chia sẻ dữ liệu đó.
-- C. Vì dữ liệu được viết bằng bút mực không xóa được.
-- D. Vì máy tính không có nút xóa.
+Tại sao "Right to be forgotten" (Quyền được quên) lại là một thách thức kỹ thuật lớn trong J1+?- A. Vì dữ liệu được viết bằng bút mực không xóa được.
+- B. Vì nhân viên hay quên.
+- C. Vì máy tính không có nút xóa.
+- D. Vì nó yêu cầu công ty phải có khả năng xóa bỏ hoàn toàn dữ liệu của một cá nhân khỏi mọi hệ thống, bản sao lưu và cả các đối tác bên thứ ba đã chia sẻ dữ liệu đó.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Một yêu cầu cực kỳ khắt khe của GDPR.
+> - **正解：D**. Một yêu cầu cực kỳ khắt khe của GDPR.
 
 **第2問 (Câu 2):**
-"Data Minimization" (Tối thiểu hóa dữ liệu) trong J1+ nhằm mục đích gì?
-- A. Tiết kiệm dung lượng ổ cứng.
-- B. Giảm thiểu rủi ro và trách nhiệm pháp lý. Nếu bạn không lấy dữ liệu đó, bạn sẽ không bao giờ làm mất nó.
-- C. Để làm cho bảng báo cáo trông gọn gàng hơn.
-- D. Vì khách hàng không thích điền thông tin dài.
+"Data Minimization" (Tối thiểu hóa dữ liệu) trong J1+ nhằm mục đích gì?- A. Tiết kiệm dung lượng ổ cứng.
+- B. Để làm cho bảng báo cáo trông gọn gàng hơn.
+- C. Vì khách hàng không thích điền thông tin dài.
+- D. Giảm thiểu rủi ro và trách nhiệm pháp lý. Nếu bạn không lấy dữ liệu đó, bạn sẽ không bao giờ làm mất nó.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Tư duy quản trị rủi ro chủ động: "Less data, less risk".
+> - **正解：D**. Tư duy quản trị rủi ro chủ động: "Less data, less risk".
 
 **第3問 (Câu 16):**
-Thuật ngữ "Transparency" (Tính minh bạch) trong xử lý dữ liệu J1+ yêu cầu điều gì?
-- A. Việc dùng màn hình máy tính trong suốt.
-- B. Việc giải thích một cách công khai, rõ ràng và dễ tiếp cận về: Loại dữ liệu thu thập, mục đích sử dụng, thời gian lưu trữ và các bên liên quan.
-- C. Việc cho khách hàng vào văn phòng xem máy chủ.
-- D. Việc công khai mật khẩu của công ty.
+Thuật ngữ "Transparency" (Tính minh bạch) trong xử lý dữ liệu J1+ yêu cầu điều gì?- A. Việc cho khách hàng vào văn phòng xem máy chủ.
+- B. Việc công khai mật khẩu của công ty.
+- C. Việc giải thích một cách công khai, rõ ràng và dễ tiếp cận về: Loại dữ liệu thu thập, mục đích sử dụng, thời gian lưu trữ và các bên liên quan.
+- D. Việc dùng màn hình máy tính trong suốt.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Nền móng của sự tin tưởng kỹ thuật số.
+> - **正解：C**. Nền móng của sự tin tưởng kỹ thuật số.
 
 ---
 

@@ -102,34 +102,31 @@ Nhất quán là sức mạnh:
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Cụm từ nào thể hiện tư duy J1+ về mục tiêu của một chiến dịch Branding nhất?
-- A. 名前を覚えてもらう。
-- B. 独自の「ナラティブ」を通じて, お客様の心に深い「共鳴」を呼び起こし, 選ばれ続ける強固な「絆」を構築します。
-- C. たくさんチラシを配る。
+Cụm từ nào thể hiện tư duy J1+ về mục tiêu của một chiến dịch Branding nhất?- A. たくさんチラシを配る。
+- B. 名前を覚えてもらう。
+- C. 独自の「ナラティブ」を通じて, お客様の心に深い「共鳴」を呼び起こし, 選ばれ続ける強固な「絆」を構築します。
 - D. テレビCMを流す。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「ナラティブ」**, **「共鳴」**, **「強固な絆」** là "tam tài" trong bộ từ vựng Branding của Elite.
+> - **正解：C**. **「ナラティブ」**, **「共鳴」**, **「強固な絆」** là "tam tài" trong bộ từ vựng Branding của Elite.
 
 **第2問 (Câu 2):**
-Thuật ngữ "Brand Identity" khác với "Brand Image" ở điểm nào trong trình độ J1+?
-- A. Không có gì khác nhau.
-- B. Identity là những gì công ty muốn khách hàng nghĩ về mình (Chủ động), còn Image là những gì khách hàng thực sự đang nghĩ (Bị động).
-- C. Identity là cái tên, Image là cái ảnh.
-- D. Image quan trọng hơn Identity.
+Thuật ngữ "Brand Identity" khác với "Brand Image" ở điểm nào trong trình độ J1+?- A. Identity là cái tên, Image là cái ảnh.
+- B. Image quan trọng hơn Identity.
+- C. Identity là những gì công ty muốn khách hàng nghĩ về mình (Chủ động), còn Image là những gì khách hàng thực sự đang nghĩ (Bị động).
+- D. Không có gì khác nhau.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Khoảng cách giữa hai cái này chính là bài toán của người làm J1+ Master.
+> - **正解：C**. Khoảng cách giữa hai cái này chính là bài toán của người làm J1+ Master.
 
 **第3問 (Câu 10):**
-Tại sao "Consistency" (Sự nhất quán) lại được coi là "Tính mạng" của thương hiệu J1+?
-- A. Để không bị lẫn với công ty khác.
-- B. Vì sự nhất quán tạo nên sự tin tưởng. Nếu lời nói và hành động bất nhất, hoặc thông điệp thay đổi xoành xoạch, niềm tin sẽ sụp đổ ngay lập tức.
-- C. Để dễ thiết kế quảng cáo.
-- D. Vì nhân viên không thích thay đổi.
+Tại sao "Consistency" (Sự nhất quán) lại được coi là "Tính mạng" của thương hiệu J1+?- A. Để không bị lẫn với công ty khác.
+- B. Để dễ thiết kế quảng cáo.
+- C. Vì nhân viên không thích thay đổi.
+- D. Vì sự nhất quán tạo nên sự tin tưởng. Nếu lời nói và hành động bất nhất, hoặc thông điệp thay đổi xoành xoạch, niềm tin sẽ sụp đổ ngay lập tức.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Tin tưởng là tài sản quý giá nhất trong kinh doanh Nhật Bản.
+> - **正解：D**. Tin tưởng là tài sản quý giá nhất trong kinh doanh Nhật Bản.
 
 ---
 

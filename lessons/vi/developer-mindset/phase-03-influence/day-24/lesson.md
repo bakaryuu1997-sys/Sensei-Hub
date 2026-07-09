@@ -114,24 +114,24 @@ K là một quản lý dự án giỏi nhưng cực kỳ nóng tính. Mỗi lầ
 # 🎯 7. QUICK QUIZ: Hệ Điều Hành Của Bạn Có Chịu Được "Áp Lực"?
 
 1. **Self-Awareness (Tự nhận thức) trong EQ có nghĩa là gì?**
-    - A. Biết mình thông minh đến đâu.
-    - B. Khả năng nhận diện chính xác cảm xúc đang diễn ra bên trong và hiểu được nguyên nhân cũng như tác động của chúng đối với hành vi của mình.
-    - C. Luôn nghĩ về bản thân.
-    - D. Biết người khác nghĩ gì về mình.
+    - A. Khả năng nhận diện chính xác cảm xúc đang diễn ra bên trong và hiểu được nguyên nhân cũng như tác động của chúng đối với hành vi của mình.
+    - B. Luôn nghĩ về bản thân.
+    - C. Biết người khác nghĩ gì về mình.
+    - D. Biết mình thông minh đến đâu.
 
 2. **Tại sao việc "Im lặng 5 giây" lại quan trọng trong EQ?**
-    - A. Vì bạn không biết nói gì.
-    - B. Để tạo ra một khoảng trống (Buffer) giúp ngăn chặn phản xạ bản năng từ hạch hạnh nhân và cho phép vỏ não tiền trán (Logic) đưa ra phản hồi sáng suốt nhất.
-    - C. Để làm đối phương sợ.
-    - D. Để tiết kiệm năng lượng.
+    - A. Để tiết kiệm năng lượng.
+    - B. Để làm đối phương sợ.
+    - C. Vì bạn không biết nói gì.
+    - D. Để tạo ra một khoảng trống (Buffer) giúp ngăn chặn phản xạ bản năng từ hạch hạnh nhân và cho phép vỏ não tiền trán (Logic) đưa ra phản hồi sáng suốt nhất.
 
 3. **Lợi ích lớn nhất của sự Thấu cảm (Empathy) trong lãnh đạo là gì?**
-    - A. Để bạn có thể lợi dụng họ.
-    - B. Để thấu hiểu "Metadata" cảm xúc của đối phương, từ đó điều chỉnh giao thức giao tiếp giúp xây dựng lòng trung thành và sự cộng tác hiệu quả.
-    - C. Để bạn trở nên yếu đuối giống họ.
-    - D. Để không phải làm việc.
+    - A. Để thấu hiểu "Metadata" cảm xúc của đối phương, từ đó điều chỉnh giao thức giao tiếp giúp xây dựng lòng trung thành và sự cộng tác hiệu quả.
+    - B. Để không phải làm việc.
+    - C. Để bạn có thể lợi dụng họ.
+    - D. Để bạn trở nên yếu đuối giống họ.
 
-*(Đáp án đúng: 1-B, 2-B, 3-B)*
+*(Đáp án đúng: 1-A, 2-D, 3-A)*
 
 ---
 **Lời nhắn từ Architect**: Bạn đã có một hệ điều hành cực kỳ ổn định! Ngày mai, chúng ta sẽ học kỹ thuật xây dựng lớp giáp cuối cùng: **Resilience** — Khả năng tự phục hồi (Self-healing) sau mọi thất bại và thảm họa cuộc đời! ⚔️💎

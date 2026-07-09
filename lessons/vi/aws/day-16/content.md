@@ -63,24 +63,24 @@ Hãy tưởng tượng một **Nhà hàng Sushi băng chuyền (Kaiten Sushi)**.
 # 📝 QUICK QUIZ
 
 **Câu 1: Điểm khác biệt lớn nhất mà Redis có nhưng Memcached không có là?**
-A. Chạy trên RAM.
+A. Tốc độ nhanh.
 B. Hỗ trợ Replication và Multi-AZ.
-C. Tốc độ nhanh.
-D. Cần cài đặt trên EC2.
+C. Cần cài đặt trên EC2.
+D. Chạy trên RAM.
 
 **Câu 2: (Cập nhật 2026) Dịch vụ Cache nào cho phép Scale từ 1GB lên 10TB tự động hoàn toàn?**
 A. ElastiCache for Memcached
 B. ElastiCache Serverless 2.0
-C. RDS Read Replica
-D. S3 Select
+C. S3 Select
+D. RDS Read Replica
 
 **Câu 3: Hiện tượng nhiều Key quan trọng cùng hết hạn một lúc gây áp lực cho DB gọi là?**
-A. Cache Hit
-B. Cache Churn
+A. Cache Churn
+B. Cache Hit
 C. Thundering Herd
 D. Lazy Loading
 
-**Đáp án:** 1-B, 2-B, 3-C.
+**Đáp án:** 1-B, 2-B, 3-A.
 
 ---
 

@@ -108,31 +108,28 @@ Kiểm soát trong bóng tối:
 ## 📝 6. QUICK QUIZ: 実踐・最終試練 (SCM & Outsourcing Test)
 
 **第1問 (Câu 1):**
-Tại sao mô hình "Just-in-Time" (JIT) lại được bổ sung thêm khái niệm "Just-in-Case" (JIC) trong kỷ nguyên J1 Mastery?
-- A. Vì JIT đã lỗi thời.
+Tại sao mô hình "Just-in-Time" (JIT) lại được bổ sung thêm khái niệm "Just-in-Case" (JIC) trong kỷ nguyên J1 Mastery?- A. Vì JIT đã lỗi thời.
 - B. Vì JIC cho phép duy trì một lượng tồn kho chiến lược để đối phó với những biến động không thể dự báo trước (Thiên tai, dịch bệnh, chiến tranh), nhằm bảo vệ sự liên tục của công ty.
-- C. Vì JIC giúp nhân viên rảnh rỗi hơn.
-- D. Vì kho hàng của công ty quá rộng.
+- C. Vì kho hàng của công ty quá rộng.
+- D. Vì JIC giúp nhân viên rảnh rỗi hơn.
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Balancing efficiency with insurance.
 
 **第2問 (Câu 2):**
-"Supply Chain Visibility" (Tầm nhìn chuỗi cung ứng) có nghĩa là gì?
-- A. Việc đeo kính khi kiểm tra hàng hóa.
-- B. Khả năng theo dõi và nắm bắt thông tin về dòng chảy của hàng hóa, linh kiện và thông tin từ nhà cung cấp của nhà cung cấp đến tận tay người tiêu dùng cuối cùng.
-- C. Việc vẽ bản đồ các nhà máy trên tường.
-- D. Việc công khai bí mật kinh doanh cho mọi người thấy.
+"Supply Chain Visibility" (Tầm nhìn chuỗi cung ứng) có nghĩa là gì?- A. Việc công khai bí mật kinh doanh cho mọi người thấy.
+- B. Việc vẽ bản đồ các nhà máy trên tường.
+- C. Khả năng theo dõi và nắm bắt thông tin về dòng chảy của hàng hóa, linh kiện và thông tin từ nhà cung cấp của nhà cung cấp đến tận tay người tiêu dùng cuối cùng.
+- D. Việc đeo kính khi kiểm tra hàng hóa.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Knowing your sub-tier suppliers is critical.
+> - **正解：C**. Knowing your sub-tier suppliers is critical.
 
 **第3問 (Câu 3):**
-Một nhà lãnh đạo J1 Mastery sẽ nói gì khi một đối tác gia công lớn bị phát hiện vi phạm quyền lao động tại nước sở tại?
-- A. 「うちは関係ない。彼らの問題だ。」
+Một nhà lãnh đạo J1 Mastery sẽ nói gì khi một đối tác gia công lớn bị phát hiện vi phạm quyền lao động tại nước sở tại?- A. 「うちは関係ない。彼らの問題だ。」
 - B. 「これは重大なガバナンスの欠如です。当社の『倫理基準』に照らし、直ちに調査を行い、改善が見られない場合は契約を打ち切る準備があります。当社の供給網（サプライチェーン）から不正を完全に排除します。」
-- C. 「安く作ってくれているのだから、目をつぶりましょう。」
-- D. 「証拠を隠してください。」
+- C. 「証拠を隠してください。」
+- D. 「安く作ってくれているのだから、目をつぶりましょう。」
 
 > **解釈 (Giải thích):**
 > - **正解：B**. ESG and Ethical sourcing are mandatory for Global Leaders.

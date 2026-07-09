@@ -66,24 +66,24 @@ Hãy tưởng tượng bạn đang quản lý một **Bệnh viện hiện đạ
 # 📝 QUICK QUIZ
 
 **Câu 1: Chỉ số nào CloudWatch KHÔNG đo được một cách mặc định trên EC2?**
-A. CPU Usage
-B. Network In
+A. Network In
+B. CPU Usage
 C. RAM Usage
 D. Disk Read
 
 **Câu 2: (Cập nhật 2026) Tính năng nào giúp AI tự động tìm lỗi trong logs từ câu hỏi ngôn ngữ tự nhiên?**
-A. CloudWatch Dashboards
+A. CloudTrail
 B. Amazon Q in CloudWatch Logs
-C. CloudTrail
+C. CloudWatch Dashboards
 D. AWS Config
 
 **Câu 3: Công cụ nào vẽ 'Service Map' để theo dõi dòng chảy request?**
-A. CloudWatch
-B. X-Ray
-C. S3
+A. S3
+B. CloudWatch
+C. X-Ray
 D. VPC Flow Logs
 
-**Đáp án:** 1-C, 2-B, 3-B.
+**Đáp án:** 1-A, 2-B, 3-C.
 
 ---
 

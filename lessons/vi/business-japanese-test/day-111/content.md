@@ -97,34 +97,31 @@ BJT Section 1 đôi khi đi kèm với hình ảnh hoặc mô tả cử chỉ.
 **第1問 (Câu 1):**
 Đối tác nước ngoài hỏi: 「このプロジェクト、いつまでに終わりますか？」
 Sếp Nhật trả lời: 「なるべく早く処置 [Xử Trí] いたします。」
-Bạn nên giải thích cho đối tác như thế nào để đạt J1+?
-- A. Sếp tôi bảo sẽ làm càng nhanh càng tốt.
-- B. Sếp tôi chưa quyết định ngày cụ thể, tôi sẽ kiểm tra lại lịch trình chi tiết và báo cho anh sau.
-- C. Sếp tôi đang lảng tránh đấy.
-- D. Đừng lo, người Nhật làm việc nhanh lắm.
+Bạn nên giải thích cho đối tác như thế nào để đạt J1+?- A. Sếp tôi bảo sẽ làm càng nhanh càng tốt.
+- B. Sếp tôi đang lảng tránh đấy.
+- C. Đừng lo, người Nhật làm việc nhanh lắm.
+- D. Sếp tôi chưa quyết định ngày cụ thể, tôi sẽ kiểm tra lại lịch trình chi tiết và báo cho anh sau.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「なるべく早く」** của người Nhật là một sự hứa hẹn mờ nhạt. Để đạt hiệu quả kinh doanh toàn cầu, bạn phải chuyển nó thành một hành động có tính cam kết hơn (kiểm tra lịch trình).
+> - **正解：D**. **「なるべく早く」** của người Nhật là một sự hứa hẹn mờ nhạt. Để đạt hiệu quả kinh doanh toàn cầu, bạn phải chuyển nó thành một hành động có tính cam kết hơn (kiểm tra lịch trình).
 
 **第2問 (Câu 2):**
-「建前 [Kiến Tiền]」 và 「本音 [Bổn Âm]」 là khái niệm quan trọng. Trong đàm phán quốc tế, việc chỉ dùng 「建前」 sẽ dẫn đến hậu quả gì?
-- A. Đối tác sẽ rất nể phục sự lịch sự của bạn.
-- B. Sẽ mất rất nhiều thời gian và gây ra sự thiếu tin tưởng về tính minh bạch của thông tin.
-- C. Mọi chuyện sẽ trôi chảy.
+「建前 [Kiến Tiền]」 và 「本音 [Bổn Âm]」 là khái niệm quan trọng. Trong đàm phán quốc tế, việc chỉ dùng 「建前」 sẽ dẫn đến hậu quả gì?- A. Mọi chuyện sẽ trôi chảy.
+- B. Đối tác sẽ rất nể phục sự lịch sự của bạn.
+- C. Sẽ mất rất nhiều thời gian và gây ra sự thiếu tin tưởng về tính minh bạch của thông tin.
 - D. Không có ảnh hưởng gì.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Trong môi trường toàn cầu, việc quá chú trọng Tatemae khiến đối tác thấy bạn "không thật lòng" (**不透明 [Bất Thấu Minh]**).
+> - **正解：C**. Trong môi trường toàn cầu, việc quá chú trọng Tatemae khiến đối tác thấy bạn "không thật lòng" (**不透明 [Bất Thấu Minh]**).
 
 **第3問 (Câu 3):**
-Từ Katakana nào sau đây thường được dùng để chỉ việc "lên kế hoạch chi tiết" trong dự án đa quốc gia?
-- A. ブラッシュアップ (Brush up)
-- B. スキーム (Scheme)
-- C. ペンディング (Pending)
+Từ Katakana nào sau đây thường được dùng để chỉ việc "lên kế hoạch chi tiết" trong dự án đa quốc gia?- A. ペンディング (Pending)
+- B. ブラッシュアップ (Brush up)
+- C. スキーム (Scheme)
 - D. リスケ (Reschedule)
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「スキーム」** (Scheme) trong tiếng Nhật Business chỉ cấu trúc, kế hoạch tổng thể của một dự án.
+> - **正解：C**. **「スキーム」** (Scheme) trong tiếng Nhật Business chỉ cấu trúc, kế hoạch tổng thể của một dự án.
 
 ---
 

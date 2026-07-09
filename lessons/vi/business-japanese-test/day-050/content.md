@@ -105,34 +105,31 @@ Giai đoạn hậu sáp nhập cần ngôn ngữ xoa dịu:
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Trong giai đoạn đầu của M&A, khi muốn nói "Chúng tôi đang thẩm định giá trị của công ty các bạn một cách nghiêm túc", câu nào là J1+?
-- A. あなたたちの値段を調べています。
-- B. 貴社の企業価値を「正当に評価」するため, 「多角的」な視点からデューデリジェンスを実施しております。
+Trong giai đoạn đầu của M&A, khi muốn nói "Chúng tôi đang thẩm định giá trị của công ty các bạn một cách nghiêm túc", câu nào là J1+?- A. 貴社の企業価値を「正当に評価」するため, 「多角的」な視点からデューデリジェンスを実施しております。
+- B. 情報を全部出してください。
 - C. 安く買いたいです。
-- D. 情報を全部出してください。
+- D. あなたたちの値段を調べています。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「正当に評価」 [Chính Đương - Bình Giá]** và **「多角的」 [Đa Giác Đích]** thể hiện sự chuyên nghiệp và khách quan, giúp đối phương bớt cảm giác bị soi mói.
+> - **正解：A**. **「正当に評価」 [Chính Đương - Bình Giá]** và **「多角的」 [Đa Giác Đích]** thể hiện sự chuyên nghiệp và khách quan, giúp đối phương bớt cảm giác bị soi mói.
 
 **第2問 (Câu 2):**
-Làm thế nào để nói về việc cắt giảm nhân sự sau sáp nhập một cách "ngôn ngữ hóa lãnh đạo" nhất?
-- A. 首にします。
-- B. 人が多すぎるのでやめてもらいます。
+Làm thế nào để nói về việc cắt giảm nhân sự sau sáp nhập một cách "ngôn ngữ hóa lãnh đạo" nhất?- A. 首にします。
+- B. お金がないのでクビです。
 - C. 組織の「スリム化」と「リソースの最適化」を断行し, 筋肉質な経営体質への転換を図ります。
-- D. お金がないのでクビです。
+- D. 人が多すぎるのでやめてもらいます。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. **「筋肉質な経営体質」** (Thể chất kinh doanh săn chắc/nhiều cơ bắp) là một ẩn dụ Elite thường dùng để chỉ việc tái cấu trúc hiệu quả.
+> - **正解：D**. **「筋肉質な経営体質」** (Thể chất kinh doanh săn chắc/nhiều cơ bắp) là một ẩn dụ Elite thường dùng để chỉ việc tái cấu trúc hiệu quả.
 
 **第3問 (Câu 3):**
-Ý nghĩa của "PMI" trong tiếng Nhật kinh doanh J1+ là gì?
-- A. Việc quảng cáo sau khi sáp nhập.
-- B. Quá trình tích hợp toàn diện từ hệ thống, nhân sự đến văn hóa sau khi ký kết hợp đồng sáp nhập.
+Ý nghĩa của "PMI" trong tiếng Nhật kinh doanh J1+ là gì?- A. Việc tổ chức tiệc chúc mừng.
+- B. Việc quảng cáo sau khi sáp nhập.
 - C. Việc đổi tên công ty.
-- D. Việc tổ chức tiệc chúc mừng.
+- D. Quá trình tích hợp toàn diện từ hệ thống, nhân sự đến văn hóa sau khi ký kết hợp đồng sáp nhập.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Một quá trình dài hơi và khó khăn nhất trong M&A.
+> - **正解：D**. Một quá trình dài hơi và khó khăn nhất trong M&A.
 
 ---
 

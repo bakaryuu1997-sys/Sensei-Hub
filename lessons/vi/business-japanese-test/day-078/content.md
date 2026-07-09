@@ -108,31 +108,28 @@ Cách tiếp nhận sự thay đổi thần tốc:
 ## 📝 6. QUICK QUIZ: 実踐・最終試練 (HR & Tech Strategy Test)
 
 **第1問 (Câu 1):**
-Tại sao "Unlearning" (Từ bỏ kiến thức cũ) lại được nhắc đến như một kỹ năng sống còn trong Day 78?
-- A. Do bộ nhớ của con người quá ít.
-- B. Để xóa bỏ những định kiến và thói quen cũ đã từng giúp chúng ta thành công nhưng nay lại trở thành rào cản trong việc tiếp nhận những công nghệ đột phá.
-- C. Vì luật pháp yêu cầu như thế.
+Tại sao "Unlearning" (Từ bỏ kiến thức cũ) lại được nhắc đến như một kỹ năng sống còn trong Day 78?- A. Do bộ nhớ của con người quá ít.
+- B. Vì luật pháp yêu cầu như thế.
+- C. Để xóa bỏ những định kiến và thói quen cũ đã từng giúp chúng ta thành công nhưng nay lại trở thành rào cản trong việc tiếp nhận những công nghệ đột phá.
 - D. Do các công ty phần mềm muốn chúng ta mua bản cập nhật mới.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Cognitive flexibility (Sự linh hoạt về nhận thức).
+> - **正解：C**. Cognitive flexibility (Sự linh hoạt về nhận thức).
 
 **第2問 (Câu 2):**
-Cụm từ **「付加価値の高い業務」 [Phó Gia Giá Trị - Cao - Nghiệp Vụ]** thường ám chỉ điều gì trong kỷ nguyên AI?
-- A. Việc nhập dữ liệu chính xác hơn AI.
+Cụm từ **「付加価値の高い業務」 [Phó Gia Giá Trị - Cao - Nghiệp Vụ]** thường ám chỉ điều gì trong kỷ nguyên AI?- A. Việc sửa chữa các bóng đèn trong công ty.
 - B. Các công việc đòi hỏi sự thấu cảm (Empathy), tư duy chiến lược phức tạp, sáng tạo nghệ thuật và những quyết định dựa trên giá trị đạo đức.
 - C. Việc ngồi văn phòng lâu hơn AI.
-- D. Việc sửa chữa các bóng đèn trong công ty.
+- D. Việc nhập dữ liệu chính xác hơn AI.
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Những thứ mà thuật toán chưa thể (hoặc không nên) thay thế.
 
 **第3問 (Câu 3):**
-Một nhà quản lý J1 Mastery sẽ nói gì để khuyến khích nhân viên tham gia chương trình "Reskilling"?
-- A. 「勉強しない人は給料を下げますよ。」
-- B. 「AI がすべてやってくれるので、皆さんは何もしなくて良いです。」
-- C. 「変化を恐れる必要はありません。新しい武器（スキル）を手にすることで、より高度な次元で活躍できるステージを用意しました。共に成長しましょう。」
-- D. 「研修は退屈ですが、我慢して受けてください。」
+Một nhà quản lý J1 Mastery sẽ nói gì để khuyến khích nhân viên tham gia chương trình "Reskilling"?- A. 「変化を恐れる必要はありません。新しい武器（スキル）を手にすることで、より高度な次元で活躍できるステージを用意しました。共に成長しましょう。」
+- B. 「研修は退屈ですが、我慢して受けてください。」
+- C. 「AI がすべてやってくれるので、皆さんは何もしなくて良いです。」
+- D. 「勉強しない人は給料を下げますよ。」
 
 > **解釈 (Giải thích):**
 > - **正解：C**. Truyền cảm hứng và đưa ra lộ trình phát triển rõ ràng.

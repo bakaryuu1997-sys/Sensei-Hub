@@ -88,34 +88,31 @@ Làm thế nào để đại lý ưu tiên bán hàng của bạn thay vì đố
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khi đại lý đạt được doanh số kỷ lục, lời chúc mừng nào thể hiện đẳng cấp "Partner" J1+ nhất?
-- A. よくやりましたね。もっと売ってください。
+Khi đại lý đạt được doanh số kỷ lục, lời chúc mừng nào thể hiện đẳng cấp "Partner" J1+ nhất?- A. 弊社の商品がいいから売れたんですね。
 - B. 貴社の多大なるご尽力に、心より感謝申し上げます。今後も強力なパートナーとして歩んでいければ幸いです。
-- C. 目標達成おめでとう。ボーナスを出します。
-- D. 弊社の商品がいいから売れたんですね。
+- C. よくやりましたね。もっと売ってください。
+- D. 目標達成おめでとう。ボーナスを出します。
 
 > **解釈 (Giải thích):**
 > - **正解：B**. **「ご尽力」 [Tận Lực]** là từ vựng tôn vinh nỗ lực của đối phương một cách trang trọng nhất. Mẫu câu thể hiện mong muốn song hành lâu dài là đặc trưng của văn hóa kinh doanh Nhật.
 
 **第2問 (Câu 2):**
-Bạn muốn đề nghị đại lý thay đổi cách trưng bày sản phẩm tại cửa hàng của họ. Cách nói nào là "Elite" nhất?
-- A. 陳列を変えてください。
-- B. 弊社のブランドイメージを守るため、このように並べていただけますでしょうか。
-- C. 消費者の動線を考慮しますと, このような配置にすることで, さらなる売上の向上が期待できるかと存じます。いかがでしょうか。
-- D. 前の方が良かったです。戻しましょう。
+Bạn muốn đề nghị đại lý thay đổi cách trưng bày sản phẩm tại cửa hàng của họ. Cách nói nào là "Elite" nhất?- A. 前の方が良かったです。戻しましょう。
+- B. 消費者の動線を考慮しますと, このような配置にすることで, さらなる売上の向上が期待できるかと存じます。いかがでしょうか。
+- C. 陳列を変えてください。
+- D. 弊社のブランドイメージを守るため、このように並べていただけますでしょうか。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Thay vì áp đặt mệnh lệnh, hãy đưa ra một **Lợi ích thực tế** cho chính họ (**売上の向上**) dựa trên một logic khoa học (**消費者の動線 [Động Tuyến]**).
+> - **正解：D**. Thay vì áp đặt mệnh lệnh, hãy đưa ra một **Lợi ích thực tế** cho chính họ (**売上の向上**) dựa trên một logic khoa học (**消費者の動線 [Động Tuyến]**).
 
 **第3問 (Câu 3):**
-Cụm từ "Win-Win" trong tiếng Nhật kinh doanh thường được liên hệ mật thiết với triết lý nào?
-- A. 自利利他 [Tự Lợi Lợi Tha].
-- B. 弱肉強食 [Nhược Nhục Cường Thực].
-- C. 三方良し [Tam Phương Hảo].
-- D. 利益第一 [Lợi Ích Đệ Nhất].
+Cụm từ "Win-Win" trong tiếng Nhật kinh doanh thường được liên hệ mật thiết với triết lý nào?- A. 自利利他 [Tự Lợi Lợi Tha].
+- B. 三方良し [Tam Phương Hảo].
+- C. 利益第一 [Lợi Ích Đệ Nhất].
+- D. 弱肉強食 [Nhược Nhục Cường Thực].
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Như đã học ở Day 35, đây là triết lý nền tảng của mọi mối quan hệ đối tác bền vững tại Nhật.
+> - **正解：D**. Như đã học ở Day 35, đây là triết lý nền tảng của mọi mối quan hệ đối tác bền vững tại Nhật.
 
 ---
 

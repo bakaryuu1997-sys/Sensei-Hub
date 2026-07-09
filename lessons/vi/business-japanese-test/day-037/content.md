@@ -89,34 +89,31 @@ Biên bản cuộc họp trong BJT không chỉ là tóm tắt. Nó là một **
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Trong một cuộc họp, khi hai đối tác đang tranh cãi gay gắt và bắt đầu lạc đề, bạn nên dùng câu nào để điều phối lại phong thái J1+?
-- A. 喧嘩はやめてください。
-- B. 話が逸れているので、元に戻しましょう。
-- C. 活発なご議論をありがとうございます。一旦ここまでの論点を整理させていただき, 本題の〇〇に戻ってもよろしいでしょうか。
-- D. 時間がないので、次に進みます。
+Trong một cuộc họp, khi hai đối tác đang tranh cãi gay gắt và bắt đầu lạc đề, bạn nên dùng câu nào để điều phối lại phong thái J1+?- A. 活発なご議論をありがとうございます。一旦ここまでの論点を整理させていただき, 本題の〇〇に戻ってもよろしいでしょうか。
+- B. 喧嘩はやめてください。
+- C. 時間がないので、次に進みます。
+- D. 話が逸れているので、元に戻しましょう。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Khen ngợi sự tranh luận sôi nổi (**活発なご議論**) là kỹ thuật xoa dịu tuyệt vời, sau đó dùng quyền điều phối để đưa cuộc họp về đúng quỹ đạo (**本題に移る**).
+> - **正解：D**. Khen ngợi sự tranh luận sôi nổi (**活発なご議論**) là kỹ thuật xoa dịu tuyệt vời, sau đó dùng quyền điều phối để đưa cuộc họp về đúng quỹ đạo (**本題に移る**).
 
 **第2問 (Câu 2):**
-Khi bạn muốn kết thúc một mục thảo luận để chuyển sang mục khác vì sắp hết giờ, câu nào là "Elite" nhất?
-- A. あと5分なので、終わりにします。
-- B. 予定の時間が近づいておりますので, 残りの論点については別途メール等で調整させていただくとして, 次の議題に進ませていただけますでしょうか。
-- C. 次の話があります。
+Khi bạn muốn kết thúc một mục thảo luận để chuyển sang mục khác vì sắp hết giờ, câu nào là "Elite" nhất?- A. あと5分なので、終わりにします。
+- B. 次の話があります。
+- C. 予定の時間が近づいておりますので, 残りの論点については別途メール等で調整させていただくとして, 次の議題に進ませていただけますでしょうか。
 - D. 続きは今度話しましょう。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Việc đưa ra phương án dự phòng (**別途メール等**) thể hiện sự trách nhiệm và sảo diệu trong việc quản lý thời gian (**タイムマネジメント**).
+> - **正解：C**. Việc đưa ra phương án dự phòng (**別途メール等**) thể hiện sự trách nhiệm và sảo diệu trong việc quản lý thời gian (**タイムマネジメント**).
 
 **第3問 (Câu 3):**
-Mục đích chính của "Nemawashi" (根回し) trong kinh doanh Nhật Bản là gì?
-- A. Để nịnh hót sếp.
-- B. Để tiết kiệm thời gian họp và tránh xung đột công khai, đảm bảo mọi người đã sẵn sàng đồng thuận.
-- C. Để lén lút thay đổi kết quả.
-- D. Để nói xấu đối thủ.
+Mục đích chính của "Nemawashi" (根回し) trong kinh doanh Nhật Bản là gì?- A. Để tiết kiệm thời gian họp và tránh xung đột công khai, đảm bảo mọi người đã sẵn sàng đồng thuận.
+- B. Để nịnh hót sếp.
+- C. Để nói xấu đối thủ.
+- D. Để lén lút thay đổi kết quả.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Đây là giá trị cốt lõi của sự hòa hợp (**和 [Hòa]**) trong doanh nghiệp Nhật.
+> - **正解：A**. Đây là giá trị cốt lõi của sự hòa hợp (**和 [Hòa]**) trong doanh nghiệp Nhật.
 
 ---
 

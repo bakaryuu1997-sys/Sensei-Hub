@@ -99,34 +99,31 @@ Trong BJT level J1+, bạn thường gặp các từ về trách nhiệm giải 
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khi bạn muốn xin cấp trên duyệt một khoản ngân sách đầu tư rất lớn, câu nào thể hiện đẳng cấp J1+ nhất?
-- A. お金が足りないので、予算をください。
+Khi bạn muốn xin cấp trên duyệt một khoản ngân sách đầu tư rất lớn, câu nào thể hiện đẳng cấp J1+ nhất?- A. 経理部が良いと言っていました。
 - B. 将来の成長を確実なものにするための「戦略的投資」として, 〇〇円の承認を仰ぎたく存じます。
-- C. 経理部が良いと言っていました。
-- D. たくさん稼ぐので、投資してください。
+- C. たくさん稼ぐので、投資してください。
+- D. お金が足りないので、予算をください。
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Biến "Chi phí" thành **「戦略的投資」 [Chiến Lược Đích Đầu Tư]** là cách ngôn ngữ hóa để thuyết phục bộ não của các nhà quản trị.
 
 **第2問 (Câu 2):**
-Làm thế nào để báo cáo một thất bại lớn với ban lãnh đạo mà vẫn giữ được sự tín nhiệm (J1+ level)?
-- A. すみません、失敗しました。
-- B. 私のせいではありません。環境が悪いです。
+Làm thế nào để báo cáo một thất bại lớn với ban lãnh đạo mà vẫn giữ được sự tín nhiệm (J1+ level)?- A. 私のせいではありません。環境が悪いです。
+- B. 運が悪かったです。また頑張ります。
 - C. 残念ながら目標達成には至りませんでしたが, 今回の「知見」をベースに, 迅速に挽回策を講じてまいる所存です。
-- D. 運が悪かったです。また頑張ります。
+- D. すみません、失敗しました。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Coi thất bại là **「知見」 [Tri Kiến]** (kiến thức thu hoạch được) và đưa ra ngay **「挽回策」 [Vãn Hồi Sách]** (phương án gỡ gạc) thể hiện bản lĩnh của một hạt giống lãnh đạo.
+> - **正解：A**. Coi thất bại là **「知見」 [Tri Kiến]** (kiến thức thu hoạch được) và đưa ra ngay **「挽回策」 [Vãn Hồi Sách]** (phương án gỡ gạc) thể hiện bản lĩnh của một hạt giống lãnh đạo.
 
 **第3問 (Câu 3):**
-Ý nghĩa của từ "Compliance" (コンプライアンス) trong báo cáo J1+ là gì?
-- A. Việc nhân viên đi làm đúng giờ.
-- B. Sự tuân thủ pháp luật, quy định nội bộ và các chuẩn mực đạo đức kinh doanh quốc tế.
-- C. Việc công ty tặng quà cho sếp.
-- D. Việc công ty tổ chức du lịch.
+Ý nghĩa của từ "Compliance" (コンプライアンス) trong báo cáo J1+ là gì?- A. Việc nhân viên đi làm đúng giờ.
+- B. Việc công ty tặng quà cho sếp.
+- C. Việc công ty tổ chức du lịch.
+- D. Sự tuân thủ pháp luật, quy định nội bộ và các chuẩn mực đạo đức kinh doanh quốc tế.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Một thuật ngữ "chấn song" để bảo vệ doanh nghiệp khỏi các rủi ro pháp lý.
+> - **正解：D**. Một thuật ngữ "chấn song" để bảo vệ doanh nghiệp khỏi các rủi ro pháp lý.
 
 ---
 

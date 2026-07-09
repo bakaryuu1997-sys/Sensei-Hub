@@ -74,22 +74,22 @@ Hãy tưởng tượng bạn đang ở một **Nhà hàng 5 sao**.
 # 📝 QUICK QUIZ
 
 **Câu 1: Loại API nào rẻ và nhanh nhất nhưng ít tính năng nâng cao hơn?**
-A. REST API
+A. SOAP API
 B. HTTP API
-C. WebSocket API
-D. SOAP API
+C. REST API
+D. WebSocket API
 
 **Câu 2: (Cập nhật 2026) Amazon Q giúp gì trong Step Functions?**
-A. Giúp Lambda chạy nhanh hơn.
+A. Xóa các API cũ.
 B. Tự động tạo Workflow từ mô tả bằng ngôn ngữ tự nhiên.
-C. Xóa các API cũ.
+C. Giúp Lambda chạy nhanh hơn.
 D. Tăng giá tiền.
 
 **Câu 3: Trạng thái nào giúp quy trình rẽ nhánh dựa trên điều kiện?**
 A. Task State
-B. Wait State
-C. Choice State
-D. Fail State
+B. Fail State
+C. Wait State
+D. Choice State
 
 **Đáp án:** 1-B, 2-B, 3-C.
 

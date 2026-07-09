@@ -102,34 +102,31 @@ Sản phẩm là một sinh vật sống:
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Cụm từ nào thể hiện tư duy J1+ về việc đa dạng hóa sản phẩm nhất?
-- A. いろいろ作る。
+Cụm từ nào thể hiện tư duy J1+ về việc đa dạng hóa sản phẩm nhất?- A. たくさん売る。
 - B. プロダクトを「スイート化」し、異なる接点でお客様の「ライフサイクル」に応じた価値を提供し続けます。
-- C. たくさん売る。
-- D. カタログを厚くする。
+- C. カタログを厚くする。
+- D. いろいろ作る。
 
 > **解釈 (Giải thích):**
 > - **正解：B**. **「スイート化」 (Suite)** (biến thành bộ sản phẩm) và **「ライフサイクル」 [Life Cycle]** (vòng đời) là các thuật ngữ quản trị sản phẩm hiện đại.
 
 **第2問 (Câu 2):**
-"Network Externality" (Hiệu ứng mạng lưới) trong thiết kế hệ sinh thái J1+ nghĩa là gì?
-- A. Việc mạng internet bị hỏng.
-- B. Giá trị của sản phẩm/dịch vụ tăng lên đối với mỗi người dùng khi số lượng người dùng khác tăng lên.
-- C. Việc dùng máy tính ngoài trời.
-- D. Một loại dây cáp mạng mới.
+"Network Externality" (Hiệu ứng mạng lưới) trong thiết kế hệ sinh thái J1+ nghĩa là gì?- A. Việc mạng internet bị hỏng.
+- B. Việc dùng máy tính ngoài trời.
+- C. Một loại dây cáp mạng mới.
+- D. Giá trị của sản phẩm/dịch vụ tăng lên đối với mỗi người dùng khi số lượng người dùng khác tăng lên.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Ví dụ: Càng nhiều người dùng ứng dụng nhắn tin đó thì nó càng có giá trị với bạn.
+> - **正解：D**. Ví dụ: Càng nhiều người dùng ứng dụng nhắn tin đó thì nó càng có giá trị với bạn.
 
 **第3問 (Câu 9):**
-Thuật ngữ "Cannibalization" (Ăn thịt đồng loại) trong chiến lược sản phẩm J1+ cảnh báo điều gì?
-- A. Việc nhân viên tranh giành thức ăn.
-- B. Việc sản phẩm mới của công ty cạnh tranh và làm giảm doanh số của chính các sản phẩm hiện có của công ty đó.
-- C. Việc đối thủ ăn cắp bí mật kinh doanh.
+Thuật ngữ "Cannibalization" (Ăn thịt đồng loại) trong chiến lược sản phẩm J1+ cảnh báo điều gì?- A. Việc sản phẩm mới của công ty cạnh tranh và làm giảm doanh số của chính các sản phẩm hiện có của công ty đó.
+- B. Việc đối thủ ăn cắp bí mật kinh doanh.
+- C. Việc nhân viên tranh giành thức ăn.
 - D. Một chiến dịch marketing hung hãn.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Một rủi ro cần tính toán kỹ khi ra mắt sản phẩm mới.
+> - **正解：A**. Một rủi ro cần tính toán kỹ khi ra mắt sản phẩm mới.
 
 ---
 

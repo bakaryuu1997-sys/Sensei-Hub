@@ -112,24 +112,24 @@ K là một Senior Architect lừng lẫy. Nhưng điều làm K tự hào nhấ
 # 🎯 7. QUICK QUIZ: Bạn Đã Sẵn Sàng "Deploy" Di Sản?
 
 1. **Lợi ích lớn nhất của việc làm Mentor (Người cố vấn) là gì?**
-    - A. Để có người làm giúp việc vặt.
-    - B. Để làm sâu sắc thêm kiến thức của chính mình (Protege Effect) và nhân bản giá trị của bạn sang thế hệ tiếp theo, tạo ra tầm ảnh hưởng vĩnh cửu.
+    - A. Để làm sâu sắc thêm kiến thức của chính mình (Protege Effect) và nhân bản giá trị của bạn sang thế hệ tiếp theo, tạo ra tầm ảnh hưởng vĩnh cửu.
+    - B. Để có người làm giúp việc vặt.
     - C. Để được mọi người kính trọng.
     - D. Để kiếm thêm tiền.
 
 2. **Cách hướng dẫn tốt nhất cho một Mentee là gì?**
-    - A. Cầm tay chỉ việc từng bước một (Micro-management).
+    - A. Để mặc họ tự làm và không quan tâm.
     - B. Đưa ra các câu hỏi định hướng (Socratic method) để giúp họ tự rèn luyện tư duy độc lập và khả năng tự giải quyết vấn đề.
-    - C. Để mặc họ tự làm và không quan tâm.
-    - D. Làm hộ họ để tiết kiệm thời gian.
+    - C. Làm hộ họ để tiết kiệm thời gian.
+    - D. Cầm tay chỉ việc từng bước một (Micro-management).
 
 3. **Tư duy "Open Source" trong đời sống xã hội nghĩa là gì?**
-    - A. Không cài đặt mật khẩu cho máy tính.
-    - B. Sẵn lòng chia sẻ kiến thức, kinh nghiệm và các "Bản thiết kế" thành công của mình cho cộng đồng để cùng nhau phát triển.
-    - C. Dùng phần mềm miễn phí.
-    - D. Nói hết mọi bí mật của mình cho người khác.
+    - A. Sẵn lòng chia sẻ kiến thức, kinh nghiệm và các "Bản thiết kế" thành công của mình cho cộng đồng để cùng nhau phát triển.
+    - B. Nói hết mọi bí mật của mình cho người khác.
+    - C. Không cài đặt mật khẩu cho máy tính.
+    - D. Dùng phần mềm miễn phí.
 
-*(Đáp án đúng: 1-B, 2-B, 3-B)*
+*(Đáp án đúng: 1-A, 2-B, 3-A)*
 
 ---
 **Lời nhắn từ Architect**: Bạn đang xây dựng một di sản vĩ đại! Tuyệt vời. Ngày mai, chúng ta bước sang một chủ đề thực tế nhưng cực kỳ quan trọng: **Financial Mindset** — Cách thiết kế một hệ thống tài chính bền vững để hỗ trợ cho mọi ước mơ của bạn! ⚔️💎

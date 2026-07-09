@@ -66,24 +66,24 @@ Tại Nhật, tòa nhà phải chịu được động đất. Nếu một cột
 # 📝 QUICK QUIZ
 
 **Câu 1: Cột trụ nào tập trung vào việc tự phục hồi (Self-healing)?**
-A. Security
-B. Reliability
-C. Cost Optimization
-D. Sustainability
+A. Sustainability
+B. Cost Optimization
+C. Security
+D. Reliability
 
 **Câu 2: (Cập nhật 2026) Kiến trúc bảo mật nào yêu cầu xác thực liên tục ngay cả trong mạng nội bộ?**
 A. VPN
-B. Firewall
-C. Zero Trust 2.0
+B. Zero Trust 2.0
+C. Firewall
 D. SSH
 
 **Câu 3: Công cụ nào dùng để Review kiến trúc Cloud?**
-A. AWS Trusted Advisor
-B. AWS Well-Architected Tool
-C. AWS Config
-D. Amazon Inspector
+A. Amazon Inspector
+B. AWS Config
+C. AWS Well-Architected Tool
+D. AWS Trusted Advisor
 
-**Đáp án:** 1-B, 2-C, 3-B.
+**Đáp án:** 1-D, 2-C, 3-C.
 
 ---
 

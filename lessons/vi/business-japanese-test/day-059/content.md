@@ -103,34 +103,31 @@ DX đòi hỏi sự nhanh nhẹn:
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Cụm từ nào thể hiện tư duy J1+ về mục đích của DX nhất?
-- A. パソコンを新しくする。
+Cụm từ nào thể hiện tư duy J1+ về mục đích của DX nhất?- A. AIに任せる。
 - B. デジタル技術をレバレッジし, 「顧客提供価値」を抜本的に再定義する。
 - C. 紙をなくす。
-- D. AIに任せる。
+- D. パソコンを新しくする。
 
 > **解釈 (Giải thích):**
 > - **正解：B**. **「レバレッジ」 [Leverage]** (đòn bẩy) và **「顧客提供価値」 [Cố Khách Đề Cung Giá Trị]** là những từ vựng chiến lược cấp cao.
 
 **第2問 (Câu 2):**
-Văn hóa làm việc "Agile" (アジャイル) trong kinh doanh J1+ nhấn mạnh điều gì?
-- A. Việc lập kế hoạch thật chi tiết trong 2 năm rồi mới làm.
-- B. Việc triển khai nhanh, thử nghiệm liên tục và điều chỉnh linh hoạt dựa trên phản hồi.
-- C. Việc làm việc thật nhanh để về sớm.
-- D. Việc không cần kế hoạch gì cả.
+Văn hóa làm việc "Agile" (アジャイル) trong kinh doanh J1+ nhấn mạnh điều gì?- A. Việc làm việc thật nhanh để về sớm.
+- B. Việc không cần kế hoạch gì cả.
+- C. Việc triển khai nhanh, thử nghiệm liên tục và điều chỉnh linh hoạt dựa trên phản hồi.
+- D. Việc lập kế hoạch thật chi tiết trong 2 năm rồi mới làm.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Đây là tư duy cốt lõi của thời đại số.
+> - **正解：C**. Đây là tư duy cốt lõi của thời đại số.
 
 **第3問 (Câu 3):**
-Cụm từ "Legacy System" (レガシーシステム) trong bối cảnh DX Nhật Bản thường ám chỉ điều gì?
-- A. Những hệ thống di sản quý giá cần bảo tồn.
-- B. Những hệ thống CNTT cũ kỹ, lỗi thời, manh mún, gây cản trở cho sự phát triển của doanh nghiệp.
-- C. Một loại phần mềm mới của Apple.
-- D. Hệ thống máy tính dùng trong lịch sử.
+Cụm từ "Legacy System" (レガシーシステム) trong bối cảnh DX Nhật Bản thường ám chỉ điều gì?- A. Hệ thống máy tính dùng trong lịch sử.
+- B. Những hệ thống di sản quý giá cần bảo tồn.
+- C. Những hệ thống CNTT cũ kỹ, lỗi thời, manh mún, gây cản trở cho sự phát triển của doanh nghiệp.
+- D. Một loại phần mềm mới của Apple.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Việc phá bỏ "Legacy" là thử thách lớn nhất của DX.
+> - **正解：C**. Việc phá bỏ "Legacy" là thử thách lớn nhất của DX.
 
 ---
 

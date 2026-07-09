@@ -103,34 +103,31 @@ Giữ chân nhân tài là ưu tiên hàng đầu:
 ## 📝 6. QUICK QUIZ: 実踐・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Tại sao "Cultural Integration" (Tích hợp văn hóa) lại khó nhất trong PMI J1+?
-- A. Vì khác biệt về ngôn ngữ.
-- B. Vì văn hóa là những thói quen và hệ giá trị đã ăn sâu vào tiềm thức, không thể thay đổi chỉ bằng một mệnh lệnh hành chính.
+Tại sao "Cultural Integration" (Tích hợp văn hóa) lại khó nhất trong PMI J1+?- A. Vì văn hóa là những thói quen và hệ giá trị đã ăn sâu vào tiềm thức, không thể thay đổi chỉ bằng một mệnh lệnh hành chính.
+- B. Vì tốn nhiều chi phí đào tạo.
 - C. Vì mọi người không muốn học văn hóa mới.
-- D. Vì tốn nhiều chi phí đào tạo.
+- D. Vì khác biệt về ngôn ngữ.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Văn hóa là "Hệ điều hành ngầm" của doanh nghiệp.
+> - **正解：A**. Văn hóa là "Hệ điều hành ngầm" của doanh nghiệp.
 
 **第2問 (Câu 2):**
-Thuật ngữ "Reverse M&A" trong trình độ J1+ có thể ám chỉ điều gì?
-- A. Việc công ty con mua lại công ty mẹ.
-- B. Việc một công ty chưa niêm yết thâu tóm một công ty đã niêm yết để được niêm yết "cửa sau".
+Thuật ngữ "Reverse M&A" trong trình độ J1+ có thể ám chỉ điều gì?- A. Việc một công ty chưa niêm yết thâu tóm một công ty đã niêm yết để được niêm yết "cửa sau".
+- B. Việc công ty con mua lại công ty mẹ.
 - C. Việc hủy bỏ hợp đồng sáp nhập.
 - D. Việc bán lại công ty vừa mua.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Một thủ thuật tài chính tinh vi.
+> - **正解：A**. Một thủ thuật tài chính tinh vi.
 
 **第3問 (Câu 13):**
-Ý nghĩa của "Earn-out" trong hợp đồng M&A J1+ là gì?
-- A. Việc trả lương cho nhân viên sau sáp nhập.
-- B. Một điều khoản quy định việc bên mua sẽ trả thêm tiền cho bên bán nếu công ty mục tiêu đạt được các chỉ tiêu kinh doanh nhất định trong tương lai.
-- C. Việc đuổi việc ban giám đốc cũ.
-- D. Việc công ty bị phá sản.
+Ý nghĩa của "Earn-out" trong hợp đồng M&A J1+ là gì?- A. Việc công ty bị phá sản.
+- B. Việc đuổi việc ban giám đốc cũ.
+- C. Một điều khoản quy định việc bên mua sẽ trả thêm tiền cho bên bán nếu công ty mục tiêu đạt được các chỉ tiêu kinh doanh nhất định trong tương lai.
+- D. Việc trả lương cho nhân viên sau sáp nhập.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Giúp giảm rủi ro định giá sai cho bên mua.
+> - **正解：C**. Giúp giảm rủi ro định giá sai cho bên mua.
 
 ---
 

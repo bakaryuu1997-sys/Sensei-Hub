@@ -77,35 +77,35 @@ Một trong những cải tiến lớn nhất năm 2026 là **Zero-ETL**.
 
 **Câu 1: Tính năng nào của Amazon RDS giúp bạn có một bản sao database 'sẵn sàng thay thế' ngay lập tức nếu máy chủ chính bị hỏng?**
 A. Read Replicas
-B. Multi-AZ Deployment
-C. Snapshots
-D. Automated Backups
+B. Snapshots
+C. Automated Backups
+D. Multi-AZ Deployment
 
 **Câu 2: Loại Database nào phù hợp nhất để lưu trữ dữ liệu 'Schema-less' (không có cấu trúc cố định) và cần tốc độ cực cao?**
 A. Amazon RDS
-B. Amazon Redshift
-C. Amazon DynamoDB
-D. Amazon Aurora
+B. Amazon Aurora
+C. Amazon Redshift
+D. Amazon DynamoDB
 
 **Câu 3: "Zero-ETL" (Cập nhật 2026) giúp ích gì cho doanh nghiệp?**
-A. Giúp giảm chi phí tiền điện.
-B. Giúp phân tích dữ liệu từ database trực tiếp mà không cần viết code chuyển dữ liệu phức tạp.
+A. Giúp phân tích dữ liệu từ database trực tiếp mà không cần viết code chuyển dữ liệu phức tạp.
+B. Giúp xóa dữ liệu rác tự động.
 C. Giúp database chạy nhanh hơn 100 lần.
-D. Giúp xóa dữ liệu rác tự động.
+D. Giúp giảm chi phí tiền điện.
 
 **Câu 4: Bạn muốn chạy một Database SQL có khả năng tự động co giãn sức mạnh xử lý lên hàng trăm máy chủ mà không cần can thiệp kỹ thuật. Bạn dùng gì?**
-A. MySQL cài trên EC2
+A. Amazon S3
 B. Amazon Aurora Limitless
-C. Amazon S3
-D. Amazon Neptune
+C. Amazon Neptune
+D. MySQL cài trên EC2
 
 **Câu 5: Dịch vụ In-memory cache nào giúp tăng tốc độ ứng dụng bằng cách lưu dữ liệu hay dùng vào RAM?**
-A. Amazon EBS
-B. Amazon ElastiCache
+A. Amazon ElastiCache
+B. Amazon EBS
 C. Amazon S3
 D. Amazon VPC
 
-**Đáp án:** 1-B, 2-C, 3-B, 4-B, 5-B.
+**Đáp án:** 1-D, 2-C, 3-A, 4-B, 5-A.
 
 ---
 

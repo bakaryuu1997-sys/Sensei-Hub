@@ -62,24 +62,24 @@ Sử dụng AI trên AWS giống như chuẩn bị một bữa tiệc:
 # 📝 QUICK QUIZ
 
 **Câu 1: Dịch vụ nào nhận diện khuôn mặt và vật thể trong ảnh?**
-A. Polly
+A. Translate
 B. Rekognition
-C. Translate
-D. Lex
+C. Lex
+D. Polly
 
 **Câu 2: (Cập nhật 2026) Amazon Q giúp gì cho lập trình viên?**
-A. Chỉ viết code mẫu
+A. Làm máy tính chạy nhanh hơn
 B. Tự động nâng cấp phiên bản code, viết Test và sửa lỗi Security
-C. Thay thế hoàn toàn Manager
-D. Làm máy tính chạy nhanh hơn
+C. Chỉ viết code mẫu
+D. Thay thế hoàn toàn Manager
 
 **Câu 3: 'Amazon Bedrock' cung cấp gì?**
-A. Ổ cứng SSD
-B. Truy cập các mô hình Generative AI (LLMs) qua API
-C. Camera an ninh
-D. Cáp quang
+A. Truy cập các mô hình Generative AI (LLMs) qua API
+B. Ổ cứng SSD
+C. Cáp quang
+D. Camera an ninh
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-B, 2-B, 3-A.
 
 ---
 

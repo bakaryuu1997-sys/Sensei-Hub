@@ -67,9 +67,9 @@ PrivateLink hoạt động ở Layer 4, không quan tâm trùng IP. Năm 2026, t
 
 **Câu 1: Lợi ích lớn nhất của Transit Gateway so với VPC Peering?**
 A. Rẻ hơn
-B. Hỗ trợ Transitive Routing giúp quản lý tập trung
-C. Web chạy nhanh hơn
-D. Bảo mật kém hơn
+B. Web chạy nhanh hơn
+C. Bảo mật kém hơn
+D. Hỗ trợ Transitive Routing giúp quản lý tập trung
 
 **Câu 2: (Cập nhật 2026) Amazon Q giúp gì trong quản trị mạng?**
 A. Chỉ để chat chit
@@ -83,7 +83,7 @@ B. Internet Gateway
 C. AWS PrivateLink
 D. VPN
 
-**Đáp án:** 1-B, 2-B, 3-C.
+**Đáp án:** 1-D, 2-B, 3-B.
 
 ---
 

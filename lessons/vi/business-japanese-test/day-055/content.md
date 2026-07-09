@@ -99,19 +99,17 @@ Tìm ra điểm mà cả hai bên đều không muốn thay đổi vì đó là 
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Trong đàm phán, khi bạn muốn tìm ra một điểm chung mà cả hai bên cùng chấp nhận được, thuật ngữ nào là J1+?
-- A. まん中あたりで。
-- B. 双方が納得し得る「着地点」を模索したいと考えます。
-- C. 適当に決めましょう。
+Trong đàm phán, khi bạn muốn tìm ra một điểm chung mà cả hai bên cùng chấp nhận được, thuật ngữ nào là J1+?- A. まん中あたりで。
+- B. 適当に決めましょう。
+- C. 双方が納得し得る「着地点」を模索したいと考えます。
 - D. 喧嘩はやめましょう。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「着地点」 [Trứ Địa Điểm]** (Điểm đáp xuống) là một thuật ngữ ẩn dụ rất tinh tế để chỉ sự đồng thuận cuối cùng sau nhiều biến động.
+> - **正解：C**. **「着地点」 [Trứ Địa Điểm]** (Điểm đáp xuống) là một thuật ngữ ẩn dụ rất tinh tế để chỉ sự đồng thuận cuối cùng sau nhiều biến động.
 
 **第2問 (Câu 2):**
-"Win-Win Relationship" trong tiếng Nhật kinh doanh J1+ thường được diễn đạt bằng cụm từ Hán Việt nào?
-- A. 共存共栄 [Cộng Tồn Cộng Vinh].
-- B. 独り勝ち [Độc Thắng].
+"Win-Win Relationship" trong tiếng Nhật kinh doanh J1+ thường được diễn đạt bằng cụm từ Hán Việt nào?- A. 独り勝ち [Độc Thắng].
+- B. 共存共栄 [Cộng Tồn Cộng Vinh].
 - C. 損得勘定 [Tổn Đắc Khám Định].
 - D. 相互監視 [Tương Hỗ Giám Thị].
 
@@ -119,14 +117,13 @@ Trong đàm phán, khi bạn muốn tìm ra một điểm chung mà cả hai bê
 > - **正解：A**. Cùng tồn tại và cùng phát triển thịnh vượng. Đây là triết lý cao nhất của doanh nhân Nhật Bản.
 
 **第3問 (Câu 3):**
-Kỹ thuật "Aisatsugawari" (挨拶代わりに) trong đàm phán giá cả của người Nhật là gì?
-- A. Việc chào hỏi thông thường.
-- B. Việc đưa ra một yêu cầu quá đáng (giảm giá sâu) ngay từ đầu như một lời chào, để thăm dò phản ứng và tạo mỏ neo cho đàm phán sau này.
+Kỹ thuật "Aisatsugawari" (挨拶代わりに) trong đàm phán giá cả của người Nhật là gì?- A. Việc đưa ra một yêu cầu quá đáng (giảm giá sâu) ngay từ đầu như một lời chào, để thăm dò phản ứng và tạo mỏ neo cho đàm phán sau này.
+- B. Việc chào hỏi thông thường.
 - C. Việc tặng quà trước khi đàm phán.
 - D. Việc giới thiệu công ty.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Một chiêu thức "nặng ký" cần sự tỉnh táo để đối ứng.
+> - **正解：A**. Một chiêu thức "nặng ký" cần sự tỉnh táo để đối ứng.
 
 ---
 

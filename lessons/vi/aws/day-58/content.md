@@ -77,24 +77,24 @@ Chúng ta đã học lẻ tẻ các trụ cột này, nhưng hôm nay là lúc k
 # 📝 QUICK QUIZ
 
 **Câu 1: Công cụ nào của AWS giúp bạn tự đánh giá kiến trúc hệ thống theo các Best-practices?**
-A. Amazon S3.
-B. AWS Well-Architected Tool.
+A. Amazon Route 53.
+B. Amazon S3.
 C. AWS Budgets.
-D. Amazon Route 53.
+D. AWS Well-Architected Tool.
 
 **Câu 2: Một 'High Risk Issue' (HRP) trong WAFR nghĩa là gì?**
-A. Một lỗi nhỏ có thể bỏ qua.
-B. Một lỗ hổng kiến trúc nghiêm trọng có khả năng gây sập hệ thống hoặc mất dữ liệu trong tương lai gần.
-C. Một yêu cầu tăng lương.
-D. Một tính năng mới của AI.
+A. Một tính năng mới của AI.
+B. Một yêu cầu tăng lương.
+C. Một lỗ hổng kiến trúc nghiêm trọng có khả năng gây sập hệ thống hoặc mất dữ liệu trong tương lai gần.
+D. Một lỗi nhỏ có thể bỏ qua.
 
 **Câu 3: (Cập nhật 2026) Amazon Q giúp gì trong buổi Review kiến trúc?**
-A. Nó tự động viết code thay bạn.
+A. Nó xóa các tài khoản nợ tiền.
 B. Nó phân tích sơ đồ kiến trúc và đưa ra các khuyến nghị tối ưu hóa dựa trên Well-Architected Framework.
-C. Nó giúp bạn đặt đồ ăn trưa.
-D. Nó xóa các tài khoản nợ tiền.
+C. Nó tự động viết code thay bạn.
+D. Nó giúp bạn đặt đồ ăn trưa.
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-D, 2-C, 3-B.
 
 ---
 

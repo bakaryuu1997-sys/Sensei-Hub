@@ -79,34 +79,34 @@ Ngoài ra, tôi thấy có một số tác vụ xử lý ảnh nền (background
 **Câu 1: Bạn muốn chạy một trang web ổn định trong vòng 2 năm tới. Loại thanh toán nào là tối ưu nhất về chi phí?**
 A. On-Demand
 B. Spot Instances
-C. Reserved Instances
-D. Dedicated Hosts
+C. Dedicated Hosts
+D. Reserved Instances
 
 **Câu 2: "Security Group" trong AWS EC2 đóng vai trò gì?**
-A. Một nhóm các kỹ sư bảo mật của AWS.
+A. Một tường lửa ảo kiểm soát traffic đi vào và đi ra của máy chủ.
 B. Một bộ chính sách quản lý mật khẩu người dùng.
-C. Một tường lửa ảo kiểm soát traffic đi vào và đi ra của máy chủ.
+C. Một nhóm các kỹ sư bảo mật của AWS.
 D. Một dịch vụ quét virus cho máy tính.
 
 **Câu 3: Khái niệm "Horizontal Scaling" (Scale Out) trên EC2 nghĩa là gì?**
 A. Thay thế máy cũ bằng một cái máy mới to hơn, mạnh hơn (tăng RAM/CPU).
 B. Thêm nhiều máy chủ có cấu hình tương đương để chia sẻ gánh nặng công việc.
-C. Di chuyển máy chủ từ Region Tokyo sang Region Mỹ.
-D. Tắt máy chủ vào ban đêm để tiết kiệm tiền.
+C. Tắt máy chủ vào ban đêm để tiết kiệm tiền.
+D. Di chuyển máy chủ từ Region Tokyo sang Region Mỹ.
 
 **Câu 4: Dịch vụ nào cho phép bạn sở hữu trọn vẹn một máy chủ vật lý mà không phải chia sẻ phần cứng với bất kỳ khách hàng nào khác?**
 A. Spot Instances
 B. Dedicated Hosts
-C. Amazon S3
-D. Amazon VPC
+C. Amazon VPC
+D. Amazon S3
 
 **Câu 5: Chuyện gì xảy ra với dữ liệu trong ổ cứng EBS nếu bạn "Stop" một máy chủ EC2?**
-A. Dữ liệu sẽ bị xóa sạch hoàn toàn.
-B. Dữ liệu vẫn được giữ nguyên và sẵn sàng khi bạn Start lại máy.
-C. Dữ liệu sẽ được tự động chuyển sang ổ cứng của Google Cloud.
+A. Dữ liệu vẫn được giữ nguyên và sẵn sàng khi bạn Start lại máy.
+B. Dữ liệu sẽ được tự động chuyển sang ổ cứng của Google Cloud.
+C. Dữ liệu sẽ bị xóa sạch hoàn toàn.
 D. Bạn không thể "Stop" máy chủ EC2.
 
-**Đáp án:** 1-C, 2-C, 3-B, 4-B, 5-B.
+**Đáp án:** 1-B, 2-B, 3-B, 4-B, 5-A.
 
 ---
 

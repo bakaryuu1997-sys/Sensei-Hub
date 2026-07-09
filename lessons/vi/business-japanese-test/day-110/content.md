@@ -94,31 +94,28 @@ Trong đàm phán, câu trả lời đúng thường kết thúc bằng một s�
 ## 📝 6. QUICK QUIZ: 最終合意・グランドマスター・チャレンジ
 
 **第1問 (Câu 1):**
-Sau một hồi tranh luận căng thẳng, đối tác nói: 「それでは、この条件で **一任 [Nhất Nhiệm]** します」. Bạn nên làm gì?
-- A. Cảm ơn và ra về ngay.
-- B. Xác nhận lại cụ thể các điều kiện một lần nữa trước khi kết thúc.
-- C. Hỏi "Một nhiệm" nghĩa là gì.
-- D. Đưa hóa đơn cho họ ký.
+Sau một hồi tranh luận căng thẳng, đối tác nói: 「それでは、この条件で **一任 [Nhất Nhiệm]** します」. Bạn nên làm gì?- A. Xác nhận lại cụ thể các điều kiện một lần nữa trước khi kết thúc.
+- B. Cảm ơn và ra về ngay.
+- C. Đưa hóa đơn cho họ ký.
+- D. Hỏi "Một nhiệm" nghĩa là gì.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「一任」** (giao toàn quyền) là một từ nguy hiểm nếu không được xác nhận lại nội dung. Elite luôn chốt hạ bằng việc nhắc lại các điểm mấu chốt.
+> - **正解：A**. **「一任」** (giao toàn quyền) là một từ nguy hiểm nếu không được xác nhận lại nội dung. Elite luôn chốt hạ bằng việc nhắc lại các điểm mấu chốt.
 
 **第2問 (Câu 2):**
-Để đạt được thỏa thuận, bạn cần phải nhượng bộ. Cách diễn đạt nào thể hiện đẳng cấp J1+?
-- A. 仕方がないので、安くします。
-- B. 貴社との長期的な **パートナーシップ [Partnership]** を重視し、本来であれば困難な条件ではございますが、特別に受諾 [Thụ Nặc] させていただきます。
-- C. sếp tôi bảo đồng ý nên tôi đồng ý.
-- D. Giảm giá cho ngài 10% nếu ngài mời tôi đi ăn.
+Để đạt được thỏa thuận, bạn cần phải nhượng bộ. Cách diễn đạt nào thể hiện đẳng cấp J1+?- A. 仕方がないので、安くします。
+- B. Giảm giá cho ngài 10% nếu ngài mời tôi đi ăn.
+- C. 貴社との長期的な **パートナーシップ [Partnership]** を重視し、本来であれば困難な条件ではございますが、特別に受諾 [Thụ Nặc] させていただきます。
+- D. sếp tôi bảo đồng ý nên tôi đồng ý.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Mượn từ khóa "Tầm nhìn dài hạn" và "Quan hệ đối tác" để nâng tầm sự nhường bộ của mình.
+> - **正解：C**. Mượn từ khóa "Tầm nhìn dài hạn" và "Quan hệ đối tác" để nâng tầm sự nhường bộ của mình.
 
 **第3問 (Câu 3):**
-Case Study kết thúc bằng việc đối tác yêu cầu bạn gửi biên bản cuộc họp (**議事録 [Nghị Sự Lục]**). Thời điểm gửi tốt nhất là khi nào?
-- A. Tuần sau.
+Case Study kết thúc bằng việc đối tác yêu cầu bạn gửi biên bản cuộc họp (**議事録 [Nghị Sự Lục]**). Thời điểm gửi tốt nhất là khi nào?- A. Đợi khi nào sếp họ hỏi thì gửi.
 - B. Ngay trong ngày học hoặc chậm nhất là sáng mai.
-- C. Đợi khi nào sếp họ hỏi thì gửi.
-- D. Không cần gửi vì đã thỏa thuận xong rồi.
+- C. Không cần gửi vì đã thỏa thuận xong rồi.
+- D. Tuần sau.
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Tính **スピード感 [Cảm]** (Tốc độ) là tiêu chuẩn vàng của Business Nhật Bản giúp bạn đạt điểm cao nhất trong các bài thi tình huống.

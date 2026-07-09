@@ -101,28 +101,25 @@ Tuân thủ không phải là đối phó với cảnh sát:
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khi bạn phát hiện một sai phạm nhỏ của đồng nghiệp và muốn nhắc nhở họ theo phong cách Governance chuyên nghiệp, bạn sẽ nói gì?
-- A. 秘密にするから直して。
+Khi bạn phát hiện một sai phạm nhỏ của đồng nghiệp và muốn nhắc nhở họ theo phong cách Governance chuyên nghiệp, bạn sẽ nói gì?- A. 見て見ぬふりをします。
 - B. このままだと弊社の「内部統制」上のリスクになります。速やかに「正規の手続き」を履行してください。
-- C. 私に任せてください。
-- D. 見て見ぬふりをします。
+- C. 秘密にするから直して。
+- D. 私に任せてください。
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Dùng các thuật ngữ **「内部統制」** và **「正規の手続き」** giúp chuyển vấn đề từ cá nhân sang hệ thống, giúp người nghe dễ chấp nhận và thực hiện đúng hơn.
 
 **第2問 (Câu 2):**
-Cụm từ "Check and Balance" (制衡) được Nhật hóa trong quản trị doanh nghiệp là gì?
-- A. 仲良しクラブ [Trọng Lương Club].
-- B. 牽制と均衡 [Khuyên Chế - Quân Hành].
-- C. 全員一致 [Toàn Viên Nhất Trí].
-- D. 自由放任 [Tự Do Phóng Nhậm].
+Cụm từ "Check and Balance" (制衡) được Nhật hóa trong quản trị doanh nghiệp là gì?- A. 全員一致 [Toàn Viên Nhất Trí].
+- B. 自由放任 [Tự Do Phóng Nhậm].
+- C. 牽制と均衡 [Khuyên Chế - Quân Hành].
+- D. 仲良しクラブ [Trọng Lương Club].
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Sự kiềm chế và cân bằng lẫn nhau giữa các bộ phận.
+> - **正解：C**. Sự kiềm chế và cân bằng lẫn nhau giữa các bộ phận.
 
 **第3問 (Câu 3):**
-Ý nghĩa của "Internal Audit" (内部監査) trong trình độ J1+ là gì?
-- A. Việc sếp đi mắng nhân viên mỗi ngày.
+Ý nghĩa của "Internal Audit" (内部監査) trong trình độ J1+ là gì?- A. Việc sếp đi mắng nhân viên mỗi ngày.
 - B. Việc kiểm tra định kỳ để đánh giá tính hiệu quả, tính tuân thủ và rủi ro của hệ thống quản lý nội bộ.
 - C. Việc kiểm kê kho hàng.
 - D. Việc tuyển chọn nhân viên mới.

@@ -91,34 +91,31 @@ Phân biệt giữa **「催告 [Thôi Cáo] 」** (Thông báo nhắc nhở tr�
 ## 📝 6. QUICK QUIZ: 法的文書・契約・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-「本契約 [Bản Khiết Ước] は、期間満了 [Kỳ Gian Mãn Liễu] の 3 ヶ月前までに書面 [Thư Diện] による申し出がない限り、**自動的に更新 [Canh Tân] される** ものとする。」 Ý nghĩa là gì?
-- A. Cứ sau 3 tháng là phải ký lại.
+「本契約 [Bản Khiết Ước] は、期間満了 [Kỳ Gian Mãn Liễu] の 3 ヶ月前までに書面 [Thư Diện] による申し出がない限り、**自動的に更新 [Canh Tân] される** ものとする。」 Ý nghĩa là gì?- A. Cứ sau 3 tháng là phải ký lại.
 - B. Hợp đồng sẽ tự động gia hạn nếu không ai báo hủy trước 3 tháng khi hết hạn.
-- C. Hợp đồng chỉ có hiệu lực 3 tháng.
-- D. Không được phép hủy hợp đồng.
+- C. Không được phép hủy hợp đồng.
+- D. Hợp đồng chỉ có hiệu lực 3 tháng.
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Đây là điều khoản gia hạn tự động chuẩn trong BJT.
 
 **第2問 (Câu 2):**
-「乙が甲に納入 [Nạp Nhập] した製品に瑕疵 [Hà Tì] が発見された場合、乙は **速やかに [Tốc]** 修理または代替 [Đại Thế] 品の納入を行う。」 Ý nghĩa của 「速やかに」?
-- A. Làm ngay trong 5 phút.
-- B. Làm sớm nhất có thể trong khả năng hợp lý.
+「乙が甲に納入 [Nạp Nhập] した製品に瑕疵 [Hà Tì] が発見された場合、乙は **速やかに [Tốc]** 修理または代替 [Đại Thế] 品の納入を行う。」 Ý nghĩa của 「速やかに」?- A. Làm ngay trong 5 phút.
+- B. Không cần làm gì cả.
 - C. Làm khi nào bên B thấy rảnh.
-- D. Không cần làm gì cả.
+- D. Làm sớm nhất có thể trong khả năng hợp lý.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「速やかに」** yêu cầu thực hiện sớm nhưng linh hoạt hơn **「直ちに」** (ngay lập tức).
+> - **正解：D**. **「速やかに」** yêu cầu thực hiện sớm nhưng linh hoạt hơn **「直ちに」** (ngay lập tức).
 
 **第3問 (Câu 3):**
-Trong văn bản quy định về tiền phạt (**違約金 [Vi Ước Kim]**), cụm từ **「実損 [Thực Tổn] 」** nghĩa là gì?
-- A. Số tiền phạt đã được ấn định sẵn.
-- B. Số tiền thiệt hại thực tế phát sinh (phải có hóa đơn/chứng từ chứng minh).
+Trong văn bản quy định về tiền phạt (**違約金 [Vi Ước Kim]**), cụm từ **「実損 [Thực Tổn] 」** nghĩa là gì?- A. Số tiền thiệt hại thực tế phát sinh (phải có hóa đơn/chứng từ chứng minh).
+- B. Số tiền phạt đã được ấn định sẵn.
 - C. Một triệu Yên.
 - D. Tiền lương nhân viên.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「実損」** là số tiền thiệt hại thực sự (Actual loss). Phân biệt với **「予定賠償額」** (Số tiền ấn định trước).
+> - **正解：A**. **「実損」** là số tiền thiệt hại thực sự (Actual loss). Phân biệt với **「予定賠償額」** (Số tiền ấn định trước).
 
 ---
 

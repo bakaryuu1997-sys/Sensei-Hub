@@ -70,24 +70,24 @@ Bạn không nhất thiết cần máy tính lượng tử để hưởng lợi.
 # 📝 QUICK QUIZ
 
 **Câu 1: Dịch vụ nào của AWS cho phép bạn thuê máy tính lượng tử để làm thí nghiệm?**
-A. Amazon S3.
-B. Amazon Braket.
-C. Amazon EC2.
-D. AWS Lambda.
+A. Amazon Braket.
+B. Amazon EC2.
+C. AWS Lambda.
+D. Amazon S3.
 
 **Câu 2: 'Q-Day' ám chỉ điều gì?**
-A. Ngày AWS giảm giá.
-B. Ngày máy tính lượng tử có thể bẻ gãy hầu hết các hệ thống mã hóa hiện nay.
-C. Ngày AI thay thế con người.
-D. Ngày quốc tế lượng tử.
+A. Ngày máy tính lượng tử có thể bẻ gãy hầu hết các hệ thống mã hóa hiện nay.
+B. Ngày AWS giảm giá.
+C. Ngày quốc tế lượng tử.
+D. Ngày AI thay thế con người.
 
 **Câu 3: (Cập nhật 2026) Làm thế nào để bảo vệ dữ liệu S3 trước máy tính lượng tử?**
-A. Đổi mật khẩu hàng ngày.
-B. Sử dụng mã hóa kháng lượng tử (Post-Quantum Cryptography) có sẵn trên AWS KMS.
-C. Rút dây mạng.
-D. Xóa hết dữ liệu nhạy cảm.
+A. Xóa hết dữ liệu nhạy cảm.
+B. Rút dây mạng.
+C. Đổi mật khẩu hàng ngày.
+D. Sử dụng mã hóa kháng lượng tử (Post-Quantum Cryptography) có sẵn trên AWS KMS.
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-A, 2-A, 3-D.
 
 ---
 

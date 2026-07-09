@@ -102,34 +102,31 @@ Sự đa dạng mang lại sức mạnh đột phá:
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khi bạn muốn nói "Chúng ta cần tuyển dụng những người có tư duy khác biệt để thúc đẩy sáng tạo", cụm từ J1+ là gì?
-- A. 面白い人を集めよう。
-- B. 組織の「多様性」を担保し, 「イノベーションの創出」を目指すため, 多彩なバックグラウンドを持つ人材の獲得が不可欠です。
-- C. 変な人を入れましょう。
-- D. 誰でもいいから入れてください。
+Khi bạn muốn nói "Chúng ta cần tuyển dụng những người có tư duy khác biệt để thúc đẩy sáng tạo", cụm từ J1+ là gì?- A. 誰でもいいから入れてください。
+- B. 変な人を入れましょう。
+- C. 面白い人を集めよう。
+- D. 組織の「多様性」を担保し, 「イノベーションの創出」を目指すため, 多彩なバックグラウンドを持つ人材の獲得が不可欠です。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「担保」 [Đam Bảo]** và **「不可欠」 [Bất Khả Khiếm]** là những từ vựng khẳng định đẳng cấp chuyên gia.
+> - **正解：D**. **「担保」 [Đam Bảo]** và **「不可欠」 [Bất Khả Khiếm]** là những từ vựng khẳng định đẳng cấp chuyên gia.
 
 **第2問 (Câu 2):**
-Thuật ngữ "Human Capital" (人的資本) khác với "Human Resources" (Nguồn nhân lực) ở điểm nào trong tư duy J1+?
-- A. Không có gì khác nhau.
+Thuật ngữ "Human Capital" (人的資本) khác với "Human Resources" (Nguồn nhân lực) ở điểm nào trong tư duy J1+?- A. Capital dùng cho ngân hàng, Resources dùng cho công ty.
 - B. Human Capital coi con người là vốn đầu tư cần được phát triển giá trị lâu dài, trong khi Human Resources coi con người là một loại tài nguyên tiêu hao.
 - C. Capital là tiền, Resources là người.
-- D. Capital dùng cho ngân hàng, Resources dùng cho công ty.
+- D. Không có gì khác nhau.
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Sự thay đổi tư duy này là nền tảng của quản trị nhân sự hiện đại.
 
 **第3問 (Câu 7):**
-Cụm từ "Psychological Safety" (心理的安全性) trong đội ngũ J1+ có nghĩa là gì?
-- A. Việc cho nhân viên đi khám tâm lý định kỳ.
-- B. Một trạng thái mà các thành viên cảm thấy an toàn khi chia sẻ ý kiến, đặt câu hỏi hoặc thừa nhận lỗi lầm mà không sợ bị trừng phạt hay làm nhục.
-- C. Việc công ty lắp đặt nhiều camera an ninh.
-- D. Việc nhân viên không cần phải làm gì cả.
+Cụm từ "Psychological Safety" (心理的安全性) trong đội ngũ J1+ có nghĩa là gì?- A. Việc công ty lắp đặt nhiều camera an ninh.
+- B. Việc cho nhân viên đi khám tâm lý định kỳ.
+- C. Việc nhân viên không cần phải làm gì cả.
+- D. Một trạng thái mà các thành viên cảm thấy an toàn khi chia sẻ ý kiến, đặt câu hỏi hoặc thừa nhận lỗi lầm mà không sợ bị trừng phạt hay làm nhục.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Điều kiện tiên quyết để có một đội ngũ hiệu suất cao (High-performing team).
+> - **正解：D**. Điều kiện tiên quyết để có một đội ngũ hiệu suất cao (High-performing team).
 
 ---
 

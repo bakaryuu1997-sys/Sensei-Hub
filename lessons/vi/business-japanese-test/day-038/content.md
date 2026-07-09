@@ -87,34 +87,31 @@ Hiện nay nhiều công ty Nhật bắt đầu bãi bỏ việc tặng quà cá
 ## 📝 6. QUICK QUIZ: 実踐・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khi bạn mang quà đến công ty đối tác, thời điểm nào trao quà là chuyên nghiệp nhất (J1+ level)?
-- A. Ngay khi gặp mặt ở quầy lễ tân.
-- B. Sau khi mọi người đã ổn định chỗ ngồi trong phòng họp và đã chào hỏi xong bằng danh thiếp.
-- C. Lúc chuẩn bị ra về.
+Khi bạn mang quà đến công ty đối tác, thời điểm nào trao quà là chuyên nghiệp nhất (J1+ level)?- A. Ngay khi gặp mặt ở quầy lễ tân.
+- B. Lúc chuẩn bị ra về.
+- C. Sau khi mọi người đã ổn định chỗ ngồi trong phòng họp và đã chào hỏi xong bằng danh thiếp.
 - D. Khi đang uống trà giữa buổi họp.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Chào hỏi và danh thiếp là phần "Công" (**公**). Quà tặng là phần "Tư" (**私**). Phải hoàn thành phần Công trước mới đến phần Tư. Trao quà ngay khi ngồi xuống giúp tạo không khí thoải mái cho cuộc họp sắp tới.
+> - **正解：C**. Chào hỏi và danh thiếp là phần "Công" (**公**). Quà tặng là phần "Tư" (**私**). Phải hoàn thành phần Công trước mới đến phần Tư. Trao quà ngay khi ngồi xuống giúp tạo không khí thoải mái cho cuộc họp sắp tới.
 
 **第2問 (Câu 2):**
-Bạn muốn tặng một món quà là đặc sản vùng miền của mình cho đối tác Nhật. Câu nào giới thiệu món quà là "Elite" nhất?
-- A. 私の田舎で一番有名な一番美味しいものです。
-- B. 地元の特産品でございます。お口に合うか分かりませんが, よろしければお受け取りください。
-- C. とても高いので、大切にしてください。
-- D. ぜひ食べて、感想を教えてください。
+Bạn muốn tặng một món quà là đặc sản vùng miền của mình cho đối tác Nhật. Câu nào giới thiệu món quà là "Elite" nhất?- A. とても高いので、大切にしてください。
+- B. 私の田舎で一番有名な一番美味しいものです。
+- C. ぜひ食べて、感想を教えてください。
+- D. 地元の特産品でございます。お口に合うか分かりませんが, よろしければお受け取りください。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Sự kết hợp giữa **「地元の特産品」** (giá trị vùng miền) và mẫu câu khiêm nhường chuẩn **「お口に合うか分かりませんが」** là công thức hoàn hảo.
+> - **正解：D**. Sự kết hợp giữa **「地元の特産品」** (giá trị vùng miền) và mẫu câu khiêm nhường chuẩn **「お口に合うか分かりませんが」** là công thức hoàn hảo.
 
 **第3問 (Câu 3):**
-Chữ "Giri" (義理) trong văn hóa quà tặng Nhật Bản có nghĩa là gì?
-- A. Gửi quà vì bị bắt buộc, không thấy vui.
-- B. Nghĩa vụ đạo đức để duy trì mối quan hệ tương hỗ (cho và nhận).
-- C. Tiền hối lộ gián tiếp.
-- D. Gửi quà để khoe khoang.
+Chữ "Giri" (義理) trong văn hóa quà tặng Nhật Bản có nghĩa là gì?- A. Gửi quà vì bị bắt buộc, không thấy vui.
+- B. Tiền hối lộ gián tiếp.
+- C. Gửi quà để khoe khoang.
+- D. Nghĩa vụ đạo đức để duy trì mối quan hệ tương hỗ (cho và nhận).
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Giri không phải là sự ép lòng, đó là một quy luật xã hội giúp mọi người gắn kết với nhau một cách có trật tự.
+> - **正解：D**. Giri không phải là sự ép lòng, đó là một quy luật xã hội giúp mọi người gắn kết với nhau một cách có trật tự.
 
 ---
 

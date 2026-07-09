@@ -105,31 +105,28 @@ Chấn an và dẫn dắt:
 ## 📝 6. QUICK QUIZ: 実踐・最終試練 (M&A & PMI Test)
 
 **第1問 (Câu 1):**
-Tại sao giai đoạn "Due Diligence" (DD) lại cực kỳ quan trọng đối với một nhà lãnh đạo J1 Mastery?
-- A. Để kéo dài thời gian thương lượng.
-- B. Để xác định chính xác các giá trị, rủi ro tiềm ẩn và các rào cản văn hóa, từ đó đưa ra quyết định mua lại có cơ sở khoa học và lập kế hoạch PMI hiệu quả.
-- C. Để làm cho đối phương cảm thấy sợ hãi.
-- D. Vì quy định của sàn chứng khoán bắt buộc như vậy.
+Tại sao giai đoạn "Due Diligence" (DD) lại cực kỳ quan trọng đối với một nhà lãnh đạo J1 Mastery?- A. Để làm cho đối phương cảm thấy sợ hãi.
+- B. Vì quy định của sàn chứng khoán bắt buộc như vậy.
+- C. Để xác định chính xác các giá trị, rủi ro tiềm ẩn và các rào cản văn hóa, từ đó đưa ra quyết định mua lại có cơ sở khoa học và lập kế hoạch PMI hiệu quả.
+- D. Để kéo dài thời gian thương lượng.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. DD là nền móng cho mọi chiến lược sau đó.
+> - **正解：C**. DD là nền móng cho mọi chiến lược sau đó.
 
 **第2問 (Câu 2):**
-Cụm từ **「シナジーの最大化」 [Synergy - Tối Đại Hóa]** thường được dùng để biện luận cho điều gì trong M&A?
-- A. Việc sa thải toàn bộ nhân viên công ty cũ.
-- B. Việc kết hợp thế mạnh của hai bên để tạo ra những giá trị mới (doanh thu mới, hiệu quả mới) mà nếu đứng riêng lẻ thì không thể đạt được.
-- C. Việc tăng giá bán sản phẩm.
-- D. Việc thay đổi logo công ty.
+Cụm từ **「シナジーの最大化」 [Synergy - Tối Đại Hóa]** thường được dùng để biện luận cho điều gì trong M&A?- A. Việc sa thải toàn bộ nhân viên công ty cũ.
+- B. Việc tăng giá bán sản phẩm.
+- C. Việc thay đổi logo công ty.
+- D. Việc kết hợp thế mạnh của hai bên để tạo ra những giá trị mới (doanh thu mới, hiệu quả mới) mà nếu đứng riêng lẻ thì không thể đạt được.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. 1 + 1 > 2.
+> - **正解：D**. 1 + 1 > 2.
 
 **第3問 (Câu 3):**
-Một người điều phối PMI đẳng cấp J1 sẽ làm gì khi phát hiện sự xung đột văn hóa gay gắt giữa hai bên?
-- A. 「勝った方の文化に合わせろ」と命令する.
-- B. 問題を放置し、時間が解決するのを待つ.
-- C. 両者の文化的な「強み」を客 quan và tìm kiếm một **「共通のプロトコル」** (Giao thức chung), khuyến khích sự đối thoại và tôn trọng sự khác biệt để xây dựng một văn hóa mới của tập đoàn.
-- D. Đại hội đồng cổ đông để phàn nàn.
+Một người điều phối PMI đẳng cấp J1 sẽ làm gì khi phát hiện sự xung đột văn hóa gay gắt giữa hai bên?- A. 「勝った方の文化に合わせろ」と命令する.
+- B. Đại hội đồng cổ đông để phàn nàn.
+- C. 問題を放置し、時間が解決するのを待つ.
+- D. 両者の文化的な「強み」を客 quan và tìm kiếm một **「共通のプロトコル」** (Giao thức chung), khuyến khích sự đối thoại và tôn trọng sự khác biệt để xây dựng một văn hóa mới của tập đoàn.
 
 > **解釈 (Giải thích):**
 > - **正解：C**. Xây dựng cầu nối và văn hóa chung (**Corporate Identity**).

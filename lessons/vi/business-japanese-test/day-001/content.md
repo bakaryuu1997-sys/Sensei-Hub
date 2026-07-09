@@ -97,31 +97,28 @@ Trong kỷ nguyên làm việc Hybrid, lời chào qua **Slack, Microsoft Teams 
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Bạn đang dẫn một khách hàng quan trọng vào phòng họp. Khi giới thiệu giám đốc của công ty mình, câu nào sau đây thể hiện sự chuyên nghiệp J1+?
-- A. こちらは社長の山下様でございます。
+Bạn đang dẫn một khách hàng quan trọng vào phòng họp. Khi giới thiệu giám đốc của công ty mình, câu nào sau đây thể hiện sự chuyên nghiệp J1+?- A. 社長の山下でございます。
 - B. 弊社の社長の山下を紹介いたします。
 - C. 私の会社の社長の山下さんです。
-- D. 社長の山下でございます。
+- D. こちらは社長の山下様でございます。
 
 > **解釈 (Giải thích):**
 > - **正解：B**. **「弊社」 [Tệ Xã]** là cách gọi khiêm nhường chuẩn mực. Loại bỏ **「さん/様」** khi nói về người nhà với khách.
 > - A sai vì dùng tôn kính ngữ cho người nhà. C quá thiếu chuyên nghiệp. D đúng nhưng B đầy đủ và trang trọng hơn trong bối cảnh giới thiệu.
 
 **第2問 (Câu 2):**
-Bạn lần đầu gọi điện cho một đối tác đã từng trao đổi qua email nhưng chưa gặp mặt. Câu mở đầu nào là "vạn năng" nhất trong BJT?
-- A. 初めまして、よろしくお願いいたします。
+Bạn lần đầu gọi điện cho một đối tác đã từng trao đổi qua email nhưng chưa gặp mặt. Câu mở đầu nào là "vạn năng" nhất trong BJT?- A. お目にかかれて光栄です。
 - B. お忙しいところ失礼いたします。
-- C. いつもお世話になっております。
-- D. お目にかかれて光栄です。
+- C. 初めまして、よろしくお願いいたします。
+- D. いつもお世話になっております。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Đây là biểu tượng của văn hóa kinh doanh Nhật. Dù chưa gặp mặt, nhưng vì hai công ty đã có quan hệ, bạn mặc định dùng **「いつもお世話になっております」** để khẳng định sự kết nối bền vững.
+> - **正解：B**. Đây là biểu tượng của văn hóa kinh doanh Nhật. Dù chưa gặp mặt, nhưng vì hai công ty đã có quan hệ, bạn mặc định dùng **「いつもお世話になっております」** để khẳng định sự kết nối bền vững.
 
 **第3問 (Câu 3):**
-Khi kết thúc phần tự giới thiệu trong buổi lễ nhậm chức, cụm từ kết thúc nào ghi điểm tuyệt đối về sự khiêm nhường?
-- A. 以上です。頑張ります。
-- B. 何卒よろしくお願いいたします。
-- C. ご指導、ご鞭撻のほど、伏してお願い申し上げます。
+Khi kết thúc phần tự giới thiệu trong buổi lễ nhậm chức, cụm từ kết thúc nào ghi điểm tuyệt đối về sự khiêm nhường?- A. 以上です。頑張ります。
+- B. ご指導、ご鞭撻のほど、伏してお願い申し上げます。
+- C. 何卒よろしくお願いいたします。
 - D. 期待に応えられるよう努力します。
 
 > **解釈 (Giải thích):**

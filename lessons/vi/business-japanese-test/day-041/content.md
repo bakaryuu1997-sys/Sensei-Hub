@@ -92,18 +92,16 @@ Khi giới thiệu sản phẩm, thay vì nói **「これは世界一です」*
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Bạn đang dẫn khách đi tham quan và muốn nhắc họ lưu ý có bậc thang phía trước. Câu nào là "Elite" nhất?
-- A. 階段があります。気をつけてください。
-- B. 足元にご注意いただけますでしょうか。段差がございます。
-- C. 下を見て歩いてください。
+Bạn đang dẫn khách đi tham quan và muốn nhắc họ lưu ý có bậc thang phía trước. Câu nào là "Elite" nhất?- A. 下を見て歩いてください。
+- B. 階段があります。気をつけてください。
+- C. 足元にご注意いただけますでしょうか。段差がございます。
 - D. 転ばないようにしてください。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「足元にご注意」** và **「段差」 [Đoạn Sai]** (bậc tam cấp) là những cụm từ chuyên dụng trong hướng dẫn cơ sở trang trọng.
+> - **正解：C**. **「足元にご注意」** và **「段差」 [Đoạn Sai]** (bậc tam cấp) là những cụm từ chuyên dụng trong hướng dẫn cơ sở trang trọng.
 
 **第2問 (Câu 2):**
-Khi khách khen nhà máy của bạn sạch sẽ, câu trả lời nào thể hiện sự khiêm nhường nhưng tự hào (J1+ level)?
-- A. 当然です。毎日掃除していますから。
+Khi khách khen nhà máy của bạn sạch sẽ, câu trả lời nào thể hiện sự khiêm nhường nhưng tự hào (J1+ level)?- A. 当然です。毎日掃除していますから。
 - B. お褒めにあずかり光栄です。社員一同、5Sを徹底するよう努めております。
 - C. 汚いですよ、まだまだ。
 - D. 掃除機がいいんです。
@@ -112,11 +110,10 @@ Khi khách khen nhà máy của bạn sạch sẽ, câu trả lời nào thể h
 > - **正解：B**. **「お褒めにあずかり光栄です」 [Phóng - Quang Vinh]** là mẫu câu tiếp nhận lời khen đẳng cấp. Việc nhắc đến sự nỗ lực của tập thể (**社員一同**) thể hiện tinh thần đoàn kết của doanh nghiệp.
 
 **第3問 (Câu 3):**
-Tại hiện trường sản xuất, khi thấy một biển báo có hình tam giác vàng và dấu chấm than, nghĩa là gì?
-- A. Khu vực ăn uống.
+Tại hiện trường sản xuất, khi thấy một biển báo có hình tam giác vàng và dấu chấm than, nghĩa là gì?- A. Khu vực ăn uống.
 - B. Chú ý nguy hiểm/Cẩn trọng.
-- C. Lối ra thoát hiểm.
-- D. Nơi để rác.
+- C. Nơi để rác.
+- D. Lối ra thoát hiểm.
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Đây là kiến thức về ký hiệu an toàn lao động thường xuất hiện trong các bài thi BJT tình huống.

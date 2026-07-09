@@ -96,34 +96,31 @@ Tiếng lật giấy của người bên cạnh, tiếng ho, hoặc gió điều
 ## 📝 6. QUICK QUIZ: 戦略・精神力チャレンジ
 
 **第1問 (Câu 1):**
-Kỳ thi đang diễn ra, bạn nhận ra mình vừa đánh sai một câu ở Section 2 nhưng đã sang Section 3. Bạn nên làm gì?
-- A. Quay lại sửa ngay lập tức dù đang trong thời gian đọc hiểu.
-- B. Dừng thi để báo với giám thị.
-- C. Quên nó đi và tập trung 100% cho Section 3 để bù lại điểm số.
-- D. Cố gắng vừa làm Section 3 vừa nghĩ cách sửa câu cũ.
+Kỳ thi đang diễn ra, bạn nhận ra mình vừa đánh sai một câu ở Section 2 nhưng đã sang Section 3. Bạn nên làm gì?- A. Quên nó đi và tập trung 100% cho Section 3 để bù lại điểm số.
+- B. Cố gắng vừa làm Section 3 vừa nghĩ cách sửa câu cũ.
+- C. Dừng thi để báo với giám thị.
+- D. Quay lại sửa ngay lập tức dù đang trong thời gian đọc hiểu.
 
 > **解釈 (Giải thích):**
 > - **正解：C**. Hiệu ứng **「サンクコスト」** (Chi phí chìm). Việc cố quay lại sửa sẽ làm đứt mạch tư duy của phần hiện tại, gây thiệt hại kép.
 
 **第2問 (Câu 2):**
-Trong Section 3, bạn gặp một bảng biểu có quá nhiều số liệu và chú thích. Câu hỏi yêu cầu tìm một con số cụ thể. Cách tiếp cận J1+ là gì?
-- A. Đọc hết từ đầu đến cuối bảng rồi mới tìm.
-- B. Nhìn câu hỏi trước, xác định từ khóa (Keyword), sau đó dùng mắt quét (Scanning) để tìm dữ liệu tương ứng trên bảng.
-- C. Dịch bảng biểu sang tiếng Việt để dễ hiểu.
-- D. Đoán đại con số trông có vẻ hợp lý.
+Trong Section 3, bạn gặp một bảng biểu có quá nhiều số liệu và chú thích. Câu hỏi yêu cầu tìm một con số cụ thể. Cách tiếp cận J1+ là gì?- A. Nhìn câu hỏi trước, xác định từ khóa (Keyword), sau đó dùng mắt quét (Scanning) để tìm dữ liệu tương ứng trên bảng.
+- B. Đoán đại con số trông có vẻ hợp lý.
+- C. Đọc hết từ đầu đến cuối bảng rồi mới tìm.
+- D. Dịch bảng biểu sang tiếng Việt để dễ hiểu.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Kỹ năng **Scanning** là bắt buộc để quản lý thời gian trong BJT.
+> - **正解：A**. Kỹ năng **Scanning** là bắt buộc để quản lý thời gian trong BJT.
 
 **第3問 (Câu 3):**
-Trước khi bắt đầu Section nghe hiểu, tư thế tinh thần nào là tốt nhất?
-- A. Cố nhớ lại toàn bộ danh sách từ vựng kính ngữ.
-- B. Lo lắng về việc mình sẽ đạt bao nhiêu điểm.
-- C. Thả lỏng cơ thể, chỉ tập trung vào việc "phản ứng với âm thanh" sắp tới.
-- D. Càu nhàu về việc đề thi quá dài.
+Trước khi bắt đầu Section nghe hiểu, tư thế tinh thần nào là tốt nhất?- A. Cố nhớ lại toàn bộ danh sách từ vựng kính ngữ.
+- B. Thả lỏng cơ thể, chỉ tập trung vào việc "phản ứng với âm thanh" sắp tới.
+- C. Càu nhàu về việc đề thi quá dài.
+- D. Lo lắng về việc mình sẽ đạt bao nhiêu điểm.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Trạng thái **「ゾーン」 [Zone]** (tập trung cực độ nhưng thư giãn) là chìa khóa để đạt phản xạ vàng trong Nghe hiểu.
+> - **正解：D**. Trạng thái **「ゾーン」 [Zone]** (tập trung cực độ nhưng thư giãn) là chìa khóa để đạt phản xạ vàng trong Nghe hiểu.
 
 ---
 

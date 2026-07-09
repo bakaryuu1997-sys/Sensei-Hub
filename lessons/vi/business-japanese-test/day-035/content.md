@@ -87,34 +87,31 @@ Khi đối phương nói: **「検討させていただきます」 [Kiểm Th�
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Đối phương đưa ra một mức giá quá thấp khiến bạn không thể chấp nhận được. Câu phản hồi nào thể hiện phong thái J1+?
-- A. 安すぎます。無理です。
-- B. その価格では、弊社の採算が合いません。
-- C. 非常に魅力的なご提示ですが、現状の品質を維持するためには、その価格設定では正直厳しいものがございます。
-- D. 他社に行ってください。
+Đối phương đưa ra một mức giá quá thấp khiến bạn không thể chấp nhận được. Câu phản hồi nào thể hiện phong thái J1+?- A. その価格では、弊社の採算が合いません。
+- B. 他社に行ってください。
+- C. 安すぎます。無理です。
+- D. 非常に魅力的なご提示ですが、現状の品質を維持するためには、その価格設定では正直厳しいものがございます。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Kỹ thuật khen trước (**魅力的なご提示**) sau đó đưa ra một lý do cực kỳ chính mực là **「品質の維持」 [Phẩm Chất - Duy Trì]** khiến đối phương không thể bắt bẻ được.
+> - **正解：A**. Kỹ thuật khen trước (**魅力的なご提示**) sau đó đưa ra một lý do cực kỳ chính mực là **「品質の維持」 [Phẩm Chất - Duy Trì]** khiến đối phương không thể bắt bẻ được.
 
 **第2問 (Câu 2):**
-Trong đàm phán, biểu hiện nào sau đây của đối phương cho thấy họ đang bắt đầu muốn thỏa hiệp (**妥協**)?
-- A. 「絶対に変更できません」
-- B. 「社内で持ち帰って検討します」
-- C. 「〇〇の条件がクリアできれば、検討の余地はありますが...」
-- D. 「忙しいので失礼します」
+Trong đàm phán, biểu hiện nào sau đây của đối phương cho thấy họ đang bắt đầu muốn thỏa hiệp (**妥協**)?- A. 「社内で持ち帰って検討します」
+- B. 「絶対に変更できません」
+- C. 「忙しいので失礼します」
+- D. 「〇〇の条件がクリアできれば、検討の余地はありますが...」
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Cụm từ **「検討の余地はありますが」 [Dư Địa]** (Vẫn còn chỗ để xem xét) là tín hiệu đèn xanh cho thấy đối phương đang chờ đợi một lời đề nghị từ bạn.
+> - **正解：A**. Cụm từ **「検討の余地はありますが」 [Dư Địa]** (Vẫn còn chỗ để xem xét) là tín hiệu đèn xanh cho thấy đối phương đang chờ đợi một lời đề nghị từ bạn.
 
 **第3問 (Câu 3):**
-Tư duy "San-po Yoshi" (Tam phương hảo) trong đàm phán Nhật Bản có nghĩa là gì?
-- A. Mình thắng 3 lần liên tiếp.
-- B. Khách hàng phải trả gấp 3 lần.
+Tư duy "San-po Yoshi" (Tam phương hảo) trong đàm phán Nhật Bản có nghĩa là gì?- A. Khách hàng phải trả gấp 3 lần.
+- B. Chia lợi nhuận làm 3 phần bằng nhau.
 - C. Lợi mình, lợi người, và lợi cho cả xã hội (quan hệ bền vững).
-- D. Chia lợi nhuận làm 3 phần bằng nhau.
+- D. Mình thắng 3 lần liên tiếp.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Đây là kim chỉ nam cho sự hợp tác trường tồn trong văn hóa doanh nghiệp Nhật.
+> - **正解：A**. Đây là kim chỉ nam cho sự hợp tác trường tồn trong văn hóa doanh nghiệp Nhật.
 
 ---
 

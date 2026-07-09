@@ -66,23 +66,23 @@ Hãy tưởng tượng bạn quản lý một **Hệ thống nhượng quyền 7
 
 **Câu 1: Tính năng nào giúp gộp hóa đơn tất cả tài khoản con về một chỗ?**
 A. SCP
-B. Consolidated Billing
-C. CloudTrail
-D. IAM Role
+B. CloudTrail
+C. IAM Role
+D. Consolidated Billing
 
 **Câu 2: (Cập nhật 2026) AI nào giúp giải thích nguyên nhân tăng chi phí AWS bằng ngôn ngữ tự nhiên?**
 A. Alexa
-B. Amazon Q in Billing
+B. Cortana
 C. Siri
-D. Cortana
+D. Amazon Q in Billing
 
 **Câu 3: Một SCP cấm S3 được áp dụng cho tài khoản con. Admin tài khoản đó có tạo được Bucket không?**
-A. Có, vì là Admin.
-B. Không, vì SCP (Explicit Deny) luôn thắng.
-C. Có, nếu họ xin phép.
+A. Có, nếu họ xin phép.
+B. Có, vì là Admin.
+C. Không, vì SCP (Explicit Deny) luôn thắng.
 D. Không, trừ khi họ đổi mật khẩu.
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-D, 2-D, 3-C.
 
 ---
 

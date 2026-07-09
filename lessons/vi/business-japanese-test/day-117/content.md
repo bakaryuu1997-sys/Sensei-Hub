@@ -95,34 +95,31 @@ Khoanh tròn tất cả các từ nối chỉ sự chuyển ngoặt.
 ## 📝 6. QUICK QUIZ: 読解・論理パターン・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-「本規定 [Bản Quy Định] は、**別段 [Biệt Đoạn] の定めがない限り**、全従業員 [从业员] に適用される。」 Ý nghĩa là gì?
-- A. Mọi người đều phải tuân theo, không có ngoại lệ.
-- B. Chỉ những người có tên trong danh sách riêng mới phải tuân theo.
-- C. Mọi người tuân theo, TRỪ KHI có một quy định khác cụ thể hơn cho một nhóm đối tượng nhất định.
-- D. Quy định này đã hết hạn.
+「本規定 [Bản Quy Định] は、**別段 [Biệt Đoạn] の定めがない限り**、全従業員 [从业员] に適用される。」 Ý nghĩa là gì?- A. Quy định này đã hết hạn.
+- B. Mọi người tuân theo, TRỪ KHI có một quy định khác cụ thể hơn cho một nhóm đối tượng nhất định.
+- C. Chỉ những người có tên trong danh sách riêng mới phải tuân theo.
+- D. Mọi người đều phải tuân theo, không có ngoại lệ.
 
 > **解釈 (Giải thích):**
 > - **正解：C**. Cụm từ **「別段の定めがない限り」** là "Cổng thoát hiểm" pháp lý cực kỳ quan trọng trong BJT.
 
 **第2問 (Câu 2):**
-Trong thông báo về việc sử dụng phòng họp, câu nào sau đây có tính chất "Ưu tiên" cao nhất?
-- A. 原則として予約制です。
+Trong thông báo về việc sử dụng phòng họp, câu nào sau đây có tính chất "Ưu tiên" cao nhất?- A. 原則として予約制です。
 - B. 空いていれば自由に使えます。
-- C. 役員会議 [Dịch Viên Hội Nghị] が入った場合は、一般の予約は取り消されるものとします。
-- D. 誰でも歓迎 [Hoan Nghênh] します.
+- C. 誰でも歓迎 [Hoan Nghênh] します.
+- D. 役員会議 [Dịch Viên Hội Nghị] が入った場合は、一般の予約は取り消されるものとします。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Điều khoản **「取り消される」** (bị hủy) dành cho cuộc họp sếp thể hiện tính ưu tiên tuyệt đối.
+> - **正解：B**. Điều khoản **「取り消される」** (bị hủy) dành cho cuộc họp sếp thể hiện tính ưu tiên tuyệt đối.
 
 **第3問 (Câu 3):**
-Khi đọc một văn bản về quyền hạn của chi nhánh, thấy từ **「専決 [Chuyên Quyết] 」**, bạn hiểu là:
-- A. Phải xin ý kiến tổng công ty.
-- B. Chi nhánh được toàn quyền tự quyết định mà không cần hỏi ai.
-- C. Phải hỏi ý kiến khách hàng.
-- D. Đang thảo luận.
+Khi đọc một văn bản về quyền hạn của chi nhánh, thấy từ **「専決 [Chuyên Quyết] 」**, bạn hiểu là:- A. Phải xin ý kiến tổng công ty.
+- B. Đang thảo luận.
+- C. Chi nhánh được toàn quyền tự quyết định mà không cần hỏi ai.
+- D. Phải hỏi ý kiến khách hàng.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「専決」** (chuyên quyết) là một từ Elite chỉ quyền tự quyết trong phạm vi được giao.
+> - **正解：C**. **「専決」** (chuyên quyết) là một từ Elite chỉ quyền tự quyết trong phạm vi được giao.
 
 ---
 

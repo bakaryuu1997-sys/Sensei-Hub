@@ -94,34 +94,31 @@ Trong Section 1, 5 giây cuối cùng của đáp án thường chứa từ ph�
 ## 📝 6. QUICK QUIZ: 実戦・テクニック・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Câu nào sau đây giúp "ghi điểm" J1+ nhất khi bạn muốn từ chối một yêu cầu vô lý từ khách hàng?
-- A. それはできません。ルールですから。
-- B. ご要望は重々 [Trọng Trọng] 承知しておりますが、現時点ではあいにく **弊社のリソースが逼迫 [Bức Bách] しておりまして** 、ご期待に沿いかねる状況でございます。
-- C. ちょっと難しいかもしれません。
-- D. 上司に聞いてみます。
+Câu nào sau đây giúp "ghi điểm" J1+ nhất khi bạn muốn từ chối một yêu cầu vô lý từ khách hàng?- A. ご要望は重々 [Trọng Trọng] 承知しておりますが、現時点ではあいにく **弊社のリソースが逼迫 [Bức Bách] しておりまして** 、ご期待に沿いかねる状況でございます。
+- B. 上司に聞いてみます。
+- C. それはできません。ルールですから。
+- D. ちょっと難しいかもしれません。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Dùng từ chuyên môn Elite (**リソースが逼迫** - Nguồn lực đang hạn hẹp), Cushion đầy đủ và lời từ chối dứt khoát nhưng lịch sự.
+> - **正解：A**. Dùng từ chuyên môn Elite (**リソースが逼迫** - Nguồn lực đang hạn hẹp), Cushion đầy đủ và lời từ chối dứt khoát nhưng lịch sự.
 
 **第2問 (Câu 2):**
-Trong phần Nghe-Đọc kết hợp (Section 2), kỹ thuật nào giúp tăng tốc độ làm bài nhất?
-- A. Đọc hết mọi chữ trên biểu đồ.
-- B. Nhìn vào biểu đồ, tìm con số cao nhất và thấp nhất trước khi nghe.
-- C. Vừa nghe vừa dịch sang tiếng Việt.
+Trong phần Nghe-Đọc kết hợp (Section 2), kỹ thuật nào giúp tăng tốc độ làm bài nhất?- A. Vừa nghe vừa dịch sang tiếng Việt.
+- B. Đọc hết mọi chữ trên biểu đồ.
+- C. Nhìn vào biểu đồ, tìm con số cao nhất và thấp nhất trước khi nghe.
 - D. Nhắm mắt lại để tập trung nghe.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Việc xác định **Cực trị (Extremes)** giúp não bạn có "mỏ neo" để đối chiếu thông tin nhanh hơn khi băng bắt đầu nói về sự so sánh.
+> - **正解：C**. Việc xác định **Cực trị (Extremes)** giúp não bạn có "mỏ neo" để đối chiếu thông tin nhanh hơn khi băng bắt đầu nói về sự so sánh.
 
 **第3問 (Câu 3):**
-Kỹ thuật "Elimination" (Loại trừ) trong BJT nên được thực hiện khi nào?
-- A. Sau khi nghe xong cả 4 đáp án.
-- B. Ngay khi nghe thấy một từ sai bối cảnh hoặc sai kính ngữ trong một đáp án.
+Kỹ thuật "Elimination" (Loại trừ) trong BJT nên được thực hiện khi nào?- A. Ngay khi nghe thấy một từ sai bối cảnh hoặc sai kính ngữ trong một đáp án.
+- B. Sau khi nghe xong cả 4 đáp án.
 - C. Khi không biết chọn câu nào.
 - D. Khi sắp hết giờ.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **Loại trừ ngay lập tức** để giảm tải bộ nhớ RAM cho não, tập trung vào các đáp án còn lại.
+> - **正解：A**. **Loại trừ ngay lập tức** để giảm tải bộ nhớ RAM cho não, tập trung vào các đáp án còn lại.
 
 ---
 

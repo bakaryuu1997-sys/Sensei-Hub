@@ -72,17 +72,17 @@ D. Retire
 
 **Câu 2: (Cập nhật 2026) Amazon Q giúp gì trong Migration?**
 A. Chỉ vẽ sơ đồ
-B. Tự động đọc code cũ và đề xuất/viết lại code theo kiến trúc mới
-C. Thay thế nhân viên bưu điện
+B. Thay thế nhân viên bưu điện
+C. Tự động đọc code cũ và đề xuất/viết lại code theo kiến trúc mới
 D. Làm website nhanh hơn
 
 **Câu 3: Dịch vụ nào chuyển đổi Schema Database (ví dụ Oracle sang Aurora)?**
 A. DataSync
-B. SCT (Schema Conversion Tool)
+B. CloudFormation
 C. Athena
-D. CloudFormation
+D. SCT (Schema Conversion Tool)
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-B, 2-C, 3-D.
 
 ---
 

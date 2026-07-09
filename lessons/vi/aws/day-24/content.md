@@ -66,23 +66,23 @@ Hãy tưởng tượng bạn là một **Người bán hàng tại hội chợ**
 
 **Câu 1: RPO đại diện cho điều gì?**
 A. Thời gian hệ thống phục hồi
-B. Lượng dữ liệu tối đa chấp nhận bị mất
+B. Tốc độ mạng
 C. Chi phí mua máy chủ
-D. Tốc độ mạng
+D. Lượng dữ liệu tối đa chấp nhận bị mất
 
 **Câu 2: (Cập nhật 2026) AI nào giúp mô phỏng thảm họa để kiểm tra tính sẵn sàng của hệ thống?**
-A. Alexa
-B. Amazon Q for DR
+A. Amazon Q for DR
+B. Alexa
 C. AWS Config
 D. Trusted Advisor
 
 **Câu 3: Chiến lược DR nào có thời gian phục hồi gần như bằng 0?**
-A. Backup & Restore
-B. Pilot Light
-C. Warm Standby
-D. Multi-Site Active-Active
+A. Pilot Light
+B. Multi-Site Active-Active
+C. Backup & Restore
+D. Warm Standby
 
-**Đáp án:** 1-B, 2-B, 3-D.
+**Đáp án:** 1-D, 2-A, 3-A.
 
 ---
 

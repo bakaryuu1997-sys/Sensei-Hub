@@ -102,34 +102,31 @@ Sức mạnh của chuẩn mực chung:
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khi bạn muốn nói "Chúng ta phải làm việc đúng đắn ngay cả khi không có ai nhìn thấy", cụm từ J1+ là gì?
-- A. ちゃんとやりましょう。
-- B. 高い「インテグリティ (Integrity)」を持ち, 透明性の高い企業文化を「醸成」させることが, 長期的な持続可能性に直結します。
-- C. 隠れてサボらないでください。
+Khi bạn muốn nói "Chúng ta phải làm việc đúng đắn ngay cả khi không có ai nhìn thấy", cụm từ J1+ là gì?- A. ちゃんとやりましょう。
+- B. 隠れてサボらないでください。
+- C. 高い「インテグリティ (Integrity)」を持ち, 透明性の高い企業文化を「醸成」させることが, 長期的な持続可能性に直結します。
 - D. 警察に捕まらないように。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「醸成」 [Nhưỡng Thành]** và **「持続可能性」 [Trì Tục Khả Năng Tính]** (Sustainability) là những từ vựng đỉnh cao của quản trị.
+> - **正解：C**. **「醸成」 [Nhưỡng Thành]** và **「持続可能性」 [Trì Tục Khả Năng Tính]** (Sustainability) là những từ vựng đỉnh cao của quản trị.
 
 **第2問 (Câu 2):**
-Thuật ngữ "Compliance" (コンプライアンス) trong doanh nghiệp Nhật Bản hiện nay bao gồm những gì?
-- A. Chỉ bao gồm việc tuân thủ pháp luật.
-- B. Bao gồm tuân thủ pháp luật, các quy định nội bộ và cả các chuẩn mực đạo đức xã hội.
-- C. Việc đi làm đúng giờ.
+Thuật ngữ "Compliance" (コンプライアンス) trong doanh nghiệp Nhật Bản hiện nay bao gồm những gì?- A. Bao gồm tuân thủ pháp luật, các quy định nội bộ và cả các chuẩn mực đạo đức xã hội.
+- B. Việc đi làm đúng giờ.
+- C. Chỉ bao gồm việc tuân thủ pháp luật.
 - D. Việc nộp thuế đầy đủ.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Một khái niệm rộng và sâu sắc hơn nhiều so với việc chỉ không vi phạm luật.
+> - **正解：A**. Một khái niệm rộng và sâu sắc hơn nhiều so với việc chỉ không vi phạm luật.
 
 **第3問 (Câu 8):**
-Ý nghĩa của "Governance" (ガバナンス) trong trình độ J1+ là gì?
-- A. Sự cai trị của chính phủ.
-- B. Cơ chế quản trị và kiểm soát nội bộ nhằm đảm bảo doanh nghiệp hoạt động hiệu quả, minh bạch và bền vững.
-- C. Việc sếp ra lệnh cho nhân viên.
-- D. Việc bầu cử ban giám đốc.
+Ý nghĩa của "Governance" (ガバナンス) trong trình độ J1+ là gì?- A. Việc sếp ra lệnh cho nhân viên.
+- B. Sự cai trị của chính phủ.
+- C. Việc bầu cử ban giám đốc.
+- D. Cơ chế quản trị và kiểm soát nội bộ nhằm đảm bảo doanh nghiệp hoạt động hiệu quả, minh bạch và bền vững.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Trọng tâm của mọi tập đoàn lớn.
+> - **正解：D**. Trọng tâm của mọi tập đoàn lớn.
 
 ---
 

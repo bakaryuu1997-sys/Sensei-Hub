@@ -102,34 +102,31 @@ Tầm nhìn vượt thời gian:
 ## 📝 6. QUICK QUIZ: 実踐・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Tại sao "Critical Thinking" (Tư duy phản biện) lại quan trọng hơn bao giờ hết trong kỷ nguyên AI J1+?
-- A. Để cãi lại AI.
+Tại sao "Critical Thinking" (Tư duy phản biện) lại quan trọng hơn bao giờ hết trong kỷ nguyên AI J1+?- A. Để tiết kiệm thời gian.
 - B. Để có thể đặt câu hỏi đúng (Prompts), nhận diện các sai lệch của thuật toán (Bias) và đưa ra những nhận định độc lập dựa trên bối cảnh phức tạp của thực tế.
-- C. Để không phải mua phần mềm AI.
-- D. Để tiết kiệm thời gian.
+- C. Để cãi lại AI.
+- D. Để không phải mua phần mềm AI.
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Khả năng đặt câu hỏi là năng lực của người lãnh đạo.
 
 **第2問 (Câu 2):**
-Cụm từ "Human-in-the-loop" trong quản trị AI J1+ nghĩa là gì?
-- A. Con người phải đứng trong một cái vòng.
-- B. Quy trình đảm bảo con người luôn có quyền can thiệp, giám sát và đưa ra quyết định cuối cùng trong các hệ thống tự động hóa.
-- C. Việc nhân viên đi làm theo vòng tuần hoàn.
-- D. Một loại dây nhún trong phòng gym của công ty.
+Cụm từ "Human-in-the-loop" trong quản trị AI J1+ nghĩa là gì?- A. Quy trình đảm bảo con người luôn có quyền can thiệp, giám sát và đưa ra quyết định cuối cùng trong các hệ thống tự động hóa.
+- B. Một loại dây nhún trong phòng gym của công ty.
+- C. Con người phải đứng trong một cái vòng.
+- D. Việc nhân viên đi làm theo vòng tuần hoàn.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Một nguyên tắc sống còn của đạo đức AI.
+> - **正解：A**. Một nguyên tắc sống còn của đạo đức AI.
 
 **第3問 (Câu 14 - Final Question):**
-Thông điệp cốt lõi của Phase 2: BJT Master (Day 70) là gì?
-- A. Tiếng Nhật là tất cả.
-- B. Ngôn ngữ là công cụ để kết nối trái tim, lý tưởng và công nghệ nhằm kiến tạo những giá trị tốt đẹp hơn cho nhân loại.
-- C. Hãy làm việc chăm chỉ.
+Thông điệp cốt lõi của Phase 2: BJT Master (Day 70) là gì?- A. Hãy làm việc chăm chỉ.
+- B. Tiếng Nhật là tất cả.
+- C. Ngôn ngữ là công cụ để kết nối trái tim, lý tưởng và công nghệ nhằm kiến tạo những giá trị tốt đẹp hơn cho nhân loại.
 - D. Hãy thi lấy bằng N1.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Đẳng cấp của một "Grand Master" không nằm ở câu chữ, mà ở tầm vóc của tâm hồn và trí tuệ.
+> - **正解：C**. Đẳng cấp của một "Grand Master" không nằm ở câu chữ, mà ở tầm vóc của tâm hồn và trí tuệ.
 
 ---
 

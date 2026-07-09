@@ -116,24 +116,24 @@ Q là một coder giỏi nhưng luôn cảm thấy mệt mỏi vì bị sếp v�
 # 🎯 7. QUICK QUIZ: Bạn Đang Là "Dev" Hay "PM" Của Cuộc Đời?
 
 1. **Đặc điểm lớn nhất của người có tư duy lãnh đạo (Leadership Mindset) là gì?**
-    - A. Muốn ra lệnh cho người khác.
-    - B. Có tầm nhìn dài hạn và chủ động thiết kế, điều phối tài nguyên cuộc đời thay vì chỉ phản ứng thụ động với môi trường.
-    - C. Làm việc chăm chỉ hơn tất cả mọi người.
-    - D. Có nhiều tiền.
+    - A. Làm việc chăm chỉ hơn tất cả mọi người.
+    - B. Có nhiều tiền.
+    - C. Có tầm nhìn dài hạn và chủ động thiết kế, điều phối tài nguyên cuộc đời thay vì chỉ phản ứng thụ động với môi trường.
+    - D. Muốn ra lệnh cho người khác.
 
 2. **Tại sao việc nói "Không" lại quan trọng đối với một PM cuộc đời?**
-    - A. Để thể hiện quyền lực.
-    - B. Để bảo vệ băng thông và tài nguyên (thời gian, năng lượng) cho những mục tiêu cốt lõi trong Roadmap.
+    - A. Để bảo vệ băng thông và tài nguyên (thời gian, năng lượng) cho những mục tiêu cốt lõi trong Roadmap.
+    - B. Để gây khó khăn cho người khác.
     - C. Vì lười biếng.
-    - D. Để gây khó khăn cho người khác.
+    - D. Để thể hiện quyền lực.
 
 3. **Lãnh đạo bản thân (Self-Leadership) là bước đầu tiên để làm gì?**
-    - A. Để người khác sợ mình.
-    - B. Để làm chủ hệ điều hành cá nhân, từ đó tạo ra sức hút tự nhiên khiến người khác muốn được dẫn dắt bởi bạn.
-    - C. Để không cần nghe lời ai nữa.
-    - D. Để thành công nhanh chóng mà không cần nỗ lực.
+    - A. Để làm chủ hệ điều hành cá nhân, từ đó tạo ra sức hút tự nhiên khiến người khác muốn được dẫn dắt bởi bạn.
+    - B. Để không cần nghe lời ai nữa.
+    - C. Để thành công nhanh chóng mà không cần nỗ lực.
+    - D. Để người khác sợ mình.
 
-*(Đáp án đúng: 1-B, 2-B, 3-B)*
+*(Đáp án đúng: 1-C, 2-A, 3-A)*
 
 ---
 **Lời nhắn từ Architect**: Chúc mừng bạn đã "Thăng chức" lên làm Project Manager cuộc đời! Ngày mai, chúng ta sẽ học kỹ thuật xây dựng những mối quan hệ "Vượt cấp": **Deep Connections** — Cách thiết kế mạng lưới P2P chất lượng cao để cộng hưởng sức mạnh! ⚔️💎

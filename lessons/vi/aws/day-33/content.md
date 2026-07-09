@@ -66,18 +66,18 @@ C. RDS
 D. DynamoDB
 
 **Câu 2: (Cập nhật 2026) Lợi ích của Zero-ETL là gì?**
-A. Dữ liệu không cần mã hóa
-B. Tự động đồng bộ dữ liệu giữa các dịch vụ mà không cần viết code ETL
-C. Làm web đẹp hơn
+A. Tự động đồng bộ dữ liệu giữa các dịch vụ mà không cần viết code ETL
+B. Làm web đẹp hơn
+C. Dữ liệu không cần mã hóa
 D. Miễn phí S3
 
 **Câu 3: Dịch vụ Kinesis nào đẩy dữ liệu trực tiếp vào S3/Redshift dễ nhất?**
-A. Data Streams
+A. Video Streams
 B. Data Firehose
-C. Data Analytics
-D. Video Streams
+C. Data Streams
+D. Data Analytics
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-B, 2-A, 3-B.
 
 ---
 

@@ -111,30 +111,27 @@ Nghệ thuật chốt hạ:
 ## 📝 6. QUICK QUIZ: 実踐・最終試練 (Boardroom Strategy Test)
 
 **第1問 (Câu 1):**
-Tại sao "Sự đồng thuận thực chất" (Substantive Consensus) lại quan trọng hơn "Biểu quyết đa số" trong các quyết định hội đồng quản trị?
-- A. Vì biểu quyết mất nhiều thời gian hơn.
-- B. Vì khi đã có sự đồng thuận thực chất, tất cả các thành viên (kể cả những người ban đầu phản đối) sẽ dốc sức thực hiện quyết định đó mà không gây ra sự cản trở ngầm bên trong tổ chức.
-- C. Vì biểu quyết làm cho sếp mất mặt.
-- D. Vì máy tính trong phòng họp không hoạt động.
+Tại sao "Sự đồng thuận thực chất" (Substantive Consensus) lại quan trọng hơn "Biểu quyết đa số" trong các quyết định hội đồng quản trị?- A. Vì khi đã có sự đồng thuận thực chất, tất cả các thành viên (kể cả những người ban đầu phản đối) sẽ dốc sức thực hiện quyết định đó mà không gây ra sự cản trở ngầm bên trong tổ chức.
+- B. Vì máy tính trong phòng họp không hoạt động.
+- C. Vì biểu quyết mất nhiều thời gian hơn.
+- D. Vì biểu quyết làm cho sếp mất mặt.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Implementation power comes from alignment.
+> - **正解：A**. Implementation power comes from alignment.
 
 **第2問 (Câu 2):**
-Cụm từ **「二律背反」 [Nhị Luật Bối Phản]** thường được dùng để mô tả tình huống nào?
-- A. Khi mọi người đều vui vẻ nhất trí.
-- B. Khi có hai mục tiêu hoặc giá trị đều đúng và quan trọng, nhưng lại mâu thuẫn trực tiếp với nhau (Ví dụ: Giảm chi phí vs Tăng chất lượng), đòi hỏi sự cân bằng và sáng tạo để giải quyết.
-- C. Việc đi làm muộn và về sớm.
+Cụm từ **「二律背反」 [Nhị Luật Bối Phản]** thường được dùng để mô tả tình huống nào?- A. Việc đi làm muộn và về sớm.
+- B. Khi mọi người đều vui vẻ nhất trí.
+- C. Khi có hai mục tiêu hoặc giá trị đều đúng và quan trọng, nhưng lại mâu thuẫn trực tiếp với nhau (Ví dụ: Giảm chi phí vs Tăng chất lượng), đòi hỏi sự cân bằng và sáng tạo để giải quyết.
 - D. Việc sử dụng tên giả trong kinh doanh.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. The core challenge of executive decision making.
+> - **正解：C**. The core challenge of executive decision making.
 
 **第3問 (Câu 3):**
-Một chủ tịch Boardroom đẳng cấp J1 sẽ nói gì khi cuộc họp đang trở nên quá hỗn loạn vì tranh cãi cá nhân?
-- A. 「うるさい！私が決める！」
-- B. 「今日は終わりです。明日続きをやりましょう。」
-- C. 「一旦、議論を『目的』に立ち返らせましょう。私たちは感情をぶつけ合うためにここにいるのではなく、当社の 10 年後の価値を最大化するために集まっているのです。客観的なデータに基づき、冷静に再論を願います。」
+Một chủ tịch Boardroom đẳng cấp J1 sẽ nói gì khi cuộc họp đang trở nên quá hỗn loạn vì tranh cãi cá nhân?- A. 「うるさい！私が決める！」
+- B. 「一旦、議論を『目的』に立ち返らせましょう。私たちは感情をぶつけ合うためにここにいるのではなく、当社の 10 年後の価値を最大化するために集まっているのです。客観的なデータに基づき、冷静に再論を願います。」
+- C. 「今日は終わりです。明日続きをやりましょう。」
 - D. 「一番大きな声の人に従います。」
 
 > **解釈 (Giải thích):**

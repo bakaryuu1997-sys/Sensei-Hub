@@ -73,24 +73,24 @@ Mỗi cái bánh mì ở 7-Eleven đều có hạn sử dụng.
 # 📝 QUICK QUIZ
 
 **Câu 1: Đâu là nơi lưu trữ nội dung thực tế (Cache) của CloudFront?**
-A. S3 Bucket
-B. Availability Zone
-C. Edge Location
-D. Region
+A. Edge Location
+B. Region
+C. Availability Zone
+D. S3 Bucket
 
 **Câu 2: Tính năng nào của năm 2026 giúp lưu trữ cấu hình ngay tại Edge mà không cần deploy lại code?**
-A. S3 Select
-B. CloudFront KeyValueStore
-C. Lambda@Edge
-D. DynamoDB
+A. Lambda@Edge
+B. DynamoDB
+C. CloudFront KeyValueStore
+D. S3 Select
 
 **Câu 3: Khi một 'Cache Miss' xảy ra, CloudFront sẽ làm gì?**
-A. Báo lỗi 404.
-B. Lấy dữ liệu từ Origin, lưu vào Cache, rồi trả cho khách.
+A. Lấy dữ liệu từ Origin, lưu vào Cache, rồi trả cho khách.
+B. Chờ người dùng thử lại.
 C. Xóa Distribution.
-D. Chờ người dùng thử lại.
+D. Báo lỗi 404.
 
-**Đáp án:** 1-C, 2-B, 3-B.
+**Đáp án:** 1-C, 2-C, 3-A.
 
 ---
 

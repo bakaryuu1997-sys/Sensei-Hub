@@ -66,24 +66,24 @@ Lambda không tự chạy, nó cần **Trigger**:
 # 📝 QUICK QUIZ
 
 **Câu 1: Thời gian chạy tối đa của một hàm Lambda là bao lâu?**
-A. 1 phút
-B. 5 phút
+A. 5 phút
+B. 24 giờ
 C. 15 phút
-D. 24 giờ
+D. 1 phút
 
 **Câu 2: (Cập nhật 2026) Công nghệ nào giúp loại bỏ độ trễ Cold Start cho mọi ngôn ngữ lập trình?**
-A. Lambda Layers
-B. SnapStart
-C. S3 Replication
-D. EC2 Auto Scaling
+A. EC2 Auto Scaling
+B. S3 Replication
+C. Lambda Layers
+D. SnapStart
 
 **Câu 3: Bạn chỉ trả tiền Lambda khi nào?**
-A. Khi bạn tạo hàm.
-B. Khi hàm đang thực thi (theo thời gian và số lượng request).
-C. Hàng tháng cố định.
-D. Khi bạn có lỗi.
+A. Hàng tháng cố định.
+B. Khi bạn tạo hàm.
+C. Khi bạn có lỗi.
+D. Khi hàm đang thực thi (theo thời gian và số lượng request).
 
-**Đáp án:** 1-C, 2-B, 3-B.
+**Đáp án:** 1-A, 2-D, 3-D.
 
 ---
 

@@ -118,24 +118,24 @@ D là một freelancer "cày cuốc" 12 tiếng một ngày nhưng luôn thấy 
 # 🎯 7. QUICK QUIZ: Hệ Thống Của Bạn Có BỊ "Quá Nhiệt"?
 
 1. **Tại sao "Context Switching" (Chuyển đổi ngữ cảnh) lại làm giảm hiệu suất?**
-    - A. Vì nó tốn thời gian di chuyển.
-    - B. Vì mỗi khi chuyển đổi, não phải tốn rất nhiều tài nguyên để "Load" lại dữ liệu và ngữ cảnh của task mới, làm cạn kiệt năng lượng nhanh chóng.
-    - C. Vì bạn sẽ quên việc cũ.
+    - A. Vì mỗi khi chuyển đổi, não phải tốn rất nhiều tài nguyên để "Load" lại dữ liệu và ngữ cảnh của task mới, làm cạn kiệt năng lượng nhanh chóng.
+    - B. Vì bạn sẽ quên việc cũ.
+    - C. Vì nó tốn thời gian di chuyển.
     - D. Không ảnh hưởng gì.
 
 2. **Khung giờ "Vàng" để làm Deep Work (Công việc sâu) thường là khi nào?**
-    - A. Đêm khuya khi mọi người đã ngủ.
+    - A. Bất cứ lúc nào thấy hứng thú.
     - B. 2-4 tiếng đầu tiên sau khi thức dậy, khi CPU của não bộ ở trạng thái mát mẻ và năng lượng nhất.
     - C. Ngay sau khi ăn trưa.
-    - D. Bất cứ lúc nào thấy hứng thú.
+    - D. Đêm khuya khi mọi người đã ngủ.
 
 3. **Nguyên tắc "Batch Processing" trong Mindset Master là gì?**
     - A. Làm thật nhiều việc cùng một lúc (Multitasking).
-    - B. Gom các công việc có tính chất giống nhau (như check mail, gọi điện) để xử lý vào một khung giờ cố định nhằm tiết kiệm tài nguyên não bộ.
-    - C. Chia nhỏ công việc ra cho nhiều người.
-    - D. Làm việc liên tục không nghỉ.
+    - B. Làm việc liên tục không nghỉ.
+    - C. Gom các công việc có tính chất giống nhau (như check mail, gọi điện) để xử lý vào một khung giờ cố định nhằm tiết kiệm tài nguyên não bộ.
+    - D. Chia nhỏ công việc ra cho nhiều người.
 
-*(Đáp án đúng: 1-B, 2-B, 3-B)*
+*(Đáp án đúng: 1-A, 2-B, 3-C)*
 
 ---
 **Lời nhắn từ Architect**: Bạn đã làm chủ được năng lượng của mình! Tuyệt vời. Ngày mai, chúng ta bước sang một bài học cao quý: **Mentorship** — Cách bạn nhân bản giá trị và để lại di sản thông qua việc giúp đỡ người khác! ⚔️💎

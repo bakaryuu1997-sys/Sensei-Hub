@@ -95,30 +95,27 @@ BJT thường cho 2 biểu đồ mâu thuẫn: Doanh thu tăng nhưng Lợi nhu�
 ## 📝 6. QUICK QUIZ: グローバル・グランドマスター・チャレンジ
 
 **第1問 (Câu 1):**
-「本事業の継続 [Kế Tục] は **困難を極 [Cực] める** と判断せざるを得ません。」 Câu này có nghĩa là gì?
-- A. Sự nghiệp đang rất thuận lợi.
-- B. Việc tiếp tục dự án này là cực kỳ khó khăn (gần như không thể).
-- C. Chúng tôi sẽ cố gắng.
+「本事業の継続 [Kế Tục] は **困難を極 [Cực] める** と判断せざるを得ません。」 Câu này có nghĩa là gì?- A. Sự nghiệp đang rất thuận lợi.
+- B. Chúng tôi sẽ cố gắng.
+- C. Việc tiếp tục dự án này là cực kỳ khó khăn (gần như không thể).
 - D. Hãy cho thêm vốn.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Cấu trúc **「～ざるを得ない」** (không thể không - bắt buộc phải) kết hợp với **「困難を極める」** là lời thông báo tử thần cho một dự án.
+> - **正解：C**. Cấu trúc **「～ざるを得ない」** (không thể không - bắt buộc phải) kết hợp với **「困難を極める」** là lời thông báo tử thần cho một dự án.
 
 **第2問 (Câu 2):**
-Tại sao việc 「面目を保つ」 [Diện Mục - Bảo] (giữ mặt mũi) lại quan trọng ngay cả khi đã cắt đứt giao dịch?
-- A. Để sau này còn có thể quay lại thị trường đó hoặc không bị đối tác cũ hãm hại về mặt truyền thông.
-- B. Để tiết kiệm chi phí luật sư.
-- C. Để sếp vui lòng.
-- D. Không có ý nghĩa gì.
+Tại sao việc 「面目を保つ」 [Diện Mục - Bảo] (giữ mặt mũi) lại quan trọng ngay cả khi đã cắt đứt giao dịch?- A. Không có ý nghĩa gì.
+- B. Để sếp vui lòng.
+- C. Để tiết kiệm chi phí luật sư.
+- D. Để sau này còn có thể quay lại thị trường đó hoặc không bị đối tác cũ hãm hại về mặt truyền thông.
 
 > **解釈 (Giải thích):**
-> - **正解：A**. Kinh doanh quốc tế rất nhỏ bé, **レピュテーション [Reputation]** là trên hết.
+> - **正解：C**. Kinh doanh quốc tế rất nhỏ bé, **レピュテーション [Reputation]** là trên hết.
 
 **第3問 (Câu 3):**
-Trong bối cảnh Country Risk tăng cao, hành động nào là ưu tiên số 1 của một J1+ Manager?
-- A. Bỏ chạy ngay lập tức.
+Trong bối cảnh Country Risk tăng cao, hành động nào là ưu tiên số 1 của một J1+ Manager?- A. Cố gắng bán thật nhiều hàng.
 - B. **資産 [Tư Sản] の安全確保** (Bảo vệ an toàn tài sản) và **社員のアサイン [Assign] 変更** (Điều chuyển công tác nhân viên) để tránh nguy hiểm.
-- C. Cố gắng bán thật nhiều hàng.
+- C. Bỏ chạy ngay lập tức.
 - D. Đi biểu tình.
 
 > **解釈 (Giải thích):**

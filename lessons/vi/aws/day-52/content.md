@@ -74,24 +74,24 @@ Một môi trường "No-code/Low-code" cho phép cả team (Dev, BA, Designer) 
 # 📝 QUICK QUIZ
 
 **Câu 1: Kỹ thuật nào giúp 'truyền' sự thông minh của Model lớn sang Model nhỏ để tiết kiệm chi phí?**
-A. S3 Replication.
-B. Model Distillation.
-C. EC2 Autoscaling.
-D. CloudFront Caching.
+A. CloudFront Caching.
+B. EC2 Autoscaling.
+C. S3 Replication.
+D. Model Distillation.
 
 **Câu 2: Khi nào bạn nên chọn Fine-tuning thay vì RAG?**
-A. Khi bạn muốn AI cập nhật tin tức thời sự hàng giờ.
-B. Khi bạn muốn thay đổi phong cách (Tone of voice) hoặc định dạng đầu ra một cách nhất quán mà RAG khó làm được.
-C. Khi bạn muốn tiết kiệm dung lượng lưu trữ S3.
-D. Khi bạn muốn AI dịch tiếng Anh sang tiếng Việt.
+A. Khi bạn muốn thay đổi phong cách (Tone of voice) hoặc định dạng đầu ra một cách nhất quán mà RAG khó làm được.
+B. Khi bạn muốn AI dịch tiếng Anh sang tiếng Việt.
+C. Khi bạn muốn AI cập nhật tin tức thời sự hàng giờ.
+D. Khi bạn muốn tiết kiệm dung lượng lưu trữ S3.
 
 **Câu 3: Bedrock Studio hỗ trợ đối tượng nào?**
-A. Chỉ dành cho Developer.
-B. Dành cho cả Team (Dev, BA, Designer) cùng cộng tác xây dựng AI App.
+A. Dành cho cả Team (Dev, BA, Designer) cùng cộng tác xây dựng AI App.
+B. Chỉ dành cho Developer.
 C. Chỉ dành cho sếp xem báo cáo.
 D. Dành cho khách hàng cuối.
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-D, 2-A, 3-A.
 
 ---
 

@@ -93,35 +93,35 @@ Tôi đề xuất chúng ta áp dụng kiến trúc **Multi-AZ**. Chúng ta sẽ
 
 **Câu 1: Bạn muốn triển khai ứng dụng của mình để đảm bảo dù có động đất làm hỏng một trung tâm dữ liệu, ứng dụng vẫn không bị gián đoạn. Bạn nên sử dụng mô hình nào?**
 A. Single-AZ
-B. Multi-AZ
-C. Single-Region, Single-AZ
+B. Single-Region, Single-AZ
+C. Multi-AZ
 D. Edge Location Storage
 
 **Câu 2: Dịch vụ nào của AWS sử dụng Edge Locations để tăng tốc độ truy cập trang web cho người dùng toàn cầu?**
-A. Amazon EC2
-B. Amazon S3
-C. Amazon CloudFront
+A. Amazon S3
+B. Amazon CloudFront
+C. Amazon EC2
 D. AWS Direct Connect
 
 **Câu 3: Tại sao một kiến trúc sư cần quan tâm đến 'Data Sovereignty' khi chọn Region?**
-A. Để tìm nơi có giá thuê máy chủ rẻ nhất.
-B. Để đảm bảo dữ liệu tuân thủ đúng luật pháp và quy định của quốc gia nơi khách hàng sinh sống.
-C. Để chọn nơi có hỗ trợ kỹ thuật bằng tiếng Việt.
+A. Để chọn nơi có hỗ trợ kỹ thuật bằng tiếng Việt.
+B. Để tìm nơi có giá thuê máy chủ rẻ nhất.
+C. Để đảm bảo dữ liệu tuân thủ đúng luật pháp và quy định của quốc gia nơi khách hàng sinh sống.
 D. Để tận dụng các dịch vụ AI mới nhất của AWS.
 
 **Câu 4: Các Availability Zones trong cùng một Region được kết nối với nhau bằng gì?**
-A. Đường truyền Internet công cộng.
-B. Mạng cáp quang riêng của AWS với độ trễ siêu thấp.
-C. Qua vệ tinh Starlink.
+A. Qua vệ tinh Starlink.
+B. Đường truyền Internet công cộng.
+C. Mạng cáp quang riêng của AWS với độ trễ siêu thấp.
 D. Chúng không hề được kết nối với nhau.
 
 **Câu 5: Khái niệm 'Fault Tolerance' trong hạ tầng AWS nghĩa là gì?**
 A. Khả năng hệ thống tự động sửa chữa phần cứng bị hỏng.
-B. Khả năng hệ thống vẫn hoạt động ổn định dù một hoặc nhiều thành phần hạ tầng gặp sự cố.
-C. Khả năng hệ thống tự động giảm chi phí khi không có người dùng.
-D. Khả năng hệ thống chống lại mọi cuộc tấn công của Hacker.
+B. Khả năng hệ thống chống lại mọi cuộc tấn công của Hacker.
+C. Khả năng hệ thống vẫn hoạt động ổn định dù một hoặc nhiều thành phần hạ tầng gặp sự cố.
+D. Khả năng hệ thống tự động giảm chi phí khi không có người dùng.
 
-**Đáp án:** 1-B, 2-C, 3-B, 4-B, 5-B.
+**Đáp án:** 1-C, 2-A, 3-C, 4-C, 5-C.
 
 ---
 

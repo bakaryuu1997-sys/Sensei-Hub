@@ -99,31 +99,28 @@ Trình độ J1+ đòi hỏi bạn phải dự báo được điểm mà cả ha
 ## 📝 6. QUICK QUIZ: 実踐・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Bạn muốn nhấn mạnh rằng đề xuất của mình không chỉ vì lợi nhuận của công ty mình mà còn vì sự phát triển chung của đối tác. Cụm từ nào là J1+ Elite nhất?
-- A. 私たちのために、協力してください。
+Bạn muốn nhấn mạnh rằng đề xuất của mình không chỉ vì lợi nhuận của công ty mình mà còn vì sự phát triển chung của đối tác. Cụm từ nào là J1+ Elite nhất?- A. これをやれば、お互いに儲かります。
 - B. 貴社の利益を第一に考えております。
-- C. 両社のシナジーを最大化し、共存共栄を目指す所存です。
-- D. これをやれば、お互いに儲かります。
+- C. 私たちのために、協力してください。
+- D. 両社のシナジーを最大化し、共存共栄を目指す所存です。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. **「シナジー」** (Synergy - Hiệp lực) và **「共存共栄」 [Cộng Tồn Cộng Vinh]** là hai thuật ngữ "vàng" trong đề xuất chiến lược, thể hiện tầm nhìn vĩ mô và sự gắn kết.
+> - **正解：B**. **「シナジー」** (Synergy - Hiệp lực) và **「共存共栄」 [Cộng Tồn Cộng Vinh]** là hai thuật ngữ "vàng" trong đề xuất chiến lược, thể hiện tầm nhìn vĩ mô và sự gắn kết.
 
 **第2問 (Câu 2):**
-Khi đối tác đưa ra một yêu cầu quá đáng về việc giảm giá, cách từ chối nào vừa giữ được quan hệ vừa bảo vệ lợi ích (J1+ level)?
-- A. 安くできません。無理です。
-- B. その価格では赤字になってしまいます。
-- C. 誠に恐縮ながら, 現時点でのこれ以上の価格調整は、提供する品質の維持を損なう恐れがございます。代替案として, 納期の調整によるコスト抑制をご提案させていただいてもよろしいでしょうか。
-- D. 上司に相談してみます。
+Khi đối tác đưa ra một yêu cầu quá đáng về việc giảm giá, cách từ chối nào vừa giữ được quan hệ vừa bảo vệ lợi ích (J1+ level)?- A. 上司に相談してみます。
+- B. 誠に恐縮ながら, 現時点でのこれ以上の価格調整は、提供する品質の維持を損なう恐れがございます。代替案として, 納期の調整によるコスト抑制をご提案させていただいてもよろしいでしょうか。
+- C. 安くできません。無理です。
+- D. その価格では赤字になってしまいます。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Gắn việc giảm giá với việc **Giảm chất lượng** là cách bảo vệ giá hiệu quả nhất. Đồng thời đưa ra một **代替案 [Đại Thế Án]** (Phương án thay thế) thể hiện sự cầu thị.
+> - **正解：D**. Gắn việc giảm giá với việc **Giảm chất lượng** là cách bảo vệ giá hiệu quả nhất. Đồng thời đưa ra một **代替案 [Đại Thế Án]** (Phương án thay thế) thể hiện sự cầu thị.
 
 **第3問 (Câu 3):**
-Ý nghĩa thực sự của việc chuẩn bị "Ringisugi" (稟議書) trong văn hóa đề xuất của Nhật là gì?
-- A. Để khoe khả năng viết lách.
-- B. Để làm khó các phòng ban khác.
-- C. Để tạo sự đồng thuận trong nội bộ đối tác thông qua văn bản xác nhận chính thức từ nhiều cấp.
-- D. Để lãng phí giấy tờ.
+Ý nghĩa thực sự của việc chuẩn bị "Ringisugi" (稟議書) trong văn hóa đề xuất của Nhật là gì?- A. Để lãng phí giấy tờ.
+- B. Để khoe khả năng viết lách.
+- C. Để làm khó các phòng ban khác.
+- D. Để tạo sự đồng thuận trong nội bộ đối tác thông qua văn bản xác nhận chính thức từ nhiều cấp.
 
 > **解釈 (Giải thích):**
 > - **正解：C**. Một đề xuất ngoại giao thành công phải hỗ trợ đối tác thực hiện quy trình Ringi (xin phê duyệt nội bộ) thuận lợi nhất.

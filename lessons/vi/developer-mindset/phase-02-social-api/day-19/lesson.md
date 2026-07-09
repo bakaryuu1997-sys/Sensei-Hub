@@ -113,24 +113,24 @@ G là một kiến trúc sư hệ thống cực kỳ giỏi nhưng luôn ăn m�
 # 🎯 7. QUICK QUIZ: Bộ CSS Của Bạn Có Đạt Chuẩn "Aura"?
 
 1. **Tại sao việc ăn mặc chỉn chu lại quan trọng đối với Mindset Master?**
-    - A. Để khoe giàu.
-    - B. Vì nó tạo ra hiệu ứng kỳ vọng (Pygmalion Effect), định hình cách thế giới đối xử với bạn và tác động ngược lại sự tự tin bên trong của bạn.
+    - A. Vì nó tạo ra hiệu ứng kỳ vọng (Pygmalion Effect), định hình cách thế giới đối xử với bạn và tác động ngược lại sự tự tin bên trong của bạn.
+    - B. Không có tác dụng gì.
     - C. Theo quy định của công ty.
-    - D. Không có tác dụng gì.
+    - D. Để khoe giàu.
 
 2. **Yếu tố nào sau đây tạo ra Charisma mạnh mẽ nhất?**
     - A. Nói thật to.
-    - B. Sự hiện diện toàn tâm toàn ý (Active Presence) đối với người đối diện, khiến họ cảm thấy mình quan trọng.
+    - B. Mặc quần áo đắt tiền nhất.
     - C. Dùng nước hoa thật nồng.
-    - D. Mặc quần áo đắt tiền nhất.
+    - D. Sự hiện diện toàn tâm toàn ý (Active Presence) đối với người đối diện, khiến họ cảm thấy mình quan trọng.
 
 3. **Tác dụng của "Nụ cười Duchenne" (cười bằng mắt) là gì?**
     - A. Làm bạn trông già hơn.
-    - B. Gửi đi một gói tin có xác thực (Verified) về sự chân thành, giúp hạ thấp rào cản phòng vệ của người đối diện ngay lập tức.
-    - C. Làm người khác sợ hãi.
-    - D. Không có tác dụng gì.
+    - B. Làm người khác sợ hãi.
+    - C. Không có tác dụng gì.
+    - D. Gửi đi một gói tin có xác thực (Verified) về sự chân thành, giúp hạ thấp rào cản phòng vệ của người đối diện ngay lập tức.
 
-*(Đáp án đúng: 1-B, 2-B, 3-B)*
+*(Đáp án đúng: 1-A, 2-D, 3-D)*
 
 ---
 **Lời nhắn từ Architect**: Bạn trông thật tuyệt vời với bộ Charisma.css mới! Ngày mai, chúng ta sẽ bước vào ngày cuối cùng của Phase 2: **Phase 2 Recap** — Tổng kết toàn bộ các giao tiếp xã hội đã học và chuẩn bị cho giai đoạn cuối cùng: **Influence & Legacy**! ⚔️💎

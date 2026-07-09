@@ -86,34 +86,31 @@ BJT rất thích các tình huống tiệc tùng (**懇親会 [Khẩn Thân Hộ
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khi thực hiện cúi chào theo kiểu **敬礼 (30度)**, hướng nhìn của mắt (Mắt nhìn - **視線 [Thị Tuyến]**) nên như thế nào?
-- A. Luôn nhìn thẳng vào mắt đối phương để thể hiện sự tự tin.
-- B. Nhìn xuống mũi chân của chính mình.
-- C. Nhìn xuống vị trí cách mũi chân khoảng 1 mét.
-- D. Nhắm mắt lại để tập trung vào lời chào.
+Khi thực hiện cúi chào theo kiểu **敬礼 (30度)**, hướng nhìn của mắt (Mắt nhìn - **視線 [Thị Tuyến]**) nên như thế nào?- A. Nhìn xuống mũi chân của chính mình.
+- B. Nhìn xuống vị trí cách mũi chân khoảng 1 mét.
+- C. Nhắm mắt lại để tập trung vào lời chào.
+- D. Luôn nhìn thẳng vào mắt đối phương để thể hiện sự tự tin.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Việc nhìn xuống cách mũi chân 1m giúp cổ và lưng tạo thành một đường thẳng chuẩn mực. Nhìn thẳng (A) là bất lịch sự, nhìn xuống chân mình (B) là biểu hiện của sự rụt rè.
+> - **正解：A**. Việc nhìn xuống cách mũi chân 1m giúp cổ và lưng tạo thành một đường thẳng chuẩn mực. Nhìn thẳng (A) là bất lịch sự, nhìn xuống chân mình (B) là biểu hiện của sự rụt rè.
 
 **第2問 (Câu 2):**
-Bạn đang trao đổi danh thiếp với đối tác nhưng phát hiện danh thiếp của mình bị bẩn một góc nhỏ. Bạn nên làm gì trong tình huống BJT này?
-- A. Cứ đưa và giả vờ như không biết.
+Bạn đang trao đổi danh thiếp với đối tác nhưng phát hiện danh thiếp của mình bị bẩn một góc nhỏ. Bạn nên làm gì trong tình huống BJT này?- A. Lau vội bằng tay áo rồi đưa.
 - B. Nói lời xin lỗi: 「汚れておりまして失礼いたします」 và vẫn đưa.
-- C. Tuyệt đối không đưa, xin lỗi vì hết danh thiếp: 「あいにく名刺を切らしておりまして」 và sau đó gửi email xin lỗi.
-- D. Lau vội bằng tay áo rồi đưa.
+- C. Cứ đưa và giả vờ như không biết.
+- D. Tuyệt đối không đưa, xin lỗi vì hết danh thiếp: 「あいにく名刺を切らしておりまして」 và sau đó gửi email xin lỗi.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Trong văn hóa Elite, đưa một tấm danh thiếp bẩn là một sự sỉ nhục. Phương án "nói dối lịch sự" (Airni-ku...) là cách giải quyết an toàn nhất để giữ diện mạo cho cả hai bên.
+> - **正解：B**. Trong văn hóa Elite, đưa một tấm danh thiếp bẩn là một sự sỉ nhục. Phương án "nói dối lịch sự" (Airni-ku...) là cách giải quyết an toàn nhất để giữ diện mạo cho cả hai bên.
 
 **第3問 (Câu 3):**
-Khi nhận danh thiếp của khách hàng có tên cực kỳ khó đọc bằng Kanji, cách xử lý nào thể hiện trình độ J1+?
-- A. Đọc đại theo âm On-yomi.
+Khi nhận danh thiếp của khách hàng có tên cực kỳ khó đọc bằng Kanji, cách xử lý nào thể hiện trình độ J1+?- A. 「失礼ですが、お名前は何とお読みすればよろしいでしょうか」 và ghi chú lại ngay lập tức.
 - B. Không đọc, chỉ cảm ơn rồi cất đi.
-- C. 「失礼ですが、お名前は何とお読みすればよろしいでしょうか」 và ghi chú lại ngay lập tức.
-- D. Đợi sếp mình gọi tên họ rồi mới biết.
+- C. Đợi sếp mình gọi tên họ rồi mới biết.
+- D. Đọc đại theo âm On-yomi.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Việc hỏi lại tên một cách trực tiếp nhưng cung kính được đánh giá cao hơn việc đọc sai tên. BJT coi trọng sự chính xác (**正確性 [Chính Xác Tánh]**) hơn là sự sĩ diện hão.
+> - **正解：B**. Việc hỏi lại tên một cách trực tiếp nhưng cung kính được đánh giá cao hơn việc đọc sai tên. BJT coi trọng sự chính xác (**正確性 [Chính Xác Tánh]**) hơn là sự sĩ diện hão.
 
 ---
 

@@ -101,24 +101,24 @@ Dành 10 phút mỗi ngày để quan sát hơi thở.
 # 🎯 6. QUICK QUIZ: Bạn Có Phải Là Một "Expert Overthinker"?
 
 1. **Infinite Loop trong tư duy dẫn đến điều gì?**
-    - A. Giúp giải quyết vấn đề nhanh hơn.
+    - A. Không có ảnh hưởng gì.
     - B. Làm cạn kiệt tài nguyên (năng lượng) và gây tê liệt hành động.
-    - C. Làm bạn thông minh hơn.
-    - D. Không có ảnh hưởng gì.
+    - C. Giúp giải quyết vấn đề nhanh hơn.
+    - D. Làm bạn thông minh hơn.
 
 2. **Kỹ thuật "Time-Boxing" có ý nghĩa gì?**
-    - A. Để suy nghĩ lâu hơn.
-    - B. Để trốn tránh vấn đề.
-    - C. Để cô lập nỗi sợ vào một không gian và thời gian xác định, bảo vệ các tiến trình khác của cuộc sống.
-    - D. Để quên đi nỗi lo.
+    - A. Để cô lập nỗi sợ vào một không gian và thời gian xác định, bảo vệ các tiến trình khác của cuộc sống.
+    - B. Để quên đi nỗi lo.
+    - C. Để trốn tránh vấn đề.
+    - D. Để suy nghĩ lâu hơn.
 
 3. **Lệnh "Kill Process" hiệu quả nhất là gì?**
     - A. Ép bản thân không được nghĩ.
     - B. Đi ngủ.
-    - C. Thực hiện một hành động cụ thể (5-Second Rule) để chuyển từ tư duy sang vận động.
-    - D. Ăn uống.
+    - C. Ăn uống.
+    - D. Thực hiện một hành động cụ thể (5-Second Rule) để chuyển từ tư duy sang vận động.
 
-*(Đáp án đúng: 1-B, 2-C, 3-C)*
+*(Đáp án đúng: 1-B, 2-C, 3-B)*
 
 ---
 **Lời nhắn từ Architect**: Đừng cố gắng sửa mọi dòng code trong quá khứ. Hãy tập trung viết những dòng code mới cho tương lai. Ngày mai, chúng ta sẽ khám phá sức mạnh của **Neuroplasticity** – khả năng tự nâng cấp phần cứng của chính bạn! ⚔️💎

@@ -88,24 +88,24 @@ Trong thực tế, một Agent không thể làm hết mọi việc. Chúng ta c
 # 📝 QUICK QUIZ
 
 **Câu 1: ReAct Pattern viết tắt của từ gì?**
-A. Read + Act.
-B. Reason + Act.
-C. React JS Framework.
-D. Repeat + Action.
+A. Reason + Act.
+B. React JS Framework.
+C. Repeat + Action.
+D. Read + Act.
 
 **Câu 2: Dịch vụ nào của AWS giúp điều phối luồng làm việc (Workflow) phức tạp giữa nhiều Agent?**
-A. Amazon S3.
-B. AWS Step Functions.
+A. AWS Step Functions.
+B. AWS KMS.
 C. Amazon Route 53.
-D. AWS KMS.
+D. Amazon S3.
 
 **Câu 3: 'Action Groups' trong Bedrock Agents thực chất là gì?**
-A. Một nhóm các nhân viên văn phòng.
-B. Một danh sách các Model AI.
-C. Các hàm AWS Lambda cho phép Agent gọi để thực hiện hành động bên ngoài.
-D. Một nhóm các ổ đĩa cứng.
+A. Các hàm AWS Lambda cho phép Agent gọi để thực hiện hành động bên ngoài.
+B. Một nhóm các ổ đĩa cứng.
+C. Một nhóm các nhân viên văn phòng.
+D. Một danh sách các Model AI.
 
-**Đáp án:** 1-B, 2-B, 3-C.
+**Đáp án:** 1-A, 2-A, 3-D.
 
 ---
 

@@ -66,24 +66,24 @@ Hãy tưởng tượng bạn quản lý một **Thư viện khổng lồ tự đ
 # 📝 QUICK QUIZ
 
 **Câu 1: Loại index nào có thể thêm vào bảng DynamoDB bất kỳ lúc nào?**
-A. LSI
-B. GSI
-C. Primary Key
-D. Partition Key
+A. Primary Key
+B. Partition Key
+C. LSI
+D. GSI
 
 **Câu 2: (Cập nhật 2026) Tính năng nào giúp tìm kiếm Full-text search từ DynamoDB mà không cần viết code đồng bộ?**
-A. Global Tables
-B. Zero-ETL to OpenSearch
-C. DAX
-D. TTL
+A. Zero-ETL to OpenSearch
+B. DAX
+C. TTL
+D. Global Tables
 
 **Câu 3: DynamoDB Streams giữ dữ liệu thay đổi trong bao lâu?**
-A. 1 giờ
-B. 24 giờ
+A. 24 giờ
+B. 1 giờ
 C. 7 ngày
 D. 1 năm
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-D, 2-A, 3-A.
 
 ---
 

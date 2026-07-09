@@ -101,31 +101,28 @@ Trong bài thi Reading:
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khi viết Email cho nhiều người cùng lúc trong một công ty đối tác, cách ghi tên người nhận (**宛名 [Uyển Danh]**) nào là chuẩn J1+?
-- A. 佐藤様、田中様、鈴木様。
+Khi viết Email cho nhiều người cùng lúc trong một công ty đối tác, cách ghi tên người nhận (**宛名 [Uyển Danh]**) nào là chuẩn J1+?- A. 佐藤様、田中様、鈴木様。
 - B. 皆様。
-- C. 各位 [Các Vị]。
-- D. 御中 [Ngự Trung]。
+- C. 御中 [Ngự Trung]。
+- D. 各位 [Các Vị]。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. **「各位」** là cách gọi trang trọng dành cho nhiều cá nhân trong một nhóm. D dùng cho cả một tổ chức khi không có tên người cụ thể. A quá dài dòng.
+> - **正解：B**. **「各位」** là cách gọi trang trọng dành cho nhiều cá nhân trong một nhóm. D dùng cho cả một tổ chức khi không có tên người cụ thể. A quá dài dòng.
 
 **第2問 (Câu 2):**
-Bạn gửi file đính kèm quá nặng và muốn xin lỗi trước. Cụm từ nào thể hiện sự tinh tế?
-- A. ファイルが重くてすみません。
-- B. 大容量のファイルを添付してしまい、お手数をおかけします。
-- C. データが大きいので注意してください。
-- D. 重いですが開いてください。
+Bạn gửi file đính kèm quá nặng và muốn xin lỗi trước. Cụm từ nào thể hiện sự tinh tế?- A. データが大きいので注意してください。
+- B. 重いですが開いてください。
+- C. ファイルが重くてすみません。
+- D. 大容量のファイルを添付してしまい、お手数をおかけします。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Sử dụng cụm **「お手数をおかけします」 [Thủ Số]** để công nhận sự phiền phức mà mình gây ra cho đối phương khi họ phải download file nặng.
+> - **正解：D**. Sử dụng cụm **「お手数をおかけします」 [Thủ Số]** để công nhận sự phiền phức mà mình gây ra cho đối phương khi họ phải download file nặng.
 
 **第3問 (Câu 3):**
-Kết thúc một email nhờ vả mà bạn muốn đối phương phản hồi sớm, câu nào là "Elite Choice"?
-- A. 早く返信してください。
-- B. お返事お待ちしております。
-- C. ご多忙中とは存じますが、ご回答いただけますと幸甚に存じます。
-- D. 明日までに連絡をください。
+Kết thúc một email nhờ vả mà bạn muốn đối phương phản hồi sớm, câu nào là "Elite Choice"?- A. ご多忙中とは存じますが、ご回答いただけますと幸甚に存じます。
+- B. 明日までに連絡をください。
+- C. お返事お待ちしております。
+- D. 早く返信してください。
 
 > **解釈 (Giải thích):**
 > - **正解：C**. **「幸甚」 [Hạnh Thậm]** - Cực kỳ hạnh phúc. Đây là từ vựng ở mức độ J1+ dành cho văn viết trang trọng bậc nhất.

@@ -98,34 +98,31 @@ Câu hỏi hỏi: "Ai phù hợp nhất cho vị trí quản lý chi nhánh mớ
 ## 📝 6. QUICK QUIZ: 人事評価・キャリア・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-「彼は即戦力 [Tức Chiến Lực] としての期待が大きいのですが、まだ **周囲 [Chu Vi] との連携 [Liên Huệ]** に課題 [Khóa Đề] がありますね。」 Biểu đồ đánh giá của người này sẽ có đặc điểm gì?
-- A. Điểm chuyên môn thấp, điểm team-work cao.
-- B. Điểm chuyên môn cao, điểm team-work thấp.
-- C. Tất cả các điểm đều trung bình.
-- D. Không có lỗi gì cả.
+「彼は即戦力 [Tức Chiến Lực] としての期待が大きいのですが、まだ **周囲 [Chu Vi] との連携 [Liên Huệ]** に課題 [Khóa Đề] がありますね。」 Biểu đồ đánh giá của người này sẽ có đặc điểm gì?- A. Điểm chuyên môn thấp, điểm team-work cao.
+- B. Tất cả các điểm đều trung bình.
+- C. Không có lỗi gì cả.
+- D. Điểm chuyên môn cao, điểm team-work thấp.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「即戦力」** (có khả năng làm việc ngay) tương ứng với chuyên môn cao, nhưng **「連携に課題」** nghĩa là phối hợp với xung quanh (team-work) kém.
+> - **正解：D**. **「即戦力」** (có khả năng làm việc ngay) tương ứng với chuyên môn cao, nhưng **「連携に課題」** nghĩa là phối hợp với xung quanh (team-work) kém.
 
 **第2問 (Câu 2):**
-Sếp nói về một nhân viên: 「今の君に足りない [Túc] のは、**当事者 [Đương Sự Giả] 意識** だよ。」 Sếp muốn nhân viên đó phải làm gì?
-- A. Phải ý thức mình là người chịu trách nhiệm chính trong công việc, không được xem mình là người ngoài cuộc.
-- B. Phải đi gặp khách hàng nhiều hơn.
-- C. Phải học thuộc nội quy công ty.
-- D. Phải nghỉ ngơi nhiều hơn.
+Sếp nói về một nhân viên: 「今の君に足りない [Túc] のは、**当事者 [Đương Sự Giả] 意識** だよ。」 Sếp muốn nhân viên đó phải làm gì?- A. Phải ý thức mình là người chịu trách nhiệm chính trong công việc, không được xem mình là người ngoài cuộc.
+- B. Phải học thuộc nội quy công ty.
+- C. Phải nghỉ ngơi nhiều hơn.
+- D. Phải đi gặp khách hàng nhiều hơn.
 
 > **解釈 (Giải thích):**
-> - **正解：A**. **「当事者意識」** (ý thức của chính chủ) là một từ cực kỳ Elite trong kinh doanh Nhật, chỉ sự chủ động chịu trách nhiệm.
+> - **正解：D**. **「当事者意識」** (ý thức của chính chủ) là một từ cực kỳ Elite trong kinh doanh Nhật, chỉ sự chủ động chịu trách nhiệm.
 
 **第3問 (Câu 3):**
-Trong biểu đồ Radar Chart, nếu một nhân viên có điểm "Compliance" (Tuân thủ) thấp, người đó có khả năng:
-- A. Hay đi muộn về sớm hoặc vi phạm quy định công ty.
-- B. Không biết dùng máy tính.
-- C. Lười làm việc.
+Trong biểu đồ Radar Chart, nếu một nhân viên có điểm "Compliance" (Tuân thủ) thấp, người đó có khả năng:- A. Hay đi muộn về sớm hoặc vi phạm quy định công ty.
+- B. Lười làm việc.
+- C. Không biết dùng máy tính.
 - D. Hay cãi sếp.
 
 > **解釈 (Giải thích):**
-> - **正解：A**. **「コンプライアンス」** (Compliance) là sự tuân thủ pháp luật và đạo đức nghề nghiệp/quy định công ty.
+> - **正解：C**. **「コンプライアンス」** (Compliance) là sự tuân thủ pháp luật và đạo đức nghề nghiệp/quy định công ty.
 
 ---
 

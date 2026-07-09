@@ -101,34 +101,31 @@ Mỗi tổ chức đều có "gene" riêng:
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khi bạn muốn bắt đầu một dự án thay đổi lớn, hành động đầu tiên theo phong cách J1+ là gì?
-- A. 全社員にメールで命令を送る。
+Khi bạn muốn bắt đầu một dự án thay đổi lớn, hành động đầu tiên theo phong cách J1+ là gì?- A. 外部のコンサルタントに丸投げする。
 - B. 主要な幹部や影響力のある社員と「個別に面談」し, 「根回し」を行う。
-- C. 外部のコンサルタントに丸投げする。
-- D. 黙って様子を見る。
+- C. 黙って様子を見る。
+- D. 全社員にメールで命令を送る。
 
 > **解釈 (Giải thích):**
 > - **正解：B**. **「根回し」** là tinh hoa của quản trị dự án tại Nhật, đảm bảo khi thông báo chính thức đưa ra, nó đã nhận được sự ủng hộ ngầm từ các nhân vật quan trọng.
 
 **第2問 (Câu 2):**
-"Listra" (リストラ - Restructuring) trong tiếng Nhật kinh doanh hiện đại thực chất có ý nghĩa rộng là gì?
-- A. Chỉ là việc đuổi việc nhân viên.
-- B. Tái cấu trúc lại doanh nghiệp để nâng cao hiệu quả, bao gồm cả việc sắp xếp lại nhân sự, tài chính và mô hình kinh doanh.
+"Listra" (リストラ - Restructuring) trong tiếng Nhật kinh doanh hiện đại thực chất có ý nghĩa rộng là gì?- A. Tái cấu trúc lại doanh nghiệp để nâng cao hiệu quả, bao gồm cả việc sắp xếp lại nhân sự, tài chính và mô hình kinh doanh.
+- B. Việc tuyển thêm nhiều người mới.
 - C. Việc đi du lịch công ty.
-- D. Việc tuyển thêm nhiều người mới.
+- D. Chỉ là việc đuổi việc nhân viên.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Dù thường bị hiểu nhầm là sa thải, nhưng nghĩa thực của nó là "Tái cấu trúc chiến lược".
+> - **正解：A**. Dù thường bị hiểu nhầm là sa thải, nhưng nghĩa thực của nó là "Tái cấu trúc chiến lược".
 
 **第3問 (Câu 3):**
-Kỹ thuật "Nenshutsu" (捻出) trong quản trị nguồn lực khi thay đổi nghĩa là gì?
-- A. Việc vắt hết sức lực của nhân viên.
-- B. Việc tìm cách "vặn" ra, xoay sở ra nguồn lực (thời gian, tiền bạc, nhân sự) từ những chỗ không ngờ tới để phục vụ cho mục tiêu mới.
-- C. Việc vay tiền ngân hàng.
+Kỹ thuật "Nenshutsu" (捻出) trong quản trị nguồn lực khi thay đổi nghĩa là gì?- A. Việc vắt hết sức lực của nhân viên.
+- B. Việc vay tiền ngân hàng.
+- C. Việc tìm cách "vặn" ra, xoay sở ra nguồn lực (thời gian, tiền bạc, nhân sự) từ những chỗ không ngờ tới để phục vụ cho mục tiêu mới.
 - D. Việc mua máy móc mới.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Một biểu hiện của sự thông minh và linh hoạt trong quản trị.
+> - **正解：C**. Một biểu hiện của sự thông minh và linh hoạt trong quản trị.
 
 ---
 

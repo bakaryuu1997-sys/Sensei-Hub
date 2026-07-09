@@ -100,34 +100,31 @@ BJT rất hay đưa ra các văn bản thông báo thay đổi (Vd: Thay đổi 
 ## 📝 6. QUICK QUIZ: 第 3 セクション突破・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Email có câu: 「お力添え [Lực Thiêm] できず、誠に遺憾 [Di Hám] ながら、今回は辞退 [Tự Thoái] せざるを得ない状況でございます。」 Ý nghĩa thực chất là gì?
-- A. Chúng tôi rất tiếc nhưng không thể giúp gì và bắt buộc phải từ chối.
-- B. Chúng tôi muốn giúp nhưng đang đợi sếp đồng ý.
-- C. Chúng tôi sẽ tham gia nhưng yêu cầu thêm tiền.
-- D. Email này gửi nhầm người.
+Email có câu: 「お力添え [Lực Thiêm] できず、誠に遺憾 [Di Hám] ながら、今回は辞退 [Tự Thoái] せざるを得ない状況でございます。」 Ý nghĩa thực chất là gì?- A. Email này gửi nhầm người.
+- B. Chúng tôi sẽ tham gia nhưng yêu cầu thêm tiền.
+- C. Chúng tôi rất tiếc nhưng không thể giúp gì và bắt buộc phải từ chối.
+- D. Chúng tôi muốn giúp nhưng đang đợi sếp đồng ý.
 
 > **解釈 (Giải thích):**
-> - **正解：A**. **「～ざるを得ない」** (không thể không, bắt buộc phải) là một cấu trúc cực mạnh về sự quyết định không thể thay đổi theo hướng tiêu cực.
+> - **正解：D**. **「～ざるを得ない」** (không thể không, bắt buộc phải) là một cấu trúc cực mạnh về sự quyết định không thể thay đổi theo hướng tiêu cực.
 
 **第2問 (Câu 2):**
-Văn bản thông báo về phí dịch vụ có dòng chữ nhỏ ở cuối: 「※キャンペーン期間中にご契約 [Khiết Ước] いただいたお客様は、上記の改定料金の適用外 [Thích Dụng Ngoại] となります。」 Câu nào sau đây đúng?
-- A. Tất cả mọi người đều phải trả giá mới.
-- B. Chỉ những khách hàng mới ký hợp đồng trong kỳ khuyến mãi mới được dùng giá cũ.
-- C. Giá sẽ tăng gấp đôi vào tháng sau.
-- D. Khách hàng cũ không được hưởng khuyến mãi.
+Văn bản thông báo về phí dịch vụ có dòng chữ nhỏ ở cuối: 「※キャンペーン期間中にご契約 [Khiết Ước] いただいたお客様は、上記の改定料金の適用外 [Thích Dụng Ngoại] となります。」 Câu nào sau đây đúng?- A. Giá sẽ tăng gấp đôi vào tháng sau.
+- B. Tất cả mọi người đều phải trả giá mới.
+- C. Khách hàng cũ không được hưởng khuyến mãi.
+- D. Chỉ những khách hàng mới ký hợp đồng trong kỳ khuyến mãi mới được dùng giá cũ.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「適用外」** nghĩa là không áp dụng. Đối tượng không bị áp dụng giá mới là người đã ký hợp đồng trong kỳ khuyến mãi (**キャンペーン期間中**).
+> - **正解：D**. **「適用外」** nghĩa là không áp dụng. Đối tượng không bị áp dụng giá mới là người đã ký hợp đồng trong kỳ khuyến mãi (**キャンペーン期間中**).
 
 **第3問 (Câu 3):**
-Trong thông cáo nội bộ, cụm từ nào sau đây báo hiệu một hành động bắt buộc (Mandatory)?
-- A. ～いただければ幸いです。
-- B. ～を検討しております。
+Trong thông cáo nội bộ, cụm từ nào sau đây báo hiệu một hành động bắt buộc (Mandatory)?- A. ～の周知 [Chu Tri] をお願いします。
+- B. ～いただければ幸いです。
 - C. ～を厳守 [Nghiêm Thủ] してください。
-- D. ～の周知 [Chu Tri] をお願いします。
+- D. ～を検討しております。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. **「厳守」** (tuân thủ nghiêm ngặt) đi kèm với thể mệnh lệnh lịch sự là mức độ bắt buộc cao nhất. Các câu khác chỉ mang tính đề nghị hoặc thông báo.
+> - **正解：D**. **「厳守」** (tuân thủ nghiêm ngặt) đi kèm với thể mệnh lệnh lịch sự là mức độ bắt buộc cao nhất. Các câu khác chỉ mang tính đề nghị hoặc thông báo.
 
 ---
 

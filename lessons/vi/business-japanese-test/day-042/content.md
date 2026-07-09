@@ -89,34 +89,31 @@ Nhiều người N1 nhầm lẫn hai từ này:
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khi viết một thông báo xin lỗi công khai, cụm từ nào thể hiện quyết tâm "chủ động" sửa sai tốt nhất (J1+)?
-- A. 今後、気をつけます。
+Khi viết một thông báo xin lỗi công khai, cụm từ nào thể hiện quyết tâm "chủ động" sửa sai tốt nhất (J1+)?- A. 運が悪かったです。
 - B. 管理体制の強化を徹底し、信頼回復に努めてまいります。
-- C. 悪気があったわけではありません。
-- D. 運が悪かったです。
+- C. 今後、気をつけます。
+- D. 悪気があったわけではありません。
 
 > **解釈 (Giải thích):**
 > - **正解：B**. **「徹底」 [Triệt Để]** và **「信頼回復」 [Tín Lại Hồi Phục]** là cặp bài trùng trong văn bản PR Elite. Nó chuyển hướng từ "Lỗi lầm quá khứ" sang "Nỗ lực tương lai".
 
 **第2問 (Câu 2):**
-Vị trí của một nhân viên PR (Public Relations) trong doanh nghiệp Nhật Bản thường được gọi là gì?
-- A. 宣伝部。
+Vị trí của một nhân viên PR (Public Relations) trong doanh nghiệp Nhật Bản thường được gọi là gì?- A. 宣伝部。
 - B. 広報部 [Quảng Báo Bộ].
-- C. 営業部。
-- D. 総務部。
+- C. 総務部。
+- D. 営業部。
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Koho-bu là bộ phận chịu trách nhiệm về hình ảnh và phát ngôn của công ty đối với công chúng và truyền thông.
 
 **第3問 (Câu 3):**
-Khi một sự cố xảy ra do lỗi của đối tác cung cấp, nhưng chính công ty bạn lại là người bán sản phẩm đó cho người dùng, bạn nên nói gì với khách hàng?
-- A. 仕入先が悪いので、そちらに文句を言ってください。
-- B. 弊社の選定責任を含め, 私どもの不手際と深く受け止めております。
-- C. 私たちも被害者です。
-- D. 誰が悪いか調べてから連絡します。
+Khi một sự cố xảy ra do lỗi của đối tác cung cấp, nhưng chính công ty bạn lại là người bán sản phẩm đó cho người dùng, bạn nên nói gì với khách hàng?- A. 弊社の選定責任を含め, 私どもの不手際と深く受け止めております。
+- B. 私たちも被害者です。
+- C. 誰が悪いか調べてから連絡します。
+- D. 仕入先が悪いので、そちらに文句を言ってください。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「選定責任」 [Tuyển Định Trách Nhiệm]** (trách nhiệm lựa chọn đối tác) là khái niệm J1+ trung trực nhất. Nó khẳng định dù ai sai thì công ty mình vẫn là người chịu trách nhiệm cuối cùng trước khách hàng.
+> - **正解：A**. **「選定責任」 [Tuyển Định Trách Nhiệm]** (trách nhiệm lựa chọn đối tác) là khái niệm J1+ trung trực nhất. Nó khẳng định dù ai sai thì công ty mình vẫn là người chịu trách nhiệm cuối cùng trước khách hàng.
 
 ---
 

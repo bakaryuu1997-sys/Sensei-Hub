@@ -102,34 +102,31 @@ Khi AI sai, ai sẽ đền?
 ## 📝 6. QUICK QUIZ: 実踐・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Tại sao "Algorithmic Accountability" (Trách nhiệm giải trình thuật toán) lại khó thực hiện trong J1+?
-- A. Vì luật sư không hiểu về code.
-- B. Vì các mô hình học sâu (Deep Learning) quá phức tạp, đôi khi chính các kỹ sư cũng không thể giải thích chính xác tại sao máy lại đưa ra kết quả đó, tạo ra thách thức về tính minh bạch.
-- C. Vì máy tính không biết nói.
-- D. Vì tốn nhiều tiền điện.
+Tại sao "Algorithmic Accountability" (Trách nhiệm giải trình thuật toán) lại khó thực hiện trong J1+?- A. Vì tốn nhiều tiền điện.
+- B. Vì máy tính không biết nói.
+- C. Vì các mô hình học sâu (Deep Learning) quá phức tạp, đôi khi chính các kỹ sư cũng không thể giải thích chính xác tại sao máy lại đưa ra kết quả đó, tạo ra thách thức về tính minh bạch.
+- D. Vì luật sư không hiểu về code.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Lý do dẫn đến sự ra đời của khái niệm XAI (Explainable AI).
+> - **正解：C**. Lý do dẫn đến sự ra đời của khái niệm XAI (Explainable AI).
 
 **第2問 (Câu 2):**
-"Human-in-the-loop" (Con người trong vòng lặp) trong quản trị AI J1+ có ý nghĩa gì?
-- A. Con người bị nhốt trong máy tính.
-- B. Quy trình bắt buộc phải có sự tham gia của con người để kiểm tra, điều chỉnh hoặc phê duyệt các quyết định quan trọng do AI đề xuất.
-- C. Việc con người đi vòng quanh máy chủ.
-- D. Một bài tập thể dục cho nhân viên IT.
+"Human-in-the-loop" (Con người trong vòng lặp) trong quản trị AI J1+ có ý nghĩa gì?- A. Con người bị nhốt trong máy tính.
+- B. Một bài tập thể dục cho nhân viên IT.
+- C. Quy trình bắt buộc phải có sự tham gia của con người để kiểm tra, điều chỉnh hoặc phê duyệt các quyết định quan trọng do AI đề xuất.
+- D. Việc con người đi vòng quanh máy chủ.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Rào chắn an toàn cuối cùng chống lại sự bạo tẩu của máy móc.
+> - **正解：C**. Rào chắn an toàn cuối cùng chống lại sự bạo tẩu của máy móc.
 
 **第3問 (Câu 18):**
-Mục tiêu cuối cùng của "Ethical AI" trong trình độ J1 Master là gì?
-- A. Để AI trở thành thánh nhân.
-- B. Để xây dựng một xã hội nơi con người và AI có thể cộng sinh một cách an toàn, tin cậy, thúc đẩy tiến bộ mà không làm tổn hại đến các giá trị nhân văn cốt lõi.
+Mục tiêu cuối cùng của "Ethical AI" trong trình độ J1 Master là gì?- A. Để AI trở thành thánh nhân.
+- B. Để tiết kiệm chi phí luật sư.
 - C. Để không bị công an bắt.
-- D. Để tiết kiệm chi phí luật sư.
+- D. Để xây dựng một xã hội nơi con người và AI có thể cộng sinh một cách an toàn, tin cậy, thúc đẩy tiến bộ mà không làm tổn hại đến các giá trị nhân văn cốt lõi.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Tầm nhìn về một tương lai bền vững.
+> - **正解：D**. Tầm nhìn về một tương lai bền vững.
 
 ---
 

@@ -101,34 +101,31 @@ Trong bối cảnh toàn cầu, sự im lặng là "tự sát":
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khi phát hiện lỗi sản phẩm, hành động nào là J1+ nhất đối với bộ phận PR?
-- A. バレないように祈る。
-- B. 即座に事実関係を確認し, 「第一報」を速やかに公表する。
-- C. 社長の許可が出るまで何日間も待つ。
-- D. 他社のせいにする。
+Khi phát hiện lỗi sản phẩm, hành động nào là J1+ nhất đối với bộ phận PR?- A. 即座に事実関係を確認し, 「第一報」を速やかに公表する。
+- B. 他社のせいにする。
+- C. バレないように祈る。
+- D. 社長の許可が出るまで何日間も待つ。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「第一報」 [Đệ Nhất Báo]** (Thông tin đầu tiên) quan trọng hơn sự hoàn hảo. Sự nhanh nhẹn thể hiện sự tôn trọng người dùng.
+> - **正解：A**. **「第一報」 [Đệ Nhất Báo]** (Thông tin đầu tiên) quan trọng hơn sự hoàn hảo. Sự nhanh nhẹn thể hiện sự tôn trọng người dùng.
 
 **第2問 (Câu 2):**
-"Inpei" (隠蔽) có nghĩa là gì trong bối cảnh bê bối doanh nghiệp?
-- A. Sự đầu tư mới.
-- B. Che giấu sự thật, tang chứng hoặc thông tin bất lợi.
+"Inpei" (隠蔽) có nghĩa là gì trong bối cảnh bê bối doanh nghiệp?- A. Sự đầu tư mới.
+- B. Việc tuyển dụng nhân sự.
 - C. Việc công bố thông tin.
-- D. Việc tuyển dụng nhân sự.
+- D. Che giấu sự thật, tang chứng hoặc thông tin bất lợi.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Một "tội chết" trong quản trị hiện đại.
+> - **正解：D**. Một "tội chết" trong quản trị hiện đại.
 
 **第3問 (Câu 3):**
-Cụm từ **「火に油を注ぐ」 [Hỏa - Du - Chú]** trong truyền thông khủng hoảng nghĩa là gì?
-- A. Dùng dầu để dập lửa.
-- B. Đưa thêm các thông tin mập mờ hoặc lời xin lỗi thiếu chân thành khiến sự phẫn nộ của dư luận bùng nổ mạnh hơn.
-- C. Việc nấu ăn trong công ty.
-- D. Việc tiết kiệm năng lượng.
+Cụm từ **「火に油を注ぐ」 [Hỏa - Du - Chú]** trong truyền thông khủng hoảng nghĩa là gì?- A. Việc nấu ăn trong công ty.
+- B. Việc tiết kiệm năng lượng.
+- C. Dùng dầu để dập lửa.
+- D. Đưa thêm các thông tin mập mờ hoặc lời xin lỗi thiếu chân thành khiến sự phẫn nộ của dư luận bùng nổ mạnh hơn.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Đổ thêm dầu vào lửa. Đây là điều Elite J1+ tuyệt đối tránh.
+> - **正解：D**. Đổ thêm dầu vào lửa. Đây là điều Elite J1+ tuyệt đối tránh.
 
 ---
 

@@ -102,8 +102,7 @@ Trận chiến trên mặt trận hàng giả:
 ## 📝 6. QUICK QUIZ: 実踐・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Tại sao "Patent Troll" (Kẻ đầu cơ bằng sáng chế) lại là nỗi khiếp sợ của các công ty J1+?
-- A. Vì họ là những con quái vật trong phim.
+Tại sao "Patent Troll" (Kẻ đầu cơ bằng sáng chế) lại là nỗi khiếp sợ của các công ty J1+?- A. Vì họ là những con quái vật trong phim.
 - B. Vì đây là các tổ chức thu gom bằng sáng chế nhưng không sản xuất gì cả, họ chỉ chờ các công ty lớn sơ hở để kiện đòi tiền bồi thường khổng lồ.
 - C. Vì họ bán bằng sáng chế giả.
 - D. Vì họ làm hỏng các bản vẽ kỹ thuật.
@@ -112,24 +111,22 @@ Tại sao "Patent Troll" (Kẻ đầu cơ bằng sáng chế) lại là nỗi kh
 > - **正解：B**. Một rủi ro pháp lý cần được quản trị bằng chiến lược bảo vệ IP chủ động.
 
 **第2問 (Câu 2):**
-Thuật ngữ "Reverse Engineering" (Kỹ thuật ngược) liên quan thế nào đến "Trade Secret" trong J1+?
-- A. Việc dùng gương để xem bản vẽ.
+Thuật ngữ "Reverse Engineering" (Kỹ thuật ngược) liên quan thế nào đến "Trade Secret" trong J1+?- A. Một kỹ thuật vẽ tranh hiện đại.
 - B. Việc đối thủ mua sản phẩm của bạn về và tháo rời ra để tìm hiểu bí quyết công nghệ. Nếu bạn không "Black-box" hóa tốt, bí mật kinh doanh sẽ bị lộ một cách hợp pháp.
-- C. Việc đi làm ngược giờ bình thường.
-- D. Một kỹ thuật vẽ tranh hiện đại.
+- C. Việc dùng gương để xem bản vẽ.
+- D. Việc đi làm ngược giờ bình thường.
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Lý do tại sao phải bảo mật quy trình sản xuất thay vì chỉ bảo mật sản phẩm cuối cùng.
 
 **第3問 (Câu 17):**
-"Trademark" (Nhãn hiệu) trong J1+ quan trọng hơn bằng sáng chế ở điểm nào?
-- A. Vì nhãn hiệu đẹp hơn.
-- B. Vì nhãn hiệu có thể được gia hạn vĩnh viễn, giúp duy trì giá trị thương hiệu và lòng trung thành của khách hàng ngay cả khi công nghệ đã lỗi thời.
-- C. Vì đăng ký nhãn hiệu rẻ hơn.
-- D. Vì nhãn hiệu dễ nhớ hơn.
+"Trademark" (Nhãn hiệu) trong J1+ quan trọng hơn bằng sáng chế ở điểm nào?- A. Vì nhãn hiệu đẹp hơn.
+- B. Vì đăng ký nhãn hiệu rẻ hơn.
+- C. Vì nhãn hiệu dễ nhớ hơn.
+- D. Vì nhãn hiệu có thể được gia hạn vĩnh viễn, giúp duy trì giá trị thương hiệu và lòng trung thành của khách hàng ngay cả khi công nghệ đã lỗi thời.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Bằng sáng chế có hạn, thương hiệu là vĩnh cửu.
+> - **正解：D**. Bằng sáng chế có hạn, thương hiệu là vĩnh cửu.
 
 ---
 

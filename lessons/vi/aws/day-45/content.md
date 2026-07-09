@@ -70,24 +70,24 @@ Năm 2026, tôi dùng **Amazon Q** để tự động phân tích thị hiếu n
 # 📝 QUICK QUIZ
 
 **Câu 1: Giải pháp nào bảo vệ nội dung S3, chỉ cho phép CloudFront truy cập?**
-A. Public Access
-B. OAC (Origin Access Control)
-C. FTP
-D. VPC Peering
+A. VPC Peering
+B. FTP
+C. Public Access
+D. OAC (Origin Access Control)
 
 **Câu 2: (Cập nhật 2026) Bạn có thể chạy gì ngay tại Edge Location để xử lý dữ liệu nhanh hơn?**
-A. Đào Bitcoin
-B. AI Inference (Chạy mô hình AI nhỏ)
-C. Render Video 8K
-D. Backup toàn bộ Database
+A. AI Inference (Chạy mô hình AI nhỏ)
+B. Render Video 8K
+C. Backup toàn bộ Database
+D. Đào Bitcoin
 
 **Câu 3: CloudFront Functions ưu tiên yếu tố nào nhất?**
-A. Độ linh hoạt code
-B. Tốc độ thực thi siêu nhanh (< 1ms) và khả năng Scale khổng lồ
+A. Tốc độ thực thi siêu nhanh (< 1ms) và khả năng Scale khổng lồ
+B. Độ linh hoạt code
 C. Giá tiền đắt nhất
 D. Khả năng kết nối DB
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-D, 2-A, 3-A.
 
 ---
 

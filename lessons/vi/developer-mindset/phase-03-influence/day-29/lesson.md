@@ -126,23 +126,23 @@ J là một nhân viên văn phòng bình thường với mức lương trung b�
 
 1. **Tại sao "Backward Engineering" (Thiết kế ngược) lại hiệu quả trong việc lập kế hoạch cuộc đời?**
     - A. Vì nó dễ hơn.
-    - B. Vì nó giúp bạn kết nối mục tiêu vĩ đại trong tương lai với những hành động nhỏ, cụ thể ở hiện tại, đảm bảo mỗi bước đi đều đúng lộ trình và không bị lãng phí tài nguyên.
-    - C. Vì tương lai quan trọng hơn hiện tại.
+    - B. Vì tương lai quan trọng hơn hiện tại.
+    - C. Vì nó giúp bạn kết nối mục tiêu vĩ đại trong tương lai với những hành động nhỏ, cụ thể ở hiện tại, đảm bảo mỗi bước đi đều đúng lộ trình và không bị lãng phí tài nguyên.
     - D. Không có tác dụng gì cụ thể.
 
 2. **Hệ thống RAS (Reticular Activating System) của não bộ giúp ích gì khi bạn có tầm nhìn rõ ràng?**
     - A. Giúp bạn ngủ ngon hơn.
-    - B. Hoạt động như một bộ lọc (Filter) thông minh, giúp bạn tự động nhận diện và thu hút những cơ hội, con người và nguồn lực phù hợp với tầm nhìn đã đề ra.
-    - C. Giúp bạn tính toán nhanh hơn.
-    - D. Làm bạn thấy vui vẻ hơn.
+    - B. Làm bạn thấy vui vẻ hơn.
+    - C. Hoạt động như một bộ lọc (Filter) thông minh, giúp bạn tự động nhận diện và thu hút những cơ hội, con người và nguồn lực phù hợp với tầm nhìn đã đề ra.
+    - D. Giúp bạn tính toán nhanh hơn.
 
 3. **5 Cột trụ (Health, Wealth, Relationships, Career, Spirit) cần được cân bằng để làm gì?**
-    - A. Để làm cho bản kế hoạch trông đẹp hơn.
-    - B. Để đảm bảo hệ thống cuộc đời của bạn phát triển bền vững (Sustainable), không bị sụp đổ do thiếu hụt tài nguyên ở bất kỳ mảng cốt lõi nào.
-    - C. Để bạn bận rộn hơn.
-    - D. Để khoe với người khác.
+    - A. Để bạn bận rộn hơn.
+    - B. Để khoe với người khác.
+    - C. Để làm cho bản kế hoạch trông đẹp hơn.
+    - D. Để đảm bảo hệ thống cuộc đời của bạn phát triển bền vững (Sustainable), không bị sụp đổ do thiếu hụt tài nguyên ở bất kỳ mảng cốt lõi nào.
 
-*(Đáp án đúng: 1-B, 2-B, 3-B)*
+*(Đáp án đúng: 1-C, 2-C, 3-D)*
 
 ---
 **Lời nhắn từ Architect**: Bạn đã có bản đồ trong tay! Tuyệt vời. Ngày mai là ngày cuối cùng: **Final Deployment** — Lễ tốt nghiệp và cam kết trở thành phiên bản Elite 10/10 vĩnh viễn của bạn! ⚔️💎

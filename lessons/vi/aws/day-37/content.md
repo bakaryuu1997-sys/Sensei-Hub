@@ -66,24 +66,24 @@ Năm 2026, tôi dùng **Amazon Q** để liên tục giám sát và tự động
 # 📝 QUICK QUIZ
 
 **Câu 1: SCP có thể ảnh hưởng đến đối tượng đặc biệt nào?**
-A. Lập trình viên
+A. Khách hàng website
 B. Tài khoản Root (Root User)
-C. Khách hàng website
-D. Database
+C. Database
+D. Lập trình viên
 
 **Câu 2: (Cập nhật 2026) Amazon Q giúp gì trong việc quản lý Policy?**
-A. Chỉ để hỏi đáp
-B. Tự động tạo Policy từ ngôn ngữ tự nhiên và chạy mô phỏng bảo mật
-C. Xóa sạch mọi Account
-D. Làm AWS Console đẹp hơn
+A. Xóa sạch mọi Account
+B. Chỉ để hỏi đáp
+C. Làm AWS Console đẹp hơn
+D. Tự động tạo Policy từ ngôn ngữ tự nhiên và chạy mô phỏng bảo mật
 
 **Câu 3: ABAC phân quyền dựa trên yếu tố nào?**
-A. Chức danh công việc
-B. Thuộc tính (Tags) của người dùng và Resource
-C. Địa chỉ nhà
-D. Số tiền trong tài khoản
+A. Thuộc tính (Tags) của người dùng và Resource
+B. Số tiền trong tài khoản
+C. Chức danh công việc
+D. Địa chỉ nhà
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-B, 2-D, 3-A.
 
 ---
 

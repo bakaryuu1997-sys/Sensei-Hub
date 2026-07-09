@@ -95,34 +95,31 @@ Tài liệu ghi giá 100 triệu, nhưng người nói bảo: **「キャンペ�
 ## 📝 6. QUICK QUIZ: 条件・選択・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-「性能 [Tính Năng] は申し分ない [Thân - Phân] のですが、維持費 [Duy Trì Phí] が予算を大幅に上回って [Thượng Hồi] いるのが痛い [Thống] ですね」という発言は、その候補をどう評価している？
-- A. Sẽ mua ngay lập tức.
-- B. Đánh giá cao hiệu năng nhưng rất ngại vì chi phí duy trì vượt ngân sách.
+「性能 [Tính Năng] は申し分ない [Thân - Phân] のですが、維持費 [Duy Trì Phí] が予算を大幅に上回って [Thượng Hồi] いるのが痛い [Thống] ですね」という発言は、その候補をどう評価している？- A. Đang mặc cả giá.
+- B. Sẽ mua ngay lập tức.
 - C. Không thích hiệu năng.
-- D. Đang mặc cả giá.
+- D. Đánh giá cao hiệu năng nhưng rất ngại vì chi phí duy trì vượt ngân sách.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「痛い」** trong bối cảnh này là thành ngữ chỉ sự đau đầu, điểm yếu chí mạng về mặt tài chính.
+> - **正解：D**. **「痛い」** trong bối cảnh này là thành ngữ chỉ sự đau đầu, điểm yếu chí mạng về mặt tài chính.
 
 **第2問 (Câu 2):**
-「駅近 [Dịch Cận] であることに越したことはありませんが、今回は静かな環境を優先 [Ưu Tiên] したいと考えています」 どの物件を選ぶべきか？
-- A. Căn ngay trước ga, rất ồn ào.
-- B. Căn xa ga 20 phút, rất yên tĩnh.
-- C. Căn trung tâm sầm uất.
-- D. Căn gần ga và yên tĩnh (nhưng nếu không có trong đáp án, chọn B).
+「駅近 [Dịch Cận] であることに越したことはありませんが、今回は静かな環境を優先 [Ưu Tiên] したいと考えています」 どの物件を選ぶべきか？- A. Căn xa ga 20 phút, rất yên tĩnh.
+- B. Căn ngay trước ga, rất ồn ào.
+- C. Căn gần ga và yên tĩnh (nhưng nếu không có trong đáp án, chọn B).
+- D. Căn trung tâm sầm uất.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Cấu trúc **「～に越したことはないが」** (Nếu được... thì tốt nhưng không bắt buộc) dùng để hạ thấp mức ưu tiên của "gần ga" và nâng cao mức ưu tiên của "yên tĩnh".
+> - **正解：A**. Cấu trúc **「～に越したことはないが」** (Nếu được... thì tốt nhưng không bắt buộc) dùng để hạ thấp mức ưu tiên của "gần ga" và nâng cao mức ưu tiên của "yên tĩnh".
 
 **第3問 (Câu 3):**
-会議で決まった最終的な選択肢を選ぶ問題で、最後の一言が「やっぱり、振り出し [Chấn Xuất] に戻しましょう」だった。どういう意味？
-- A. Chọn phương án 1.
-- B. Quay lại từ đầu, không chọn phương án nào đã thảo luận.
-- C. Chọn phương án cuối cùng.
+会議で決まった最終的な選択肢を選ぶ問題で、最後の一言が「やっぱり、振り出し [Chấn Xuất] に戻しましょう」だった。どういう意味？- A. Quay lại từ đầu, không chọn phương án nào đã thảo luận.
+- B. Chọn phương án cuối cùng.
+- C. Chọn phương án 1.
 - D. Kết thúc cuộc họp và ký hợp đồng.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「振り出しに戻る」** là cụm từ Elite nghĩa là mọi thứ quay về vạch xuất phát, bỏ hết các thảo luận trước đó.
+> - **正解：A**. **「振り出しに戻る」** là cụm từ Elite nghĩa là mọi thứ quay về vạch xuất phát, bỏ hết các thảo luận trước đó.
 
 ---
 

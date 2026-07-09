@@ -97,24 +97,24 @@ Tuyệt đối không chạm vào điện thoại trong 1 tiếng đầu tiên s
 # 🎯 6. QUICK QUIZ: Hệ Thống Của Bạn Có Đang Bị Quá Tải?
 
 1. **Dopamine đóng vai trò gì trong não bộ?**
-    - A. Là chất gây buồn ngủ.
-    - B. Là "Tiền tệ" của động lực và sự mong đợi phần thưởng.
-    - C. Là chất giúp tiêu hóa thức ăn.
+    - A. Là chất giúp tiêu hóa thức ăn.
+    - B. Là chất gây buồn ngủ.
+    - C. Là "Tiền tệ" của động lực và sự mong đợi phần thưởng.
     - D. Là chất làm tăng trí nhớ.
 
 2. **Cơ chế "Down-regulation" dẫn đến hậu quả gì?**
-    - A. Làm bạn thông minh hơn.
-    - B. Khiến các thụ thể Dopamine đóng lại, làm bạn cảm thấy mất động lực và trơ lì với cuộc sống.
-    - C. Giúp bạn ngủ ngon hơn.
-    - D. Không có hậu quả gì.
+    - A. Khiến các thụ thể Dopamine đóng lại, làm bạn cảm thấy mất động lực và trơ lì với cuộc sống.
+    - B. Không có hậu quả gì.
+    - C. Làm bạn thông minh hơn.
+    - D. Giúp bạn ngủ ngon hơn.
 
 3. **Tại sao nên thực hiện "Boredom Protocol"?**
-    - A. Để hành hạ bản thân.
-    - B. Để tiết kiệm điện.
-    - C. Để hệ thống phần thưởng được nghỉ ngơi và hạ thấp ngưỡng nhạy cảm, giúp bạn lấy lại sự tập trung.
-    - D. Vì không có gì để làm.
+    - A. Vì không có gì để làm.
+    - B. Để hệ thống phần thưởng được nghỉ ngơi và hạ thấp ngưỡng nhạy cảm, giúp bạn lấy lại sự tập trung.
+    - C. Để tiết kiệm điện.
+    - D. Để hành hạ bản thân.
 
-*(Đáp án đúng: 1-B, 2-B, 3-C)*
+*(Đáp án đúng: 1-C, 2-A, 3-C)*
 
 ---
 **Lời nhắn từ Architect**: Bạn là người quản lý tài nguyên, không phải là nô lệ cho nó. Hãy ngắt kết nối để thực sự kết nối với chính mình. Ngày mai, chúng ta sẽ học bài học cuối cùng của Phase 1: **The Victim Loop** và cách lấy lại quyền ROOT cho cuộc đời bạn! ⚔️💎

@@ -65,22 +65,22 @@ Học xong khóa học này cũng giống như bạn đã biết cách điều k
 **Câu 1: Chứng chỉ nào của AWS tập trung vào việc triển khai và vận hành các hệ thống AI/ML quy mô lớn?**
 A. Cloud Practitioner.
 B. AWS Certified Machine Learning Engineer - Associate.
-C. SysOps Administrator.
-D. Developer Associate.
+C. Developer Associate.
+D. SysOps Administrator.
 
 **Câu 2: Một BrSE giỏi trong năm 2026 cần ưu tiên kỹ năng nào nhất?**
 A. Chỉ cần giỏi tiếng Nhật.
-B. Chỉ cần giỏi Code.
-C. Kết hợp giữa Tiếng Nhật, Kiến trúc Cloud và Khả năng thiết kế giải pháp AI.
-D. Chỉ cần biết dùng ChatGPT.
+B. Chỉ cần biết dùng ChatGPT.
+C. Chỉ cần giỏi Code.
+D. Kết hợp giữa Tiếng Nhật, Kiến trúc Cloud và Khả năng thiết kế giải pháp AI.
 
 **Câu 3: Làm thế nào để giữ cho kiến thức không bị lạc hậu?**
-A. Đọc lại bài học cũ hàng ngày.
-B. Theo dõi AWS What's New, tham gia các cộng đồng AI và không ngừng thực hành (Hands-on).
-C. Chờ đến khi có khóa học mới.
-D. Nghỉ ngơi hoàn toàn.
+A. Nghỉ ngơi hoàn toàn.
+B. Chờ đến khi có khóa học mới.
+C. Đọc lại bài học cũ hàng ngày.
+D. Theo dõi AWS What's New, tham gia các cộng đồng AI và không ngừng thực hành (Hands-on).
 
-**Đáp án:** 1-B, 2-C, 3-B.
+**Đáp án:** 1-B, 2-C, 3-D.
 
 ---
 

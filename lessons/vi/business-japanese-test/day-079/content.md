@@ -109,34 +109,31 @@ Tư duy tầm nhìn rộng:
 ## 📝 6. QUICK QUIZ: 実踐・最終試練 (Global Diplomacy Test)
 
 **第1問 (Câu 1):**
-Thuật ngữ **「根回し」 [Căn Hồi]** nên được giải thích như thế nào cho một đối tác phương Tây để họ không thấy đó là một hành vi "thiếu minh bạch"?
-- A. 「それは日本独自の秘密の会議です。」
-- B. 「正式名決定の前に、関係者の理解と合意を得ることで、プロジェクト開始後の摩擦を減らし、スピードを加速させるための準備プロセスです。」
-- C. 「何も考えずに、ただみんなで集まって話すだけです。」
-- D. 「メールを送るのが面倒なので、直接話しているだけです。」
+Thuật ngữ **「根回し」 [Căn Hồi]** nên được giải thích như thế nào cho một đối tác phương Tây để họ không thấy đó là một hành vi "thiếu minh bạch"?- A. 「正式名決定の前に、関係者の理解と合意を得ることで、プロジェクト開始後の摩擦を減らし、スピードを加速させるための準備プロセスです。」
+- B. 「それは日本独自の秘密の会議です。」
+- C. 「メールを送るのが面倒なので、直接話しているだけです。」
+- D. 「何も考えずに、ただみんなで集まって話すだけです。」
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Biến một hành vi văn hóa thành một giá trị kinh doanh (Giảm ma sát, tăng tốc độ).
+> - **正解：A**. Biến một hành vi văn hóa thành một giá trị kinh doanh (Giảm ma sát, tăng tốc độ).
 
 **第2問 (Câu 2):**
-Trong một cuộc đàm phán, khi bạn muốn bày tỏ rằng "Đề xuất này rất khó thực hiện ngay", cách nói nào thể hiện trình độ J1 Mastery nhất?
-- A. 「それは絶対に無理です。不可能です。」
-- B. 「ご提案の趣旨は理解いたしました。ただ、社内のリソース状況を鑑みますと、現時点での即断は困難を極める側面がございます。段階的な導入など、別のオプションを検討させていただけないでしょうか。」
-- C. 「たぶん大丈夫だと思いますが、自信はありません。」
+Trong một cuộc đàm phán, khi bạn muốn bày tỏ rằng "Đề xuất này rất khó thực hiện ngay", cách nói nào thể hiện trình độ J1 Mastery nhất?- A. 「それは絶対に無理です。不可能です。」
+- B. 「たぶん大丈夫だと思いますが、自信はありません。」
+- C. 「ご提案の趣旨は理解いたしました。ただ、社内のリソース状況を鑑みますと、現時点での即断は困難を極める側面がございます。段階的な導入など、別のオプションを検討させていただけないでしょうか。」
 - D. 「後で返事します。」
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Thể hiện sự hiểu biết, nêu rõ khó khăn (một cách lịch sự) và đưa ra giải pháp thay thế.
+> - **正解：C**. Thể hiện sự hiểu biết, nêu rõ khó khăn (một cách lịch sự) và đưa ra giải pháp thay thế.
 
 **第3問 (Câu 3):**
-Ý nghĩa thực sự của việc **「双方のメンツを立てる」** là gì?
-- A. Cả hai bên cùng đi ăn tối và chụp ảnh.
-- B. Tạo ra một kết quả mà cả hai bên đều có thể báo cáo với cấp trên hoặc cổ đông của mình rằng "Chúng tôi đã đạt được thành công", tránh việc một bên cảm thấy bị lép vế hoặc thất bại hoàn toàn.
-- C. Việc nhường hết lợi ích cho đối phương.
-- D. Việc ai thắng thì người đó có quyền nói to.
+Ý nghĩa thực sự của việc **「双方のメンツを立てる」** là gì?- A. Việc ai thắng thì người đó có quyền nói to.
+- B. Việc nhường hết lợi ích cho đối phương.
+- C. Tạo ra một kết quả mà cả hai bên đều có thể báo cáo với cấp trên hoặc cổ đông của mình rằng "Chúng tôi đã đạt được thành công", tránh việc một bên cảm thấy bị lép vế hoặc thất bại hoàn toàn.
+- D. Cả hai bên cùng đi ăn tối và chụp ảnh.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Bảo vệ danh tiếng cho cả hai bên để duy trì mối quan hệ lâu dài.
+> - **正解：C**. Bảo vệ danh tiếng cho cả hai bên để duy trì mối quan hệ lâu dài.
 
 ---
 

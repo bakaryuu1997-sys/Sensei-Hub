@@ -71,24 +71,24 @@ Chi phí và năng lượng trên Cloud cũng giống như việc bạn quản l
 # 📝 QUICK QUIZ
 
 **Câu 1: Dịch vụ nào giúp bạn xử lý lượng lớn dữ liệu AI với giá rẻ hơn 50% nếu không cần kết quả ngay lập tức?**
-A. Bedrock On-Demand.
-B. Bedrock Batch Inference.
-C. Amazon S3 Standard.
-D. AWS Lambda.
+A. AWS Lambda.
+B. Amazon S3 Standard.
+C. Bedrock On-Demand.
+D. Bedrock Batch Inference.
 
 **Câu 2: 'Sustainability' trong Cloud nghĩa là gì?**
-A. Giữ cho Server không bao giờ sập.
-B. Giảm thiểu tác động tiêu cực đến môi trường thông qua việc tối ưu hóa năng lượng và tài nguyên.
+A. Giảm thiểu tác động tiêu cực đến môi trường thông qua việc tối ưu hóa năng lượng và tài nguyên.
+B. Giữ cho Server không bao giờ sập.
 C. Làm cho AI thông minh mãi mãi.
 D. Tăng giá dịch vụ hàng năm.
 
 **Câu 3: (Cập nhật 2026) Loại Chip nào của AWS được tối ưu để chạy AI 'Xanh' và rẻ nhất?**
-A. Intel Xeon.
-B. AMD EPYC.
-C. AWS Graviton4 & Trainium2.
-D. Nvidia H100.
+A. AWS Graviton4 & Trainium2.
+B. Nvidia H100.
+C. Intel Xeon.
+D. AMD EPYC.
 
-**Đáp án:** 1-B, 2-B, 3-C.
+**Đáp án:** 1-D, 2-A, 3-D.
 
 ---
 

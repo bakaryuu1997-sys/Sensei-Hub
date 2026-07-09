@@ -58,24 +58,24 @@ Hãy tưởng tượng bạn quản lý một **Đội xe giao hàng siêu tốc
 # 📝 QUICK QUIZ
 
 **Câu 1: Loại Instance nào của AWS dùng chip ARM tự thiết kế, giá rẻ và hiệu năng cao?**
-A. Intel Xeon
+A. NVIDIA
 B. AMD EPYC
 C. AWS Graviton
-D. NVIDIA
+D. Intel Xeon
 
 **Câu 2: (Cập nhật 2026) AI nào giúp tự động thực thi việc cắt giảm tài nguyên rảnh rỗi để tiết kiệm tiền?**
 A. Alexa
-B. Amazon Q for Cost Optimization
-C. Siri
-D. Cortana
+B. Siri
+C. Cortana
+D. Amazon Q for Cost Optimization
 
 **Câu 3: Chiến lược mua Instance nào tiết kiệm đến 90% nhưng có thể bị AWS thu hồi bất cứ lúc nào?**
-A. On-Demand
-B. Reserved
-C. Spot Instance
-D. Savings Plans
+A. Reserved
+B. On-Demand
+C. Savings Plans
+D. Spot Instance
 
-**Đáp án:** 1-C, 2-B, 3-C.
+**Đáp án:** 1-B, 2-D, 3-A.
 
 ---
 

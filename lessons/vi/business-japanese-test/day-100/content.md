@@ -94,34 +94,31 @@ Nhiều thí sinh bỏ cuộc hoặc đánh lụi ở 5 câu cuối do mệt m�
 ## 📝 6. QUICK QUIZ: グランドマスター・チャレンジ
 
 **第1問 (Câu 1):**
-Trong một Case Study, khi dữ liệu cho thấy việc tiếp tục dự án sẽ gây lỗ, nhưng sếp lại nói 「何とかして成功させたい」 (Dù gì đi nữa cũng muốn làm cho thành công), bạn nên chọn phương án nào?
-- A. Tiếp tục bằng mọi giá.
-- B. Từ chối ngay lập tức vì số liệu đã rõ.
-- C. Đề xuất một "quy mô thu hẹp" hoặc "thay đổi cách tiếp cận" để giảm thiểu rủi ro trong khi vẫn tôn trọng ý chí của sếp.
+Trong một Case Study, khi dữ liệu cho thấy việc tiếp tục dự án sẽ gây lỗ, nhưng sếp lại nói 「何とかして成功させたい」 (Dù gì đi nữa cũng muốn làm cho thành công), bạn nên chọn phương án nào?- A. Từ chối ngay lập tức vì số liệu đã rõ.
+- B. Đề xuất một "quy mô thu hẹp" hoặc "thay đổi cách tiếp cận" để giảm thiểu rủi ro trong khi vẫn tôn trọng ý chí của sếp.
+- C. Tiếp tục bằng mọi giá.
 - D. Giả vờ làm nhưng thực tế là trì hoãn.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Đây là cách giải quyết xung đột kinh điển của J1+: **「折衷案」 [Chiết Trung Án]**. Vừa đảm bảo logic kinh tế, vừa đảm bảo kính ngữ và tôn ti trật tự.
+> - **正解：A**. Đây là cách giải quyết xung đột kinh điển của J1+: **「折衷案」 [Chiết Trung Án]**. Vừa đảm bảo logic kinh tế, vừa đảm bảo kính ngữ và tôn ti trật tự.
 
 **第2問 (Câu 2):**
-Văn hóa 「報連相」 [Báo Liên Tương] trong bài thi tổng hợp được thể hiện rõ nhất qua hành động nào?
-- A. Tự mình giải quyết mọi việc.
+Văn hóa 「報連相」 [Báo Liên Tương] trong bài thi tổng hợp được thể hiện rõ nhất qua hành động nào?- A. Giấu thông tin xấu để giữ hình ảnh.
 - B. Chỉ báo cáo khi đã xong việc.
-- C. Báo cáo ngay khi có dấu hiệu sự cố (Initial Report), dù chưa có giải pháp.
-- D. Giấu thông tin xấu để giữ hình ảnh.
+- C. Tự mình giải quyết mọi việc.
+- D. Báo cáo ngay khi có dấu hiệu sự cố (Initial Report), dù chưa có giải pháp.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Trong BJT, **「初報告」** (Báo cáo đầu tiên) là cực kỳ quan trọng để cấp trên nắm bắt tình hình sớm.
+> - **正解：B**. Trong BJT, **「初報告」** (Báo cáo đầu tiên) là cực kỳ quan trọng để cấp trên nắm bắt tình hình sớm.
 
 **第3問 (Câu 3):**
-Điểm số cao nhất trong BJT không thuộc về người giỏi tiếng Nhật nhất, mà thuộc về người có khả nãng gì?
-- A. Viết Kanji nhanh.
+Điểm số cao nhất trong BJT không thuộc về người giỏi tiếng Nhật nhất, mà thuộc về người có khả nãng gì?- A. Đọc sách nhanh.
 - B. Nghe được nhiều từ vựng lạ.
 - C. Phán đoán và ứng xử phù hợp nhất trong bối cảnh văn hóa doanh nghiệp Nhật.
-- D. Đọc sách nhanh.
+- D. Viết Kanji nhanh.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Bản chất của BJT là **「ビジネスコミュニケーション能力」** (Năng lực giao tiếp kinh doanh).
+> - **正解：B**. Bản chất của BJT là **「ビジネスコミュニケーション能力」** (Năng lực giao tiếp kinh doanh).
 
 ---
 

@@ -113,24 +113,24 @@ T là một người tài giỏi nhưng luôn tự làm mọi việc. Khi công 
 # 🎯 7. QUICK QUIZ: Bạn Có Đang Sở Hữu Một Mạng Lưới P2P?
 
 1. **Tại sao Deep Connection lại mạnh hơn quan hệ xã giao thông thường?**
-    - A. Vì bạn có thể mượn tiền họ.
-    - B. Vì nó dựa trên sự cộng hưởng giá trị cốt lõi và sự tin cậy phi tập trung, giúp tạo ra sức mạnh tổng hợp vượt xa khả năng cá nhân.
-    - C. Vì họ sẽ khen bạn nhiều hơn.
-    - D. Vì nó dễ xây dựng hơn.
+    - A. Vì họ sẽ khen bạn nhiều hơn.
+    - B. Vì nó dễ xây dựng hơn.
+    - C. Vì bạn có thể mượn tiền họ.
+    - D. Vì nó dựa trên sự cộng hưởng giá trị cốt lõi và sự tin cậy phi tập trung, giúp tạo ra sức mạnh tổng hợp vượt xa khả năng cá nhân.
 
 2. **Hành động "Active Seeding" trong quan hệ nghĩa là gì?**
-    - A. Chờ người khác tặng quà rồi mới tặng lại.
-    - B. Chủ động trao đi giá trị, kiến thức và sự giúp đỡ trước mà không đòi hỏi đền đáp ngay lập tức, để khởi động quy tắc Reciprocity.
-    - C. Gửi tin nhắn rác cho nhiều người.
-    - D. Nhờ vả mọi người giúp mình.
+    - A. Gửi tin nhắn rác cho nhiều người.
+    - B. Chờ người khác tặng quà rồi mới tặng lại.
+    - C. Nhờ vả mọi người giúp mình.
+    - D. Chủ động trao đi giá trị, kiến thức và sự giúp đỡ trước mà không đòi hỏi đền đáp ngay lập tức, để khởi động quy tắc Reciprocity.
 
 3. **Yếu tố nào giúp thiết lập sự tin cậy ở mức "Kernel"?**
-    - A. Quần áo đắt tiền.
-    - B. Sự nhất quán (Consistency) trong lời nói, hành động và sự yếu đuối (Vulnerability) được chia sẻ đúng lúc.
-    - C. Nói chuyện thật nhiều.
-    - D. Tặng những món quà đắt tiền.
+    - A. Tặng những món quà đắt tiền.
+    - B. Quần áo đắt tiền.
+    - C. Sự nhất quán (Consistency) trong lời nói, hành động và sự yếu đuối (Vulnerability) được chia sẻ đúng lúc.
+    - D. Nói chuyện thật nhiều.
 
-*(Đáp án đúng: 1-B, 2-B, 3-B)*
+*(Đáp án đúng: 1-D, 2-D, 3-C)*
 
 ---
 **Lời nhắn từ Architect**: Bạn đã bắt đầu xây dựng được mạng lưới tinh hoa! Ngày mai, chúng ta sẽ học cách điều phối mạng lưới đó: **Influence Architecture** — Nghệ thuật dẫn dắt và điều hướng đám đông theo tầm nhìn của bạn! ⚔️💎

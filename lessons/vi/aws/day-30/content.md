@@ -76,24 +76,24 @@ Kỳ thi gồm 65 câu hỏi/130 phút. Cần đạt 720/1000 điểm.
 # 📝 QUICK QUIZ
 
 **Câu 1: Từ khóa 'decoupling' (giảm phụ thuộc) nên chọn dịch vụ nào?**
-A. S3
-B. SQS
-C. EBS
-D. CloudTrail
+A. EBS
+B. CloudTrail
+C. SQS
+D. S3
 
 **Câu 2: (Cập nhật 2026) Trụ cột mới nào được nhấn mạnh trong đề thi SAA?**
-A. AI-Native & Sustainability
-B. Blockchain
+A. Blockchain
+B. Web3
 C. Quantum Computing
-D. Web3
+D. AI-Native & Sustainability
 
 **Câu 3: Giải pháp 'Most cost-effective' để lưu trữ dữ liệu 1 năm, cần lấy ngay lập tức?**
-A. S3 Glacier Deep Archive
+A. Snowball
 B. S3 Standard
-C. S3 Standard-IA
-D. Snowball
+C. S3 Glacier Deep Archive
+D. S3 Standard-IA
 
-**Đáp án:** 1-B, 2-A, 3-C (IA lấy ngay, Glacier phải chờ).
+**Đáp án:** 1-C, 2-A, 3-B.
 
 ---
 

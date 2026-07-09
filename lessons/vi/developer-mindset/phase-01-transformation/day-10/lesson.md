@@ -121,24 +121,24 @@ Nếu câu trả lời là "SẴN SÀNG", hãy thực hiện lệnh `Final_Commi
 # 🎯 QUICK QUIZ: Bạn Đã Sẵn Sàng "Deploy" Chưa?
 
 1. **Mục tiêu quan trọng nhất của Day 10 - Phase 1 Recap là gì?**
-    - A. Học thêm 10 kỹ năng mới.
+    - A. Nghỉ ngơi và không làm gì.
     - B. Hệ thống hóa lại các "bản vá" tâm lý đã học, thực hiện System Audit để đảm bảo sự ổn định trước khi bước sang giai đoạn giao tiếp xã hội.
-    - C. Nghỉ ngơi và không làm gì.
+    - C. Học thêm 10 kỹ năng mới.
     - D. Quên hết những gì đã học.
 
 2. **Tại sao Phase 1 được gọi là "Neural Rewiring"?**
-    - A. Vì chúng ta học về mạng máy tính.
-    - B. Vì 10 ngày này tập trung vào việc thay đổi cấu trúc liên kết thần kinh bên trong não bộ (Cài đặt lại Kernel).
-    - C. Vì nó nghe có vẻ chuyên nghiệp.
-    - D. Vì chúng ta sửa dây điện.
+    - A. Vì 10 ngày này tập trung vào việc thay đổi cấu trúc liên kết thần kinh bên trong não bộ (Cài đặt lại Kernel).
+    - B. Vì chúng ta sửa dây điện.
+    - C. Vì chúng ta học về mạng máy tính.
+    - D. Vì nó nghe có vẻ chuyên nghiệp.
 
 3. **Trạng thái "Production Ready" của một Mindset Master là gì?**
     - A. Không bao giờ mắc lỗi nữa.
-    - B. Có một hệ điều hành nội tâm vững chắc, có khả năng tự phục hồi, bảo mật tốt và sẵn sàng tương tác với thế giới thực đầy áp lực.
-    - C. Trở thành người nổi tiếng.
+    - B. Trở thành người nổi tiếng.
+    - C. Có một hệ điều hành nội tâm vững chắc, có khả năng tự phục hồi, bảo mật tốt và sẵn sàng tương tác với thế giới thực đầy áp lực.
     - D. Biết hết mọi thứ.
 
-*(Đáp án đúng: 1-B, 2-B, 3-B)*
+*(Đáp án đúng: 1-B, 2-A, 3-C)*
 
 ---
 **Lời nhắn từ Architect**: Chúc mừng bạn đã hoàn thành Phase 1! Đây là khoảnh khắc đáng tự hào nhất. Bạn đã chứng minh cho bản thân thấy rằng bạn có khả năng thay đổi. Từ ngày mai, chúng ta bắt đầu Phase 2: **SOCIAL API DESIGN**. Chúng ta sẽ học cách mã hóa giọng nói, ngôn ngữ cơ thể và kỹ thuật bắt chuyện để bạn thực sự tỏa sáng trước đám đông. Hãy tự thưởng cho mình một buổi tối nghỉ ngơi chất lượng nhé! ⚔️💎

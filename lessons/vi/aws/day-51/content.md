@@ -74,24 +74,24 @@ AWS đã bổ sung một "trụ cột" mới dành riêng cho AI/ML:
 # 📝 QUICK QUIZ
 
 **Câu 1: Tính năng nào của Bedrock giúp chặn người dùng hỏi về các chủ đề nhạy cảm hoặc không liên quan?**
-A. S3 Bucket.
-B. Bedrock Guardrails.
-C. CloudWatch Logs.
+A. Bedrock Guardrails.
+B. CloudWatch Logs.
+C. S3 Bucket.
 D. IAM Role.
 
 **Câu 2: (Cập nhật 2026) Tại sao AI Governance lại quan trọng hơn bao giờ hết?**
-A. Vì nó giúp AI chạy nhanh hơn.
-B. Vì các quy định pháp luật (như AI Act) và rủi ro về an toàn dữ liệu ngày càng phức tạp.
-C. Vì nó giúp giảm tiền điện.
-D. Vì nó giúp AI viết code giỏi hơn.
+A. Vì nó giúp giảm tiền điện.
+B. Vì nó giúp AI chạy nhanh hơn.
+C. Vì nó giúp AI viết code giỏi hơn.
+D. Vì các quy định pháp luật (như AI Act) và rủi ro về an toàn dữ liệu ngày càng phức tạp.
 
 **Câu 3: 'Contextual Grounding Check' dùng để làm gì?**
-A. Kiểm tra xem server có đang chạy không.
-B. Kiểm tra xem câu trả lời của AI có căn cứ trên tài liệu thực tế hay là "bịa" (Hallucination).
-C. Để nén dữ liệu.
-D. Để gửi tin nhắn cho khách hàng.
+A. Kiểm tra xem câu trả lời của AI có căn cứ trên tài liệu thực tế hay là "bịa" (Hallucination).
+B. Để nén dữ liệu.
+C. Để gửi tin nhắn cho khách hàng.
+D. Kiểm tra xem server có đang chạy không.
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-A, 2-D, 3-A.
 
 ---
 

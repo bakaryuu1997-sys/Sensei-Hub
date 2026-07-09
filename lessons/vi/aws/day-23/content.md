@@ -62,24 +62,24 @@ Hãy tưởng tượng bạn quản lý một **Ngân hàng trung tâm cực k�
 # 📝 QUICK QUIZ
 
 **Câu 1: Dịch vụ nào tự động đổi mật khẩu (Rotation) cho Database RDS?**
-A. AWS KMS
+A. AWS Config
 B. AWS Secrets Manager
-C. AWS Config
+C. AWS KMS
 D. Amazon S3
 
 **Câu 2: (Cập nhật 2026) KMS hỗ trợ loại mã hóa nào để chống lại máy tính lượng tử?**
-A. AES-256
-B. RSA-2048
-C. Quantum-Safe Cryptography
-D. ROT13
+A. Quantum-Safe Cryptography
+B. ROT13
+C. AES-256
+D. RSA-2048
 
 **Câu 3: GuardDuty phân tích nguồn dữ liệu nào để tìm hacker?**
-A. Email nhân viên
-B. VPC Flow Logs & CloudTrail
-C. Giá cổ phiếu công ty
-D. Tốc độ quạt máy chủ
+A. Tốc độ quạt máy chủ
+B. Email nhân viên
+C. VPC Flow Logs & CloudTrail
+D. Giá cổ phiếu công ty
 
-**Đáp án:** 1-B, 2-C, 3-B.
+**Đáp án:** 1-B, 2-D, 3-C.
 
 ---
 

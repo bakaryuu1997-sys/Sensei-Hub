@@ -102,34 +102,31 @@ Người sếp J1+ phải là tấm gương về đạo đức:
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khi đại diện công ty nói về trách nhiệm đối với môi trường, cụm từ nào thể hiện đẳng cấp J1+ nhất?
-- A. エコを頑張ります。
-- B. 資源の「有効活用」と「環境負荷の低減」を経営の最優先事項として掲げております。
-- C. ゴミを拾っています。
-- D. 緑を大切にしましょう。
+Khi đại diện công ty nói về trách nhiệm đối với môi trường, cụm từ nào thể hiện đẳng cấp J1+ nhất?- A. 緑を大切にしましょう。
+- B. ゴミを拾っています。
+- C. 資源の「有効活用」と「環境負荷の低減」を経営の最優先事項として掲げております。
+- D. エコを頑張ります。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「掲げております」 [Yết]** (đề ra/nêu cao) và **「環境負荷」 [Hoàn Cảnh Phụ Hà]** là những thuật ngữ chuẩn mực của quản trị ESG.
+> - **正解：C**. **「掲げております」 [Yết]** (đề ra/nêu cao) và **「環境負荷」 [Hoàn Cảnh Phụ Hà]** là những thuật ngữ chuẩn mực của quản trị ESG.
 
 **第2問 (Câu 2):**
-Thuật ngữ "Diversity & Inclusion (D&I)" được diễn đạt bằng tiếng Nhật kinh doanh thường dùng là gì?
-- A. 差別撤廃 [Sai Biệt Triệt Phế].
-- B. 多様性の受容 [Đa Dạng Tính - Thụ Dung].
-- C. 全員同じ [Toàn Viên Đồng].
-- D. 個性の無視 [Cá Tính - Vô Thị].
+Thuật ngữ "Diversity & Inclusion (D&I)" được diễn đạt bằng tiếng Nhật kinh doanh thường dùng là gì?- A. 個性の無視 [Cá Tính - Vô Thị].
+- B. 差別撤廃 [Sai Biệt Triệt Phế].
+- C. 多様性の受容 [Đa Dạng Tính - Thụ Dung].
+- D. 全員同じ [Toàn Viên Đồng].
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Sự chấp nhận và bao hàm tính đa dạng.
+> - **正解：C**. Sự chấp nhận và bao hàm tính đa dạng.
 
 **第3問 (Câu 3):**
-Ý nghĩa thực sự của "Compliance" (コンプライアンス) đối với một J1+ Elite là gì?
-- A. Chỉ là việc không vi phạm pháp luật để không bị bắt.
-- B. Việc tuân thủ pháp luật, đạo đức kinh doanh và các quy chuẩn xã hội một cách tự nguyện để bảo vệ giá trị doanh nghiệp.
+Ý nghĩa thực sự của "Compliance" (コンプライアンス) đối với một J1+ Elite là gì?- A. Chỉ là việc không vi phạm pháp luật để không bị bắt.
+- B. Việc thuê nhiều luật sư.
 - C. Việc giấu kín các lỗi lầm.
-- D. Việc thuê nhiều luật sư.
+- D. Việc tuân thủ pháp luật, đạo đức kinh doanh và các quy chuẩn xã hội một cách tự nguyện để bảo vệ giá trị doanh nghiệp.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Tuân thủ không chỉ vì "sợ phạt" mà vì "tuyệt vời".
+> - **正解：D**. Tuân thủ không chỉ vì "sợ phạt" mà vì "tuyệt vời".
 
 ---
 

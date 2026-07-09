@@ -102,34 +102,31 @@ Con số không còn là tất cả:
 ## 📝 6. QUICK QUIZ: 実踐・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Tại sao "PBR" (Price Book-value Ratio) dưới 1.0 lại là vấn đề nghiêm trọng cho một công ty J1+?
-- A. Vì giá cổ phiếu quá rẻ là điều tốt cho người mua.
+Tại sao "PBR" (Price Book-value Ratio) dưới 1.0 lại là vấn đề nghiêm trọng cho một công ty J1+?- A. Vì số 1 là số không may mắn.
 - B. Vì nó có nghĩa là thị trường đang định giá công ty thấp hơn cả giá trị tài sản ròng. Đó là dấu hiệu của sự mất niềm tin vào khả năng tạo ra lợi nhuận trong tương lai.
-- C. Vì số 1 là số không may mắn.
+- C. Vì giá cổ phiếu quá rẻ là điều tốt cho người mua.
 - D. Vì PBR chỉ dùng cho các công ty xây dựng.
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Một vấn đề thời sự nhức nhối trong quản trị doanh nghiệp Nhật Bản hiện nay.
 
 **第2問 (Câu 2):**
-Thuật ngữ "Equity Story" trong IR J1+ có nghĩa là gì?
-- A. Một câu chuyện cổ tích về các hiệp sĩ.
-- B. Một kịch bản thuyết phục giải thích lý do tại sao nhà đầu tư nên mua cổ phiếu của công ty dựa trên điểm mạnh độc đáo và tiềm năng tăng trưởng.
-- C. Danh sách các cổ đông của công ty.
-- D. Việc bán hết cổ phiếu công ty.
+Thuật ngữ "Equity Story" trong IR J1+ có nghĩa là gì?- A. Việc bán hết cổ phiếu công ty.
+- B. Danh sách các cổ đông của công ty.
+- C. Một kịch bản thuyết phục giải thích lý do tại sao nhà đầu tư nên mua cổ phiếu của công ty dựa trên điểm mạnh độc đáo và tiềm năng tăng trưởng.
+- D. Một câu chuyện cổ tích về các hiệp sĩ.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. IR không chỉ là đưa số, mà là kể một câu chuyện tài chính hấp dẫn.
+> - **正解：C**. IR không chỉ là đưa số, mà là kể một câu chuyện tài chính hấp dẫn.
 
 **第3問 (Câu 12):**
-"Stewardship Code" (Quy tắc quản trị có trách nhiệm) trong thị trường vốn Nhật Bản yêu cầu điều gì ở nhà đầu tư J1+?
-- A. Việc nhà đầu tư phải nộp thêm tiền cho công ty.
-- B. Việc các nhà đầu tư tổ chức phải tích cực đối thoại (Engagement) với công ty để thúc đẩy tăng trưởng dài hạn và nâng cao giá trị doanh nghiệp.
-- C. Việc nhà đầu tư không được bán cổ phiếu.
+"Stewardship Code" (Quy tắc quản trị có trách nhiệm) trong thị trường vốn Nhật Bản yêu cầu điều gì ở nhà đầu tư J1+?- A. Việc nhà đầu tư không được bán cổ phiếu.
+- B. Việc nhà đầu tư phải nộp thêm tiền cho công ty.
+- C. Việc các nhà đầu tư tổ chức phải tích cực đối thoại (Engagement) với công ty để thúc đẩy tăng trưởng dài hạn và nâng cao giá trị doanh nghiệp.
 - D. Việc nhà đầu tư phải đi làm tại công ty.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Sự chuyển dịch từ "nhà đầu tư thụ động" sang "nhà đầu tư chủ động đồng hành".
+> - **正解：C**. Sự chuyển dịch từ "nhà đầu tư thụ động" sang "nhà đầu tư chủ động đồng hành".
 
 ---
 

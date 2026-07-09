@@ -105,34 +105,31 @@ Sếp hoặc khách hàng hiếm khi nói **「ダメです」** (Không đượ
 ## 📝 6. QUICK QUIZ: 依頼・許可・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-お客様に「こちらの資料、コピーしてもよろしいでしょうか」と聞かれた時の、最も Elite な返しは？
-- A. はい、どうぞ。
-- B. かしこまりました。よろしければ私がいたしましょうか。
-- C. いいですよ。勝手にしていいですよ。
-- D. 自分でやってください。
+お客様に「こちらの資料、コピーしてもよろしいでしょうか」と聞かれた時の、最も Elite な返しは？- A. 自分でやってください。
+- B. いいですよ。勝手にしていいですよ。
+- C. かしこまりました。よろしければ私がいたしましょうか。
+- D. はい、どうぞ。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Trong văn hóa J1+, khi khách hàng xin phép làm gì đó, thay vì chỉ đồng ý, bạn nên chủ động đề nghị làm giúp (**いたしましょうか**). Điều này thể hiện sự tinh tế vượt bậc.
+> - **正解：C**. Trong văn hóa J1+, khi khách hàng xin phép làm gì đó, thay vì chỉ đồng ý, bạn nên chủ động đề nghị làm giúp (**いたしましょうか**). Điều này thể hiện sự tinh tế vượt bậc.
 
 **第2問 (Câu 2):**
-上司に「ちょっと手伝ってもらえないかな」と言われた時、最も適切な応対は？
-- A. はい、何でしょうか。
+上司に「ちょっと手伝ってもらえないかな」と言われた時、最も適切な応対は？- A. はい、何でしょうか。
 - B. 今忙しいので、後でいいですか。
-- C. お力になれることがあれば、喜んで。
-- D. 承知いたしました。喜んで承ります。
+- C. 承知いたしました。喜んで承ります。
+- D. お力になれることがあれば、喜んで。
 
 > **解釈 (Giải thích):**
-> - **正解：D**. **「承る」 [Thừa]** là động từ khiêm nhường đặc biệt của "nhận lấy" lệnh hoặc yêu cầu. Câu C hơi giống văn nói đời thường, trong BJT Business, câu D đạt chuẩn trang trọng hơn.
+> - **正解：B**. **「承る」 [Thừa]** là động từ khiêm nhường đặc biệt của "nhận lấy" lệnh hoặc yêu cầu. Câu C hơi giống văn nói đời thường, trong BJT Business, câu D đạt chuẩn trang trọng hơn.
 
 **第3問 (Câu 3):**
-会議中、どうしても先に退席 [Thoái Tịch] しなければならない時、周囲への許可はどう求めるべきか？
-- A. すみません、帰ります。
+会議中、どうしても先に退席 [Thoái Tịch] しなければならない時、周囲への許可はどう求めるべきか？- A. 会議を終わらせてください。
 - B. お先に失礼します。
-- C. 恐縮ですが、次の予定がございますので、一足先 [Nhất Túc Tiên] に失礼させていただいてもよろしいでしょうか。
-- D. 会議を終わらせてください。
+- C. すみません、帰ります。
+- D. 恐縮ですが、次の予定がございますので、一足先 [Nhất Túc Tiên] に失礼させていただいてもよろしいでしょうか。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Phải nêu lý do khách quan (**次の予定**), dùng cụm từ Elite (**一足先に**) và cấu trúc xin phép (**させていただいてもよろしいでしょうか**).
+> - **正解：B**. Phải nêu lý do khách quan (**次の予定**), dùng cụm từ Elite (**一足先に**) và cấu trúc xin phép (**させていただいてもよろしいでしょうか**).
 
 ---
 

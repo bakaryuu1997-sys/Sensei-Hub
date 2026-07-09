@@ -93,34 +93,31 @@ Email khách hàng viết một kiểu (Gay gắt), biểu đồ viết một ki
 ## 📝 6. QUICK QUIZ: 危機管理・グランドマスター
 
 **第1問 (Câu 1):**
-Xin lỗi vì giao hàng chậm do thiên tai (Bất khả kháng), mẫu câu nào là Elite nhất?
-- A. 台風のせいなので、仕方がありません。
+Xin lỗi vì giao hàng chậm do thiên tai (Bất khả kháng), mẫu câu nào là Elite nhất?- A. いつ届くか分かりません。
 - B. 自然災害による不可抗力 [Bất Khả Kháng Lực] とはいえ、多大なるご迷惑をおかけしておりますこと、衷心 [衷 Tâm] よりお詫び申し上げます。
-- C. 運送会社に文句を言ってください。
-- D. いつ届くか分かりません。
+- C. 台風のせいなので、仕方がありません。
+- D. 運送会社に文句を言ってください。
 
 > **解釈 (Giải thích):**
 > - **正解：B**. **「～とはいえ」** (Dẫu biết rằng...) là cấu trúc cực hay để thừa nhận bối cảnh khách quan nhưng vẫn không đổ lỗi, giữ trọn trách nhiệm phục vụ khách hàng.
 
 **第2問 (Câu 2):**
-Trong thông cáo báo chí về sự cố rò rỉ thông tin, từ nào sau đây mang tính "trấn an" nhất?
-- A. おそらく大丈夫です。
-- B. 二次被害 [Nhị Thứ Bị Hại] の防止に全力を尽くしております。
-- C. 原因は調査中です。
-- D. 誰が漏らしたか探しています。
+Trong thông cáo báo chí về sự cố rò rỉ thông tin, từ nào sau đây mang tính "trấn an" nhất?- A. 原因は調査中です。
+- B. おそらく大丈夫です。
+- C. 誰が漏らしたか探しています。
+- D. 二次被害 [Nhị Thứ Bị Hại] の防止に全力を尽くしております。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Tập trung vào việc **「防止」** (Ngăn chặn) thiệt hại tiếp theo là cách tốt nhất để xoa dịu tâm lý đám đông trong khủng hoảng.
+> - **正解：D**. Tập trung vào việc **「防止」** (Ngăn chặn) thiệt hại tiếp theo là cách tốt nhất để xoa dịu tâm lý đám đông trong khủng hoảng.
 
 **第3問 (Câu 3):**
-Case Study Case: Biểu đồ cho thấy 80% khách hàng không hài lòng. Sếp bảo: 「まあ、よくあることだよ」 (Chuyện thường thôi mà). Phản ứng của một nhân viên J1+?
-- A. そうですね、無視しましょう。
-- B. 滅相 [Diệt Tương] もございません。この数値は深刻 [Thâm Khắc] に受け止めるべきだと存じます。早急な対策立案 [Lập Án] を具申 [Cụ Thân] いたします。
-- C. 部長のおっしゃる通りです。
-- D. 私は辞めます。
+Case Study Case: Biểu đồ cho thấy 80% khách hàng không hài lòng. Sếp bảo: 「まあ、よくあることだよ」 (Chuyện thường thôi mà). Phản ứng của một nhân viên J1+?- A. 滅相 [Diệt Tương] もございません。この数値は深刻 [Thâm Khắc] に受け止めるべきだと存じます。早急な対策立案 [Lập Án] を具申 [Cụ Thân] いたします。
+- B. 私は辞めます。
+- C. そうですね、無視しましょう。
+- D. 部長のおっしゃる通りです。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Elite là người dám dùng kính ngữ để "phản bác" sếp một cách lịch sự khi thấy rủi ro kinh doanh (**具申** - Trình bày ý kiến lên cấp trên).
+> - **正解：A**. Elite là người dám dùng kính ngữ để "phản bác" sếp một cách lịch sự khi thấy rủi ro kinh doanh (**具申** - Trình bày ý kiến lên cấp trên).
 
 ---
 

@@ -102,36 +102,33 @@ Nếu bạn thấy đáp án A khớp hoàn hảo với cả biểu đồ và l�
 **第1問 (Câu 1):**
 Tài liệu ghi: Dự kiến hoàn thành vào 20/12.
 Audio sếp nói: 「配送 [Phối Tống] トラブルで、当初の予定より **一週間ずれ込む [Táp]** 見込みです。」
-Ngày hoàn thành thực tế là bao nhiêu?
-- A. 13/12
+Ngày hoàn thành thực tế là bao nhiêu?- A. 13/12
 - B. 20/12
-- C. 27/12 (Phản xạ J1+).
-- D. 1/1
+- C. 1/1
+- D. 27/12 (Phản xạ J1+).
 
 > **解釈 (Giải thích):**
-> - **正解：C**. **「ずれ込む」** nghĩa là bị chậm lại, cộng thêm 7 ngày vào ngày 20.
+> - **正解：B**. **「ずれ込む」** nghĩa là bị chậm lại, cộng thêm 7 ngày vào ngày 20.
 
 **第2問 (Câu 2):**
 Mắt bạn thấy biểu đồ cột có 4 hạng mục: Marketing, R&D, Sales, HR.
 Tai bạn nghe: 「今回の予算削減 [Tước Giảm] は、**バックオフィス [Back office] 部門** を中心 [Trung Tâm] に行います。」
-Hạng mục nào trên biểu đồ sẽ bị ảnh hưởng nhiều nhất?
-- A. Marketing
-- B. R&D
-- C. Sales
-- D. HR (Phản xạ J1+).
+Hạng mục nào trên biểu đồ sẽ bị ảnh hưởng nhiều nhất?- A. HR (Phản xạ J1+).
+- B. Marketing
+- C. R&D
+- D. Sales
 
 > **解釈 (Giải thích):**
-> - **正解：D**. **「バックオフィス」** trong tiếng Nhật Business chỉ các bộ phận hỗ trợ như HR (Nhân sự), General Affairs (Tổng vụ), Accounting (Kế toán).
+> - **正解：C**. **「バックオフィス」** trong tiếng Nhật Business chỉ các bộ phận hỗ trợ như HR (Nhân sự), General Affairs (Tổng vụ), Accounting (Kế toán).
 
 **第3問 (Câu 3):**
-Khi sếp nói: 「グラフ [Graph] の **右肩下がり [Hữu Kiên Hạ]** の傾向 [Khuynh Hướng] を食い止める [Thực] 必要があります」. Sếp đang nói về điều gì?
-- A. Một chỉ số đang tăng trưởng tốt.
-- B. Một chỉ số đang sụt giảm (đường biểu đồ đi xuống về phía bên phải).
-- C. Một đường thẳng ngang.
-- D. Sếp đang mỏi vai.
+Khi sếp nói: 「グラフ [Graph] の **右肩下がり [Hữu Kiên Hạ]** の傾向 [Khuynh Hướng] を食い止める [Thực] 必要があります」. Sếp đang nói về điều gì?- A. Một đường thẳng ngang.
+- B. Sếp đang mỏi vai.
+- C. Một chỉ số đang tăng trưởng tốt.
+- D. Một chỉ số đang sụt giảm (đường biểu đồ đi xuống về phía bên phải).
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「右肩下がり」** là thuật ngữ mô tả xu hướng đi xuống của biểu đồ kinh doanh.
+> - **正解：D**. **「右肩下がり」** là thuật ngữ mô tả xu hướng đi xuống của biểu đồ kinh doanh.
 
 ---
 

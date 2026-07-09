@@ -70,24 +70,24 @@ Quản lý chi phí Cloud giống như quản lý điện nước cho chuỗi kh
 # 📝 QUICK QUIZ
 
 **Câu 1: Chiến lược tiết kiệm nào linh hoạt nhất cho cả EC2, Lambda và Fargate?**
-A. Reserved Instances
-B. Compute Savings Plans
+A. S3 Standard
+B. Reserved Instances
 C. Trả tiền mặt
-D. S3 Standard
+D. Compute Savings Plans
 
 **Câu 2: (Cập nhật 2026) Amazon Q FinOps giúp gì?**
 A. Tự động tìm cơ hội tiết kiệm và giải trình hóa đơn bằng ngôn ngữ tự nhiên
 B. Viết hộ đơn xin tăng lương
-C. Hack vào tài khoản ngân hàng
-D. Xóa bớt file trên máy tính
+C. Xóa bớt file trên máy tính
+D. Hack vào tài khoản ngân hàng
 
 **Câu 3: Chip xử lý nào do AWS thiết kế giúp tiết kiệm 20% chi phí?**
-A. Intel i9
+A. M3 Max
 B. AWS Graviton
-C. M3 Max
-D. Pentium 4
+C. Pentium 4
+D. Intel i9
 
-**Đáp án:** 1-B, 2-A, 3-B.
+**Đáp án:** 1-D, 2-B, 3-B.
 
 ---
 

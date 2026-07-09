@@ -88,34 +88,31 @@ Khiếu nại xảy ra khi có một khoảng cách (**ギャップ**) giữa *K
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khi khách hàng đang mắng bạn vì lỗi giao hàng chậm, câu phản hồi nào sau đây giúp "hứng" cơn giận tốt nhất (J1+ level)?
-- A. 私のせいではありません。
+Khi khách hàng đang mắng bạn vì lỗi giao hàng chậm, câu phản hồi nào sau đây giúp "hứng" cơn giận tốt nhất (J1+ level)?- A. ご不便をおかけしており、誠に心中お察しいたします。
 - B. おっしゃることは分かりますが、交通事情でして...
-- C. ご不便をおかけしており、誠に心中お察しいたします。
+- C. 私のせいではありません。
 - D. すぐに届けますので、少し待ってください。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. **「心中お察しいたします」 [Tâm Trung - Sát]** (Tôi vô cùng thấu hiểu nỗi lòng của quý khách) là cụm từ đồng cảm đẳng cấp cao nhất. Nó chuyển cuộc hội thoại từ "Cãi lý" sang "Xoa dịu tâm lý".
+> - **正解：B**. **「心中お察しいたします」 [Tâm Trung - Sát]** (Tôi vô cùng thấu hiểu nỗi lòng của quý khách) là cụm từ đồng cảm đẳng cấp cao nhất. Nó chuyển cuộc hội thoại từ "Cãi lý" sang "Xoa dịu tâm lý".
 
 **第2問 (Câu 2):**
-Sau khi giải quyết xong khiếu nại, bạn muốn gửi một món quà nhỏ để tạ lỗi. Cách nói nào là chuyên nghiệp nhất?
-- A. 詫びのしるしとして、これを受け取ってください。
-- B. 心ばかりの品ではございますが、お受け取りいただければ幸いです。
-- C. お詫びの気持ちを込めましたので、どうぞ。
-- D. 迷惑料としてお持ちしました。
+Sau khi giải quyết xong khiếu nại, bạn muốn gửi một món quà nhỏ để tạ lỗi. Cách nói nào là chuyên nghiệp nhất?- A. 心ばかりの品ではございますが、お受け取りいただければ幸いです。
+- B. 詫びのしるしとして、これを受け取ってください。
+- C. 迷惑料としてお持ちしました。
+- D. お詫びの気持ちを込めましたので、どうぞ。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「心ばかりの品」 [Tâm]** (Món quà mọn/Một chút lòng thành) thể hiện sự khiêm nhường, không gây áp lực cho khách hàng.
+> - **正解：A**. **「心ばかりの品」 [Tâm]** (Món quà mọn/Một chút lòng thành) thể hiện sự khiêm nhường, không gây áp lực cho khách hàng.
 
 **第3問 (Câu 3):**
-Trong BJT, khi bạn phải chuyển cuộc gọi khiếu nại cho cấp trên xử lý, bạn nên nói gì với khách?
-- A. 私は分からないので、上司に代わります。
+Trong BJT, khi bạn phải chuyển cuộc gọi khiếu nại cho cấp trên xử lý, bạn nên nói gì với khách?- A. 私は分からないので、上司に代わります。
 - B. 責任者に代わりますので、お待ちください。
 - C. さらに詳しくお伺いするため、担当の責任者より改めてご連絡差し上げてもよろしいでしょうか。
 - D. 店長を呼んできます。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Đây là cách "câu giờ" và chuyển đổi vị thế sang một cấp bậc có quyền quyết định hơn một cách vô cùng chuyên nghiệp và được sự đồng thuận của khách.
+> - **正解：B**. Đây là cách "câu giờ" và chuyển đổi vị thế sang một cấp bậc có quyền quyết định hơn một cách vô cùng chuyên nghiệp và được sự đồng thuận của khách.
 
 ---
 

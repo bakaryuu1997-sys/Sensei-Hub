@@ -113,24 +113,24 @@ H là một Project Manager đang gánh vác một dự án cực kỳ căng th�
 # 🎯 8. QUICK QUIZ: Server Của Bạn Có Sắp Sập Không?
 
 1. **"Circuit Breaker" trong quản trị Stress có nghĩa là gì?**
-    - A. Việc bỏ việc hoàn toàn.
-    - B. Tự động ngắt kết nối với các tác vụ gây áp lực quá lớn khi đạt ngưỡng chịu đựng để ngăn chặn sự kiệt sức (Burnout).
+    - A. Sự lười biếng.
+    - B. Việc bỏ việc hoàn toàn.
     - C. Một loại cầu chì điện.
-    - D. Sự lười biếng.
+    - D. Tự động ngắt kết nối với các tác vụ gây áp lực quá lớn khi đạt ngưỡng chịu đựng để ngăn chặn sự kiệt sức (Burnout).
 
 2. **Tại sao bài tập thở lại có tác dụng giảm Stress?**
-    - A. Vì nó giúp cung cấp oxy cho phổi.
-    - B. Vì nó kích hoạt dây thần kinh phế vị, gửi lệnh "Cooling" đến toàn bộ hệ thống thần kinh.
+    - A. Vì nó kích hoạt dây thần kinh phế vị, gửi lệnh "Cooling" đến toàn bộ hệ thống thần kinh.
+    - B. Không có tác dụng gì.
     - C. Vì nó tốn thời gian.
-    - D. Không có tác dụng gì.
+    - D. Vì nó giúp cung cấp oxy cho phổi.
 
 3. **Nguyên lý "Stress + Rest = Growth" nhấn mạnh điều gì?**
-    - A. Chỉ cần Stress là đủ.
-    - B. Càng nghỉ nhiều càng tốt.
-    - C. Áp lực là cần thiết để phát triển, nhưng phải đi kèm với chu kỳ hồi phục và bảo trì hệ thống.
-    - D. Nên tránh Stress bằng mọi giá.
+    - A. Càng nghỉ nhiều càng tốt.
+    - B. Nên tránh Stress bằng mọi giá.
+    - C. Chỉ cần Stress là đủ.
+    - D. Áp lực là cần thiết để phát triển, nhưng phải đi kèm với chu kỳ hồi phục và bảo trì hệ thống.
 
-*(Đáp án đúng: 1-B, 2-B, 3-C)*
+*(Đáp án đúng: 1-D, 2-A, 3-A)*
 
 ---
 **Lời nhắn từ Architect**: Áp lực chính là kim cương, miễn là bạn biết cách mài giũa nó mà không làm vỡ mạch. Ngày mai, chúng ta sẽ xây dựng hệ thống bảo mật tối thượng: **Self-Love Architecture** — Tường lửa bảo vệ lòng tự tôn! ⚔️💎

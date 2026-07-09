@@ -119,35 +119,35 @@ Cách làm này giúp tôi dễ dàng quản lý: Nếu sau này có thêm kỹ 
 
 **Câu 1: Một tài khoản IAM User mới được tạo ra sẽ có những quyền gì mặc định?**
 A. Có toàn quyền quản trị (Administrator).
-B. Có quyền xem mọi tài nguyên nhưng không được sửa.
-C. Không có bất kỳ quyền gì (Implicit Deny).
-D. Chỉ có quyền đổi mật khẩu của mình.
+B. Chỉ có quyền đổi mật khẩu của mình.
+C. Có quyền xem mọi tài nguyên nhưng không được sửa.
+D. Không có bất kỳ quyền gì (Implicit Deny).
 
 **Câu 2: Công cụ nào của IAM giúp bạn kiểm tra xem một User có đang dùng các quyền dư thừa vượt quá nhu cầu thực tế của họ hay không?**
-A. CloudTrail
-B. IAM Access Analyzer
-C. CloudWatch
+A. CloudWatch
+B. CloudTrail
+C. IAM Access Analyzer
 D. AWS Trusted Advisor
 
 **Câu 3: Đâu là các thành phần của một IAM Policy?**
-A. Username, Password, Email.
-B. Effect, Action, Resource.
-C. Region, AZ, Edge Location.
-D. Storage, Compute, Database.
+A. Storage, Compute, Database.
+B. Region, AZ, Edge Location.
+C. Effect, Action, Resource.
+D. Username, Password, Email.
 
 **Câu 4: Bạn nên làm gì để bảo vệ tài khoản Root User?**
-A. Chia sẻ mật khẩu cho Trưởng phòng để dự phòng.
+A. Chỉ dùng Root User để code hàng ngày cho tiện.
 B. Bật MFA và không tạo Access Key trừ khi thực sự cần thiết.
-C. Chỉ dùng Root User để code hàng ngày cho tiện.
-D. Đặt mật khẩu đơn giản để dễ nhớ.
+C. Đặt mật khẩu đơn giản để dễ nhớ.
+D. Chia sẻ mật khẩu cho Trưởng phòng để dự phòng.
 
 **Câu 5: Khi một ứng dụng chạy trên máy ảo EC2 cần lấy ảnh từ kho S3, cách bảo mật nhất để cấp quyền là gì?**
-A. Chép Access Key của Root User vào file config của ứng dụng.
-B. Tạo một IAM User mới và lưu key vào code.
-C. Gán một IAM Role cho máy ảo EC2 đó.
+A. Tạo một IAM User mới và lưu key vào code.
+B. Gán một IAM Role cho máy ảo EC2 đó.
+C. Chép Access Key của Root User vào file config của ứng dụng.
 D. Mở khóa công khai (Public) cho kho S3.
 
-**Đáp án:** 1-C, 2-B, 3-B, 4-B, 5-C.
+**Đáp án:** 1-C, 2-C, 3-C, 4-B, 5-A.
 
 ---
 

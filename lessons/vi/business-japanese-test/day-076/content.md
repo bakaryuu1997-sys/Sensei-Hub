@@ -103,31 +103,28 @@ Xương sống của doanh nghiệp hiện đại:
 ## 📝 6. QUICK QUIZ: 実踐・最終試練 (Executive Test)
 
 **第1問 (Câu 1):**
-Cụm từ nào mô tả đúng nhất về triết lý kinh doanh của một doanh nghiệp trong kỷ nguyên "Stakeholder Capitalism"?
-- A. 株主の利益率のみを追求し, 最大限の配当を行う。
-- B. 従業員, 取引先, 地域社会など, 企業を取り巻くあらゆる利害関係者の価値を総体的に高める。
-- C. 経費を極限まで削減し, 内部留保を積み増す。
-- D. 派手な広告宣伝を行い, 市場占有率を一時的に拡大する。
+Cụm từ nào mô tả đúng nhất về triết lý kinh doanh của một doanh nghiệp trong kỷ nguyên "Stakeholder Capitalism"?- A. 経費を極限まで削減し, 内部留保を積み増す。
+- B. 株主の利益率のみを追求し, 最大限の配当を行う。
+- C. 派手な広告宣伝を行い, 市場占有率を一時的に拡大する。
+- D. 従業員, 取引先, 地域社会など, 企業を取り巻くあらゆる利害関係者の価値を総体的に高める。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Đây là định nghĩa của sự hài hòa giữa các bên liên quan.
+> - **正解：D**. Đây là định nghĩa của sự hài hòa giữa các bên liên quan.
 
 **第2問 (Câu 2):**
-Tại sao "Transparency" (Minh bạch) lại được coi là nền tảng của Governance?
-- A. Để khoe khoang với báo chí.
+Tại sao "Transparency" (Minh bạch) lại được coi là nền tảng của Governance?- A. Để khoe khoang với báo chí.
 - B. Để các bên liên quan có thể kiểm tra và tin tưởng vào các quyết định của ban lãnh đạo, từ đó giảm thiểu sự lạm quyền và sai sót chiến lược.
-- C. Để làm cho hồ sơ công ty trông dày hơn.
-- D. Vì quy định pháp luật bắt buộc phải làm màu như vậy.
+- C. Vì quy định pháp luật bắt buộc phải làm màu như vậy.
+- D. Để làm cho hồ sơ công ty trông dày hơn.
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Niềm tin (**Trust**) là đơn vị tiền tệ của quản trị hiện đại.
 
 **第3問 (Câu 3):**
-Một nhà lãnh đạo J1 Mastery sẽ nói gì khi phải đối mặt với một cuộc khủng hoảng liên quan đến chuỗi cung ứng (Supply chain) không đạt chuẩn đạo đức?
-- A. 「それは委託先の責任であり, 当社には関係ありません。」
-- B. 「コストを優先した結果として不可避な事象であり, 今後も現状を維持します。」
-- C. 「サプライチェーン全体における人権・倫理の欠如は当社の責任であり, 直ちに是正措置を講じ, 監視体制を抜本的に見直します。」
-- D. 「秘密保持契約があるため, 詳細な回答は差し控えます。」
+Một nhà lãnh đạo J1 Mastery sẽ nói gì khi phải đối mặt với một cuộc khủng hoảng liên quan đến chuỗi cung ứng (Supply chain) không đạt chuẩn đạo đức?- A. 「秘密保持契約があるため, 詳細な回答は差し控えます。」
+- B. 「サプライチェーン全体における人権・倫理の欠如は当社の責任であり, 直ちに是正措置を講じ, 監視体制を抜本的に見直します。」
+- C. 「コストを優先した結果として不可避な事象であり, 今後も現状を維持します。」
+- D. 「それは委託先の責任であり, 当社には関係ありません。」
 
 > **解釈 (Giải thích):**
 > - **正解：C**. Nhận trách nhiệm (**Accountability**) và hành động triệt để (**Radical transparency**).

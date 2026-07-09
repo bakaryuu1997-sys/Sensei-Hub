@@ -125,10 +125,10 @@ K là một tester luôn có cái nhìn tiêu cực về mọi thứ. K tin rằ
 # 🎯 QUICK QUIZ: Bạn Đã Sẵn Sàng "Boot Up" Chưa?
 
 1. **"Gratitude.sh" đóng vai trò gì trong hệ thống tâm trí?**
-    - A. Là một phần mềm thay thế cho công việc.
-    - B. Là một script khởi động giúp thiết lập trạng thái tích cực và đủ đầy, loại bỏ các "mã lỗi" của sự đố kỵ và thiếu thốn.
-    - C. Là một cách để cảm thấy yếu đuối.
-    - D. Là một trò đùa.
+    - A. Là một trò đùa.
+    - B. Là một cách để cảm thấy yếu đuối.
+    - C. Là một script khởi động giúp thiết lập trạng thái tích cực và đủ đầy, loại bỏ các "mã lỗi" của sự đố kỵ và thiếu thốn.
+    - D. Là một phần mềm thay thế cho công việc.
 
 2. **Tại sao nên thực hiện lòng biết ơn TRƯỚC khi cầm điện thoại?**
     - A. Để điện thoại sạc pin lâu hơn.
@@ -138,11 +138,11 @@ K là một tester luôn có cái nhìn tiêu cực về mọi thứ. K tin rằ
 
 3. **Việc viết nhật ký biết ơn giúp gì cho não bộ?**
     - A. Giúp tập viết chữ đẹp.
-    - B. "Commit" các trải nghiệm tích cực vào bộ nhớ dài hạn, tạo ra các đường mòn thần kinh mới thiên về sự lạc quan.
-    - C. Làm chậm quá trình làm việc.
-    - D. Không có tác dụng.
+    - B. Làm chậm quá trình làm việc.
+    - C. Không có tác dụng.
+    - D. "Commit" các trải nghiệm tích cực vào bộ nhớ dài hạn, tạo ra các đường mòn thần kinh mới thiên về sự lạc quan.
 
-*(Đáp án đúng: 1-B, 2-B, 3-B)*
+*(Đáp án đúng: 1-C, 2-B, 3-D)*
 
 ---
 **Lời nhắn từ Architect**: Script đã sẵn sàng, phím `Enter` đang nằm trong tay bạn. Hãy chạy nó ngay bây giờ. Ngày mai, chúng ta sẽ học kỹ thuật **Load Balancing** để quản trị Stress như một Pro! ⚔️💎

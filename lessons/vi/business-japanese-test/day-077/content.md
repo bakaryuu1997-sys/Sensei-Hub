@@ -106,34 +106,31 @@ Xây dựng sức bền từ bên trong:
 ## 📝 6. QUICK QUIZ: 実踐・最終試練 (Crisis Management Test)
 
 **第1問 (Câu 1):**
-Hành động nào sau đây bị coi là "Sai lầm chí mạng" trong buổi họp báo xin lỗi (謝罪会見)?
-- A. 冒頭で深々と（10秒以上）頭を下げる。
-- B. 記者の厳しい質問に対し、感情的に反論したり、不快感を露わにする。
-- C. 「現時点では調査中です」と、不明な点については正直に答える。
+Hành động nào sau đây bị coi là "Sai lầm chí mạng" trong buổi họp báo xin lỗi (謝罪会見)?- A. 冒頭で深々と（10秒以上）頭を下げる。
+- B. 「現時点では調査中です」と、不明な点については正直に答える。
+- C. 記者の厳しい質問に対し、感情的に反論したり、不快感を露わにする。
 - D. 写真撮影に応じ、フラッシュを浴びながら真摯な表情を貫く。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Kiềm chế cảm xúc là yêu cầu tối thiểu của một nhà lãnh đạo Elite.
+> - **正解：C**. Kiềm chế cảm xúc là yêu cầu tối thiểu của một nhà lãnh đạo Elite.
 
 **第2問 (Câu 2):**
-"Resilience" trong doanh nghiệp thực sự có nghĩa là gì?
-- A. Một hệ thống bảo vệ cứng nhắc không bao giờ cho phép sai sót xảy ra.
-- B. Khả năng chịu đựng cú sốc, thích nghi linh hoạt và phục hồi nhanh chóng để vươn tới một trạng thái ổn định năng động hơn.
-- C. Việc thuê thật nhiều bảo vệ để ngăn chặn khủng hoảng.
+"Resilience" trong doanh nghiệp thực sự có nghĩa là gì?- A. Một hệ thống bảo vệ cứng nhắc không bao giờ cho phép sai sót xảy ra.
+- B. Việc thuê thật nhiều bảo vệ để ngăn chặn khủng hoảng.
+- C. Khả năng chịu đựng cú sốc, thích nghi linh hoạt và phục hồi nhanh chóng để vươn tới một trạng thái ổn định năng động hơn.
 - D. Việc có thật nhiều tiền dự trữ trong ngân hàng mà không cần kế hoạch ứng phó.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Sự phục hồi và tiến hóa.
+> - **正解：C**. Sự phục hồi và tiến hóa.
 
 **第3問 (Câu 3):**
-Cụm từ **「不退転の決意」 [Bất Thoái Chuyển - Quyết Ý]** mang ý nghĩa gì trong bài phát biểu khủng hoảng?
-- A. Ý chí muốn rút lui để bảo toàn tính mạng.
-- B. Sự do dự không biết nên đi hay ở.
+Cụm từ **「不退転の決意」 [Bất Thoái Chuyển - Quyết Ý]** mang ý nghĩa gì trong bài phát biểu khủng hoảng?- A. Việc thông báo sẽ nghỉ việc vào ngày mai.
+- B. Ý chí muốn rút lui để bảo toàn tính mạng.
 - C. Quyết tâm sắt đá, không bao giờ lùi bước trước khó khăn để đạt được mục tiêu phục hồi.
-- D. Việc thông báo sẽ nghỉ việc vào ngày mai.
+- D. Sự do dự không biết nên đi hay ở.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Một thuật ngữ cực mạnh để thể hiện cam kết lãnh đạo.
+> - **正解：D**. Một thuật ngữ cực mạnh để thể hiện cam kết lãnh đạo.
 
 ---
 

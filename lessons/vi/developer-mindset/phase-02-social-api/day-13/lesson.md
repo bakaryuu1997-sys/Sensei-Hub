@@ -108,24 +108,24 @@ H là một trưởng nhóm kỹ thuật tài năng nhưng tiếng nói trong c�
 # 🎯 7. QUICK QUIZ: Audio Của Bạn Có Đạt Chuẩn "High-Fidelity"?
 
 1. **Giọng nói uy tín nhất thường nằm ở vùng tần số nào?**
-    - A. Cao và thanh (Frequency cao).
-    - B. Trầm và ấm (Frequency thấp).
+    - A. Trầm và ấm (Frequency thấp).
+    - B. Cao và thanh (Frequency cao).
     - C. Lúc cao lúc thấp liên tục.
     - D. Không quan trọng.
 
 2. **Tác dụng của việc ngắt nghỉ (Pausing) trong khi nói là gì?**
     - A. Để bạn có thời gian đi uống nước.
-    - B. Để người nghe có thời gian Buffer và xử lý thông tin, đồng thời thể hiện sự tự tin và làm chủ không gian của bạn.
-    - C. Vì bạn quên lời.
+    - B. Vì bạn quên lời.
+    - C. Để người nghe có thời gian Buffer và xử lý thông tin, đồng thời thể hiện sự tự tin và làm chủ không gian của bạn.
     - D. Để trêu chọc người nghe.
 
 3. **Việc lên giọng ở cuối câu (Up-talk) gây ra lỗi gì trong giao tiếp?**
-    - A. Làm bạn trông thân thiện hơn.
-    - B. Làm thông tin bị biến dạng thành một câu hỏi, gây nghi ngờ về sự tự tin và năng lực của người nói.
-    - C. Làm người nghe vui vẻ.
-    - D. Không có ảnh hưởng gì.
+    - A. Làm thông tin bị biến dạng thành một câu hỏi, gây nghi ngờ về sự tự tin và năng lực của người nói.
+    - B. Làm bạn trông thân thiện hơn.
+    - C. Không có ảnh hưởng gì.
+    - D. Làm người nghe vui vẻ.
 
-*(Đáp án đúng: 1-B, 2-B, 3-B)*
+*(Đáp án đúng: 1-A, 2-C, 3-A)*
 
 ---
 **Lời nhắn từ Architect**: Bạn đã có UI đẹp và Audio xịn! Ngày mai, chúng ta sẽ học kỹ thuật **Active Listening** — Cách "Query" dữ liệu từ người đối diện để khiến họ cảm thấy bạn là người thú vị nhất thế giới! ⚔️💎

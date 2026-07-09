@@ -118,16 +118,16 @@ L là một kỹ sư phần mềm xuất sắc nhưng cực kỳ ghét việc ph
 # 🎯 7. QUICK QUIZ: Server Của Bạn Có Chịu Được "Tải Lớn"?
 
 1. **Tại sao nên im lặng 3 giây khi vừa bước lên sân khấu?**
-    - A. Vì bạn bị quên lời.
-    - B. Để tạo ra sự hiện diện vững chãi, buộc mọi người phải tập trung vào bạn và thiết lập kết nối (Establishing Connection) một cách chuyên nghiệp.
-    - C. Để chờ mic được bật.
-    - D. Vì bạn đang run.
+    - A. Để chờ mic được bật.
+    - B. Vì bạn bị quên lời.
+    - C. Vì bạn đang run.
+    - D. Để tạo ra sự hiện diện vững chãi, buộc mọi người phải tập trung vào bạn và thiết lập kết nối (Establishing Connection) một cách chuyên nghiệp.
 
 2. **Cách tốt nhất để ghi nhớ nội dung bài thuyết trình là gì?**
     - A. Viết ra giấy và đọc thuộc lòng từng chữ (Hard-coded).
-    - B. Chia nội dung thành các Module ý chính độc lập, giúp linh hoạt hơn và giảm tải cho bộ nhớ RAM.
+    - B. Nhìn vào Slide và đọc.
     - C. Không cần chuẩn bị gì cả.
-    - D. Nhìn vào Slide và đọc.
+    - D. Chia nội dung thành các Module ý chính độc lập, giúp linh hoạt hơn và giảm tải cho bộ nhớ RAM.
 
 3. **Bạn nên làm gì nếu cảm thấy run rẩy trước khi nói?**
     - A. Uống thật nhiều caffeine.
@@ -135,7 +135,7 @@ L là một kỹ sư phần mềm xuất sắc nhưng cực kỳ ghét việc ph
     - C. Xin lỗi khán giả trước khi bắt đầu.
     - D. Nhắm mắt lại và cầu nguyện.
 
-*(Đáp án đúng: 1-B, 2-B, 3-B)*
+*(Đáp án đúng: 1-D, 2-D, 3-B)*
 
 ---
 **Lời nhắn từ Architect**: Bạn đã sẵn sàng để Scaling! Tuyệt vời. Ngày mai, chúng ta sẽ học kỹ thuật **The Art of Asking** — Cách đặt những câu hỏi truy vấn thông minh để lấy được dữ liệu quý giá nhất từ bất kỳ ai! ⚔️💎

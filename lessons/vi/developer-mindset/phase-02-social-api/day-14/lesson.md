@@ -109,24 +109,24 @@ P là một nhân viên kinh doanh luôn thất bại vì nói quá nhiều. P t
 # 🎯 7. QUICK QUIZ: Server Của Bạn Có Chế Độ "Read-Active"?
 
 1. **Lỗi lớn nhất trong lắng nghe là gì?**
-    - A. Không nhìn vào mắt.
-    - B. Chỉ chờ đến lượt mình để nói mà không xử lý thực sự những gì đối phương đang phát đi.
-    - C. Ngủ gật.
-    - D. Gật đầu quá nhiều.
+    - A. Ngủ gật.
+    - B. Không nhìn vào mắt.
+    - C. Gật đầu quá nhiều.
+    - D. Chỉ chờ đến lượt mình để nói mà không xử lý thực sự những gì đối phương đang phát đi.
 
 2. **Tại sao việc tóm tắt lại ý của đối phương (Paraphrasing) lại quan trọng?**
-    - A. Để chứng tỏ bạn nhớ dai.
+    - A. Để sửa lỗi cho họ.
     - B. Để xác thực thông tin (Data Validation) và cho đối phương thấy họ đã thực sự được thấu hiểu, tạo ra sự tin tưởng tuyệt đối.
     - C. Để kéo dài thời gian.
-    - D. Để sửa lỗi cho họ.
+    - D. Để chứng tỏ bạn nhớ dai.
 
 3. **Quy tắc "Golden Silence" (Im lặng 2 giây) giúp gì?**
-    - A. Làm bạn trông như đang bị đơ máy.
-    - B. Tạo không gian cho đối phương chia sẻ thêm những thông tin sâu sắc hơn và thể hiện sự tôn trọng của bạn đối với lời nói của họ.
-    - C. Để bạn có thời gian thở.
+    - A. Tạo không gian cho đối phương chia sẻ thêm những thông tin sâu sắc hơn và thể hiện sự tôn trọng của bạn đối với lời nói của họ.
+    - B. Để bạn có thời gian thở.
+    - C. Làm bạn trông như đang bị đơ máy.
     - D. Không có tác dụng.
 
-*(Đáp án đúng: 1-B, 2-B, 3-B)*
+*(Đáp án đúng: 1-D, 2-B, 3-A)*
 
 ---
 **Lời nhắn từ Architect**: Bạn đã trở thành một listener xuất sắc! Ngày mai, chúng ta sẽ học kỹ thuật cuối cùng của Phase 2: **Storytelling Framework** — Cách đóng gói trải nghiệm của bạn thành những "Gói tin" hấp dẫn khiến ai cũng phải chờ đợi! ⚔️💎

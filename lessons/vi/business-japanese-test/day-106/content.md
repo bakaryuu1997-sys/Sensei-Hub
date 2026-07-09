@@ -103,34 +103,31 @@ Các từ như **「素晴らしい」**, **「感心 [Cảm Tâm] しました�
 ## 📝 6. QUICK QUIZ: 意図把握・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-部長に「君の提案、ユニーク [Unique] で面白いね」と言われた時、その意図として可能性が高いのは？
-- A. Tuyệt vời, sếp sẽ triển khai ngay.
-- B. Sếp khen bạn sáng tạo.
-- C. Sếp thấy đề xuất này quá xa rời thực tế, kỳ quặc và không khả thi.
-- D. Sếp muốn bạn đi làm diễn viên hài.
+部長に「君の提案、ユニーク [Unique] で面白いね」と言われた時、その意図として可能性が高いのは？- A. Tuyệt vời, sếp sẽ triển khai ngay.
+- B. Sếp muốn bạn đi làm diễn viên hài.
+- C. Sếp khen bạn sáng tạo.
+- D. Sếp thấy đề xuất này quá xa rời thực tế, kỳ quặc và không khả thi.
 
 > **解釈 (Giải thích):**
 > - **正解：C**. Trong môi trường kinh doanh bảo thủ của Nhật, **「面白い」「ユニーク」** thường là những từ "mã hóa" cho việc sếp thấy nó không thực tế. Một lời khen thực sự sẽ dùng **「手堅い」 [Thủ Kiên]** (chắc chắn) hoặc **「現実的」**.
 
 **第2問 (Câu 2):**
-「その件については、我々も苦慮 [Khổ Lự] しているところです」という発言の裏にある本音は？
-- A. Chúng tôi đang cố gắng rất nhiều.
-- B. Chúng tôi gặp khó khăn và có lẽ sẽ không thể giúp gì được bạn.
-- C. Hãy để chúng tôi lo.
+「その件については、我々も苦慮 [Khổ Lự] しているところです」という発言の裏にある本音は？- A. Hãy để chúng tôi lo.
+- B. Chúng tôi đang cố gắng rất nhiều.
+- C. Chúng tôi gặp khó khăn và có lẽ sẽ không thể giúp gì được bạn.
 - D. Chúng tôi rất thích vụ này.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「苦慮している」** (đang lo lắng/khổ tâm) là cách nói Elite để báo hiệu sự thất bại hoặc sự bế tắc trong việc hỗ trợ.
+> - **正解：C**. **「苦慮している」** (đang lo lắng/khổ tâm) là cách nói Elite để báo hiệu sự thất bại hoặc sự bế tắc trong việc hỗ trợ.
 
 **第3問 (Câu 3):**
-「お忙しいところ申し訳ありませんが、これ、お手すきの時に [Thủ - Thời] 見ておいていただけますか？」と言われた。いつ見るべきか？
-- A. Khi nào thật sự rảnh (có thể là tuần sau).
-- B. Không cần xem cũng được.
-- C. Phải xem ngay lập tức hoặc sớm nhất có thể.
-- D. Đợi người đó nhắc lại lần nữa.
+「お忙しいところ申し訳ありませんが、これ、お手すきの時に [Thủ - Thời] 見ておいていただけますか？」と言われた。いつ見るべきか？- A. Khi nào thật sự rảnh (có thể là tuần sau).
+- B. Phải xem ngay lập tức hoặc sớm nhất có thể.
+- C. Đợi người đó nhắc lại lần nữa.
+- D. Không cần xem cũng được.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. **「お手すきの時に」** (Khi nào rảnh...) là một "Cushion" cực kỳ lịch sự của người Nhật khi giao việc. Nghĩa thực của nó là: "Tôi biết bạn bận nhưng việc này rất quan trọng, hãy làm sớm hộ tôi".
+> - **正解：D**. **「お手すきの時に」** (Khi nào rảnh...) là một "Cushion" cực kỳ lịch sự của người Nhật khi giao việc. Nghĩa thực của nó là: "Tôi biết bạn bận nhưng việc này rất quan trọng, hãy làm sớm hộ tôi".
 
 ---
 

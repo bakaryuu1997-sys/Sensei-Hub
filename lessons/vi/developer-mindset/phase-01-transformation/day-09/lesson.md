@@ -115,24 +115,24 @@ M từng là một người cực kỳ sợ bị đánh giá. M có thể buồn
 # 🎯 8. QUICK QUIZ: Tường Lửa Của Bạn Có Bị Thủ Luân?
 
 1. **Kiến trúc "Zero Trust" cho lòng tự tôn có nghĩa là gì?**
-    - A. Không tin tưởng vào bất kỳ điều gì bản thân làm.
-    - B. Không mặc định để ý kiến bên ngoài quyết định giá trị bản thân; mọi đánh giá phải qua kiểm duyệt và xác thực nội bộ.
-    - C. Sống cô lập, không chơi với ai.
-    - D. Sự kiêu ngạo.
+    - A. Sống cô lập, không chơi với ai.
+    - B. Sự kiêu ngạo.
+    - C. Không tin tưởng vào bất kỳ điều gì bản thân làm.
+    - D. Không mặc định để ý kiến bên ngoài quyết định giá trị bản thân; mọi đánh giá phải qua kiểm duyệt và xác thực nội bộ.
 
 2. **Sự khác biệt cốt lõi giữa Self-Esteem và Self-Love là gì?**
-    - A. Không có sự khác biệt.
+    - A. Self-Love quan trọng hơn.
     - B. Self-Esteem dựa trên hiệu năng (Performance), còn Self-Love là quyền truy cập Root (chấp nhận bản thân vô điều kiện).
-    - C. Self-Love quan trọng hơn.
-    - D. Self-Esteem khó đạt được hơn.
+    - C. Self-Esteem khó đạt được hơn.
+    - D. Không có sự khác biệt.
 
 3. **Lệnh "Drop Packet" trong giao tiếp xã hội được dùng khi nào?**
-    - A. Khi bạn muốn trốn tránh trách nhiệm.
-    - B. Khi gặp phải những lời chỉ trích độc hại, không có tính xây dựng nhằm mục đích hạ thấp giá trị của bạn.
-    - C. Khi máy tính bị hỏng.
-    - D. Khi bạn không muốn nói chuyện.
+    - A. Khi bạn không muốn nói chuyện.
+    - B. Khi máy tính bị hỏng.
+    - C. Khi gặp phải những lời chỉ trích độc hại, không có tính xây dựng nhằm mục đích hạ thấp giá trị của bạn.
+    - D. Khi bạn muốn trốn tránh trách nhiệm.
 
-*(Đáp án đúng: 1-B, 2-B, 3-B)*
+*(Đáp án đúng: 1-D, 2-B, 3-C)*
 
 ---
 **Lời nhắn từ Architect**: Bạn là phiên bản duy nhất trên thế giới này, và Source Code của bạn là vô giá. Hãy bảo vệ nó bằng tất cả sức mạnh. Ngày mai, chúng ta bước vào vạch đích của Phase 1: **Recap & Scaling** — Chuẩn bị đưa hệ thống của bạn ra thị trường toàn cầu! ⚔️💎

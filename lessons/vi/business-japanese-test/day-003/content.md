@@ -90,34 +90,31 @@ Nhầm lẫn 2 cụm này sẽ khiến bạn bị đánh rớt ngay lập tức 
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Chuông điện thoại reo đến tiếng thứ mấy thì bạn bắt buộc phải bắt đầu bằng câu **「お待たせいたしました」**?
-- A. Tiếng thứ nhất.
-- B. Tiếng thứ hai.
-- C. Tiếng thứ ba trở đi.
-- D. Bất kể khi nào.
+Chuông điện thoại reo đến tiếng thứ mấy thì bạn bắt buộc phải bắt đầu bằng câu **「お待たせいたしました」**?- A. Tiếng thứ ba trở đi.
+- B. Bất kể khi nào.
+- C. Tiếng thứ hai.
+- D. Tiếng thứ nhất.
 
 > **解釈 (Giải thích):**
 > - **正解：C**. Trong tiêu chuẩn vàng của CS (Customer Service) Nhật Bản, 3 tiếng chuông là giới hạn của sự kiên nhẫn. Sau 3 tiếng, bạn đã để khách phải chờ (**待たせる [Đãi]**).
 
 **第2問 (Câu 2):**
-Khách hàng muốn để lại lời nhắn cho sếp bạn. Bạn nên nói câu nào để thể hiện sự sẵn sàng?
-- A. 何かありますか？
+Khách hàng muốn để lại lời nhắn cho sếp bạn. Bạn nên nói câu nào để thể hiện sự sẵn sàng?- A. もしよろしければ、ご伝言をお伺いいたしましょうか。
 - B. 伝言を伺いましょうか？
 - C. 何か伝えておきますか？
-- D. もしよろしければ、ご伝言をお伺いいたしましょうか。
+- D. 何かありますか？
 
 > **解釈 (Giải thích):**
-> - **正解：D**. Đây là mẫu câu "Full Option" cho trình độ J1+. Sử dụng từ đệm **「もしよろしければ」** và kính ngữ kép **「お伺いいたしましょうか」**.
+> - **正解：B**. Đây là mẫu câu "Full Option" cho trình độ J1+. Sử dụng từ đệm **「もしよろしければ」** và kính ngữ kép **「お伺いいたしましょうか」**.
 
 **第3問 (Câu 3):**
-Khi kết thúc cuộc gọi với đối tác, ai nên là người cúp máy trước?
-- A. Ai xong việc trước thì cúp.
-- B. Luôn là người gọi điện.
+Khi kết thúc cuộc gọi với đối tác, ai nên là người cúp máy trước?- A. Luôn là người gọi điện.
+- B. Ai xong việc trước thì cúp.
 - C. Luôn là khách hàng (hoặc người có địa vị cao hơn).
 - D. Cả hai cùng cúp một lúc.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Logic của BJT là sự tôn trọng. Bạn phải đợi đối phương cúp máy trước, hoặc nếu phải cúp, hãy đợi khoảng 2-3 giây sau khi đối phương dứt lời và đặt ống nghe thật nhẹ nhàng (**静かに切る [Tĩnh]**).
+> - **正解：A**. Logic của BJT là sự tôn trọng. Bạn phải đợi đối phương cúp máy trước, hoặc nếu phải cúp, hãy đợi khoảng 2-3 giây sau khi đối phương dứt lời và đặt ống nghe thật nhẹ nhàng (**静かに切る [Tĩnh]**).
 
 ---
 

@@ -63,24 +63,24 @@ Năm 2026, tôi dùng **Amazon Q** để tự động gỡ lỗi mạng dựa tr
 # 📝 QUICK QUIZ
 
 **Câu 1: Dịch vụ nào giúp các Service tự tìm thấy IP của nhau qua tên gọi?**
-A. S3
+A. IAM
 B. Cloud Map
 C. DynamoDB
-D. IAM
+D. S3
 
 **Câu 2: (Cập nhật 2026) Lợi ích của Serverless Mesh là gì?**
-A. Miễn phí hoàn toàn
-B. Giảm độ trễ và không cần quản lý Sidecar Proxy (Envoy)
-C. Tăng dung lượng lưu trữ
-D. Tự động viết code Java
+A. Tăng dung lượng lưu trữ
+B. Miễn phí hoàn toàn
+C. Tự động viết code Java
+D. Giảm độ trễ và không cần quản lý Sidecar Proxy (Envoy)
 
 **Câu 3: 'Circuit Breaker' giúp ích gì cho hệ thống?**
-A. Tiết kiệm tiền điện
-B. Chống sét cho Data Center
-C. Ngắt kết nối đến Service lỗi để tránh lỗi dây chuyền (Cascading Failure)
-D. Tắt máy tính khi trời tối
+A. Tắt máy tính khi trời tối
+B. Ngắt kết nối đến Service lỗi để tránh lỗi dây chuyền (Cascading Failure)
+C. Chống sét cho Data Center
+D. Tiết kiệm tiền điện
 
-**Đáp án:** 1-B, 2-B, 3-C.
+**Đáp án:** 1-B, 2-D, 3-C.
 
 ---
 

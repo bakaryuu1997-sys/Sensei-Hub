@@ -110,34 +110,31 @@ Học cách thua để thắng:
 ## 📝 6. QUICK QUIZ: 実踐・最終試練 (Innovation & VC Mindset Test)
 
 **第1問 (Câu 1):**
-Cụm từ **「出島 (Dejima)」** trong quản trị doanh nghiệp hiện đại ám chỉ điều gì?
-- A. Việc mở một cửa hàng tại các hòn đảo du lịch.
-- B. Việc thiết lập một đơn vị kinh doanh hoặc công ty con tách biệt khỏi cấu trúc và văn hóa truyền thống của tổng công ty, nhằm tạo môi trường tự do cho các dự án khởi nghiệp mạo hiểm.
-- C. Việc thuê nhân viên là người nước ngoài sống tại cảng Dejima (Nagasaki).
-- D. Việc đóng cửa biên giới công ty không cho thông tin lọt ra ngoài.
+Cụm từ **「出島 (Dejima)」** trong quản trị doanh nghiệp hiện đại ám chỉ điều gì?- A. Việc đóng cửa biên giới công ty không cho thông tin lọt ra ngoài.
+- B. Việc thuê nhân viên là người nước ngoài sống tại cảng Dejima (Nagasaki).
+- C. Việc mở một cửa hàng tại các hòn đảo du lịch.
+- D. Việc thiết lập một đơn vị kinh doanh hoặc công ty con tách biệt khỏi cấu trúc và văn hóa truyền thống của tổng công ty, nhằm tạo môi trường tự do cho các dự án khởi nghiệp mạo hiểm.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Protecting the new from the old core.
+> - **正解：D**. Protecting the new from the old core.
 
 **第2問 (Câu 2):**
-"Corporate Venture Capital" (CVC) khác với "Venture Capital" (VC) thuần túy ở điểm nào?
-- A. CVC có nhiều tiền hơn.
-- B. VC chỉ tìm kiếm lợi nhuận tài chính, còn CVC tìm kiếm cả lợi nhuận tài chính và các giá trị lợi ích chiến lược cho công ty mẹ (Technology access, market expansion).
+"Corporate Venture Capital" (CVC) khác với "Venture Capital" (VC) thuần túy ở điểm nào?- A. VC chỉ tìm kiếm lợi nhuận tài chính, còn CVC tìm kiếm cả lợi nhuận tài chính và các giá trị lợi ích chiến lược cho công ty mẹ (Technology access, market expansion).
+- B. VC không bao giờ thất bại, còn CVC thì có.
 - C. CVC chỉ đầu tư vào các công ty trong nước.
-- D. VC không bao giờ thất bại, còn CVC thì có.
+- D. CVC có nhiều tiền hơn.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Strategic alignment vs Pure financial return.
+> - **正解：A**. Strategic alignment vs Pure financial return.
 
 **第3問 (Câu 3):**
-Một nhà lãnh đạo J1 Mastery sẽ nói gì khi một nhóm startup nội bộ báo cáo rằng giả thuyết ban đầu của họ đã sai và dự án phải hủy bỏ?
-- A. 「無駄な時間と金を使わせやがって、クビだ！」
-- B. 「失敗した原因を隠蔽しろ。」
-- C. 「素晴らしい。その『失敗という名のデータ』を全社で共有しよう。何が間違いだったのかを分析し、次の挑戦への糧にしてくれ。挑戦した君たちの勇気を称える。」
-- D. 「二度と新しいことはするな。」
+Một nhà lãnh đạo J1 Mastery sẽ nói gì khi một nhóm startup nội bộ báo cáo rằng giả thuyết ban đầu của họ đã sai và dự án phải hủy bỏ?- A. 「素晴らしい。その『失敗という名のデータ』を全社で共有しよう。何が間違いだったのかを分析し、次の挑戦への糧にしてくれ。挑戦した君たちの勇気を称える。」
+- B. 「二度と新しいことはするな。」
+- C. 「無駄な時間と金を使わせやがって、クビだ！」
+- D. 「失敗した原因を隠蔽しろ。」
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Building a learning organization and psychological safety.
+> - **正解：D**. Building a learning organization and psychological safety.
 
 ---
 

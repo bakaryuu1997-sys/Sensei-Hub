@@ -87,36 +87,36 @@ Vào năm 2026, tôi cũng sẽ kích hoạt **S3 Access Grants** để các AI 
 # 📝 QUICK QUIZ
 
 **Câu 1: Một công ty muốn lưu trữ dữ liệu sao lưu (backup) trong 10 năm và hiếm khi cần truy cập. Lựa chọn nào rẻ nhất?**
-A. S3 Standard
+A. S3 Intelligent-Tiering
 B. S3 One Zone-IA
 C. S3 Glacier Deep Archive
-D. S3 Intelligent-Tiering
+D. S3 Standard
 
 **Câu 2: "S3 Tables" (Cập nhật 2026) dựa trên công nghệ mã nguồn mở nào?**
-A. MySQL
-B. Apache Iceberg
-C. Redis
-D. MongoDB
+A. Apache Iceberg
+B. MongoDB
+C. MySQL
+D. Redis
 
 **Câu 3: Đâu là đơn vị lưu trữ lớn nhất trong Amazon S3?**
-A. Folder
+A. Volume
 B. Object
-C. Bucket
-D. Volume
+C. Folder
+D. Bucket
 
 **Câu 4: Tính năng nào giúp khôi phục dữ liệu khi lỡ tay xóa hoặc bị hacker tấn công đổi tên file?**
 A. Replication
-B. Versioning
+B. Multi-Factor Authentication
 C. Encryption
-D. Multi-Factor Authentication
+D. Versioning
 
 **Câu 5: Tại sao S3 có độ bền (Durability) 11 số 9?**
-A. Vì AWS dùng ổ cứng làm bằng kim cương.
-B. Vì dữ liệu được tự động sao chép sang ít nhất 3 Availability Zones khác nhau.
+A. Vì dữ liệu được tự động sao chép sang ít nhất 3 Availability Zones khác nhau.
+B. Vì AWS dùng ổ cứng làm bằng kim cương.
 C. Vì AWS cam kết bồi thường tiền nếu mất dữ liệu.
 D. Vì dữ liệu được lưu trên vệ tinh.
 
-**Đáp án:** 1-C, 2-B, 3-C, 4-B, 5-B.
+**Đáp án:** 1-B, 2-A, 3-B, 4-D, 5-A.
 
 ---
 

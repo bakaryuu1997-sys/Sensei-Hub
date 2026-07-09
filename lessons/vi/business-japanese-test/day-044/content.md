@@ -85,31 +85,28 @@ Trong văn hóa J1+, sự trung thực nhưng có chọn lọc là đỉnh cao.
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Ký giả hỏi bạn một câu mà nếu trả lời thật sẽ gây ảnh hưởng xấu đến giá cổ phiếu của công ty. Cách xử lý nào là J1+?
-- A. 嘘をついて隠す。
+Ký giả hỏi bạn một câu mà nếu trả lời thật sẽ gây ảnh hưởng xấu đến giá cổ phiếu của công ty. Cách xử lý nào là J1+?- A. 「その点に関しては多方面から精査している最中でございます。決定次第, プレスリリースを通じて正式に発表させていただきます」
 - B. 「それは機密事項なので話せません」と突っぱねる。
-- C. 「その点に関しては多方面から精査している最中でございます。決定次第, プレスリリースを通じて正式に発表させていただきます」
-- D. 「内緒にしてくれるなら話します」
+- C. 「内緒にしてくれるなら話します」
+- D. 嘘をついて隠す。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Một câu trả lời mẫu mực: Chừa đường lui cho mình (**精査中 [Tinh Tra Trung]**), và hướng ký giả về kênh thông tin chính thống (**正式発表**).
+> - **正解：B**. Một câu trả lời mẫu mực: Chừa đường lui cho mình (**精査中 [Tinh Tra Trung]**), và hướng ký giả về kênh thông tin chính thống (**正式発表**).
 
 **第2問 (Câu 2):**
-Trong buổi phỏng vấn, khi phóng viên dùng từ ngữ mang tính tiêu cực để mô tả sản phẩm của bạn, bạn nên làm gì?
-- A. Giận dữ phản bác lại.
+Trong buổi phỏng vấn, khi phóng viên dùng từ ngữ mang tính tiêu cực để mô tả sản phẩm của bạn, bạn nên làm gì?- A. Giận dữ phản bác lại.
 - B. Im lặng chịu đựng.
 - C. Sử dụng kỹ thuật Framing để thay đổi thuật ngữ đó sang hướng tích cực hơn ngay trong câu trả lời của mình.
 - D. Bỏ cuộc phỏng vấn.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Đây là kỹ năng làm chủ thông điệp cốt lõi của PR chuyên nghiệp.
+> - **正解：B**. Đây là kỹ năng làm chủ thông điệp cốt lõi của PR chuyên nghiệp.
 
 **第3問 (Câu 3):**
-Cụm từ "Bộ mặt của công ty" trong bối cảnh truyền thông Nhật Bản thường được dùng để chỉ ai?
-- A. Người mẫu quảng cáo.
+Cụm từ "Bộ mặt của công ty" trong bối cảnh truyền thông Nhật Bản thường được dùng để chỉ ai?- A. Người mẫu quảng cáo.
 - B. Nhân viên PR hoặc Giám đốc điều hành khi xuất hiện trước công chúng.
-- C. Bác bảo vệ.
-- D. Khách hàng thân thiết.
+- C. Khách hàng thân thiết.
+- D. Bác bảo vệ.
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Tại bàn phỏng vấn, mọi cử chỉ của bạn đều được đánh đồng với uy tín của toàn thể công ty (**会社の看板を背負う [Khán Bản]**).

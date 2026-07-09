@@ -109,34 +109,31 @@ Khi cổ đông "lên tiếng" mạnh mẽ:
 ## 📝 6. QUICK QUIZ: 実踐・最終試練 (IR Strategy Test)
 
 **第1問 (Câu 1):**
-Tại sao cụm từ **「資本効率 (Capital Efficiency)」** lại là từ khóa cửa miệng của các nhà đầu tư tổ chức khi nói chuyện với lãnh đạo J1 Mastery?
-- A. Vì họ muốn công ty phải tiết kiệm tiền.
-- B. Vì họ muốn biết công ty sử dụng nguồn vốn của cổ đông hiệu quả như thế nào để tạo ra lợi nhuận (ROE, ROIC), thay vì chỉ nhìn vào quy mô doanh thu.
+Tại sao cụm từ **「資本効率 (Capital Efficiency)」** lại là từ khóa cửa miệng của các nhà đầu tư tổ chức khi nói chuyện với lãnh đạo J1 Mastery?- A. Vì họ thích các thuật ngữ chuyên môn phức tạp.
+- B. Vì họ muốn công ty phải tiết kiệm tiền.
 - C. Vì họ muốn biết công ty có bao nhiêu tiền trong két sắt.
-- D. Vì họ thích các thuật ngữ chuyên môn phức tạp.
+- D. Vì họ muốn biết công ty sử dụng nguồn vốn của cổ đông hiệu quả như thế nào để tạo ra lợi nhuận (ROE, ROIC), thay vì chỉ nhìn vào quy mô doanh thu.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Efficiency is key to valuation.
+> - **正解：D**. Efficiency is key to valuation.
 
 **第2問 (Câu 2):**
-"Earnings Guidance" (Dự báo kết quả kinh doanh) có tác động gì đến giá cổ phiếu?
-- A. Không có tác động gì, vì nó chỉ là dự báo.
-- B. Nó thiết lập "Kỳ vọng của thị trường". Nếu kết quả thực tế thấp hơn Guidance, giá cổ phiếu thường giảm mạnh ngay cả khi công ty vẫn có lãi.
-- C. Nó làm cho nhân viên cảm thấy áp lực.
-- D. Nó chỉ dành cho các cổ đông nhỏ lẻ.
+"Earnings Guidance" (Dự báo kết quả kinh doanh) có tác động gì đến giá cổ phiếu?- A. Nó thiết lập "Kỳ vọng của thị trường". Nếu kết quả thực tế thấp hơn Guidance, giá cổ phiếu thường giảm mạnh ngay cả khi công ty vẫn có lãi.
+- B. Nó chỉ dành cho các cổ đông nhỏ lẻ.
+- C. Không có tác động gì, vì nó chỉ là dự báo.
+- D. Nó làm cho nhân viên cảm thấy áp lực.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Managing expectations is the core of IR.
+> - **正解：A**. Managing expectations is the core of IR.
 
 **第3問 (Câu 3):**
-Một nhà lãnh đạo J1 Mastery sẽ nói gì khi được hỏi về rủi ro của một vụ bê bối vừa xảy ra trong một công ty con?
-- A. 「私は担当ではないので、詳細は分かりません。」
-- B. 「現在、事実関係を精査中であり、判明次第、速やかに、かつ『隠すことなく』全情報を開示いたします。再発防止に向けたガバナンスの刷新を最優先課題として取り組みます。」
-- C. 「大した問題ではありません。すぐに忘れられます。」
-- D. 「質問を禁じます。」
+Một nhà lãnh đạo J1 Mastery sẽ nói gì khi được hỏi về rủi ro của một vụ bê bối vừa xảy ra trong một công ty con?- A. 「現在、事実関係を精査中であり、判明次第、速やかに、かつ『隠すことなく』全情報を開示いたします。再発防止に向けたガバナンスの刷新を最優先課題として取り組みます。」
+- B. 「質問を禁じます。」
+- C. 「私は担当ではないので、詳細は分かりません。」
+- D. 「大した問題ではありません。すぐに忘れられます。」
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Transparency maintains trust even in crisis.
+> - **正解：A**. Transparency maintains trust even in crisis.
 
 ---
 

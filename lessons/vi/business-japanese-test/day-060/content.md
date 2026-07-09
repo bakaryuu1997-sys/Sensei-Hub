@@ -100,31 +100,28 @@ Phục hồi không phải là quay lại trạng thái cũ:
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khi xảy ra sự cố, câu nào thể hiện sự chủ động của một lãnh đạo J1+ Master?
-- A. 誰がやったか調べます。
-- B. 現場の混乱を最小限に抑えるべく, 直ちに「対策本部」を立ち上げ, 代表である私が「指揮」を執ります。
-- C. ちょっと待ってください。
+Khi xảy ra sự cố, câu nào thể hiện sự chủ động của một lãnh đạo J1+ Master?- A. 現場の混乱を最小限に抑えるべく, 直ちに「対策本部」を立ち上げ, 代表である私が「指揮」を執ります。
+- B. ちょっと待ってください。
+- C. 誰がやったか調べます。
 - D. 運が悪かったです。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「対策本部」** và **「指揮を執る」** (Chỉ huy) thể hiện sự kiểm soát tình hình và trách nhiệm cá nhân của cấp cao nhất.
+> - **正解：A**. **「対策本部」** và **「指揮を執る」** (Chỉ huy) thể hiện sự kiểm soát tình hình và trách nhiệm cá nhân của cấp cao nhất.
 
 **第2問 (Câu 2):**
-Cụm từ "Damage Control" trong tiếng Nhật kinh doanh J1+ thường được hiểu là gì?
-- A. 修理代を払う [Tu Lý Đại].
-- B. 被害の最小化と信頼の維持 [Phi Hại - Tối Tiểu Hóa].
+Cụm từ "Damage Control" trong tiếng Nhật kinh doanh J1+ thường được hiểu là gì?- A. 修理代を払う [Tu Lý Đại].
+- B. 責任転嫁 [Trách Nhiệm Chuyển Giá].
 - C. 壊れたものを捨てる [Hoại].
-- D. 責任転嫁 [Trách Nhiệm Chuyển Giá].
+- D. 被害の最小化と信頼の維持 [Phi Hại - Tối Tiểu Hóa].
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Giảm thiểu thiệt hại và duy trì niềm tin.
+> - **正解：D**. Giảm thiểu thiệt hại và duy trì niềm tin.
 
 **第3問 (Câu 4):**
-Tư duy "Resilience" (レジリエンス) khác với "Robustness" (Cứng cáp) ở điểm nào trong trình độ J1+?
-- A. Resilience là khả năng quay về trạng thái ban đầu sau khi vỡ, Robustness là không bao giờ vỡ.
+Tư duy "Resilience" (レジリエンス) khác với "Robustness" (Cứng cáp) ở điểm nào trong trình độ J1+?- A. Resilience là từ dùng trong y tế.
 - B. Resilience là khả năng linh hoạt thích ứng và phục hồi mạnh mẽ sau biến cố, Robustness là tính bền vững, chịu lực tốt.
-- C. Cả hai giống hệt nhau.
-- D. Resilience là từ dùng trong y tế.
+- C. Resilience là khả năng quay về trạng thái ban đầu sau khi vỡ, Robustness là không bao giờ vỡ.
+- D. Cả hai giống hệt nhau.
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Resilience đề cao sự linh hoạt và khả năng "bật dậy" (Bounce back).

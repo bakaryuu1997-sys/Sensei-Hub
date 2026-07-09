@@ -66,24 +66,24 @@ Thay vì viết bằng mực thường, mọi hồ sơ đều được viết b�
 # 📝 QUICK QUIZ
 
 **Câu 1: Điều kiện tiên quyết để bật S3 Replication là gì?**
-A. Cùng Region.
-B. Bật Versioning.
-C. Tắt mã hóa.
-D. Đổi tên Bucket.
+A. Đổi tên Bucket.
+B. Tắt mã hóa.
+C. Bật Versioning.
+D. Cùng Region.
 
 **Câu 2: (Cập nhật 2026) Tính năng nào biến S3 thành một 'Data Lakehouse' có khả năng truy vấn bảng hiệu năng cao?**
-A. S3 Select
-B. S3 Tables
-C. S3 Glacier
-D. S3 Inventory
+A. S3 Inventory
+B. S3 Glacier
+C. S3 Select
+D. S3 Tables
 
 **Câu 3: Để tải một file 100GB lên S3, kỹ thuật nào là BẮT BUỘC?**
-A. S3 Transfer Acceleration
-B. Multi-part Upload
-C. S3 Select
-D. Versioning
+A. S3 Select
+B. S3 Transfer Acceleration
+C. Versioning
+D. Multi-part Upload
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-C, 2-D, 3-D.
 
 ---
 

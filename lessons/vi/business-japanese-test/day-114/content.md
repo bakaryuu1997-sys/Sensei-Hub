@@ -95,31 +95,28 @@ Văn bản dài 1 trang, nhưng đáp án lại nằm ở một dòng chữ nh�
 ## 📝 6. QUICK QUIZ: 高難易度・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-「本件、担当者の独断 [Độc Đoán] とはいえ、管理不足の **そしり [Cơ] を免 [Miễn] れません**。」 Ý nghĩa thực sự là gì?
-- A. Người nhân viên đó không có lỗi.
-- B. Dù là nhân viên tự quyết nhưng chúng tôi không thể tránh khỏi bị chỉ trích là thiếu quản lý (chấp nhận trách nhiệm).
-- C. Sẽ không ai chê trách chúng tôi đâu.
-- D. Hãy sa thải người nhân viên đó đi.
+「本件、担当者の独断 [Độc Đoán] とはいえ、管理不足の **そしり [Cơ] を免 [Miễn] れません**。」 Ý nghĩa thực sự là gì?- A. Người nhân viên đó không có lỗi.
+- B. Sẽ không ai chê trách chúng tôi đâu.
+- C. Hãy sa thải người nhân viên đó đi.
+- D. Dù là nhân viên tự quyết nhưng chúng tôi không thể tránh khỏi bị chỉ trích là thiếu quản lý (chấp nhận trách nhiệm).
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「そしりを免れない」** (Không thể tránh khỏi sự chỉ trích) là mẫu câu Elite dùng để nhận trách nhiệm của cấp quản lý.
+> - **正解：D**. **「そしりを免れない」** (Không thể tránh khỏi sự chỉ trích) là mẫu câu Elite dùng để nhận trách nhiệm của cấp quản lý.
 
 **第2問 (Câu 2):**
-Trong một bài Nghe phức tạp, khi nghe thấy cụm từ **「万 [Vạn] が一 [Nhất] 」**, bạn nên chuẩn bị cho điều gì?
-- A. Một sự kiện rất hiếm khi xảy ra nhưng có hậu quả khủng khiếp.
+Trong một bài Nghe phức tạp, khi nghe thấy cụm từ **「万 [Vạn] が一 [Nhất] 」**, bạn nên chuẩn bị cho điều gì?- A. Một vạn người.
 - B. Một điều may mắn sắp tới.
-- C. Một vạn người.
-- D. Không có gì quan trọng.
+- C. Không có gì quan trọng.
+- D. Một sự kiện rất hiếm khi xảy ra nhưng có hậu quả khủng khiếp.
 
 > **解釈 (Giải thích):**
-> - **正解：A**. **「万が一」** (vạn nhất - lỡ như) dùng để đưa ra các phương án dự phòng cho tình huống xấu nhất (Contingency plan).
+> - **正解：B**. **「万が一」** (vạn nhất - lỡ như) dùng để đưa ra các phương án dự phòng cho tình huống xấu nhất (Contingency plan).
 
 **第3問 (Câu 3):**
-Câu nào sau đây là cách sửa lỗi cho khách hàng một cách J1+ nhất?
-- A. お客様、それは間違いです。
+Câu nào sau đây là cách sửa lỗi cho khách hàng một cách J1+ nhất?- A. お客様、それは間違いです。
 - B. 失礼ですが、こちらの手元のデータでは少々異なる数値となっておりますが、もう一度確認させていただいてもよろしいでしょうか。
-- C. 何か勘違い [Khám Tri] されていませんか？
-- D. 証拠 [Chứng Cứ] を出してください。
+- C. 証拠 [Chứng Cứ] を出してください。
+- D. 何か勘違い [Khám Tri] されていませんか？
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Dùng từ ngữ mềm mỏng (**少々異なる**), mượn vật mốc khách quan (**手元のデータ**), và xin phép xác nhận lại để đối phương tự nhận ra lỗi của mình.

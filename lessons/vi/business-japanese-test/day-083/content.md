@@ -104,31 +104,28 @@ Bảo mật trong sự công khai:
 ## 📝 6. QUICK QUIZ: 実踐・最終試練 (Brand & IP Strategy Test)
 
 **第1問 (Câu 1):**
-Cụm từ **「プレミアム価格」 [Premium - Giá Cách]** có mối liên hệ gì với Brand Equity?
-- A. Là việc tăng giá bất hợp lý để lấy lời.
-- B. Là khả năng của một thương hiệu mạnh khiến khách hàng sẵn sàng chi trả mức giá cao hơn so với sản phẩm cùng loại của đối thủ vì họ tin tưởng vào giá trị và uy tín mà thương hiệu mang lại.
-- C. Là giá bán sỉ cho các đại lý lớn.
+Cụm từ **「プレミアム価格」 [Premium - Giá Cách]** có mối liên hệ gì với Brand Equity?- A. Là khả năng của một thương hiệu mạnh khiến khách hàng sẵn sàng chi trả mức giá cao hơn so với sản phẩm cùng loại của đối thủ vì họ tin tưởng vào giá trị và uy tín mà thương hiệu mang lại.
+- B. Là giá bán sỉ cho các đại lý lớn.
+- C. Là việc tăng giá bất hợp lý để lấy lời.
 - D. Là giá dành riêng cho các quan chức chính phủ.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Brand value translates into pricing power.
+> - **正解：A**. Brand value translates into pricing power.
 
 **第2問 (Câu 2):**
-"Black box strategy" (Chiến lược hộp đen) trong quản trị IP có nghĩa là gì?
-- A. Việc sơn đen các máy móc để đối thủ không nhìn thấy.
-- B. Việc giữ bí mật kinh doanh thay vì đăng ký bằng sáng chế đối với những công nghệ cốt lõi, nhằm tránh việc bị tiết lộ thông tin sau khi hết thời hạn bảo hộ.
-- C. Việc bỏ các tài liệu vào một chiếc hộp màu đen có khóa.
-- D. Việc sử dụng trí tuệ nhân tạo (AI) mà không hiểu cách nó hoạt động.
+"Black box strategy" (Chiến lược hộp đen) trong quản trị IP có nghĩa là gì?- A. Việc sử dụng trí tuệ nhân tạo (AI) mà không hiểu cách nó hoạt động.
+- B. Việc sơn đen các máy móc để đối thủ không nhìn thấy.
+- C. Việc giữ bí mật kinh doanh thay vì đăng ký bằng sáng chế đối với những công nghệ cốt lõi, nhằm tránh việc bị tiết lộ thông tin sau khi hết thời hạn bảo hộ.
+- D. Việc bỏ các tài liệu vào một chiếc hộp màu đen có khóa.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Strategic secrecy for long-term dominance.
+> - **正解：C**. Strategic secrecy for long-term dominance.
 
 **第3問 (Câu 3):**
-Một nhà lãnh đạo J1 Mastery sẽ nói gì khi thương hiệu của công ty bị một fan hâm mộ sử dụng hình ảnh một cách hài hước trên mạng xã hội?
-- A. 「即刻削除させ、多額の賠償金を請求しろ。」
+Một nhà lãnh đạo J1 Mastery sẽ nói gì khi thương hiệu của công ty bị một fan hâm mộ sử dụng hình ảnh một cách hài hước trên mạng xã hội?- A. 「即刻削除させ、多額の賠償金を請求しろ。」
 - B. 「意図を冷静に分析し、ブランドへの愛着（アフェクション）に繋がるのであれば、公式に『公認』したり共生する道を模索しよう。厳格すぎる管理はファンの離反を招く。」
-- C. 「無視しておけばよい。」
-- D. 「アカウントをハッキングしろ。」
+- C. 「アカウントをハッキングしろ。」
+- D. 「無視しておけばよい。」
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Sự linh hoạt trong quản trị thương hiệu hiện đại (**Community engagement**).

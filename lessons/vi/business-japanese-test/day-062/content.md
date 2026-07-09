@@ -101,34 +101,31 @@ Sức mạnh của đám đông trung thành:
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khi bạn muốn nói "Chúng ta cần làm cho khách hàng thấy vui sướng đến mức muốn khoe với người khác", cụm từ J1+ là gì?
-- A. バズらせたいです。
-- B. お客様に「感動体験 (Wow Experience)」を提供し, ポジティブな「口コミ」の連鎖を生み出す必要があります。
-- C. 喜ばせましょう。
-- D. 写真を撮らせましょう。
+Khi bạn muốn nói "Chúng ta cần làm cho khách hàng thấy vui sướng đến mức muốn khoe với người khác", cụm từ J1+ là gì?- A. 写真を撮らせましょう。
+- B. バズらせたいです。
+- C. お客様に「感動体験 (Wow Experience)」を提供し, ポジティブな「口コミ」の連鎖を生み出す必要があります。
+- D. 喜ばせましょう。
 
 > **解釈 (Giải thích):**
-> - **正解：B**. **「感動体験」** và **「連鎖」 [Liên Tỏa]** thể hiện một quy trình marekting bài bản và cao cấp.
+> - **正解：C**. **「感動体験」** và **「連鎖」 [Liên Tỏa]** thể hiện một quy trình marekting bài bản và cao cấp.
 
 **第2問 (Câu 2):**
-Thuật ngữ "LTV" trong chiến lược khách hàng J1+ viết tắt của từ gì và có nghĩa là gì?
-- A. Long Time Vacation (Kỳ nghỉ dài cho nhân viên).
-- B. Life Time Value (Tổng giá trị một khách hàng mang lại cho công ty trong suốt cuộc đời của họ).
-- C. Low Total Volume (Tổng lượng giao dịch thấp).
-- D. Large Team Vision (Tầm nhìn đội ngũ lớn).
+Thuật ngữ "LTV" trong chiến lược khách hàng J1+ viết tắt của từ gì và có nghĩa là gì?- A. Life Time Value (Tổng giá trị một khách hàng mang lại cho công ty trong suốt cuộc đời của họ).
+- B. Long Time Vacation (Kỳ nghỉ dài cho nhân viên).
+- C. Large Team Vision (Tầm nhìn đội ngũ lớn).
+- D. Low Total Volume (Tổng lượng giao dịch thấp).
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Chỉ số quan trọng nhất để đánh giá sự thành công của Loyalty.
+> - **正解：A**. Chỉ số quan trọng nhất để đánh giá sự thành công của Loyalty.
 
 **第3問 (Câu 6):**
-Tinh thần "Omotenashi" (おもてなし) ở trình độ J1+ khác với "Dịch vụ thông thường" ở điểm nào?
-- A. Omotenashi là làm việc miễn phí.
-- B. Omotenashi là sự phục vụ vượt ngoài mong đợi và không đòi hỏi sự trả ơn ngay lập tức, dựa trên sự tinh tế thấu hiểu tâm lý khách hàng.
-- C. Dịch vụ thông thường là của người Nhật, Omotenashi là của người nước ngoài.
-- D. Cả hai giống hệt nhau.
+Tinh thần "Omotenashi" (おもてなし) ở trình độ J1+ khác với "Dịch vụ thông thường" ở điểm nào?- A. Cả hai giống hệt nhau.
+- B. Dịch vụ thông thường là của người Nhật, Omotenashi là của người nước ngoài.
+- C. Omotenashi là sự phục vụ vượt ngoài mong đợi và không đòi hỏi sự trả ơn ngay lập tức, dựa trên sự tinh tế thấu hiểu tâm lý khách hàng.
+- D. Omotenashi là làm việc miễn phí.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Một giá trị văn hóa cốt lõi của Nhật Bản được ứng dụng vào kinh doanh hiện đại.
+> - **正解：C**. Một giá trị văn hóa cốt lõi của Nhật Bản được ứng dụng vào kinh doanh hiện đại.
 
 ---
 

@@ -70,24 +70,24 @@ Năm 2026, tôi dùng **Amazon Q** để giám sát và tự động tối ưu h
 # 📝 QUICK QUIZ (Final Pro Level)
 
 **Câu 1: Giải pháp Disaster Recovery nào có thời gian khôi phục nhanh nhất (gần bằng 0)?**
-A. Backup & Restore
-B. Pilot Light
-C. Multi-site Active-Active (Chạy song song 2 vùng)
-D. Warm Standby
+A. Pilot Light
+B. Multi-site Active-Active (Chạy song song 2 vùng)
+C. Warm Standby
+D. Backup & Restore
 
 **Câu 2: (Cập nhật 2026) Vai trò quan trọng nhất của một Cloud Architect hiện nay là gì?**
 A. Ngồi gõ lệnh Linux
-B. Thiết kế chiến lược tích hợp AI và tự động hóa hạ tầng (Autonomous Infrastructure)
-C. Thay ổ cứng hỏng
+B. Thay ổ cứng hỏng
+C. Thiết kế chiến lược tích hợp AI và tự động hóa hạ tầng (Autonomous Infrastructure)
 D. Cài đặt Windows Server
 
 **Câu 3: Dịch vụ nào giúp quản lý hàng trăm tài khoản AWS theo đúng Best Practices một cách tự động?**
-A. Control Tower
-B. GameLift
-C. Lightsail
-D. Mobile Hub
+A. GameLift
+B. Mobile Hub
+C. Control Tower
+D. Lightsail
 
-**Đáp án:** 1-C, 2-B, 3-A.
+**Đáp án:** 1-A, 2-C, 3-A.
 
 ---
 

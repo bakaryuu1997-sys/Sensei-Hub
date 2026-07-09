@@ -108,8 +108,7 @@ Lắng nghe và đáp trả:
 ## 📝 6. QUICK QUIZ: 実踐・最終試練 (Crisis PR Test)
 
 **第1問 (Câu 1):**
-Tại sao 1 giờ đầu tiên lại được gọi là "Golden Hour" trong quản trị khủng hoảng?
-- A. Vì sau 1 giờ đó mọi người sẽ đi ngủ.
+Tại sao 1 giờ đầu tiên lại được gọi là "Golden Hour" trong quản trị khủng hoảng?- A. Vì sau 1 giờ đó mọi người sẽ đi ngủ.
 - B. Vì đó là khoảng thời gian quý giá để doanh nghiệp đưa ra thông tin chính thống đầu tiên, định hướng dư luận trước khi những tin đồn và các thuyết âm mưu tiêu cực lấp đầy khoảng trống thông tin.
 - C. Vì đó là thời gian để luật sư soạn thảo văn bản.
 - D. Vì giá điện thoại rẻ hơn trong giờ đó.
@@ -118,20 +117,18 @@ Tại sao 1 giờ đầu tiên lại được gọi là "Golden Hour" trong qu�
 > - **正解：B**. Dominating the narrative early is key.
 
 **第2問 (Câu 2):**
-Cụm từ **「炎上 (Enjo)」** trong ngữ cảnh truyền thông số ám chỉ điều gì?
-- A. Việc văn phòng công ty bị hỏa hoạn thực sự.
-- B. Hiện tượng bị cộng đồng mạng chỉ trích dữ dội và đồng loạt trên các nền tảng xã hội, dẫn đến một cuộc khủng hoảng danh tiếng quy mô lớn.
+Cụm từ **「炎上 (Enjo)」** trong ngữ cảnh truyền thông số ám chỉ điều gì?- A. Hiện tượng bị cộng đồng mạng chỉ trích dữ dội và đồng loạt trên các nền tảng xã hội, dẫn đến một cuộc khủng hoảng danh tiếng quy mô lớn.
+- B. Việc nhân viên nấu nướng trong công ty.
 - C. Một chiến dịch marketing rầm rộ khiến doanh số tăng vọt.
-- D. Việc nhân viên nấu nướng trong công ty.
+- D. Việc văn phòng công ty bị hỏa hoạn thực sự.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. A massive negative viral wave.
+> - **正解：A**. A massive negative viral wave.
 
 **第3問 (Câu 3):**
-Một nhà lãnh đạo J1 Mastery sẽ nói gì khi một tin giả (Fake News) ác ý đang làm hại công ty?
-- A. 「放っておけば、いつか収まるだろう。」
+Một nhà lãnh đạo J1 Mastery sẽ nói gì khi một tin giả (Fake News) ác ý đang làm hại công ty?- A. 「私たちも相手の悪口を言い返しましょう。」
 - B. 「これは明確な法的境界を越えた『悪意ある情報操作』です。私たちは表現の自由を尊重しますが、名誉を毀損する虚偽には断固とした法的措置を講じつつ、事実に基づく情報の正確性を世界に示し続けます。」
-- C. 「私たちも相手の悪口を言い返しましょう。」
+- C. 「放っておけば、いつか収まるだろう。」
 - D. 「インターネットを遮断してください。」
 
 > **解釈 (Giải thích):**

@@ -104,34 +104,31 @@ Tạo niềm tin qua thành quả nhỏ:
 ## 📝 6. QUICK QUIZ: 実踐・最終試練 (Change Management Test)
 
 **第1問 (Câu 1):**
-Tại sao "Sự thấu cảm" (Empathy) lại được coi là công cụ quyền năng nhất của một nhà lãnh đạo J1 Mastery trong quản lý thay đổi?
-- A. Để làm cho mọi người cảm thấy vui vẻ.
-- B. Để thấu hiểu được nỗi sợ hãi ẩn sau sự phản kháng, từ đó điều chỉnh thông điệp và cách triển khai sao cho giảm bớt sự bất an và huy động được sự ủng hộ thực chất.
-- C. Để chứng tỏ sếp là người tốt.
-- D. Vì sách giáo khoa quản trị yêu cầu như vậy.
+Tại sao "Sự thấu cảm" (Empathy) lại được coi là công cụ quyền năng nhất của một nhà lãnh đạo J1 Mastery trong quản lý thay đổi?- A. Để thấu hiểu được nỗi sợ hãi ẩn sau sự phản kháng, từ đó điều chỉnh thông điệp và cách triển khai sao cho giảm bớt sự bất an và huy động được sự ủng hộ thực chất.
+- B. Để làm cho mọi người cảm thấy vui vẻ.
+- C. Vì sách giáo khoa quản trị yêu cầu như vậy.
+- D. Để chứng tỏ sếp là người tốt.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Thấu hiểu nỗi sợ là chìa khóa của sự thuyết phục.
+> - **正解：A**. Thấu hiểu nỗi sợ là chìa khóa của sự thuyết phục.
 
 **第2問 (Câu 2):**
-Cụm từ **「組織文化の刷新」 [Loát Tân]** khác gì so với việc chỉ thay đổi quy trình làm việc?
-- A. Chỗ này không có gì khác nhau, đều là thay đổi.
-- B. Thay đổi quy trình là thay đổi "Hành động", còn đổi mới văn hóa là thay đổi "Tư duy, niềm tin và giá trị cốt lõi" của toàn bộ con người trong tổ chức.
-- C. Chỉ là một cách nói mỹ miều hơn của việc tăng giờ làm.
+Cụm từ **「組織文化の刷新」 [Loát Tân]** khác gì so với việc chỉ thay đổi quy trình làm việc?- A. Thay đổi quy trình là thay đổi "Hành động", còn đổi mới văn hóa là thay đổi "Tư duy, niềm tin và giá trị cốt lõi" của toàn bộ con người trong tổ chức.
+- B. Chỉ là một cách nói mỹ miều hơn của việc tăng giờ làm.
+- C. Chỗ này không có gì khác nhau, đều là thay đổi.
 - D. Việc thay đổi logo và màu sắc của công ty.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Cultual transformation là cấp độ sâu nhất của Metamorphosis.
+> - **正解：A**. Cultual transformation là cấp độ sâu nhất của Metamorphosis.
 
 **第3問 (Câu 3):**
-Một nhà lãnh đạo J1 Mastery sẽ nói gì khi gặp phải một "rào cản" do hệ thống cũ để lại?
-- A. 「前の担当者が悪い。私は関係ない。」
-- B. 「これは過去の成功が生み出した遺産ですが、今では足かせになっています。勇気を持って手放し、新しい標準（New Normal）を共に創りましょう。」
+Một nhà lãnh đạo J1 Mastery sẽ nói gì khi gặp phải một "rào cản" do hệ thống cũ để lại?- A. 「力ずくで破壊します。」
+- B. 「前の担当者が悪い。私は関係ない。」
 - C. 「壊すのは大変なので、そのままにしておきましょう。」
-- D. 「力ずくで破壊します。」
+- D. 「これは過去の成功が生み出した遺産ですが、今では足かせになっています。勇気を持って手放し、新しい標準（New Normal）を共に創りましょう。」
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Thừa nhận giá trị quá khứ nhưng khẳng định sự cần thiết của việc thay đổi để hướng tới tương lai.
+> - **正解：D**. Thừa nhận giá trị quá khứ nhưng khẳng định sự cần thiết của việc thay đổi để hướng tới tương lai.
 
 ---
 

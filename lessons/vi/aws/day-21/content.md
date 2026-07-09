@@ -63,24 +63,24 @@ Hãy tưởng tượng sự khác biệt giữa **Xây nhà thủ công** và **
 # 📝 QUICK QUIZ
 
 **Câu 1: Định dạng file nào CloudFormation hỗ trợ?**
-A. Python và Java
+A. XML
 B. YAML và JSON
-C. HTML và CSS
-D. XML
+C. Python và Java
+D. HTML và CSS
 
 **Câu 2: (Cập nhật 2026) Tính năng nào giúp biến tài nguyên tạo bằng tay thành file code YAML?**
 A. CloudFormation StackSet
-B. IaC Generator 2.0
-C. AWS Config
-D. Trusted Advisor
+B. Trusted Advisor
+C. IaC Generator 2.0
+D. AWS Config
 
 **Câu 3: Làm thế nào để biết trước tác động của việc cập nhật Stack?**
 A. Dùng CloudWatch
-B. Dùng Change Sets
-C. Dùng CloudTrail
-D. Xóa đi làm lại
+B. Xóa đi làm lại
+C. Dùng Change Sets
+D. Dùng CloudTrail
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-B, 2-C, 3-C.
 
 ---
 

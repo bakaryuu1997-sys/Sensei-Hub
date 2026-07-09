@@ -115,16 +115,16 @@ S đang phỏng vấn cho một vị trí quan trọng nhưng nhà tuyển dụn
 # 🎯 7. QUICK QUIZ: Lệnh Query Của Bạn Có Tối Ưu?
 
 1. **Tại sao nên hạn chế đặt câu hỏi "Tại sao" (Why) trong giao tiếp xã hội?**
-    - A. Vì nó tốn thời gian.
-    - B. Vì nó thường kích hoạt tâm lý phòng vệ (Defensive Firewall) của đối phương, khiến họ cảm thấy bị thẩm vấn hoặc bị buộc tội.
+    - A. Không có lý do gì.
+    - B. Vì nó tốn thời gian.
     - C. Vì nó không chuyên nghiệp.
-    - D. Không có lý do gì.
+    - D. Vì nó thường kích hoạt tâm lý phòng vệ (Defensive Firewall) của đối phương, khiến họ cảm thấy bị thẩm vấn hoặc bị buộc tội.
 
 2. **Câu hỏi nào sau đây là một câu hỏi "Smart Query"?**
     - A. "Hôm nay bạn thấy thế nào?"
-    - B. "Điều gì trong công việc hiện tại mang lại cho bạn nhiều sự thỏa mãn nhất?"
-    - C. "Bạn có thích đi du lịch không?"
-    - D. "Mấy giờ rồi?"
+    - B. "Mấy giờ rồi?"
+    - C. "Điều gì trong công việc hiện tại mang lại cho bạn nhiều sự thỏa mãn nhất?"
+    - D. "Bạn có thích đi du lịch không?"
 
 3. **Mục tiêu của việc đặt câu hỏi trong Mindset Master là gì?**
     - A. Để kiểm tra kiến thức của họ.
@@ -132,7 +132,7 @@ S đang phỏng vấn cho một vị trí quan trọng nhưng nhà tuyển dụn
     - C. Để làm cho mình trông thông minh hơn.
     - D. Để tìm ra kẽ hở của người khác.
 
-*(Đáp án đúng: 1-B, 2-B, 3-B)*
+*(Đáp án đúng: 1-D, 2-C, 3-B)*
 
 ---
 **Lời nhắn từ Architect**: Bạn đã trở thành một Query Master! Ngày mai, chúng ta sẽ bước sang một bài học cực kỳ thú vị: **Charisma.css** — Cách "Code" phong cách cá nhân và thần thái để thu hút mọi ánh nhìn! ⚔️💎

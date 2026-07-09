@@ -82,22 +82,22 @@ Dự án của bạn sẽ gồm 3 luồng chính:
 **Câu 1: Tại sao chúng ta nên dùng Step Functions trong dự án này?**
 A. Để AI chạy nhanh hơn.
 B. Để điều phối quy trình phức tạp (như: Dịch xong mới được tạo Ticket) và xử lý lỗi tự động.
-C. Để lưu trữ hình ảnh.
-D. Để thay thế cho S3.
+C. Để thay thế cho S3.
+D. Để lưu trữ hình ảnh.
 
 **Câu 2: Model nào là lựa chọn 'Best-value' cho dự án BrSE AI 2026?**
 A. Claude 3.5 Opus (Quá đắt cho các tác vụ đơn giản).
-B. Claude 3.5 Sonnet (Cân bằng tốt nhất giữa thông minh và chi phí).
-C. Llama 2 7B (Hơi yếu cho tiếng Nhật chuyên sâu).
-D. GPT-2 (Quá lỗi thời).
+B. GPT-2 (Quá lỗi thời).
+C. Claude 3.5 Sonnet (Cân bằng tốt nhất giữa thông minh và chi phí).
+D. Llama 2 7B (Hơi yếu cho tiếng Nhật chuyên sâu).
 
 **Câu 3: Làm thế nào để đảm bảo dữ liệu dự án không bị lộ?**
-A. Đặt mật khẩu thật dài.
-B. Dùng VPC Endpoint và mã hóa KMS cho tất cả dữ liệu lưu trữ/truyền tải.
-C. Không dùng AI nữa.
-D. Chỉ cho phép truy cập vào ban ngày.
+A. Không dùng AI nữa.
+B. Chỉ cho phép truy cập vào ban ngày.
+C. Đặt mật khẩu thật dài.
+D. Dùng VPC Endpoint và mã hóa KMS cho tất cả dữ liệu lưu trữ/truyền tải.
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-B, 2-C, 3-D.
 
 ---
 

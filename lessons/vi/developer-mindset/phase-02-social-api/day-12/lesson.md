@@ -111,24 +111,24 @@ M là một nhà thiết kế tài năng nhưng luôn bị khách hàng ép giá
 # 🎯 7. QUICK QUIZ: Giao Diện Của Bạn Có BỊ "Vỡ Layout"?
 
 1. **Tại sao dáng đứng lại quan trọng trong giao tiếp?**
-    - A. Để trông cao hơn.
-    - B. Vì nó là tín hiệu đầu tiên (Visual Signaling) để não bộ đối phương đánh giá sự tin cậy và bản lĩnh của bạn trước khi bạn mở lời.
-    - C. Để quần áo trông đẹp hơn.
-    - D. Không có tác dụng gì.
+    - A. Không có tác dụng gì.
+    - B. Để trông cao hơn.
+    - C. Vì nó là tín hiệu đầu tiên (Visual Signaling) để não bộ đối phương đánh giá sự tin cậy và bản lĩnh của bạn trước khi bạn mở lời.
+    - D. Để quần áo trông đẹp hơn.
 
 2. **Tư thế "Wonder Woman" (đứng thẳng, hai tay chống hông) giúp gì cho sinh hóa não?**
-    - A. Làm bạn đói bụng.
-    - B. Tăng Testosterone (tự tin) và giảm Cortisol (lo âu).
-    - C. Không giúp gì.
-    - D. Làm bạn đau lưng.
+    - A. Tăng Testosterone (tự tin) và giảm Cortisol (lo âu).
+    - B. Không giúp gì.
+    - C. Làm bạn đau lưng.
+    - D. Làm bạn đói bụng.
 
 3. **Lòng bàn tay hướng ra ngoài/hướng lên khi nói chuyện gửi đi tín hiệu gì?**
-    - A. Cho tôi tiền.
+    - A. Sự đe dọa.
     - B. Tôi đang bận.
     - C. Sự chân thành, cởi mở và sẵn sàng kết nối (Open Source/Zero Firewall sentiment).
-    - D. Sự đe dọa.
+    - D. Cho tôi tiền.
 
-*(Đáp án đúng: 1-B, 2-B, 3-C)*
+*(Đáp án đúng: 1-C, 2-A, 3-B)*
 
 ---
 **Lời nhắn từ Architect**: Bạn đã có một UI rực rỡ! Ngày mai, chúng ta sẽ tối ưu hóa **Audio Driver** — Làm chủ âm thanh và tần số giọng nói để gói tin của bạn đi sâu vào lòng người! ⚔️💎

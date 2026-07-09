@@ -102,8 +102,7 @@ Mọi người dân đều là một kênh truyền thông:
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Tại sao "Third-party endorsement" (Sự bảo chứng từ bên thứ ba) lại quan trọng trong PR J1+?
-- A. Vì nhờ người khác nói hộ sẽ đỡ tốn sức.
+Tại sao "Third-party endorsement" (Sự bảo chứng từ bên thứ ba) lại quan trọng trong PR J1+?- A. Vì nhờ người khác nói hộ sẽ đỡ tốn sức.
 - B. Vì khách hàng tin tưởng vào nhận định độc lập của báo chí, chuyên gia hơn là lời tự khen của chính công ty.
 - C. Để chia sẻ trách nhiệm nếu sản phẩm bị hỏng.
 - D. Vì luật pháp bắt buộc như vậy.
@@ -112,24 +111,22 @@ Tại sao "Third-party endorsement" (Sự bảo chứng từ bên thứ ba) lạ
 > - **正解：B**. Niềm tin là gốc rễ của PR.
 
 **第2問 (Câu 2):**
-Cụm từ "Media Training" (Tập huấn truyền thông) cho lãnh đạo cấp cao nhằm mục đích gì?
-- A. Để CEO biết cách dùng máy ảnh.
-- B. Trang bị kỹ năng phát ngôn, cách ứng biến trước các câu hỏi nhạy cảm và kiểm soát ngôn ngữ cơ thể trước ống kính để bảo vệ hình ảnh công ty.
-- C. Để CEO biết cách viết code cho website của báo.
-- D. Để CEO đi làm phóng viên.
+Cụm từ "Media Training" (Tập huấn truyền thông) cho lãnh đạo cấp cao nhằm mục đích gì?- A. Để CEO biết cách viết code cho website của báo.
+- B. Để CEO biết cách dùng máy ảnh.
+- C. Để CEO đi làm phóng viên.
+- D. Trang bị kỹ năng phát ngôn, cách ứng biến trước các câu hỏi nhạy cảm và kiểm soát ngôn ngữ cơ thể trước ống kính để bảo vệ hình ảnh công ty.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Một hoạt động PR chiến lược cấp cao.
+> - **正解：D**. Một hoạt động PR chiến lược cấp cao.
 
 **第3問 (Câu 11):**
-Cụm từ "Public Interest" (Lợi ích công cộng) có vai trò gì trong việc viết thông cáo báo chí J1+?
-- A. Là thứ để lấp đầy phần cuối bài cho đẹp.
-- B. Là "vòng đời" của thông tin. Thông tin chỉ được coi là "Tin tức" khi nó có giá trị hoặc ảnh hưởng đến lợi ích của một nhóm đông người trong xã hội.
-- C. Là tiền đóng thuế cho chính phủ.
-- D. Là sở thích của người dân.
+Cụm từ "Public Interest" (Lợi ích công cộng) có vai trò gì trong việc viết thông cáo báo chí J1+?- A. Là "vòng đời" của thông tin. Thông tin chỉ được coi là "Tin tức" khi nó có giá trị hoặc ảnh hưởng đến lợi ích của một nhóm đông người trong xã hội.
+- B. Là sở thích của người dân.
+- C. Là thứ để lấp đầy phần cuối bài cho đẹp.
+- D. Là tiền đóng thuế cho chính phủ.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Đây là tư duy cốt lõi để thu hút sự chú ý của báo giới một cách chuyên nghiệp.
+> - **正解：A**. Đây là tư duy cốt lõi để thu hút sự chú ý của báo giới một cách chuyên nghiệp.
 
 ---
 

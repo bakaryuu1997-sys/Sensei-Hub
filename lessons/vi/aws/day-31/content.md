@@ -64,24 +64,24 @@ EDA giao tiếp qua các **Sự kiện (Event)**:
 # 📝 QUICK QUIZ
 
 **Câu 1: Dịch vụ nào đóng vai trò 'Nhạc trưởng' điều phối workflow?**
-A. EventBridge
-B. Step Functions
+A. Step Functions
+B. Lambda
 C. SQS
-D. Lambda
+D. EventBridge
 
 **Câu 2: (Cập nhật 2026) Amazon Q giúp gì cho Step Functions?**
-A. Tự động viết code Python
+A. Làm web nhanh hơn
 B. Tự động tối ưu hóa workflow và sửa lỗi timeout
 C. Thay thế hoàn toàn Database
-D. Làm web nhanh hơn
+D. Tự động viết code Python
 
 **Câu 3: 'Saga Pattern' dùng để làm gì?**
-A. Tăng tốc độ Web
-B. Đảm bảo nhất quán dữ liệu xuyên suốt nhiều Microservices khi có lỗi
+A. Đảm bảo nhất quán dữ liệu xuyên suốt nhiều Microservices khi có lỗi
+B. Lưu trữ file
 C. Chống Hacker
-D. Lưu trữ file
+D. Tăng tốc độ Web
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-A, 2-B, 3-A.
 
 ---
 

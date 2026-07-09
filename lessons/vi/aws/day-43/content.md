@@ -77,18 +77,18 @@ C. Tape Gateway
 D. EC2
 
 **Câu 2: (Cập nhật 2026) Thiết bị Snowball Edge mới tích hợp gì để xử lý tại chỗ?**
-A. Máy pha cà phê
+A. Màn hình 8K
 B. Phần cứng tăng tốc AI để chạy Model ngay tại chỗ
-C. Màn hình 8K
-D. Pin năng lượng mặt trời
+C. Pin năng lượng mặt trời
+D. Máy pha cà phê
 
 **Câu 3: Dịch vụ nào mang nguyên dàn Rack Server của AWS về lắp tại Data Center khách hàng?**
 A. S3
-B. AWS Outposts
+B. VPC Peering
 C. Lambda
-D. VPC Peering
+D. AWS Outposts
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-B, 2-B, 3-D.
 
 ---
 

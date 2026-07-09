@@ -101,34 +101,31 @@ Người J1+ bán "cảm xúc", không bán "tính năng":
 ## 📝 6. QUICK QUIZ: 実踐・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Làm thế nào để mô tả một sản phẩm tối giản nhưng cực kỳ cao cấp theo phong cách J1+?
-- A. シンプルで高いです。
+Làm thế nào để mô tả một sản phẩm tối giản nhưng cực kỳ cao cấp theo phong cách J1+?- A. 何もついていません。
 - B. 無駄を極限まで排除した「究極の造形美」と「機能性」の両立。
-- C. 何もついていません。
-- D. 地味だけど高価です。
+- C. 地味だけど高価です。
+- D. シンプルで高いです。
 
 > **解釈 (Giải thích):**
 > - **正解：B**. **「排除」** (loại bỏ) và **「造形美」** (vẻ đẹp tạo hình) là những từ vựng cực kỳ "high-end".
 
 **第2問 (Câu 2):**
-"Brand Equity" (ブランド・エクイティ) trong kinh doanh có nghĩa là gì?
-- A. Số lượng nhân viên của công ty thương hiệu.
-- B. Giá trị tài sản vô hình của một thương hiệu, dựa trên nhận diện, uy tín và sự trung thành của khách hàng.
-- C. Việc đổi logo công ty.
+"Brand Equity" (ブランド・エクイティ) trong kinh doanh có nghĩa là gì?- A. Giá trị tài sản vô hình của một thương hiệu, dựa trên nhận diện, uy tín và sự trung thành của khách hàng.
+- B. Việc đổi logo công ty.
+- C. Số lượng nhân viên của công ty thương hiệu.
 - D. Số tiền quảng cáo đã chi.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Một tài sản mà người J1+ phải ra sức bảo vệ và gia tăng.
+> - **正解：A**. Một tài sản mà người J1+ phải ra sức bảo vệ và gia tăng.
 
 **第3問 (Câu 3):**
-Trong marketing toàn cầu, từ nào sau đây mang sắc thái "Bản địa hóa" tốt nhất?
-- A. 押し付け [Áp Phó] (Áp đặt).
-- B. 同化 [Đồng Hóa] (Trở nên giống hệt).
+Trong marketing toàn cầu, từ nào sau đây mang sắc thái "Bản địa hóa" tốt nhất?- A. 無視 [Vô Thị] (Phớt lờ).
+- B. 押し付け [Áp Phó] (Áp đặt).
 - C. 適応 [Thích Ứng] (Điều chỉnh để phù hợp).
-- D. 無視 [Vô Thị] (Phớt lờ).
+- D. 同化 [Đồng Hóa] (Trở nên giống hệt).
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Sự linh hoạt là chìa khóa của thành công quốc tế.
+> - **正解：D**. Sự linh hoạt là chìa khóa của thành công quốc tế.
 
 ---
 

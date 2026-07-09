@@ -100,24 +100,24 @@ Mỗi tối ghi lại: "Hôm nay tôi đã thực hiện quyền Root ở đâu?
 # 🎯 6. QUICK QUIZ: Bạn Đã Có Mật Khẩu Root Chưa?
 
 1. **Tư duy nạn nhân (Victim Loop) gây hại như thế nào?**
-    - A. Làm bạn trở nên nhạy cảm hơn.
+    - A. Tước đoạt quyền hành động của bạn và khiến bạn bị mắc kẹt trong những lỗi lầm cũ.
     - B. Giúp bạn nhận được sự giúp đỡ từ người khác.
-    - C. Tước đoạt quyền hành động của bạn và khiến bạn bị mắc kẹt trong những lỗi lầm cũ.
-    - D. Không có hại gì nếu bạn thực sự là nạn nhân.
+    - C. Không có hại gì nếu bạn thực sự là nạn nhân.
+    - D. Làm bạn trở nên nhạy cảm hơn.
 
 2. **Quyền "Root Access" trong cuộc đời tương ứng với điều gì?**
-    - A. Sự giàu có.
-    - B. Quyền lực điều khiển người khác.
-    - C. Trách nhiệm tuyệt đối đối với phản ứng và hành động của bản thân trong mọi hoàn cảnh.
-    - D. Sự may mắn.
+    - A. Sự may mắn.
+    - B. Trách nhiệm tuyệt đối đối với phản ứng và hành động của bản thân trong mọi hoàn cảnh.
+    - C. Sự giàu có.
+    - D. Quyền lực điều khiển người khác.
 
 3. **Thay đổi ngôn ngữ từ "Tôi phải" sang "Tôi chọn" giúp ích gì?**
-    - A. Làm bạn trông sang trọng hơn.
-    - B. Chuyển trạng thái từ "Bị ép buộc" (Thụ động) sang "Tự nguyện" (Chủ động), kích hoạt lại năng lực hành động của não bộ.
+    - A. Chuyển trạng thái từ "Bị ép buộc" (Thụ động) sang "Tự nguyện" (Chủ động), kích hoạt lại năng lực hành động của não bộ.
+    - B. Không có tác dụng gì thực tế.
     - C. Giúp bạn nói tiếng Anh tốt hơn.
-    - D. Không có tác dụng gì thực tế.
+    - D. Làm bạn trông sang trọng hơn.
 
-*(Đáp án đúng: 1-C, 2-C, 3-B)*
+*(Đáp án đúng: 1-B, 2-D, 3-A)*
 
 ---
 **Lời nhắn từ Architect**: Chúc mừng bạn đã hoàn thành Phase 1: Neural Rewiring! Bạn đã hiểu về mạng lưới xã hội, đã biết cách debug vòng lặp, đã hiểu về cấu trúc phần cứng và tài nguyên Dopamine, và cuối cùng là giành lại quyền Root. Sang Phase 2, chúng ta sẽ bắt đầu thiết kế những "Giao thức xã hội" (Social Protocols) đỉnh cao để bạn thực sự tỏa sáng. Nghỉ ngơi và sạc đầy năng lượng nhé! ⚔️💎

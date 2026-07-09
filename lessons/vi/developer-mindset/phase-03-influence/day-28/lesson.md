@@ -117,24 +117,24 @@ N là một Freelancer kiếm được cả trăm triệu mỗi tháng nhưng lu
 # 🎯 7. QUICK QUIZ: Hệ Thống Tài Chính Của Bạn Có "Stable"?
 
 1. **Sự khác biệt cốt lõi giữa "Asset" (Tài sản) và "Liability" (Tiêu sản) là gì?**
-    - A. Assets đắt tiền hơn.
-    - B. Assets là thứ mang tiền vào túi bạn (như đầu tư, kỹ năng); Liabilities là thứ lấy tiền ra khỏi túi bạn (như nợ tiêu dùng, đồ xa xỉ không sinh lời).
-    - C. Không có sự khác biệt.
-    - D. Assets dành cho người giàu, Liabilities dành cho người nghèo.
+    - A. Assets là thứ mang tiền vào túi bạn (như đầu tư, kỹ năng); Liabilities là thứ lấy tiền ra khỏi túi bạn (như nợ tiêu dùng, đồ xa xỉ không sinh lời).
+    - B. Không có sự khác biệt.
+    - C. Assets dành cho người giàu, Liabilities dành cho người nghèo.
+    - D. Assets đắt tiền hơn.
 
 2. **Tại sao lãi suất kép được gọi là "Kỳ quan thứ 8"?**
-    - A. Vì nó khó tính toán.
-    - B. Vì sức mạnh tăng trưởng theo hàm mũ (Exponential) của nó qua thời gian, giúp những khoản nhỏ tích lũy trở thành khối tài sản khổng lồ nếu được duy trì bền bỉ.
-    - C. Vì nó giúp bạn giàu sau một đêm.
-    - D. Vì ngân hàng thích nó.
+    - A. Vì nó giúp bạn giàu sau một đêm.
+    - B. Vì ngân hàng thích nó.
+    - C. Vì sức mạnh tăng trưởng theo hàm mũ (Exponential) của nó qua thời gian, giúp những khoản nhỏ tích lũy trở thành khối tài sản khổng lồ nếu được duy trì bền bỉ.
+    - D. Vì nó khó tính toán.
 
 3. **Mục tiêu quân trọng nhất của việc quản trị tài chính trong Mindset Master là gì?**
-    - A. Để trở nên giàu nhất thế giới.
-    - B. Để đạt được sự tự do tài chính, giải phóng CPU não bộ khỏi sự lo âu về tiền bạc, từ đó có thể tập trung vào những giá trị cao đẹp hơn và cống hiến cho xã hội.
+    - A. Để khoe với bạn bè.
+    - B. Để trở nên giàu nhất thế giới.
     - C. Để mua được mọi thứ mình thích.
-    - D. Để khoe với bạn bè.
+    - D. Để đạt được sự tự do tài chính, giải phóng CPU não bộ khỏi sự lo âu về tiền bạc, từ đó có thể tập trung vào những giá trị cao đẹp hơn và cống hiến cho xã hội.
 
-*(Đáp án đúng: 1-B, 2-B, 3-B)*
+*(Đáp án đúng: 1-A, 2-C, 3-D)*
 
 ---
 **Lời nhắn từ Architect**: Bạn đã làm chủ được dòng tiền! Tuyệt vời. Ngày mai, chúng ta bước sang một bài học mang tính chiến lược nhất: **Life Vision** — Thiết kế Roadmap 10 năm cho "Siêu dự án" cuộc đời vĩ đại của bạn! ⚔️💎

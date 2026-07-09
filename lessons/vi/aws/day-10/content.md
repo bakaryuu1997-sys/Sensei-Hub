@@ -74,41 +74,36 @@ Hãy nghĩ về mô hình tính phí của AWS giống như việc bạn đăng 
 # 📝 QUICK QUIZ — 5 Câu Kiểm Tra
 
 **Câu 1: Nguyên tắc tính phí Data Transfer nào sau đây là ĐÚNG trên AWS?**
-
-A. Data transfer Inbound và Outbound đều miễn phí.  
-B. Data transfer Inbound tính phí, Outbound miễn phí.  
-C. Data transfer Inbound miễn phí, Outbound ra Internet bị tính phí.  
-D. Chỉ tính phí Data transfer trong cùng một Region.  
+A. Data transfer Inbound miễn phí, Outbound ra Internet bị tính phí.  
+B. Chỉ tính phí Data transfer trong cùng một Region.  
+C. Data transfer Inbound tính phí, Outbound miễn phí.  
+D. Data transfer Inbound và Outbound đều miễn phí.  
 
 **Câu 2: Bạn muốn nhận được thông báo qua Email khi chi phí AWS dự báo sẽ vượt quá $500 trong tháng này. Bạn nên dùng dịch vụ nào?**
-
 A. AWS Cost Explorer  
-B. AWS Pricing Calculator  
+B. AWS Trusted Advisor  
 C. AWS Budgets  
-D. AWS Trusted Advisor  
+D. AWS Pricing Calculator  
 
 **Câu 3: Công ty bạn có 50 tài khoản AWS khác nhau cho các team. Dịch vụ nào giúp gộp toàn bộ hóa đơn về thanh toán một lần và tận dụng mức chiết khấu theo số lượng (Volume Discount)?**
-
-A. AWS IAM  
-B. AWS Organizations (Consolidated Billing)  
+A. AWS Organizations (Consolidated Billing)  
+B. AWS Savings Plans  
 C. AWS Cost Allocation Tags  
-D. AWS Savings Plans  
+D. AWS IAM  
 
 **Câu 4: Bạn đang gặp sự cố production nghiêm trọng (hệ thống sập) và cần một kỹ sư AWS hỗ trợ qua điện thoại trong vòng 15 phút. Bạn phải mua gói Support Plan nào?**
-
-A. Basic Support  
-B. Developer Support  
-C. Enterprise Support  
-D. Gói nào cũng được, tùy mức độ nghiêm trọng  
+A. Enterprise Support  
+B. Gói nào cũng được, tùy mức độ nghiêm trọng  
+C. Developer Support  
+D. Basic Support  
 
 **Câu 5: Dịch vụ nào sử dụng Machine Learning để liên tục theo dõi và tự động gửi cảnh báo khi phát hiện sự gia tăng chi phí bất thường, đột ngột (ví dụ do bị hack hoặc code lỗi)?**
-
 A. AWS Cost Anomaly Detection  
 B. AWS Budgets  
 C. AWS Billing Dashboard  
 D. AWS Pricing Calculator  
 
-**Đáp án:** 1-C, 2-C, 3-B, 4-C, 5-A.
+**Đáp án:** 1-C, 2-D, 3-A, 4-C, 5-B.
 
 ---
 

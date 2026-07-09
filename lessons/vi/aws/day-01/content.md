@@ -113,36 +113,36 @@ Hiện nay, các AI Assistant (như Claude, GPT) có thể kết nối trực ti
 # 📝 QUICK QUIZ
 
 **Câu 1: Một công ty muốn tối ưu hóa chi phí bằng cách di chuyển toàn bộ hệ thống lưu trữ file sang AWS. Họ không muốn quản lý máy chủ hay cài đặt phần mềm. Họ chỉ muốn dùng API để tải file lên và xuống. Đây là đặc tính nào của Cloud?**
-A. Broad Network Access
-B. Resource Pooling
-C. On-demand Self-service
-D. Rapid Elasticity
+A. Resource Pooling
+B. On-demand Self-service
+C. Rapid Elasticity
+D. Broad Network Access
 
 **Câu 2: Bạn đang sử dụng dịch vụ lưu trữ Email của Microsoft 365. Bạn chỉ việc đăng nhập và gửi thư, không quan tâm server chạy thế nào hay database nằm ở đâu. Bạn đang dùng mô hình dịch vụ nào?**
-A. IaaS (Infrastructure as a Service) 
-B. PaaS (Platform as a Service)
-C. SaaS (Software as a Service)
-D. On-Premises
+A. SaaS (Software as a Service)
+B. On-Premises
+C. PaaS (Platform as a Service)
+D. IaaS (Infrastructure as a Service) 
 
 **Câu 3: Khái niệm "Go Global in Minutes" của AWS dựa trên hạ tầng nào?**
-A. Một trung tâm dữ liệu duy nhất tại Mỹ.
-B. Một mạng lưới các Regions và Edge Locations trải dài khắp thế giới.
-C. Sử dụng đường truyền dây cáp quang của bưu điện.
+A. Một mạng lưới các Regions và Edge Locations trải dài khắp thế giới.
+B. Sử dụng đường truyền dây cáp quang của bưu điện.
+C. Một trung tâm dữ liệu duy nhất tại Mỹ.
 D. Thuê lại vệ tinh của NASA.
 
 **Câu 4: Lợi ích "Massive Economies of Scale" nghĩa là gì?**
-A. AWS sẽ tặng máy chủ miễn phí cho các công ty lớn.
-B. Càng nhiều người dùng Cloud, AWS càng tối ưu được chi phí vận hành và giảm giá thuê cho mọi người.
-C. Bạn phải mua thật nhiều dịch vụ thì mới được giảm giá.
-D. AWS chỉ dành cho các tập đoàn đa quốc gia.
+A. AWS chỉ dành cho các tập đoàn đa quốc gia.
+B. AWS sẽ tặng máy chủ miễn phí cho các công ty lớn.
+C. Càng nhiều người dùng Cloud, AWS càng tối ưu được chi phí vận hành và giảm giá thuê cho mọi người.
+D. Bạn phải mua thật nhiều dịch vụ thì mới được giảm giá.
 
 **Câu 5: Tại sao việc sử dụng Cloud giúp doanh nghiệp "Stop guessing capacity"?**
-A. Vì Cloud có trí tuệ nhân tạo dự đoán tương lai chính xác 100%.
-B. Vì bạn có thể tăng hoặc giảm tài nguyên ngay lập tức dựa trên nhu cầu thực tế, không cần mua dư thừa để dự phòng.
-C. Vì AWS cam kết không bao giờ hết tài nguyên.
-D. Vì các kỹ sư AWS sẽ làm thay công việc dự đoán cho bạn.
+A. Vì bạn có thể tăng hoặc giảm tài nguyên ngay lập tức dựa trên nhu cầu thực tế, không cần mua dư thừa để dự phòng.
+B. Vì các kỹ sư AWS sẽ làm thay công việc dự đoán cho bạn.
+C. Vì Cloud có trí tuệ nhân tạo dự đoán tương lai chính xác 100%.
+D. Vì AWS cam kết không bao giờ hết tài nguyên.
 
-**Đáp án:** 1-C, 2-C, 3-B, 4-B, 5-B.
+**Đáp án:** 1-A, 2-C, 3-A, 4-C, 5-A.
 
 ---
 

@@ -102,31 +102,28 @@ Kẻ thù có thể đến từ phía đối tác:
 ## 📝 6. QUICK QUIZ: 実踐・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Tại sao "Zero Trust" (Không tin cậy) lại được coi là tiêu chuẩn vàng trong an ninh mạng J1+?
-- A. Vì sếp không tin nhân viên.
+Tại sao "Zero Trust" (Không tin cậy) lại được coi là tiêu chuẩn vàng trong an ninh mạng J1+?- A. Vì sử dụng phần mềm mang tên Zero Trust.
 - B. Vì nó loại bỏ định kiến rằng mạng nội bộ là an toàn, buộc phải xác thực mọi truy cập bất kể nó đến từ đâu, giúp ngăn chặn các vụ tấn công từ bên trong.
-- C. Vì sử dụng phần mềm mang tên Zero Trust.
-- D. Vì làm việc không cần lòng tin.
+- C. Vì làm việc không cần lòng tin.
+- D. Vì sếp không tin nhân viên.
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Tư duy "Verify everything, trust no one".
 
 **第2問 (Câu 2):**
-Thuật ngữ "Social Engineering" (Tấn công bằng kỹ thuật xã hội) trong bảo mật J1+ cảnh báo điều gì?
-- A. Việc các kỹ sư đi làm từ thiện.
-- B. Các phương thức kẻ tấn công lừa đảo, thao túng tâm lý con người (như email giả mạo, gọi điện lừa đảo) để lấy mật khẩu thay vì đánh vào lỗ hổng kỹ thuật.
-- C. Việc xây dựng mạng xã hội cho công ty.
-- D. Một môn học về kỹ thuật trong xã hội.
+Thuật ngữ "Social Engineering" (Tấn công bằng kỹ thuật xã hội) trong bảo mật J1+ cảnh báo điều gì?- A. Một môn học về kỹ thuật trong xã hội.
+- B. Việc xây dựng mạng xã hội cho công ty.
+- C. Việc các kỹ sư đi làm từ thiện.
+- D. Các phương thức kẻ tấn công lừa đảo, thao túng tâm lý con người (như email giả mạo, gọi điện lừa đảo) để lấy mật khẩu thay vì đánh vào lỗ hổng kỹ thuật.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Hình thức tấn công nhắm vào mắt xích yếu nhất là con người.
+> - **正解：D**. Hình thức tấn công nhắm vào mắt xích yếu nhất là con người.
 
 **第3問 (Câu 15):**
-Vai trò của "Business Continuity Plan (BCP)" (Kế hoạch kinh doanh liên tục) trong an ninh mạng J1+ là gì?
-- A. Để công ty không bao giờ phải nghỉ lễ.
+Vai trò của "Business Continuity Plan (BCP)" (Kế hoạch kinh doanh liên tục) trong an ninh mạng J1+ là gì?- A. Để công ty không bao giờ phải nghỉ lễ.
 - B. Quy trình đảm bảo các chức năng kinh doanh thiết yếu có thể tiếp tục hoạt động hoặc phục hồi nhanh chóng sau khi bị tấn công mạng nghiêm trọng.
-- C. Việc bắt nhân viên làm thêm giờ.
-- D. Việc bán hàng trên internet.
+- C. Việc bán hàng trên internet.
+- D. Việc bắt nhân viên làm thêm giờ.
 
 > **解釈 (Giải thích):**
 > - **正解：B**. Khả năng chống chịu và hồi phục (**Resilience**).

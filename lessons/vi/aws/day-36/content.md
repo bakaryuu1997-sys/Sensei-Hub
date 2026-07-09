@@ -63,24 +63,24 @@ Chuẩn bị cho thảm họa (Disaster Recovery) giống như bảo vệ tài l
 # 📝 QUICK QUIZ
 
 **Câu 1: RPO tập trung vào khía cạnh nào?**
-A. Tốc độ phục hồi
-B. Lượng dữ liệu có thể bị mất
-C. Giá tiền
-D. Bảo mật
+A. Bảo mật
+B. Giá tiền
+C. Lượng dữ liệu có thể bị mất
+D. Tốc độ phục hồi
 
 **Câu 2: (Cập nhật 2026) Amazon Q giúp gì trong Disaster Recovery?**
-A. Chỉ gửi Email cảnh báo
-B. Tự động lập kế hoạch, dự báo ảnh hưởng và ưu tiên phục hồi Service theo doanh thu
+A. Tự động lập kế hoạch, dự báo ảnh hưởng và ưu tiên phục hồi Service theo doanh thu
+B. Chỉ gửi Email cảnh báo
 C. Thay thế hoàn toàn nhân viên kỹ thuật
 D. Làm máy tính mát hơn
 
 **Câu 3: Chiến lược DR nào đắt nhất và nhanh nhất?**
-A. Backup & Restore
+A. Multi-Site Active-Active
 B. Pilot Light
-C. Multi-Site Active-Active
+C. Backup & Restore
 D. Warm Standby
 
-**Đáp án:** 1-B, 2-B, 3-C.
+**Đáp án:** 1-C, 2-A, 3-B.
 
 ---
 

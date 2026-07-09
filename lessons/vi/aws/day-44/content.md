@@ -66,22 +66,22 @@ Sự kết hợp này giúp rút ngắn thời gian huấn luyện từ hàng th
 **Câu 1: Giao thức nào giúp EFA giảm độ trễ bằng cách đọc/ghi trực tiếp vào RAM của Node khác?**
 A. HTTP
 B. RDMA
-C. FTP
-D. SMTP
+C. SMTP
+D. FTP
 
 **Câu 2: (Cập nhật 2026) SageMaker HyperPod 2.0 có tính năng gì nổi bật?**
-A. Tự động sửa code Python
+A. Miễn phí tiền điện
 B. Tự phục hồi khi có GPU hỏng trong quá trình huấn luyện quy mô lớn
-C. Làm server chạy êm hơn
-D. Miễn phí tiền điện
+C. Tự động sửa code Python
+D. Làm server chạy êm hơn
 
 **Câu 3: Hệ thống File nào phù hợp nhất cho băng thông cực lớn trong HPC?**
-A. EFS
-B. Amazon FSx for Lustre
-C. S3 Standard
-D. EBS Magnetic
+A. EBS Magnetic
+B. S3 Standard
+C. Amazon FSx for Lustre
+D. EFS
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-B, 2-B, 3-C.
 
 ---
 

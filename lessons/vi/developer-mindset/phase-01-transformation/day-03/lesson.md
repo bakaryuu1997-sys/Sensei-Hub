@@ -96,23 +96,23 @@ Não bộ chiếm 20% năng lượng cơ thể.
 
 1. **Neural Plasticity là gì?**
     - A. Khả năng thay đổi hình dạng hộp sọ.
-    - B. Khả năng não bộ tự thay đổi cấu trúc và chức năng dựa trên trải nghiệm và luyện tập.
+    - B. Sự lão hóa của não bộ.
     - C. Một loại chất nhựa trong não.
-    - D. Sự lão hóa của não bộ.
+    - D. Khả năng não bộ tự thay đổi cấu trúc và chức năng dựa trên trải nghiệm và luyện tập.
 
 2. **Tại sao việc luyện tập lặp đi lặp lại lại quan trọng?**
-    - A. Để cho vui.
-    - B. Để làm dày lớp vỏ Myelin, giúp tín hiệu truyền đi nhanh hơn và chính xác hơn (từ cáp đồng lên cáp quang).
+    - A. Để làm dày lớp vỏ Myelin, giúp tín hiệu truyền đi nhanh hơn và chính xác hơn (từ cáp đồng lên cáp quang).
+    - B. Để giết thời gian.
     - C. Để ghi nhớ thông tin tốt hơn.
-    - D. Để giết thời gian.
+    - D. Để cho vui.
 
 3. **"Neurons that fire together, wire together" có nghĩa là gì?**
-    - A. Các tế bào não sẽ bốc cháy khi ta suy nghĩ.
-    - B. Suy nghĩ càng nhiều thì não càng nóng.
-    - C. Khi chúng ta thực hiện một hành động đi kèm một cảm xúc nhiều lần, não sẽ tạo ra một liên kết tự động giữa chúng.
-    - D. Não bộ là một mạng lưới điện.
+    - A. Khi chúng ta thực hiện một hành động đi kèm một cảm xúc nhiều lần, não sẽ tạo ra một liên kết tự động giữa chúng.
+    - B. Não bộ là một mạng lưới điện.
+    - C. Các tế bào não sẽ bốc cháy khi ta suy nghĩ.
+    - D. Suy nghĩ càng nhiều thì não càng nóng.
 
-*(Đáp án đúng: 1-B, 2-B, 3-C)*
+*(Đáp án đúng: 1-D, 2-A, 3-D)*
 
 ---
 **Lời nhắn từ Architect**: Đừng nản lòng nếu ngày đầu tiên bạn thấy khó khăn. Đó chỉ là vì bạn đang đi vào bụi rậm. Hãy cầm chắc mỏ hàn, chúng ta sẽ tiếp tục "Code" lại cuộc đời vào ngày mai với bài học về **Dopamine Detox**! ⚔️💎

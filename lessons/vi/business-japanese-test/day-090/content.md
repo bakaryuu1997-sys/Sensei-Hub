@@ -108,34 +108,31 @@ Di sản không phải là một bức tượng:
 ## 📝 6. QUICK QUIZ: 実踐・最終・極限試練 (The Zenith Final Test)
 
 **第1問 (Câu 1):**
-Triết lý **「不易流行 (Fueki Ryuko)」** đóng vai trò gì trong việc xây dựng một doanh nghiệp trường tồn?
-- A. Giúp công ty luôn luôn đứng yên để giữ gìn bản sắc.
-- B. Giúp doanh nghiệp xác định được cái gì là "Cốt lõi hằng sản" (Lý niệm) để kiên trì bảo vệ, đồng thời dũng cảm thay đổi những "Hình thức phù hoa" (Công nghệ, quy trình) để luôn dẫn đầu thời đại.
-- C. Là việc thuê các nhà thơ Basho về làm việc.
-- D. Giúp công ty thay đổi mọi thứ mỗi ngày.
+Triết lý **「不易流行 (Fueki Ryuko)」** đóng vai trò gì trong việc xây dựng một doanh nghiệp trường tồn?- A. Là việc thuê các nhà thơ Basho về làm việc.
+- B. Giúp công ty thay đổi mọi thứ mỗi ngày.
+- C. Giúp doanh nghiệp xác định được cái gì là "Cốt lõi hằng sản" (Lý niệm) để kiên trì bảo vệ, đồng thời dũng cảm thay đổi những "Hình thức phù hoa" (Công nghệ, quy trình) để luôn dẫn đầu thời đại.
+- D. Giúp công ty luôn luôn đứng yên để giữ gìn bản sắc.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Stability in values, agility in execution.
+> - **正解：C**. Stability in values, agility in execution.
 
 **第2問 (Câu 2):**
-"Succession Planning" (Kế hoạch kế nhiệm) đẳng cấp J1 Mastery tập trung vào điều gì nhất?
-- A. Việc chọn một người thân trong gia đình.
-- B. Việc tuyển chọn và đào tạo những người có khả năng thấu hiểu và phát huy triết lý tổ chức, đồng thời có tư duy độc lập để dẫn dắt công ty vượt qua những thách thức mới của tương lai.
-- C. Việc chuẩn bị một bữa tiệc chia tay thật lớn.
-- D. Việc bán toàn bộ cổ phiếu trước khi nghỉ hưu.
+"Succession Planning" (Kế hoạch kế nhiệm) đẳng cấp J1 Mastery tập trung vào điều gì nhất?- A. Việc tuyển chọn và đào tạo những người có khả năng thấu hiểu và phát huy triết lý tổ chức, đồng thời có tư duy độc lập để dẫn dắt công ty vượt qua những thách thức mới của tương lai.
+- B. Việc bán toàn bộ cổ phiếu trước khi nghỉ hưu.
+- C. Việc chọn một người thân trong gia đình.
+- D. Việc chuẩn bị một bữa tiệc chia tay thật lớn.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Sustaining the soul of the organization through the next generation.
+> - **正解：A**. Sustaining the soul of the organization through the next generation.
 
 **第3問 (Câu 3):**
-Một nhà lãnh đạo Zenith (Đỉnh cao) sẽ nói gì trong ngày làm việc cuối cùng của mình tại công ty?
-- A. 「私が去った後、この会社はきっとダメになるだろう。」
-- B. 「私の仕事は、今日終わるのではなく、 100 年後にこの会社がどうなっているかによって評価されます。皆の中に生き続ける『私たちの志』を信じています。さあ、未来へ進みましょう。」
-- C. 「もう疲れました。何も聞かないでください。」
-- D. 「私の名前の像を正面玄関に建ててください。」
+Một nhà lãnh đạo Zenith (Đỉnh cao) sẽ nói gì trong ngày làm việc cuối cùng của mình tại công ty?- A. 「私の仕事は、今日終わるのではなく、 100 年後にこの会社がどうなっているかによって評価されます。皆の中に生き続ける『私たちの志』を信じています。さあ、未来へ進みましょう。」
+- B. 「私の名前の像を正面玄関に建ててください。」
+- C. 「私が去った後、この会社はきっとダメになるだろう。」
+- D. 「もう疲れました。何も聞かないでください。」
 
 > **解釈 (Giải thích):**
-> - **正解：B**. The ultimate sign of legacy is believing in the future you built but will not inhabit.
+> - **正解：A**. The ultimate sign of legacy is believing in the future you built but will not inhabit.
 
 ---
 

@@ -71,24 +71,24 @@ Năm 2026, tôi dùng **Zero-ETL** để dữ liệu luôn sẵn sàng trong Red
 # 📝 QUICK QUIZ
 
 **Câu 1: Dịch vụ nào quản lý quyền truy cập dữ liệu đến từng Cột (Column) và Dòng (Row)?**
-A. IAM
-B. Lake Formation
-C. VPC
-D. S3 Bucket Policy
+A. VPC
+B. IAM
+C. S3 Bucket Policy
+D. Lake Formation
 
 **Câu 2: (Cập nhật 2026) Amazon Q giúp gì trong việc phân tích dữ liệu?**
-A. Tự động trả lương nhân viên
-B. Cho phép truy vấn dữ liệu bằng ngôn ngữ tự nhiên thay vì viết SQL
-C. Làm server chạy mát hơn
-D. Tự động xóa dữ liệu cũ
+A. Tự động xóa dữ liệu cũ
+B. Làm server chạy mát hơn
+C. Cho phép truy vấn dữ liệu bằng ngôn ngữ tự nhiên thay vì viết SQL
+D. Tự động trả lương nhân viên
 
 **Câu 3: Tại sao nên chuyển dữ liệu sang định dạng Parquet?**
-A. Để file có tên đẹp hơn
-B. Để giảm lượng dữ liệu cần quét, từ đó tăng tốc độ và giảm 90% chi phí truy vấn
+A. Để giảm lượng dữ liệu cần quét, từ đó tăng tốc độ và giảm 90% chi phí truy vấn
+B. Để file có tên đẹp hơn
 C. Để bảo mật hơn
 D. Để nén file thành file ZIP
 
-**Đáp án:** 1-B, 2-B, 3-B.
+**Đáp án:** 1-D, 2-C, 3-A.
 
 ---
 

@@ -62,24 +62,24 @@ Tôi có thể xác định lỗi trong vài phút thay vì hàng giờ mò mẫ
 # 📝 QUICK QUIZ
 
 **Câu 1: Dịch vụ nào giúp theo dõi hành trình (Tracing) của Request?**
-A. S3
-B. AWS X-Ray
-C. IAM
-D. VPC
+A. AWS X-Ray
+B. VPC
+C. S3
+D. IAM
 
 **Câu 2: (Cập nhật 2026) Amazon Q giúp gì trong Observability?**
-A. Tự động tìm nguyên nhân gốc rễ (RCA) từ câu hỏi ngôn ngữ tự nhiên
-B. Viết hộ Email cho sếp
-C. Tăng tốc độ Internet
-D. Làm mát Server
+A. Tăng tốc độ Internet
+B. Làm mát Server
+C. Tự động tìm nguyên nhân gốc rễ (RCA) từ câu hỏi ngôn ngữ tự nhiên
+D. Viết hộ Email cho sếp
 
 **Câu 3: CloudWatch ServiceLens kết hợp những gì?**
 A. S3 + EC2
 B. Metrics + Logs + Traces
-C. IAM + CloudTrail
-D. VPC + Subnet
+C. VPC + Subnet
+D. IAM + CloudTrail
 
-**Đáp án:** 1-B, 2-A, 3-B.
+**Đáp án:** 1-A, 2-D, 3-B.
 
 ---
 

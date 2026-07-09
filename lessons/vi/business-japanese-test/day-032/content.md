@@ -92,18 +92,16 @@ XYZ株式会社の山田でございます。
 ## 📝 6. QUICK QUIZ: 実踐・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Bạn muốn từ chối một lời mời dự tiệc từ đối tác vì đã có lịch hẹn khác. Câu nào sau đây là "Elite" nhất?
-- A. その日は都合が悪いため、参加できません。
+Bạn muốn từ chối một lời mời dự tiệc từ đối tác vì đã có lịch hẹn khác. Câu nào sau đây là "Elite" nhất?- A. その日は都合が悪いため、参加できません。
 - B. せっかくのお誘いですが、先約がありまして今回は欠席いたします。
 - C. あいにく先約がございまして、今回は見送らせていただきたく存じます。
 - D. 他の予定が入っているので、またの機会にお願いします。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. **「あいにく」 [Khác]** thể hiện sự đáng tiếc một cách khách quan. **「見送らせていただく」 [Kiến Tống]** là cách từ chối lịch thiệp nhất, biến sự vắng mặt của bạn thành một hành động "tạm hoãn có cân nhắc".
+> - **正解：B**. **「あいにく」 [Khác]** thể hiện sự đáng tiếc một cách khách quan. **「見送らせていただく」 [Kiến Tống]** là cách từ chối lịch thiệp nhất, biến sự vắng mặt của bạn thành một hành động "tạm hoãn có cân nhắc".
 
 **第2問 (Câu 2):**
-Trong Email gửi cho khách hàng, khi muốn nói "Tôi đã nhận được tài liệu của quý khách", cách dùng nào thể hiện trình độ J1?
-- A. 資料をもらいました。
+Trong Email gửi cho khách hàng, khi muốn nói "Tôi đã nhận được tài liệu của quý khách", cách dùng nào thể hiện trình độ J1?- A. 資料をもらいました。
 - B. 資料を拝受いたしました。
 - C. 資料を受け取りました。
 - D. 資料をいただきました。
@@ -112,14 +110,13 @@ Trong Email gửi cho khách hàng, khi muốn nói "Tôi đã nhận được t
 > - **正解：B**. **「拝受する」 [Bái Thụ]** là từ vựng chuyên dụng cho văn bản Email cấp cao, trang trọng hơn hẳn **「いただく」**.
 
 **第3問 (Câu 3):**
-Khi gửi Email đính kèm file cho đối tác, bạn nên viết câu nào để nhắc họ kiểm tra?
-- A. ファイルを見てください。
-- B. ファイルを添付しました。
+Khi gửi Email đính kèm file cho đối tác, bạn nên viết câu nào để nhắc họ kiểm tra?- A. ファイルを添付しました。
+- B. 資料を送ったので、確認してください。
 - C. 資料を添付いたしましたので、ご査収ください。
-- D. 資料を送ったので、確認してください。
+- D. ファイルを見てください。
 
 > **解釈 (Giải thích):**
-> - **正解：C**. **「ご査収」 [Tra Thu]** (Mời ngài kiểm tra và thu nhận) là cụm từ bắt buộc trong Email đính kèm tài liệu của BJT.
+> - **正解：A**. **「ご査収」 [Tra Thu]** (Mời ngài kiểm tra và thu nhận) là cụm từ bắt buộc trong Email đính kèm tài liệu của BJT.
 
 ---
 

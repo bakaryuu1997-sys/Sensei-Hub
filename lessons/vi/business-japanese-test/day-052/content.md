@@ -99,34 +99,31 @@ Làm thế nào để đòi tiền bản quyền cao mà khách vẫn vui?
 ## 📝 6. QUICK QUIZ: 実踐・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Khi bạn muốn nhấn mạnh rằng bí mật công nghệ của bạn phải được bảo vệ tuyệt đối trong quá trình hợp tác, cụm từ nào là J1+?
-- A. 他の人には言わないでください。
+Khi bạn muốn nhấn mạnh rằng bí mật công nghệ của bạn phải được bảo vệ tuyệt đối trong quá trình hợp tác, cụm từ nào là J1+?- A. 誰にも見せないで。
 - B. 本技術は弊社の「競争力の源泉」であり, 徹底した「情報管理」をお願いしたく存じます。
 - C. 秘密を守りましょう。
-- D. 誰にも見せないで。
+- D. 他の人には言わないでください。
 
 > **解釈 (Giải thích):**
 > - **正解：B**. **「競争力の源泉」 [Cạnh Tranh Lực - Nguyên Tuyên]** (Nguồn gốc của sức cạnh tranh) là cách định nghĩa giá trị công nghệ cao cấp nhất.
 
 **第2問 (Câu 2):**
-"Royalty" (ロイヤリティ) trong kinh doanh kỹ thuật là gì?
-- A. Sự trung thành của nhân viên.
-- B. Tiền phí trả cho việc sử dụng quyền sở hữu trí tuệ, bằng sáng chế hoặc nhãn hiệu.
+"Royalty" (ロイヤリティ) trong kinh doanh kỹ thuật là gì?- A. Sự trung thành của nhân viên.
+- B. Một loại thuế của chính phủ.
 - C. Việc công ty tổ chức kỷ niệm.
-- D. Một loại thuế của chính phủ.
+- D. Tiền phí trả cho việc sử dụng quyền sở hữu trí tuệ, bằng sáng chế hoặc nhãn hiệu.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Đây là nguồn thu nhập thụ động quý giá nhất của một công ty công nghệ.
+> - **正解：D**. Đây là nguồn thu nhập thụ động quý giá nhất của một công ty công nghệ.
 
 **第3問 (Câu 3):**
-Cụm từ "Open Innovation" (オープン・イノベーション) thực sự có ý nghĩa gì đối với một J1+?
-- A. Việc cho mọi người vào thăm quan nhà máy miễn phí.
-- B. Việc kết hợp nguồn lực bên ngoài (đối tác, trường đại học) để đẩy nhanh tốc độ đổi mới sáng tạo, thay vì tự mình làm hết.
+Cụm từ "Open Innovation" (オープン・イノベーション) thực sự có ý nghĩa gì đối với một J1+?- A. Việc công ty công khai hết bí mật cho đối thủ.
+- B. Việc cho mọi người vào thăm quan nhà máy miễn phí.
 - C. Việc công ty chuyển sang văn phòng có không gian mở.
-- D. Việc công ty công khai hết bí mật cho đối thủ.
+- D. Việc kết hợp nguồn lực bên ngoài (đối tác, trường đại học) để đẩy nhanh tốc độ đổi mới sáng tạo, thay vì tự mình làm hết.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Một xu hướng quản trị hiện đại nhưng cần đi kèm với sự tỉnh táo về IP.
+> - **正解：D**. Một xu hướng quản trị hiện đại nhưng cần đi kèm với sự tỉnh táo về IP.
 
 ---
 

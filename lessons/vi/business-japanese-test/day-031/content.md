@@ -91,31 +91,28 @@ Trong tình huống bận rộn hoặc khi gặp nhiều người cùng lúc:
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Bạn đang dẫn khách đi bộ trên hành lang. Vị trí đi bộ nào sau đây là đúng quy tắc ứng đối đối ngoại?
-- A. Đi trước khách khoảng 2-3 bước, hơi chếch về bên trái.
-- B. Đi song song sát cạnh khách để dễ trò chuyện.
-- C. Đi phía sau khách để đảm bảo an toàn cho khách.
-- D. Đi trước khách khoảng 5 bước để mở cửa sẵn.
+Bạn đang dẫn khách đi bộ trên hành lang. Vị trí đi bộ nào sau đây là đúng quy tắc ứng đối đối ngoại?- A. Đi phía sau khách để đảm bảo an toàn cho khách.
+- B. Đi trước khách khoảng 5 bước để mở cửa sẵn.
+- C. Đi song song sát cạnh khách để dễ trò chuyện.
+- D. Đi trước khách khoảng 2-3 bước, hơi chếch về bên trái.
 
 > **解釈 (Giải thích):**
-> - **正解：A**. Đi trước dẫn đường (**案内 [Án Nội]**) là chuẩn mực. Khoảng cách 2-3 bước là vừa đủ để khách không cảm thấy bị bỏ rơi nhưng cũng không bị áp lực không gian. Việc đi chếch giúp bạn dễ dàng quay lại quan sát và hướng dẫn khách.
+> - **正解：C**. Đi trước dẫn đường (**案内 [Án Nội]**) là chuẩn mực. Khoảng cách 2-3 bước là vừa đủ để khách không cảm thấy bị bỏ rơi nhưng cũng không bị áp lực không gian. Việc đi chếch giúp bạn dễ dàng quay lại quan sát và hướng dẫn khách.
 
 **第2問 (Câu 2):**
-Khi đối phương trao danh thiếp cho bạn trước, nhưng bạn chưa kịp chuẩn bị danh thiếp của mình, bạn nên làm gì để giữ phong thái Elite?
-- A. 「すみません、名刺を忘れてしまいました」
-- B. 「名刺を切らしておりまして、申し訳ございません。後ほどお送りいたします」
-- C. 「後で渡しますので、先にお受け取りください」
-- D. Lẳng lặng nhận danh thiếp của họ và không nói gì.
+Khi đối phương trao danh thiếp cho bạn trước, nhưng bạn chưa kịp chuẩn bị danh thiếp của mình, bạn nên làm gì để giữ phong thái Elite?- A. 「すみません、名刺を忘れてしまいました」
+- B. Lẳng lặng nhận danh thiếp của họ và không nói gì.
+- C. 「名刺を切らしておりまして、申し訳ございません。後ほどお送りいたします」
+- D. 「後で渡しますので、先にお受け取りください」
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Cụm từ **「名刺を切らす」 [Thiết]** (hết danh thiếp giữa chừng) là cách nói giảm nhẹ, thể hiện bạn là người bận rộn và được nhiều người quan tâm, tránh dùng từ "Quên" (**忘れる**) vì nó thể hiện sự thiếu chuyên nghiệp (Careless).
+> - **正解：C**. Cụm từ **「名刺を切らす」 [Thiết]** (hết danh thiếp giữa chừng) là cách nói giảm nhẹ, thể hiện bạn là người bận rộn và được nhiều người quan tâm, tránh dùng từ "Quên" (**忘れる**) vì nó thể hiện sự thiếu chuyên nghiệp (Careless).
 
 **第3問 (Câu 3):**
-Trong một phòng họp có 4 ghế bố trí quanh 1 bàn dài, cửa ra vào nằm ở góc dưới bên trái. Phía sau hàng ghế đối diện cửa là một bức tranh phong cảnh đẹp (**床の間 [Sàng Gian]**). Vị trí nào là dành cho trưởng đoàn đối tác?
-- A. Ghế gần cửa nhất.
-- B. Ghế ở giữa.
-- C. Ghế xa cửa nhất, phía có bức tranh.
-- D. Tùy ý khách chọn.
+Trong một phòng họp có 4 ghế bố trí quanh 1 bàn dài, cửa ra vào nằm ở góc dưới bên trái. Phía sau hàng ghế đối diện cửa là một bức tranh phong cảnh đẹp (**床の間 [Sàng Gian]**). Vị trí nào là dành cho trưởng đoàn đối tác?- A. Ghế xa cửa nhất, phía có bức tranh.
+- B. Tùy ý khách chọn.
+- C. Ghế ở giữa.
+- D. Ghế gần cửa nhất.
 
 > **解釈 (Giải thích):**
 > - **正解：C**. Quy tắc vàng: Xa cửa + Phía có cảnh trang trí (Tokonoma) luôn là vị trí tôn quý nhất tôn vinh khách.

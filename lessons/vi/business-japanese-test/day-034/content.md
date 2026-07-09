@@ -97,34 +97,31 @@ Người Nhật cực kỳ sùng bái con số. Thay vì nói **「大幅に改�
 ## 📝 6. QUICK QUIZ: 実践・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-Trong một bài thuyết trình, khi bạn muốn chuyển sang phần tiếp theo sau khi đã kết thúc một mục, câu nào là "Elite" nhất?
-- A. 次の話に行きます。
-- B. 以上で第1部を終わります。次は...
-- C. 第1部につきましては、以上でございます。続きまして、第2部のご説明に移らせていただきます。
+Trong một bài thuyết trình, khi bạn muốn chuyển sang phần tiếp theo sau khi đã kết thúc một mục, câu nào là "Elite" nhất?- A. 第1部につきましては、以上でございます。続きまして、第2部のご説明に移らせていただきます。
+- B. 次の話に行きます。
+- C. 以上で第1部を終わります。次は...
 - D. 1番は終わりです。2番に目を向けてください。
 
 > **解釈 (Giải thích):**
 > - **正解：C**. Sự kết hợp giữa **「につきましては」** và **「移らせていただきます」** tạo nên một sự chuyển đoạn mượt mà và vô cùng chuyên nghiệp.
 
 **第2問 (Câu 2):**
-Khi khách hàng đặt một câu hỏi mà bạn không biết câu trả lời chính xác ngay lúc đó, bạn nên xử lý thế nào theo phong cách J1+?
-- A. 「分かりません。後で調べます」
-- B. 「その点に関しては、現在確認中でございますので、改めて本日中に回答させていただきます」
+Khi khách hàng đặt một câu hỏi mà bạn không biết câu trả lời chính xác ngay lúc đó, bạn nên xử lý thế nào theo phong cách J1+?- A. 「分かりません。後で調べます」
+- B. 「それは私の担当外ですので、担当者に聞いてください」
 - C. 「たぶん、〇〇だと思います」
-- D. 「それは私の担当外ですので、担当者に聞いてください」
+- D. 「その点に関しては、現在確認中でございますので、改めて本日中に回答させていただきます」
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Tuyệt đối không đoán (**たぶん**). Hãy xin phép xác nhận (**確認中**) và đưa ra **Thời hạn cụ thể** (Hôm nay/Trong tuần) để khách hàng an tâm.
+> - **正解：D**. Tuyệt đối không đoán (**たぶん**). Hãy xin phép xác nhận (**確認中**) và đưa ra **Thời hạn cụ thể** (Hôm nay/Trong tuần) để khách hàng an tâm.
 
 **第3問 (Câu 3):**
-Trong cấu trúc PREP, chữ "E" (Example/Evidence) quan trọng nhất ở điểm nào?
-- A. Càng nhiều ví dụ càng tốt.
+Trong cấu trúc PREP, chữ "E" (Example/Evidence) quan trọng nhất ở điểm nào?- A. Càng nhiều ví dụ càng tốt.
 - B. Phải là ví dụ vui vẻ.
 - C. Phải có tính định lượng (con số) và nguồn tin cậy.
 - D. Phải kể chuyện thật dài.
 
 > **解釈 (Giải thích):**
-> - **正解：C**. Trong BJT, "Evidence" là vũ khí sắc bén nhất để củng cố "Point". Thiếu con số, thuyết trình chỉ là chùm lời nói sáo rỗng.
+> - **正解：B**. Trong BJT, "Evidence" là vũ khí sắc bén nhất để củng cố "Point". Thiếu con số, thuyết trình chỉ là chùm lời nói sáo rỗng.
 
 ---
 

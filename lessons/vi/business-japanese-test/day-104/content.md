@@ -94,34 +94,31 @@ BJT thường cho một định nghĩa cụ thể cho một thuật ngữ trong 
 ## 📝 6. QUICK QUIZ: 規定・公告・精鋭チャレンジ
 
 **第1問 (Câu 1):**
-「本件について、各位 [Các Vị] ご承知おきください」という一文。この「各位」は誰を指す？
-- A. Chỉ cấp trên.
+「本件について、各位 [Các Vị] ご承知おきください」という一文。この「各位」は誰を指す？- A. Khách hàng bên ngoài.
 - B. Chỉ cấp dưới.
-- C. Tất cả những người có liên quan (mọi người).
-- D. Khách hàng bên ngoài.
+- C. Chỉ cấp trên.
+- D. Tất cả những người có liên quan (mọi người).
 
 > **解釈 (Giải thích):**
-> - **正解：C**. **「各位」** là cách gọi trân trọng dành cho một tập thể, mang nghĩa "Gửi tất cả các vị/mọi người".
+> - **正解：B**. **「各位」** là cách gọi trân trọng dành cho một tập thể, mang nghĩa "Gửi tất cả các vị/mọi người".
 
 **第2問 (Câu 2):**
-「～は、速やかに [Tốc] 届け出る [Giới - Xuất] こと。」 Ý nghĩa của 「速やかに」 ở đây là gì?
-- A. Làm ngay lập tức, không được chậm trễ một giây nào.
-- B. Làm càng sớm càng tốt (trong phạm vi hợp lý).
-- C. Tuần sau làm cũng được.
-- D. Khi nào nhớ thì làm.
+「～は、速やかに [Tốc] 届け出る [Giới - Xuất] こと。」 Ý nghĩa của 「速やかに」 ở đây là gì?- A. Tuần sau làm cũng được.
+- B. Khi nào nhớ thì làm.
+- C. Làm càng sớm càng tốt (trong phạm vi hợp lý).
+- D. Làm ngay lập tức, không được chậm trễ một giây nào.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Trong ngôn ngữ pháp lý và quy định Nhật Bản, **「速やかに」** yêu cầu thực hiện sớm nhưng có sự linh hoạt hơn so với **「直ちに」 [Trực]** (ngay lập tức). Tuy nhiên, trong BJT, nó vẫn là một yêu cầu về tính thời điểm cao.
+> - **正解：C**. Trong ngôn ngữ pháp lý và quy định Nhật Bản, **「速やかに」** yêu cầu thực hiện sớm nhưng có sự linh hoạt hơn so với **「直ちに」 [Trực]** (ngay lập tức). Tuy nhiên, trong BJT, nó vẫn là một yêu cầu về tính thời điểm cao.
 
 **第3問 (Câu 3):**
-「～については、別に [Biệt] 定める [Định] ところによる」という表現の意味は？
-- A. Việc đó đã được quyết định xong.
-- B. Việc đó sẽ được quy định cụ thể ở một văn bản khác/phần khác.
-- C. Việc đó không quan trọng.
+「～については、別に [Biệt] 定める [Định] ところによる」という表現の意味は？- A. Việc đó đã được quyết định xong.
+- B. Việc đó không quan trọng.
+- C. Việc đó sẽ được quy định cụ thể ở một văn bản khác/phần khác.
 - D. Mọi người tự quyết định.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Đây là cụm từ Elite để dẫn chiếu sang một quy định khác. Đừng mất công tìm câu trả lời trong đoạn văn hiện tại nếu gặp cụm từ này.
+> - **正解：C**. Đây là cụm từ Elite để dẫn chiếu sang một quy định khác. Đừng mất công tìm câu trả lời trong đoạn văn hiện tại nếu gặp cụm từ này.
 
 ---
 

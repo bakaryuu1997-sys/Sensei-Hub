@@ -109,24 +109,24 @@ V là một tech-lead giỏi về code nhưng cực kỳ chán khi thuyết trì
 # 🎯 7. QUICK QUIZ: Gói Tin Story Của Bạn Có Bị "Corruption"?
 
 1. **Tại sao bộ não lại nhớ câu chuyện tốt hơn số liệu?**
-    - A. Vì câu chuyện ngắn hơn.
+    - A. Không có lý do cụ thể.
     - B. Vì câu chuyện kích hoạt nhiều vùng não cùng lúc (Thị giác, Cảm xúc) và tạo ra sự cộng hưởng thần kinh (Neural Coupling).
     - C. Vì con người lười suy nghĩ logic.
-    - D. Không có lý do cụ thể.
+    - D. Vì câu chuyện ngắn hơn.
 
 2. **Cấu trúc "The Hook" ở đầu câu chuyện có tác dụng gì?**
-    - A. Để giới thiệu tên bạn.
-    - B. Để tạo ra sự tò mò và chiếm dụng tài nguyên chú ý của đối phương ngay lập tức, ngăn chặn lỗi "Connection Timeout".
+    - A. Để khoe khoang.
+    - B. Để giới thiệu tên bạn.
     - C. Để làm câu chuyện dài ra.
-    - D. Để khoe khoang.
+    - D. Để tạo ra sự tò mò và chiếm dụng tài nguyên chú ý của đối phương ngay lập tức, ngăn chặn lỗi "Connection Timeout".
 
 3. **"Sensory Data" (Dữ liệu giác quan) là gì trong kể chuyện?**
-    - A. Các số liệu thống kê.
-    - B. Mô tả những gì bạn thấy, nghe, ngửi, chạm và cảm nhận thực tế thay vì chỉ nói các khái niệm trừu tượng.
-    - C. Các từ ngữ chuyên môn.
-    - D. Những câu chuyện bịa đặt.
+    - A. Mô tả những gì bạn thấy, nghe, ngửi, chạm và cảm nhận thực tế thay vì chỉ nói các khái niệm trừu tượng.
+    - B. Các số liệu thống kê.
+    - C. Những câu chuyện bịa đặt.
+    - D. Các từ ngữ chuyên môn.
 
-*(Đáp án đúng: 1-B, 2-B, 3-B)*
+*(Đáp án đúng: 1-B, 2-D, 3-A)*
 
 ---
 **Lời nhắn từ Architect**: Chúc mừng bạn đã hoàn thành Phase 2 - **Social API Design**! Bạn đã sở hữu bộ công cụ giao tiếp mạnh mẽ nhất. Ngày mai, chúng ta sẽ thực hiện cuộc **Review Tổng Thể Giao Thức** trước khi bước sang Phase 3: **Networking & Influence**. Hãy chuẩn bị tinh thần để "Scaling" hệ thống của bạn ra toàn thế giới! ⚔️💎

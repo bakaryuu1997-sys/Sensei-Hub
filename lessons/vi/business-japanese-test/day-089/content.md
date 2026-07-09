@@ -107,34 +107,31 @@ Cuộc chơi về năng lượng:
 ## 📝 6. QUICK QUIZ: 実踐・最終試練 (ESG & Ethical Leadership Test)
 
 **第1問 (Câu 1):**
-Cụm từ **「グリーンウォッシュ (Greenwash)」** ám chỉ điều gì trong quản trị hiện đại?
-- A. Việc sử dụng các chất tẩy rửa thân thiện với môi trường trong văn phòng.
-- B. Việc doanh nghiệp đưa ra những thông báo hoặc chiến dịch truyền thông gây hiểu lầm rằng sản phẩm hoặc hoạt động của mình là bảo vệ môi trường, trong khi thực tế không phải vậy hoặc chỉ làm ở mức độ rất nhỏ.
-- C. Việc sơn màu xanh lên các tòa nhà trụ sở.
+Cụm từ **「グリーンウォッシュ (Greenwash)」** ám chỉ điều gì trong quản trị hiện đại?- A. Việc doanh nghiệp đưa ra những thông báo hoặc chiến dịch truyền thông gây hiểu lầm rằng sản phẩm hoặc hoạt động của mình là bảo vệ môi trường, trong khi thực tế không phải vậy hoặc chỉ làm ở mức độ rất nhỏ.
+- B. Việc sơn màu xanh lên các tòa nhà trụ sở.
+- C. Việc sử dụng các chất tẩy rửa thân thiện với môi trường trong văn phòng.
 - D. Việc trồng cây quá nhiều dẫn đến thiếu đất xây dựng.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Deceptive environmental marketing.
+> - **正解：A**. Deceptive environmental marketing.
 
 **第2問 (Câu 2):**
-"Scope 3" trong báo cáo phát thải khí nhà kính quan trọng như thế nào đối với một nhà lãnh đạo J1 Mastery?
-- A. Nó không quan trọng vì nó nằm ngoài tầm kiểm soát của công ty.
-- B. Nó cực kỳ quan trọng vì nó bao gồm toàn bộ khí thải do chuỗi cung ứng và khách hàng sử dụng sản phẩm tạo ra. Việc kiểm soát Scope 3 thể hiện trách nhiệm toàn diện của doanh nghiệp đối với hành tinh.
-- C. Nó chỉ là một thuật ngữ kỹ thuật dành cho các kỹ sư.
-- D. Nó giúp công ty tiết kiệm tiền điện.
+"Scope 3" trong báo cáo phát thải khí nhà kính quan trọng như thế nào đối với một nhà lãnh đạo J1 Mastery?- A. Nó giúp công ty tiết kiệm tiền điện.
+- B. Nó chỉ là một thuật ngữ kỹ thuật dành cho các kỹ sư.
+- C. Nó không quan trọng vì nó nằm ngoài tầm kiểm soát của công ty.
+- D. Nó cực kỳ quan trọng vì nó bao gồm toàn bộ khí thải do chuỗi cung ứng và khách hàng sử dụng sản phẩm tạo ra. Việc kiểm soát Scope 3 thể hiện trách nhiệm toàn diện của doanh nghiệp đối với hành tinh.
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Supply chain accountability is the final frontier of ESG.
+> - **正解：D**. Supply chain accountability is the final frontier of ESG.
 
 **第3問 (Câu 3):**
-Một nhà lãnh đạo J1 Mastery sẽ làm gì khi phát hiện sự thiếu hụt nghiêm trọng về "Sự đa dạng" (Diversity) trong ban điều hành?
-- A. 「能力のある順に選んだ結果だ。多様性など二の次でいい。」
-- B. 「これは組織の『思考の硬直化』を招くリスクです。意図的に異質な背景を持つ人材を登用し、健全な葛藤（コンフリクト）を奨励することで、変化に強い組織へと変革（アップデート）していきます。」
-- C. 「形だけ女性や外国人を数人雇って、役職ではない部署に配置しよう。」
-- D. 「多様性の議論を禁止します。」
+Một nhà lãnh đạo J1 Mastery sẽ làm gì khi phát hiện sự thiếu hụt nghiêm trọng về "Sự đa dạng" (Diversity) trong ban điều hành?- A. 「これは組織の『思考の硬直化』を招くリスクです。意図的に異質な背景を持つ人材を登用し、健全な葛藤（コンフリクト）を奨励することで、変化に強い組織へと変革（アップデート）していきます。」
+- B. 「多様性の議論を禁止します。」
+- C. 「能力のある順に選んだ結果だ。多様性など二の次でいい。」
+- D. 「形だけ女性や外国人を数人雇って、役職ではない部署に配置しよう。」
 
 > **解釈 (Giải thích):**
-> - **正解：B**. Diversity as a strategic advantage, not a quota.
+> - **正解：A**. Diversity as a strategic advantage, not a quota.
 
 ---
 

@@ -111,24 +111,24 @@ Cuối ngày, hãy ghi lại 3 tương tác xã hội mà bạn đã thực hi�
 # 🎯 6. QUICK QUIZ: Kiểm Tra Trạng Thái Hệ Thống
 
 1. **Tại sao người hướng nội lại cảm thấy kiệt sức sau khi giao tiếp?**
-    - A. Vì họ không có kỹ năng.
-    - B. Vì họ chạy "Infinite Loop" của việc tự phân tích (Overthinking) tiêu tốn quá nhiều CPU.
-    - C. Vì họ ghét con người.
+    - A. Vì họ chạy "Infinite Loop" của việc tự phân tích (Overthinking) tiêu tốn quá nhiều CPU.
+    - B. Vì họ ghét con người.
+    - C. Vì họ không có kỹ năng.
     - D. Vì họ thiếu Vitamin.
 
 2. **Hành động "Ping Test" trong Action Plan có mục đích gì?**
-    - A. Để kết bạn với tất cả mọi người.
-    - B. Để tìm người yêu.
-    - C. Để chứng minh hệ thống giao tiếp vẫn có thể gửi đi tín hiệu mà không bị sập.
-    - D. Để khoe khoang.
+    - A. Để tìm người yêu.
+    - B. Để chứng minh hệ thống giao tiếp vẫn có thể gửi đi tín hiệu mà không bị sập.
+    - C. Để khoe khoang.
+    - D. Để kết bạn với tất cả mọi người.
 
 3. **Thuật toán "External Focus" giúp ích gì cho bộ não?**
-    - A. Giúp bạn nhìn rõ hơn.
-    - B. Giảm tải tài nguyên cho các suy nghĩ tiêu cực về bản thân bằng cách tập trung vào Input từ người khác.
+    - A. Giảm tải tài nguyên cho các suy nghĩ tiêu cực về bản thân bằng cách tập trung vào Input từ người khác.
+    - B. Không có tác dụng gì.
     - C. Làm bạn thông minh hơn.
-    - D. Không có tác dụng gì.
+    - D. Giúp bạn nhìn rõ hơn.
 
-*(Đáp án đúng: 1-B, 2-C, 3-B)* 
+*(Đáp án đúng: 1-A, 2-A, 3-A)* 
 
 ---
 **Lời nhắn từ Architect**: Bạn không bị hỏng. Bạn chỉ đang chạy một cấu hình cũ không còn phù hợp với môi trường hiện tại. Ngày mai, chúng ta sẽ học cách "Debug" những suy nghĩ tiêu cực. Hãy hoàn thành 5 cái "Ping" đầu tiên ngay hôm nay! ⚔️💎
