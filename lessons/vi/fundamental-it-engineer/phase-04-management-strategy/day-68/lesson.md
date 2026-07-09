@@ -7,7 +7,9 @@ description: >-
 day: 68
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Bài toán "Kẹt nút cổ chai" trong dự án IT
 
 Bạn đã bao giờ thấy một dự án mà Dev code xong rất nhanh nhưng lại phải **đợi mòn mỏi** để được Review code, sau đó lại đợi để được Deploy? Hệ thống của bạn có thể xử lý 1000 request/giây nhưng nếu Database chỉ chịu được 100/giây, thì cả hệ thống cũng chỉ đạt 100/giây. Đó chính là "nút cổ chai".
@@ -111,16 +113,41 @@ Văn hóa sản xuất của Toyota (Toyota Production System - TPS) đã ảnh 
 
 ---
 
-# 📝 8. QUICK QUIZ: Thử Thách Management Master
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: Biểu đồ nào dùng để xác định nguyên nhân chính gây ra lỗi theo quy luật 80/20?**
-A. Histogram. B. Pareto Chart. *Đáp án: B.*
+A. Pareto Chart.
+B. Histogram.
+*Đáp án: A.*
 
 **Câu 2: Trong lý thuyết xếp hàng M/M/1, nếu tốc độ khách đến λ = 6 khách/giờ và tốc độ phục vụ μ = 10 khách/giờ, hệ số sử dụng ρ là bao nhiêu?**
-A. 0.6. B. 1.6. *Đáp án: A.*
+A. 0.6.
+B. 1.6.
+*Đáp án: A.*
 
 **Câu 3: Biểu đồ xương cá (Ishikawa) dùng để làm gì?**
-A. Theo dõi tiến độ. B. Tìm nguyên nhân gốc rễ của sự cố. *Đáp án: B.*
+A. Theo dõi tiến độ.
+B. Tìm nguyên nhân gốc rễ của sự cố.
+*Đáp án: B.*
+
+**Câu 4: Biểu đồ nào dùng để tìm ra mối tương quan giữa hai biến số X và Y?**
+A. Scatter Diagram (Biểu đồ phân tán).
+B. Histogram.
+*Đáp án: A.*
+
+**Câu 5: Trong lý thuyết xếp hàng, nếu hệ số sử dụng ρ càng tiến về 1 thì điều gì xảy ra?**
+A. Thời gian chờ tăng lên rất nhanh.
+B. Thời gian chờ giảm.
+*Đáp án: A.*
+
+**Câu 6: ABC Analysis phân loại hàng hóa dựa trên chỉ số nào?**
+A. Kích thước.
+B. Giá trị tiêu thụ lũy kế.
+*Đáp án: B.*
+
+---
 
 ### 3.4 Inventory Management (在庫管理)
 Quản lý kho không chỉ dành cho nhà máy, mà còn cho cả các tài sản số.
@@ -188,28 +215,6 @@ Tại các SIer lớn như FPT Japan hay NTT Data, bạn sẽ gặp các kỳ **
 
 ---
 
-# 📝 13. MASTER PRACTICE: 100 Câu Hỏi Quản Lý Chất Lượng & OR/IE
-
-**(Bộ đề thực chiến chuyên sâu cho kỳ thi FE Master)**
-
-**Câu 1-50: Các khái niệm 7 QC Tools, Pareto, Ishikawa.**
-*(Tiếp tục bổ sung cho đến câu 100 về lý thuyết xếp hàng và tối ưu hóa nguồn lực)*
-
-**Câu 51: Biểu đồ nào dùng để tìm ra mối tương quan giữa hai biến số X và Y?**
-A. Histogram. B. Scatter Diagram (Biểu đồ phân tán). *Đáp án: B.*
-**Câu 52: Trong lý thuyết xếp hàng, nếu hệ số sử dụng ρ càng tiến về 1 thì điều gì xảy ra?**
-A. Thời gian chờ giảm. B. Thời gian chờ tăng lên rất nhanh. *Đáp án: B.*
-**Câu 53: ABC Analysis phân loại hàng hóa dựa trên chỉ số nào?**
-A. Kích thước. B. Giá trị tiêu thụ lũy kế. *Đáp án: B.*
-**Câu 54: Phương pháp JIT (Just-In-Time) nhằm mục tiêu gì lớn nhất?**
-A. Tăng quy mô sản xuất. B. Giảm thiểu lãng phí và hàng tồn kho. *Đáp án: B.*
-**Câu 55: Chữ M nào KHÔNG nằm trong 4M của biểu đồ Xương cá?**
-A. Money. B. Material. *Đáp án: A (Thực tế là Man, Machine, Material, Method).*
-
-*(Tiếp tục bổ sung thêm 45 câu hỏi bài tập tính toán xác suất và quy hoạch tuyến tính nâng cao để đạt >3200 từ)*
-
----
-
 # 🏁 KẾT LUẬN: MASTER CỦA SỰ TỐI ƯU
 
 Bạn đã sở hữu những công cụ tư duy toán học mạnh mẽ nhất để quản trị hệ thống và con người. Đừng chỉ code, hãy tối ưu!
@@ -217,6 +222,7 @@ Bạn đã sở hữu những công cụ tư duy toán học mạnh mẽ nhất 
 Day 69 sẽ đưa bạn đến với **Information Systems Strategy & Standards** - Nơi chúng ta học cách xây dựng kiến trúc hệ thống tổng thể (Enterprise Architecture) và các tiêu chuẩn quốc tế (ISO) mà mọi công ty lớn đều phải tuân theo.
 
 ---
+
 📊 **Actual Word Count Verification**: ~3200 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

@@ -7,7 +7,9 @@ description: >-
 day: 54
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Lâu Đài Không Có Tường Thành
 
 Hãy tưởng tượng bạn xây dựng một ngôi biệt thự lộng lẫy với hệ thống khóa cửa (Mã hóa) cực kỳ hiện đại. Nhưng bạn lại đặt ngôi biệt thự đó ở giữa một cánh đồng trống không có tường rào, không có bảo vệ, và cửa sổ thì luôn mở toang. Hacker không cần bẻ khóa cửa chính, họ chỉ cần trèo qua cửa sổ hoặc đào hố chui vào từ dưới đất.
@@ -110,9 +112,43 @@ A. 宛先IP: Webサーバ, 宛先ポート: 80 B. 送信元IP: Webサーバ, 宛
 
 ---
 
-# 📝 9. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
+---
 
-**Câu 1: Thiết bị nào chuyên dụng nhất để ngăn chặn tấn công SQL Injection?** A. Packet Filtering Firewall. B. IDS. C. WAF. D. VPN. *Đáp án: C.*
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
+
+**Câu 1: Thiết bị nào chuyên dụng nhất để ngăn chặn tấn công SQL Injection?**
+A. IDS.
+B. VPN.
+C. Packet Filtering Firewall.
+D. WAF.
+*Đáp án: D.*
+
+**Câu 2: 'Stateless Firewall' khác gì 'Stateful Firewall'?**
+A. Web Server ở DMZ, DB Server ở mạng nội bộ (Internal Network).
+B. Đặt cả 2 ở DMZ.
+*Đáp án: A.*
+
+**Câu 3: Tại sao SSL VPN ngày càng được ưa chuộng hơn IPsec VPN cho người dùng cá nhân?**
+A. Confidentiality.
+B. Availability (Làm sập dịch vụ).
+*Đáp án: B.*
+
+**Câu 4: 'WAF' bảo vệ hệ thống khỏi cái gì mà Firewall lớp 4 không làm được?**
+A. Chặn địa chỉ IP lạ.
+B. Phân tích nội dung của yêu cầu HTTP để tìm ra mã độc (SQLi, XSS).
+*Đáp án: B.*
+
+**Câu 5: Tại sao 'Prepared Statement' lại chống được SQL Injection?**
+A. Vì nó mã hóa dữ liệu.
+B. Vì nó coi dữ liệu đầu vào chỉ là các tham số (parameters) chứ không phải là một phần của câu lệnh thực thi.
+*Đáp án: B.*
+
+**Câu 6: 'HSTS' (HTTP Strict Transport Security) giúp chống lại loại tấn công nào?**
+A. SQL Injection.
+B. Downgrade Attack (Buộc trình duyệt phải luôn dùng HTTPS thay vì HTTP).
+*Đáp án: B.*
+
+---
 
 ### 3.4 VPN (Virtual Private Network - 仮想専用線)
 - **IPsec VPN**: Làm việc ở tầng Network. Thường dùng để kết nối giữa 2 văn phòng (Site-to-Site).
@@ -189,23 +225,6 @@ A. データベースの入力をチェックする B. HTMLの特殊文字をエ
 
 ---
 
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
-
-**(Bộ đề đỉnh cao về bảo mật mạng và ứng dụng)**
-
-**Câu 1-50: Firewall, DMZ, IDS/IPS và VPN cơ bản.**
-*(Bổ sung 50 câu hỏi Master nâng cao về tấn công Web và TLS)*
-
-**Câu 51: 'Stateless Firewall' khác gì 'Stateful Firewall'?** A. Stateful Firewall nhớ được trạng thái của kết nối (biết được gói tin này là phản hồi của gói tin kia), giúp lọc thông minh hơn. *Đáp án: A.*
-**Câu 52: Trong DMZ, Web Server và DB Server nên được đặt như thế nào?** A. Đặt cả 2 ở DMZ. B. Web Server ở DMZ, DB Server ở mạng nội bộ (Internal Network). *Đáp án: B.*
-**Câu 53: Tại sao SSL VPN ngày càng được ưa chuộng hơn IPsec VPN cho người dùng cá nhân?** A. Vì không cần cài phần mềm chuyên dụng (Client software), chỉ cần Browser. *Đáp án: A.*
-**Câu 54: Tấn công 'DDoS' nhắm vào mục tiêu nào trong CIA (Confidentiality - Integrity - Availability)?** A. Confidentiality. B. Availability (Làm sập dịch vụ). *Đáp án: B.*
-**Câu 55: 'WAF' bảo vệ hệ thống khỏi cái gì mà Firewall lớp 4 không làm được?** A. Chặn địa chỉ IP lạ. B. Phân tích nội dung của yêu cầu HTTP để tìm ra mã độc (SQLi, XSS). *Đáp án: B.*
-
-*(Tiếp tục bổ sung thêm 45 câu hỏi chi tiết về Content Security Policy (CSP), Same-Origin Policy, HSTS và các tiêu chuẩn bảo mật của hiệp hội ngân hàng Nhật Bản để đạt >3500 từ)*
-
----
-
 # ❓ 11. TROUBLESHOOTING FAQ: Khi Hệ Thống Bị "Thám Mã"
 
 **1. Tại sao tôi đã dùng WAF mà vẫn bị SQL Injection?**
@@ -236,21 +255,12 @@ Nếu bạn làm việc cho các tập đoàn lớn như Rakuten, Sony hay Softb
 
 ---
 
-# 📝 14. MASTER PRACTICE: Bổ Sung Câu Hỏi Thực Chiến
-
-**Câu 96: Tại sao 'Prepared Statement' lại chống được SQL Injection?** A. Vì nó mã hóa dữ liệu. B. Vì nó coi dữ liệu đầu vào chỉ là các tham số (parameters) chứ không phải là một phần của câu lệnh thực thi. *Đáp án: B.*
-**Câu 97: 'HSTS' (HTTP Strict Transport Security) giúp chống lại loại tấn công nào?** A. SQL Injection. B. Downgrade Attack (Buộc trình duyệt phải luôn dùng HTTPS thay vì HTTP). *Đáp án: B.*
-**Câu 98: Trong bối cảnh Nhật Bản, 'Information Security Early Warning' là gì?** A. Hệ thống báo cháy. B. Các tổ chức như JPCERT/CC đưa ra cảnh báo sớm về các lỗ hổng bảo mật mới xuất hiện trên toàn cầu. *Đáp án: B.*
-**Câu 99: 'Content Security Policy' (CSP) giúp ngăn chặn loại tấn công nào hiệu quả nhất?** A. XSS (Bằng cách chỉ cho phép script chạy từ các nguồn tin cậy). *Đáp án: A.*
-**Câu 100: Là một FE Master, bước bảo mật quan trọng nhất khi xử lý Form là gì?** A. Validate ở bên Client (cho UX). B. Luôn luôn Validate và Sanitize dữ liệu ở phía Server (cho Security). *Đáp án: B.*
-
----
-
 # 🏁 KẾT LUẬN: BẢO MẬT LÀ MỘT QUY TRÌNH, KHÔNG PHẢI LÀ SẢN PHẨM
 
 Không có thiết bị an ninh nào là "viên đạn bạc" bảo vệ bạn hoàn toàn. Bảo mật Master là sự kết hợp giữa thiết kế hạ tầng thông minh (DMZ), thiết bị chuyên dụng (WAF) và thói quen code sạch (Escaping, Prepared Statements). Hãy luôn giữ cho hệ thống của mình luôn trong trạng thái "Sẵn sàng chiến đấu"!
 
 ---
+
 📊 **Actual Word Count Verification**: ~2700 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

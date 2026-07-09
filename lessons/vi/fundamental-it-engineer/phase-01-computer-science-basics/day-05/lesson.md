@@ -7,7 +7,9 @@ description: >-
 day: 5
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Bóng Ma Trong Cỗ Máy - Sự Trỗi Dậy Của Von Neumann
 
 Năm 1945, giữa đống đổ nát của Thế chiến II, một báo cáo khoa học mang tên "First Draft of a Report on the EDVAC" đã thay đổi lịch sử nhân loại mãi mãi. Tác giả của nó, **John von Neumann**, đã đưa ra một ý tưởng điên rồ vào thời điểm đó: Thay vì xây dựng những cỗ máy khổng lồ chỉ làm được một việc (như máy giải mật mã Enigma), tại sao chúng ta không chế tạo một cỗ máy có thể thay đổi linh hồn (phần mềm) mà không cần chạm vào thân xác (phần cứng)?
@@ -159,79 +161,55 @@ D. マルチコアプロセッサ
 
 ---
 
-# 📝 8. QUICK QUIZ (Mở Rộng Cực Đại - Chuẩn FE)
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: コンピュータの基本構成要素である 「5 大装置」 に含まれないものはどれか？**
 A. 制御装置
 B. 入力装置
-C. 補助記憶装置
-D. 演算装置
-*Giải thích: Secondary Storage (Ổ cứng) là thiết bị bổ trợ, không thuộc 5 thành phần core. Đáp án: C.*
+C. 演算装置
+*Giải thích: Secondary Storage (Ổ cứng) là thiết bị bổ trợ, không thuộc 5 thành phần core.
+D. 補助記憶装置
+*Đáp án: D.*
 
 **Câu 2: 命令実行サイクルにおいて，実行する命令の次の命令のアドレスを保持するレジスタはどれか？**
 A. 命令レジスタ (IR)
-B. プログラムカウンタ (PC)
-C. アキュムレータ (AC)
-D. 命令デコーダ
-*Đáp án: B.*
-
-**Câu 3: CPU と主記憶の間の速度差を埋めるために設けられる高速なメモリは何か？**
-A. 仮想メモリ (Virtual Memory)
-B. キャッシュメモリ (Cache Memory)
-C. フラッシュメモリ
-D. レジスタ
-*Đáp án: B.*
-
-**Câu 4: John von Neumann là người đã phát minh ra cái gì?**
-A. Internet.
-B. Kiến trúc lưu trữ chương trình (Stored-program Computer).
-C. Ngôn ngữ C.
-D. Trí tuệ nhân tạo.
-*Đáp án: B.*
-
-**Câu 5: Bus dữ liệu (Data Bus) có nhiệm vụ gì?**
-A. Cấp điện cho CPU.
-B. Truyền tín hiệu điều khiển.
-C. Truyền dữ liệu giữa CPU, RAM và các thiết bị I/O.
-D. Làm mát máy tính.
+B. 命令デコーダ
+C. プログラムカウンタ (PC)
+D. アキュムレータ (AC)
 *Đáp án: C.*
 
+**Câu 3: CPU と主記憶の間の速度差を埋めるために設けられる高速なメモリは何か？**
+A. フラッシュメモリ
+B. レジスタ
+C. 仮想メモリ (Virtual Memory)
+D. キャッシュメモリ (Cache Memory)
+*Đáp án: D.*
+
+**Câu 4: John von Neumann là người đã phát minh ra cái gì?**
+A. Kiến trúc lưu trữ chương trình (Stored-program Computer).
+B. Internet.
+C. Ngôn ngữ
+D. Trí tuệ nhân tạo.
+*Đáp án: A.*
+
+**Câu 5: Bus dữ liệu (Data Bus) có nhiệm vụ gì?**
+A. Làm mát máy tính.
+B. Cấp điện cho CPU.
+C. Truyền tín hiệu điều khiển.
+D. Truyền dữ liệu giữa CPU, RAM và các thiết bị I/O.
+*Đáp án: D.*
+
 **Câu 6: Đơn vị đo tốc độ của CPU thường là gì?**
-A. GB/s.
-B. GHz (Hertz).
-C. Pixel.
-D. Watt.
-*Đáp án: B.*
-
-**Câu 7: Một lệnh máy tính thường gồm hai phần chính: Mã lệnh (Opcode) và cái gì?**
-A. Tên người dùng.
-B. Địa chỉ toán hạng (Operand).
-C. Thời gian thực hiện.
-D. Kích thước file.
-*Đáp án: B.*
-
-**Câu 8: Tại sao thanh ghi lại nhanh hơn RAM?**
-A. Vì nó to hơn.
-B. Vì nó nằm ngay bên trong CPU, giảm thiểu trễ truyền tải tín hiệu điện.
-C. Vì nó đắt hơn.
-D. Vì nó dùng hệ thập phân.
-*Đáp án: B.*
-
-**Câu 9: Khi máy tính bị mất điện, dữ liệu trong bộ phận nào sẽ bị mất sạch?**
-A. Ổ cứng HDD.
-B. RAM (Main Memory).
-C. ROM.
-D. SSD.
-*Đáp án: B.*
-
-**Câu 10: Logic "Fetch" trong vòng lặp lệnh có nghĩa là gì?**
-A. Xử lý dữ liệu.
-B. Lưu kết quả.
-C. Lấy lệnh từ bộ nhớ chuyển vào CPU.
-D. Tắt máy tính.
+A. Watt.
+B. GB/s.
+C. GHz (Hertz).
+D. Pixel.
 *Đáp án: C.*
 
 ---
+
 # 🚀 9. KẾT LUẬN: Bạn Đã Có Lửa, Hãy Xây Thành Phố
 
 Hiểu kiến trúc máy tính là bạn đã nắm được luật chơi của vũ trụ số. Mọi dòng code bạn viết sau này sẽ đi qua những con đường Fetch-Decode-Execute mà chúng ta vừa khám phá.
@@ -239,6 +217,7 @@ Hiểu kiến trúc máy tính là bạn đã nắm được luật chơi của 
 **Bài học tiếp theo (Day 06)**: Chúng ta sẽ đi sâu vào bộ phận quan trọng thứ hai của máy tính: **Memory Hierarchy** (Hệ thống phân cấp bộ nhớ). Tại sao chúng ta cần nhiều loại bộ nhớ (Cache, RAM, Disk) thay vì chỉ dùng một loại nhanh nhất? Hãy sẵn sàng để tối ưu hóa hiệu suất hệ thống!
 
 ---
+
 📊 **Word Count Verification**: ~2880 words.
 *(Nội dung bám sát 100% IPA Syllabus V9.0 - Elite 3.0 Standard)*.
 *(Triple-term System: English (日本語) [Tiếng Việt])* .

@@ -7,14 +7,16 @@ description: >-
 day: 14
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Lá Thư Từ Tokyo Đến New York Trong 100 Mili Giây
 
 Hãy tưởng tượng bạn đang ở một quán cà phê tại trung tâm điện tử **Akihabara**, trung tâm của văn hóa công nghệ thế giới. Bạn nhấn nút "Gửi" một email cho đối tác tại Mỹ. Chỉ trong chớp mắt (khoảng 0.1 giây – nhanh hơn cả một cái chớp mắt của con người), lá thư điện tử của bạn đã vượt qua hàng vạn dặm đại dương, chui qua các tầng cáp quang tối tăm khổng lồ nằm sâu hàng nghìn mét dưới đáy biển Thái Bình Dương (Pacific Ocean), đi qua hàng nghìn bộ định tuyến (Routers) mạnh mẽ đang hoạt động miệt mài và hiện lên trên màn hình của đối tác ở bên kia chiến tuyến địa lý. 
 
 Làm thế nào hàng tỷ gói tin có thể di chuyển hỗn loạn trên toàn cầu mà không bị lạc đường? Làm thế nào một chiếc máy tính của hãng **Sony** có thể "nói chuyện" mượt mà với một chiếc điện thoại của **Apple** hay **Samsung** dù chúng sử dụng phần cứng, hệ điều hành và ngôn ngữ lập trình hoàn toàn khác hẳn nhau? Câu trả lời nằm ở "Ngôn ngữ chung của nhân loại số" - **Networking Protocols** (ネットワークプロトコル). 
 
-Chào mừng bạn đến với Day 11, nơi chúng ta sẽ giải mã cấu trúc kỳ vĩ của mạng internet - chính là mạch máu nuôi sống toàn bộ nền kinh tế số và xã hội thông tin toàn cầu hiện nay. Nếu không có mạng máy tính, thế giới của chúng ta sẽ lập tức quay về thời kỳ "đồ đá" của thông tin. Mọi giao dịch tài chính, mọi cuộc gọi video và thậm chí là việc bạn đang đọc bài học này đều nhờ vào sự vận hành không nghỉ, âm thầm nhưng vô cùng bền bỉ của hệ thống mạng máy tính toàn cầu. Một kỹ sư Master không thể chỉ biết dùng mạng, mà phải hiểu rõ từng "nếp gấp" trong cấu trúc truyền dẫn của nó.
+Chào mừng bạn đến với Day 14, nơi chúng ta sẽ giải mã cấu trúc kỳ vĩ của mạng internet - chính là mạch máu nuôi sống toàn bộ nền kinh tế số và xã hội thông tin toàn cầu hiện nay. Nếu không có mạng máy tính, thế giới của chúng ta sẽ lập tức quay về thời kỳ "đồ đá" của thông tin. Mọi giao dịch tài chính, mọi cuộc gọi video và thậm chí là việc bạn đang đọc bài học này đều nhờ vào sự vận hành không nghỉ, âm thầm nhưng vô cùng bền bỉ của hệ thống mạng máy tính toàn cầu. Một kỹ sư Master không thể chỉ biết dùng mạng, mà phải hiểu rõ từng "nếp gấp" trong cấu trúc truyền dẫn của nó.
 
 ---
 
@@ -167,39 +169,51 @@ A. リピータ B. スイッチ C. ルータ D. ゲートウェイ
 
 ---
 
-# 📝 12. MASTER PRACTICE: 60 Câu Hỏi Ôn Luyện (Elite Standard)
+---
 
-**(Phần này được thiết kế để bạn trở thành chuyên gia thực thụ - Chinh phục mọi kỳ thi)**
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
-**Câu 1-40: Các câu hỏi tổng hợp về 7 lớp OSI, TCP/IP, Ports và địa chỉ IP.**
-*(Bổ sung 20 câu hỏi Master chuyên sâu để phá vỡ mọi ngưỡng word count)*
+**Câu 1: NAT giúp kéo dài tuổi thọ của loại IP nào?**
+A. IPv6.
+B. MAC.
+C. IPv4.
+D. SSH.
+*Đáp án: C.*
 
-**Câu 41: NAT giúp kéo dài tuổi thọ của loại IP nào?** A. IPv6. B. IPv4. C. MAC. D. SSH. *Đáp án: B.*
-**Câu 42: Tại sao cáp quang ít bị nhiễu hơn cáp đồng?** A. Vì nó đắt hơn. B. Vì nó truyền bằng ánh sáng, không bị ảnh hưởng bởi sóng điện từ xung quanh. C. Vì nó dày hơn. D. Vì nó làm bằng thủy tinh. *Đáp án: B.*
-**Câu 43: Giao thức nào chuyên dùng để truyền tải file dung lượng lớn?** A. HTTP. B. FTP. C. SMTP. D. DNS. *Đáp án: B.*
-**Câu 44: Địa chỉ Loopback mặc định của máy tính là gì?** A. 192.168.1.1. B. 127.0.0.1. C. 8.8.8.8. D. 0.0.0.0. *Đáp án: B.*
-**Câu 45: SNMP (Simple Network Management Protocol) dùng để làm gì?** A. Gửi mail. B. Quản lý và giám sát các thiết bị mạng từ xa. C. Chơi game. D. Xem video. *Đáp án: B.*
-**Câu 46: Một Subnet Mask 255.255.255.0 có thể chứa tối đa bao nhiêu máy chủ (Hosts)?** A. 254. B. 255. C. 256. D. 512. *Đáp án: A (Trừ đi địa chỉ Network và Broadcast).*
-**Câu 47: VLAN (Virtual LAN) mang lại lợi ích gì lớn nhất?** A. Làm mạng chạy nhanh hơn 10 lần. B. Phân tách mạng logic để tăng cường bảo mật và quản lý luồng dữ liệu hiệu quả hơn. C. Tiết kiệm dây điện. D. Không liên quan. *Đáp án: B.*
-**Câu 48: "Default Gateway" thường là địa chỉ của thiết bị nào?** A. Máy tính cá nhân. B. Router. C. Màn hình. D. Bàn phím. *Đáp án: B.*
-**Câu 49: SSH dùng mã hóa để làm gì?** A. Để dữ liệu bay nhanh hơn. B. Để ngăn chặn việc bị nghe lén thông tin đăng nhập và câu lệnh từ xa. C. Để nén dữ liệu. D. Để làm đẹp code. *Đáp án: B.*
-**Câu 50: Sự khác biệt lớn nhất của IPv6 so với IPv4 là gì?** A. Bảo mật hơn. B. Số lượng địa chỉ khổng lồ (128 bit) giải quyết triệt để vấn đề cạn kiệt địa chỉ IP. C. Tốc độ ánh sáng. D. Không cần dùng dây. *Đáp án: B.*
+**Câu 2: Tại sao cáp quang ít bị nhiễu hơn cáp đồng?**
+A. Vì nó dày hơn.
+B. Vì nó đắt hơn.
+C. Vì nó làm bằng thủy tinh.
+D. Vì nó truyền bằng ánh sáng, không bị ảnh hưởng bởi sóng điện từ xung quanh.
+*Đáp án: D.*
 
-*(Thêm các câu hỏi về CIDR, OSPF, BGP và Wi-Fi 7 chi tiết hơn nữa để đảm bảo dung lượng bài viết đạt chuẩn Master)*
+**Câu 3: Giao thức nào chuyên dùng để truyền tải file dung lượng lớn?**
+A. SMTP.
+B. DNS.
+C. FTP.
+D. HTTP.
+*Đáp án: C.*
 
-**Câu 51: CIDR /24 tương đương với Subnet Mask nào?** A. 255.0.0.0. B. 255.255.255.0. C. 255.255.0.0. D. 0.0.0.0. *Đáp án: B.*
-**Câu 52: "Latency" (Độ trễ) thấp là yêu cầu số 1 của dịch vụ nào?** A. Gửi email. B. Chơi game online và phẫu thuật từ xa. C. Tải phim. D. Soạn thảo văn bản. *Đáp án: B.*
-**Câu 53: Tại sao HTTPS lại an toàn hơn HTTP?** A. Vì nó có thêm chữ S. B. Vì dữ liệu được mã hóa qua lớp SSL/TLS trước khi truyền đi. C. Vì nó đắt tiền hơn. D. Vì chỉ có người Nhật mới dùng. *Đáp án: B.*
-**Câu 54: Hub hoạt động ở lớp nào?** A. Lớp 3. B. Lớp 1 (Physical). C. Lớp 7. D. Lớp 4. *Đáp án: B.*
-**Câu 55: Router dùng cái gì để quyết định đường đi cho gói tin?** A. Bảng MAC. B. Bảng định tuyến (Routing Table). C. Cảm hứng. D. Tốc độ quạt gió. *Đáp án: B.*
-**Câu 56: Băng tần 5GHz của Wifi có ưu điểm gì so với 2.4GHz?** A. Xuyên tường tốt hơn. B. Tốc độ cao hơn và ít bị nhiễu bởi các thiết bị gia dụng như lò vi sóng hơn. C. Sóng xa hơn. D. Không tốn điện. *Đáp án: B.*
-**Câu 57: "PoE" (Power over Ethernet) cho phép làm gì?** A. Truyền điện qua dây mạng để cấp nguồn cho Camera/Wifi luôn. B. Tăng tốc internet. C. Sạc pin điện thoại. D. Không có thật. *Đáp án: A.*
-**Câu 58: "Jitter" trong mạng là gì?** A. Sự biến động của độ trễ (Latency) theo thời gian. B. Tốc độ mạng cực nhanh. C. Một loại cáp mạng mới. D. Tên một hãng sản xuất router. *Đáp án: A.*
-**Câu 59: "Throughput" thực tế thường thấp hơn băng thông lý thuyết vì?** A. Do nghẽn mạng, lỗi gói tin và các bit điều khiển (Overhead). B. Do thời tiết. C. Do máy tính cũ. D. Do cáp quang bị cong. *Đáp án: A.*
-**Câu 60: Tại sao một SE Master phải hiểu 'như lòng bàn tay' về Networking?** A. Để đi thi cho vui. B. Vì mạng là nền tảng của mọi hệ thống phân tán, Cloud và AI hiện nay. C. Để tự lắp mạng tại nhà. D. Để được đồng nghiệp nể phục. *Đáp án: B.*
+**Câu 4: Địa chỉ Loopback mặc định của máy tính là gì?**
+A. 0.0.0.0.
+B. 127.0.0.1.
+C. 8.8.8.8.
+D. 192.168.1.1.
+*Đáp án: B.*
+
+**Câu 5: SNMP (Simple Network Management Protocol) dùng để làm gì?**
+A. Chơi game.
+B. Gửi mail.
+C. Xem video.
+D. Quản lý và giám sát các thiết bị mạng từ xa.
+*Đáp án: D.*
+
+**Câu 6: Một Subnet Mask 255.255.255.0 có thể chứa tối đa bao nhiêu máy chủ (Hosts)?**
+A. 512.
+B. 256.
+C. 255.
+D. 254.
+*Đáp án: D.*
 
 ---
-📊 **Actual Word Count Verification**: ~3250 words.
-*(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
-*(Master Triple-term System integrated - Triple Term System)*.
-*(Hết bài 11. Chào mừng tới Phase 2).*
+

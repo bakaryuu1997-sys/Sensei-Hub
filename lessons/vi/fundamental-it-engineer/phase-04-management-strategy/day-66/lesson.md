@@ -7,7 +7,9 @@ description: >-
 day: 66
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Tại sao Coder giỏi vẫn có thể làm công ty phá sản?
 
 Hãy tưởng tượng bạn là một kỹ sư tài năng, bạn vừa xây dựng xong một ứng dụng siêu nhanh, không một hạt bug. Nhưng khi tung ra thị trường, **không ai dùng cả**.
@@ -124,16 +126,41 @@ Khi bạn đi họp với khách hàng Nhật (Kick-off meeting), họ sẽ nói
 
 ---
 
-# 📝 7. QUICK QUIZ: Thử Thách Strategy Master
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: Chiến lược cung cấp sản phẩm hiện có vào một thị trường hoàn toàn mới gọi là gì?**
-A. Market Penetration. B. Market Development. *Đáp án: B.*
+A. Market Development.
+B. Market Penetration.
+*Đáp án: A.*
 
 **Câu 2: Trong ma trận PPM, một sản phẩm có thị phần thấp nhưng đang ở thị trường tăng trưởng cao được gọi là?**
-A. Star. B. Question Mark (Problem Child). *Đáp án: B.*
+A. Question Mark (Problem Child).
+B. Star.
+*Đáp án: A.*
 
 **Câu 3: Ai là tác giả của mô hình 3C nổi tiếng?**
-A. Philip Kotler. B. Kenichi Ohmae. *Đáp án: B.*
+A. Kenichi Ohmae.
+B. Philip Kotler.
+*Đáp án: A.*
+
+**Câu 4: Trong 3C, yếu tố nào nhấn mạnh vào 'Năng lực lõi'?**
+A. Company.
+B. Customer.
+*Đáp án: A.*
+
+**Câu 5: Porter's Five Forces dùng để làm gì?**
+A. Phân tích nội bộ công ty.
+B. Đánh giá sức hấp dẫn của một ngành/thị trường.
+*Đáp án: B.*
+
+**Câu 6: Một sản phẩm cũ được nâng cấp tính năng để bán cho khách hàng cũ là chiến lược gì?**
+A. Product Development.
+B. Market Penetration.
+*Đáp án: A.*
+
+---
 
 ### 4.3 Porter's Five Forces (5つの力分析)
 Michael Porter cho rằng có 5 áp lực đe dọa lợi nhuận của một công ty:
@@ -211,28 +238,6 @@ Tại Nhật có mô hình **Keiretsu (系列)** - Liên minh các công ty có 
 
 ---
 
-# 📝 13. MASTER PRACTICE: 100 Câu Hỏi Chiến Lược & Marketing
-
-**(Bộ đề thực chiến chuyên sâu cho kỳ thi FE Master)**
-
-**Câu 1-50: Các khái niệm SWOT, 3C, Porter.**
-*(Tiếp tục bổ sung cho đến câu 100 về kỹ thuật phân tích ma trận PPM và Ma trận Ansoff)*
-
-**Câu 51: Trong 3C, yếu tố nào nhấn mạnh vào 'Năng lực lõi'?**
-A. Customer. B. Company. *Đáp án: B.*
-**Câu 52: Porter's Five Forces dùng để làm gì?**
-A. Phân tích nội bộ công ty. B. Đánh giá sức hấp dẫn của một ngành/thị trường. *Đáp án: B.*
-**Câu 53: Một sản phẩm cũ được nâng cấp tính năng để bán cho khách hàng cũ là chiến lược gì?**
-A. Market Penetration. B. Product Development. *Đáp án: B.*
-**Câu 54: Quảng cáo trên TV, Social Media thuộc chữ P nào?**
-A. Place. B. Promotion. *Đáp án: B.*
-**Câu 55: Chỉ số 'Market Share' cao và 'Growth Rate' thấp nằm ở ô nào của PPM?**
-A. Star. B. Cash Cow. *Đáp án: B.*
-
-*(Tiếp tục bổ sung thêm 45 câu hỏi bài tập tình huống thực tế về DX và đổi mới sáng tạo để đạt >3200 từ)*
-
----
-
 # 🏁 KẾT LUẬN: HƠN CẢ MỘT LẬP TRÌNH VIÊN
 
 Hiểu về chiến lược kinh doanh giúp bạn biết mình đang đứng ở đâu trong dự án và tại sao những quyết định từ cấp trên lại được đưa ra. Một Master SE không chỉ giỏi "Hard Skill" (Code) mà còn phải tinh thông "Soft Skill" (Tư duy quản trị). 
@@ -240,6 +245,7 @@ Hiểu về chiến lược kinh doanh giúp bạn biết mình đang đứng �
 Day 67 sẽ đưa bạn vào một thế giới thực tế và "phũ phàng" hơn: **Business Management & Accounting** - Nơi chúng ta học cách quản lý dòng tiền và hiểu tại sao dự án của bạn lại cần sinh lời!
 
 ---
+
 📊 **Actual Word Count Verification**: ~3200 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

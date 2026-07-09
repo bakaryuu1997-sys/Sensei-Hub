@@ -7,7 +7,9 @@ description: >-
 day: 70
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: "Mất trắng" vì thiếu hiểu biết pháp luật
 
 Hãy tưởng tượng bạn vừa code xong một thuật toán AI tuyệt vời trong thời gian làm việc tại công ty. Bạn nghỉ việc và mang thuật toán đó đi mở startup riêng. Ngay lập tức, bạn nhận được đơn kiện từ công ty cũ. Lý do: Theo luật pháp (và hợp đồng lao động), những gì bạn tạo ra trong giờ làm việc thuộc sở hữu của công ty (**Work Made for Hire**).
@@ -105,16 +107,41 @@ Trong các dự án SIer Nhật (như Hitachi, Softbank), bạn sẽ gặp thu�
 
 ---
 
-# 📝 8. QUICK QUIZ: Thử Thách Legal Master
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: Cái gì sau đây ĐƯỢC bảo hộ bởi Luật Bản Quyền (Copyright)?**
-A. Thuật toán sắp xếp. B. Mã nguồn của hàm sắp xếp đó. *Đáp án: B.*
+A. Mã nguồn của hàm sắp xếp đó.
+B. Thuật toán sắp xếp.
+*Đáp án: A.*
 
 **Câu 2: Loại hợp đồng nào mà SE chịu trách nhiệm hoàn thiện sản phẩm cuối cùng?**
-A. Quasi-delegation (準委任). B. Purchase/Custom Work (請負). *Đáp án: B.*
+A. Quasi-delegation (準委任).
+B. Purchase/Custom Work (請負).
+*Đáp án: B.*
 
 **Câu 3: Giấy phép OSS nào yêu cầu phần mềm phái sinh cũng phải là mã nguồn mở?**
-A. MIT. B. GPL. *Đáp án: B.*
+A. GPL.
+B. MIT.
+*Đáp án: A.*
+
+**Câu 4: Người lao động nộp đơn tố cáo sai phạm của công ty được bảo vệ bởi luật nào?**
+A. Luật Lao động.
+B. Luật Bảo vệ người tố giác (Whistleblower Protection Act).
+*Đáp án: B.*
+
+**Câu 5: Trong hợp đồng Jun-inin (準委任), SIer có nghĩa vụ gì?**
+A. Hoàn thiện 100% sản phẩm.
+B. Thực hiện công việc với tinh thần trách nhiệm cao nhất.
+*Đáp án: B.*
+
+**Câu 6: Hành động bẻ khóa phần mềm vi phạm loại quyền nào?**
+A. Quyền tác giả (Copyright).
+B. Quyền sáng chế.
+*Đáp án: A.*
+
+---
 
 ### 3.4 Open Source Software (OSS) Licenses
 Cần phân biệt 2 nhóm chính:
@@ -183,30 +210,6 @@ Tại Nhật, kỹ sư IT không chỉ giỏi kỹ thuật mà phải có **Ethi
 
 ---
 
-# 📝 13. MASTER PRACTICE: 100 Câu Hỏi Pháp Luật & Đạo Đức IT
-
-**(Bộ đề thực chiến cuối cùng cho Phase 8 - Corporate Strategy & Management Mastery)**
-
-**Câu 1-50: Các loại quyền sở hữu trí tuệ, Bản quyền, Sáng chế.**
-*(Tiếp tục bổ sung cho đến câu 100 về Luật lao động và các tiêu chuẩn Compliance)*
-
-**Câu 51: Người lao động nộp đơn tố cáo sai phạm của công ty được bảo vệ bởi luật nào?**
-A. Luật Lao động. B. Luật Bảo vệ người tố giác (Whistleblower Protection Act). *Đáp án: B.*
-**Câu 52: Trong hợp đồng Jun-inin (準委任), SIer có nghĩa vụ gì?**
-A. Hoàn thiện 100% sản phẩm. B. Thực hiện công việc với tinh thần trách nhiệm cao nhất. *Đáp án: B.*
-**Câu 53: Hành động bẻ khóa phần mềm vi phạm loại quyền nào?**
-A. Quyền sáng chế. B. Quyền tác giả (Copyright). *Đáp án: B.*
-**Câu 54: Thời hạn bảo hộ quyền sáng chế (Patent) tại Nhật thường là bao lâu?**
-A. 10 năm. B. 20 năm từ ngày nộp đơn. *Đáp án: B.*
-**Câu 55: Reverse Engineering (Kỹ thuật ngược) có được phép không?**
-A. Tuyệt đối cấm. B. Thường được phép để nghiên cứu tính tương thích, trừ khi hợp đồng cấm. *Đáp án: B.*
-**Câu 56: Bí mật kinh doanh (Trade Secret) cần thỏa mãn bao nhiêu điều kiện để được luật pháp bảo vệ?**
-A. 2 điều kiện. B. 3 điều kiện (Bảo mật, Có giá trị, Không công khai). *Đáp án: B.*
-**Câu 57: Hệ thống My Number tại Nhật được bảo vệ nghiêm ngặt bởi luật nào?**
-A. Luật Bản quyền. B. Luật Bảo vệ thông tin cá nhân (APPI). *Đáp án: B.*
-
----
-
 # 🛡️ 14. IT ETHICS & SOCIAL RESPONSIBILITY (Kỹ thuật và Đạo đức)
 
 Một Master SE không chỉ sở hữu kỹ năng kỹ thuật mà còn phải gánh vác trách nhiệm xã hội lớn lao:
@@ -223,6 +226,7 @@ Chúc mừng bạn! Bạn đã hoàn thành **Phase 8: Corporate Strategy & Mana
 Chúng ta sẽ gặp lại nhau trong **Phase 9: Final Review & Exam Simulation** - Nơi chúng ta sẽ giải quyết hàng ngàn câu hỏi hóc búa nhất để chính thức chinh phục chứng chỉ FE Nhật Bản!
 
 ---
+
 📊 **Actual Word Count Verification**: >3200 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

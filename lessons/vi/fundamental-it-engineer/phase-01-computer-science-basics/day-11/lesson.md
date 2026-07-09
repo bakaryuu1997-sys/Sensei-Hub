@@ -7,7 +7,9 @@ description: >-
 day: 11
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Ảo Ảnh Của Sự Đồng Thời (The Illusion of Concurrency)
 
 Hãy tưởng tượng bạn đang sử dụng một chiếc máy tính đời cũ chỉ có duy nhất một lõi CPU (Single-core). Bạn mở trình duyệt Chrome để nghe nhạc trên YouTube, đồng thời mở VS Code để viết mã, và thỉnh thoảng liếc qua Telegram để nhận tin nhắn. Bạn thấy mọi thứ diễn ra cùng một lúc mượt mà.
@@ -142,100 +144,58 @@ Kiến thức này cực kỳ quan trọng đối với một **(Frontend Develo
 
 ---
 
-# 📝 8. QUICK QUIZ (Bộ 5 Câu Hỏi Củng Cố)
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: Điểm khác biệt lớn nhất về bộ nhớ giữa Process và Thread là gì?**
-A. Thread có vùng nhớ Code riêng, Process dùng chung.
-B. Process có không gian địa chỉ riêng biệt hoàn toàn, Thread dùng chung vùng nhớ với các luồng khác trong cùng tiến trình.
+A. Process có không gian địa chỉ riêng biệt hoàn toàn, Thread dùng chung vùng nhớ với các luồng khác trong cùng tiến trình.
+B. Thread có vùng nhớ Code riêng, Process dùng chung.
 C. Cả hai đều không dùng bộ nhớ RAM.
 D. Thread dùng nhiều bộ nhớ hơn Process.
-*Giải thích: Thread chia sẻ bộ nhớ, Process thì không. Đáp án: B.*
+*Giải thích: Thread chia sẻ bộ nhớ, Process thì không.
+*Đáp án: A.*
 
 **Câu 2: Hiện tượng Deadlock xảy ra khi nào?**
-A. Khi máy tính hết pin.
+A. Khi người dùng tắt ứng dụng đột ngột.
+*Giải thích: Deadlock là tình trạng bế tắc do tranh giành tài nguyên.
 B. Khi một tiến trình chạy quá nhanh.
-C. Khi hai hoặc nhiều tiến trình/luồng chờ đợi nhau giải phóng tài nguyên mãi mãi.
-D. Khi người dùng tắt ứng dụng đột ngột.
-*Giải thích: Deadlock là tình trạng bế tắc do tranh giành tài nguyên. Đáp án: C.*
+C. Khi máy tính hết pin.
+D. Khi hai hoặc nhiều tiến trình/luồng chờ đợi nhau giải phóng tài nguyên mãi mãi.
+*Đáp án: D.*
 
 **Câu 3: Tại sao "Context Switch" lại được coi là chi phí (Overhead)?**
-A. Vì nó làm CPU bị hỏng.
-B. Vì trong lúc chuyển đổi, CPU không thực hiện được công việc tính toán thực tế cho ứng dụng.
+A. Vì trong lúc chuyển đổi, CPU không thực hiện được công việc tính toán thực tế cho ứng dụng.
+B. Vì nó xóa sạch dữ liệu trên ổ cứng.
+*Giải thích: CPU tốn thời gian quản lý thay vì thực thi.
 C. Vì nó tốn tiền điện.
-D. Vì nó xóa sạch dữ liệu trên ổ cứng.
-*Giải thích: CPU tốn thời gian quản lý thay vì thực thi. Đáp án: B.*
+D. Vì nó làm CPU bị hỏng.
+*Đáp án: A.*
 
 **Câu 4: Tình trạng "Race Condition" dẫn đến hậu quả gì?**
-A. Máy tính chạy nhanh hơn.
-B. Dữ liệu bị sai lệch hoặc không nhất quán do nhiều luồng truy cập cùng lúc.
-C. Ổ cứng bị đầy.
-D. Màn hình bị nhấp nháy.
-*Giải thích: Do không có đồng bộ hóa dữ liệu. Đáp án: B.*
+A. Màn hình bị nhấp nháy.
+*Giải thích: Do không có đồng bộ hóa dữ liệu.
+B. Máy tính chạy nhanh hơn.
+C. Dữ liệu bị sai lệch hoặc không nhất quán do nhiều luồng truy cập cùng lúc.
+D. Ổ cứng bị đầy.
+*Đáp án: C.*
 
 **Câu 5: Trong trình duyệt Web, Main Thread chịu trách nhiệm chính cho việc gì?**
 A. Lưu trữ file cache.
 B. Gỡ lỗi phần cứng.
-C. Xử lý JS logic, Render giao diện (DOM) và tương tác người dùng.
-D. Quản lý tốc độ quạt chip.
-*Giải thích: Luồng chính của trình duyệt lo lắng về giao diện và JS. Đáp án: C.*
+C. Quản lý tốc độ quạt chip.
+*Giải thích: Luồng chính của trình duyệt lo lắng về giao diện và JS.
+D. Xử lý JS logic, Render giao diện (DOM) và tương tác người dùng.
+*Đáp án: D.*
 
-# 📝 10. MASTER PRACTICE (Ultimate Edition - 40 Questions)
-
-**Câu 1: Một đơn vị thực thi nhỏ nhất được Hệ điều hành lập lịch là?**
-A. Process
+**Câu 6: Một đơn vị thực thi nhỏ nhất được Hệ điều hành lập lịch là?**
+A. Task
 B. Thread
 C. Program
-D. Task
+D. Process
 *Đáp án: B.*
 
-**Câu 2: Tài nguyên nào sau đây KHÔNG được chia sẻ giữa các Thread trong cùng một Process?**
-A. Heap memory
-B. Global variables
-C. Stack
-D. Code segment
-*Đáp án: C. Mỗi thread cần stack riêng để quản lý lời gọi hàm cục bộ.*
-
-**Câu 3: Thuật toán lập lịch nào có thể gây ra hiện tượng "Starvation" (Đói tiến trình)?**
-A. Round Robin
-B. FCFS
-C. Priority Scheduling
-D. FIFO
-*Đáp án: C.*
-
-**Câu 4: Context Switch thực hiện việc lưu trữ trạng thái của tiến trình vào đâu?**
-A. Cache L1
-B. Registers and PCB
-C. Hard Drive
-D. ROM
-*Đáp án: B.*
-
-**Câu 5: 'Race Condition' có thể được giải quyết triệt để bằng cách dùng?**
-A. Thêm RAM
-B. Mutex/Semaphore (Đồng bộ hóa)
-C. Nâng cấp CPU
-D. Chia nhỏ file
-*Đáp án: B.*
-
-**Câu 6: Trạng thái 'Ready' (Sẵn sàng) của một tiến trình nghĩa là gì?**
-A. Đang được CPU xử lý.
-B. Đang đợi nhập dữ liệu từ bàn phím.
-C. Đã sẵn sàng mọi thứ và chỉ chờ CPU rảnh để nhảy vào chạy.
-D. Đã kết thúc thực thi.
-*Đáp án: C.*
-
-**Câu 7: Lợi ích lớn nhất của Multithreading so với Multiprocessing là?**
-A. Bảo mật tốt hơn.
-B. Chi phí tạo và chuyển đổi (overhead) thấp hơn do dùng chung bộ nhớ.
-C. Không bao giờ bị hỏng.
-D. Dễ code hơn.
-*Đáp án: B.*
-
-**Câu 8: Tại sao JS lại dùng cơ chế Event Loop thay vì Multi-threading truyền thống cho các tác vụ I/O?**
-A. Vì JS yếu.
-B. Để tránh phức tạp hóa vấn đề đồng bộ dữ liệu (Race Condition) và tận dụng hiệu quả cơ chế bất đồng bộ.
-C. Vì trình duyệt không hỗ trợ nhiều luồng.
-D. Vì JS không có bộ nhớ Heap.
-*Đáp án: B.*
+---
 
 # 🎨 11. MASTER DEEP-DIVE: Scheduler & Priority Inversion
 
@@ -253,13 +213,3 @@ Trong các hệ thống Real-time (Thời gian thực) tại Nhật như hệ th
 Vì cơ chế quản lý Process của nó cực kỳ linh hoạt. Lệnh `fork()` trong Linux cho phép tạo ra bản sao của Process cha với chi phí gần như bằng 0 nhờ kỹ thuật **Copy-on-Write** (Chỉ thực sự copy vùng nhớ khi có thay đổi). Đây là lý do các hệ thống Microservices hiện đại đều chạy trên Linux.
 
 ---
-
-# 📝 13. DETAILED PRACTICE SOLUTIONS (OS Mastery)
-
-**(Viết chi tiết 30 câu hỏi về quản lý tiến trình, sơ đồ trạng thái Process: Ready -> Running -> Waiting, và cách tính toán thời gian chờ trung bình trong bài toán lập lịch CPU để đạt mốc 2700 từ...)**
-
----
-📊 **Actual Word Count Verification**: >3000 words.
-*(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
-*(Master Triple-term System integrated)*.
-*(Hết bài 11).*

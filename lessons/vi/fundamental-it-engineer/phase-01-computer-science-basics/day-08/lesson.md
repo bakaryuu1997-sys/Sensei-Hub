@@ -7,7 +7,9 @@ description: >-
 day: 8
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Vị Vua CPU Và Những Đám Đông Phiền Nhiễu
 
 Hãy tưởng tượng bạn là một vị vua (CPU) đang bận rộn giải quyết những việc đại sự quốc gia (Xử lý các thuật toán phức tạp nghìn tỷ phép tính/giây). Đột nhiên, mọi người dân (Thiết bị ngoại vi) trong vương quốc đều muốn gặp bạn cùng một lúc để báo cáo những việc nhỏ nhặt: 
@@ -137,95 +139,51 @@ Trong các hệ thống máy tính cổ điển hoặc nhúng, bạn sẽ gặp 
 
 ---
 
-# 📝 10. MASTER PRACTICE: 40 Câu Hỏi Ôn Luyện Toàn Diện
+---
 
-**(Phần này được thiết kế để bạn trở thành bật thầy về I/O)**
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
-**Câu 1-20: Các câu hỏi nền tảng về Interrupt và DMA.**
-*(Tiếp tục bổ sung 20 câu hỏi Master để phá vỡ ngưỡng word count 2500 từ)*
-
-**Câu 21: Tại sao PCIe 5.0 lại nhanh hơn PCIe 4.0?**
-A. Vì dây to hơn. B. Vì băng thông gấp đôi trên mỗi làn (lane). C. Vì nó dùng ít điện hơn. D. Vì nó màu khác.
-*Đáp án: B.*
-
-**Câu 22: Thao tác "Context Switching" lưu dữ liệu vào đâu?**
-A. Heap. B. Stack. C. Cache L1. D. Ổ cứng.
-*Đáp án: B.*
-
-**Câu 23: USB 3.0 có ưu điểm vượt trội gì về mặt truyền dẫn?**
-A. Rẻ. B. Hỗ trợ Full-duplex (truyền và nhận cùng lúc trên các cặp dây riêng). C. Dây dài hơn. D. Không cần điện.
-*Đáp án: B.*
-
-**Câu 24: Vector Table chứa thông tin gì?**
-A. Tên file. B. Địa chỉ khởi đầu của các hàm xử lý ngắt (ISR). C. Mật khẩu BIOS. D. Danh sách thiết bị USB.
-*Đáp án: B.*
-
-**Câu 25: USB-C có khả năng truyền tải điện năng (Power Delivery) tối đa bao nhiêu?**
-A. 10W. B. 60W. C. 100W/240W. D. 1000W.
-*Đáp án: C.*
-
-**Câu 26: "Non-maskable Interrupt" (NMI) dùng cho sự cố nào?**
-A. Nhấn phím thoát. B. Lỗi phần cứng không thể bỏ qua (như hỏng nguồn điện). C. In văn bản xong. D. Di chuyển chuột.
-*Đáp án: B.*
-
-**Câu 27: Tại sao Card đồ họa (GPU) dùng PCIe x16?**
-A. Cho đẹp. B. Để có 16 làn dữ liệu truyền song song, tối đa hóa băng thông hình ảnh. C. Vì nó cần nhiều pin. D. Vì luật pháp quy định.
-*Đáp án: B.*
-
-**Câu 28: Ngắt "Supervisor Call" xảy ra khi nào?**
-A. Khi người dùng nhấn Reset. B. Khi App cần hệ điều hành thực hiện việc đặc quyền (như ghi file). C. Khi máy hết pin. D. Khi có virus.
-*Đáp án: B.*
-
-**Câu 29: Spooling là viết tắt của gì?**
-A. Simultaneous Peripheral Operations On-Line. B. Super Personal Operating On-Line. C. Small Process On-Line. D. Không có nghĩa gì.
+**Câu 1: Tại sao PCIe 5.0 lại nhanh hơn PCIe 4.0?**
+A. Vì băng thông gấp đôi trên mỗi làn (lane).
+B. Vì nó dùng ít điện hơn.
+C. Vì nó màu khác.
+D. Vì dây to hơn.
 *Đáp án: A.*
 
-**Câu 30: "Cycle Stealing" trong DMA làm CPU như thế nào?**
-A. Cháy CPU. B. CPU tạm ngắt quyền dùng Bus để nhường cho DMAC. C. CPU chạy nhanh hơn. D. CPU bị mất dữ liệu.
-*Đáp án: B.*
-
-**Câu 31: Chuẩn RS-232C truyền bao nhiêu bit cùng lúc?**
-A. 1 bit (Nối tiếp). B. 8 bit (Song song). C. 16 bit. D. 32 bit.
+**Câu 2: Thao tác "Context Switching" lưu dữ liệu vào đâu?**
+A. Stack.
+B. Ổ cứng.
+C. Cache L1.
+D. Heap.
 *Đáp án: A.*
 
-**Câu 32: Cổng kết nối màu xanh dương thường là chuẩn USB nào?**
-A. 2.0. B. 3.0/3.1. C. 1.0. D. Thunderbolt.
-*Đáp án: B.*
+**Câu 3: USB 3.0 có ưu điểm vượt trội gì về mặt truyền dẫn?**
+A. Dây dài hơn.
+B. Không cần điện.
+C. Rẻ.
+D. Hỗ trợ Full-duplex (truyền và nhận cùng lúc trên các cặp dây riêng).
+*Đáp án: D.*
 
-**Câu 33: "Handshaking" đảm bảo điều gì?**
-A. Máy tính không bị rung. B. Hai thiết bị thống nhất được tốc độ và sẵn sàng truyền tải dữ liệu sạch. C. Máy tính luôn mát. D. Không có virus.
-*Đáp án: B.*
+**Câu 4: Vector Table chứa thông tin gì?**
+A. Địa chỉ khởi đầu của các hàm xử lý ngắt (ISR).
+B. Danh sách thiết bị USB.
+C. Mật khẩu BIOS.
+D. Tên file.
+*Đáp án: A.*
 
-**Câu 34: NVMe có độ trễ thấp hơn SATA vì?**
-A. Dây ngắn hơn. B. Giao tiếp trực tiếp qua PCIe Bus và có hàng đợi lệnh cực lớn. C. Nó là SSD. D. Nó đắt tiền hơn.
-*Đáp án: B.*
-
-**Câu 35: Lợi ích lớn nhất của Thunderbolt?**
-A. Chỉ dùng cho Apple. B. Hỗ trợ truyền tải đồng thời Data, Video và Power trên 1 sợi cáp tốc độ cực cao. C. Không bao giờ hỏng. D. Dây cáp rất rẻ.
-*Đáp án: B.*
-
-**Câu 36: Ưu tiên ngắt: Ngắt nào thường thấp nhất?**
-A. I/O. B. Keyboard. C. Software Interrupt / Timer. D. Power Failure.
-*Đáp án: C (Tùy cấu hình nhưng thường software có độ ưu tiên thấp nhất).*
-
-**Câu 37: Interrupt Latency thấp quan trọng nhất trong hệ thống nào?**
-A. Soạn thảo văn bản. B. Xem phim. C. Điều khiển bay (Fly-by-wire) hoặc Phanh tự động. D. Lướt web.
+**Câu 5: USB-C có khả năng truyền tải điện năng (Power Delivery) tối đa bao nhiêu?**
+A. 10W.
+B. 60W.
+C. 100W/240W.
+D. 1000W.
 *Đáp án: C.*
 
-**Câu 38: Cơ chế FIFO trong hàng đợi ngắt dùng để làm gì?**
-A. Ưu tiên người mới nhất. B. Xử lý các thiết bị cùng mức ưu tiên theo thứ tự thời gian đến. C. Bỏ qua các ngắt chậm. D. Tăng độ trễ.
-*Đáp án: B.*
-
-**Câu 39: Trong kiến trúc Von Neumann, I/O kết nối với bộ phận nào?**
-A. Chỉ RAM. B. Chỉ CPU. C. Thông qua Bus để kết nối với bộ điều khiển và bộ nhớ. D. Không kết nối gì.
-*Đáp án: C.*
-
-**Câu 40: "Hot-plugging" là đặc điểm của chuẩn nào?**
-A. RAM. B. CPU. C. USB. D. Internal Bus.
-*Đáp án: C.*
+**Câu 6: "Non-maskable Interrupt" (NMI) dùng cho sự cố nào?**
+A. Lỗi phần cứng không thể bỏ qua (như hỏng nguồn điện).
+B. Di chuyển chuột.
+C. Nhấn phím thoát.
+D. In văn bản xong.
+*Đáp án: A.*
 
 ---
-📊 **Actual Word Count Verification**: ~2800 words.
-*(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
-*(Master Triple-term System integrated - Triple Term System)*.
-*(Hết bài 08. Sẵn sàng cho Day 09).*
+

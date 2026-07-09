@@ -7,7 +7,9 @@ description: >-
 day: 63
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Lý Thuyết "Luôn Luôn Chậm Tiến Độ"
 
 Có một định luật vui trong ngành phần mềm gọi là **Hofstadter's Law**: "Dự án luôn luôn tốn nhiều thời gian hơn bạn dự kiến, ngay cả khi bạn đã tính đến định luật Hofstadter".
@@ -100,16 +102,41 @@ Họ sẽ mở sơ đồ mạng ra và nói: "Task X nằm trên đường găng
 
 ---
 
-# 📝 7. QUICK QUIZ: Thử Thách Planning Master
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: WBS dùng để làm gì?**
-A. Chia nhỏ dự án thành các phần việc dễ quản lý. B. Để viết code nhanh hơn. *Đáp án: A.*
+A. Để viết code nhanh hơn.
+B. Chia nhỏ dự án thành các phần việc dễ quản lý.
+*Đáp án: B.*
 
 **Câu 2: Công việc nằm trên 'Đường găng' (Critical Path) có Slack time bằng bao nhiêu?**
-A. 1 ngày. B. 0 ngày. *Đáp án: B.*
+A. 1 ngày.
+B. 0 ngày.
+*Đáp án: B.*
 
 **Câu 3: Phương pháp ước lượng nào dựa trên giá trị chức năng của phần mềm?**
-A. COCOMO. B. Function Point. *Đáp án: B.*
+A. Function Point.
+B. COCOMO.
+*Đáp án: A.*
+
+**Câu 4: Kỹ thuật nào chia nhỏ dự án thành các Work Packages?**
+A. Gantt Chart.
+B. WBS.
+*Đáp án: B.*
+
+**Câu 5: 'Critical Path' là gì?**
+A. Đường ngắn nhất trong dự án.
+B. Đường dài nhất trong dự án.
+*Đáp án: B.*
+
+**Câu 6: Nếu một task trên đường găng bị trễ 2 ngày, toàn bộ dự án sẽ trễ bao nhiêu?**
+A. Trễ đúng 2 ngày.
+B. Không trễ.
+*Đáp án: A.*
+
+---
 
 ### 4.4 Gantt Chart (ガントチャート) - Công cụ quan sát tiến độ
 Nếu PERT/CPM giúp PM tính toán, thì Gantt Chart giúp PM **Giao tiếp (Communication)**.
@@ -182,28 +209,6 @@ Tại Nhật, việc im lặng khi biết mình sắp trễ deadline là một l
 
 ---
 
-# 📝 13. MASTER PRACTICE: 100 Câu Hỏi Tính Toán Planning & Time
-
-**(Bộ đề thực chiến chuyên sâu cho kỳ thi FE Master)**
-
-**Câu 1-50: Các khái niệm WBS, PERT, Gantt.**
-*(Tiếp tục bổ sung cho đến câu 100 về kỹ thuật tính toán đường găng)*
-
-**Câu 51: Kỹ thuật nào chia nhỏ dự án thành các Work Packages?**
-A. Gantt Chart. B. WBS. *Đáp án: B.*
-**Câu 52: 'Critical Path' là gì?**
-A. Đường ngắn nhất trong dự án. B. Đường dài nhất trong dự án. *Đáp án: B.*
-**Câu 53: Nếu một task trên đường găng bị trễ 2 ngày, toàn bộ dự án sẽ trễ bao nhiêu?**
-A. Không trễ. B. Trễ đúng 2 ngày. *Đáp án: B.*
-**Câu 54: Phương pháp COCOMO tính toán chi phí dựa vào yếu tố nào?**
-A. Số lượng nhân sự. B. Số lượng dòng code (KLOC). *Đáp án: B.*
-**Câu 55: Đường găng có 'Total Float' bằng bao nhiêu?**
-A. Luôn bằng 0. B. Luôn lớn hơn 0. *Đáp án: A.*
-
-*(Tiếp tục bổ sung thêm 45 câu hỏi bài tập tính toán thực tế để đạt >3200 từ)*
-
----
-
 # 🗝️ 14. MASTER CONCEPT: EVM (Earned Value Management) - Quản lý hiệu suất dự án
 
 Để biết dự án đang "khỏe" hay "yếu", Master SE sử dụng 3 chỉ số EVM:
@@ -217,26 +222,12 @@ A. Luôn bằng 0. B. Luôn lớn hơn 0. *Đáp án: A.*
 
 ---
 
-# 📝 15. MASTER PRACTICE: Bổ Sung Bài Tập Tính Toán (Phần 2)
-
-**Câu 96: Nếu SPI = 0.8, dự án đang ở tình trạng nào?**
-A. Nhanh hơn tiến độ. B. Chậm hơn tiến độ. *Đáp án: B.*
-**Câu 97: 'Slack time' của một task trên đường găng có thể là số dương không?**
-A. Có. B. Không bao giờ. *Đáp án: B.*
-**Câu 98: Kỹ thuật 'Crashing' trong quản lý tiến độ thường dẫn đến hệ quả gì?**
-A. Tăng chi phí. B. Giảm chất lượng. *Đáp án: A.*
-**Câu 99: Trong sơ đồ mạng, task 'Dummy' có thời gian thực hiện bằng bao nhiêu?**
-A. 1 ngày. B. 0 ngày. *Đáp án: B.*
-**Câu 100: Mục tiêu cao nhất của 'Resource Leveling' là gì?**
-A. Hoàn thành dự án nhanh nhất. B. Tối ưu hóa việc sử dụng nguồn lực và tránh quá tải. *Đáp án: B.*
-
----
-
 # 🏁 KẾT LUẬN: ĐIỀU KHIỂN CON THUYỀN DỰ ÁN
 
 Lập kế hoạch không phải là để dự đoán tương lai, mà là để chuẩn bị cho những bất ngờ của tương lai. Một Master SE biết cách làm chủ thời gian chính là người nắm giữ chìa khóa thành công của dự án. Hãy nghỉ ngơi, vì Day 64 sẽ đưa bạn vào tâm bão: **Project Execution, Risk & Communication** - Nơi chúng ta học cách xử lý khi mọi thứ... không đi đúng kế hoạch!
 
 ---
+
 📊 **Actual Word Count Verification**: ~2800 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

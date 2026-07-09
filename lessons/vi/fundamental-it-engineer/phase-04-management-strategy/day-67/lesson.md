@@ -6,7 +6,9 @@ description: >-
 day: 67
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Tại sao dự án "Xịn" vẫn bị khai tử?
 
 Bạn vừa đề xuất một công nghệ mới nhất cho dự án, sếp gật đầu khen hay nhưng sau đó lại... **bác bỏ**.
@@ -111,16 +113,41 @@ Tại Nhật, khi bạn lên chức **Project Leader**, bạn sẽ phải quản
 
 ---
 
-# 📝 8. QUICK QUIZ: Thử Thách Accounting Master
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: Điểm mà tại đó Tổng doanh thu bằng Tổng chi phí gọi là?**
-A. Lợi nhuận định mức. B. Điểm hòa vốn (BEP). *Đáp án: B.*
+A. Lợi nhuận định mức.
+B. Điểm hòa vốn (BEP).
+*Đáp án: B.*
 
 **Câu 2: Tài liệu nào thể hiện tình hình tài chính của công ty tại một thời điểm cụ thể?**
-A. P&L. B. Balance Sheet (B/S). *Đáp án: B.*
+A. Balance Sheet (B/S).
+B. P&L.
+*Đáp án: A.*
 
 **Câu 3: Công thức tính ROI là?**
-A. Lợi nhuận / Vốn đầu tư. B. Doanh thu / Chi phí. *Đáp án: A.*
+A. Doanh thu / Chi phí.
+B. Lợi nhuận / Vốn đầu tư.
+*Đáp án: B.*
+
+**Câu 4: Loại báo cáo nào cho biết tiền thực sự đi vào và đi ra khỏi công ty?**
+A. Cash Flow Statement.
+B. P&L.
+*Đáp án: A.*
+
+**Câu 5: Chi phí nào sau đây là Fixed Cost trong dự án IT?**
+A. Phí mua License theo User.
+B. Lương cứng của nhân viên.
+*Đáp án: B.*
+
+**Câu 6: Nếu tỷ lệ lợi nhuận biên tăng lên, điểm hòa vốn (BEP) sẽ thay đổi thế nào?**
+A. Tăng lên.
+B. Giảm xuống (Dễ hòa vốn hơn).
+*Đáp án: B.*
+
+---
 
 ### 3.4 Depreciation & Amortization (減価償却 - Khấu hao)
 Khi công ty mua một Server giá 1 tỷ, họ không ghi nhận chi phí 1 tỷ ngay lập tức mà chia nhỏ ra nhiều năm (Vòng đời hữu ích).
@@ -191,28 +218,6 @@ Khi bạn chọn làm tính năng A, bạn đang từ bỏ việc làm tính nă
 
 ---
 
-# 📝 13. MASTER PRACTICE: 100 Câu Hỏi Kế Toán & Quản Trị Doanh Nghiệp
-
-**(Bộ đề thực chiến chuyên sâu cho kỳ thi FE Master)**
-
-**Câu 1-50: Các khái niệm B/S, P&L, ROI, ROE.**
-*(Tiếp tục bổ sung cho đến câu 100 về kỹ thuật tính khấu hao và phân tích dòng tiền)*
-
-**Câu 51: Loại báo cáo nào cho biết tiền thực sự đi vào và đi ra khỏi công ty?**
-A. P&L. B. Cash Flow Statement. *Đáp án: B.*
-**Câu 52: Chi phí nào sau đây là Fixed Cost trong dự án IT?**
-A. Phí mua License theo User. B. Lương cứng của nhân viên. *Đáp án: B.*
-**Câu 53: Nếu tỷ lệ lợi nhuận biên tăng lên, điểm hòa vốn (BEP) sẽ thay đổi thế nào?**
-A. Tăng lên. B. Giảm xuống (Dễ hòa vốn hơn). *Đáp án: B.*
-**Câu 54: Công thức tính ROE (Return on Equity)?**
-A. Lợi nhuận ròng / Vốn chủ sở hữu. B. Doanh thu / Tổng tài sản. *Đáp án: A.*
-**Câu 55: Khấu hao (Depreciation) bản chất là gì?**
-A. Một khoản chi tiền mặt hàng năm. B. Phân bổ chi phí đầu tư vào các kỳ kế toán. *Đáp án: B.*
-
-*(Tiếp tục bổ sung thêm 45 câu hỏi tính toán phức tạp về PV, NPV và IRR để đạt >3200 từ)*
-
----
-
 # 🏁 KẾT LUẬN: MASTER CỦA SỰ THỰC TẾ
 
 Chúc mừng bạn đã làm quen với "ngôn ngữ của giới doanh nhân". Một Master SE không chỉ xây dựng những hệ thống tốt, mà còn phải xây dựng những hệ thống **có lãi**. 
@@ -220,6 +225,7 @@ Chúc mừng bạn đã làm quen với "ngôn ngữ của giới doanh nhân". 
 Day 68 sẽ đưa chúng ta đến với **Management Engineering (OR/IE)** - Nơi chúng ta học cách tối ưu hóa vận hành, quản lý kho bãi và dây chuyền sản xuất bằng các công cụ toán học đỉnh cao!
 
 ---
+
 📊 **Actual Word Count Verification**: ~3200 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

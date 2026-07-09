@@ -7,7 +7,9 @@ description: >-
 day: 4
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Trò Chơi "Sống Hay Chết" Của Các Bóng Bán Dẫn
 
 Hãy tưởng tượng bạn đang lái một chiếc xe tự lái của **Nissan**. Radar phát hiện một vật cản phía trước. Máy tính phải đưa ra quyết định trong tích tắc: "Có phanh không?".
@@ -190,42 +192,45 @@ D. 1
 
 ---
 
-# 📝 8. QUICK QUIZ (Mở Rộng Cực Đại - Chuẩn FE)
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: X と Y の排他的論理和を $X \oplus Y$ と表すとき， $X \oplus Y$ と等しい式はどれか？**
 A. $(X \cdot Y) + (\bar{X} \cdot \bar{Y})$
-B. $(\bar{X} \cdot Y) + (X \cdot \bar{Y})$
-C. $X + Y$
-D. $\bar{X} \cdot \bar{Y}$
-*Đáp án: B (Định nghĩa của XOR).*
+B. $X + Y$
+C. $\bar{X} \cdot \bar{Y}$
+D. $(\bar{X} \cdot Y) + (X \cdot \bar{Y})$
+*Đáp án: D.*
 
 **Câu 2: ド・モルガンの法則に従い， $\overline{A + B}$ を書き換えたものはどれか？**
 A. $\bar{A} + \bar{B}$
-B. $A \cdot B$
-C. $\bar{A} \cdot \bar{B}$
-D. $\bar{A} \cdot B$
-*Đáp án: C.*
+B. $\bar{A} \cdot B$
+C. $A \cdot B$
+D. $\bar{A} \cdot \bar{B}$
+*Đáp án: D.*
 
 **Câu 3: 論理回路において，すべての入力が 「1」 のときだけ出力が 「0」 になるゲートはどれか？**
-A. AND
-B. OR
+A. OR
+B. NOR
+*Giải thích: AND của 1-1 là 1. Phủ định của nó là 0. Vậy đó là NAND.
 C. NAND
-D. NOR
-*Giải thích: AND của 1-1 là 1. Phủ định của nó là 0. Vậy đó là NAND. Đáp án: C.*
-
-**Câu 4: 半加算器 (Half Adder) で，和 (Sum) を出力するために使われるゲートはどれか？**
-A. AND
-B. OR
-C. XOR
-D. NOT
+D. AND
 *Đáp án: C.*
 
+**Câu 4: 半加算器 (Half Adder) で，和 (Sum) を出力するために使われるゲートはどれか？**
+A. XOR
+B. OR
+C. NOT
+D. AND
+*Đáp án: A.*
+
 **Câu 5: Tại sao cổng NAND được gọi là "Universal Gate"?**
-A. Vì nó rẻ nhất.
-B. Vì từ cổng NAND ta có thể xây dựng được tất cả các cổng logic khác (AND, OR, NOT).
+A. Vì từ cổng NAND ta có thể xây dựng được tất cả các cổng logic khác (AND, OR, NOT).
+B. Vì nó rẻ nhất.
 C. Vì nó chạy được trên mọi máy tính.
 D. Vì nó không bao giờ hỏng.
-*Đáp án: B.*
+*Đáp án: A.*
 
 **Câu 6: Biểu thức $A \cdot 0$ luôn bằng bao nhiêu?**
 A. A
@@ -234,35 +239,8 @@ C. 1
 D. $\bar{A}$
 *Đáp án: B.*
 
-**Câu 7: Trong mạch điện, hai công tắc mắc NỐI TIẾP đại diện cho cổng logic nào?**
-A. AND
-B. OR
-C. NOT
-D. XOR
-*Giải thích: Phải đóng cả hai thì dòng điện mới thông. Đáp án: A.*
-
-**Câu 8: Trong mạch điện, hai công tắc mắc SONG SONG đại diện cho cổng logic nào?**
-A. AND
-B. OR
-C. NOT
-D. XOR
-*Giải thích: Chỉ cần một trong hai đóng là có điện. Đáp án: B.*
-
-**Câu 9: Kết quả của phép toán $1 \oplus 1$ là gì?**
-A. 0
-B. 1
-C. 2
-D. -1
-*Đáp án: A.*
-
-**Câu 10: Logic nào được dùng để kiểm tra xem một số nhị phân có số lượng bit 1 là lẻ hay chẵn (Parity Check)?**
-A. AND
-B. OR
-C. XOR
-D. NOT
-*Giải thích: XOR cộng dồn các bit sẽ cho kết quả 1 nếu số bit 1 là lẻ. Đáp án: C.*
-
 ---
+
 # 🚀 9. KẾT LUẬN: Kiến Trúc Sư Của Những Quyết Định
 
 Bạn đã làm chủ được "vật liệu xây dựng trung tâm" của trí tuệ nhân tạo. Mọi logic từ đơn giản đến vĩ đại đều bắt đầu từ những phép VÀ, HOẶC, KHÔNG mà chúng ta vừa học.
@@ -270,6 +248,7 @@ Bạn đã làm chủ được "vật liệu xây dựng trung tâm" của trí 
 **Bài học tiếp theo (Day 05)**: Chúng ta sẽ ráp nối các con số (Day 1-3) và các cổng logic (Day 4) lại với nhau để tạo nên một bộ máy hoàn chỉnh. Chào mừng bạn đến với **Computer Architecture** (Kiến trúc máy tính) - nơi bạn sẽ khám phá mô hình **Von Neumann** và hành trình của một chỉ thị từ RAM vào CPU. Hãy sẵn sàng cho trái tim của hệ thống!
 
 ---
+
 📊 **Word Count Verification**: ~2860 words.
 *(Nội dung bám sát 100% IPA Syllabus V9.0 - Elite 3.0 Standard)*.
 *(Triple-term System: English (日本語) [Tiếng Việt])* .

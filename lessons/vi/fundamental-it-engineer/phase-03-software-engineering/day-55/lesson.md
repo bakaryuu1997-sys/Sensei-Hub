@@ -7,7 +7,9 @@ description: >-
 day: 55
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Tại Sao Chiếc iPhone Lại Thay Đổi Thế Giới?
 
 Trước năm 2007, điện thoại thông minh đều có bàn phím vật lý phức tạp. iPhone ra đời với một màn hình cảm ứng duy nhất và triết lý "Trượt để mở khóa". Đó không chỉ là thành công về phần cứng, đó là thành công vĩ đại của **HCI (Human-Computer Interaction)**.
@@ -106,9 +108,43 @@ Người Nhật cực kỳ chú trọng đến chi tiết. Một ứng dụng We
 
 ---
 
-# 📝 9. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
+---
 
-**Câu 1: Thuật ngữ nào mô tả việc phần mềm đứng giữa để kết nối ứng dụng và hệ điều hành?** A. Firmware. B. Middleware. C. Hardware. D. Spyware. *Đáp án: B.*
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
+
+**Câu 1: Thuật ngữ nào mô tả việc phần mềm đứng giữa để kết nối ứng dụng và hệ điều hành?**
+A. Middleware.
+B. Firmware.
+C. Spyware.
+D. Hardware.
+*Đáp án: A.*
+
+**Câu 2: 'Affordance' của một chiếc nút bấm trên màn hình là gì?**
+A. Khả năng nó trông giống như một khối lồi lên, gợi ý rằng người dùng có thể "nhấn" vào.
+B. Màu sắc của nó.
+*Đáp án: A.*
+
+**Câu 3: Middleware 'RPC' hoạt động theo mô hình nào?**
+A. Peer-to-Peer.
+B. Client-Server (Gọi hàm từ xa).
+*Đáp án: B.*
+
+**Câu 4: Cổng USB Type-C có ưu điểm gì lớn nhất về HCI?**
+A. Tốc độ nhanh.
+B. Tính đối xứng (Cắm chiều nào cũng được), giảm lỗi frustration cho người dùng.
+*Đáp án: B.*
+
+**Câu 5: Chuẩn 'IEEE 802.11' là tên gọi kỹ thuật của công nghệ nào?**
+A. Wi-Fi.
+B. Bluetooth.
+*Đáp án: A.*
+
+**Câu 6: Middleware giúp giải quyết vấn đề gì lớn nhất trong hệ thống phân tán?**
+A. Làm code đẹp hơn.
+B. Giảm sự phụ thuộc cứng (Tăng tính Loose Coupling) giữa các thành phần khác nhau.
+*Đáp án: B.*
+
+---
 
 ### 3.4 Quy Tắc Norman Trong Thiết Kế HCI (ノーマンのデザイン原則)
 Don Norman, "cha đẻ" của trải nghiệm người dùng, đã đưa ra 6 nguyên tắc mà bất kỳ Master SE nào cũng phải nằm lòng:
@@ -192,23 +228,6 @@ Trong văn hóa an toàn của Nhật, việc "dừng lại" khi gặp sự cố
 
 ---
 
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
-
-**(Bộ đề tổng kết Phase 5 - Kiến trúc và Giao diện)**
-
-**Câu 1-50: Các khái niệm HCI, GUI, Middleware cơ bản.**
-*(Bổ sung 50 câu hỏi Master nâng cao về Interface và MOM)*
-
-**Câu 51: 'Affordance' của một chiếc nút bấm trên màn hình là gì?** A. Màu sắc của nó. B. Khả năng nó trông giống như một khối lồi lên, gợi ý rằng người dùng có thể "nhấn" vào. *Đáp án: B.*
-**Câu 52: Middleware 'RPC' hoạt động theo mô hình nào?** A. Peer-to-Peer. B. Client-Server (Gọi hàm từ xa). *Đáp án: B.*
-**Câu 53: Cổng USB Type-C có ưu điểm gì lớn nhất về HCI?** A. Tốc độ nhanh. B. Tính đối xứng (Cắm chiều nào cũng được), giảm lỗi frustration cho người dùng. *Đáp án: B.*
-**Câu 54: Chuẩn 'IEEE 802.11' là tên gọi kỹ thuật của công nghệ nào?** A. Bluetooth. B. Wi-Fi. *Đáp án: B.*
-**Câu 55: Middleware giúp giải quyết vấn đề gì lớn nhất trong hệ thống phân tán?** A. Làm code đẹp hơn. B. Giảm sự phụ thuộc cứng (Tăng tính Loose Coupling) giữa các thành phần khác nhau. *Đáp án: B.*
-
-*(Tiếp tục bổ sung thêm 45 câu hỏi chi tiết về JIS (Japanese Industrial Standards) cho Accessibility, Web Content Accessibility Guidelines (WCAG) 2.1 và các giao thức tầng trung gian để đạt >3500 từ)*
-
----
-
 # ❓ 11. TROUBLESHOOTING FAQ: Giải Đáp Nút Thắt HCI
 
 **1. Tại sao App của tôi chức năng rất tốt nhưng lượt tải lại thấp?**
@@ -238,21 +257,12 @@ Tương lai của HCI không chỉ dừng lại ở màn hình cảm ứng:
 
 ---
 
-# 📝 14. MASTER PRACTICE: Bổ Sung Câu Hỏi Thực Chiến
-
-**Câu 96: Tại sao 'USB Type-C' lại là một bước tiến lớn của HCI?** A. Vì nó có màu đẹp. B. Vì nó loại bỏ sự nhầm lẫn khi cắm (Reversible plug), nâng cao trải nghiệm người dùng. *Đáp án: B.*
-**Câu 97: 'JIS X 8341' là tiêu chuẩn gì của Nhật Bản?** A. Tiêu chuẩn về sắt thép. B. Tiêu chuẩn quốc gia về khả năng truy cập Web (Web Accessibility) cho người cao tuổi và người khuyết tật. *Đáp án: B.*
-**Câu 98: Trong kiến trúc Microservices, thành phần nào đóng vai trò như một Middleware quản lý các API?** A. Database. B. API Gateway. *Đáp án: B.*
-**Câu 99: 'Consistency' (Tính nhất quán) trong HCI giúp gì cho người dùng?** A. Làm app đẹp hơn. B. Giúp người dùng giảm thời gian học cách sử dụng vì các chức năng tương tự luôn nằm ở vị trí cũ. *Đáp án: B.*
-**Câu 100: Là một FE Master, bạn nên ưu tiên điều gì nhất khi thiết kế Interface?** A. Công nghệ mới nhất. B. Trải nghiệm người dùng thực tế. Hãy luôn đặt mình vào vị trí của người dùng, đặc biệt là những người không rành về kỹ thuật, để tạo ra những sản phẩm thực sự có ích cho xã hội. *Đáp án: B.*
-
----
-
 # 🏁 KẾT LUẬN: KHÁP KÍN CHIẾN LƯỢC MASTER PHASE 5
 
 Chúc mừng bạn! Bạn đã hoàn thành 5 ngày học cực kỳ cường độ cao về **Kỹ thuật hệ thống bài bản**. Chúng ta đã đi từ Cấu trúc hệ thống, Độ tin cậy, Bảo mật mật mã đến bảo mật mạng và cuối cùng là sự tương tác tuyệt vời giữa con người và máy móc. Bạn không còn là một lập trình viên chỉ biết viết code, bạn đã bắt đầu tư duy như một **Software Architect thực thụ**. Hẹn gặp lại bạn ở các Phase tiếp theo để chinh phục những đỉnh cao mới!
 
 ---
+
 📊 **Actual Word Count Verification**: ~2700 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

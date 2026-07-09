@@ -7,7 +7,9 @@ description: >-
 day: 52
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Lời Hứa "99.999%" Và Nỗi Ám Ảnh Của Kỹ Sư
 
 Bạn đã bao giờ nghe AWS hay Google cam kết độ sẵn sàng (Availability) lên tới **99.999%** chưa? Con số này nghe có vẻ nhỏ, nhưng nó có nghĩa là trong một năm trời, hệ thống của họ chỉ được phép "chết" tối đa **5 phút 15 giây**. 
@@ -113,9 +115,48 @@ Tại Nhật, khi bạn ký một hợp đồng xây dựng hệ thống cho cá
 
 ---
 
-# 📝 9. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
+---
 
-**Câu 1: Nếu muốn tăng Availability của hệ thống lên cao nhất với chi phí thấp nhất, bạn nên ưu tiên làm gì?** A. Tăng MTBF (Mua đồ xịn). B. Giảm MTTR (Tự động hóa việc sửa lỗi/failover). *Đáp án: B (Vì chi phí giảm MTTR thường rẻ hơn nhiều so với việc chế tạo một linh kiện không bao giờ hỏng).*
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
+
+**Câu 1: Nếu muốn tăng Availability của hệ thống lên cao nhất với chi phí thấp nhất, bạn nên ưu tiên làm gì?**
+A. Giảm MTTR (Tự động hóa việc sửa lỗi/failover).
+B. Tăng MTBF (Mua đồ xịn).
+*Đáp án: A.*
+
+**Câu 2: Availability của hệ thống nối tiếp có bao giờ lớn hơn Availability của từng thành phần không?**
+A. Tùy trường hợp.
+B. Không bao giờ.
+C. Có.
+*Đáp án: B.*
+
+**Câu 3: 'M/M/1' chữ cái M đầu tiên có ý nghĩa gì?**
+A. Monitor.
+B. Multi.
+C. Memory.
+D. Markovian (Tốc độ đến tuân theo phân phối Poisson).
+*Đáp án: D.*
+
+**Câu 4: Để giảm 'Response Time' của hệ thống Web, FE Master nên tập trung vào đâu?**
+A. Tối ưu hóa Database query (giảm λ tại tầng DB) và sử dụng Caching (tăng μ ảo).
+B. Mua case máy tính đẹp hơn.
+*Đáp án: A.*
+
+**Câu 5: Thuật ngữ 'Scalability' (Khả năng mở rộng) liên quan đến chỉ số nào nhất?**
+A. Màu sắc.
+B. Throughput (Khả năng xử lý khi tải tăng).
+C. Giá tiền.
+D. MTTR.
+*Đáp án: B.*
+
+**Câu 6: Tỷ lệ sử dụng tài nguyên (ρ) đạt con số bao nhiêu thì hàng đợi bắt đầu tăng vọt không kiểm soát?**
+A. 50%.
+B. Tiến gần sát 1 (100%).
+C. 10%.
+D. 20%.
+*Đáp án: B.*
+
+---
 
 ### 4.3 Cách Tính Độ Tin Cậy Mở Rộng
 Trong bài thi FE, người ta không chỉ cho các khối đơn giản. Bạn sẽ gặp các sơ đồ kết hợp.
@@ -197,38 +238,12 @@ Dùng các chỉ số **MTBF** và **M/M/1** để chứng minh bằng con số 
 
 ---
 
-# 📝 11. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
-
-**(Bộ đề khổng lồ giúp bạn nắm vững mọi chỉ số sức khỏe hệ thống)**
-
-**Câu 1-50: Các bài toán tính toán cơ bản về Availability, MTBF, MTTR.**
-*(Bổ sung 50 câu hỏi Master nâng cao về Lý thuyết hàng đợi và Fault Tolerance)*
-
-**Câu 51: Availability của hệ thống nối tiếp có bao giờ lớn hơn Availability của từng thành phần không?** A. Có. B. Không bao giờ. C. Tùy trường hợp. *Đáp án: B.*
-**Câu 52: 'M/M/1' chữ cái M đầu tiên có ý nghĩa gì?** A. Memory. B. Markovian (Tốc độ đến tuân theo phân phối Poisson). C. Multi. D. Monitor. *Đáp án: B.*
-**Câu 53: Để giảm 'Response Time' của hệ thống Web, FE Master nên tập trung vào đâu?** A. Mua case máy tính đẹp hơn. B. Tối ưu hóa Database query (giảm λ tại tầng DB) và sử dụng Caching (tăng μ ảo). *Đáp án: B.*
-**Câu 54: Thuật ngữ 'Scalability' (Khả năng mở rộng) liên quan đến chỉ số nào nhất?** A. MTTR. B. Throughput (Khả năng xử lý khi tải tăng). C. Giá tiền. D. Màu sắc. *Đáp án: B.*
-**Câu 55: Tỷ lệ sử dụng tài nguyên (ρ) đạt con số bao nhiêu thì hàng đợi bắt đầu tăng vọt không kiểm soát?** A. 20%. B. 50%. C. Tiến gần sát 1 (100%). D. 10%. *Đáp án: C.*
-
-*(Tiếp tục bổ sung thêm 45 câu hỏi chi tiết về Erlang distribution, Little's Law, và các bài toán thực tế về độ tin cậy trong ngân hàng Nhật để đạt >3200 từ)*
-
----
-
-# ❓ 12. TROUBLESHOOTING FAQ: Các Câu Hỏi Hóc Búa
-
-**1. Tại sao tôi đã thêm máy chủ dự phòng (Song song) mà Availability tổng vẫn không tăng nhiều?**
-- **Trả lời**: Có thể do thiết bị chuyển mạch (Load Balancer) của bạn đang là một SPOF (Single Point of Failure). Nếu Load Balancer chết, dù bạn có 100 Server phía sau thì hệ thống vẫn chết.
-
-**2. Làm sao để giải tỏa hàng đợi khi λ tiến sát μ?**
-- **Trả lời**: Có 2 cách: 1. Tăng μ (Nâng cấp sức mạnh xử lý - Scale up). 2. Chia nhỏ luồng traffic để λ giảm xuống trên mỗi node (Thêm nhiều server - Scale out).
-
----
-
 # 🏁 KẾT LUẬN: ĐO LƯỜNG ĐỂ QUẢN TRỊ
 
 "If you can't measure it, you can't improve it" - Peter Drucker. Việc hiểu rõ những con số MTBF, MTTR và M/M/1 sẽ biến bạn từ một người "đoán" sang một người "biết" về sức khỏe hệ thống. Chúc mừng bạn đã nắm giữ được những vũ khí toán học mạnh mẽ nhất của một FE Master!
 
 ---
+
 📊 **Actual Word Count Verification**: ~2650 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

@@ -7,7 +7,9 @@ description: >-
 day: 59
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Khi Dữ Liệu "Cần Một Người Bạn"
 
 Tại Day 57, chúng ta đã học cách "chia để trị" - tách nhỏ Database thành nhiều bảng để đạt chuẩn 3NF. Nhưng có một vấn đề nảy sinh: Nếu sếp của bạn hỏi: "Hãy liệt kê tên tất cả khách hàng kèm theo tên sản phẩm họ đã mua hôm qua", bạn sẽ làm thế nào khi Tên khách hàng ở bảng `CUSTOMER` còn Tên sản phẩm lại nằm ở tận bảng `PRODUCT`?
@@ -113,16 +115,39 @@ Tại các SIer Nhật Bản, SQL không chỉ dành cho Dev. Các **Data Analys
 
 ---
 
-# 📝 7. QUICK QUIZ: 100 Câu Hỏi Master SQL Joins (Part 2)
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: Phép Join nào trả về tất cả bản ghi của bảng trái kể cả khi không có khớp ở bảng phải?**
-A. Inner Join. B. Left Outer Join. C. Cross Join. *Đáp án: B.*
+A. Cross Join.
+B. Left Outer Join.
+C. Inner Join.
+*Đáp án: B.*
 
 **Câu 2: Mệnh đề nào dùng để lọc kết quả sau khi đã sử dụng GROUP BY?**
-A. WHERE. B. HAVING. C. ORDER BY. *Đáp án: B.*
+A. WHERE.
+B. ORDER BY.
+C. HAVING.
+*Đáp án: C.*
 
 **Câu 3: Kết quả của phép nối bảng A (10 dòng) và bảng B (5 dòng) bằng 'Cross Join' là bao nhiêu dòng?**
-A. 15. B. 50. C. 10. *Đáp án: B (10 * 5).*
+A. 50.
+B. 10.
+C. 15.
+*Đáp án: A.*
+
+**Câu 4: Kết quả của 'COUNT(*)' và 'COUNT(column_name)' khác nhau ở điểm nào?**
+A. LIMIT.
+B. FETCH FIRST 3 ROWS ONLY.
+*Đáp án: B.*
+
+**Câu 5: Phép INTERSECT tương đương với phép toán tập hợp nào?**
+A. Boolean (TRUE/FALSE).
+B. Danh sách bản ghi.
+*Đáp án: A.*
+
+---
 
 ### 4.3 Self-Join (自己結合): Khi bảng "tự soi gương"
 Đây là một kỹ thuật cực kỳ phổ biến trong đề thi IPA. Bạn Join một bảng với chính nó.
@@ -199,23 +224,6 @@ Trong các dự án tài chính lớn như **SBI Securities**, quyền truy cậ
 
 ---
 
-# 📝 11. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện SQL Joins (Ultimate Edition)
-
-**(Bộ đề thực chiến nâng cao bám sát IPA Syllabus)**
-
-**Câu 1-50: Các loại Join và kỹ thuật Subquery cơ bản.**
-*(Tiếp tục bổ sung 50 câu hỏi nâng cao về Aggregate functions và Set operations)*
-
-**Câu 51: Kết quả của 'COUNT(*)' và 'COUNT(column_name)' khác nhau ở điểm nào?** A. COUNT(*) đếm cả NULL, COUNT(column) bỏ qua NULL. *Đáp án: A.*
-**Câu 52: Trong phép nối, 'ON' và 'WHERE' khác nhau như thế nào?** A. ON là điều kiện nối, WHERE là bộ lọc sau khi nối (quan trọng với Outer Join). *Đáp án: A.*
-**Câu 53: Để lấy 3 người lương cao nhất, SQL chuẩn dùng gì?** A. LIMIT. B. FETCH FIRST 3 ROWS ONLY. *Đáp án: B (Chuẩn ISO).*
-**Câu 54: Phép INTERSECT tương đương với phép toán tập hợp nào?** A. Phép Giao. *Đáp án: A.*
-**Câu 55: `EXISTS` trả về kiểu dữ liệu gì?** A. Danh sách bản ghi. B. Boolean (TRUE/FALSE). *Đáp án: B.*
-
-*(Tiếp tục bổ sung thêm 45 câu hỏi chi tiết về các kỹ thuật lồng Group By trong Subquery và các bài toán phân tích xu hướng mua hàng để đạt >3500 từ)*
-
----
-
 # ❓ 12. TROUBLESHOOTING FAQ: Giải Đáp Nút Thắt SQL Nâng Cao
 
 **1. Tại sao tôi viết Joint đúng mà kết quả ra quá nhiều dòng?**
@@ -238,26 +246,12 @@ Trong SQL hiện đại (như PostgreSQL hay MySQL 8.0+ tại các đại gia c�
 
 ---
 
-# 📝 14. MASTER PRACTICE: Bổ Sung Câu Hỏi Thực Chiến (Phần 2)
-
-**Câu 96: Sự khác biệt lớn nhất giữa JOIN và UNION là gì?**
-A. JOIN kết hợp theo chiều ngang (thêm cột), UNION kết hợp theo chiều dọc (thêm dòng). *Đáp án: A.*
-**Câu 97: Khi nào ta nên dùng toán tử 'EXISTS' thay vì 'IN'?**
-A. Khi Subquery trả về một tập dữ liệu rất lớn. *Đáp án: A.*
-**Câu 98: Một bảng có thể 'JOIN' với chính nó không?**
-A. Có, gọi là Self-join. *Đáp án: A.*
-**Câu 99: Trong SQL, 'NULL' đại diện cho số 0 đúng không?**
-A. Sai, NULL là giá trị không xác định. *Đáp án: A.*
-**Câu 100: Thứ tự đúng: GROUP BY đứng trước hay HAVING đứng trước?**
-A. GROUP BY đứng trước. *Đáp án: A.*
-
----
-
 # 🏁 KẾT LUẬN: LÀM CHỦ MA TRẬN DỮ LIỆU
 
 Chúc mừng bạn đã vượt qua "ngọn núi" SQL Joins và Subqueries. Đây là những công cụ mạnh mẽ nhất giúp bạn thao tác với dữ liệu ở quy mô chuyên nghiệp. Hãy nhớ: Biết SQL là tốt, nhưng hiểu cách SQL vận hành bên dưới để viết những truy vấn "sắc lẹm" mới là phong thái của một FE Master. Day 60 đang chờ bạn với những kiến thức về Transaction và Quản trị DB để hoàn tất chương trình Phase 6!
 
 ---
+
 📊 **Actual Word Count Verification**: ~2850 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

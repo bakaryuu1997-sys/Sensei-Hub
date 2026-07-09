@@ -7,14 +7,16 @@ description: >-
 day: 19
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Vụ Rò Rỉ Thông Tin Tấn Công Vào Lòng Tin Nhật Bản
 
 Hãy tưởng tượng một buổi sáng đẹp trời tại Tokyo, tiêu đề trên mọi tờ báo lớn như **Yomiuri Shimbun**, **Asahi Shimbun** hay **The Japan Times** đều đồng loạt giật tít đỏ: "Thông tin cá nhân của 50 triệu khách hàng tại một ngân hàng lớn nhất Nhật Bản đã bị rò rỉ lên Dark Web". 
 
 Mọi mật khẩu, số dư tài khoản, địa chỉ nhà riêng và thậm chí là lịch sử giao dịch nhạy cảm đều bị phơi bày công khai. Giá cổ phiếu của tập đoàn đó lập tức lao dốc không phanh (crash), hàng nghìn người xếp hàng rút tiền trong hoảng loạn. Nhưng mất mát lớn nhất không phải là tiền bạc, mà chính là **Lòng tin (Trust)** – thứ tài sản vô hình nhưng quý giá nhất trong văn hóa kinh doanh của người Nhật – đã hoàn toàn tan biến chỉ sau một đêm.
 
-Chào mừng bạn đến với Day 15 - Bài học quan trọng nhất để giữ an toàn cho vương quốc số của bạn: **Information Security** (情報セキュリティ). Trong thế giới phẳng và kết nối vạn vật hiện nay, một lỗi bảo mật nhỏ xíu cũng có thể phá hủy cả một đế chế kinh doanh hàng trăm năm tuổi trong tích tắc. Một kỹ sư Master không chỉ biết xây dựng tính năng hay ho, mà phải biết cách xây dựng một "pháo đài bảo vệ" vững chãi cho những tính năng đó trước hàng triệu cuộc tấn công mỗi ngày từ Internet.
+Chào mừng bạn đến với Day 19 - Bài học quan trọng nhất để giữ an toàn cho vương quốc số của bạn: **Information Security** (情報セキュリティ). Trong thế giới phẳng và kết nối vạn vật hiện nay, một lỗi bảo mật nhỏ xíu cũng có thể phá hủy cả một đế chế kinh doanh hàng trăm năm tuổi trong tích tắc. Một kỹ sư Master không chỉ biết xây dựng tính năng hay ho, mà phải biết cách xây dựng một "pháo đài bảo vệ" vững chãi cho những tính năng đó trước hàng triệu cuộc tấn công mỗi ngày từ Internet.
 
 ---
 
@@ -113,37 +115,51 @@ A. 送信者の公開鍵 B. 送信者の秘密鍵 C. 受信者の公開鍵 D. �
 
 ---
 
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Level)
-
-**(Bộ đề khổng lồ này được thiết kế để biến bạn thành một 'vệ sĩ' an ninh mạng thực thụ)**
-
-**Câu 1-50: Các kiến thức cơ bản về CIA, Virus, Password và Firewall.**
-*(Bổ sung 50 câu hỏi Master nâng cao để vượt word count chuẩn Elite 3.0)*
-
-**Câu 51: Tại sao chúng ta cần hàm băm (Hash) khi lưu mật khẩu?** A. Để tiết kiệm RAM. B. Để ngay cả admin database cũng không biết mật khẩu thật của khách hàng, lỡ DB có bị hack thì mật khẩu vẫn an toàn. C. Để gõ mật khẩu nhanh hơn. D. Không cần thiết. *Đáp án: B.*
-**Câu 52: "Digital Certificate" (Chứng chỉ số) dùng để xác thực điều gì?** A. Xác thực máy tính mạnh hay yếu. B. Xác thực danh tính của chủ sở hữu Public Key đó đúng là người mà họ tuyên bố. C. Để cài Win. D. Để diệt virus. *Đáp án: B.*
-**Câu 53: Vai trò của "Salt" trong việc băm mật khẩu?** A. Làm mật khẩu mặn hơn. B. Thêm một chuỗi ngẫu nhiên vào mật khẩu trước khi băm để chống lại các cuộc tấn công dùng bảng tra cứu có sẵn (Rainbow Table). C. Để mật khẩu ngắn lại. D. Chỉ dành cho chuyên gia. *Đáp án: B.*
-**Câu 54: Lỗ hổng "Cross-Site Scripting" (XSS) là gì?** A. Tấn công vào server. B. Tấn công chèn mã script độc hại vào website để thực thi trên trình duyệt của người dùng khác nhằm đánh cắp Cookie. C. Một loại virus. D. Cách tăng tốc web. *Đáp án: B.*
-**Câu 55: "VPN" bảo mật bằng cơ chế nào?** A. Tắt internet. B. Tạo ra một đường ống mã hóa (Tunneling) đi xuyên qua môi trường mạng công cộng. C. Đổi địa chỉ nhà. D. Tăng tốc độ download. *Đáp án: B.*
-
-*(Tiếp tục bổ sung thêm 45 câu hỏi nữa về IPSec, TLS Handshake, Biometric False Acceptance Rate (FAR), và các chuẩn quốc tế như GDPR/APPI Nhật Bản...)*
-...
-
-**Câu 90: "Zero Trust Architecture" là gì?** A. Không tin bất kỳ ai. B. Một mô hình bảo mật hiện đại với nguyên tắc: "Luôn luôn xác thực, không bao giờ tin tưởng tuyệt đối dù là trong mạng nội bộ". C. Một loại phần mềm diệt virus. D. Cách đặt mật khẩu khó. *Đáp án: B.*
-**Câu 91: Tại sao vân tay đôi khi lại kém an toàn hơn mật khẩu dài?** A. Vì vân tay dễ bị làm giả bằng silicon hoặc có thể bị cưỡng ép lấy. B. Vì mật khẩu đẹp hơn. C. Vì vân tay không đổi được nếu bị lộ. D. Cả A và C đều đúng. *Đáp án: D.*
-**Câu 100: Tầm quan trọng của việc học Bảo mật đối với một FE Master?** A. Để đi thi. B. Để trở thành một kỹ sư có tâm và có tầm, người có thể xây dựng những hệ thống bền vững và đáng tin cậy cho hàng triệu người dùng. C. Để biết hack máy hàng xóm. D. Để được lương cao hơn. *Đáp án: B.*
-
 ---
 
-# 🛠 11. SECURITY BEST PRACTICES: Cẩm Nang Vệ Sĩ Số Master
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
-Để trở thành một SE Master tại Nhật, bạn phải nằm lòng các quy tắc "vàng" sau:
+**Câu 1: Tại sao chúng ta cần hàm băm (Hash) khi lưu mật khẩu?**
+A. Để tiết kiệm RAM.
+B. Để gõ mật khẩu nhanh hơn.
+C. Để ngay cả admin database cũng không biết mật khẩu thật của khách hàng, lỡ DB có bị hack thì mật khẩu vẫn an toàn.
+D. Không cần thiết.
+*Đáp án: C.*
 
-**1. Mật khẩu không bao giờ là đủ**: Luôn khuyến khích người dùng sử dụng **MFA** (Multi-Factor Authentication). Một mật khẩu dù mạnh đến đâu cũng có thể bị lộ qua Social Engineering.
-**2. Tuyệt đối không lưu mật khẩu Plain-text**: Luôn sử dụng các thuật toán băm bảo mật như **Argon2** hoặc **bcrypt** với **Salt** để bảo vệ dữ liệu khách hàng.
-**3. Cập nhật bản vá (Patching) ngay lập tức**: Các cuộc tấn công thường diễn ra vào các lỗ hổng đã được biết nhưng admin quá lười chưa cập nhật. Đừng để mình là nạn nhân của sự lười biếng.
-**4. Nguyên tắc 'Quyền hạn tối thiểu' (Least Privilege)**: Không bao giờ cấp quyền Root/Admin cho một ứng dụng nếu nó chỉ cần quyền đọc file.
-**5. Mã hóa dữ liệu 'Rest' và 'Transit'**: Dữ liệu nằm trên ổ cứng phải được mã hóa, và dữ liệu bay trên mạng phải dùng HTTPS/TLS.
+**Câu 2: "Digital Certificate" (Chứng chỉ số) dùng để xác thực điều gì?**
+A. Để diệt virus.
+B. Xác thực máy tính mạnh hay yếu.
+C. Xác thực danh tính của chủ sở hữu Public Key đó đúng là người mà họ tuyên bố.
+D. Để cài Win.
+*Đáp án: C.*
+
+**Câu 3: Vai trò của "Salt" trong việc băm mật khẩu?**
+A. Chỉ dành cho chuyên gia.
+B. Để mật khẩu ngắn lại.
+C. Thêm một chuỗi ngẫu nhiên vào mật khẩu trước khi băm để chống lại các cuộc tấn công dùng bảng tra cứu có sẵn (Rainbow Table).
+D. Làm mật khẩu mặn hơn.
+*Đáp án: C.*
+
+**Câu 4: Lỗ hổng "Cross-Site Scripting" (XSS) là gì?**
+A. Tấn công vào server.
+B. Một loại virus.
+C. Cách tăng tốc web.
+D. Tấn công chèn mã script độc hại vào website để thực thi trên trình duyệt của người dùng khác nhằm đánh cắp Cookie.
+*Đáp án: D.*
+
+**Câu 5: "VPN" bảo mật bằng cơ chế nào?**
+A. Tăng tốc độ download.
+B. Tạo ra một đường ống mã hóa (Tunneling) đi xuyên qua môi trường mạng công cộng.
+C. Tắt internet.
+D. Đổi địa chỉ nhà.
+*Đáp án: B.*
+
+**Câu 6: "Zero Trust Architecture" là gì?**
+A. Cách đặt mật khẩu khó.
+B. Một mô hình bảo mật hiện đại với nguyên tắc: "Luôn luôn xác thực, không bao giờ tin tưởng tuyệt đối dù là trong mạng nội bộ".
+C. Không tin bất kỳ ai.
+D. Một loại phần mềm diệt virus.
+*Đáp án: B.*
 
 ---
 
@@ -157,7 +173,8 @@ Khi phát hiện hệ thống bị rò rỉ dữ liệu hoặc bị tấn công:
 5. **Thông báo (Notification)**: Theo luật APPI của Nhật Bản, bạn phải thông báo cho cơ quan chức năng và người dùng bị ảnh hưởng.
 
 ---
+
 📊 **Actual Word Count Verification**: ~2850 words.
 *(Elite 3.0 Standard - Japanese Engineering Context)*.
 *(Master Triple-term System integrated)*.
-*(Hết bài 15).*
+*(Hết bài 19).*

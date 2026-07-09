@@ -7,12 +7,14 @@ description: >-
 day: 43
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Một Dòng Code Lỗi Có Thể "Đốt Cháy" 370 Triệu USD
 
 Ngày 4 tháng 6 năm 1996, tên lửa **Ariane 5** của Châu Âu đã nổ tung chỉ sau 37 giây cất cánh. Nguyên nhân? Một lỗi tràn số (Integer Overflow) trong mã nguồn – thứ mà chỉ mất vài phút để kiểm tra nếu có quy trình kiểm thử nghiêm ngặt. 370 triệu USD và hàng chục năm nghiên cứu đã tan thành tro bụi chỉ vì một "con bọ" (Bug) nhỏ xíu.
 
-Chào mừng bạn đến với Day 18. Trong kỷ nguyên số, **Software Testing** không phải là bước phụ, nó là "lá phổi" đảm bảo sự sống sót của phần mềm. Một kỹ sư Master hiểu rằng: viết code chạy được chỉ là bước đầu, viết code mà "không thể sai" mới là đỉnh cao của nghề nghiệp. Tại các tập đoàn lớn Nhật Bản như **Sony** hay **Panasonic**, chất lượng (Quality) chính là danh dự của người kỹ sư. Hãy cùng học cách "săn lùng" và tiêu diệt mọi lỗi lầm ngay từ trong trứng nước.
+Chào mừng bạn đến với Day 43. Trong kỷ nguyên số, **Software Testing** không phải là bước phụ, nó là "lá phổi" đảm bảo sự sống sót của phần mềm. Một kỹ sư Master hiểu rằng: viết code chạy được chỉ là bước đầu, viết code mà "không thể sai" mới là đỉnh cao của nghề nghiệp. Tại các tập đoàn lớn Nhật Bản như **Sony** hay **Panasonic**, chất lượng (Quality) chính là danh dự của người kỹ sư. Hãy cùng học cách "săn lùng" và tiêu diệt mọi lỗi lầm ngay từ trong trứng nước.
 
 ---
 
@@ -109,24 +111,51 @@ A. ブラックボックステスト B. ホワイトボックステスト C. レ
 
 ---
 
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
+---
 
-**(Bộ đề khổng lồ này giúp bạn trở thành 'thợ săn Bug' đẳng cấp thế giới)**
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
-**Câu 1-50: Các kiến thức cơ bản về các loại Test, Coverage và Bug life cycle.**
-*(Bổ sung 50 câu hỏi Master nâng cao về Automation, TDD và Performance Test)*
+**Câu 1: "Regression Testing" nên được thực hiện khi nào?**
+A. Khi rảnh.
+B. Chỉ thực hiện 1 lần đầu.
+C. Sau mỗi lần sửa code hoặc thêm tính năng mới.
+D. Khi khách hàng phàn nàn.
+*Đáp án: C.*
 
-**Câu 51: "Regression Testing" nên được thực hiện khi nào?** A. Khi rảnh. B. Sau mỗi lần sửa code hoặc thêm tính năng mới. C. Khi khách hàng phàn nàn. D. Chỉ thực hiện 1 lần đầu. *Đáp án: B.*
-**Câu 52: "Boundary Value Analysis" cho khoảng [10, 50] nên chọn các giá trị nào?** A. 20, 30, 40. B. 9, 10, 11, 49, 50, 51. C. 0, 100. D. Bất kỳ. *Đáp án: B.*
-**Câu 53: Ai là người thực hiện Acceptance Test?** A. Lập trình viên. B. Người dùng cuối (End-user) hoặc khách hàng. C. Hacker. D. Giám đốc dự án. *Đáp án: B.*
-**Câu 54: Lợi ích của Automation Testing lớn nhất là gì?** A. Code chạy nhanh hơn. B. Có thể lặp lại hàng nghìn lần một cách chính xác mà không mệt mỏi. C. Xóa được hết Bug. D. Không cần lập trình viên nữa. *Đáp án: B.*
-**Câu 55: "Stub" dùng để thay thế cho cái gì?** A. Module chưa hoàn thiện phía trên. B. Module chưa hoàn thiện phía dưới (Bị gọi). C. Database thật. D. Màn hình. *Đáp án: B.*
+**Câu 2: "Boundary Value Analysis" cho khoảng [10, 50] nên chọn các giá trị nào?**
+A. Bất kỳ.
+B. 9, 10, 11, 49, 50, 51.
+C. 0, 100.
+D. 20, 30, 40.
+*Đáp án: B.*
 
-*(Tiếp tục bổ sung thêm 45 câu hỏi nữa với độ chi tiết cực cao để đảm bảo >3200 từ)*
-...
+**Câu 3: Ai là người thực hiện Acceptance Test?**
+A. Hacker.
+B. Giám đốc dự án.
+C. Người dùng cuối (End-user) hoặc khách hàng.
+D. Lập trình viên.
+*Đáp án: C.*
 
-**Câu 90: "Usability Testing" tập trung vào điều gì?** A. Tốc độ server. B. Sự thuận tiện và dễ dùng của giao diện đối với người dùng thực tế. C. Bảo mật. D. Dung lượng file. *Đáp án: B.*
-**Câu 100: Tại sao một FE Master phải coi Testing là 'tôn giáo' của mình?** A. Để đi thi. B. Vì chất lượng sản phẩm là nền móng cho mọi niềm tin. Một kỹ sư giỏi không bao giờ để lỗi lọt qua tay mình một cách dễ dàng. C. Để bắt lỗi đồng nghiệp. D. Để được tăng lương. *Đáp án: B.*
+**Câu 4: Lợi ích của Automation Testing lớn nhất là gì?**
+A. Code chạy nhanh hơn.
+B. Có thể lặp lại hàng nghìn lần một cách chính xác mà không mệt mỏi.
+C. Không cần lập trình viên nữa.
+D. Xóa được hết Bug.
+*Đáp án: B.*
+
+**Câu 5: "Stub" dùng để thay thế cho cái gì?**
+A. Màn hình.
+B. Module chưa hoàn thiện phía trên.
+C. Database thật.
+D. Module chưa hoàn thiện phía dưới (Bị gọi).
+*Đáp án: D.*
+
+**Câu 6: "Usability Testing" tập trung vào điều gì?**
+A. Sự thuận tiện và dễ dùng của giao diện đối với người dùng thực tế.
+B. Dung lượng file.
+C. Bảo mật.
+D. Tốc độ server.
+*Đáp án: A.*
 
 ---
 
@@ -152,23 +181,6 @@ Năm 2005, một lỗi phần mềm kinh điển đã khiến sàn giao dịch c
 
 ---
 
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
-
-**(Phần bổ sung 45 câu hỏi cuối cùng để đạt mốc 2500 từ)**
-
-**Câu 56-100: Tập trung vào kỹ thuật viết kịch bản test và thuật ngữ tiếng Nhật.**
-
-**Câu 56: 'Boundary Value' của số nguyên dương nhỏ hơn 100 là gì?** A. 0, 1, 99, 100. B. 50. C. -1. D. 101. *Đáp án: A.*
-**Câu 57: 'Stub' và 'Driver' khác nhau thế nào?** A. Giống nhau. B. Stub giả lập module CẤP DƯỚI (bị gọi), Driver giả lập module CẤP TRÊN (gọi). C. Stub chạy nhanh hơn. D. Driver chỉ dùng cho phần cứng. *Đáp án: B.*
-**Câu 58: 'Integration Test' (Tiếng Nhật) gọi là gì?** A. 単体テスト. B. 結合テスト. C. システムテスト. D. 運用テスト. *Đáp án: B.*
-**Câu 59: Tại sao cần 'Environment Isolation' khi test?** A. Để tiết kiệm điện. B. Đảm bảo dữ liệu test không làm hỏng dữ liệu thật của khách hàng và kết quả test không bị ảnh hưởng bởi các yếu tố ngoại cảnh. C. Cho chuyên nghiệp. D. Không cần thiết. *Đáp án: B.*
-**Câu 60: 'Alpha Test' và 'Beta Test' khác nhau điểm nào?** A. Alpha test do người dùng cuối làm tại nơi sản xuất, Beta test do người dùng thực tế làm tại môi trường thực tế của họ. B. Không khác gì. C. Beta test nhanh hơn. D. Alpha test chỉ dành cho sếp. *Đáp án: A.*
-
-*(Tiếp tục bổ sung thêm 40 câu hỏi chi tiết về Security Testing, Load Testing, Stress Testing để tổng word count đạt >3200 từ)*
-...
-
----
-
 # 📝 14. TESTING MASTER CHEAT SHEET: Bảng Tra Cứu Nhanh
 
 | Loại kiểm thử | Tiếng Nhật | Trọng tâm kiểm tra |
@@ -183,28 +195,13 @@ Năm 2005, một lỗi phần mềm kinh điển đã khiến sàn giao dịch c
 
 ---
 
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
-
-**(Phần mở rộng 50 câu hỏi cuối cùng để đạt mốc 2500 từ)**
-
-**Câu 51-100: Tập trung vào kỹ thuật viết kịch bản test, automation và thuật ngữ IPA.**
-
-**Câu 51: 'Boundary Value' của số nguyên dương nhỏ hơn 100 là gì?** A. 0, 1, 99, 100. B. 50. C. -1. D. 101. *Đáp án: A.*
-**Câu 52: 'Stub' và 'Driver' khác nhau thế nào?** A. Giống nhau. B. Stub giả lập module CẤP DƯỚI (bị gọi), Driver giả lập module CẤP TRÊN (gọi). C. Stub chạy nhanh hơn. D. Driver chỉ dùng cho phần cứng. *Đáp án: B.*
-**Câu 53: 'Integration Test' (Tiếng Nhật) gọi là gì?** A. 単体テスト. B. 結合テスト. C. システムテスト. D. 運用テスト. *Đáp án: B.*
-**Câu 60: 'Alpha Test' và 'Beta Test' khác nhau điểm nào?** A. Alpha test do người dùng cuối làm tại nơi sản xuất, Beta test do người dùng thực tế làm tại môi trường thực tế của họ. B. Không khác gì. C. Beta test nhanh hơn. D. Alpha test chỉ dành cho sếp. *Đáp án: A.*
-
-*(Tiếp tục bổ sung thêm 40 câu hỏi chi tiết về Security Testing, Load Testing, Stress Testing, SQL Injection, XSS, OWASP Top 10 và các tình huống văn hóa QA 'Kaizen' tại Nhật để tổng word count đạt >3200 từ)*
-...
-
----
-
 # 🕒 15. TỔNG KẾT: Sứ Mệnh Của Chất Lượng Trong Kỹ Nghệ Phần Mềm
 
 Kiểm thử không phải là tìm cách chứng minh code của mình đúng, mà là tìm mọi cách để phá hỏng nó một cách có phương pháp. Một FE Master hiểu rằng: Mỗi con Bug được tìm thấy hôm nay là một lời xin lỗi chân thành nhất gửi tới người dùng ngày mai. Hãy luôn giữ tinh thần "Kaizen" - luôn luôn cải tiến, luôn luôn nghi ngờ và luôn luôn tỉ mỉ.
 
 ---
+
 📊 **Actual Word Count Verification**: ~2600 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.
-*(Hết bài 18).*
+*(Hết bài 43).*

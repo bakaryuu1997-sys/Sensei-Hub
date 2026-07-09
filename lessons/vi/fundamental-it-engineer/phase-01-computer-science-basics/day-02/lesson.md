@@ -7,7 +7,9 @@ description: >-
 day: 2
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Tại Sao Máy Tính Không Biết Trừ?
 
 Hãy tưởng tượng bạn đang xây dựng một cỗ máy tính thô sơ bằng bánh răng và dây cót. Việc làm cho bánh răng quay tiến để thực hiện phép cộng là cực kỳ đơn giản. Nhưng để làm nó quay lùi một cách chính xác để thực hiện phép trừ? Đó là một cơn ác mộng cơ khí: Bánh răng dễ bị kẹt, lò xo dễ bị đứt, và logic máy trở nên cồng kềnh gấp đôi.
@@ -166,79 +168,57 @@ Hệ điều hành Unix/Linux lưu trữ thời gian bằng số giây tính t�
 
 ---
 
-# 📝 8. QUICK QUIZ (Mở Rộng Cực Đại - Chuẩn FE)
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: 2 の補数表現において，全ビットを反転させて 1 を加える操作の意味は何か？**
-A. 数値を 2 倍にする。
-B. 数値の符号を反転させる (Đổi dấu).
-C. 数値を 0 にする。
+A. 数値を 0 にする。
+B. 数値を 2 倍にする。
+C. 数値の符号を反転させる (Đổi dấu).
 D. 数値を 16 進数に変換する.
-*Đáp án: B.*
+*Đáp án: C.*
 
 **Câu 2: 8 ビットの 2 の補数で 「10000000」 は 10 進数でいくらか？**
-A. 128
-B. -127
-C. -128
+A. -128
+B. 128
+C. -127
 D. 0
-*Giải thích: Đây là số nhỏ nhất có thể biểu diễn. Đáp án: C.*
+*Giải thích: Đây là số nhỏ nhất có thể biểu diễn.
+*Đáp án: A.*
 
 **Câu 3: 4 ビットの 2 の補数表現で， 「3 + 6」 を計算するとどうなるか？**
 A. 9
-B. -7
-C. 7
-D. 0
-*Giải thích: 3 (0011) + 6 (0110) = 9 (1001). Vì bit dấu là 1 nên máy hiểu là số âm. 1001 là số bù 2 của 7. Kết quả: -7. Đây là hiện tượng Tràn số. Đáp án: B.*
+B. 0
+*Giải thích: 3 (0011) + 6 (0110) = 9 (1001). Vì bit dấu là 1 nên máy hiểu là số âm. 1001 là số bù 2 của 7. Kết quả: -7. Đây là hiện tượng Tràn số.
+C. -7
+D. 7
+*Đáp án: C.*
 
 **Câu 4: Số 0 trong hệ thống số bù 2 được biểu diễn như thế nào?**
-A. Có hai cách biểu diễn.
-B. Chỉ có một cách là toàn bộ các bit bằng 0.
+A. Chỉ có một cách là toàn bộ các bit bằng 0.
+B. Có hai cách biểu diễn.
 C. Chỉ có một cách là toàn bộ các bit bằng 1.
 D. Biểu diễn bằng bit dấu là 1.
-*Đáp án: B.*
+*Đáp án: A.*
 
 **Câu 5: Tại sao phép trừ lại được thực hiện bằng phép cộng số bù?**
-A. Để CPU chạy chậm hơn cho ổn định.
+A. Vì phép trừ không tồn tại trong toán học.
 B. Để giảm bớt cổng logic trong ALU, giúp vi xử lý rẻ và mát hơn.
-C. Vì phép trừ không tồn tại trong toán học.
+C. Để CPU chạy chậm hơn cho ổn định.
 D. Vì hệ nhị phân không có dấu trừ.
 *Đáp án: B.*
 
 **Câu 6: Để biểu diễn số -1 trong hệ 8-bit số bù 2, chuỗi bit nào là đúng?**
-A. `10000001`
-B. `11111111`
-C. `01111111`
+A. `01111111`
+B. `10000001`
+C. `11111111`
 D. `11111110`
-*Giải thích: +1 là `00000001`. Đảo bit: `11111110`. Cộng 1: `11111111`. Đáp án: B.*
-
-**Câu 7: Tràn số (Overflow) chỉ xảy ra khi nào?**
-A. Khi cộng hai số khác dấu.
-B. Khi kết quả vượt quá khả năng biểu diễn của số bit cho trước.
-C. Khi máy tính bị quá nhiệt.
-D. Khi dùng hệ thập lục phân.
-*Đáp án: B.*
-
-**Câu 8: Trong lập trình C, kiểu `signed char` (8-bit) có giá trị cực đại là bao nhiêu?**
-A. 255
-B. 256
-C. 127
-D. 128
+*Giải thích: +1 là `00000001`. Đảo bit: `11111110`. Cộng 1: `11111111`.
 *Đáp án: C.*
 
-**Câu 9: Thuật ngữ "MSB" viết tắt cho cái gì?**
-A. Most Significant Bit.
-B. Main System Bus.
-C. Memory Storage Block.
-D. Modified Standard Binary.
-*Đáp án: A.*
-
-**Câu 10: Logic XOR được ứng dụng như thế nào trong phép cộng số bù?**
-A. Dùng để đảo bit.
-B. Dùng để tính tổng (Sum) của từng cột bit.
-C. Dùng để tính số dư (Carry).
-D. Dùng để xóa dữ liệu.
-*Đáp án: B.*
-
 ---
+
 # 🚀 9. KẾT LUẬN: Bước Đệm Đến Thế Giới Số Thực
 
 Bạn đã nắm vững cách máy tính xử lý các con số nguyên, cả dương lẫn âm. Đây chính là nền móng để bạn hiểu về cách dữ liệu được tính toán trong các hệ thống lõi. 
@@ -246,6 +226,7 @@ Bạn đã nắm vững cách máy tính xử lý các con số nguyên, cả d�
 **Bài học tiếp theo (Day 03)**: Chúng ta sẽ đối mặt với một thử thách còn "khó nhằn" hơn: Làm sao máy tính lưu trữ được những số cực lớn (như khoảng cách giữa các thiên hà) hay những số cực nhỏ (như kích thước nguyên tử)? Chào mừng bạn đến với chuẩn **IEEE 754** và nghệ thuật **Floating Point** (Số thực dấu phẩy động). Hãy sẵn sàng, vì 0.1 + 0.2 trong thế giới đó sẽ không bao giờ bằng 0.3!
 
 ---
+
 📊 **Word Count Verification**: ~2880 words.
 *(Nội dung bám sát 100% IPA Syllabus V9.0 - Elite 3.0 Japanese Standard)*.
 *(Triple-term System: English (日本語) [Tiếng Việt])* .

@@ -7,7 +7,9 @@ description: >-
 day: 61
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Khi "Kế Hoạch Hoàn Hảo" Trở Thành Thảm Họa
 
 Năm 2000, một dự án lớn tại Nhật Bản đã dành 2 năm chỉ để viết tài liệu yêu cầu (Requirement Documentation) dày hàng nghìn trang. Theo mô hình **Waterfall (ウォータフォール)**, họ không viết bất kỳ dòng code nào cho đến khi tài liệu được phê duyệt.
@@ -103,16 +105,41 @@ Ngày xưa, các SIer lớn (Fujitsu, NTT) chỉ dùng Waterfall. Nhưng hiện 
 
 ---
 
-# 📝 7. QUICK QUIZ: Thử Thách Agile Master
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: Trong Scrum, ai là người có quyền ưu tiên các Task trong Product Backlog?**
-A. Scrum Master. B. Product Owner. *Đáp án: B.*
+A. Product Owner.
+B. Scrum Master.
+*Đáp án: A.*
 
 **Câu 2: Một Sprint điển hình thường kéo dài bao lâu?**
-A. 1-4 tuần. B. 6 tháng. *Đáp án: A.*
+A. 1-4 tuần.
+B. 6 tháng.
+*Đáp án: A.*
 
 **Câu 3: 'Daily Scrum' thường diễn ra trong bao lâu?**
-A. 15 phút. B. 1 tiếng. *Đáp án: A.*
+A. 15 phút.
+B. 1 tiếng.
+*Đáp án: A.*
+
+**Câu 4: Trong Scrum, ai chịu trách nhiệm giải quyết các vật cản cho nhóm?**
+A. Product Owner.
+B. Scrum Master.
+*Đáp án: B.*
+
+**Câu 5: Kỹ thuật 'Pair Programming' thuộc phương pháp nào?**
+A. XP.
+B. Waterfall.
+*Đáp án: A.*
+
+**Câu 6: Biểu đồ nào dùng để theo dõi tiến độ trong một Sprint?**
+A. Gantt Chart.
+B. Burn-down Chart.
+*Đáp án: B.*
+
+---
 
 ### 4.3 Kanban (カンバン) - Quản trị theo luồng
 Khác với Scrum chia theo Sprint, **Kanban** tập trung vào "Flow" (Luồng công việc) liên tục.
@@ -179,26 +206,6 @@ Tại Nhật, dù làm Agile, tinh thần **Ho-Ren-So (Báo cáo - Liên lạc -
 
 ---
 
-# 📝 13. MASTER PRACTICE: 100 Câu Hỏi Trắc Nghiệm Agile & SDLC
-
-**Câu 1-50: Căn bản về Agile, Scrum và XP.**
-*(Tiếp tục bổ sung cho đến câu 100 về DevOps và quản trị rủi ro trong Agile)*
-
-**Câu 51: Trong Scrum, ai chịu trách nhiệm giải quyết các vật cản cho nhóm?**
-A. Scrum Master. B. Product Owner. *Đáp án: A.*
-**Câu 52: Kỹ thuật 'Pair Programming' thuộc phương pháp nào?**
-A. XP. B. Waterfall. *Đáp án: A.*
-**Câu 53: Biểu đồ nào dùng để theo dõi tiến độ trong một Sprint?**
-A. Gantt Chart. B. Burn-down Chart. *Đáp án: B.*
-**Câu 54: TDD nghĩa là gì?**
-A. Viết code xong mới viết Test. B. Viết Test trước khi viết code. *Đáp án: B.*
-**Câu 55: Sprint Retrospective dùng để làm gì?**
-A. Review tính năng với khách hàng. B. Họp rút kinh nghiệm nội bộ nhóm. *Đáp án: B.*
-
-*(Tiếp tục bổ sung thêm 45 câu hỏi thực chiến và tình huống quản lý rủi ro để đạt >3200 từ)*
-
----
-
 # 🗝️ 14. MASTER CONCEPT: Scrum Ceremonies - Nhịp đập của sự linh hoạt
 
 Để một cỗ máy Scrum vận hành trơn tru, Master SE phải làm chủ 4 sự kiện chính:
@@ -209,26 +216,12 @@ A. Review tính năng với khách hàng. B. Họp rút kinh nghiệm nội bộ
 
 ---
 
-# 📝 15. MASTER PRACTICE: Bổ Sung Câu Hỏi Thực Chiến (Phần 2)
-
-**Câu 96: Sự khác biệt lớn nhất giữa Agile và Waterfall là gì?**
-A. Agile chia nhỏ giai đoạn và lấy phản hồi liên tục, Waterfall chạy tuyến tính. *Đáp án: A.*
-**Câu 97: Trong Scrum, 'Definition of Done' (DoD) do ai quyết định?**
-A. Đội phát triển cùng thống nhất. *Đáp án: A.*
-**Câu 98: 'Sprint Burndown Chart' cho ta biết điều gì?**
-A. Lượng công việc còn lại trong một Sprint. *Đáp án: A.*
-**Câu 99: Phương pháp nào tập trung vào việc loại bỏ lãng phí (Muda)?**
-A. Lean. B. Scrum. *Đáp án: A.*
-**Câu 100: Trong DevOps, chữ 'Ops' đại diện cho điều gì?**
-A. Operations (Vận hành). *Đáp án: A.*
-
----
-
 # 🏁 KẾT LUẬN: TƯ DUY CỦA MỘT KỸ SƯ LINH HOẠT
 
 Agile không chỉ là một phương pháp làm việc, nó là một tư duy (Mindset). Một Master FE thành công là người biết khi nào cần sự vững chãi của Waterfall và khi nào cần sự linh hoạt của Agile để đưa dự án tới đích rực rỡ nhất. Day 62 sẽ đưa bạn tới một thế giới khắt khe hơn: **Software Testing & QA** - Nơi chúng ta học cách "bới lông tìm vết" để tạo ra sản phẩm hoàn hảo.
 
 ---
+
 📊 **Actual Word Count Verification**: ~2800 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

@@ -4,7 +4,9 @@ description: Hãy tưởng tượng bạn đang rút 5 triệu đồng tại câ
 day: 60
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Cơn Ác Mộng Tại Cây ATM
 
 Hãy tưởng tượng bạn đang rút 5 triệu đồng tại cây ATM của **Vietcombank**. 
@@ -97,16 +99,41 @@ Khi làm dự án cho **Rakuten Pay**, hàng triệu người thanh toán cùng 
 
 ---
 
-# 📝 7. QUICK QUIZ: 100 Câu Hỏi Quản Trị Database (Final Chapter)
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: Property nào đảm bảo Transaction thực hiện xong thì dữ liệu được lưu vĩnh viễn?**
-A. Atomicity. B. Durability. *Đáp án: B.*
+A. Atomicity.
+B. Durability.
+*Đáp án: B.*
 
 **Câu 2: Hiện tượng đọc phải dữ liệu chưa được Commit của người khác gọi là gì?**
-A. Dirty Read. B. Phantom Read. *Đáp án: A.*
+A. Phantom Read.
+B. Dirty Read.
+*Đáp án: B.*
 
 **Câu 3: Index giúp tăng tốc lệnh nào?**
-A. SELECT. B. INSERT. *Đáp án: A.*
+A. INSERT.
+B. SELECT.
+*Đáp án: B.*
+
+**Câu 4: Khi gặp lỗi trong Transaction, ta dùng lệnh nào?**
+A. ROLLBACK.
+B. COMMIT.
+*Đáp án: A.*
+
+**Câu 5: Khóa nào ngăn cản các giao dịch khác ĐỌC dữ liệu?**
+A. Shared Lock (S).
+B. Exclusive Lock (X).
+*Đáp án: B.*
+
+**Câu 6: Cấp độ cô lập nào cao nhất và an toàn nhất?**
+A. Read Committed.
+B. Serializable.
+*Đáp án: B.*
+
+---
 
 ### 4.3 Database Security (データベースセキュリティ)
 Trong môi trường doanh nghiệp Nhật Bản khắt khe, Master SE phải đảm bảo 3 yếu tố:
@@ -159,23 +186,6 @@ Họ sẽ dùng lệnh `EXPLAIN` hoặc `EXPLAIN ANALYZE` để xem DBMS đang "
 
 ---
 
-# 📝 9. MASTER PRACTICE: 100 Câu Hỏi Toàn Tập Database (Phase 6 Final)
-
-**(Bộ đề thực chiến tổng hợp từ tất cả các bài trong Phase 6)**
-
-**Câu 1-50: ACID, Transaction và Indexing.**
-*(Tiếp tục bổ sung 50 câu hỏi nâng cao về Recovery và Security)*
-
-**Câu 51: Khi gặp lỗi trong Transaction, ta dùng lệnh nào?** A. COMMIT. B. ROLLBACK. *Đáp án: B.*
-**Câu 52: Khóa nào ngăn cản các giao dịch khác ĐỌC dữ liệu?** A. Exclusive Lock (X). B. Shared Lock (S). *Đáp án: A.*
-**Câu 53: Cấp độ cô lập nào cao nhất và an toàn nhất?** A. Read Committed. B. Serializable. *Đáp án: B.*
-**Câu 54: Kỹ thuật 'Sharding' là gì?** A. Tách Database ra nhiều Server vật lý. *Đáp án: A.*
-**Câu 55: Index nhanh nhất để tìm kiếm dữ liệu có phạm vi (Range) là gì?** A. Hash Index. B. B-Tree Index. *Đáp án: B.*
-
-*(Tiếp tục bổ sung thêm 45 câu hỏi chi tiết về các tình huống Backup/Recovery thực tế và các câu hỏi "Tricky" trong đề thi IPA để đạt >3500 từ)*
-
----
-
 # ❓ 10. TROUBLESHOOTING FAQ: Giải Đáp Nút Thắt Cuối Cùng
 
 **1. Tại sao Recovery lại mất quá nhiều thời gian?**
@@ -198,21 +208,6 @@ Một Master SE phải biết rằng **Index không phải là "viên đạn b�
 
 ---
 
-# 📝 12. MASTER PRACTICE: Bổ Sung Câu Hỏi Thực Chiến (Phần 2)
-
-**Câu 96: Trong ACID, tính chất nào đảm bảo 'Một bước lỗi, cả làng nghỉ'?**
-A. Atomicity. B. Consistency. *Đáp án: A.*
-**Câu 97: 'Two-Phase Locking' (2PL) dùng để đảm bảo tính chất nào?**
-A. Isolation. B. Durability. *Đáp án: A.*
-**Câu 98: 'Differential Backup' khác 'Incremental Backup' ở điểm nào?**
-A. Differential sao lưu thay đổi so với Full gần nhất, Incremental sao lưu thay đổi so với lần Backup (bất kỳ) gần nhất. *Đáp án: A.*
-**Câu 99: Lệnh nào dùng để thu hồi quyền truy cập của một người dùng?**
-A. GRANT. B. REVOKE. *Đáp án: B.*
-**Câu 100: Kỹ thuật nào giúp tăng tốc độ đọc dữ liệu bằng cách chia nhỏ bảng lớn thành các phần nhỏ dựa trên giá trị cột?**
-A. Normalization. B. Partitioning (Phân mảnh). *Đáp án: B.*
-
----
-
 # 🏁 KẾT LUẬN: BÀN GIAO CHÌA KHÓA CỦA PHÙ THỦY DỮ LIỆU
 
 Chúc mừng bạn đã hoàn thành Phase 6! Bạn bắt đầu từ những khái niệm DBMS cơ bản, chinh phục chuẩn hóa, làm chủ SQL và giờ đây là nắm giữ tính toàn vẹn của cả một hệ thống lớn. 
@@ -220,6 +215,7 @@ Chúc mừng bạn đã hoàn thành Phase 6! Bạn bắt đầu từ những kh
 Dữ liệu là dòng máu của phần mềm. Một Master SE giỏi không chỉ biết xây dựng tính năng, mà còn biết cách bảo vệ "linh hồn" của hệ thống đó. Hãy nghỉ ngơi một chút trước khi chúng ta bước vào Phase 7 - nơi thế giới Infrastructure và Cloud đang chờ đón bạn!
 
 ---
+
 📊 **Actual Word Count Verification**: ~2800 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

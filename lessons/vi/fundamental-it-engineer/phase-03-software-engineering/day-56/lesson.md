@@ -7,7 +7,9 @@ description: >-
 day: 56
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Tại Sao "Excel" Không Phải Là Một Database Chuyên Nghiệp?
 
 Hãy tưởng tượng bạn đang quản lý một chuỗi cửa hàng tiện lợi **Lawson** tại Tokyo. Bạn lưu danh sách khách hàng, hàng tồn kho và các hóa đơn vào... hàng ngàn tệp Excel khác nhau. 
@@ -124,18 +126,44 @@ Tại các dự án gia công phần mềm cho Nhật (Outsourcing), khách hàn
 
 ---
 
-# 📝 7. QUICK QUIZ: 100 Câu Hỏi Master DB (Part 1)
+---
 
-**(Bộ câu hỏi khởi động về DBMS và Data Modeling)**
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: Schema nào định nghĩa cấu trúc lưu trữ vật lý trên đĩa?**
-A. Conceptual Schema. B. Internal Schema. C. External Schema. *Đáp án: B.*
+A. Conceptual Schema.
+B. Internal Schema.
+C. External Schema.
+*Đáp án: B.*
 
 **Câu 2: Trong ERD, hình thoi (hoặc đường nối) đại diện cho điều gì?**
-A. Thuộc tính. B. Thực thể. C. Quan hệ. *Đáp án: C.*
+A. Thuộc tính.
+B. Quan hệ.
+C. Thực thể.
+*Đáp án: B.*
 
 **Câu 3: DBMS đảm bảo điều gì khi nhiều người cùng truy cập dữ liệu?**
-A. Backup. B. Concurrency Control (Điều khiển cạnh tranh). C. Encoding. *Đáp án: B.*
+A. Encoding.
+B. Concurrency Control (Điều khiển cạnh tranh).
+C. Backup.
+*Đáp án: B.*
+
+**Câu 4: Loại lược đồ nào dùng để mô tả mối quan hệ giữa các thực thể mà không phụ thuộc vào một DBMS cụ thể?**
+A. Conceptual Model (Lược đồ khái niệm).
+B. Physical Model.
+*Đáp án: A.*
+
+**Câu 5: Thuật ngữ 'Cardinality' trong ERD có ý nghĩa gì?**
+A. Số lượng thực thể tham gia vào một quan hệ (1:1, 1:N, M:N).
+B. Số lượng thuộc tính.
+*Đáp án: A.*
+
+**Câu 6: Tại sao ta cần kiến trúc 3 lớp Schema?**
+A. Để DB chạy nhanh hơn.
+B. Để đạt được tính độc lập dữ liệu (Data Independence).
+*Đáp án: B.*
+
+---
 
 ### 4.4 Các loại Khóa trong RDBMS (キーの種類)
 
@@ -206,30 +234,6 @@ Lý do: Các công cụ sinh tài liệu tự động (Document Generator) và c
 
 ---
 
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
-
-**Câu 1-50: DBMS & ERD cơ bản.**
-*(Tiếp tục mở rộng 50 câu hỏi nâng cao về chuyên sâu Data Modeling và IPA Logic)*
-
-**Câu 51: Loại lược đồ nào dùng để mô tả mối quan hệ giữa các thực thể mà không phụ thuộc vào một DBMS cụ thể?**
-A. Physical Model. B. Conceptual Model (Lược đồ khái niệm). *Đáp án: B.*
-
-**Câu 52: Thuật ngữ 'Cardinality' trong ERD có ý nghĩa gì?**
-A. Số lượng thuộc tính. B. Số lượng thực thể tham gia vào một quan hệ (1:1, 1:N, M:N). *Đáp án: B.*
-
-**Câu 53: Tại sao ta cần kiến trúc 3 lớp Schema?**
-A. Để DB chạy nhanh hơn. B. Để đạt được tính độc lập dữ liệu (Data Independence). *Đáp án: B.*
-
-**Câu 54: Một 'Weak Entity' (Thực thể yếu) là gì?**
-A. Thực thể có ít thuộc tính. B. Thực thể không thể tồn tại nếu thiếu thực thể cha (Ví dụ: 'Phòng' thuộc về 'Nhà'). *Đáp án: B.*
-
-**Câu 55: Trong DBMS, 'Redundancy' (Dư thừa dữ liệu) quá mức sẽ dẫn đến điều gì?**
-A. Tăng tính an toàn. B. Lãng phí bộ nhớ và gây ra lỗi mâu thuẫn dữ liệu khi cập nhật. *Đáp án: B.*
-
-*(Tiếp tục bổ sung thêm 45 câu hỏi chi tiết về cách đọc lược đồ E-R định dạng Chen và định dạng Crow's Foot bám sát đề thi IPA để đạt >3500 từ)*
-
----
-
 # ❓ 11. TROUBLESHOOTING FAQ: Giải Đáp Nút Thắt Data Modeling
 
 **1. Khi nào thì dùng quan hệ đệ quy (Recursive)?**
@@ -249,26 +253,12 @@ Trước khi đến với những kỹ thuật phức tạp ở Day 48, bạn c�
 
 ---
 
-# 📝 13. MASTER PRACTICE: Bổ Sung Câu Hỏi Thực Chiến
-
-**Câu 96: Tại sao Primary Key không được chứa giá trị NULL?**
-A. Vì DB sẽ bị lỗi cú pháp. B. Vì NULL không thể dùng để định danh duy nhất (Entity Integrity). *Đáp án: B.*
-**Câu 97: 'Referential Integrity' (Tính toàn vẹn tham chiếu) liên quan đến loại khóa nào?**
-A. Primary Key. B. Foreign Key. *Đáp án: B.*
-**Câu 98: Trong bối cảnh Nhật Bản, IPA khuyên dùng mô hình nào để mô tả logic dữ liệu?**
-A. UML Class Diagram. B. E-R Diagram. *Đáp án: B.*
-**Câu 99: 'Junction Table' dùng để giải quyết loại quan hệ nào?**
-A. 1:1. B. M:N. *Đáp án: B.*
-**Câu 100: Một Master DB SE nên làm gì đầu tiên khi nhận yêu cầu dự án?**
-A. Viết Code Python. B. Phân tích thực thể và vẽ sơ đồ ERD. *Đáp án: B.*
-
----
-
 # 🏁 KẾT LUẬN: NỀN TẢNG CHO NHỮNG TRUY VẤN THẦN TỐC
 
 Bạn đã hoàn thành Day 56 - ngày khai màn của Phase 6. Hiểu rõ về DBMS, kiến trúc Schema và nghệ thuật vẽ ERD là "gốc rễ" của mọi hệ thống phần mềm. Nếu cái gốc này vững chắc, việc viết SQL hay tối ưu hóa hiệu năng ở những ngày sau sẽ trở nên cực kỳ dễ dàng. Hãy luyện tập vẽ ERD cho những ứng dụng xung quanh bạn (như Facebook hay Shopee) để rèn luyện tư duy Master nhé!
 
 ---
+
 📊 **Actual Word Count Verification**: ~2800 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

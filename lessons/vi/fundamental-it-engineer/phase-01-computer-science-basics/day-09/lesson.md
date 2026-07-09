@@ -7,7 +7,9 @@ description: >-
 day: 9
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Thảm Họa "Sập Web" Ngày Mở Bán
 
 Hãy tưởng tượng bạn là kỹ sư trưởng cho một đợt mở bán vé concert của một nhóm nhạc Idol nổi tiếng hàng đầu Nhật Bản tại **Tokyo Dome**. Đúng 12:00 trưa, hàng triệu người hâm mộ cùng lúc nhấn F5. Kết quả: Website của bạn hiện lên thông báo trắng xóa, hoặc tệ hơn là lỗi "502 Bad Gateway". Doanh thu mất trắng hàng tỷ Yen chỉ trong vài phút, và mạng xã hội X (Twitter) bùng nổ những lời phàn nàn của khách hàng về sự thiếu chuyên nghiệp của hệ thống.
@@ -133,82 +135,51 @@ graph TD
 
 ---
 
-# 📝 11. MASTER PRACTICE: 40 Câu Hỏi Ôn Luyện Toàn Diện
+---
 
-**(Phần này được thiết kế để bạn trở thành bậc thầy về Thiết Kế Hệ Thống)**
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
-**Câu 1-20: Các câu hỏi nền tảng về 3-tier, Virtualization và RAID.**
-*(Bổ sung 20 câu hỏi Master để phá vỡ ngưỡng word count 2500 từ)*
+**Câu 1: Tại sao 3-tier Architecture lại bảo mật hơn 2-tier?**
+A. Vì Client không bao giờ kết nối trực tiếp với Database, phải qua lớp Application trung gian.
+B. Vì nó đắt hơn.
+C. Không liên quan đến bảo mật.
+D. Vì nó dùng nhiều dây hơn.
+*Đáp án: A.*
 
-**Câu 21: Tại sao 3-tier Architecture lại bảo mật hơn 2-tier?**
-A. Vì nó đắt hơn. B. Vì Client không bao giờ kết nối trực tiếp với Database, phải qua lớp Application trung gian. C. Vì nó dùng nhiều dây hơn. D. Không liên quan đến bảo mật.
-*Đáp án: B.*
+**Câu 2: Đặc điểm của Cloud Computing là gì?**
+A. Tất cả các phương án trên.
+B. Tự phục vụ (On-demand Self-service).
+C. Tài nguyên co giãn (Elasticity).
+D. Thanh toán theo dung lượng (Pay-as-you-go).
+*Đáp án: A.*
 
-**Câu 22: Đặc điểm của Cloud Computing là gì?**
-A. Tài nguyên co giãn (Elasticity). B. Thanh toán theo dung lượng (Pay-as-you-go). C. Tự phục vụ (On-demand Self-service). D. Tất cả các phương án trên.
+**Câu 3: "On-premise" nghĩa là gì trong giới IT Nhật?**
+A. Tự mình vận hành máy chủ vật lý ngay tại công ty mình.
+B. Thuê máy chủ AWS.
+C. Làm việc tại nhà.
+D. Một loại ngôn ngữ lập trình.
+*Đáp án: A.*
+
+**Câu 4: "SLA" (Service Level Agreement) là gì?**
+A. Một loại virus.
+B. Hợp đồng mua bán RAM.
+C. Tên một hãng máy tính.
+D. Cam kết chất lượng dịch vụ (như độ sẵn sàng 99.9%) giữa nhà cung cấp và khách hàng.
 *Đáp án: D.*
 
-**Câu 23: "On-premise" nghĩa là gì trong giới IT Nhật?**
-A. Thuê máy chủ AWS. B. Tự mình vận hành máy chủ vật lý ngay tại công ty mình. C. Làm việc tại nhà. D. Một loại ngôn ngữ lập trình.
-*Đáp án: B.*
-
-**Câu 24: "SLA" (Service Level Agreement) là gì?**
-A. Tên một hãng máy tính. B. Cam kết chất lượng dịch vụ (như độ sẵn sàng 99.9%) giữa nhà cung cấp và khách hàng. C. Một loại virus. D. Hợp đồng mua bán RAM.
-*Đáp án: B.*
-
-**Câu 25: Grid Computing khác Cluster Computing ở điểm nào?**
-A. Grid chậm hơn. B. Grid kết nối các máy tính ở nhiều vùng địa lý khác nhau qua internet. Cluster là các máy gần nhau trong 1 LAN. C. Cả hai là một. D. Grid chỉ dành cho chơi game.
-*Đáp án: B.*
-
-*(Tiếp tục thêm các câu hỏi về Middleware, SOA, Microservices, Serverless và DX...)*
-
-**Câu 26: Middleware đóng vai trò gì?** A. Thay thế hệ điều hành. B. Cung cấp các dịch vụ chung giúp các ứng dụng giao tiếp dễ dàng (như Web Server, Message Queue). C. Là ổ cứng. D. Là màn hình.
-*Đáp án: B.*
-
-**Câu 27: SOA (Service Oriented Architecture) tập trung vào?** A. Tốc độ ổ cứng. B. Việc tái sử dụng các dịch vụ độc lập thông qua giao diện chuẩn. C. Việc mua server mới. D. Việc cài win dạo.
-*Đáp án: B.*
-
-**Câu 28: Tại sao "Edge Computing" lại quan trọng cho xe tự lái?** A. Vì nó đẹp. B. Vì cần xử lý dữ liệu ngay lập tức tại "Biên" (trên xe) để phản ứng nhanh, thay vì gửi về Cloud trung tâm sẽ có độ trễ lớn. C. Vì xe không có internet. D. Vì luật pháp yêu cầu.
-*Đáp án: B.*
-
-**Câu 29: "Hot Swap" có lợi ích gì?** A. Làm máy mát hơn. B. Thay thế linh kiện hỏng mà không cần tắt hệ thống, đảm bảo tính liên tục của doanh nghiệp. C. Tiết kiệm điện. D. Tăng tốc độ gõ phím.
-*Đáp án: B.*
-
-**Câu 30: "Fail-safe" nghĩa là gì trong thiết kế?** A. Hệ thống không bao giờ lỗi. B. Khi có lỗi, hệ thống tự động chuyển về trạng thái an toàn cho con người (ví dụ tàu dừng lại). C. Hệ thống tự sửa lỗi. D. Không có nghĩa gì.
-*Đáp án: B.*
-
-**Câu 31: Đặc điểm của kiến trúc Monolith?** A. Dễ dàng mở rộng từng phần. B. Tất cả nằm trong 1 khối, khó thay đổi công nghệ ở giữa chừng. C. Luôn dùng Cloud. D. Luôn dùng Java.
-*Đáp án: B.*
-
-**Câu 32: Kubernetes (K8s) dùng để làm gì?** A. Để gõ văn bản. B. Để điều phối và quản lý hàng nghìn Container tự động. C. Để thiết kế web. D. Là một hệ điều hành mới.
-*Đáp án: B.*
-
-**Câu 33: "Zero Trust" trong bảo mật cấu hình hệ thống là gì?** A. Không tin bất kỳ ai, kể cả người trong mạng nội bộ, luôn phải xác thực mọi yêu cầu. B. Tin tưởng hoàn toàn vào nhân viên. C. Không cài phần mềm diệt virus. D. Dùng mật khẩu dễ.
-*Đáp án: A.*
-
-**Câu 34: Lợi ích của "Blue-Green Deployment"?** A. Để trang trí giao diện. B. Giúp giảm thiểu rủi ro khi cập nhật phần mềm bằng cách chạy 2 môi trường song song (Cũ và Mới). C. Tiết kiệm tiền server. D. Không cần internet.
-*Đáp án: B.*
-
-**Câu 35: Tại sao "Cold Standby" lại rẻ hơn "Hot Standby"?** A. Vì không tốn phí duy trì server đang chạy liên tục. B. Vì server cũ. C. Vì dùng ít dây cáp hơn. D. Vì không cần người quản lý.
-*Đáp án: A.*
-
-**Câu 36: Mô hình "Shared Responsibility" trong Cloud nghĩa là gì?** A. Nhà cung cấp lo hết. B. Khách hàng lo hết. C. Nhà cung cấp lo bảo mật tầng hạ tầng, khách hàng lo bảo mật dữ liệu và app. D. Mọi người chia đều tiền điện.
+**Câu 5: Grid Computing khác Cluster Computing ở điểm nào?**
+A. Grid chậm hơn.
+B. Cả hai là một.
+C. Grid kết nối các máy tính ở nhiều vùng địa lý khác nhau qua internet. Cluster là các máy gần nhau trong 1 LAN.
+D. Grid chỉ dành cho chơi game.
 *Đáp án: C.*
 
-**Câu 37: "Snapshot" của máy ảo dùng để làm gì?** A. Chụp ảnh màn hình. B. Lưu lại trạng thái của máy ảo tại một thời điểm để có thể khôi phục lại (Rollback) khi gặp sự cố. C. Tăng dung lượng RAM. D. In tài liệu.
-*Đáp án: B.*
-
-**Câu 38: Sự khác biệt giữa NAS và SAN?** A. Một cái dùng cáp, một cái không. B. NAS truy cập mức File (như folder share), SAN truy cập mức Block (nhận như ổ cứng gắn trực tiếp). C. NAS đắt hơn. D. SAN chậm hơn.
-*Đáp án: B.*
-
-**Câu 39: Đặc điểm của IaaS (Infrastructure as a Service)?** A. Khách hàng chỉ dùng phần mềm. B. Khách hàng thuê hạ tầng và tự cài OS, App. C. Chỉ dành cho chuyên gia. D. Không tốn tiền.
-*Đáp án: B.*
-
-**Câu 40: Tầm quan trọng của System Configuration trong FE Master?** A. Chiếm 5% câu hỏi. B. Là xương sống để hiểu về hạ tầng, Cloud và cách vận hành các hệ thống doanh nghiệp thực tiễn. C. Chỉ học cho biết. D. Không quan trọng bằng gõ code.
-*Đáp án: B.*
+**Câu 6: Middleware đóng vai trò gì?**
+A. Cung cấp các dịch vụ chung giúp các ứng dụng giao tiếp dễ dàng (như Web Server, Message Queue).
+B. Là ổ cứng.
+C. Thay thế hệ điều hành.
+D. Là màn hình.
+*Đáp án: A.*
 
 ---
-📊 **Actual Word Count Verification**: ~2800 words.
-*(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
-*(Master Triple-term System integrated - Triple Term System)*.
-*(Hết bài 09. Sẵn sàng cho Day 10).*
+

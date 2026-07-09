@@ -7,7 +7,9 @@ description: >-
 day: 3
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Khi 1 Cent Phá Hủy Một Ngân Hàng
 
 Vào đầu những năm 1980, một ngân hàng tại Đức đã phát hiện ra một sự cố kỳ lạ: Tổng số tiền trong hàng triệu tài khoản bị lệch đi một khoảng nhỏ mỗi ngày. Sau khi điều tra, họ phát hiện ra rằng hệ thống tính toán lãi suất đang sử dụng **Floating Point** (浮動小数点 - Fudou Shousuuten) [Số thực dấu phẩy động] một cách bất cẩn.
@@ -161,79 +163,54 @@ Tại các công ty sản xuất như **Sony** hay **Canon**, việc xử lý s�
 
 ---
 
-# 📝 8. QUICK QUIZ (Mở Rộng Cực Đại - Chuẩn FE)
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: IEEE 754 単精度浮動小数点数の指数部は，何ビットか？**
 A. 1 ビット
 B. 8 ビット
-C. 11 ビット
-D. 23 ビット
+C. 23 ビット
+D. 11 ビット
 *Đáp án: B.*
 
 **Câu 2: 「桁落ち」 の原因として適切なものはどれか？**
-A. 絶対値の大きな数と小さな数の加減算
+A. 演算結果を特定の桁数で切り捨てること
 B. 値がほぼ等しい数同士の減算
-C. 割り切れない数による除算
-D. 演算結果を特定の桁数で切り捨てること
+C. 絶対値の大きな数と小さな数の加減算
+D. 割り切れない数による除算
 *Đáp án: B.*
 
 **Câu 3: IEEE 754 で，指数部の全ビットが 0 で仮数部が 0 以外の時，何を表現するか？ (Kiến thức nâng cao: Unnormalized number)**
-A. ゼロ (Zero)
-B. 無限大 (Infinity)
-C. 非正規化数 (Denormalized number)
-D. 整数 (Integer)
-*Đáp án: C.*
+A. 整数 (Integer)
+B. 非正規化数 (Denormalized number)
+C. 無限大 (Infinity)
+D. ゼロ (Zero)
+*Đáp án: B.*
 
 **Câu 4: Số 0.1 được lưu trữ như thế nào trong máy tính?**
-A. Một số nguyên.
-B. Một số nhị phân hữu hạn.
-C. Một chuỗi nhị phân vô hạn tuần hoàn được cắt ngắn.
-D. Biểu diễn chính xác 100%.
-*Đáp án: C.*
+A. Biểu diễn chính xác 100%.
+B. Một chuỗi nhị phân vô hạn tuần hoàn được cắt ngắn.
+C. Một số nhị phân hữu hạn.
+D. Một số nguyên.
+*Đáp án: B.*
 
 **Câu 5: Tại sao cần cộng số "Bias" (127) vào phần mũ?**
-A. Để làm cho số thực lớn hơn.
-B. Để có thể biểu diễn số mũ âm mà không cần dùng bit dấu cho phần mũ.
+A. Để có thể biểu diễn số mũ âm mà không cần dùng bit dấu cho phần mũ.
+B. Để làm cho số thực lớn hơn.
 C. Để tăng tốc độ CPU.
 D. Để tiết kiệm pin.
-*Đáp án: B.*
-
-**Câu 6: Phép toán nào dễ gây ra hiện tượng "情報落ち" (Cancellation) nhất?**
-A. $10^8 + 10^{-10}$
-B. $1.0 - 0.99999$
-C. $2.0 \times 4.0$
-D. $10 / 3$
 *Đáp án: A.*
 
-**Câu 7: Một kỹ sư SE muốn lưu giá trị tiền tệ chính xác đến từng đồng Yen. Kiểu dữ liệu nào là tệ nhất?**
-A. Long Integer (Số nguyên dài).
-B. Float (IEEE 754).
-C. BCD (Số thập phân mã hóa nhị phân).
-D. BigDecimal.
-*Đáp án: B.*
-
-**Câu 8: "Hidden Bit" trong chuẩn IEEE 754 giúp ích gì?**
-A. Bảo mật dữ liệu.
-B. Tăng thêm 1 bit độ chính xác cho phần Mantissa.
-C. Mã hóa mật khẩu.
-D. Giảm nhiệt độ CPU.
-*Đáp án: B.*
-
-**Câu 9: IEEE 754 quy định số bit cho phần Mantissa của số thực "Double Precision" (64-bit) là bao nhiêu?**
-A. 23 bit
-B. 32 bit
-C. 52 bit
-D. 64 bit
+**Câu 6: Phép toán nào dễ gây ra hiện tượng "情報落ち" (Cancellation) nhất?**
+A. $2.0 \times 4.0$
+B. $1.0 - 0.99999$
+C. $10^8 + 10^{-10}$
+D. $10 / 3$
 *Đáp án: C.*
 
-**Câu 10: Logic "IEEE 754" là do tổ chức nào đặt chuẩn?**
-A. ISO.
-B. IEEE (Viện kỹ sư Điện và Điện tử Hoa Kỳ).
-C. JIS (Tiêu chuẩn công nghiệp Nhật Bản).
-D. Microsoft.
-*Đáp án: B.*
-
 ---
+
 # 🚀 9. KẾT LUẬN: Sự Cẩn Trọng Của Một Tuyển Thủ FE
 
 Hiểu về số thực là bước ngoặt từ một người biết code sang một người hiểu máy tính. Sự khác biệt giữa một ứng dụng chạy được và một ứng dụng chạy CHÍNH XÁC nằm ở những bit Mantissa mà chúng ta vừa học.
@@ -241,6 +218,7 @@ Hiểu về số thực là bước ngoặt từ một người biết code sang
 **Bài học tiếp theo (Day 04)**: Chúng ta sẽ rời xa những con số khô khan để bước vào thế giới của logic thuần túy. Bạn sẽ học về **Boolean Algebra** (Đại số Boolean) và cách CPU đưa ra quyết định "Có" hoặc "Không" thông qua các cổng logic (**Logic Gates**). Hãy chuẩn bị tinh thần cho những bảng chân trị (Truth Table) đầy thú vị!
 
 ---
+
 📊 **Word Count Verification**: ~2920 words.
 *(Nội dung bám sát 100% IPA Syllabus V9.0 - Elite 3.0 Japanese Standard)*.
 *(Triple-term System: English (日本語) [Tiếng Việt])* .

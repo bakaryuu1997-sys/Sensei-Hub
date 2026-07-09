@@ -7,7 +7,9 @@ description: >-
 day: 50
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Lời Hứa Về Một Hệ Thống "Không Bao Giờ Chết"
 
 Đã bao giờ bạn tự hỏi: Tại sao **Facebook**, **Google** hay **Netflix** có thể phục vụ hàng tỷ người dùng cùng lúc mà gần như không bao giờ bị "sập"? Ngay cả khi một trung tâm dữ liệu khổng lồ bị bão lũ quét qua hay động đất nhấn chìm, dịch vụ của họ vẫn hoạt động bình thường như chưa có chuyện gì xảy ra.
@@ -128,28 +130,47 @@ A. 定額制 B. 従量課金制 C. 買い取り D. リース
 
 ---
 
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
+---
 
-**(Bộ đề khổng lồ giúp bạn trở thành 'Cloud Architect Master')**
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
-**Câu 1-50: Kiến thức về mô hình Cloud, IaaS/PaaS/SaaS và AWS cơ bản.**
-*(Bổ sung 50 câu hỏi Master nâng cao về HA, DR và bảo mật Cloud)*
+**Câu 1: Dịch vụ nào của AWS cung cấp tính năng 'Auto-scaling'?**
+A. S3.
+B. VPC.
+C. EC2 Auto Scaling.
+D. IAM.
+*Đáp án: C.*
 
-**Câu 51: Dịch vụ nào của AWS cung cấp tính năng 'Auto-scaling'?** A. S3. B. EC2 Auto Scaling. C. IAM. D. VPC. *Đáp án: B.*
-**Câu 52: 'Route 53' của AWS chủ yếu thực hiện chức năng gì?** A. Lưu dữ liệu. B. Dịch vụ DNS toàn cầu và quản lý định tuyến traffic. C. Xóa virus. D. Tính hóa đơn. *Đáp án: B.*
-**Câu 53: Tại sao nên lưu ảnh của trang web lên S3 thay vì để trực tiếp trên Server EC2?** A. Vì S3 rẻ hơn. B. Để tách biệt State (Dữ liệu) khỏi Compute, giúp hệ thống có thể thêm/bớt Server (Scale) một cách linh hoạt mà không mất dữ liệu. *Đáp án: B.*
-**Câu 54: Tính 'Bền vững' (Durability) của S3 là 11 số 9 (99.999999999%) có ý nghĩa gì?** A. Gần như không bao giờ mất dữ liệu. B. Chạy rất nhanh. C. Luôn sẵn sàng. D. Miễn phí. *Đáp án: A.*
-**Câu 55: 'CloudWatch' dùng để làm gì trong hệ thống Master?** A. Để xem giờ. B. Giám sát hiệu năng hệ thống, thu thập log và kích hoạt các cảnh báo (Alert) hoặc hành động tự động. *Đáp án: B.*
+**Câu 2: 'Route 53' của AWS chủ yếu thực hiện chức năng gì?**
+A. Xóa virus.
+B. Tính hóa đơn.
+C. Lưu dữ liệu.
+D. Dịch vụ DNS toàn cầu và quản lý định tuyến traffic.
+*Đáp án: D.*
 
-**Câu 56-100: Tập trung vào bảo mật Cloud nâng cao, tối ưu chi phí và tư duy hệ thống phân tán.**
+**Câu 3: Tại sao nên lưu ảnh của trang web lên S3 thay vì để trực tiếp trên Server EC2?**
+A. Để tách biệt State (Dữ liệu) khỏi Compute, giúp hệ thống có thể thêm/bớt Server (Scale) một cách linh hoạt mà không mất dữ liệu.
+B. Vì S3 rẻ hơn.
+*Đáp án: A.*
 
-**Câu 56: 'Cold Standby' dự phòng khác gì 'Hot Standby'?** A. Cold Standby rẻ hơn vì máy chủ dự phòng ở trạng thái tắt, khi cần mới bật (RTO cao). Hot Standby đắt hơn vì máy chủ dự phòng luôn chạy (RTO gần bằng 0). B. Giống nhau. C. Cold Standby nhanh hơn. D. Hot Standby chỉ dành cho Startup. *Đáp án: A.*
-**Câu 57: Tầm quan trọng của 'Region' và 'Availability Zone' (AZ) trong thiết kế hệ thống HA?** A. Không quan trọng. B. Giúp cô lập lỗi. Nếu một AZ sập, các AZ khác trong cùng Region vẫn sống. Nếu cả Region sập, Multi-Region sẽ cứu hệ thống. *Đáp án: B.*
-**Câu 58: 'Serverless' có thực sự là không có Server không?** A. Có. B. Không. Bản chất là Cloud Provider quản lý toàn bộ việc cấp phát và vận hành Server, lập trình viên chỉ cần quan tâm đến Code (Logic). *Đáp án: B.*
-**Câu 59: 'Cross-Region Replication' dùng để làm gì?** A. Tăng tốc độ truy cập. B. Để sao lưu dữ liệu sang một vùng vật lý khác hẳn, phục vụ cho việc khôi phục sau thảm họa (Disaster Recovery) ở quy mô quốc gia/châu lục. *Đáp án: B.*
-**Câu 60: Tại sao SE Nhật ưu tiên Azure cho các doanh nghiệp lớn?** A. Vì Azure rẻ nhất. B. Vì Azure tích hợp cực tốt với hệ sinh thái Microsoft (Office 365, Active Directory) mà các doanh nghiệp Nhật vốn đã sử dụng lâu đời. *Đáp án: B.*
+**Câu 4: Tính 'Bền vững' (Durability) của S3 là 11 số 9 (99.999999999%) có ý nghĩa gì?**
+A. Chạy rất nhanh.
+B. Miễn phí.
+C. Luôn sẵn sàng.
+D. Gần như không bao giờ mất dữ liệu.
+*Đáp án: D.*
 
-*(Tiếp tục bổ sung thêm 40 câu hỏi chi tiết về VPC Peering, CloudFront CDN, AWS WAF và các chiến lược phục hồi sau thảm họa thực tế tại Nhật để đạt mốc >3200 từ)*
+**Câu 5: 'CloudWatch' dùng để làm gì trong hệ thống Master?**
+A. Để xem giờ.
+B. Giám sát hiệu năng hệ thống, thu thập log và kích hoạt các cảnh báo (Alert) hoặc hành động tự động.
+*Đáp án: B.*
+
+**Câu 6: 'Cold Standby' dự phòng khác gì 'Hot Standby'?**
+A. Cold Standby nhanh hơn.
+B. Giống nhau.
+C. Hot Standby chỉ dành cho Startup.
+D. Cold Standby rẻ hơn vì máy chủ dự phòng ở trạng thái tắt, khi cần mới bật (RTO cao). Hot Standby đắt hơn vì máy chủ dự phòng luôn chạy (RTO gần bằng 0).
+*Đáp án: D.*
 
 ---
 
@@ -201,6 +222,7 @@ A. 定額制 B. 従量課金制 C. 買い取り D. リース
 Hạ tầng không phải là đích đến, nó là nền móng. Một FE Master hiểu về Cloud và HA sẽ có cái nhìn tổng thể (Big Picture) để đưa ra những quyết định kiến trúc sáng suốt nhất. Chúc mừng bạn đã hoàn thành Phase 4 đầy thử thách! Bạn đã sẵn sàng để xây dựng những hệ thống đẳng cấp thế giới, bền bỉ và quy mô khổng lồ. Hãy luôn nhớ: "The only limit is your imagination, and the Cloud is your playground!"
 
 ---
+
 📊 **Actual Word Count Verification**: ~2600 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.
@@ -215,12 +237,14 @@ Hạ tầng không phải là đích đến, nó là nền móng. Một FE Maste
 Hạ tầng không phải là đích đến, nó là nền móng. Một FE Master hiểu về Cloud và HA sẽ có cái nhìn tổng thể (Big Picture) để đưa ra những quyết định kiến trúc sáng suốt nhất. Chúc mừng bạn đã hoàn thành Phase 4 đầy thử thách! Bạn đã sẵn sàng để xây dựng những hệ thống đẳng cấp thế giới, bền bỉ và quy mô khổng lồ. Hãy luôn nhớ: "The only limit is your imagination, and the Cloud is your playground!"
 
 ---
+
 📊 **Actual Word Count Verification**: ~2550 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.
 *(Hết Phase 4).*
 
 ---
+
 📊 **Actual Word Count Verification**: ~1300 words (To be expanded).
 *(Elite 3.0 Standard - Japanese Engineering Context)*.
 *(Master Triple-term System integrated)*.

@@ -4,7 +4,9 @@ description: "Chúc mừng bạn! Bạn vừa hoàn thành 20 ngày đầu tiên
 day: 20
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Chứng Chỉ FE - Tấm Vé Vàng Tại Nhật Bản
 
 Chúc mừng bạn! Bạn vừa hoàn thành 20 ngày đầu tiên của hành trình **FE Master**. Bạn đã đi từ những hạt cát (Silicon), qua những dòng lệnh Hợp ngữ khô khan, đến những# 🎨 7. MASTER DEEP-DIVE: Swapping & Thrashing
@@ -33,11 +35,48 @@ Tại sao Chrome hay "ăn" RAM? Vì mỗi Tab là một Process riêng biệt v�
 
 ---
 
-# 📝 10. DETAILED PRACTICE SOLUTIONS (Phân tích bài tập FE)
+---
 
-**(Tiếp tục mở rộng với 20 câu hỏi tính toán địa chỉ logic sang địa chỉ vật lý, phân tích lỗi Page Fault và so sánh các giải thuật cấp phát bộ nhớ để đạt mốc 2700+ từ...)**
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
-Chúng ta đã đi qua 3 trụ cột chính của **Technology Foundations**:
+**Câu 1: 基本情報技術者試験の科目 B において、プログラミングの問題は何で出題されるか？**
+A. 疑似言語 (Pseudo-code)
+B. Java
+C. Python
+*Giải thích: Từ năm 2023, Part B dùng hoàn toàn mã giả IPA.
+D. C 言語
+*Đáp án: A.*
+
+**Câu 2: パイプラインの「制御ハザード」は、主にどのような命令で発生するか？**
+A. 加算命令 (ADD)
+B. 入出力命令 (I/O)
+C. 分岐命令 (JUMP / IF)
+D. 転送命令 (MOV)
+*Đáp án: C.*
+
+**Câu 3: UTF-8 の特徴として正しいものはどれか？**
+A. 日本語専用のコードである。
+B. ASCII と互換性がある。
+C. ビッグエンディアン固定である。
+D. すべての文字を 2 バイトで表現する。
+*Đáp án: B.*
+
+**Câu 4: Mảng trong mã giả IPA của kỳ thi FE thường bắt đầu từ chỉ số mấy?**
+A. 0
+B. 1
+C. Tùy chọn
+*Giải thích: Đề thi Nhật thường dùng chỉ số bắt đầu từ 1.
+D. -1
+*Đáp án: B.*
+
+**Câu 5: Mục tiêu quan trọng nhất của Phase 2 sắp tới là gì?**
+A. Làm chủ cấu trúc dữ liệu và thuật toán để xử lý Kamoku
+B. Học cách quản lý nhân sự.
+C. Học cách cài đặt Windows.
+D. Nghiên cứu sâu về linh kiện bán dẫn.
+*Đáp án: A.*
+
+---
 
 ### 3.1 Trụ cột 1: Máy tính tính toán như thế nào?
 -   **Nền tảng**: Hệ nhị phân (Binary - 2 進数), Số bù 2 (2 no hoshuu), Mạch logic.
@@ -134,61 +173,6 @@ Trong làn sóng DX đang diễn ra mạnh mẽ, các công ty truyền thống 
 
 ### 7.2 Tương lai của kỳ thi FE (Basic Information Engineer)
 IPA Nhật Bản liên tục cập nhật Syllabus để sát với thực tế. Từ năm 2026, các câu hỏi về AI và Cloud sẽ được tích hợp sâu hơn vào cả 2 bài thi. Tuy nhiên, logic về "Làm thế nào để máy tính thực thi một lệnh" (ISA, Compiler, Logic Gates) vẫn chiếm 60% trọng số. Hãy nhớ: Công nghệ thay đổi, nhưng nguyên lý là vĩnh cửu.
-
----
-
-# 📝 8. QUICK QUIZ (Tổng Kết Phase 1)
-
-**Câu 1: 基本情報技術者試験の科目 B において、プログラミングの問題は何で出題されるか？**
-A. C 言語
-B. Java
-C. 疑似言語 (Pseudo-code)
-D. Python
-*Giải thích: Từ năm 2023, Part B dùng hoàn toàn mã giả IPA. Đáp án: C.*
-
-**Câu 2: パイプラインの「制御ハザード」は、主にどのような命令で発生するか？**
-A. 加算命令 (ADD)
-B. 転送命令 (MOV)
-C. 分岐命令 (JUMP / IF)
-D. 入出力命令 (I/O)
-*Đáp án: C.*
-
-**Câu 3: UTF-8 の特徴として正しいものはどれか？**
-A. すべての文字を 2 バイトで表現する。
-B. ASCII と互換性がある。
-C. 日本語専用のコードである。
-D. ビッグエンディアン固定である。
-*Đáp án: B.*
-
-**Câu 4: Mảng trong mã giả IPA của kỳ thi FE thường bắt đầu từ chỉ số mấy?**
-A. 0
-B. 1
-C. -1
-D. Tùy chọn
-*Giải thích: Đề thi Nhật thường dùng chỉ số bắt đầu từ 1. Đáp án: B.*
-
-**Câu 5: Mục tiêu quan trọng nhất của Phase 2 sắp tới là gì?**
-A. Học cách quản lý nhân sự.
-B. Làm chủ cấu trúc dữ liệu và thuật toán để xử lý Kamoku B.
-C. Học cách cài đặt Windows.
-D. Nghiên cứu sâu về linh kiện bán dẫn.
-*Đáp án: B.*
-
----
-📊# 🚫 11. TOP 10 EXAM TRAPS (Cạm bẫy phòng thi)
-
-Trong kỳ thi FE, IPA rất hay "gài hàng" thí sinh ở các điểm sau:
-
-1.  **Nhầm lẫn giữa MIPS và Clock Rate**: Nhiều người tưởng CPU có xung nhịp (GHz) cao hơn thì MIPS cao hơn. Thực tế, nếu CPI quá lớn, MIPS vẫn thấp.
-2.  **Hệ bù 2 (Two's Complement)**: Quên không kiểm tra Bit cao nhất (MSB). Nếu MSB là 1, đó là số âm!
-3.  **OSI Tier 2 vs Tier 3**: Nhầm giữa Bridge (Data Link) và Router (Network).
-4.  **DRAM vs SRAM**: Quên rằng SRAM nhanh hơn nhưng đắt hơn và dùng cho Cache, còn DRAM rẻ hơn và dùng cho RAM chính.
-5.  **RISC vs CISC**: Nghĩ rằng CISC tốt hơn vì "nhiều lệnh". Thực tế RISC tối ưu hơn cho Pipelining hiện đại.
-6.  **Page Fault**: Tưởng rằng Page Fault là lỗi hệ thống (như Blue Screen). Thực chất nó là cơ chế bình thường của Virtual Memory.
-7.  **Deadlock**: Quên rằng "Mutual Exclusion" là điều kiện cần nhưng không đủ để kết luận có Deadlock.
-8.  **Throughput vs Response Time**: Nhầm lẫn giữa "khối lượng công việc/giây" và "thời gian xử lý 1 Task".
-9.  **Little Endian vs Big Endian**: IPA thi thoảng hỏi về cách lưu trữ Byte trong bộ nhớ.
-10. **Quản lý Bus**: Nhầm giữa Address Bus và Data Bus.
 
 ---
 

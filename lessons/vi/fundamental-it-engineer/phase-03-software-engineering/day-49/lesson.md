@@ -7,7 +7,9 @@ description: >-
 day: 49
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Tại Sao "Nó Chạy Ở Máy Tôi" Không Còn Là Lời Bào Chữa?
 
 Hãy tưởng tượng bạn vừa viết xong một tuyệt tác Frontend, chạy cực mượt trên chiếc Macbook Pro M3 bóng bẩy của mình. Nhưng khi bàn giao cho đội Ops để Deploy lên máy chủ Linux, mọi thứ đổ vỡ: "Lỗi thư viện", "Sai phiên bản Node", "Thiếu biến môi trường". Câu nói kinh điển: "Nhưng nó chạy cực tốt ở máy tôi mà!" (It works on my machine!) chính là nỗi ác mộng lớn nhất của ngành công nghệ trong nhiều thập kỷ.
@@ -191,28 +193,45 @@ A. クラスタリング B. 仮想化 C. ミラーリング D. デュプレッ�
 
 ---
 
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
+---
 
-**(Bộ đề khổng lồ giúp bạn trở thành 'Lord of Containers')**
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
-**Câu 1-50: Kiến thức về VM, Hypervisor, Docker cơ bản và Dockerfile.**
-*(Bổ sung 50 câu hỏi Master nâng cao về Kubernetes, IaC và Microservices)*
+**Câu 1: Tại sao Docker Image lại được cấu tạo từ nhiều 'Layers'?**
+A. Để tái sử dụng (Reusability). Nếu nhiều Image dùng chung một Layer nền, chúng sẽ tiết kiệm bộ nhớ cực lớn.
+B. Để đẹp.
+C. Để làm file nặng hơn.
+D. Không biết.
+*Đáp án: A.*
 
-**Câu 51: Tại sao Docker Image lại được cấu tạo từ nhiều 'Layers'?** A. Để làm file nặng hơn. B. Để tái sử dụng (Reusability). Nếu nhiều Image dùng chung một Layer nền, chúng sẽ tiết kiệm bộ nhớ cực lớn. C. Để đẹp. D. Không biết. *Đáp án: B.*
-**Câu 52: 'kubectl get pods' dùng để làm gì?** A. Tắt máy tính. B. Liệt kê danh sách các Pod đang chạy trong Cluster. C. Xóa code. D. Mua thêm RAM. *Đáp án: B.*
-**Câu 53: Lệnh 'RUN' và 'CMD' trong Dockerfile khác nhau thế nào?** A. Giống nhau. B. 'RUN' thực thi lúc Build (cài phần mềm), 'CMD' thực thi lúc Container khởi động (chạy ứng dụng). *Đáp án: B.*
-**Câu 54: Tại sao Kubernetes lại cần 'etcd'?** A. Để trang trí. B. Vì etcd là "nguồn sự thật duy nhất" lưu trữ mọi cấu trúc và trạng thái của cluster. Nếu mất etcd, cluster sẽ sụp đổ. *Đáp án: B.*
-**Câu 55: 'Infrastructure as Code' giúp tránh được lỗi gì lớn nhất?** A. Lỗi cú pháp. B. Lỗi do con người (Human Error) khi cấu hình bằng tay và đảm bảo tính nhất quán (Consistency) giữa môi trường Test và Production. *Đáp án: B.*
+**Câu 2: 'kubectl get pods' dùng để làm gì?**
+A. Tắt máy tính.
+B. Mua thêm RAM.
+C. Liệt kê danh sách các Pod đang chạy trong Cluster.
+D. Xóa code.
+*Đáp án: C.*
 
-**Câu 56-100: Tập trung vào bảo mật container, K8s nâng cao và tư duy DevOps.**
+**Câu 3: Lệnh 'RUN' và 'CMD' trong Dockerfile khác nhau thế nào?**
+A. Giống nhau.
+B. 'RUN' thực thi lúc Build (cài phần mềm), 'CMD' thực thi lúc Container khởi động (chạy ứng dụng).
+*Đáp án: B.*
 
-**Câu 56: Tại sao không nên chạy ứng dụng dưới quyền 'root' trong container?** A. Vì tốn RAM. B. Vì rủi ro bảo mật (Container Escape). Nếu hacker chiếm được container, họ sẽ có quyền cao nhất trên Host OS. C. Vì ứng dụng chạy chậm. D. Không quan trọng. *Đáp án: B.*
-**Câu 57: 'Docker Compose' dùng để làm gì?** A. Để viết nhạc. B. Để định nghĩa và chạy các ứng dụng có nhiều Container (Multi-container apps) chỉ bằng một file YAML duy nhất. C. Để xóa Docker. D. Để mua thêm RAM. *Đáp án: B.*
-**Câu 58: Sự khác biệt giữa 'Stateless' và 'Stateful' ứng dụng trong K8s?** A. Giống nhau. B. Stateless không lưu dữ liệu (như web app), Stateful cần lưu dữ liệu bền vững (như Database). Stateful khó quản lý hơn trong K8s. *Đáp án: B.*
-**Câu 59: 'Rolling Update' là gì?** A. Xóa hết rồi cài lại. B. Cập nhật từng Pod một để đảm bảo hệ thống luôn có Pod sống phục vụ khách hàng, không gây gián đoạn dịch vụ. C. Cập nhật nhanh hơn. D. Chỉ cho startup. *Đáp án: B.*
-**Câu 60: Tầm quan trọng của 'Image Scanning' trong CI/CD?** A. Để cho đẹp. B. Để tự động phát hiện các lỗ hổng bảo mật (CVE) trong các thư viện cài sẵn của Image trước khi Deploy. *Đáp án: B.*
+**Câu 4: Tại sao Kubernetes lại cần 'etcd'?**
+A. Để trang trí.
+B. Vì etcd là "nguồn sự thật duy nhất" lưu trữ mọi cấu trúc và trạng thái của cluster. Nếu mất etcd, cluster sẽ sụp đổ.
+*Đáp án: B.*
 
-*(Tiếp tục bổ sung thêm 40 câu hỏi chi tiết về K8s Ingress, Helm, và các tình huống sập cluster tại Nhật để đạt mốc >3200 từ)*
+**Câu 5: 'Infrastructure as Code' giúp tránh được lỗi gì lớn nhất?**
+A. Lỗi do con người (Human Error) khi cấu hình bằng tay và đảm bảo tính nhất quán (Consistency) giữa môi trường Test và Production.
+B. Lỗi cú pháp.
+*Đáp án: A.*
+
+**Câu 6: Tại sao không nên chạy ứng dụng dưới quyền 'root' trong container?**
+A. Không quan trọng.
+B. Vì ứng dụng chạy chậm.
+C. Vì tốn RAM.
+D. Vì rủi ro bảo mật (Container Escape). Nếu hacker chiếm được container, họ sẽ có quyền cao nhất trên Host OS.
+*Đáp án: D.*
 
 ---
 
@@ -257,12 +276,14 @@ Năm 2026, **WebAssembly** không còn chỉ dành cho trình duyệt. Với **W
 | **Scalability** | 拡張性 (Kakuchou-sei) | Khả năng mở rộng |
 
 ---
+
 📊 **Actual Word Count Verification**: ~2800 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.
 *(Hết bài 49).*
 
 ---
+
 📊 **Actual Word Count Verification**: ~1300 words (To be expanded).
 *(Elite 3.0 Standard - Japanese Engineering Context)*.
 *(Master Triple-term System integrated)*.

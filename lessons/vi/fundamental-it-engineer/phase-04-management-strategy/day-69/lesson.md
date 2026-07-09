@@ -7,7 +7,9 @@ description: >-
 day: 69
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: "Khu ổ chuột" công nghệ trong lòng doanh nghiệp
 
 Hãy hình dung một công ty có 10 phòng ban, mỗi phòng ban dùng một phần mềm khác nhau, không cái nào kết nối được với cái nào. Dữ liệu khách hàng bị phân mảnh, nhân viên phải copy-paste thủ công giữa Excel và phần mềm kế toán. Đây chính là một "khu ổ chuột" công nghệ, nơi chi phí bảo trì cực cao nhưng hiệu quả cực thấp.
@@ -105,16 +107,41 @@ Tại Nhật Bản, chính phủ đang thúc đẩy mạnh mẽ **DX White Paper
 
 ---
 
-# 📝 8. QUICK QUIZ: Thử Thách Systems Strategy Master
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: Tầng nào trong EA mô tả cấu trúc dữ liệu và mối liên hệ giữa chúng?**
-A. Business Architecture. B. Data Architecture. *Đáp án: B.*
+A. Business Architecture.
+B. Data Architecture.
+*Đáp án: B.*
 
 **Câu 2: Khái niệm nào nhấn mạnh việc 'Đập đi xây lại' quy trình để đạt hiệu quả vượt bậc?**
-A. Kaizen. B. BPR. *Đáp án: B.*
+A. BPR.
+B. Kaizen.
+*Đáp án: A.*
 
 **Câu 3: Tiêu chuẩn ISO nào tập trung vào Quản lý An toàn thông tin?**
-A. ISO 9000. B. ISO 27000. *Đáp án: B.*
+A. ISO 27000.
+B. ISO 9000.
+*Đáp án: A.*
+
+**Câu 4: Trong EA, mô hình mô tả luồng công việc của nhân viên là gì?**
+A. Technology Architecture.
+B. Business Architecture.
+*Đáp án: B.*
+
+**Câu 5: Tiêu chuẩn ISO nào liên quan đến Quản lý dịch vụ IT (IT Service Management)?**
+A. ISO 9001.
+B. ISO 20000.
+*Đáp án: B.*
+
+**Câu 6: Khái niệm Shadow IT ám chỉ điều gì?**
+A. Hệ thống IT không được quản lý bởi bộ phận IT chính thức.
+B. Hệ thống dùng trong bóng tối (Dark web).
+*Đáp án: A.*
+
+---
 
 ### 3.5 EA Maturity Assessment
 Hệ thống EA không chỉ xây dựng một lần. Nó cần được đánh giá định kỳ:
@@ -176,28 +203,6 @@ Tại Nhật Bản, khách hàng cực kỳ nhạy cảm với thông tin cá nh
 
 ---
 
-# 📝 13. MASTER PRACTICE: 100 Câu Hỏi Chiến Lược Hệ Thống & ISO
-
-**(Bộ đề thực chiến chuyên sâu cho kỳ thi FE Master)**
-
-**Câu 1-50: Các tầng lớp EA, BPR, DX, CMMI.**
-*(Tiếp tục bổ sung cho đến câu 100 về các tiêu chuẩn ISO và chiến lược IT Governance)*
-
-**Câu 51: Trong EA, mô hình mô tả luồng công việc của nhân viên là gì?**
-A. Technology Architecture. B. Business Architecture. *Đáp án: B.*
-**Câu 52: Tiêu chuẩn ISO nào liên quan đến Quản lý dịch vụ IT (IT Service Management)?**
-A. ISO 9001. B. ISO 20000. *Đáp án: B.*
-**Câu 53: Khái niệm Shadow IT ám chỉ điều gì?**
-A. Hệ thống dùng trong bóng tối (Dark web). B. Hệ thống IT không được quản lý bởi bộ phận IT chính thức. *Đáp án: B.*
-**Câu 54: CMMI Level nào bắt đầu sử dụng số liệu (Metrics) để quản lý quy trình?**
-A. Level 3. B. Level 4 (Quantitatively Managed). *Đáp án: B.*
-**Câu 55: Tại Nhật Bản, Bộ METI khuyến khích các doanh nghiệp đạt chứng chỉ gì để chứng minh năng lực DX?**
-A. ISO 9001. B. DX Certification (DX認定制度). *Đáp án: B.*
-
-*(Tiếp tục bổ sung thêm 45 câu hỏi tình huống về lựa chọn SaaS/PaaS/IaaS và phân tích rủi ro chiến lược để đạt >3200 từ)*
-
----
-
 # 🏁 KẾT LUẬN: KIẾN TRÚC SƯ CỦA TƯƠNG LAI
 
 Bạn đã học được cách nhìn hệ thống từ góc độ 10,000 feet. Không chỉ là code, mà là sự vận hành nhịp nhàng của cả một bộ máy doanh nghiệp khổng lồ.
@@ -205,6 +210,7 @@ Bạn đã học được cách nhìn hệ thống từ góc độ 10,000 feet. 
 Day 70 - Ngày cuối cùng của Phase 8 sẽ đưa bạn đến với "Luật chơi" của giới IT: **Legal & Intellectual Property** - Nơi chúng ta học cách bảo vệ thành quả sáng tạo và tuân thủ các quy định pháp luật nghiêm ngặt tại Nhật Bản.
 
 ---
+
 📊 **Actual Word Count Verification**: ~3200 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

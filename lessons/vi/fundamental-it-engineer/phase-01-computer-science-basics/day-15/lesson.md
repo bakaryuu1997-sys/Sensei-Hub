@@ -7,14 +7,16 @@ description: >-
 day: 15
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Tại Sao "S" Lại Đáng Giá Hàng Tỷ Đô?
 
 Bạn có bao giờ để ý một ổ khóa nhỏ màu xanh (hoặc xám) bên cạnh địa chỉ web `https://google.com` hay `https://amazon.co.jp` không? Chỉ một chữ cái "**S**" (Secure - Bảo mật) duy nhất nhưng nó là ranh giới sống còn giữa một giao dịch an toàn và một thảm họa rò rỉ thông tin cá nhân quy mô lớn. 
 
 Nếu không có các giao thức bảo mật này, mọi thông tin thẻ tín dụng, mật khẩu đăng nhập, địa chỉ nhà và các bí mật kinh doanh nhạy cảm nhất của các tập đoàn khổng lồ như **Toyota**, **Sony** hay **Nintendo** sẽ bị phơi bày trên không gian mạng internet như những tờ giấy trắng mỏng manh giữa quảng trường giao lộ Shinjuku đông đúc. 
 
-Chào mừng bạn đến với Day 12. Nếu Day 11 là "Bản đồ xa lộ" và "Móng nhà", thì Day 12 chính là "Luật giao thông" và "Phương tiện" vận chuyển dữ liệu thực tế. Hiểu rõ các giao thức (Protocols) không chỉ giúp bạn thi đỗ kỳ thi FE Master với điểm số tối đa, mà còn giúp bạn thiết kế được những hệ thống phần mềm có khả năng giao tiếp toàn cầu một cách cực kỳ an toàn, nhanh chóng và ổn định tuyệt đối trong hàng thập kỷ.
+Chào mừng bạn đến với Day 15. Nếu Day 11 là "Bản đồ xa lộ" và "Móng nhà", thì Day 12 chính là "Luật giao thông" và "Phương tiện" vận chuyển dữ liệu thực tế. Hiểu rõ các giao thức (Protocols) không chỉ giúp bạn thi đỗ kỳ thi FE Master với điểm số tối đa, mà còn giúp bạn thiết kế được những hệ thống phần mềm có khả năng giao tiếp toàn cầu một cách cực kỳ an toàn, nhanh chóng và ổn định tuyệt đối trong hàng thập kỷ.
 
 ---
 
@@ -139,47 +141,51 @@ A. IPアドレスからMACアドレスを求める。 B. ドメイン名からIP
 
 ---
 
-# 📝 10. MASTER PRACTICE: 60 Câu Hỏi Ôn Luyện Toàn Diện
+---
 
-**(Phần bài tập khổng lồ này giúp bạn trở thành chuyên gia về Network Protocols)**
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
-**Câu 1-30: Các câu hỏi nền tảng về Web, Email và DNS (Đã nêu ở trên).**
-*(Tiếp tục bổ sung 30 câu hỏi Master để phá vỡ ngưỡng word count 3000 từ)*
+**Câu 1: Phương thức HTTP nào được dùng để "tạo mới" một bản ghi sinh viên?**
+A. DELETE.
+B. OPTIONS.
+C. POST.
+D. GET.
+*Đáp án: C.*
 
-**Câu 31: Phương thức HTTP nào được dùng để "tạo mới" một bản ghi sinh viên?** A. GET. B. POST. C. DELETE. D. OPTIONS. *Đáp án: B.*
-**Câu 32: SSL/TLS hoạt động chủ yếu ở lớp nào của mô hình OSI?** A. Lớp 3. B. Lớp 4 & Lớp 6 (Presentation). C. Lớp 1. D. Lớp 2. *Đáp án: B.*
-**Câu 33: "TTL" trong bảng ghi DNS nghĩa là gì?** A. Tên của máy chủ. B. Thời gian sống (Time To Live) - Quy định bao lâu thì máy tính phải cập nhật lại thông tin DNS đó. C. Mật khẩu web. D. Tốc độ download. *Đáp án: B.*
-**Câu 34: Tại sao thư rác (Spam) thường dùng cổng 25?** A. Vì nó đẹp. B. Vì đó là cổng mặc định của SMTP để gửi thư giữa các server. C. Vì nó miễn phí. D. Vì nó nhanh. *Đáp án: B.*
-**Câu 35: Giao thức nào dùng để ánh xạ địa chỉ IP sang MAC?** A. DNS. B. ARP. C. DHCP. D. ICMP. *Đáp án: B.*
+**Câu 2: SSL/TLS hoạt động chủ yếu ở lớp nào của mô hình OSI?**
+A. Lớp 3.
+B. Lớp 2.
+C. Lớp 1.
+D. Lớp 4 & Lớp 6 (Presentation).
+*Đáp án: D.*
 
-*(Bổ sung thêm hàng loạt câu hỏi chi tiết về MIME, LDAPS, SIP cho IP Phone và các kỹ thuật Tunneling...)*
+**Câu 3: "TTL" trong bảng ghi DNS nghĩa là gì?**
+A. Thời gian sống (Time To Live) - Quy định bao lâu thì máy tính phải cập nhật lại thông tin DNS đó.
+B. Tốc độ download.
+C. Mật khẩu web.
+D. Tên của máy chủ.
+*Đáp án: A.*
 
-**Câu 36: Giao thức POP3 khác IMAP ở điểm cốt lõi nào?** A. POP3 nhanh hơn. B. IMAP giữ thư trên server và đồng bộ đa thiết bị, POP3 thường tải về và xóa trên server. C. IMAP chỉ dùng cho Gmail. D. POP3 dùng cho Yahoo. *Đáp án: B.*
-**Câu 37: Lệnh `TRACERT` trong Windows dùng giao thức nào?** A. HTTP. B. ICMP. C. TCP. D. FTP. *Đáp án: B.*
-**Câu 38: HTTP/2 mang lại cải tiến gì lớn nhất?** A. Tải ảnh đẹp hơn. B. Cho phép truyền nhiều yêu cầu đồng thời trên 1 kết nối TCP duy nhất (Multiplexing). C. Không cần internet. D. Chỉ dùng cho tiếng Nhật. *Đáp án: B.*
-**Câu 39: Web Server Apache hay Nginx thường chạy ở cổng mặc định nào?** A. 21. B. 80. C. 3306. D. 5432. *Đáp án: B.*
-**Câu 40: Giao thức nào cho phép bạn gõ `master.com` mà máy vẫn biết tìm đúng IP của server?** A. HTTP. B. DNS. C. SMTP. D. ARP. *Đáp án: B.*
+**Câu 4: Tại sao thư rác (Spam) thường dùng cổng 25?**
+A. Vì nó miễn phí.
+B. Vì nó nhanh.
+C. Vì đó là cổng mặc định của SMTP để gửi thư giữa các server.
+D. Vì nó đẹp.
+*Đáp án: C.*
 
-*(Bổ sung thêm 20 câu hỏi về mã lỗi HTTP, bảo mật Header và các giao thức IoT thời đại mới...)*
-...
-*(Nội dung mở rộng dài dằng dặc để đảm bảo đạt 3000-3500 từ)*
+**Câu 5: Giao thức nào dùng để ánh xạ địa chỉ IP sang MAC?**
+A. DNS.
+B. ARP.
+C. DHCP.
+D. ICMP.
+*Đáp án: B.*
 
-**Câu 41: Mã lỗi 403 Forbidden nghĩa là gì?** A. Không tìm thấy trang. B. Có trang đó nhưng bạn không được phép truy cập. C. Server đang ngủ. D. Sai địa chỉ IP. *Đáp án: B.*
-**Câu 42: "Proxy Server" thường dùng để làm gì?** A. Để chơi game. B. Để làm trạm trung chuyển yêu cầu, giúp bảo mật và tăng tốc độ bằng cách lưu cache dữ liệu. C. Để xóa virus. D. Để tăng dung lượng ổ cứng. *Đáp án: B.*
-**Câu 43: Giao thức NTP dùng cổng nào?** A. 80. B. 123. C. 443. D. 22. *Đáp án: B.*
-**Câu 44: "Cookie" và "Session" khác nhau ở đâu?** A. Cookie lưu ở client (trình duyệt), Session lưu ở phía server. B. Giống nhau. C. Cookie chỉ lưu được số. D. Session chỉ dùng được cho admin. *Đáp án: A.*
-**Câu 45: Tại sao cần HTTPS khi nhập mật khẩu?** A. Để gõ nhanh hơn. B. Để mã hóa thông tin, tránh việc hacker dùng kỹ thuật 'Man-in-the-middle' để đọc trộm mật khẩu của bạn trên đường truyền. C. Để trang web trông chuyên nghiệp hơn. D. Để được Google hỗ trợ. *Đáp án: B.*
-**Câu 46: "HSTS" là một tính năng bảo mật giúp làm gì?** A. Tăng tốc web. B. Ép trình duyệt luôn luôn phải kết nối bằng HTTPS thay vì HTTP. C. Chặn quảng cáo. D. Lưu ảnh. *Đáp án: B.*
-**Câu 47: Giao thức LDAP thường dùng trong môi trường nào?** A. Chơi game online. B. Hệ thống mạng nội bộ doanh nghiệp để quản lý tập trung danh sách nhân viên và quyền hạn. C. Xem video Youtube. D. Thiết kế đồ họa. *Đáp án: B.*
-**Câu 48: "RESTful API" là cái gì?** A. Một loại phần cứng. B. Một phong cách kiến trúc thiết kế hệ thống sử dụng các phương thức của HTTP để quản lý tài nguyên. C. Một ngôn ngữ lập trình. D. Một loại cơ sở dữ liệu. *Đáp án: B.*
-**Câu 49: Tại sao lại gọi là Giao thức 'phi trạng thái' (Stateless) đối với HTTP?** A. Vì nó không có tiền. B. Vì mỗi yêu cầu từ client đến server là hoàn toàn độc lập, server không tự động 'nhớ' các yêu cầu trước đó nếu không có Cookie hay Token. C. Vì nó chạy rất nhanh. D. Vì nó không bị lỗi. *Đáp án: B.*
-**Câu 50: Tầm quan trọng của việc hiểu Protocols đối với một SE Master?** A. Để đi thi. B. Để có nền tảng vững chắc trong việc thiết kế, bảo trì và tối ưu hóa bất kỳ hệ thống phần mềm kết nối mạng nào trên thế giới. C. Để biết sửa wifi. D. Để giải thích cho khách hàng hiểu tại sao web lại chậm. *Đáp án: B.*
-
-*(Thêm 10 câu hỏi cuối cùng về các tiêu chuẩn RFC và tương lai của Internet...)*
-...
+**Câu 6: Giao thức POP3 khác IMAP ở điểm cốt lõi nào?**
+A. POP3 nhanh hơn.
+B. IMAP giữ thư trên server và đồng bộ đa thiết bị, POP3 thường tải về và xóa trên server.
+C. IMAP chỉ dùng cho Gmail.
+D. POP3 dùng cho Yahoo.
+*Đáp án: B.*
 
 ---
-📊 **Actual Word Count Verification**: ~3500 words.
-*(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
-*(Master Triple-term System integrated - Triple Term System)*.
-*(Hết bài 12. Chào mừng tới kỉ nguyên Protocols).*
+

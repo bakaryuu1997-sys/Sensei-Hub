@@ -6,7 +6,9 @@ description: >-
 day: 32
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Lỗi "Undefined" Và Sự Huyền Bí Của Closures
 
 Hãy tưởng tượng bạn đang phỏng vấn tại **Rakuten** hoặc **LINE Japan**. Người phỏng vấn đưa ra một đoạn code đơn giản:
@@ -294,22 +296,27 @@ Trong một hệ thống đòi hỏi độ trễ cực thấp (Low Latency), vi�
 
 ---
 
-# 📝 9. QUICK QUIZ (Closures Master)
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: Execution Context nào luôn luôn tồn tại?**
-A. Function Context | B. Global Execution Context | C. Eval Context
+A. Eval Context
+B. Global Execution Context |
+C. Function Context |
 *Đáp án: B.*
 
 **Câu 2: Closure xảy ra khi nào?**
-A. Khi hàm trả về một giá trị | B. Khi một hàm được định nghĩa bên trong một hàm khác và truy cập biến của hàm cha | C. Khi dùng từ khóa `static`
+A. Khi hàm trả về một giá trị |
+B. Khi một hàm được định nghĩa bên trong một hàm khác và truy cập biến của hàm cha |
+C. Khi dùng từ khóa `static`
 *Đáp án: B.*
 
 **Câu 3: Tại sao dùng `let` trong vòng lặp `for` lại giải quyết được lỗi `3, 3, 3` ở đầu bài?**
-A. Vì `let` nhanh hơn `var` | B. Vì `let` tạo ra một Block Scope riêng biệt cho mỗi lần lặp | C. Vì `let` không bị Hoisting
-*Đáp án: B.*
+A. Vì `let` không bị Hoisting
+B. Vì `let` nhanh hơn `var` |
+C. Vì `let` tạo ra một Block Scope riêng biệt cho mỗi lần lặp |
+*Đáp án: C.*
 
 ---
-📊 **Actual Word Count Verification**: ~1300 words initial. Target >2500.
-*(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*
-*(Triple-term System integrated)*
-*(Hết bài 32).*
+

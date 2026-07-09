@@ -7,7 +7,9 @@ description: >-
 day: 62
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Lỗi Phần Mềm Đắt Giá Nhất Lịch Sử
 
 Năm 1996, tên lửa **Ariane 5** của Châu Âu đã nổ tung chỉ sau 37 giây phóng, gây thiệt hại 370 triệu USD. Nguyên nhân? Một lỗi chuyển đổi số thực 64-bit sang số nguyên 16-bit gây ra hiện tượng **Overflow (オーバーフロー)**.
@@ -91,16 +93,41 @@ Tại các tập đoàn như **Hitachi** hay **NEC**, quy trình QA cực kỳ "
 
 ---
 
-# 📝 7. QUICK QUIZ: Thử Thách QA Master
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: Cấp độ kiểm thử nào kiểm tra sự tương tác giữa các Module?**
-A. Unit Test. B. Integration Test. *Đáp án: B.*
+A. Unit Test.
+B. Integration Test.
+*Đáp án: B.*
 
 **Câu 2: Kỹ thuật nào yêu cầu người test phải hiểu rõ cấu trúc code bên trong?**
-A. Black-box. B. White-box. *Đáp án: B.*
+A. White-box.
+B. Black-box.
+*Đáp án: A.*
 
 **Câu 3: 'Regression Testing' nên thực hiện khi nào?**
-A. Khi vừa code xong Module mới. B. Sau khi sửa lỗi hoặc thay đổi tính năng cũ. *Đáp án: B.*
+A. Khi vừa code xong Module mới.
+B. Sau khi sửa lỗi hoặc thay đổi tính năng cũ.
+*Đáp án: B.*
+
+**Câu 4: Loại kiểm thử nào được thực hiện bởi NGƯỜI DÙNG CUỐI để xác nhận phần mềm đạt yêu cầu?**
+A. Acceptance Test.
+B. System Test.
+*Đáp án: A.*
+
+**Câu 5: Trong Top-down Integration Testing, ta dùng cái gì để thay thế cho Module chưa hoàn thiện?**
+A. Driver.
+B. Stub.
+*Đáp án: B.*
+
+**Câu 6: 'Equivalence Partitioning' là kỹ thuật thuộc loại nào?**
+A. Black-box.
+B. White-box.
+*Đáp án: A.*
+
+---
 
 ### 4.3 Automation Testing (テスト自動化) - Kỷ nguyên của FE Master
 Trong môi trường FE hiện đại, chúng ta không thể test tay mãi được.
@@ -167,28 +194,6 @@ Tại các SIer Nhật, **Evidence (証跡)** là tất cả.
 
 ---
 
-# 📝 13. MASTER PRACTICE: 100 Câu Hỏi Toàn Tập Testing & QA
-
-**(Bộ đề thực chiến tổng hợp cho trình độ Master)**
-
-**Câu 1-50: Các khái niệm cơ bản và V-Model.**
-*(Tiếp tục bổ sung cho đến câu 100 về kỹ thuật White-box/Black-box)*
-
-**Câu 51: Loại kiểm thử nào được thực hiện bởi NGƯỜI DÙNG CUỐI để xác nhận phần mềm đạt yêu cầu?**
-A. System Test. B. Acceptance Test. *Đáp án: B.*
-**Câu 52: Trong Top-down Integration Testing, ta dùng cái gì để thay thế cho Module chưa hoàn thiện?**
-A. Driver. B. Stub. *Đáp án: B.*
-**Câu 53: 'Equivalence Partitioning' là kỹ thuật thuộc loại nào?**
-A. White-box. B. Black-box. *Đáp án: B.*
-**Câu 54: Để đảm bảo mọi nhánh rẽ đều được chạy qua, ta dùng độ phủ nào?**
-A. Statement Coverage. B. Branch Coverage. *Đáp án: B.*
-**Câu 55: Kiểm thử lại hệ thống sau khi thay đổi code gọi là gì?**
-A. Monkey Testing. B. Regression Testing. *Đáp án: B.*
-
-*(Tiếp tục bổ sung thêm 45 câu hỏi chi tiết về các tình huống 'Tricky' trong đề thi FE Nhật Bản để đạt >3200 từ)*
-
----
-
 # 🗝️ 14. MASTER CONCEPT: Test Metrics - Dùng con số để chứng minh chất lượng
 
 Một Master SE không nói "Tôi nghĩ code đã tốt". Họ sử dụng dữ liệu:
@@ -199,26 +204,12 @@ Một Master SE không nói "Tôi nghĩ code đã tốt". Họ sử dụng dữ 
 
 ---
 
-# 📝 15. MASTER PRACTICE: Bổ Sung Câu Hỏi Thực Chiến (Phần 2)
-
-**Câu 96: Tại sao chúng ta cần 'Boundary Value Analysis'?**
-A. Vì bug thường xảy ra tại các điểm ranh giới của dữ liệu. *Đáp án: A.*
-**Câu 97: Sự khác biệt lớn nhất giữa Stub và Driver là gì?**
-A. Stub giả lập module cấp thấp, Driver giả lập module cấp cao. *Đáp án: A.*
-**Câu 98: 'White-box Testing' thường do ai thực hiện chính?**
-A. Developer (Lập trình viên). *Đáp án: A.*
-**Câu 99: Khi nào ta có thể dừng việc Testing?**
-A. Khi đạt được các tiêu chí chất lượng (Exit Criteria) đã đề ra ban đầu. *Đáp án: A.*
-**Câu 100: Kỹ thuật nào giúp kiểm tra xem code mới có làm "hỏng" tính năng cũ không?**
-A. Regression Testing (回帰テスト). *Đáp án: A.*
-
----
-
 # 🏁 KẾT LUẬN: NGƯỜI GÁC CỔNG CUỐI CÙNG
 
 Kiểm thử không phải là nhiệm vụ tìm lỗi, mà là nhiệm vụ xây dựng niềm tin. Một Master SE giỏi là người tự tin rằng sản phẩm của mình đủ kiên cường để đối mặt với mọi tình huống thực tế của người dùng. Hãy chuẩn bị tâm thế, vì Day 63 sẽ đưa bạn vào bàn cờ chiến lược: **Project Planning & Time Management** - Nơi chúng ta học cách kiểm soát "Đường găng" để dự án luôn về đích đúng hạn!
 
 ---
+
 📊 **Actual Word Count Verification**: ~2800 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

@@ -7,7 +7,9 @@ description: >-
 day: 58
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: SQL - Chiếc Chìa Khóa Vạn Năng Của Kỹ Sư Dữ Liệu
 
 Hãy tưởng tượng bạn đang đứng trước một "thư viện dữ liệu" khổng lồ của **Rakuten**. Có hàng tỷ dòng dữ liệu về giao dịch, người dùng và sản phẩm. Làm thế nào để bạn tìm ra: "Top 5 khách hàng tại Osaka đã mua iPhone 15 trong tháng vừa rồi" chỉ trong vòng 0.1 giây?
@@ -128,16 +130,44 @@ Tại các dự án lớn cho ngân hàng **MUFG** hay **Mizuho**, code SQL thư
 
 ---
 
-# 📝 8. QUICK QUIZ: 100 Câu Hỏi Master SQL (Part 1)
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: Lệnh nào dùng để xóa toàn bộ dữ liệu trong bảng nhưng giữ lại cấu trúc bảng?**
-A. DROP. B. TRUNCATE. C. DELETE. *Đáp án: B (và C kèm WHERE).*
+A. DROP.
+B. DELETE.
+C. TRUNCATE.
+*Đáp án: C.*
 
 **Câu 2: Ràng buộc nào đảm bảo một cột không được mang giá trị trùng lặp?**
-A. NOT NULL. B. UNIQUE. C. DEFAULT. *Đáp án: B.*
+A. UNIQUE.
+B. DEFAULT.
+C. NOT NULL.
+*Đáp án: A.*
 
 **Câu 3: Để tìm những người có tên bắt đầu bằng chữ 'A', ta dùng toán tử nào?**
-A. = 'A*'. B. LIKE 'A%'. C. IN ('A'). *Đáp án: B.*
+A. = 'A*'.
+B. LIKE 'A%'.
+C. IN ('A').
+*Đáp án: B.*
+
+**Câu 4: Kết quả của phép toán '5 + NULL' trong SQL là gì?**
+A. 5.
+B. NULL.
+*Đáp án: B.*
+
+**Câu 5: Lệnh nào dùng để thay đổi kiểu dữ liệu của một cột đã tồn tại?**
+A. UPDATE TABLE.
+B. ALTER TABLE.
+*Đáp án: B.*
+
+**Câu 6: Thứ tự đúng của các mệnh đề trong SELECT là gì?**
+A. SELECT -> FROM -> WHERE -> ORDER BY.
+B. SELECT -> WHERE -> FROM.
+*Đáp án: A.*
+
+---
 
 ### 5.3 UPDATE (データ更新) và DELETE (データ削除)
 Đây là hai lệnh "nguy hiểm" nhất. Một Master SE không bao giờ quên mệnh đề `WHERE`.
@@ -206,23 +236,6 @@ Là một Master SE, bạn phải review code và ngăn chặn những lỗi sơ
 
 ---
 
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện SQL (Ultimate Edition)
-
-**(Bộ đề thực chiến về cú pháp và DDL/DML)**
-
-**Câu 1-50: Cú pháp cơ bản và các nhóm lệnh.**
-*(Tiếp tục bổ sung 50 câu hỏi nâng cao về toán tử, hàm xử lý và ràng buộc dữ liệu)*
-
-**Câu 51: Kết quả của phép toán '5 + NULL' trong SQL là gì?** A. 5. B. NULL. *Đáp án: B.*
-**Câu 52: Lệnh nào dùng để thay đổi kiểu dữ liệu của một cột đã tồn tại?** A. UPDATE TABLE. B. ALTER TABLE. *Đáp án: B.*
-**Câu 53: Thứ tự đúng của các mệnh đề trong SELECT là gì?** A. SELECT -> WHERE -> FROM. B. SELECT -> FROM -> WHERE -> ORDER BY. *Đáp án: B.*
-**Câu 54: Để lấy ra các bản ghi có lương từ 1000 đến 2000, ta dùng?** A. IN (1000, 2000). B. BETWEEN 1000 AND 2000. *Đáp án: B.*
-**Câu 55: Lệnh DELETE có xóa bảng khỏi Database không?** A. Có. B. Không, chỉ xóa dữ liệu bên trong. *Đáp án: B.*
-
-*(Tiếp tục bổ sung thêm 45 câu hỏi chi tiết về các hàm `COUNT`, `SUM`, `AVG` đơn giản và các ví dụ thực tế về quản lý User để đạt >3500 từ)*
-
----
-
 # ❓ 11. TROUBLESHOOTING FAQ: Giải Đáp Nút Thắt SQL
 
 **1. Sự khác nhau giữa `CHAR` và `VARCHAR`?**
@@ -245,26 +258,12 @@ Một Master SQL không chỉ viết code chạy đúng, mà còn phải chạy 
 
 ---
 
-# 📝 13. MASTER PRACTICE: Bổ Sung Câu Hỏi Thực Chiến (Phần 2)
-
-**Câu 96: Lệnh nào dùng để thay đổi cấu trúc bảng (như thêm cột mới)?**
-A. UPDATE. B. ALTER. *Đáp án: B.*
-**Câu 97: Sự khác biệt giữa DELETE và TRUNCATE là gì?**
-A. DELETE xóa từng dòng và sinh Log, TRUNCATE xóa toàn bộ và nhanh hơn. *Đáp án: A.*
-**Câu 98: Tại sao không nên dùng SELECT * trong môi trường Production?**
-A. Tốn băng thông và khó bảo trì. *Đáp án: A.*
-**Câu 99: Toán tử nào dùng để tìm kiếm các bản ghi có giá trị trong một tập hợp cho trước?**
-A. BETWEEN. B. IN. *Đáp án: B.*
-**Câu 100: Trong SQL, mệnh đề nào được thực thi cuối cùng?**
-A. SELECT. B. ORDER BY. *Đáp án: B.*
-
----
-
 # 🏁 KẾT LUẬN: KHỞI ĐẦU CỦA NHỮNG TRUY VẤN SẮC BÉN
 
 Hôm nay bạn đã nắm vững những "viên gạch" đầu tiên của ngôn ngữ SQL. Từ việc định nghĩa cấu trúc (DDL) đến việc thao tác dữ liệu (DML), bạn đang dần làm chủ sức mạnh của dữ liệu. Hãy nhớ: SQL không khó, nhưng để viết SQL hiệu quả và an toàn thì cần sự tỉ mỉ của một Master. Day 59 sẽ đưa bạn đến với những phép Join "thần thánh", chuẩn bị tinh thần nhé!
 
 ---
+
 📊 **Actual Word Count Verification**: ~2800 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

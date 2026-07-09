@@ -6,7 +6,9 @@ description: >-
 day: 64
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Khi "Kế hoạch hoàn hảo" sụp đổ
 
 Nghề Project Manager (PM) có một câu nói nổi tiếng: "Kế hoạch chỉ là danh sách những thứ không bao giờ xảy ra".
@@ -88,16 +90,41 @@ Khi xảy ra rủi ro nghiêm trọng, BrSE không được nói: "Tôi xin lỗ
 
 ---
 
-# 📝 7. QUICK QUIZ: Thử Thách Management Master
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: Chiến lược 'Mua bảo hiểm' thuộc loại đáp ứng rủi ro nào?**
-A. Mitigation. B. Transfer. *Đáp án: B.*
+A. Transfer.
+B. Mitigation.
+*Đáp án: A.*
 
 **Câu 2: Công thức tính số lượng kênh giao tiếp trong nhóm 5 người?**
-A. 5. B. 10. *Đáp án: B (5*4/2).*
+A. 5.
+B. 10.
+*Đáp án: B.*
 
 **Câu 3: Bước đầu tiên của quy trình quản trị rủi ro là gì?**
-A. Risk Identification. B. Risk Response. *Đáp án: A.*
+A. Risk Response.
+B. Risk Identification.
+*Đáp án: B.*
+
+**Câu 4: Chiến lược 'Sửa code ngay để giảm lỗi' thuộc loại nào?**
+A. Mitigation.
+B. Avoidance.
+*Đáp án: A.*
+
+**Câu 5: Ai là người có quyền phê duyệt thay đổi đối với Baseline?**
+A. Developer.
+B. CCB (Ban hội thẩm).
+*Đáp án: B.*
+
+**Câu 6: Xung đột giữa 2 Dev về kỹ thuật nên giải quyết theo cách nào là tốt nhất?**
+A. Forcing.
+B. Collaborating.
+*Đáp án: B.*
+
+---
 
 ### 4.3 Configuration Management (構成管理)
 Quản lý cấu hình là việc đảm bảo mọi thứ trong dự án (Code, Tài liệu, Tooling) đều được kiểm soát phiên bản (Version Control).
@@ -173,28 +200,6 @@ Trong các nhà máy và cả văn phòng IT Nhật, văn hóa **Kiken Yochi (�
 
 ---
 
-# 📝 13. MASTER PRACTICE: 100 Câu Hỏi Quản Trị Rủi Ro & Thực Thi
-
-**(Bộ đề thực chiến chuyên sâu cho kỳ thi FE Master)**
-
-**Câu 1-50: Các loại rủi ro và chiến lược đáp ứng.**
-*(Tiếp tục bổ sung cho đến câu 100 về kỹ thuật giao tiếp và quản lý thay đổi)*
-
-**Câu 51: Chiến lược 'Sửa code ngay để giảm lỗi' thuộc loại nào?**
-A. Avoidance. B. Mitigation. *Đáp án: B.*
-**Câu 52: Ai là người có quyền phê duyệt thay đổi đối với Baseline?**
-A. Developer. B. CCB (Ban hội thẩm). *Đáp án: B.*
-**Câu 53: Xung đột giữa 2 Dev về kỹ thuật nên giải quyết theo cách nào là tốt nhất?**
-A. Collaborating. B. Forcing. *Đáp án: A.*
-**Câu 54: Công thức tính số kênh giao tiếp của nhóm 'n' người?**
-A. n^2. B. n(n-1)/2. *Đáp án: B.*
-**Câu 55: Tài liệu ghi lại kinh nghiệm sau dự án gọi là gì?**
-A. WBS. B. Lessons Learned. *Đáp án: B.*
-
-*(Tiếp tục bổ sung thêm 45 câu hỏi tình huống xử lý khủng hoảng truyền thông dự án để đạt >3200 từ)*
-
----
-
 # 🗝️ 14. MASTER CONCEPT: PMBOK 7th Edition - Từ "Quy trình" sang "Nguyên tắc"
 
 Kiến thức quản lý dự án hiện đại (PMBOK 7) đã chuyển dịch từ 10 Knowledge Areas sang **12 Principles (Nguyên tắc)** và **8 Performance Domains (Miền hiệu suất)**.
@@ -205,26 +210,12 @@ Kiến thức quản lý dự án hiện đại (PMBOK 7) đã chuyển dịch t
 
 ---
 
-# 📝 15. MASTER PRACTICE: Bổ Sung Tình Huống Xử Lý Rủi Ro (Phần 2)
-
-**Câu 96: Khi một stakeholder quan trọng yêu cầu thay đổi ngoài Scope, BrSE nên làm gì đầu tiên?**
-A. Đồng ý ngay để giữ mối quan hệ. B. Phân tích ảnh hưởng (Impact Analysis) và báo cáo quy trình quản lý thay đổi. *Đáp án: B.*
-**Câu 97: Để giảm thiểu rủi ro 'Nhân sự chủ chốt xin nghỉ', Master SE nên làm gì?**
-A. Tăng lương cho họ. B. Chia sẻ kiến thức (Knowledge Sharing) và viết tài liệu kỹ thuật đầy đủ. *Đáp án: B.*
-**Câu 98: Kỹ thuật 'Meeting' hiệu quả nhất trong dự án là?**
-A. Họp càng lâu càng tốt. B. Có chương trình (Agenda) rõ ràng, giới hạn thời gian và có biên bản (Minutes of Meeting). *Đáp án: B.*
-**Câu 99: 'Conflict' trong dự án IT được coi là gì?**
-A. Một dấu hiệu của sự thất bại. B. Một điều tất yếu có thể mang lại sự sáng tạo nếu được giải quyết đúng cách. *Đáp án: B.*
-**Câu 100: Bản lĩnh lớn nhất của một Master PM là gì?**
-A. Luôn đúng kế hoạch. B. Giữ được sự bình tĩnh và đưa ra quyết định sáng suốt nhất dựa trên dữ liệu khi có rủi ro xảy ra. *Đáp án: B.*
-
----
-
 # 🏁 KẾT LUẬN: BẢN LĨNH NGƯỜI DẪN ĐẦU
 
 Quản lý dự án không phải là ngồi trên tháp ngà xem biểu đồ, mà là lăn lộn cùng anh em và khách hàng để giải quyết từng rủi ro mỗi ngày. Day 65 sẽ đưa bạn tới nấc thang cuối cùng: **IT Service Management (ITIL) & System Audit** - Nơi chúng ta học cách vận hành bền vững sau khi dự án đã "Go-live".
 
 ---
+
 📊 **Actual Word Count Verification**: ~2800 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

@@ -7,12 +7,14 @@ description: >-
 day: 41
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Tại Sao 90% Dự Án Phần Mềm Thất Bại?
 
 Hãy tưởng tượng bạn đang xây dựng một tòa nhà chọc trời tại trung tâm **Roppongi Hills**, Tokyo. Nếu bạn không có một bản thiết kế chi tiết, không có lộ trình xây dựng từng tầng và không có quy trình kiểm tra chất lượng thép, tòa nhà đó chắc chắn sẽ sụp đổ trước khi nó kịp hoàn thiện. 
 
-Trong thế giới phần mềm cũng vậy. Viết code chỉ chiếm khoảng 20-30% nỗ lực của một dự án thành công. 70% còn lại nằm ở việc lập kế hoạch, phân tích yêu cầu, thiết kế hệ thống và bảo trì. Chào mừng bạn đến với Day 16 - nơi chúng ta học cách trở thành một "Kiến trúc sư trưởng" chứ không chỉ là một "Thợ xây code". Hiểu rõ **SDLC** (Software Development Life Cycle) chính là bí mật để các tập đoàn khổng lồ như **Fujitsu**, **NEC** hay **Hitachi** có thể vận hành những hệ thống phần mềm khổng lồ cho chính phủ và ngân hàng trong suốt 40 năm mà không gặp sự cố nghiêm trọng.
+Trong thế giới phần mềm cũng vậy. Viết code chỉ chiếm khoảng 20-30% nỗ lực của một dự án thành công. 70% còn lại nằm ở việc lập kế hoạch, phân tích yêu cầu, thiết kế hệ thống và bảo trì. Chào mừng bạn đến với Day 41 - nơi chúng ta học cách trở thành một "Kiến trúc sư trưởng" chứ không chỉ là một "Thợ xây code". Hiểu rõ **SDLC** (Software Development Life Cycle) chính là bí mật để các tập đoàn khổng lồ như **Fujitsu**, **NEC** hay **Hitachi** có thể vận hành những hệ thống phần mềm khổng lồ cho chính phủ và ngân hàng trong suốt 40 năm mà không gặp sự cố nghiêm trọng.
 
 ---
 
@@ -113,24 +115,51 @@ A. ウォータフォール B. アジャイル C. プロトタイピング D. �
 
 ---
 
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
+---
 
-**(Bộ đề khổng lồ này giúp bạn nắm vững mọi quy trình phát triển phần mềm)**
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
-**Câu 1-50: Các kiến thức cơ bản về Waterfall, Agile và các giai đoạn thiết kế.**
-*(Bổ sung 50 câu hỏi Master nâng cao về Scrum, Kanban và DevOps)*
+**Câu 1: Trong Scrum, ai là người chịu trách nhiệm tối ưu hóa giá trị sản phẩm?**
+A. Giám đốc.
+B. Developer.
+C. Scrum Master.
+D. Product Owner.
+*Đáp án: D.*
 
-**Câu 51: Trong Scrum, ai là người chịu trách nhiệm tối ưu hóa giá trị sản phẩm?** A. Scrum Master. B. Product Owner. C. Developer. D. Giám đốc. *Đáp án: B.*
-**Câu 52: "Technical Debt" (Nợ kỹ thuật) là gì?** A. Tiền nợ ngân hàng. B. Hệ quả của việc viết code nhanh, cẩu thả để đạt deadline, dẫn đến khó bảo trì về sau. C. Một loại phí phần mềm. D. Lỗi compiler. *Đáp án: B.*
-**Câu 53: Mô hình Spiral tập trung mạnh nhất vào yếu tố nào?** A. Tốc độ. B. Quản trị rủi ro (Risk Analysis). C. Đồ họa. D. Tài liệu. *Đáp án: B.*
-**Câu 54: "Internal Design" trong tiếng Nhật gọi là gì?** A. 外部設計. B. 内部設計. C. 要件定義. D. テスト. *Đáp án: B.*
-**Câu 55: Daily Stand-up meeting trong Scrum kéo dài bao lâu?** A. 2 tiếng. B. Tối đa 15 phút. C. 1 ngày. D. Không cần họp. *Đáp án: B.*
+**Câu 2: "Technical Debt" (Nợ kỹ thuật) là gì?**
+A. Lỗi compiler.
+B. Một loại phí phần mềm.
+C. Tiền nợ ngân hàng.
+D. Hệ quả của việc viết code nhanh, cẩu thả để đạt deadline, dẫn đến khó bảo trì về sau.
+*Đáp án: D.*
 
-*(Tiếp tục bổ sung thêm 45 câu hỏi nữa với độ chi tiết cực cao để đảm bảo >3200 từ)*
-...
+**Câu 3: Mô hình Spiral tập trung mạnh nhất vào yếu tố nào?**
+A. Đồ họa.
+B. Tốc độ.
+C. Tài liệu.
+D. Quản trị rủi ro (Risk Analysis).
+*Đáp án: D.*
 
-**Câu 90: "Pair Programming" mang lại lợi ích gì?** A. Tốn gấp đôi tiền lương. B. Hai người cùng soi code cho nhau giúp giảm lỗi và chia sẻ kiến thức ngay lập tức. C. Đi chơi nhanh hơn. D. Không làm được gì. *Đáp án: B.*
-**Câu 100: Tại sao một FE Master phải am hiểu SDLC như 'lòng bàn tay'?** A. Để đi thi. B. Để có thể dẫn dắt đội ngũ xây dựng nên những kiệt tác phần mềm có sức sống bền bỉ và tạo ra giá trị thật sự cho xã hội. C. Để biết cách quản lý thời gian. D. Để được khách hàng tin tưởng. *Đáp án: B.*
+**Câu 4: "Internal Design" trong tiếng Nhật gọi là gì?**
+A. テスト.
+B. 外部設計.
+C. 要件定義.
+D. 内部設計.
+*Đáp án: D.*
+
+**Câu 5: Daily Stand-up meeting trong Scrum kéo dài bao lâu?**
+A. Không cần họp.
+B. 1 ngày.
+C. Tối đa 15 phút.
+D. 2 tiếng.
+*Đáp án: C.*
+
+**Câu 6: "Pair Programming" mang lại lợi ích gì?**
+A. Không làm được gì.
+B. Hai người cùng soi code cho nhau giúp giảm lỗi và chia sẻ kiến thức ngay lập tức.
+C. Tốn gấp đôi tiền lương.
+D. Đi chơi nhanh hơn.
+*Đáp án: B.*
 
 ---
 
@@ -177,23 +206,6 @@ Hãy phân tích một ví dụ kinh điển về thất bại trong SDLC: **D�
 
 ---
 
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
-
-**(Phần bổ sung 45 câu hỏi cuối cùng để đạt mốc 2500 từ)**
-
-**Câu 56-100: Tập trung vào các thuật ngữ tiếng Nhật và tình huống quản lý thực tế.**
-
-**Câu 56: 'Regression Test' trong tiếng Nhật là gì?** A. 単体テスト. B. 回帰テスト (hoặc 退行テスト). C. 結合テスト. D. 運用テスト. *Đáp án: B.*
-**Câu 57: Trong Scrum, 'Sprint Planning' diễn ra khi nào?** A. Cuối Sprint. B. Đầu mỗi Sprint. C. Giữa Sprint. D. Một lần duy nhất đầu dự án. *Đáp án: B.*
-**Câu 58: 'User Story' là gì?** A. Một câu chuyện cổ tích. B. Cách mô tả tính năng từ góc nhìn của người dùng: "Là một [người dùng], tôi muốn [làm gì đó] để [nhận được giá trị gì]". C. Một file code. D. Một lỗi phần mềm. *Đáp án: B.*
-**Câu 59: 'Definition of Done' (DoD) dùng để làm gì?** A. Để biết khi nào dự án hết tiền. B. Danh sách kiểm tra chung để cả đội thống nhất thế nào là một công việc đã hoàn thành 100%. C. Để kết thúc cuộc họp. D. Để xóa code. *Đáp án: B.*
-**Câu 60: 'Refactoring' có làm thay đổi chức năng của phần mềm không?** A. Có. B. Không, nó chỉ cải thiện cấu trúc code bên trong để dễ đọc và dễ bảo trì hơn. C. Làm phần mềm chạy chậm hơn. D. Chỉ dành cho chuyên gia. *Đáp án: B.*
-
-*(Tiếp tục bổ sung thêm 40 câu hỏi chi tiết về CI/CD, Docker, Kubernetes trong SDLC hiện đại để tổng word count đạt >3000 từ)*
-...
-
----
-
 # 📝 14. SDLC MASTER CHEAT SHEET: Bảng Tra Cứu Nhanh
 
 | Giai đoạn | Tiếng Nhật | Sản phẩm đầu ra (Deliverables) |
@@ -208,7 +220,8 @@ Hãy phân tích một ví dụ kinh điển về thất bại trong SDLC: **D�
 | **Vận hành & Bảo trì** | 運用・保守 (Unyou Hoshu) | Log files, Update patches |
 
 ---
+
 📊 **Actual Word Count Verification**: ~2600 words.
 *(Elite 3.0 Standard - Japanese Engineering Context)*.
 *(Master Triple-term System integrated)*.
-*(Hết bài 16).*
+*(Hết bài 41).*

@@ -7,7 +7,9 @@ description: >-
 day: 73
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Khi Hacker đọc mã giả của bạn
 
 Hãy tưởng tượng bạn đang viết một module xử lý đăng nhập cho một ngân hàng lớn tại Nhật (như MUFG hoặc Mizuho). Bạn nghĩ rằng mã giả (Pseudo-code) của mình đã hoàn hảo vì nó chạy đúng logic. Nhưng một hacker có thể nhìn thấy điều mà bạn không thấy: Một lỗ hổng **Buffer Overflow** có thể làm sập hệ thống, hoặc một lỗi **SQL Injection** có thể lấy sạch dữ liệu khách hàng.
@@ -100,7 +102,34 @@ Khi làm việc với các hệ thống thanh toán như **PayPay** hay **Rakute
 
 ---
 
-# 📝 8. QUICK QUIZ: Thách thức Master Security
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
+
+**Câu 1: Loại tấn công nào sử dụng kỹ thuật chèn các thẻ `<script>` vào trang web?**
+A. XSS (Cross-Site Scripting).
+B. SQL Injection.
+*Đáp án: A.*
+
+**Câu 2: Trong mã giả, tại sao nên dùng `Hash(Password + Salt)` thay vì chỉ `Hash(Password)`?**
+A. Để chống tấn công Rainbow Table (Dò tìm bảng băm có sẵn).
+B. Để tăng tốc độ tính toán.
+*Đáp án: A.*
+
+**Câu 3: Một biến con trỏ được sử dụng sau khi đã bị `free()`. Lỗ hổng này tên là gì?**
+A. Use-After-Free.
+B. Buffer Overflow.
+*Đáp án: A.*
+
+**Câu 4: Thuật toán mã hóa đối xứng (Symmetric Encryption) yêu cầu điều gì quan trọng nhất?**
+A. Cùng một Secret Key cho cả hai bên và phải giữ bí mật tuyệt đối.
+B. Key công khai.
+*Đáp án: A.*
+
+**Câu 5: [Kamoku B Simulation] Đoạn code xử lý nhận File từ người dùng không kiểm tra đuôi file (Extension). Nguy cơ lớn nhất là gì?**
+A. Làm đầy ổ cứng.
+B. Remote Code Execution (Thực thi mã từ xa).
+*Đáp án: B.*
 
 ---
 
@@ -183,27 +212,6 @@ Các doanh nghiệp lớn tại Nhật đều phải đạt chứng chỉ **ISMS
 
 ---
 
-# 📝 14. MASTER PRACTICE: 100 Câu Hỏi Thực Chiến Kamoku B (Phần 3)
-
-**Câu 1-50: Tập trung vào Logic và Debug bảo mật (Day 71-72).**
-
-**Câu 51: Loại tấn công nào sử dụng kỹ thuật chèn các thẻ `<script>` vào trang web?**
-A. SQL Injection. B. XSS (Cross-Site Scripting). *Đáp án: B.*
-
-**Câu 52: Trong mã giả, tại sao nên dùng `Hash(Password + Salt)` thay vì chỉ `Hash(Password)`?**
-A. Để tăng tốc độ tính toán. B. Để chống tấn công Rainbow Table (Dò tìm bảng băm có sẵn). *Đáp án: B.*
-
-**Câu 53: Một biến con trỏ được sử dụng sau khi đã bị `free()`. Lỗ hổng này tên là gì?**
-A. Buffer Overflow. B. Use-After-Free. *Đáp án: B.*
-
-**Câu 54: Thuật toán mã hóa đối xứng (Symmetric Encryption) yêu cầu điều gì quan trọng nhất?**
-A. Key công khai. B. Cùng một Secret Key cho cả hai bên và phải giữ bí mật tuyệt đối. *Đáp án: B.*
-
-**Câu 55: [Kamoku B Simulation] Đoạn code xử lý nhận File từ người dùng không kiểm tra đuôi file (Extension). Nguy cơ lớn nhất là gì?**
-A. Làm đầy ổ cứng. B. Remote Code Execution (Thực thi mã từ xa). *Đáp án: B.*
-
----
-
 # ⚙️ 15. UNDER THE HOOD: Phân tích OWASP Top 10 trên mã giả
 
 Để trở thành một Master SE tại Nhật, bạn phải có khả năng ánh xạ các lỗ hổng của **OWASP Top 10** vào mã giả IPA.
@@ -249,23 +257,6 @@ graph TD
 ```
 
 **Mẹo Master**: Bất kỳ dữ liệu nào đến từ `input` hoặc `request` đều bị coi là "Dirty". Nó phải đi qua một hàm lọc trước khi vào "Sink" (nơi thực hiện hành động).
-
----
-
-# 📝 18. MASTER PRACTICE: 100 Câu Hỏi Thực Chiến Kamoku B (Hoàn thiện)
-
-**Câu 56-75: Tập trung vào Mã hóa và Quản lý Key.**
-
-**Câu 76 [Logic Bẫy]: Một đoạn code sử dụng `Random()` để tạo mã xác thực OTP. Tại sao điều này không an toàn?**
-A. Vì mã OTP quá ngắn. B. Vì hàm Random thông thường (PRNG) có thể đoán trước được chu kỳ. *Đáp án: B (Cần dùng CSPRNG).*
-
-**Câu 77 [Access Control]: "Default Deny" có nghĩa là gì?**
-A. Hệ thống mặc định cho phép tất cả trừ những gì bị cấm. B. Hệ thống mặc định cấm tất cả trừ những gì được cho phép rõ ràng. *Đáp án: B.*
-
-**Câu 78 [Web Security]: Token CSRF dùng để chống lại loại tấn công nào?**
-A. SQL Injection. B. Cross-Site Request Forgery. *Đáp án: B.*
-
-**Câu 79-100: (Bộ đề 22 câu hỏi tổng hợp - Mỗi câu là một đoạn mã giả dài 25 dòng với các lỗi bảo mật đan xen, yêu cầu Master chỉ ra vị trí dòng code gây lỗi và cách khắc phục tối ưu).**
 
 ---
 
@@ -376,6 +367,7 @@ Cảm ơn bạn đã đồng hành cùng Day 73. Bảo mật không phải là m
 Day 74 chúng ta sẽ đi sâu vào **Cryptography & Network Defense** - Lớp lá chắn thép cho toàn bộ hạ tầng Master! Hãy giữ vững sự tập trung, Master!
 
 ---
+
 📊 **Actual Word Count Verification**: >3200 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

@@ -6,7 +6,9 @@ description: >-
 day: 29
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Tại sao Cấp Cứu Luôn Được Ưu Tiên?
 
 Tại một bệnh viện lớn ở Tokyo, phòng cấp cứu không hoạt động theo kiểu "Ai đến trước phục vụ trước" (FIFO).
@@ -143,53 +145,18 @@ Hãy đọc kỹ đề bài xem họ bắt đầu từ 0 hay 1.
 
 ---
 
-# 10. DETAILED PRACTICE SOLUTIONS (Master Logic)
-
-**Câu 1: Cho mảng [10, 20, 15, 30, 40]. Sau khi Build Max-Heap, mảng sẽ trông như thế nào?**
-- **Bước 1**: Vẽ cây theo thứ tự. 10 là Root. 20 trái, 15 phải...
-- **Bước 2**: Heapify từ dưới lên. 20 đổi chỗ với 10 (vì 20 > 10). 40 đổi chỗ với cha của nó cho đến Root.
-- **Đáp án**: [40, 30, 15, 10, 20].
-
-**Câu 2: Độ phức tạp của việc lấy phần tử lớn nhất ra khỏi Max-Heap là bao nhiêu?**
-- *Trả lời*: Lấy Root ra mất $O(1)$, nhưng phải tốn $O(\log n)$ để Heapify lại.
-- *Đáp án*: $O(\log n)$.
-
-**Câu 3: Heap Sort là thuật toán sắp xếp "Stable" (Ổn định) hay "Unstable"?**
-- *Trả lời*: **Unstable**. Vì thao tác đổi chỗ Root với phần tử cuối có thể làm thay đổi thứ tự tương đối của các phần tử bằng nhau.
-
-**Câu 4: Ứng dụng của Heap trong bài toán "Tìm K số lớn nhất trong 1 tỷ số"?**
-- *Giải pháp Master*: Đừng sort cả 1 tỷ số! Hãy dùng một **Min-Heap kích thước K**. Duyệt qua 1 tỷ số, nếu số nào lớn hơn Root của Heap, ta ném Root ra và cho số mới vào. Sau 1 tỷ lần, Heap chứa đúng K số lớn nhất. Tiết kiệm RAM khổng lồ!
-
-**Câu 5: Trong IPA Pseudo-code, thao tác đổi chỗ (Swap) thường được viết như thế nào?**
-- *Đáp án*: `work ← a[i]; a[i] ← a[j]; a[j] ← work`.
-
-**Câu 6: "Median-finding" dùng Heap như thế nào?**
-- *Đáp án*: Dùng 2 Heap (một Max-Heap cho nửa nhỏ và một Min-Heap cho nửa lớn).
-
-**Câu 7: Tại sao không dùng BST để làm Priority Queue?**
-- *Trả lời*: BST linh hoạt hơn nhưng Heap cài đặt bằng mảng nhanh hơn và không cần bảo trì tính "cân bằng" phức tạp như AVL Tree.
-
-**Câu 8: Heapify từ trên xuống (Sift-down) hay từ dưới lên (Sift-up) hiệu quả hơn khi Build Heap?**
-- *Đáp án*: Từ trên xuống (Sift-down) cho toàn bộ cây mất $O(n)$, hiệu quả hơn Sift-up mất $O(n \log n)$.
-
 ---
 
-# 11. QUICK QUIZ: KIỂM TRA TƯ DUY MASTER
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: Max-Heap において、根ノード (Root) にある値は常にどのような値か？**
-A. 最小値 (Giá trị nhỏ nhất)
-B. 最大値 (Giá trị lớn nhất)
-C. 平均値 (Giá trị trung bình)
-D. 任意の数値 (Số bất kỳ)
-*Đáp án: B.*
-
-**Câu 2: Một Heap có 7 phần tử lưu trong mảng. Node tại Index 2 sẽ có các con tại Index nào?**
--   *Giải thích*: Con trái: $2 \times 2 + 1 = 5$, Con phải: $2 \times 2 + 2 = 6$.
--   *Đáp án*: Index 5 và 6.
+A. 最大値 (Giá trị lớn nhất)
+B. 最小値 (Giá trị nhỏ nhất)
+C. 任意の数値 (Số bất kỳ)
+D. 平均値 (Giá trị trung bình)
+*Đáp án: A.*
 
 ---
-
-**(Tiếp tục mở rộng 15 câu hỏi thực hành mô phỏng tình huống BSE giải thích về Quality of Service - QoS - cho khách hàng sử dụng Priority Queue để ưu tiên traffic Video Call trước traffic Download để đạt mốc 3000 từ...)**
 
 ### 🏗️ 12. MASTER DEEP-DIVE: D-ary Heaps & Memory Optimization
 
@@ -214,13 +181,6 @@ Trong các hệ thống nhúng (Embedded Systems) tại Nhật, bộ nhớ là t
 | **Sorting** | **整列** (Seiretsu) | Sắp xếp |
 | **Stability** | **安定性** (Anteisei) | Tính ổn định |
 
-### 📝 14. PRACTICE SOLUTIONS: NÂNG CAO (FE PART B FOCUS)
-
-**Câu 12: Tại sao không dùng Heap để tìm kiếm một giá trị bất kỳ?**
-- *Trả lời*: Vì Heap chỉ đảm bảo quan hệ cha-con, không đảm bảo quan hệ giữa các anh em (sibling). Để tìm 1 giá trị, bạn vẫn phải duyệt cả mảng $O(n)$. Heap sinh ra chỉ để lấy phần tử ĐẦU BẢNG.
-
-**Câu 13: Một kỹ sư System Design tại Rakuten muốn thiết kế hệ thống xếp hạng (Leaderboard) theo thời gian thực. Tại sao họ dùng Heap?**
-- *Trả lời*: Vì Top 10 thay đổi liên tục khi người dùng có điểm mới. Thao tác cập nhật điểm và lấy Top 10 trên Heap cực nhanh $O(\log n)$.
 
 ### 🏗️ 15. MASTER DEEP-DIVE: Fibonacci Heaps & Đỉnh Cao Tối Ưu
 
@@ -241,6 +201,7 @@ Làm chủ được Heap, bạn không chỉ biết cách sắp xếp dữ liệ
 Chào mừng bạn đã hoàn thành Day 29. Chỉ còn một bước nữa thôi - **Day 30** - nơi chúng ta sẽ tổng kết lại toàn bộ Phase 2 và nhìn lại bức tranh "Complexity" một cách toàn diện nhất.
 
 ---
+
 📊 **Actual Word Count Verification**: >2600 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*
 *(Master Triple-term System integrated)*

@@ -7,7 +7,9 @@ description: >-
 day: 45
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Tại Sao Hệ Thống 40 Năm Tuổi Vẫn Đang Chạy?
 
 Tại Nhật Bản, có những hệ thống ngân hàng hoặc quản lý vận tải được viết từ những năm 1980 bằng ngôn ngữ **COBOL**. Bạn có bao giờ tự hỏi làm thế nào mà một bộ mã nguồn cổ xưa như thế vẫn có thể xử lý hàng triệu giao dịch mỗi giây vào năm 2026 mà không sụp đổ? 
@@ -129,24 +131,51 @@ A. 修正保守 B. 適応保守 C. 改良保守 D. 予防保守
 
 ---
 
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
+---
 
-**(Bộ đề khổng lồ này giúp bạn trở thành 'người gác đền' vĩ đại cho hệ thống)**
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
-**Câu 1-50: Các kiến thức cơ bản về 4 loại bảo trì, MTBF, MTTR và Audit process.**
-*(Bổ sung 50 câu hỏi Master nâng cao về ITIL, SRE và J-SOX compliance)*
+**Câu 1: Công thức tính 'Availability' (Độ sẵn sàng) là gì?**
+A. MTBF / (MTBF + MTTR).
+B. MTTR / MTBF.
+C. MTBF + MTTR.
+D. 100%.
+*Đáp án: A.*
 
-**Câu 51: Công thức tính 'Availability' (Độ sẵn sàng) là gì?** A. MTBF / (MTBF + MTTR). B. MTTR / MTBF. C. MTBF + MTTR. D. 100%. *Đáp án: A.*
-**Câu 52: 'Perfective Maintenance' khác gì với thêm tính năng mới?** A. Giống nhau. B. Nó tập trung vào việc làm tốt hơn những cái đã có (tối ưu code, làm giao diện mượt hơn) thay vì đẻ ra cái hoàn toàn mới. C. Perfective nhanh hơn. D. Không ai dùng. *Đáp án: B.*
-**Câu 53: Vai trò của Auditor có được phép sửa code không?** A. Có, nếu thấy lỗi. B. Tuyệt đối không. Họ chỉ quan sát, đánh giá và lập báo cáo. Sự độc lập là yếu tố sống còn của kiểm toán. C. Chỉ sửa nếu sếp cho phép. D. Auditor không biết code. *Đáp án: B.*
-**Câu 54: 'Patch Management' là gì?** A. Quản lý miếng vá. B. Quy trình cập nhật các bản vá bảo mật từ nhà sản xuất một cách có kiểm soát để tránh làm hỏng hệ thống. C. Một loại game. D. Cách sửa server. *Đáp án: B.*
-**Câu 55: SLA 99.9% nghĩa là hệ thống được phép ngừng hoạt động tối đa bao nhiêu trong 1 năm?** A. 1 ngày. B. Khoảng 8.76 giờ. C. 1 tháng. D. Không bao giờ. *Đáp án: B.*
+**Câu 2: 'Perfective Maintenance' khác gì với thêm tính năng mới?**
+A. Nó tập trung vào việc làm tốt hơn những cái đã có (tối ưu code, làm giao diện mượt hơn) thay vì đẻ ra cái hoàn toàn mới.
+B. Không ai dùng.
+C. Giống nhau.
+D. Perfective nhanh hơn.
+*Đáp án: A.*
 
-*(Tiếp tục bổ sung thêm 45 câu hỏi chi tiết về Incident lifecycle, Disaster Recovery Center và các tình huống Audit thực tế tại Nhật để đảm bảo >3200 từ)*
-...
+**Câu 3: Vai trò của Auditor có được phép sửa code không?**
+A. Tuyệt đối không. Họ chỉ quan sát, đánh giá và lập báo cáo. Sự độc lập là yếu tố sống còn của kiểm toán.
+B. Chỉ sửa nếu sếp cho phép.
+C. Có, nếu thấy lỗi.
+D. Auditor không biết code.
+*Đáp án: A.*
 
-**Câu 90: 'Legacy System' là gì?** A. Hệ thống hiện đại. B. Hệ thống cũ kỹ, lỗi thời nhưng vẫn đang đóng vai trò quan trọng trong doanh nghiệp. C. Một loại virus. D. Đồ chơi trẻ em. *Đáp án: B.*
-**Câu 100: Tại sao một FE Master phải coi Bảo trì là một 'nghệ thuật'?** A. Để đi thi. B. Vì bảo vệ di sản và sự ổn định là sứ mệnh cao cả nhất của kỹ sư phần mềm. Một Master thực thụ là người để lại những hệ thống chạy tốt ngay cả khi mình không còn ở đó. C. Để có việc làm lâu dài. D. Để được sếp nể. *Đáp án: B.*
+**Câu 4: 'Patch Management' là gì?**
+A. Quy trình cập nhật các bản vá bảo mật từ nhà sản xuất một cách có kiểm soát để tránh làm hỏng hệ thống.
+B. Một loại game.
+C. Cách sửa server.
+D. Quản lý miếng vá.
+*Đáp án: A.*
+
+**Câu 5: SLA 99.9% nghĩa là hệ thống được phép ngừng hoạt động tối đa bao nhiêu trong 1 năm?**
+A. Khoảng 8.76 giờ.
+B. 1 ngày.
+C. 1 tháng.
+D. Không bao giờ.
+*Đáp án: A.*
+
+**Câu 6: 'Legacy System' là gì?**
+A. Hệ thống hiện đại.
+B. Một loại virus.
+C. Hệ thống cũ kỹ, lỗi thời nhưng vẫn đang đóng vai trò quan trọng trong doanh nghiệp.
+D. Đồ chơi trẻ em.
+*Đáp án: C.*
 
 ---
 
@@ -157,38 +186,6 @@ A. 修正保守 B. 適応保守 C. 改良保守 D. 予防保守
 
 **2. Audit phát hiện hệ thống của tôi dùng thư viện Open Source có lỗ hổng, tôi phải làm gì?**
 - **Trả lời**: Bình tĩnh báo cáo (Houkoku), lập kế hoạch nâng cấp lên phiên bản an toàn và thực hiện Regression Test kỹ lưỡng. Đừng bao giờ giấu diếm Auditor vì đó là lỗi nặng nhất.
-
----
-
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
-
-**(Phần mở rộng 40 câu hỏi cuối cùng để đạt mốc 2500 từ)**
-
-**Câu 61-100: Tập trung vào Cloud Maintenance, Container Security và luật J-SOX.**
-
-**Câu 61: Trong Cloud, bảo trì 'Serverless' do ai chịu trách nhiệm chính?** A. Khách hàng. B. Nhà cung cấp Cloud (AWS/Google). C. Cả hai. D. Không ai. *Đáp án: B.*
-**Câu 62: Kỹ thuật 'Blue-Green Deployment' giúp gì cho bảo trì?** A. Tiết kiệm điện. B. Giúp chuyển đổi giữa phiên bản cũ và mới một cách tức thì, không gây gián đoạn dịch vụ (Zero downtime). C. Làm web đẹp hơn. D. Chỉ cho startup. *Đáp án: B.*
-**Câu 63: Tại Nhật, việc giữ 'Backup' tại một tỉnh khác gọi là gì?** A. DR (Disaster Recovery). B. BC (Business Continuity). C. BCP (Business Continuity Plan). D. Tất cả đều đúng. *Đáp án: D.*
-
-*(Tiếp tục bổ sung thêm 35 câu hỏi chi tiết về Risk Matrix, Audit Report Template, và các quy tắc ứng xử khi làm việc với đoàn thanh tra chính phủ Nhật)*
-...
-
----
-
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
-
-**(Bộ đề 100 câu khổng lồ - Phần kiến thức Master Maintenance & Audit)**
-
-**Câu 1-60: Đã có ở trên.**
-
-**Câu 61: 'MTTR' đo lường điều gì?** A. Thời gian hệ thống chạy thông suốt. B. Thời gian trung bình để khôi phục (sửa chữa) sau khi xảy ra sự cố. C. Số lượng lỗi. D. Lương kỹ sư. *Đáp án: B.*
-**Câu 62: Kỹ thuật 'Refactoring' thuộc loại bảo trì nào?** A. Corrective. B. Preventive (Phòng ngừa). C. Adaptive. D. Không thuộc loại nào. *Đáp án: B.*
-**Câu 63: Tại Nhật, 'J-SOX' tập trung vào việc kiểm soát điều gì?** A. Phần cứng máy tính. B. Quy trình báo cáo tài chính và kiểm soát nội bộ để đảm bảo tính minh bạch. C. Mạng internet. D. Lượng khí thải. *Đáp án: B.*
-**Câu 64: 'Configuration Management' (Quản lý cấu hình) đảm bảo điều gì?** A. Code ngắn hơn. B. Tính nhất quán và chính xác của cấu hình hệ thống (Software, Hardware, Document) trong suốt vòng đời. C. Tự động hóa. D. Giấu lỗi. *Đáp án: B.*
-**Câu 65: 'Audit Trail' là gì?** A. Đường mòn trong rừng. B. Nhật ký ghi lại các hành động trên hệ thống để phục vụ việc truy vết và kiểm toán. C. Một file ảnh. D. Một virus. *Đáp án: B.*
-
-*(Tiếp tục bổ sung thêm 35 câu hỏi chi tiết về ITIL, Service Desk, Problem management, Change Control Board và các quy định bảo mật thông tin cá nhân của Nhật để đạt >3200 từ)*
-...
 
 ---
 
@@ -204,22 +201,3 @@ A. 修正保守 B. 適応保守 C. 改良保守 D. 予防保守
 - Sau các vụ gian lận tài chính quốc tế, Nhật ban hành luật J-SOX. Mọi hệ thống IT giờ đây phải được Audit khắt khe để đảm bảo tính trung thực của dữ liệu tài chính. Đây là lúc nghề nghiệp 'System Auditor' (Kiểm toán viên hệ thống) lên ngôi.
 
 ---
-
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
-
-**(Bộ đề 100 câu giúp bạn nắm giữ chìa khóa vận hành mọi hệ thống khổng lồ)**
-
-**Câu 1-100: Bao phủ toàn bộ ITIL, SRE, J-SOX và SLIs/SLOs.**
-
-**Câu 1: Chỉ số 'SLA 99.99%' cho phép hệ thống ngừng hoạt động tối đa bao nhiêu trong 1 năm?** A. 8.7 giờ. B. 52.6 phút. C. 5.3 phút. D. 1 ngày. *Đáp án: B.*
-**Câu 2: 'Change Record' dùng để làm gì trong bảo trì?** A. Để ghi lại ai đã sửa cái gì, lúc nào. B. Để xóa code. C. Để tăng lương. D. Không cần thiết. *Đáp án: A.*
-**Câu 3: Tại sao Auditor lại yêu cầu xem 'Access Log'?** A. Để kiểm tra xem có ai truy cập trái phép hoặc thực hiện các hành vi gian lận trên dữ liệu không. B. Để giải trí. C. Để học code. D. Để xóa log. *Đáp án: A.*
-
-*(Tiếp tục bổ sung thêm 90 câu hỏi chi tiết về Incident Management, Problem Management, Root Cause Analysis (RCA), luật bảo vệ thông tin cá nhân (APPI) và cách chuẩn bị cho kỳ kiểm toán thực tế tại các công ty SI Nhật để đạt mốc >3500 từ)*
-...
-
----
-📊 **Actual Word Count Verification**: ~3500 words.
-*(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
-*(Master Triple-term System integrated - Triple Term System)*.
-*(Hết bài 20).*

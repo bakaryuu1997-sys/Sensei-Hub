@@ -7,7 +7,9 @@ description: >-
 day: 53
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Bức Thư Tình Bị Đánh Cắp Và Enigma Hiện Đại
 
 Trong Thế chiến thứ II, quân đội Đức đã sử dụng máy **Enigma** để mã hóa các mệnh lệnh tối mật. Ai giải được nó sẽ nắm giữ chìa khóa chiến thắng. Ngày nay, mỗi khi bạn truy cập vào website của ngân hàng hay gửi một tin nhắn Zalo, bạn đang sử dụng một phiên bản "Enigma" kỹ thuật số mạnh hơn gấp tỷ lần.
@@ -113,9 +115,44 @@ Người Nhật có khái niệm **Reliability (信頼性)** cực cao. Một s�
 
 ---
 
-# 📝 9. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
+---
 
-**Câu 1: Thuật toán mã hóa đối xứng nào được coi là tiêu chuẩn hiện nay?** A. RSA. B. AES. C. MD5. D. DES. *Đáp án: B.*
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
+
+**Câu 1: Thuật toán mã hóa đối xứng nào được coi là tiêu chuẩn hiện nay?**
+A. MD5.
+B. AES.
+C. DES.
+D. RSA.
+*Đáp án: B.*
+
+**Câu 2: 'Salting' giúp chống lại loại tấn công nào hiệu quả nhất?**
+A. Rainbow Table.
+B. SQL Injection.
+C. Brute-force.
+*Đáp án: A.*
+
+**Câu 3: Tại sao kết nối HTTPS lại bắt đầu bằng việc trao đổi Cert của CA?**
+A. Để xác thực rằng Public Key mà trình duyệt nhận được thực sự là của Website đó chứ không phải hacker.
+B. Để lấy thông tin người dùng.
+*Đáp án: A.*
+
+**Câu 4: Một đặc điểm của 'One-way Hash Function' là gì?**
+A. Có thể giải mã được.
+B. Không thể từ mã băm suy ngược ra dữ liệu gốc.
+*Đáp án: B.*
+
+**Câu 5: Thuật toán RSA dựa trên độ khó của bài toán toán học nào?**
+A. Phân tích thừa số nguyên tố của các số cực lớn.
+B. Giải phương trình bậc 2.
+*Đáp án: A.*
+
+**Câu 6: Chữ ký số cung cấp tính năng 'Non-repudiation' nghĩa là gì?**
+A. Người nhận không thể đọc thư.
+B. Người gửi không thể chối rằng mình đã gửi bức thư đó vì chỉ họ mới có Private Key để tạo chữ ký.
+*Đáp án: B.*
+
+---
 
 ### 3.3 Hybrid Cryptosystem (ハイブリッド暗号方式) - Tuyệt kỹ Master
 Tại sao không dùng RSA cho tất cả? Vì RSA rất chậm.
@@ -189,23 +226,6 @@ Dành cho trình độ Master:
 
 ---
 
-# 📝 8. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
-
-**(Bộ đề đỉnh cao giúp bạn làm chủ mật mã học)**
-
-**Câu 1-50: Các khái niệm AES, RSA, SHA, Digital Signature cơ bản.**
-*(Bổ sung 50 câu hỏi Master nâng cao về PKI và kịch bản tấn công)*
-
-**Câu 51: 'Salting' giúp chống lại loại tấn công nào hiệu quả nhất?** A. Brute-force. B. Rainbow Table. C. SQL Injection. *Đáp án: B.*
-**Câu 52: Tại sao kết nối HTTPS lại bắt đầu bằng việc trao đổi Cert của CA?** A. Để lấy thông tin người dùng. B. Để xác thực rằng Public Key mà trình duyệt nhận được thực sự là của Website đó chứ không phải hacker. *Đáp án: B.*
-**Câu 53: Một đặc điểm của 'One-way Hash Function' là gì?** A. Có thể giải mã được. B. Không thể từ mã băm suy ngược ra dữ liệu gốc. *Đáp án: B.*
-**Câu 54: Thuật toán RSA dựa trên độ khó của bài toán toán học nào?** A. Giải phương trình bậc 2. B. Phân tích thừa số nguyên tố của các số cực lớn. *Đáp án: B.*
-**Câu 55: Chữ ký số cung cấp tính năng 'Non-repudiation' nghĩa là gì?** A. Người nhận không thể đọc thư. B. Người gửi không thể chối rằng mình đã gửi bức thư đó vì chỉ họ mới có Private Key để tạo chữ ký. *Đáp án: B.*
-
-*(Tiếp tục bổ sung thêm 45 câu hỏi chi tiết về CRL (Certificate Revocation List), OCSP, SSL Pinning và các tiêu chuẩn bảo mật chính phủ Nhật để đạt >3500 từ)*
-
----
-
 # ❓ 9. TROUBLESHOOTING FAQ: Giải Đáp Nút Thắt Bảo Mật
 
 **1. Tại sao tôi cài SSL rồi mà trình duyệt vẫn báo "Not Secure"?**
@@ -224,21 +244,12 @@ Chính phủ Nhật Bản có một danh sách gọi là **CRYPTREC (Cryptograph
 
 ---
 
-# 📝 11. MASTER PRACTICE: Bổ Sung Câu Hỏi Thực Chiến
-
-**Câu 96: Tại sao chữ ký số (Digital Signature) lại dùng Private Key để ký thay vì Public Key?** A. Để ai cũng có thể đọc được. B. Để chứng minh tính duy nhất (Chỉ người sở hữu Private Key mới tạo ra được chữ ký đó). *Đáp án: B.*
-**Câu 97: 'Certificate Revocation List' (CRL) dùng để làm gì?** A. Danh sách các Public Key mới. B. Danh sách các chứng chỉ số đã bị thu hồi (do lộ khóa bí mật hoặc hết hạn) trước khi chúng thực sự hết hạn. *Đáp án: B.*
-**Câu 98: Tấn công 'Man-in-the-Middle' (MitM) lừa người dùng ở bước nào?** A. Hacker đánh cắp máy tính. B. Hacker giả danh Public Key của người nhận để người gửi mã hóa dữ liệu bằng Public Key của hacker. *Đáp án: B.*
-**Câu 99: 'Salt' trong mật mã học thường là gì?** A. Muối ăn. B. Một chuỗi dữ liệu ngẫu nhiên được thêm vào mật khẩu trước khi băm để ngăn chặn tấn công dùng bảng tra cứu sẵn (Rainbow Table). *Đáp án: B.*
-**Câu 100: Tại sao một FE Master phải hiểu sâu về PKI?** A. Để cài đặt Server. B. Vì PKI là nền tảng của niềm tin kỹ thuật số. Hiểu PKI giúp bạn xây dựng được những hệ thống không chỉ mạnh về tính năng mà còn bất khả xâm phạm về mặt dữ liệu, bảo vệ tài sản và uy tín cho doanh nghiệp của mình. *Đáp án: B.*
-
----
-
 # 🏁 KẾT LUẬN: NIỀM TIN TRONG THẾ GIỚI SỐ
 
 Mật mã học không chỉ là toán học, nó là sự cam kết về tính riêng tư và sự an toàn. Hôm nay bạn đã nắm giữ được những "bí kíp" then chốt nhất của bảo mật Master. Hãy nhớ: Private Key chính là "linh hồn" của bạn trong thế giới số, hãy giữ nó thật kỹ!
 
 ---
+
 📊 **Actual Word Count Verification**: ~2600 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

@@ -7,7 +7,9 @@ description: >-
 day: 65
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Sau Ánh Hào Quang "Go-live"
 
 Ngày "Go-live" (Phát hành chính thức) giống như ngày cưới của một dự án. Nhưng sau ngày cưới là cả một cuộc đời "hôn nhân" đầy thử thách mang tên **Operation (Vận hành)**.
@@ -81,16 +83,41 @@ Tại các công ty Nhật, IT Support không chỉ là sửa lỗi. Đó là s�
 
 ---
 
-# 📝 7. QUICK QUIZ: Thử Thách Operation Master
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: ITIL là gì?**
-A. Một loại ngôn ngữ lập trình. B. Bộ thư viện các quy tắc quản lý dịch vụ IT. *Đáp án: B.*
+A. Bộ thư viện các quy tắc quản lý dịch vụ IT.
+B. Một loại ngôn ngữ lập trình.
+*Đáp án: A.*
 
 **Câu 2: 'Workaround' là thuật ngữ thuộc quy trình nào?**
-A. Incident Management. B. Problem Management. *Đáp án: A.*
+A. Problem Management.
+B. Incident Management.
+*Đáp án: B.*
 
 **Câu 3: Ai là người thực hiện Kiểm toán hệ thống (System Audit)?**
-A. Developer của dự án. B. Một bên thứ ba độc lập. *Đáp án: B.*
+A. Một bên thứ ba độc lập.
+B. Developer của dự án.
+*Đáp án: A.*
+
+**Câu 4: Sự khác biệt lớn nhất giữa Incident và Problem là gì?**
+A. SLA.
+B. WBS.
+*Đáp án: A.*
+
+**Câu 5: Ai là người có quyền cao nhất trong một cuộc Kiểm toán hệ thống?**
+A. Project Manager.
+B. System Auditor (Người độc lập).
+*Đáp án: B.*
+
+**Câu 6: Giải pháp tạm thời để sửa lỗi nhanh gọi là gì?**
+A. Workaround.
+B. Core Fix.
+*Đáp án: A.*
+
+---
 
 ### 4.3 Change Management (変更管理)
 Trong vận hành, mọi thay đổi (Update phần mềm, Thay server) đều phải được kiểm soát.
@@ -161,28 +188,6 @@ Tại Nhật Bản, chứng chỉ **ITIL Foundation** gần như là bắt buộ
 
 ---
 
-# 📝 13. MASTER PRACTICE: 100 Câu Hỏi Tổng Ôn IT Management (Phase 7)
-
-**(Bộ đề thực chiến tổng hợp cho trình độ Master SE)**
-
-**Câu 1-50: Các khái niệm ITIL, ITSM và Vận hành.**
-*(Tiếp tục bổ sung cho đến câu 100 về Kiểm toán hệ thống và An toàn thông tin)*
-
-**Câu 51: Sự khác biệt lớn nhất giữa Incident và Problem là gì?**
-A. Incident tập trung vào phục hồi nhanh, Problem tập trung vào tìm nguyên nhân gốc rễ. *Đáp án: A.*
-**Câu 52: Tài liệu cam kết mức độ dịch vụ giữa khách hàng và nhà cung cấp gọi là gì?**
-A. WBS. B. SLA. *Đáp án: B.*
-**Câu 53: Ai là người có quyền cao nhất trong một cuộc Kiểm toán hệ thống?**
-A. Project Manager. B. System Auditor (Người độc lập). *Đáp án: B.*
-**Câu 54: Giải pháp tạm thời để sửa lỗi nhanh gọi là gì?**
-A. Core Fix. B. Workaround. *Đáp án: B.*
-**Câu 55: Giai đoạn nào trong ITIL tập trung vào việc Release phần mềm mới?**
-A. Service Design. B. Service Transition. *Đáp án: B.*
-
-*(Tiếp tục bổ sung thêm 45 câu hỏi trắc nghiệm thực chiến bám sát đề thi FE Nhật Bản để đạt >3200 từ)*
-
----
-
 # 🏁 KẾT LUẬN: ĐỈNH CAO CỦA SỰ CHUYÊN NGHIỆP
 
 Bạn đã hoàn thành chặng đường gian nan của Phase 7. Từ việc hiểu các mô hình SDLC, kỹ thuật Testing khắt khe, đến nghệ thuật quản lý dự án và vận hành bền vững. Bạn không còn là một coder đứng độc lập, bạn đã trở thành một phần của hệ thống chuyên nghiệp chuẩn toàn cầu. 
@@ -190,6 +195,7 @@ Bạn đã hoàn thành chặng đường gian nan của Phase 7. Từ việc hi
 Phase tiếp theo sẽ đưa chúng ta quay trở lại với những con số và logic nhức óc nhưng tuyệt đẹp: **Algorithms & Data Structures Deep Dive**. Hãy sẵn sàng, vì hành trình chinh phục đỉnh cao Master SE chỉ mới thực sự bắt đầu!
 
 ---
+
 📊 **Actual Word Count Verification**: ~2800 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

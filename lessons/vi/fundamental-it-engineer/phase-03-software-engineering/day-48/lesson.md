@@ -7,7 +7,9 @@ description: >-
 day: 48
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Tại Sao Facebook Có Thể Tìm Thấy Bạn Trong 0.01 Giây?
 
 Hãy tưởng tượng bạn đang đứng trước thư viện quốc gia **Diet Library** tại Tokyo với hơn 45 triệu ấn bản. Bạn cần tìm một câu trích dẫn duy nhất của một triết gia thế kỷ 18. Nếu bạn đi tìm từng cuốn sách một (Full Table Scan), bạn sẽ héo mòn cả đời người mà vẫn chưa thấy. Nhưng nếu bạn có một bộ mục lục thần kỳ (Full-text Index), bạn chỉ mất vài giây.
@@ -130,32 +132,45 @@ A. ロールバック B. デッドロック C. コミット D. チェックポ�
 
 ---
 
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
+---
 
-**(Bộ đề khổng lồ giúp bạn trở thành 'phù thủy dữ liệu' - Database Wizard)**
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
-**Câu 1-50: Kiến thức về RDBMS, Indexing, ACID và SQL Tuning.**
-*(Bổ sung 50 câu hỏi Master nâng cao về NoSQL, Sharding và Vector DB)*
+**Câu 1: 'Composite Index' (Index trên nhiều cột) nên ưu tiên cột nào trước?**
+A. Cột xuất hiện đầu tiên.
+B. Tùy ý.
+C. Cột ngắn nhất.
+D. Cột có Cardinality cao nhất (Dữ liệu độc nhất nhất).
+*Đáp án: D.*
 
-**Câu 51: 'Composite Index' (Index trên nhiều cột) nên ưu tiên cột nào trước?** A. Cột có Cardinality cao nhất (Dữ liệu độc nhất nhất). B. Cột ngắn nhất. C. Cột xuất hiện đầu tiên. D. Tùy ý. *Đáp án: A.*
-**Câu 52: Tại sao không nên đánh Index cho mọi cột?** A. Tốn tiền mua bản quyền SQL. B. Làm chậm quá trình Ghi (INSERT/UPDATE) vì DB phải cập nhật cả cây Index. C. Không ai làm thế. D. Lỗi compiler. *Đáp án: B.*
-**Câu 53: 'Consistency' trong CAP Theorem khác gì 'Consistency' trong ACID?** A. Giống nhau. B. ACID Consistency là về tính đúng đắn của quy tắc dữ liệu; CAP Consistency là về việc mọi máy chủ nhìn thấy cùng một dữ liệu tại cùng một thời điểm. *Đáp án: B.*
-**Câu 54: Redis chạy đơn luồng (Single-thread), tại sao nó lại cực nhanh?** A. Vì nó dùng ngôn ngữ máy. B. Vì nó chạy hoàn toàn trên RAM và sử dụng IO Multiplexing cực kỳ hiệu quả, không tốn tài nguyên chuyển ngữ cảnh (Context switching). *Đáp án: B.*
-**Câu 55: 'Vector Database' (Milvus, Pinecone) dùng làm gì trong năm 2026?** A. Lưu ảnh. B. Lưu các Vector nhúng (Embeddings) phục vụ cho tìm kiếm ngữ nghĩa và AI (RAG). *Đáp án: B.*
+**Câu 2: Tại sao không nên đánh Index cho mọi cột?**
+A. Làm chậm quá trình Ghi (INSERT/UPDATE) vì DB phải cập nhật cả cây Index.
+B. Lỗi compiler.
+C. Không ai làm thế.
+D. Tốn tiền mua bản quyền SQL.
+*Đáp án: A.*
 
-**Câu 98: 'Read-only Replica' giúp gì cho hệ thống có lượng traffic khổng lồ?** A. Giúp Ghi nhanh hơn. B. Giúp giảm tải cho Master DB bằng cách điều hướng toàn bộ các truy vấn Đọc sang các máy con (Slaves), để Master DB chỉ tập trung xử lý Ghi. C. Tiết kiệm điện. D. Không có tác dụng. *Đáp án: B.*
-**Câu 99: 'Query Cache' đã bị loại bỏ trong MySQL 8.0, tại sao?** A. Vì nó quá hoàn hảo. B. Vì nó gây ra vấn đề về khả năng mở rộng (Scalability bottleneck) khi có quá nhiều lệnh UPDATE liên tục làm vô hiệu hóa cache. C. Vì tốn RAM. D. Vì lỗi bảo mật. *Đáp án: B.*
-**Câu 100: Tầm quan trọng của Database đối với một FE Master năm 2026?** A. Chỉ để biết cho vui. B. Vì Database là cội nguồn của mọi trải nghiệm người dùng. Hiểu sâu về nó giúp bạn phối hợp nhịp nhàng với đội Backend và Infra để xây dựng nên những kiệt tác phần mềm bền bỉ với thời gian. *Đáp án: B.*
+**Câu 3: 'Consistency' trong CAP Theorem khác gì 'Consistency' trong ACID?**
+A. ACID Consistency là về tính đúng đắn của quy tắc dữ liệu; CAP Consistency là về việc mọi máy chủ nhìn thấy cùng một dữ liệu tại cùng một thời điểm.
+B. Giống nhau.
+*Đáp án: A.*
 
-**Câu 56-100: Tập trung vào các tình huống thực tế, thiết kế hệ thống và SQL nâng cao.**
+**Câu 4: Redis chạy đơn luồng (Single-thread), tại sao nó lại cực nhanh?**
+A. Vì nó chạy hoàn toàn trên RAM và sử dụng IO Multiplexing cực kỳ hiệu quả, không tốn tài nguyên chuyển ngữ cảnh (Context switching).
+B. Vì nó dùng ngôn ngữ máy.
+*Đáp án: A.*
 
-**Câu 56: 'Indexing' làm tăng tốc độ Đọc nhưng làm chậm tốc độ Ghi, tại sao?** A. Vì tốn RAM. B. Vì mỗi khi Ghi (INSERT/UPDATE), hệ thống phải tính toán lại và cập nhật toàn bộ các cấu trúc cây B-Tree của Index đó. C. Vì lỗi phần cứng. D. Không làm chậm. *Đáp án: B.*
-**Câu 57: 'Soft Delete' (Sử dụng cột is_deleted) mang lại lợi ích gì?** A. Xóa nhanh hơn. B. Giúp bảo toàn dữ liệu để phục vụ Audit và dễ dàng khôi phục khi cần, tránh việc Xóa vật lý (Hard delete) gây hỏng Referential Integrity. C. Tiết kiệm dung lượng. D. Chống virus. *Đáp án: B.*
-**Câu 58: Tại sao NoSQL lại dễ mở rộng ngang (Horizontal Scaling) hơn RDBMS?** A. Vì NoSQL rẻ hơn. B. Vì NoSQL thường sử dụng mô hình dữ liệu phi tập trung, không yêu cầu các ràng buộc quan hệ chéo (Join/Foreign Key) phức tạp giữa các máy chủ khác nhau. C. Vì NoSQL không cần RAM. D. Vì NoSQL do Google tạo ra. *Đáp án: B.*
-**Câu 59: 'Database Migration' là gì?** A. Di cư Database sang nước khác. B. Quy trình quản lý phiên bản thay đổi cấu trúc Database (Schema) một cách có kiểm soát và an toàn. C. Nâng cấp phiên bản DB. D. Xóa DB cũ. *Đáp án: B.*
-**Câu 60: 'N+1 Query Problem' là gì?** A. Một bài toán toán học. B. Lỗi hiệu năng phổ biến khi ứng dụng thực hiện 1 câu lệnh lấy danh sách và sau đó thực hiện N câu lệnh lấy chi tiết trong vòng lặp. Cần dùng Eager Loading để giải quyết. C. Lỗi SQL. D. Lỗi thiếu Index. *Đáp án: B.*
+**Câu 5: 'Vector Database' (Milvus, Pinecone) dùng làm gì trong năm 2026?**
+A. Lưu các Vector nhúng (Embeddings) phục vụ cho tìm kiếm ngữ nghĩa và AI (RAG).
+B. Lưu ảnh.
+*Đáp án: A.*
 
-*(Tiếp tục bổ sung thêm 40 câu hỏi chi tiết về SQL Injection, Vector Search, và các tình huống văn hóa quản trị dữ liệu tại Nhật để đạt mốc >3200 từ)*
+**Câu 6: 'Read-only Replica' giúp gì cho hệ thống có lượng traffic khổng lồ?**
+A. Giúp Ghi nhanh hơn.
+B. Tiết kiệm điện.
+C. Giúp giảm tải cho Master DB bằng cách điều hướng toàn bộ các truy vấn Đọc sang các máy con (Slaves), để Master DB chỉ tập trung xử lý Ghi.
+D. Không có tác dụng.
+*Đáp án: C.*
 
 ---
 
@@ -203,12 +218,14 @@ A. ロールバック B. デッドロック C. コミット D. チェックポ�
 | **Normal Form** | 正規形 (Seikikei) | Dạng chuẩn |
 
 ---
+
 📊 **Actual Word Count Verification**: ~2800 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.
 *(Hết bài 48).*
 
 ---
+
 📊 **Actual Word Count Verification**: ~1200 words (To be expanded).
 *(Elite 3.0 Standard - Japanese Engineering Context)*.
 *(Master Triple-term System integrated)*.

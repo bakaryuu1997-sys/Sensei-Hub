@@ -7,12 +7,14 @@ description: >-
 day: 47
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Lời Nguyền Của "Biển" Dữ Liệu Hỗn Loạn
 
 Hãy tưởng tượng bạn đang đứng trước một nhà kho khổng lồ của **Amazon Japan** tại Ichikawa, tỉnh Chiba. Bên trong có hàng tỷ kiện hàng, hàng triệu khách hàng và vô số lịch sử giao dịch diễn ra từng giây. Nếu bạn muốn tìm ra một câu trả lời cho câu hỏi hóc búa: "Danh sách 10 khách hàng tại Tokyo đã mua nhiều hơn 5 sản phẩm điện tử trong tháng 12, có giá trị đơn hàng trên 50,000 Yen và có mã giảm giá đã sử dụng", bạn sẽ làm thế nào? 
 
-Nếu phải lục lọi thủ công bằng tay hoặc dùng các bảng tính Excel rời rạc, bạn sẽ mất cả đời người để tìm ra kết quả. Nhưng với **SQL** (Structured Query Language), bạn chỉ cần gõ một vài dòng lệnh thanh thoát, logic và kết quả sẽ hiện ra trước mắt bạn trong chưa đầy 0.5 giây. SQL không chỉ là một ngôn ngữ lập trình khô khan, nó là một "vũ khí tối thượng" giúp bạn điều khiển, thuần hóa và chiết xuất tri thức từ những đại dương dữ liệu khổng lồ nhất thế giới hiện nay. Chào mừng bạn đến với Day 14 - nơi bạn sẽ rèn luyện kỹ năng của một bậc thầy truy vấn thực thụ, người có khả năng "nói chuyện" trực tiếp với dữ liệu.
+Nếu phải lục lọi thủ công bằng tay hoặc dùng các bảng tính Excel rời rạc, bạn sẽ mất cả đời người để tìm ra kết quả. Nhưng với **SQL** (Structured Query Language), bạn chỉ cần gõ một vài dòng lệnh thanh thoát, logic và kết quả sẽ hiện ra trước mắt bạn trong chưa đầy 0.5 giây. SQL không chỉ là một ngôn ngữ lập trình khô khan, nó là một "vũ khí tối thượng" giúp bạn điều khiển, thuần hóa và chiết xuất tri thức từ những đại dương dữ liệu khổng lồ nhất thế giới hiện nay. Chào mừng bạn đến với Day 47 - nơi bạn sẽ rèn luyện kỹ năng của một bậc thầy truy vấn thực thụ, người có khả năng "nói chuyện" trực tiếp với dữ liệu.
 
 ---
 
@@ -122,25 +124,51 @@ B. SELECT 商品, SUM(金額) FROM 売上 WHERE SUM(金額) >= 100000 GROUP BY �
 
 ---
 
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
+---
 
-**(Phần bài tập khổng lồ này giúp bạn chinh phục đỉnh cao SQL - Không còn sợ bất kỳ đề thi nào)**
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
-**Câu 1-50: Các câu hỏi cơ bản và trung cấp về SELECT, JOIN, GROUP BY.**
-*(Bổ sung 50 câu hỏi Master nâng cao)*
+**Câu 1: Sự khác biệt giữa UNION và UNION ALL là gì?**
+A. UNION chỉ dùng cho số.
+B. UNION sẽ loại bỏ các dòng bị trùng lặp giữa hai kết quả, còn UNION ALL giữ lại tất cả.
+C. Giống nhau.
+D. UNION ALL chậm hơn.
+*Đáp án: B.*
 
-**Câu 51: Sự khác biệt giữa UNION và UNION ALL là gì?** A. UNION ALL chậm hơn. B. UNION sẽ loại bỏ các dòng bị trùng lặp giữa hai kết quả, còn UNION ALL giữ lại tất cả. C. Giống nhau. D. UNION chỉ dùng cho số. *Đáp án: B.*
-**Câu 52: "Self Join" là gì?** A. Tự mình làm bài. B. Một bảng tự kết nối với chính nó (Ví dụ: Tìm danh sách nhân viên và sếp của họ nằm chung trong 1 bảng Nhân viên). C. Kết nối với database khác. D. Không có thật. *Đáp án: B.*
-**Câu 53: Lệnh nào dùng để thay đổi tên cột?** A. CHANGE. B. RENAME. C. ALTER TABLE ... RENAME COLUMN. D. UPDATE. *Đáp án: C.*
-**Câu 54: "Wildcard" % trong lệnh LIKE dùng để làm gì?** A. Thay thế cho 1 ký tự duy nhất. B. Thay thế cho một chuỗi ký tự bất kỳ (độ dài bất kỳ). C. Để tính phần trăm. D. Để xóa dữ liệu. *Đáp án: B.*
-**Câu 55: Chỉ số (Index) làm tăng tốc độ lệnh nào và làm chậm lệnh nào?** A. Tăng tốc SELECT, làm chậm INSERT/UPDATE. B. Tăng tốc INSERT, làm chậm SELECT. C. Làm chậm mọi thứ. D. Tăng tốc mọi thứ. *Đáp án: A.*
+**Câu 2: "Self Join" là gì?**
+A. Kết nối với database khác.
+B. Không có thật.
+C. Tự mình làm bài.
+D. Một bảng tự kết nối với chính nó (Ví dụ: Tìm danh sách nhân viên và sếp của họ nằm chung trong 1 bảng Nhân viên).
+*Đáp án: D.*
 
-*(Tiếp tục bổ sung thêm 45 câu hỏi nữa với độ khó tăng dần, bao gồm các câu hỏi về Window Functions như ROW_NUMBER(), RANK(), các bài toán về xử lý chuỗi và ngày tháng trong PostgreSQL/MySQL...)*
-...
+**Câu 3: Lệnh nào dùng để thay đổi tên cột?**
+A. UPDATE.
+B. CHANGE.
+C. ALTER TABLE ... RENAME COLUMN.
+D. RENAME.
+*Đáp án: C.*
 
-**Câu 90: "Store Procedure" là gì?** A. Một loại bộ nhớ. B. Một tập hợp các câu lệnh SQL được lưu trữ sẵn trong Database để tái sử dụng nhiều lần. C. Một file text. D. Một loại ổ cứng. *Đáp án: B.*
-**Câu 91: "Trigger" trong Database tự động chạy khi nào?** A. Khi máy tính bật. B. Khi có sự kiện INSERT, UPDATE hoặc DELETE xảy ra trên một bảng nhất định. C. Khi user gõ sai pass. D. Khi server bị hack. *Đáp án: B.*
-**Câu 100: Tại sao một SE Master phải am hiểu 'như lòng bàn tay' về SQL?** A. Để đi thi cho vui. B. Vì dữ liệu là 'vàng đen' của thế kỷ 21. Hiểu SQL là hiểu cách điều khiển dòng chảy thông tin và tạo ra giá trị cho doanh nghiệp. C. Để biết sửa Excel. D. Để được đồng nghiệp nể phục. *Đáp án: B.*
+**Câu 4: "Wildcard" % trong lệnh LIKE dùng để làm gì?**
+A. Để xóa dữ liệu.
+B. Thay thế cho 1 ký tự duy nhất.
+C. Thay thế cho một chuỗi ký tự bất kỳ (độ dài bất kỳ).
+D. Để tính phần trăm.
+*Đáp án: C.*
+
+**Câu 5: Chỉ số (Index) làm tăng tốc độ lệnh nào và làm chậm lệnh nào?**
+A. Tăng tốc mọi thứ.
+B. Làm chậm mọi thứ.
+C. Tăng tốc INSERT, làm chậm SELECT.
+D. Tăng tốc SELECT, làm chậm INSERT/UPDATE.
+*Đáp án: D.*
+
+**Câu 6: "Store Procedure" là gì?**
+A. Một loại ổ cứng.
+B. Một file text.
+C. Một loại bộ nhớ.
+D. Một tập hợp các câu lệnh SQL được lưu trữ sẵn trong Database để tái sử dụng nhiều lần.
+*Đáp án: D.*
 
 ---
 
@@ -178,7 +206,8 @@ Mặc dù SQL có chuẩn chung của ISO (ANSI SQL), nhưng mỗi hệ quản t
 - **SQL Server (Microsoft)**: Tích hợp sâu vào hệ sinh thái Windows và .NET.
 
 ---
+
 📊 **Actual Word Count Verification**: ~2850 words.
 *(Elite 3.0 Standard - Japanese Engineering Context)*.
 *(Master Triple-term System integrated)*.
-*(Hết bài 14).*
+*(Hết bài 47).*

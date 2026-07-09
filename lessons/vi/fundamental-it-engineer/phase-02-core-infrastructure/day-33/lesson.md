@@ -7,7 +7,9 @@ description: >-
 day: 33
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Cơn Ác Mộng "Callback Hell"
 
 Hãy quay lại thời điểm năm 2012. Bạn đang làm việc tại một dự án SIer lớn ở Tokyo. Hệ thống yêu cầu lấy dữ liệu User, sau đó lấy danh sách Order, rồi lấy chi tiết từng sản phẩm. Code của bạn trông như thế này:
@@ -180,19 +182,29 @@ const myPromise = new Promise((resolve, reject) => {
 
 ---
 
-# 📝 8. QUICK QUIZ (Async Mastery)
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: Điều gì xảy ra nếu bạn không dùng `.catch()` cho một Promise bị reject?**
-A. Code dừng chạy | B. Hiện cảnh báo "Unhandled Promise Rejection" | C. Trình duyệt tự động fix
-*Đáp án: B.*
+A. Code dừng chạy |
+B. Trình duyệt tự động fix
+C. Hiện cảnh báo "Unhandled Promise Rejection" |
+*Đáp án: C.*
 
 **Câu 2: `await` có thể dùng bên ngoài hàm `async` không?**
-A. Có (ở ES Module cấp cao) | B. Tuyệt đối không | C. Chỉ trong Node.js
-*Đáp án: A.*
+A. Tuyệt đối không |
+B. Có (ở ES Module cấp cao) |
+C. Chỉ trong Node.js
+*Đáp án: B.*
 
 **Câu 3: Task nào chạy trước: `Promise.resolve()` hay `process.nextTick()` (trong Node.js)?**
-A. Promise | B. nextTick | C. Chạy song song
-*Đáp án: B (nextTick có hàng chờ riêng ưu tiên hơn cả Microtasks).*
+A. Promise |
+B. nextTick |
+C. Chạy song song
+*Đáp án: B.*
+
+---
 
 ### 11.1 Sequential vs Parallel: Khi Nào Dùng Gì?
 
@@ -242,27 +254,6 @@ Trong các đợt Flash Sale, hàng triệu người dùng cùng lúc nhấn "Mu
 
 ---
 
-# 💻 12. PRACTICE SCENARIOS: Từ Lý Thuyết Đến Vũ Khí Thực Chiến
-
-**Kịch bản 1: Chống lặp Request (Anti-duplicate)**
-Làm thế nào để đảm bảo nếu người dùng nhấn nút 10 lần, chỉ có 1 request cuối cùng được thực thi?
-- *Đáp án*: Dùng `AbortController` (đã học ở mục 6) hoặc kỹ thuật **Debounce** bất đồng bộ.
-
-**Kịch bản 2: Tự động Retry với Delay tăng dần**
-```javascript
-async function fetchWithRetry(url, retries = 3, delay = 1000) {
-    try {
-        return await fetch(url);
-    } catch (err) {
-        if (retries === 0) throw err;
-        await new Promise(r => setTimeout(r, delay));
-        return fetchWithRetry(url, retries - 1, delay * 2);
-    }
-}
-```
-
----
-
 # 📊 13. MASTER GLOSSARY: Triple-Term System (Async Deep-Dive)
 
 | English | Japanese (Kanji/Katakana) | Vietnamese |
@@ -306,7 +297,8 @@ Tại **Rakuten**, đây là kỹ năng bắt buộc để tối ưu ứng dụn
 Chúng ta đã đi từ những byte dữ liệu sơ khai đến thuật toán Orinoco tinh vi. Hiểu về bộ nhớ là sự khác biệt giữa một thợ code và một kiến trúc sư thực thụ. Hãy luôn giữ cho ứng dụng của bạn "sạch sẽ" và mượt mà.
 
 ---
+
 📊 **Final Word Count Verification**: >2550 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*
 *(Triple-term System integrated)*
-*(Hết bài 34).*
+*(Hết bài 33).*

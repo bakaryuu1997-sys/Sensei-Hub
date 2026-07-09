@@ -6,7 +6,9 @@ description: >-
 day: 26
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Sự Cố Tại Kho Hàng Amazon Japan
 
 Hãy tưởng tượng bạn là kỹ sư hệ thống tại trung tâm vận chuyển của **Amazon Japan** ở Sakai. Một đơn hàng bị thất lạc trong số 10 triệu kiện hàng.
@@ -109,7 +111,18 @@ Một kỹ sư **System Engineer (SE)** tại Nhật luôn đặt câu hỏi: "D
 
 ---
 
-# 📝 8. QUICK QUIZ: THỬ THÁCH TRÍ TUỆ
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
+
+**Câu 1: $O(\log_2 n)$ の計算量を持つ探索アルゴリズムはどれか？**
+A. 二分探索
+B. 線形探索
+C. 全探索
+D. ハッシュ法
+*Đáp án: A.*
+
+---
 
 # ⚙️ 7. MASTER DEEP-DIVE: Khi $O(\log n)$ Vẫn Chưa Đủ Nhanh
 
@@ -139,52 +152,6 @@ Dành cho những trường hợp việc "nhảy ngược" tốn kém (như trê
 *Trả lời*: Đó là việc quên `mid + 1` hoặc `mid - 1`. Nếu bạn chỉ gán `left = mid`, khi mảng chỉ còn 2 phần tử và Target nằm bên phải, `mid` sẽ giữ nguyên giá trị cũ mãi mãi.
 
 ---
-
-# 📝 9. DETAILED PRACTICE SOLUTIONS (Master Logic)
-
-**Câu 1: Cho mảng $A = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]$. Tìm Target = 23 dùng Binary Search. Vẽ Trace Table.**
-- **Bước 1**: $left=1, right=10, mid=5, A[5]=16$. $16 < 23 \to left = 6$.
-- **Bước 2**: $left=6, right=10, mid=8, A[8]=56$. $56 > 23 \to right = 7$.
-- **Bước 3**: $left=6, right=7, mid=6, A[6]=23$. **Found!** Trả về vị trí 6.
-
-**Câu 2: Tại sao Binary Search lại được gọi là thuật toán "Chia để trị" (Divide and Conquer)?**
-- *Giải thích*: Vì nó chia bài toán lớn (tìm trong n phần tử) thành bài toán nhỏ hơn (tìm trong n/2 phần tử) một cách liên tục.
-- *Đáp án*: Do tính chất giảm quy mô bài toán theo cấp số nhân.
-
-**Câu 3: Một hệ thống có 4 tỷ bản ghi. Binary Search cần tối đa bao nhiêu lần so sánh?**
-- *Giải thích*: $2^{32} \approx 4.2$ tỷ. Vậy chỉ cần tối đa 32 lần so sánh. Một con số kinh ngạc!
-- *Đáp án*: 32 lần.
-
-**Câu 4: Khi nào nên dùng Linear Search thay vì Binary Search?**
-- *Giải thích*: 1. Khi mảng cực nhỏ (dưới 10 phần tử). 2. Khi dữ liệu thay đổi liên tục và việc sắp xếp tốn nhiều thời gian hơn cả việc tìm kiếm tuần tự.
-- *Đáp án*: Mảng nhỏ hoặc dữ liệu biến động cao.
-
-**Câu 5: Trong IPA Pseudo-code, ký hiệu `▲` và `▼` có ý nghĩa gì?**
-- *Đáp án*: `▲` đánh dấu bắt đầu khối lệnh (vòng lặp/điều kiện), `▼` đánh dấu kết thúc. Nó giống như cặp ngoặc nhọn `{ }` trong C++/Java.
-
-**Câu 6: Tại sao `left + (right - left) / 2` lại an toàn hơn `(left + right) / 2`?**
-- *Giải thích*: Nếu `left` và `right` đều là những số nguyên lớn (gần mốc 2 tỷ), việc cộng chúng lại sẽ gây ra hiện tượng Overflow (tràn số) thành số âm. Cách viết trừ trước rồi cộng sau sẽ giữ cho các số luôn trong phạm vi an toàn.
-- *Đáp án*: Ngăn chặn lỗi tràn số (Integer Overflow).
-
-**Câu 7: Tìm kiếm nhị phân có độ phức tạp không gian (Space Complexity) là bao nhiêu?**
-- *Giải thích*: Nếu dùng vòng lặp, nó chỉ cần thêm 3 biến (left, right, mid), tức là $O(1)$. Nếu dùng đệ quy, nó tốn $O(\log n)$ bộ nhớ Stack.
-- *Đáp án*: $O(1)$ cho phiên bản Iterative.
-
-**Câu 8: "Sentinel Linear Search" là gì?**
-- *Giải thích*: Là bản nâng cấp của Linear Search. Ta gán Target vào phần tử cuối cùng của mảng (`A[n+1] = target`). Điều này giúp vòng lặp không cần kiểm tra điều kiện `i < n` ở mỗi bước, giảm 50% số phép so sánh điều kiện.
-- *Đáp án*: Tối ưu hóa số phép so sánh trong vòng lặp.
-
-**Câu 9: Thuật toán tìm kiếm nào được dùng trong lệnh `Ctrl + F` của trình duyệt?**
-- *Giải thích*: Thường là các thuật toán tìm kiếm chuỗi (String Searching) như **Boyer-Moore** hoặc **Knuth-Morris-Pratt**, không phải Binary Search (vì text không được "sắp xếp" theo nghĩa thông thường).
-- *Đáp án*: Pattern Matching Algorithms.
-
-**Câu 10: Ý nghĩa của "Success Rate" và "Average Search Length (ASL)"?**
-- *Giải thích*: Tại các SIer Nhật, khi bàn giao hệ thống, bạn phải chứng minh được ASL của thuật toán để đảm bảo Response Time cam kết trong SLA.
-- *Đáp án*: Chỉ số đánh giá hiệu suất trung bình của hệ thống tìm kiếm.
-
-**Câu 11: Tại sao Binary Search lại "khó viết đúng ngay lần đầu"?**
--   *Giải thích*: Donald Knuth (huyền thoại lập trình) từng nói 90% kỹ sư viết sai Binary Search ở các điểm biên (Boundary conditions).
--   *Đáp án*: Do tính phức tạp của các trường hợp biên.
 
 ### 📊 10. MASTER DEEP-DIVE: Searching in Higher Dimensions (Mảng Đa Chiều)
 
@@ -222,31 +189,3 @@ Dưới đây là các thuật ngữ "vàng" bạn cần nằm lòng để đọ
 | **Interpolation** | **補間** (Hokan) | Nội suy |
 | **Target Value** | **探索値** (Tansaku-chi) | Giá trị cần tìm |
 | **Array Index** | **添字** (Soeji) | Chỉ số mảng |
-
-### 📝 14. KAMOKU A: BỘ CÂU HỎI TRẮC NGHIỆM TỔNG HỢP (DEEP REVIEW)
-
-**Câu 1: $O(\log_2 n)$ の計算量を持つ探索アルゴリズムはどれか？**
-A. 線形探索
-B. 二分探索
-C. ハッシュ法
-D. 全探索
-*Đáp án: B.*
-
-**Câu 2: Linear Search ($O(n)$) có ưu điểm gì lớn nhất so với Binary Search?**
--   *Trả lời*: Không yêu cầu mảng phải được sắp xếp trước. Chạy ngay trên dữ liệu thô.
-
-**Câu 3: $n = 1,000,000,000$ (1 tỷ). Binary Search cần khoảng bao nhiêu lần so sánh?**
--   *Giải thích*: $2^{30} \approx 1$ tỷ. Vậy cần khoảng 30 lần.
--   *Đáp án*: 30 lần.
-
-**Câu 4: Tại sao nói Binary Search là thuật toán hiệu quả nhất cho dữ liệu tĩnh lớn?**
--   *Trả lời*: Vì nó tận dụng được cấu trúc sắp xếp để bẻ gãy độ phức tạp tuyến tính, chỉ tốn cực ít phép toán để tìm ra kết quả.
-
-**Câu 5-10: (Phần này sẽ đi sâu vào các câu hỏi về so sánh hiệu suất giữa bộ nhớ Cache và RAM khi thực hiện tìm kiếm, cách tính toán địa chỉ `mid` trong hệ thống 32-bit và 64-bit, và các mô phỏng lỗi logic khi gán nhầm `left = mid` thay vì `left = mid + 1`...)**
-
----
-📊 **Actual Word Count Verification**: >2600 words.
-*(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*
-*(Master Triple-term System integrated)*
-*(Hết bài 26).*
-*(Bắt đầu chuẩn bị cho Day 27: Hash Tables).*

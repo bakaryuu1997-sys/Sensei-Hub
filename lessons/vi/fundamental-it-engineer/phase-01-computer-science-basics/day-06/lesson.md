@@ -7,7 +7,9 @@ description: >-
 day: 6
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Nghịch Lý Về Tốc Độ Của CPU
 
 Hãy tưởng tượng bạn đang sở hữu một chiếc Ferrari (CPU) có khả năng chạy 300km/h. Bạn đang rất hào hứng để chinh phục xa lộ. Nhưng để chiếc xe chạy được, bạn cần đổ xăng. Trạm xăng gần nhất (RAM) lại cách đó 10km và con đường dẫn đến trạm xăng là một con đường làng gồ ghề đầy ổ gà. Mỗi lần đi bạn chỉ mang về được một chai xăng nhỏ. 
@@ -118,24 +120,52 @@ Bạn thấy không? Dù RAM chậm gấp 25 lần Cache, nhưng nhờ HitRate c
 
 ---
 
-# 📝 8. QUICK QUIZ (Siêu Cấp Master - 15 Câu Hỏi)
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: DRAM と SRAM の比較において，SRAM の特徴はどれ cả?**
-A. メモリ容量を大きくしやすい.
-B. 定期的なリフレッシュが必要である.
-C. DRAM よりも高速に動作する.
+A. 定期的なリフレッシュが必要である.
+B. DRAM よりも高速に動作する.
+C. メモリ容量を大きくしやすい.
 D. 消費電力が非常に少ない.
-*Đáp án: C.*
+*Đáp án: B.*
 
 **Câu 2: RAID 5 において，最低限必要なディスク枚数は何枚か？**
-A. 2枚 B. 3枚 C. 4枚 D. 5枚
+A. 5枚
+B. 3枚
+C. 2枚
+D. 4枚
 *Đáp án: B.*
 
 **Câu 3: キャッシュメモリのヒット率が 0.9，キャッシュのアクセス時間が 10ns，主記憶のアクセス時間が 60ns のとき，平均アクセス時間は何 ns か？**
-A. 15 B. 20 C. 25 D. 30
-*Giải: (10 * 0.9) + (60 * 0.1) = 9 + 6 = 15ns. Đáp án: A.*
+A. 15
+B. 25
+C. 30
+*Giải: (10 * 0.9) + (60 * 0.1) = 9 + 6 = 15ns.
+D. 20
+*Đáp án: A.*
 
-*(Phần Quiz sẽ kéo dài với hàng loạt câu hỏi tính toán phức tạp về RAID dung lượng, TBW của SSD và chu kỳ nạp DRAM...)*
+**Câu 4: Trong các loại bộ nhớ sau, loại nào có tốc độ truy cập nhanh nhất?**
+A. Main Memory (主記憶)
+B. SSD (Auxiliary Memory)
+C. Cache Memory (キャッシュ)
+D. Register (レジスタ)
+*Đáp án: D.*
+
+**Câu 5: Cơ chế nào cần phải "Refresh" liên tục để duy trì dữ liệu?**
+A. SRAM
+B. ROM
+C. DRAM
+D. Flash Memory
+*Đáp án: C.*
+
+**Câu 6: Tại sao Cache L1 thường được tích hợp trực tiếp vào CPU chip?**
+A. Để tiết kiệm chi phí sản xuất.
+B. Để giảm thiểu độ trễ vật lý và tăng xung nhịp truy cập.
+C. Để bảo vệ dữ liệu khỏi virus.
+D. Để tăng dung lượng bộ nhớ.
+*Đáp án: B.*
 
 ---
 
@@ -151,83 +181,3 @@ A. 15 B. 20 C. 25 D. 30
 - Chính phủ Nhật cùng 8 tập đoàn lớn (Toyota, Sony, NTT,...) thành lập **Rapidus** với tham vọng sản xuất chip 2nm vào năm 2027. Kiến thức về bộ nhớ và bán dẫn lại trở thành "mạch máu" nóng hổi của kinh tế Nhật.
 
 ---
-
-# 📝 10. MASTER PRACTICE: 50 Câu Hỏi Ôn Luyện Tuyển Chọn (Kamoku A Style)
-
-**Câu 1: Trong các loại bộ nhớ sau, loại nào có tốc độ truy cập nhanh nhất?**
-A. Main Memory (主記憶)
-B. SSD (Auxiliary Memory)
-C. Cache Memory (キャッシュ)
-D. Register (レジスタ)
-*Đáp án: D. Thanh ghi nằm ngay trong CPU core.*
-
-**Câu 2: Cơ chế nào cần phải "Refresh" liên tục để duy trì dữ liệu?**
-A. SRAM
-B. ROM
-C. DRAM
-D. Flash Memory
-*Đáp án: C. DRAM dùng tụ điện nên bị rò rỉ điện.*
-
-**Câu 3: Tại sao Cache L1 thường được tích hợp trực tiếp vào CPU chip?**
-A. Để tiết kiệm chi phí sản xuất.
-B. Để giảm thiểu độ trễ vật lý và tăng xung nhịp truy cập.
-C. Để tăng dung lượng bộ nhớ.
-D. Để bảo vệ dữ liệu khỏi virus.
-*Đáp án: B. Khoảng cách vật lý càng ngắn, tín hiệu điện truyền càng nhanh.*
-
-**Câu 4: RAID 1 (Mirroring) có đặc điểm chính là gì?**
-A. Tăng gấp đôi tốc độ ghi.
-B. Tiết kiệm 100% dung lượng ổ cứng.
-C. Ghi cùng một dữ liệu lên hai ổ đĩa song song để dự phòng.
-D. Sử dụng mã Parity để sửa lỗi.
-*Đáp án: C.*
-
-**Câu 5: Nếu một hệ thống có Hit Rate của Cache là 90%, thời gian truy cập RAM là 100ns, thời gian truy cập Cache là 10ns. Thời gian truy cập trung bình là?**
-A. 10ns
-B. 19ns
-C. 55ns
-D. 90ns
-*Giải: (0.9 * 10) + (0.1 * 100) = 9 + 10 = 19ns. Đáp án: B.*
-
-**Câu 6: 'Thrashing' trong quản lý bộ nhớ xảy ra khi nào?**
-A. Khi CPU xử lý quá nhanh.
-B. Khi hệ thống dành quá nhiều thời gian để hoán đổi trang (Paging) giữa RAM và đĩa cứng do thiếu RAM vật lý.
-C. Khi quạt tản nhiệt bị hỏng.
-D. Khi người dùng xóa file hệ thống.
-*Đáp án: B.*
-
-**Câu 7: Thuật toán thay thế block trong Cache nào bỏ đi block lâu nhất không được truy cập?**
-A. FIFO
-B. LFU
-C. LRU
-D. LIFO
-*Đáp án: C (Least Recently Used).*
-
-**Câu 8: Cấu trúc của NAND Flash (trong SSD) so với HDD có ưu điểm gì nổi bật?**
-A. Giá rẻ hơn trên mỗi GB.
-B. Không có bộ phận cơ học quay, chống sốc tốt và độ trễ ngẫu nhiên cực thấp.
-C. Tuổi thọ ghi xóa vĩnh viễn không giới hạn.
-D. Dung lượng lớn hơn HDD trong cùng một kích thước.
-*Đáp án: B.*
-
-**Câu 9: RAID 5 cần tối thiểu bao nhiêu ổ đĩa?**
-A. 2
-B. 3
-C. 4
-D. 5
-*Đáp án: B.*
-
-**Câu 10: ROM (Read-Only Memory) thường được dùng để chứa gì?**
-A. File Excel của người dùng.
-B. Trình duyệt Chrome.
-C. BIOS/Firmware khởi động máy.
-D. Bộ nhớ đệm cho game.
-*Đáp án: C.*
-
-**(Nội dung tiếp tục được mở rộng với 40 câu hỏi chuyên sâu về kiến trúc tập lệnh, lý thuyết bán dẫn và các tình huống giải quyết sự cố Server thực tế để đảm bảo bài học đạt trên 2800 từ...)**
-
----
-📊 **Actual Word Count Verification**: >2800 words.
-*(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
-*(Master Triple-term System integrated)*.
-*(Hết bài 06).*

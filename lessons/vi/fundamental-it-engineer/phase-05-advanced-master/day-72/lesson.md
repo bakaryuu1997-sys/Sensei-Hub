@@ -7,7 +7,9 @@ description: >-
 day: 72
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: "Mê cung" dữ liệu
 
 Hãy tưởng tượng bạn đang xây dựng một hệ thống gợi ý kết bạn cho một mạng xã hội tại Nhật Bản (như Mixi hoặc Line). Làm sao để tìm được "bạn của bạn" trong hàng triệu người một cách nhanh nhất? Hay làm sao để hệ thống ưu tiên xử lý các đơn hàng quan trọng nhất (Priority Queue) của một trang TMĐT như Rakuten?
@@ -101,7 +103,41 @@ Khi làm việc tại các dự án Logictics cho các cảng biển lớn tại
 
 ---
 
-# 📝 8. QUICK QUIZ: Thử thách Cấu trúc dữ liệu
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
+
+**Câu 1: Trong một Max-Heap, phần tử nhỏ nhất luôn nằm ở đâu?**
+A. Ở các Node lá (Leaves).
+B. Ở gốc (Root).
+*Đáp án: A.*
+
+**Câu 2: Thuật toán tìm kiếm theo chiều sâu (DFS) thường sử dụng cấu trúc dữ liệu nào?**
+A. Stack.
+B. Queue.
+*Đáp án: A.*
+
+**Câu 3: Cho đồ thị có 5 đỉnh. Số cạnh tối đa trong đồ thị vô hướng (không có vòng) là bao nhiêu?**
+A. 10.
+B. 20.
+*Đáp án: A.*
+
+**Câu 4: Khi duyệt In-order một cây BST, kết quả thu được là gì?**
+A. Dãy số tăng dần.
+B. Dãy số giảm dần.
+*Đáp án: A.*
+
+**Câu 5: [Kamoku B Simulation] Một mảng `a = [null, 50, 30, 40, 10, 20]` (chỉ số 1-based) biểu diễn một Max-Heap. Nếu xóa 50, phần tử nào sẽ được đưa lên gốc trước khi Heapify?**
+A. 40.
+B. 20.
+*Đáp án: B.*
+
+**Câu 6: Một cây nhị phân hoàn chỉnh (Complete Binary Tree) có 7 nút thì có bao nhiêu nút lá?**
+A. 4.
+B. 3.
+*Đáp án: A.*
+
+---
 
 ### 3.3 Cấu trúc Đồ thị (Graph Structures)
 Trong đề thi FE, Đồ thị thường được biểu diễn theo 2 cách:
@@ -174,27 +210,6 @@ Tại Nhật Bản, các dịch vụ hành chính công như **City Hall** (区�
 
 ---
 
-# 📝 13. MASTER PRACTICE: 100 Câu Hỏi Thực Chiến Kamoku B (Phần 2)
-
-**Câu 1-50: Tập trung vào Logic và Trace code căn bản (Day 71).**
-
-**Câu 51: Trong một Max-Heap, phần tử nhỏ nhất luôn nằm ở đâu?**
-A. Ở gốc (Root). B. Ở các Node lá (Leaves). *Đáp án: B.*
-
-**Câu 52: Thuật toán tìm kiếm theo chiều sâu (DFS) thường sử dụng cấu trúc dữ liệu nào?**
-A. Queue. B. Stack. *Đáp án: B.*
-
-**Câu 53: Cho đồ thị có 5 đỉnh. Số cạnh tối đa trong đồ thị vô hướng (không có vòng) là bao nhiêu?**
-A. 10. B. 20. *Đáp án: A (Công thức n(n-1)/2).*
-
-**Câu 54: Khi duyệt In-order một cây BST, kết quả thu được là gì?**
-A. Dãy số giảm dần. B. Dãy số tăng dần. *Đáp án: B.*
-
-**Câu 55: [Kamoku B Simulation] Một mảng `a = [null, 50, 30, 40, 10, 20]` (chỉ số 1-based) biểu diễn một Max-Heap. Nếu xóa 50, phần tử nào sẽ được đưa lên gốc trước khi Heapify?**
-A. 40. B. 20. *Đáp án: B (Phần tử cuối cùng của mảng).*
-
----
-
 # ⚙️ 13. UNDER THE HOOD: Duyệt đồ thị (BFS vs DFS)
 
 Để tìm kiếm thông tin trong một mạng lưới, chúng ta có hai chiến thuật kinh điển:
@@ -256,25 +271,6 @@ Hỗ trợ một hệ thống kho vận khổng lồ như **Sagawa** yêu cầu 
 
 ---
 
-# 📝 17. MASTER PRACTICE: 100 Câu Hỏi Thực Chiến Kamoku B (Phần cuối)
-
-**Câu 69: Một cây nhị phân hoàn chỉnh (Complete Binary Tree) có 7 nút thì có bao nhiêu nút lá?**
-A. 3. B. 4. *Đáp án: B.*
-
-**Câu 70: Bài toán tìm đường đi ngắn nhất giữa tất cả các cặp đỉnh (All-pairs shortest path) thường dùng thuật toán nào?**
-A. Dijkstra. B. Floyd-Warshall. *Đáp án: B.*
-
-**Câu 71 [IPA Logic]: Trong mã giả IPA, nếu `node.left` trỏ đến `null`, điều này có nghĩa là gì?**
-A. Node đó là Node gốc. B. Node đó không có con trái (Lá hoặc chỉ có con phải). *Đáp án: B.*
-
-**Câu 72 [Heap Logic]: Để xây dựng một Heap từ một mảng lộn xộn $n$ phần tử, độ phức tạp tối ưu là bao nhiêu?**
-A. $O(n \log n)$. B. $O(n)$. *Đáp án: B (Thuật toán Build-Heap).*
-
-**Câu 73-100: Các bài toán tình huống thực tế kết hợp xử lý lỗi vùng nhớ và tối ưu thuật toán.**
-*(Tiếp tục bổ sung thêm 28 câu hỏi "trace mã giả" dài 20 dòng để người học rèn luyện tư duy bền bỉ)*
-
----
-
 # 🧠 18. MASTER LEVEL: Quản lý Con trỏ và Bộ nhớ (Pointers & Memory)
 
 Trong mã giả IPA mới nhất, việc thao tác với Node thường ẩn chứa các logic về quản lý bộ nhớ.
@@ -321,18 +317,6 @@ Khi gặp một câu hỏi Cấu trúc dữ liệu "khủng" trong đề thi FE:
 1.  **Visualize**: Vẽ ngay cấu trúc đó ra nháp. Đừng bao giờ trace Tree hay Graph trong đầu.
 2.  **State Tracking**: Tạo một bảng biến thiên. Cột là tên biến, dòng là từng bước chạy của vòng lặp.
 3.  **Boundary Check**: Kiểm tra các trường hợp đặc biệt (Cây rỗng, mảng có 1 phần tử, tìm kiếm giá trị không có trong cây).
-# 📝 22. FINAL PRACTICE: 100 Câu Hỏi Thực Chiến Kamoku B (Hoàn thiện)
-
-**Câu 73 [Tree Logic]: Một cây Max-Heap có thể đồng thời là một cây BST không?**
-A. Có. B. Chỉ khi cây chỉ có 1 hoặc 2 node có giá trị sắp xếp đặc biệt. *Đáp án: B.*
-
-**Câu 74 [Graph Algorithm]: Thuật toán nào dùng để tìm cây khung nhỏ nhất?**
-A. Prim hoặc Kruskal. B. Dijkstra. *Đáp án: A.*
-
-**Câu 75 [Memory Logic]: Trong mã giả, thao tác `free(p)` có ý nghĩa gì?**
-A. Gán p bằng 0. B. Giải phóng vùng nhớ mà con trỏ p đang trỏ tới. *Đáp án: B.*
-
----
 
 # 🕵️ 23. MASTER WALKTHROUGH: Giải mã bài toán Graph hóc búa
 
@@ -379,6 +363,7 @@ Chúc mừng bạn đã chinh phục được "ngôn ngữ" khó nhất của k�
 Day 73 chúng ta sẽ bước sang một chủ đề "nóng" không kém: **Security Resilience Part B** - Nơi bạn sẽ học cách phân tích các lỗ hổng bảo mật trực tiếp trên mã giả! Hãy giữ vững sự tập trung, Master!
 
 ---
+
 📊 **Actual Word Count Verification**: >3200 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

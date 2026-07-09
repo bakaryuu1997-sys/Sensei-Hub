@@ -7,7 +7,9 @@ description: >-
 day: 51
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Tại Sao Hệ Thống Ngân Hàng "Sợ" Sự Thay Đổi?
 
 Hãy tưởng tượng bạn đang điều hành một ngân hàng khổng lồ tại Nhật Bản như **MUFG** hay **Mizuho**. Million giao dịch diễn ra mỗi giây. Nếu bạn để tất cả dữ liệu và logic xử lý vào một chiếc máy tính duy nhất (Mainframe), chuyện gì sẽ xảy ra nếu chiếc máy đó bị chập điện? Ngược lại, nếu bạn chia nhỏ hệ thống ra hàng ngàn máy chủ mini, làm sao để đảm bảo chúng không bao giờ xung đột dữ liệu với nhau?
@@ -125,11 +127,53 @@ A. 運用コストが最も低い B. 各層の独立性が高く, 変更時の�
 
 ---
 
-# 📝 8. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
+---
 
-**Câu 1: Chức năng chính của 'Middleware' trong hệ thống Master là gì?** A. Hiển thị giao diện. B. Kết nối và trung chuyển dữ liệu giữa các phần mềm hoặc các lớp (Tier) khác nhau. C. Diệt virus. D. Tăng tốc ổ cứng. *Đáp án: B.*
-**Câu 2: 'Horizontal Scaling' (Mở rộng hàng ngang) nghĩa là gì?** A. Mua Server mạnh hơn. B. Thêm nhiều Server cấu hình tương đương vào cụm (Cluster) để chia tải. C. Xóa Server cũ. D. Đổi hệ điều hành. *Đáp án: B.*
-**Câu 3: Hệ thống 'Dual' khác hệ thống 'Duplex' ở chỗ nào?** A. Dual chạy 2 máy giống hệt nhau cùng lúc để so sánh kết quả. Duplex có 1 máy chạy chính, 1 máy chờ sẵn (Standby). *Đáp án: A.*
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
+
+**Câu 1: Chức năng chính của 'Middleware' trong hệ thống Master là gì?**
+A. Kết nối và trung chuyển dữ liệu giữa các phần mềm hoặc các lớp (Tier) khác nhau.
+B. Tăng tốc ổ cứng.
+C. Hiển thị giao diện.
+D. Diệt virus.
+*Đáp án: A.*
+
+**Câu 2: 'Horizontal Scaling' (Mở rộng hàng ngang) nghĩa là gì?**
+A. Thêm nhiều Server cấu hình tương đương vào cụm (Cluster) để chia tải.
+B. Mua Server mạnh hơn.
+C. Xóa Server cũ.
+D. Đổi hệ điều hành.
+*Đáp án: A.*
+
+**Câu 3: Dịch vụ nào xử lý giao diện người dùng trong kiến trúc 3 lớp?**
+A. Web Server/Browser.
+B. OS.
+C. App Server.
+D. DB Server.
+*Đáp án: A.*
+
+**Câu 4: 'Failover' là hành động gì?**
+A. Restart server.
+B. Tự động chuyển quyền điều khiển từ máy hỏng sang máy dự phòng.
+C. Xóa code lỗi.
+D. Nâng cấp ram.
+*Đáp án: B.*
+
+**Câu 5: Hệ thống 'Client-Server' có ưu điểm gì so với xử lý tập trung?**
+A. Chạy chậm hơn.
+B. Bảo mật hơn.
+C. Không cần mạng.
+D. Rẻ hơn và linh hoạt hơn, dễ dàng nâng cấp từng phần.
+*Đáp án: D.*
+
+**Câu 6: Thuật ngữ 'N-tier' nói về cái gì?**
+A. Server của NASA.
+B. Hệ thống có nhiều lớp xử lý (vượt quá 3 lớp truyền thống, ví dụ thêm lớp Caching, lớp Security riêng).
+C. Nhiều người dùng.
+D. Mạng 5G.
+*Đáp án: B.*
+
+---
 
 ### 4.4 Middleware (ミドルウェア) - "Chất Keo" Kết Dính Hệ Thống
 Master SE không thể bỏ qua lớp trung gian này. Middleware nằm giữa Hệ điều hành (OS) và Ứng dụng.
@@ -216,32 +260,12 @@ A. 仮想化 B. クラスタリング C. ミドルウェア D. マルチプロ�
 
 ---
 
-# 📝 12. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
-
-**(Bộ đề khổng lồ giúp bạn trở thành 'System Architect Master')**
-
-**Câu 1-50: Kiến thức về Client-Server, 3-tier, Cluster và Dual/Duplex.**
-*(Bổ sung 50 câu hỏi Master nâng cao về phân tích hiệu năng và so sánh kiến trúc)*
-
-**Câu 51: Dịch vụ nào xử lý giao diện người dùng trong kiến trúc 3 lớp?** A. DB Server. B. Web Server/Browser. C. App Server. D. OS. *Đáp án: B.*
-**Câu 52: 'Failover' là hành động gì?** A. Xóa code lỗi. B. Tự động chuyển quyền điều khiển từ máy hỏng sang máy dự phòng. C. Nâng cấp ram. D. Restart server. *Đáp án: B.*
-**Câu 53: Hệ thống 'Client-Server' có ưu điểm gì so với xử lý tập trung?** A. Rẻ hơn và linh hoạt hơn, dễ dàng nâng cấp từng phần. B. Bảo mật hơn. C. Chạy chậm hơn. D. Không cần mạng. *Đáp án: A.*
-**Câu 54: Thuật ngữ 'N-tier' nói về cái gì?** A. Nhiều người dùng. B. Hệ thống có nhiều lớp xử lý (vượt quá 3 lớp truyền thống, ví dụ thêm lớp Caching, lớp Security riêng). C. Mạng 5G. D. Server của NASA. *Đáp án: B.*
-**Câu 55: 'Thin Client' giúp giảm chi phí gì nhiều nhất?** A. Chi phí điện. B. Chi phí quản lý và bảo trì đầu cuối (TCO - Total Cost of Ownership) vì máy trạm không cần cài đặt phức tạp. C. Chi phí mua chuột. D. Chi phí bàn ghế. *Đáp án: B.*
-
-**Câu 96: 'RPC' giúp ích gì cho lập trình viên?** A. Tăng tốc ổ cứng. B. Giúp lập trình viên gọi các hàm từ xa trên Server khác mà không cần quan tâm đến chi tiết kết nối mạng phức tạp bên dưới. *Đáp án: B.*
-**Câu 97: 'Vertical Scaling' (Scale-up) có nhược điểm gì lớn nhất?** A. Có giới hạn phần cứng (Bạn không thể nâng RAM mãi mãi) và gây gián đoạn (Downtime) khi nâng cấp. *Đáp án: A.*
-**Câu 98: 'Web 3-tier' có tầng nào chịu trách nhiệm lưu trữ ảnh của người dùng?** A. Presentation Tier. B. Data Tier (Lưu thông tin metadata) và thường kết hợp với Storage Service (như S3). *Đáp án: B.*
-**Câu 99: Tại sao 'Thin Client' lại giúp bảo mật tốt hơn?** A. Vì không có dữ liệu quan trọng nào được lưu ở máy người dùng, kẻ trộm lấy máy cũng không lấy được thông tin. *Đáp án: A.*
-**Câu 100: Tầm quan trọng của 'Architectural Design' đối với Senior SE?** A. Chỉ để đi thi. B. Đây là kỹ năng phân biệt giữa một người thợ code (Coder) và một kiến trúc sư (Architect). Biết cách chọn cấu hình hệ thống hợp lý giúp bạn xây dựng những sản phẩm bền bỉ, uy tín và tiết kiệm hàng triệu USD cho doanh nghiệp. *Đáp án: B.*
-
----
-
 # 🏁 KẾT LUẬN: NỀN TẢNG CỦA MỌI HỆ THỐNG
 
 Hôm nay bạn đã đi từ những hệ máy Mainframe khổng lồ đến các mạng lưới phân tán hiện đại. Nhớ rằng: Kiến trúc hệ thống là sự đánh đổi (Trade-off). Không có cái nào là tốt nhất, chỉ có cái **phù hợp nhất** với bài toán bạn đang giải. Hãy rèn luyện tư duy Architect này mỗi ngày để trở thành một FE Master thực thụ!
 
 ---
+
 📊 **Actual Word Count Verification**: ~2600 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

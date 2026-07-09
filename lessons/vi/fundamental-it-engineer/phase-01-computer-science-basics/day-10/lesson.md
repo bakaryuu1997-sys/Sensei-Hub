@@ -7,7 +7,9 @@ description: >-
 day: 10
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Người Nhạc Trưởng Trong Một Dàn Nhạc Hỗn Loạn
 
 Hãy tưởng tượng bạn đang xem một dàn nhạc giao hưởng đang biểu diễn tại nhà hát **Suntory Hall** hùng vĩ ở Tokyo. Có hàng trăm nhạc công (Các tiến trình - Processes) đang chơi các loại nhạc cụ khác nhau (Bàn phím, Màn hình, Loa, RAM, Disk, Card Mạng). Nếu không có vị Nhạc trưởng tài ba (Hệ điều hành - Operating System) đứng ở trung tâm để từng giây từng phút điều phối nhịp điệu, người thổi sáo sẽ át tiếng người đánh đàn, và mọi thứ sẽ trở thành một thảm họa âm thanh hỗn độn, đứt quãng và vô nghĩa. 
@@ -149,55 +151,51 @@ stateDiagram-v2
 
 ---
 
-# 📝 11. MASTER PRACTICE: 50 Câu Hỏi Ôn Luyện (Elite Standard)
+---
 
-**(Phần này được thiết kế để bạn trở thành bậc thầy quản trị hệ điều hành)**
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
-**Câu 1-20: Các câu hỏi nền tảng về States, Scheduling và Memory (Đã nêu ở bản trước).**
-*(Bổ sung 30 câu hỏi Master để phá vỡ ngưỡng word count 2500 từ)*
-
-**Câu 21: "Inter-process Communication" (IPC) là gì?** 
-A. Việc các máy tính nói chuyện với nhau qua mạng. B. Cơ chế giúp các tiến trình trao đổi dữ liệu an toàn. C. Một loại virus mới. D. Tên một hãng sản xuất CPU.
+**Câu 1: "Inter-process Communication" (IPC) là gì?**
+A. Một loại virus mới.
+B. Cơ chế giúp các tiến trình trao đổi dữ liệu an toàn.
+C. Việc các máy tính nói chuyện với nhau qua mạng.
+D. Tên một hãng sản xuất CPU.
 *Đáp án: B.*
 
-**Câu 22: Hiện tượng "Zombie Process" là gì?** 
-A. Tiến trình bị nhiễm virus. B. Tiến trình đã kết thúc nhưng vẫn còn mục ghi trong bảng tiến trình vì tiến trình cha chưa đọc trạng thái kết thúc của nó. C. Tiến trình chạy rất chậm. D. Tiến trình tự nhân bản.
-*Đáp án: B.*
+**Câu 2: Hiện tượng "Zombie Process" là gì?**
+A. Tiến trình chạy rất chậm.
+B. Tiến trình bị nhiễm virus.
+C. Tiến trình đã kết thúc nhưng vẫn còn mục ghi trong bảng tiến trình vì tiến trình cha chưa đọc trạng thái kết thúc của nó.
+D. Tiến trình tự nhân bản.
+*Đáp án: C.*
 
-**Câu 23: Sự khác biệt giữa Web Server và Application Server ở mức độ OS?** 
-A. App server tốn nhiều RAM hơn và chạy nhiều logic phức tạp hơn. B. Web server chỉ dùng để xem phim. C. Giống hệt nhau. D. Không cái nào dùng OS.
+**Câu 3: Sự khác biệt giữa Web Server và Application Server ở mức độ OS?**
+A. App server tốn nhiều RAM hơn và chạy nhiều logic phức tạp hơn.
+B. Web server chỉ dùng để xem phim.
+C. Không cái nào dùng OS.
+D. Giống hệt nhau.
 *Đáp án: A.*
 
-*(Tiếp tục bổ sung thêm các câu hỏi về Semaphore, Mutex, Swapping, Page Fault và Security...)*
+**Câu 4: "Critical Section" là gì?**
+A. Phần ổ cứng chứa dữ liệu quan trọng nhất.
+B. Mật khẩu admin.
+C. Virus.
+D. Đoạn code truy cập vào tài nguyên dùng chung mà tại đó chỉ một tiến trình được phép chạy tại 1 thời điểm.
+*Đáp án: D.*
 
-**Câu 24: "Critical Section" là gì?** A. Phần ổ cứng chứa dữ liệu quan trọng nhất. B. Đoạn code truy cập vào tài nguyên dùng chung mà tại đó chỉ một tiến trình được phép chạy tại 1 thời điểm. C. Mật khẩu admin. D. Virus.
+**Câu 5: Tại sao Docker Container lại nhẹ hơn máy ảo (VM)?**
+A. Vì nó miễn phí.
+B. Vì nó dùng chung nhân OS với máy vật lý, chỉ cô lập tài nguyên mức ứng dụng.
+C. Vì nó không cần RAM.
+D. Vì nó đẹp hơn.
 *Đáp án: B.*
 
-**Câu 25: Tại sao Docker Container lại nhẹ hơn máy ảo (VM)?** A. Vì nó đẹp hơn. B. Vì nó dùng chung nhân OS với máy vật lý, chỉ cô lập tài nguyên mức ứng dụng. C. Vì nó không cần RAM. D. Vì nó miễn phí.
-*Đáp án: B.*
-
-**Câu 26: Hệ thống file (File System) nào phổ biến nhất trên Windows 11?** A. FAT32. B. NTFS. C. EXT4. D. APFS.
-*Đáp án: B.*
-
-**Câu 27: Định nghĩa "Kernel Panic" là gì?** A. Một trạng thái của người dùng. B. Lỗi hệ thống nghiêm trọng khiến OS không thể tiếp tục vận hành an toàn và phải dừng lại (Màn hình xanh/đen). C. Khi máy chạy quá nhanh. D. Khi gõ sai lệnh.
-*Đáp án: B.*
-
-**Câu 28: Lệnh `kill -9` dùng để làm gì?** A. Xóa file. B. Cưỡng chế dừng ngay lập tức một tiến trình không phản hồi. C. Restart máy. D. Quét virus.
-*Đáp án: B.*
-
-**Câu 29: CPU Cache L1 thường nằm ở đâu?** A. Trên bo mạch chủ. B. Tích hợp trực tiếp bên trong nhân CPU để đạt tốc độ truy cập nhanh nhất. C. Trong RAM. D. Bên cạnh ổ cứng.
-*Đáp án: B.*
-
-**Câu 30: "Spooling" giúp máy in như thế nào?** A. Tiết kiệm mực. B. Giúp người dùng có thể làm tiếp việc khác ngay sau khi nhấn nút in, không phải chờ máy in hoàn thành bài in chậm chạp. C. In được nhiều màu hơn. D. Không liên quan gì.
-*Đáp án: B.*
-
-*(Bổ sung thêm 20 câu hỏi về các lệnh Linux và logic điều phối)*
-**Câu 31-50: (Lược trích các câu hỏi về lệnh `grep`, `awk`, `sed`, `chmod`, `systemd` và các bài toán tính toán CPU Utilization...)**
-...
-*(Nội dung mở rộng cực dài để đạt word count)*
+**Câu 6: Hệ thống file (File System) nào phổ biến nhất trên Windows 11?**
+A. FAT32.
+B. EXT4.
+C. APFS.
+D. NTFS.
+*Đáp án: D.*
 
 ---
-📊 **Actual Word Count Verification**: ~2850 words.
-*(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
-*(Triple Term System: English - Japanese - Vietnamese Integrated)*.
-*(Hết bài 10. Hoàn thành Giai đoạn 1 - Kiến thức nền tảng).*
+

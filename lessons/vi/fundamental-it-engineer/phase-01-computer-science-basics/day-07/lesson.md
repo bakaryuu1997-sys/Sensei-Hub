@@ -6,7 +6,9 @@ description: >-
 day: 7
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Lời Nói Dối Về Những Con Số GHz
 
 Bạn bước vào một cửa hàng điện tử sầm uất tại Akihabara, Tokyo. Bạn thấy hai chiếc máy tính:
@@ -165,24 +167,55 @@ Tại sao không kéo dài Pipeline vô tận? Vì mỗi tầng Pipeline thêm v
 
 ---
 
-# 📝 8. QUICK QUIZ (Elite 3.0 Standard - 15 Câu Hỏi)
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: MIPS の説明として適切なものはどれか？**
-A. 1秒間に実行できる命令の百万単位の数.
-B. 命令の平均実行サイクル数.
-C. コンピュータの主記憶容量.
-D. 通信回線の伝送速度.
-*Đáp án: A.*
+A. コンピュータの主記憶容量.
+B. 1秒間に実行できる命令の百万単位の数.
+C. 通信回線の伝送速度.
+D. 命令の平均実行サイクル数.
+*Đáp án: B.*
 
 **Câu 2: MTBF が 450時間，MTTR が 50時間のとき，稼働率はいくらか？**
-A. 0.1 B. 0.5 C. 0.9 D. 1.0
-*Giải: 450 / (450 + 50) = 0.9. Đáp án: C.*
+A. 1.0
+*Giải: 450 / (450 + 50) = 0.9.
+B. 0.9
+C. 0.5
+D. 0.1
+*Đáp án: B.*
 
 **Câu 3: CPU の 1 命令あたりの実行に平均 5 クロックかかり，クロック周波数が 1GHz のとき，MIPS 値はいくらか？**
-A. 100 B. 200 C. 500 D. 1000
-*Giải: (1,000,000,000 / 5) / 1,000,000 = 200. Đáp án: B.*
+A. 200
+B. 100
+C. 500
+D. 1000
+*Giải: (1,000,000,000 / 5) / 1,000,000 = 200.
+*Đáp án: A.*
 
-*(Phần Quiz tiếp tục với các câu hỏi về định luật Amdahl, tính toán thời gian thực thi cho các chương trình có hàng tỷ lệnh...)*
+**Câu 4: Một CPU có tần số 3GHz, chu kỳ xung nhịp (Clock Cycle) là bao nhiêu?**
+A. 3 ns
+B. 300 ps
+*Giải: T = 1 / (3*10^9) = 0.333 * 10^-9 s = 0.33 ns.
+C. 0.33 ms
+D. 0.33 ns
+*Đáp án: D.*
+
+**Câu 5: Theo định luật Amdahl, nếu 50% chương trình không thể song song hóa, tốc độ tối đa đạt được khi nâng cấp số lõi lên vô hạn là bao nhiêu?**
+A. Không giới hạn
+*Giải: Max Speedup = 1 / (1 - 0.5) = 1 / 0.5 = 2.
+B. 5 lần
+C. 10 lần
+D. 2 lần
+*Đáp án: D.*
+
+**Câu 6: RAS là viết tắt của 3 khái niệm nào trong đánh giá hệ thống?**
+A. Reliability, Availability, Serviceability
+B. Resource, Application, System
+C. Real-time, Async, Sync
+D. Rapid, Accurate, Secure
+*Đáp án: A.*
 
 ---
 
@@ -195,83 +228,3 @@ A. 100 B. 200 C. 500 D. 1000
 - Khi xung nhịp (GHz) chạm ngưỡng giới hạn vật lý (vấn đề nhiệt độ), các hãng chip tập trung vào việc làm sao để một chu kỳ làm được nhiều việc hơn (IPC). Đây là lúc các kiến trúc Pipeline và Out-of-order execution lên ngôi.
 
 ---
-
-# 📝 10. MASTER PRACTICE: 50 Câu Hỏi Ôn Luyện Hiệu Năng (Sizing & Reliability)
-
-**Câu 1: Một CPU có tần số 3GHz, chu kỳ xung nhịp (Clock Cycle) là bao nhiêu?**
-A. 0.33 ns
-B. 3 ns
-C. 0.33 ms
-D. 300 ps
-*Giải: T = 1 / (3*10^9) = 0.333 * 10^-9 s = 0.33 ns. Đáp án: A.*
-
-**Câu 2: Theo định luật Amdahl, nếu 50% chương trình không thể song song hóa, tốc độ tối đa đạt được khi nâng cấp số lõi lên vô hạn là bao nhiêu?**
-A. 2 lần
-B. 5 lần
-C. 10 lần
-D. Không giới hạn
-*Giải: Max Speedup = 1 / (1 - 0.5) = 1 / 0.5 = 2. Đáp án: A.*
-
-**Câu 3: RAS là viết tắt của 3 khái niệm nào trong đánh giá hệ thống?**
-A. Rapid, Accurate, Secure
-B. Reliability, Availability, Serviceability
-C. Real-time, Async, Sync
-D. Resource, Application, System
-*Đáp án: B (Tiêu chuẩn chất lượng Nhật Bản).*
-
-**Câu 4: Chỉ số nào đo lường khả năng sửa chữa nhanh chóng của một hệ thống?**
-A. MTBF
-B. MTTR
-C. Availability
-D. MIPS
-*Đáp án: B (Mean Time To Repair).*
-
-**Câu 5: CPU A có MIPS = 1000, CPU B có MIPS = 1500. Kết luận nào sau đây là LUÔN luôn đúng?**
-A. B chạy nhanh hơn A 1.5 lần.
-B. B xử lý được nhiều lệnh hơn A trong 1 giây.
-C. A tiết kiệm điện hơn B.
-D. B có giá đắt hơn A.
-*Đáp án: B. MIPS chỉ phản ánh số lượng lệnh thực thi, không phản ánh chất lượng công việc xong.*
-
-**Câu 6: 'Throughput' (スループット) của một hệ thống ngân hàng được đo bằng đơn vị nào phổ biến nhất?**
-A. Ghz
-B. MIPS
-C. TPS (Transactions Per Second)
-D. GB/s
-*Đáp án: C.*
-
-**Câu 7: Một hệ thống có 2 Server chạy song song (Redundant). Mỗi Server có độ sẵn sàng 0.9. Độ sẵn sàng tổng thể là?**
-A. 0.81
-B. 0.9
-C. 0.99
-D. 1.8
-*Giải: Xác suất cả 2 đều hỏng là (1-0.9)*(1-0.9) = 0.01. Độ sẵn sàng là 1 - 0.01 = 0.99. Đáp án: C.*
-
-**Câu 8: Kỹ thuật 'Pipelining' giúp cải thiện chỉ số nào nhất?**
-A. Xung nhịp (Clock Frequency)
-B. Số lượng lệnh trung bình trên mỗi giây (Throughput)
-C. Dung lượng RAM
-D. Giá thành phần cứng
-*Đáp án: B.*
-
-**Câu 9: SpecInt là bài kiểm tra Benchmark dùng để làm gì?**
-A. Đo hiệu năng đồ họa.
-B. Đo hiệu năng tính toán số nguyên (Integer).
-C. Đo tốc độ mạng.
-D. Đo độ bền ổ cứng.
-*Đáp án: B.*
-
-**Câu 10: 'Wait State' xảy ra khi nào trong CPU?**
-A. Khi CPU đang làm việc quá tải.
-B. Khi CPU phải tạm dừng để đợi dữ liệu từ bộ nhớ chậm hơn (RAM).
-C. Khi máy tính ở chế độ Sleep.
-D. Khi người dùng không gõ phím.
-*Đáp án: B.*
-
-**(Nội dung tiếp tục bổ sung thêm 40 câu hỏi nâng cao về tổ chức Pipeline, bối cảnh Sizing Server tại các Data Center Nhật Bản và bài tập RAS phức tạp để đạt mốc >2800 từ...)**
-
----
-📊 **Actual Word Count Verification**: >2800 words.
-*(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
-*(Master Triple-term System integrated)*.
-*(Hết bài 07).*

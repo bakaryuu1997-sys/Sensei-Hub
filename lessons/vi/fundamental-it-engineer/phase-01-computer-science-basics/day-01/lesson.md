@@ -7,7 +7,9 @@ description: >-
 day: 1
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Thảm Họa "Ariane 5" Và Bài Học Về Sự Chính Xác Tuyệt Đối
 
 Hãy tưởng tượng bạn đang đứng tại trung tâm kiểm soát không gian của Kourou, Guiana thuộc Pháp. Ngày 4 tháng 6 năm 1996, cả thế giới nín thở dõi theo tên lửa **Ariane 5** (Tên lửa đẩy Ariane 5) - niềm tự hào của châu Âu. Nhưng chỉ sau 37 giây, giấc mơ đó đã nổ tung thành hàng triệu mảnh vụn, tiêu tốn 370 triệu USD (khoảng 8.500 tỷ VNĐ).
@@ -152,77 +154,57 @@ Làm việc tại các SIer (System Integrator) lớn của Nhật như NTT Data
 
 ---
 
-# 📝 8. QUICK QUIZ (Mở Rộng Cực Đại - Chuẩn FE)
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: 16 進数の 「2A」 を，10 進数で表したものはどれか？**
 A. 26
 B. 32
 C. 42
 D. 50
-*Giải thích: $2 \times 16^1 + 10 \times 16^0 = 32 + 10 = 42$. Đáp án: C.*
+*Giải thích: $2 \times 16^1 + 10 \times 16^0 = 32 + 10 = 42$.
+*Đáp án: C.*
 
 **Câu 2: $2^{10}$ は約いくらか？ (Đây là câu hỏi kinh điển trong FE để ước lượng đơn vị Kilo/Mega)**
 A. 100
-B. 500
-C. 1,000
+B. 1,000
+C. 500
 D. 1,000,000
-*Giải thích: $2^{10} = 1024 \approx 1000$. Đây là lý do 1KB = 1024 bytes. Đáp án: C.*
+*Giải thích: $2^{10} = 1024 \approx 1000$. Đây là lý do 1KB = 1024 bytes.
+*Đáp án: B.*
 
 **Câu 3: 8 ビットの 2 進数の最大値は，10 進数でいくらか？ (Dùng số không dấu)**
 A. 127
-B. 128
+B. 256
+*Giải thích: $2^8 - 1 = 255$.
 C. 255
-D. 256
-*Giải thích: $2^8 - 1 = 255$. Đáp án: C.*
+D. 128
+*Đáp án: C.*
 
 **Câu 4: 16 進数 1 桁は，2 進数では何ビットに相当するか？**
-A. 2 ビット
-B. 3 ビット
+A. 8 ビット
+*Giải thích: $16 = 2^4$.
+B. 2 ビット
 C. 4 ビット
-D. 8 ビット
-*Giải thích: $16 = 2^4$. Đáp án: C.*
+D. 3 ビット
+*Đáp án: C.*
 
 **Câu 5: Tại sao máy tính dùng hệ nhị phân thay vì hệ thập phân?**
 A. Vì nó dễ đọc hơn.
 B. Vì các linh kiện điện tử (Transistor) hoạt động ổn định nhất ở 2 trạng thái bật/tắt.
-C. Vì hệ nhị phân chứa ít số hơn.
-D. Vì hệ thập phân quá cũ.
+C. Vì hệ thập phân quá cũ.
+D. Vì hệ nhị phân chứa ít số hơn.
 *Đáp án: B.*
 
 **Câu 6: Phép toán nào được dùng để lấy ra chữ số hàng thấp nhất trong một hệ đếm?**
-A. Phép cộng.
+A. Phép chia lấy dư (Modulo).
 B. Phép nhân.
-C. Phép chia lấy dư (Modulo).
-D. Phép lũy thừa.
-*Đáp án: C.*
-
-**Câu 7: Đưa số 0.5 (hệ 10) về hệ nhị phân 8-bit.**
-A. 10000000
-B. 0.10000000
-C. 0.00000001
-D. 0.5
-*Đáp án: B (Lưu ý dấu phẩy nhị phân).*
-
-**Câu 8: Trong mã màu RGB, giá trị `#0000FF` đại diện cho màu xanh dương (Blue). Giá trị này tương đương với số bao nhiêu trong hệ thập phân?**
-A. 0
-B. 15
-C. 255
-D. 65535
-*Giải thích: `FF` trong 16 tương đương 255 trong hệ 10. Đáp án: C.*
-
-**Câu 9: Khi dịch một số nhị phân không dấu sang phải 1 bit (Shift Right), giá trị của nó sẽ như thế nào?**
-A. Tăng gấp đôi.
-B. Giảm đi một nửa.
-C. Không đổi.
-D. Trừ đi 1.
-*Giải thích: $1/2 = 2^{-1}$. Dịch phải tương đương chia cho 2. Đáp án: B.*
-
-**Câu 10: ASCII là bộ mã dùng bao nhiêu bit để đại diện cho một ký tự?**
-A. 7 bit (thường lưu trong 8 bit)
-B. 16 bit
-C. 32 bit
-D. 64 bit
+C. Phép lũy thừa.
+D. Phép cộng.
 *Đáp án: A.*
+
+---
 
 ### 3.5 Chuẩn Nhật Bản (JIS - 日本産業規格)
 Trong bối cảnh công nghệ Nhật Bản, bạn sẽ thường gặp chuẩn **JIS** (Nippon Sangyou Kikaku). Các bộ mã ký tự như Shift_JIS hay EUC-JP (mà chúng ta sẽ học kỹ ở Day 18) đều bắt nguồn từ việc ánh xạ các số nhị phân vào bảng chữ cái tiếng Nhật (Kanji, Hiragana, Katakana). Việc hiểu rõ hệ đếm chính là chìa khóa để giải quyết các vấn đề về **Mojibake** (文字化け) [Lỗi mã hóa] - một bài toán kinh điển mà mọi kỹ sư SE tại Nhật đều phải đối mặt khi xử lý dữ liệu từ các hệ thống Legacy.
@@ -244,6 +226,7 @@ Bạn đã vượt qua cửa ải đầu tiên. Hệ đếm không chỉ là nh�
 **Bài học tiếp theo (Day 02)**: Chúng ta sẽ đi sâu vào cách máy tính thực hiện các phép toán âm (**Negative Numbers**) và tại sao CPU lại không bao giờ thực hiện phép trừ trực tiếp. Hãy chuẩn bị tinh thần cho một cú twist mang tên **2's Complement** (Số bù hai) - vũ khí bí mật giúp CPU tinh gọn bộ máy của mình.
 
 ---
+
 📊 **Word Count Verification**: ~2850 words.
 *(Nội dung bám sát 100% IPA Syllabus V9.0 - Chuẩn bị kỹ lưỡng cho kỳ thi FE tại Nhật Bản)*.
 *(Cấu trúc Elite 3.0: The Hook -> Analogy -> Under the Hood -> Architecture & Flow -> Logic & Pseudo-code -> Exam Logic -> Professional Context -> Quick Quiz)*.

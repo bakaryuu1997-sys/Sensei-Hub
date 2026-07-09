@@ -7,7 +7,9 @@ description: >-
 day: 57
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Cơn Ác Mộng Cập Nhật Và Sự Sụp Đổ Của Một Hệ Thống Quản Lý
 
 Vào năm một năm nọ tại một SIer quy mô vừa ở Osaka, một kỹ sư trẻ đã thiết kế một bảng dữ liệu duy nhất chứa tất cả thông tin: Tên khách hàng, địa chỉ, số điện thoại, tên sản phẩm đã mua, giá tiền và tên nhân viên tư vấn.
@@ -106,16 +108,44 @@ Lúc này, một Master SE sẽ thực hiện **Denormalization** (非正規化)
 
 ---
 
-# 📝 7. QUICK QUIZ: 100 Câu Hỏi Master DB Normalization (Ultimate)
+---
+
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
 **Câu 1: Chuẩn hóa nhằm mục tiêu lớn nhất là gì?**
-A. Tiết kiệm RAM. B. Loại bỏ dư thừa và ngăn chặn mâu thuẫn dữ liệu. C. Làm SQL ngắn hơn. *Đáp án: B.*
+A. Làm SQL ngắn hơn.
+B. Loại bỏ dư thừa và ngăn chặn mâu thuẫn dữ liệu.
+C. Tiết kiệm RAM.
+*Đáp án: B.*
 
 **Câu 2: Nếu biết ID sinh viên, ta biết được Tên sinh viên. Đây gọi là gì?**
-A. Phụ thuộc hàm (Functional Dependency). B. Join. C. Index. *Đáp án: A.*
+A. Join.
+B. Index.
+C. Phụ thuộc hàm (Functional Dependency).
+*Đáp án: C.*
 
 **Câu 3: Bảng đang ở 1NF. Khóa chính là {Mã Hóa Đơn, Mã Sản Phẩm}. Cột "Ngày Lập Hóa Đơn" chỉ thụ thuộc vào "Mã Hóa Đơn". Bảng này vi phạm chuẩn mấy?**
-A. 1NF. B. 2NF. C. 3NF. *Đáp án: B.*
+A. 3NF.
+B. 1NF.
+C. 2NF.
+*Đáp án: C.*
+
+**Câu 4: Một bảng có PK là {Mã Công Việc, Mã Nhân Viên}. Cột 'Tên Nhân Viên' là vi phạm chuẩn mấy?**
+A. Giảm đi.
+B. Tăng lên.
+*Đáp án: B.*
+
+**Câu 5: Phép toán nào trong đại số quan hệ tương ứng với mệnh đề 'WHERE' trong SQL?**
+A. Projection.
+B. Selection.
+*Đáp án: B.*
+
+**Câu 6: Kết quả của phép 'Natural Join' dựa trên điều gì?**
+A. Ngay từ đầu.
+B. Sau khi đã chuẩn hóa xong và phát hiện vấn đề về hiệu năng.
+*Đáp án: B.*
+
+---
 
 ### 4.4 Tại sao 3NF vẫn chưa phải là điểm dừng? (BCNF & 4NF)
 
@@ -194,23 +224,6 @@ Tại các công ty như **Toshiba** hay **Hitachi**, kỹ sư không được p
 
 ---
 
-# 📝 11. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
-
-**(Bộ đề chuyên sâu về Logic Database & Chuẩn hóa)**
-
-**Câu 1-50: Các khái niệm 1NF, 2NF, 3NF và Phụ thuộc hàm.**
-*(Tiếp tục bổ sung 50 câu hỏi nâng cao về BCNF, Đại số quan hệ và Tối ưu hóa Database)*
-
-**Câu 51: Một bảng có PK là {Mã Công Việc, Mã Nhân Viên}. Cột 'Tên Nhân Viên' là vi phạm chuẩn mấy?** A. 2NF (Vì nó chỉ cần Mã Nhân Viên là biết tên). *Đáp án: A.*
-**Câu 52: Sau khi chuẩn hóa đến 3NF, số lượng bảng trong hệ thống thường sẽ...** A. Giảm đi. B. Tăng lên. *Đáp án: B.*
-**Câu 53: Phép toán nào trong đại số quan hệ tương ứng với mệnh đề 'WHERE' trong SQL?** A. Projection. B. Selection. *Đáp án: B.*
-**Câu 54: Kết quả của phép 'Natural Join' dựa trên điều gì?** A. Tên cột giống nhau giữa hai bảng. *Đáp án: A.*
-**Câu 55: 'Denormalization' nên được thực hiện ở giai đoạn nào?** A. Ngay từ đầu. B. Sau khi đã chuẩn hóa xong và phát hiện vấn đề về hiệu năng. *Đáp án: B.*
-
-*(Tiếp tục bổ sung thêm 45 câu hỏi chi tiết về cách phân tích lược đồ phụ thuộc hàm (Functional Dependency Diagram) và các bài toán tách bảng thực tế để đạt >3500 từ)*
-
----
-
 # ❓ 12. TROUBLESHOOTING FAQ: Giải Đáp Nút Thắt Chuẩn Hóa
 
 **1. Chuẩn hóa có làm App chạy chậm đi không?**
@@ -230,26 +243,12 @@ Một Master SE không bao giờ chuẩn hóa một cách máy móc.
 
 ---
 
-# 📝 14. MASTER PRACTICE: Bổ Sung Câu Hỏi Thực Chiến (Phần 2)
-
-**Câu 96: Sự khác biệt lớn nhất giữa 2NF và 3NF là gì?**
-A. 2NF loại bỏ lặp lại, 3NF loại bỏ NULL. B. 2NF loại bỏ phụ thuộc từng phần, 3NF loại bỏ phụ thuộc bắc cầu. *Đáp án: B.*
-**Câu 97: Trong một bảng ở 3NF, mọi cột không phải khóa phải phụ thuộc vào điều gì?**
-A. Một phần của PK. B. Toàn bộ PK và chỉ PK mà thôi. *Đáp án: B.*
-**Câu 98: Tại sao BCNF lại khó đạt được hơn 3NF?**
-A. Vì nó yêu cầu không có phụ thuộc hàm nào mà Determinant không phải là Superkey. *Đáp án: A.*
-**Câu 99: 'Lossy Decomposition' là gì?**
-A. Tách bảng làm mất dữ liệu gốc. B. Tách bảng làm tăng dung lượng. *Đáp án: A.*
-**Câu 100: Một Database Architect giỏi sẽ làm gì nếu phép Join quá chậm?**
-A. Xóa dữ liệu. B. Xem xét Denormalization một cách có kiểm soát và thêm Index. *Đáp án: B.*
-
----
-
 # 🏁 KẾT LUẬN: SỰ CÂN BẰNG GIỮA LÝ THUYẾT VÀ THỰC TIỄN
 
 Chúc mừng bạn đã chinh phục được một trong những đỉnh cao khó nhằn nhất của Database Engineering. Chuẩn hóa dữ liệu không chỉ là một kỹ thuật, nó là một tư duy về sự ngăn nắp và logic. Một Master SE giỏi là người biết khi nào nên chuẩn hóa triệt để và khi nào cần linh hoạt để tối ưu hệ thống. Hẹn gặp lại bạn ở Day 58 để bắt đầu viết những câu lệnh SQL thần thánh!
 
 ---
+
 📊 **Actual Word Count Verification**: ~2850 words.
 *(Elite 3.0 Standard - Japanese Engineering Context - Master Edition)*.
 *(Master Triple-term System integrated - Triple Term System)*.

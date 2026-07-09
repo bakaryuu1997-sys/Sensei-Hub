@@ -7,12 +7,14 @@ description: >-
 day: 42
 chapter: FE MASTER
 category: FE-MASTER
+
 ---
+
 # 🪝 1. THE HOOK: Tại Sao Dự Án 1 Năm Lại Kéo Dài Thành 3 Năm?
 
 Bạn có bao giờ thắc mắc tại sao dự án xây dựng tháp truyền hình **Tokyo Skytree** khổng lồ lại hoàn thành đúng tiến độ đến từng ngày, trong khi một trang web đơn giản đôi khi lại bị chậm deadline hàng tháng trời, ngân bổng bị "đội" lên gấp đôi và cuối cùng ra mắt trong sự thất vọng của khách hàng?
 
-Sự khác biệt không nằm ở việc lập trình viên giỏi hay kém, mà nằm ở nghệ thuật của **Project Management** (プロジェクト管理). Chào mừng bạn đến với Day 17 - nơi bạn học cách làm chủ thời gian, ngân sách và con người. Một kỹ sư Master không chỉ biết code, mà phải là người biết biến những ý tưởng mơ hồ thành hiện thực trong phạm vi nguồn lực cho phép. Hiểu về Quản trị dự án chính là bước đệm để bạn trở thành một **Project Manager (PM)** quyền lực, người giữ cán cân cho sự thành bại của những dự án hàng triệu đô.
+Sự khác biệt không nằm ở việc lập trình viên giỏi hay kém, mà nằm ở nghệ thuật của **Project Management** (プロジェクト管理). Chào mừng bạn đến với Day 42 - nơi bạn học cách làm chủ thời gian, ngân sách và con người. Một kỹ sư Master không chỉ biết code, mà phải là người biết biến những ý tưởng mơ hồ thành hiện thực trong phạm vi nguồn lực cho phép. Hiểu về Quản trị dự án chính là bước đệm để bạn trở thành một **Project Manager (PM)** quyền lực, người giữ cán cân cho sự thành bại của những dự án hàng triệu đô.
 
 ---
 
@@ -109,24 +111,51 @@ A. クリティカルパス B. ガントチャート C. WBS D. マイルスト�
 
 ---
 
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
+---
 
-**(Bộ đề khổng lồ này giúp bạn trở thành bậc thầy điều phối dự án)**
+# 📝 10. MASTER PRACTICE: Câu Hỏi Ôn Luyện
 
-**Câu 1-50: Các kiến thức cơ bản về WBS, Gantt, PERT và các mốc Milestone.**
-*(Bổ sung 50 câu hỏi Master nâng cao về rủi ro, chi phí và nhân sự)*
+**Câu 1: "Scope Creep" là hiện tượng gì?**
+A. Dự án chạy nhanh hơn.
+B. Lỗi màn hình.
+C. Virus.
+D. Phạm vi dự án bị mở rộng mất kiểm soát mà không được điều chỉnh về thời gian và ngân sách.
+*Đáp án: D.*
 
-**Câu 51: "Scope Creep" là hiện tượng gì?** A. Dự án chạy nhanh hơn. B. Phạm vi dự án bị mở rộng mất kiểm soát mà không được điều chỉnh về thời gian và ngân sách. C. Lỗi màn hình. D. Virus. *Đáp án: B.*
-**Câu 52: Chỉ số CPI < 1 trong quản lý chi phí nghĩa là gì?** A. Dự án đang tiết kiệm tiền. B. Dự án đang bị vượt ngân sách (Over budget). C. Dự án đang lãi. D. Không có ý nghĩa gì. *Đáp án: B.*
-**Câu 53: Ai là người lập WBS?** A. Một mình khách hàng. B. Toàn bộ đội ngũ dự án cùng PM. C. Sếp tổng. D. Bảo vệ. *Đáp án: B.*
-**Câu 54: Lợi ích lớn nhất của Critical Path Method (CPM) là gì?** A. Làm code đẹp hơn. B. Xác định được những công việc thiết yếu quyết định ngày hoàn thành của dự án. C. Để giải trí. D. Để tăng lương. *Đáp án: B.*
-**Câu 55: Khi gặp rủi ro 'Phát sinh lỗi nghiêm trọng', PM nên làm gì đầu tiên?** A. Đi ngủ. B. Đánh giá tác động và kích hoạt phương án ứng phó đã lập sẵn. C. Mắng lập trình viên. D. Giấu khách hàng. *Đáp án: B.*
+**Câu 2: Chỉ số CPI < 1 trong quản lý chi phí nghĩa là gì?**
+A. Dự án đang tiết kiệm tiền.
+B. Không có ý nghĩa gì.
+C. Dự án đang lãi.
+D. Dự án đang bị vượt ngân sách (Over budget).
+*Đáp án: D.*
 
-*(Tiếp tục bổ sung thêm 45 câu hỏi nữa với độ chi tiết cực cao để đảm bảo >3200 từ)*
-...
+**Câu 3: Ai là người lập WBS?**
+A. Toàn bộ đội ngũ dự án cùng PM.
+B. Bảo vệ.
+C. Sếp tổng.
+D. Một mình khách hàng.
+*Đáp án: A.*
 
-**Câu 90: "Leadership" trong quản trị dự án là gì?** A. Chỉ tay năm ngón. B. Khả năng truyền cảm hứng, định hướng và giúp đội ngũ vượt qua khó khăn để đạt mục tiêu chung. C. Biết nhiều lệnh Linux. D. Có văn phòng riêng. *Đáp án: B.*
-**Câu 100: Tại sao một FE Master phải coi Quản trị dự án là 'nghề tay phải'?** A. Để đi thi. B. Để có thể biến những giấc mơ công nghệ vĩ đại thành hiện thực một cách có tổ chức, chuyên nghiệp và thành công rực rỡ. C. Để biết cách dùng ứng dụng lịch. D. Để quản lý cuộc đời mình tốt hơn. *Đáp án: B.*
+**Câu 4: Lợi ích lớn nhất của Critical Path Method (CPM) là gì?**
+A. Để giải trí.
+B. Để tăng lương.
+C. Làm code đẹp hơn.
+D. Xác định được những công việc thiết yếu quyết định ngày hoàn thành của dự án.
+*Đáp án: D.*
+
+**Câu 5: Khi gặp rủi ro 'Phát sinh lỗi nghiêm trọng', PM nên làm gì đầu tiên?**
+A. Mắng lập trình viên.
+B. Đi ngủ.
+C. Đánh giá tác động và kích hoạt phương án ứng phó đã lập sẵn.
+D. Giấu khách hàng.
+*Đáp án: C.*
+
+**Câu 6: "Leadership" trong quản trị dự án là gì?**
+A. Khả năng truyền cảm hứng, định hướng và giúp đội ngũ vượt qua khó khăn để đạt mục tiêu chung.
+B. Có văn phòng riêng.
+C. Chỉ tay năm ngón.
+D. Biết nhiều lệnh Linux.
+*Đáp án: A.*
 
 ---
 
@@ -166,23 +195,6 @@ Dự án hệ thống xử lý hành lý tự động tại sân bay Denver là 
 
 ---
 
-# 📝 10. MASTER PRACTICE: 100 Câu Hỏi Ôn Luyện (Ultimate Edition)
-
-**(Phần bổ sung 45 câu hỏi cuối cùng để đạt mốc 2500 từ)**
-
-**Câu 56-100: Tập trung vào tính toán sơ đồ mạng và kỹ năng mềm của PM.**
-
-**Câu 56: 'Critical Path' có thời gian dự phòng (Float) là bao nhiêu?** A. 10 ngày. B. Luôn bằng 0. (Vì bất kỳ sự chậm trễ nào cũng làm chậm toàn bộ dự án). C. Vô hạn. D. Tùy dự án. *Đáp án: B.*
-**Câu 57: 'Stakeholder Management' là quản lý những ai?** A. Chỉ khách hàng. B. Bất kỳ ai có ảnh hưởng hoặc bị ảnh hưởng bởi dự án (Sếp, khách hàng, nhân viên, đối tác). C. Chỉ lập trình viên. D. Bảo vệ tòa nhà. *Đáp án: B.*
-**Câu 58: Lợi ích của việc tổ chức Kick-off meeting?** A. Để đi liên hoan. B. Giúp mọi người hiểu rõ mục tiêu, vai trò và thống nhất cách làm việc ngay từ đầu. C. Để ra mắt sếp mới. D. Không cần thiết. *Đáp án: B.*
-**Câu 59: 'Change Request' (Yêu cầu thay đổi) cần có những gì?** A. Chỉ cần nói miệng. B. Phân tích tác động đến thời gian, chi phí và sự phê duyệt chính thức của các bên liên quan. C. Một bức ảnh. D. Một lời xin lỗi. *Đáp án: B.*
-**Câu 60: Trong văn hóa Nhật, khi dự án bị chậm, việc đầu tiên PM nên làm là gì?** A. Đổ lỗi cho cấp dưới. B. Thực hiện 'Báo cáo sớm' (Soki Houkoku), phân tích nguyên nhân và trình bày phương án khắc phục cho khách hàng. C. Tắt máy điện thoại. D. Chờ đến khi hết dự án mới nói. *Đáp án: B.*
-
-*(Tiếp tục bổ sung thêm 40 câu hỏi chi tiết về tính toán chi phí dự phòng, quản lý nhân sự GANTT, PERT để tổng word count đạt >3200 từ)*
-...
-
----
-
 # 📝 14. PM MASTER CHEAT SHEET: Bảng Tra Cứu Nhanh
 
 | Thuật ngữ | Tiếng Nhật | Ý nghĩa cốt lõi |
@@ -196,7 +208,8 @@ Dự án hệ thống xử lý hành lý tự động tại sân bay Denver là 
 | **Quality Control** | 品質管理 (Hinshitsu Kanri) | Đảm bảo sản phẩm đúng chuẩn. |
 
 ---
+
 📊 **Actual Word Count Verification**: ~2600 words.
 *(Elite 3.0 Standard - Japanese Engineering Context)*.
 *(Master Triple-term System integrated)*.
-*(Hết bài 17).*
+*(Hết bài 42).*
